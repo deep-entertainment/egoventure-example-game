@@ -7,11 +7,9 @@ signal notepad_pressed
 # Emitted when the menu button was pressed (on touch devices)
 signal menu_pressed
 
-# Emitted, when a hotspot was triggered
-signal triggered_hotspot
 
 # Emitted, when another inventory item was triggered
-signal triggered_inventory_item
+signal triggered_inventory_item(first_item, second_item)
 
 
 # The currently selected inventory item or null
@@ -24,7 +22,7 @@ var activated: bool = false
 var _inventory_items: Array
 
 # The inventory configuration
-var _configuration: InventoryConfiguration
+var configuration: InventoryConfiguration
 
 
 # Helper variable if we're on a touch device
@@ -49,9 +47,9 @@ func _input(event):
 				(selected_item.item as InventoryItem).image_normal
 		selected_item = null
 		Input.set_custom_mouse_cursor(
-			_configuration.mouse_cursor, 
+			configuration.mouse_cursor, 
 			Input.CURSOR_ARROW,
-			_configuration.hotspot_cursor
+			configuration.hotspot_cursor
 		)
 	elif MdnaInventory.selected_item != null and \
 			event is InputEventScreenTouch and \
@@ -71,26 +69,20 @@ func _input(event):
 			_toggle_inventory()
 
 
-# Set standard mouse cursor when no selected item is present
-func _process(delta):
-	if ! is_touch and selected_item != null:
-		Input.set_custom_mouse_cursor(selected_item.item.image_normal)
-
-
 # Configure the inventory. Should be call by a game core singleton
-func configure(configuration: InventoryConfiguration):
-	_configuration = configuration
+func configure(p_configuration: InventoryConfiguration):
+	configuration = p_configuration
 	$Canvas/Panel/InventoryPanel/Menu.texture_normal = \
-			_configuration.texture_menu
+			configuration.texture_menu
 	$Canvas/Panel/InventoryPanel/Notepad.texture_normal = \
-			_configuration.texture_notepad
-	$Activate.texture_normal = _configuration.texture_activate
-	$Canvas/Panel.theme = _configuration.theme
-	$Canvas/Panel.margin_top = _configuration.size * -1
-	$Canvas/Panel.rect_min_size.y = _configuration.size
+			configuration.texture_notepad
+	$Activate.texture_normal = configuration.texture_activate
+	$Canvas/Panel.theme = configuration.theme
+	$Canvas/Panel.margin_top = configuration.size * -1
+	$Canvas/Panel.rect_min_size.y = configuration.size
 	var animation: Animation = $Animations.get_animation("Activate")
-	animation.track_set_key_value(0,0,Vector2(0, _configuration.size * -1))
-	animation.track_set_key_value(1,1,_configuration.size)
+	animation.track_set_key_value(0,0,Vector2(0, configuration.size * -1))
+	animation.track_set_key_value(1,1,configuration.size)
 
 
 # Disable the inventory system

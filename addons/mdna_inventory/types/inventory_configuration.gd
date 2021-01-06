@@ -25,6 +25,13 @@ var mouse_cursor: Texture
 # Default mouse cursor
 var hotspot_cursor: Vector2
 
+# "Use" mouse cursor. Shown when no inventory item is selected and the
+# player hovers over a trigger hotspot
+var use_cursor: Texture
+
+# "Use" mouse cursor hotspot
+var use_cursor_hotspot: Vector2
+
 
 # Build the property list of the resource
 func _get_property_list():
@@ -65,6 +72,16 @@ func _get_property_list():
 	})
 	properties.append({
 		"name": "hotspot_cursor",
+		"type": TYPE_VECTOR2,
+	})
+	properties.append({
+		"name": "use_cursor",
+		"type": TYPE_OBJECT,
+		"hint": PROPERTY_HINT_RESOURCE_TYPE,
+		"hint_string": "Texture"
+	})
+	properties.append({
+		"name": "use_cursor_hotspot",
 		"type": TYPE_VECTOR2,
 	})
 	return properties

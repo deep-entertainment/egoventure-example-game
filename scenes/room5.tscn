@@ -27,7 +27,6 @@ __meta__ = {
 }
 hotspot_type = ""
 target_scene = "res://scenes/room6.tscn"
-target_view = ""
 
 [node name="Backward" type="TextureButton" parent="."]
 margin_left = 868.625
@@ -53,4 +52,3 @@ __meta__ = {
 }
 hotspot_type = ""
 target_scene = "res://scenes/room5_detail.tscn"
-target_view = ""

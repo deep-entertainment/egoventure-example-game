@@ -1,6 +1,7 @@
 # An inventory item
 tool
-class_name InventoryItem
+class_name InventoryItem, \
+		"res://addons/mdna_inventory/images/inventory_item.svg"
 extends Resource
 
 
@@ -40,11 +41,5 @@ func _get_property_list():
 		type = TYPE_OBJECT,
 		hint = PROPERTY_HINT_RESOURCE_TYPE,
 		hint_string = "Texture"
-	})
-	properties.append({
-		"name": "trigger_hotspots",
-		type = TYPE_ARRAY,		
-		hint = 24,
-		hint_string = "17/17:TriggerHotspot"
 	})
 	return properties

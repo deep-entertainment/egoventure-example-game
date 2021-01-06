@@ -99,7 +99,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/mdna_core/scene_cache.gd"
 }, {
-"base": "Resource",
+"base": "Button",
 "class": "TriggerHotspot",
 "language": "GDScript",
 "path": "res://addons/mdna_inventory/types/trigger_hotspot.gd"
@@ -117,13 +117,13 @@ _global_script_class_icons={
 "Importer": "",
 "InGameConfiguration": "",
 "InventoryConfiguration": "",
-"InventoryItem": "",
+"InventoryItem": "res://addons/mdna_inventory/images/inventory_item.svg",
 "InventoryItemNode": "",
 "MapHotspot": "res://addons/mdna_core/images/map_hotspot.svg",
 "MdnaMenuButton": "",
 "ResourceQueue": "",
 "SceneCache": "",
-"TriggerHotspot": ""
+"TriggerHotspot": "res://addons/mdna_inventory/images/trigger_hotspot.svg"
 }
 
 [application]
