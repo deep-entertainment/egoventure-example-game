@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://images/rooms/4r.jpeg" type="Texture" id=1]
+[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=2]
+[ext_resource path="res://images/rooms/4l.jpeg" type="Texture" id=3]
+[ext_resource path="res://images/rooms/4b.jpeg" type="Texture" id=4]
+[ext_resource path="res://images/rooms/4f.jpeg" type="Texture" id=5]
+[ext_resource path="res://addons/mdna_core/nodes/four_side_room.tscn" type="PackedScene" id=6]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Room" parent="." instance=ExtResource( 6 )]
+front_texture = ExtResource( 5 )
+right_texture = ExtResource( 1 )
+back_texture = ExtResource( 4 )
+left_texture = ExtResource( 3 )
+image_scale = 0.635
+
+[node name="Forward" type="TextureButton" parent="Room"]
+margin_left = 906.0
+margin_top = -906.0
+margin_right = 1890.0
+margin_bottom = -2.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = ""
+target_scene = "res://scenes/room5.tscn"
+target_view = ""
+
+[node name="Backward" type="TextureButton" parent="Room"]
+margin_left = 769.158
+margin_top = 1967.69
+margin_right = 1753.16
+margin_bottom = 2871.69
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = ""
+target_scene = "res://scenes/room3.tscn"
+target_view = "back"

@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=2]
+[ext_resource path="res://addons/mdna_core/nodes/four_side_room.gd" type="Script" id=6]
+
+[node name="Room" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Left" type="TextureButton" parent="CanvasLayer"]
+margin_left = 10.0
+margin_top = 149.0
+margin_right = 476.0
+margin_bottom = 1283.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = "turn_left"
+
+[node name="Right" type="TextureButton" parent="CanvasLayer"]
+margin_left = 2086.57
+margin_top = 124.396
+margin_right = 2552.57
+margin_bottom = 1258.4
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = "turn_right"
+
+[node name="Views" type="Node" parent="."]
+
+[node name="Front" type="Sprite" parent="Views"]
+position = Vector2( 0, -1440 )
+z_index = -1
+centered = false
+__meta__ = {
+"_editor_description_": "	"
+}
+
+[node name="Right" type="Sprite" parent="Views"]
+position = Vector2( 2560, 0 )
+z_index = -1
+centered = false
+
+[node name="Back" type="Sprite" parent="Views"]
+position = Vector2( 0, 1440 )
+z_index = -1
+centered = false
+
+[node name="Left" type="Sprite" parent="Views"]
+position = Vector2( -2560, 0 )
+z_index = -1
+centered = false
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+[connection signal="pressed" from="CanvasLayer/Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="CanvasLayer/Right" to="." method="_on_right_pressed"]

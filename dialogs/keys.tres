@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://addons/parrot/resources/dialog_resource.gd" type="Script" id=1]
+[ext_resource path="res://characters/carol.tres" type="Resource" id=2]
+[ext_resource path="res://addons/parrot/resources/dialog_line_resource.gd" type="Script" id=3]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 3 )
+character = ExtResource( 2 )
+text = "Why would I want to throw that into the bush?"
+
+[resource]
+script = ExtResource( 1 )
+id = "keys"
+lines = [ SubResource( 1 ) ]

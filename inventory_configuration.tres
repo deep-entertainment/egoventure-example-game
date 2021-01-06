@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://addons/mdna_inventory/types/inventory_configuration.gd" type="Script" id=1]
+[ext_resource path="res://theme.tres" type="Theme" id=2]
+[ext_resource path="res://images/mouse/common.png" type="Texture" id=3]
+
+[resource]
+script = ExtResource( 1 )
+size = 92
+theme = ExtResource( 2 )
+mouse_cursor = ExtResource( 3 )
+hotspot_cursor = Vector2( 32, 32 )

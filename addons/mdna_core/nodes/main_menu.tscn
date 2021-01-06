@@ -1,0 +1,943 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://addons/mdna_core/images/empty.png" type="Texture" id=1]
+[ext_resource path="res://addons/mdna_core/nodes/mdna_menu_button.gd" type="Script" id=3]
+[ext_resource path="res://addons/mdna_core/nodes/main_menu.gd" type="Script" id=5]
+
+[sub_resource type="Image" id=4]
+data = {
+"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"format": "LumAlpha8",
+"height": 16,
+"mipmaps": false,
+"width": 16
+}
+
+[sub_resource type="ImageTexture" id=2]
+flags = 4
+flags = 4
+image = SubResource( 4 )
+size = Vector2( 16, 16 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = SubResource( 2 )
+region_rect = Rect2( 0, 0, 16, 16 )
+margin_left = 2.0
+margin_right = 2.0
+margin_top = 2.0
+margin_bottom = 2.0
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource( 5 )
+
+[node name="Control" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 200
+custom_constants/margin_top = 50
+custom_constants/margin_left = 200
+custom_constants/margin_bottom = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Control/Margin"]
+margin_left = 200.0
+margin_top = 50.0
+margin_right = 2360.0
+margin_bottom = 1390.0
+size_flags_vertical = 3
+custom_constants/separation = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="TextureRect" parent="Control/Margin/VBox"]
+margin_right = 2160.0
+margin_bottom = 860.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+expand = true
+stretch_mode = 6
+
+[node name="MenuItems" type="VBoxContainer" parent="Control/Margin/VBox"]
+margin_top = 910.0
+margin_right = 2160.0
+margin_bottom = 1340.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 30
+
+[node name="Continue" type="Button" parent="Control/Margin/VBox/MenuItems"]
+margin_right = 2160.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+text = "Continue"
+script = ExtResource( 3 )
+
+[node name="Resume" type="Button" parent="Control/Margin/VBox/MenuItems"]
+margin_top = 65.0
+margin_right = 2160.0
+margin_bottom = 101.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+text = "Continue"
+script = ExtResource( 3 )
+
+[node name="NewGame" type="Button" parent="Control/Margin/VBox/MenuItems"]
+margin_top = 131.0
+margin_right = 2160.0
+margin_bottom = 167.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+text = "New Game"
+script = ExtResource( 3 )
+
+[node name="Load" type="Button" parent="Control/Margin/VBox/MenuItems"]
+margin_top = 197.0
+margin_right = 2160.0
+margin_bottom = 232.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+text = "Load"
+script = ExtResource( 3 )
+
+[node name="Save" type="Button" parent="Control/Margin/VBox/MenuItems"]
+margin_top = 262.0
+margin_right = 2160.0
+margin_bottom = 298.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+text = "Save"
+script = ExtResource( 3 )
+
+[node name="Options" type="Button" parent="Control/Margin/VBox/MenuItems"]
+margin_top = 328.0
+margin_right = 2160.0
+margin_bottom = 364.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+text = "Options"
+script = ExtResource( 3 )
+
+[node name="Quit" type="Button" parent="Control/Margin/VBox/MenuItems"]
+margin_top = 394.0
+margin_right = 2160.0
+margin_bottom = 430.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+text = "Quit"
+script = ExtResource( 3 )
+
+[node name="SaveSlots" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="SaveSlots"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="SaveSlots"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="SaveSlots/VBox"]
+margin_right = 2560.0
+margin_bottom = 14.0
+text = "Load/Save Game"
+align = 1
+
+[node name="HBox" type="HBoxContainer" parent="SaveSlots/VBox"]
+margin_top = 18.0
+margin_right = 2560.0
+margin_bottom = 1416.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Previous" type="TextureButton" parent="SaveSlots/VBox/HBox"]
+margin_right = 319.0
+margin_bottom = 1398.0
+size_flags_horizontal = 3
+expand = true
+stretch_mode = 5
+
+[node name="Slots" type="GridContainer" parent="SaveSlots/VBox/HBox"]
+margin_left = 323.0
+margin_right = 2237.0
+margin_bottom = 1398.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 6.0
+columns = 4
+
+[node name="Slot1" type="MarginContainer" parent="SaveSlots/VBox/HBox/Slots"]
+margin_right = 475.0
+margin_bottom = 463.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Slot" type="VBoxContainer" parent="SaveSlots/VBox/HBox/Slots/Slot1"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 465.0
+margin_bottom = 453.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="SaveSlots/VBox/HBox/Slots/Slot1/Slot"]
+margin_right = 455.0
+margin_bottom = 425.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureButton" parent="SaveSlots/VBox/HBox/Slots/Slot1/Slot/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="Label" parent="SaveSlots/VBox/HBox/Slots/Slot1/Slot"]
+margin_top = 429.0
+margin_right = 455.0
+margin_bottom = 443.0
+align = 1
+
+[node name="Slot2" type="MarginContainer" parent="SaveSlots/VBox/HBox/Slots"]
+margin_left = 479.0
+margin_right = 954.0
+margin_bottom = 463.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Slot" type="VBoxContainer" parent="SaveSlots/VBox/HBox/Slots/Slot2"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 465.0
+margin_bottom = 453.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="SaveSlots/VBox/HBox/Slots/Slot2/Slot"]
+margin_right = 455.0
+margin_bottom = 425.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureButton" parent="SaveSlots/VBox/HBox/Slots/Slot2/Slot/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="Label" parent="SaveSlots/VBox/HBox/Slots/Slot2/Slot"]
+margin_top = 429.0
+margin_right = 455.0
+margin_bottom = 443.0
+align = 1
+
+[node name="Slot3" type="MarginContainer" parent="SaveSlots/VBox/HBox/Slots"]
+margin_left = 958.0
+margin_right = 1433.0
+margin_bottom = 463.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Slot" type="VBoxContainer" parent="SaveSlots/VBox/HBox/Slots/Slot3"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 465.0
+margin_bottom = 453.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="SaveSlots/VBox/HBox/Slots/Slot3/Slot"]
+margin_right = 455.0
+margin_bottom = 425.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureButton" parent="SaveSlots/VBox/HBox/Slots/Slot3/Slot/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="Label" parent="SaveSlots/VBox/HBox/Slots/Slot3/Slot"]
+margin_top = 429.0
+margin_right = 455.0
+margin_bottom = 443.0
+align = 1
+
+[node name="Slot4" type="MarginContainer" parent="SaveSlots/VBox/HBox/Slots"]
+margin_left = 1437.0
+margin_right = 1912.0
+margin_bottom = 463.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Slot" type="VBoxContainer" parent="SaveSlots/VBox/HBox/Slots/Slot4"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 465.0
+margin_bottom = 453.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="SaveSlots/VBox/HBox/Slots/Slot4/Slot"]
+margin_right = 455.0
+margin_bottom = 425.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureButton" parent="SaveSlots/VBox/HBox/Slots/Slot4/Slot/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="Label" parent="SaveSlots/VBox/HBox/Slots/Slot4/Slot"]
+margin_top = 429.0
+margin_right = 455.0
+margin_bottom = 443.0
+align = 1
+
+[node name="Slot5" type="MarginContainer" parent="SaveSlots/VBox/HBox/Slots"]
+margin_top = 467.0
+margin_right = 475.0
+margin_bottom = 930.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Slot" type="VBoxContainer" parent="SaveSlots/VBox/HBox/Slots/Slot5"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 465.0
+margin_bottom = 453.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="SaveSlots/VBox/HBox/Slots/Slot5/Slot"]
+margin_right = 455.0
+margin_bottom = 425.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureButton" parent="SaveSlots/VBox/HBox/Slots/Slot5/Slot/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="Label" parent="SaveSlots/VBox/HBox/Slots/Slot5/Slot"]
+margin_top = 429.0
+margin_right = 455.0
+margin_bottom = 443.0
+align = 1
+
+[node name="Slot6" type="MarginContainer" parent="SaveSlots/VBox/HBox/Slots"]
+margin_left = 479.0
+margin_top = 467.0
+margin_right = 954.0
+margin_bottom = 930.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Slot" type="VBoxContainer" parent="SaveSlots/VBox/HBox/Slots/Slot6"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 465.0
+margin_bottom = 453.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="SaveSlots/VBox/HBox/Slots/Slot6/Slot"]
+margin_right = 455.0
+margin_bottom = 425.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureButton" parent="SaveSlots/VBox/HBox/Slots/Slot6/Slot/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="Label" parent="SaveSlots/VBox/HBox/Slots/Slot6/Slot"]
+margin_top = 429.0
+margin_right = 455.0
+margin_bottom = 443.0
+align = 1
+
+[node name="Slot7" type="MarginContainer" parent="SaveSlots/VBox/HBox/Slots"]
+margin_left = 958.0
+margin_top = 467.0
+margin_right = 1433.0
+margin_bottom = 930.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Slot" type="VBoxContainer" parent="SaveSlots/VBox/HBox/Slots/Slot7"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 465.0
+margin_bottom = 453.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="SaveSlots/VBox/HBox/Slots/Slot7/Slot"]
+margin_right = 455.0
+margin_bottom = 425.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureButton" parent="SaveSlots/VBox/HBox/Slots/Slot7/Slot/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="Label" parent="SaveSlots/VBox/HBox/Slots/Slot7/Slot"]
+margin_top = 429.0
+margin_right = 455.0
+margin_bottom = 443.0
+align = 1
+
+[node name="Slot8" type="MarginContainer" parent="SaveSlots/VBox/HBox/Slots"]
+margin_left = 1437.0
+margin_top = 467.0
+margin_right = 1912.0
+margin_bottom = 930.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Slot" type="VBoxContainer" parent="SaveSlots/VBox/HBox/Slots/Slot8"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 465.0
+margin_bottom = 453.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="SaveSlots/VBox/HBox/Slots/Slot8/Slot"]
+margin_right = 455.0
+margin_bottom = 425.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureButton" parent="SaveSlots/VBox/HBox/Slots/Slot8/Slot/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="Label" parent="SaveSlots/VBox/HBox/Slots/Slot8/Slot"]
+margin_top = 429.0
+margin_right = 455.0
+margin_bottom = 443.0
+align = 1
+
+[node name="Slot9" type="MarginContainer" parent="SaveSlots/VBox/HBox/Slots"]
+margin_top = 934.0
+margin_right = 475.0
+margin_bottom = 1397.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Slot" type="VBoxContainer" parent="SaveSlots/VBox/HBox/Slots/Slot9"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 465.0
+margin_bottom = 453.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="SaveSlots/VBox/HBox/Slots/Slot9/Slot"]
+margin_right = 455.0
+margin_bottom = 425.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureButton" parent="SaveSlots/VBox/HBox/Slots/Slot9/Slot/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="Label" parent="SaveSlots/VBox/HBox/Slots/Slot9/Slot"]
+margin_top = 429.0
+margin_right = 455.0
+margin_bottom = 443.0
+align = 1
+
+[node name="Slot10" type="MarginContainer" parent="SaveSlots/VBox/HBox/Slots"]
+margin_left = 479.0
+margin_top = 934.0
+margin_right = 954.0
+margin_bottom = 1397.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Slot" type="VBoxContainer" parent="SaveSlots/VBox/HBox/Slots/Slot10"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 465.0
+margin_bottom = 453.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="SaveSlots/VBox/HBox/Slots/Slot10/Slot"]
+margin_right = 455.0
+margin_bottom = 425.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureButton" parent="SaveSlots/VBox/HBox/Slots/Slot10/Slot/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="Label" parent="SaveSlots/VBox/HBox/Slots/Slot10/Slot"]
+margin_top = 429.0
+margin_right = 455.0
+margin_bottom = 443.0
+align = 1
+
+[node name="Slot11" type="MarginContainer" parent="SaveSlots/VBox/HBox/Slots"]
+margin_left = 958.0
+margin_top = 934.0
+margin_right = 1433.0
+margin_bottom = 1397.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Slot" type="VBoxContainer" parent="SaveSlots/VBox/HBox/Slots/Slot11"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 465.0
+margin_bottom = 453.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="SaveSlots/VBox/HBox/Slots/Slot11/Slot"]
+margin_right = 455.0
+margin_bottom = 425.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureButton" parent="SaveSlots/VBox/HBox/Slots/Slot11/Slot/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="Label" parent="SaveSlots/VBox/HBox/Slots/Slot11/Slot"]
+margin_top = 429.0
+margin_right = 455.0
+margin_bottom = 443.0
+align = 1
+
+[node name="Slot12" type="MarginContainer" parent="SaveSlots/VBox/HBox/Slots"]
+margin_left = 1437.0
+margin_top = 934.0
+margin_right = 1912.0
+margin_bottom = 1397.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+
+[node name="Slot" type="VBoxContainer" parent="SaveSlots/VBox/HBox/Slots/Slot12"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 465.0
+margin_bottom = 453.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="SaveSlots/VBox/HBox/Slots/Slot12/Slot"]
+margin_right = 455.0
+margin_bottom = 425.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Image" type="TextureButton" parent="SaveSlots/VBox/HBox/Slots/Slot12/Slot/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture_normal = ExtResource( 1 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Date" type="Label" parent="SaveSlots/VBox/HBox/Slots/Slot12/Slot"]
+margin_top = 429.0
+margin_right = 455.0
+margin_bottom = 443.0
+align = 1
+
+[node name="Next" type="TextureButton" parent="SaveSlots/VBox/HBox"]
+margin_left = 2241.0
+margin_right = 2560.0
+margin_bottom = 1398.0
+size_flags_horizontal = 3
+expand = true
+stretch_mode = 5
+
+[node name="Cancel" type="Button" parent="SaveSlots/VBox"]
+margin_top = 1420.0
+margin_right = 2560.0
+margin_bottom = 1440.0
+text = "Cancel"
+
+[node name="Options" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="Options"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="CenterContainer" type="CenterContainer" parent="Options"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBox" type="VBoxContainer" parent="Options/CenterContainer"]
+margin_left = 380.0
+margin_top = 270.0
+margin_right = 2180.0
+margin_bottom = 1170.0
+rect_min_size = Vector2( 1800, 900 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="Options/CenterContainer/VBox"]
+margin_top = 79.0
+margin_right = 1800.0
+margin_bottom = 93.0
+size_flags_vertical = 6
+text = "Options"
+align = 1
+valign = 1
+
+[node name="Speech" type="HBoxContainer" parent="Options/CenterContainer/VBox"]
+margin_top = 176.0
+margin_right = 1800.0
+margin_bottom = 348.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Options/CenterContainer/VBox/Speech"]
+margin_top = 79.0
+margin_right = 898.0
+margin_bottom = 93.0
+size_flags_horizontal = 3
+text = "Sound"
+align = 2
+valign = 2
+
+[node name="Slider" type="HSlider" parent="Options/CenterContainer/VBox/Speech"]
+margin_left = 902.0
+margin_right = 1800.0
+margin_bottom = 172.0
+rect_min_size = Vector2( 0, 30 )
+size_flags_horizontal = 3
+size_flags_vertical = 1
+value = 50.0
+rounded = true
+tick_count = 10
+ticks_on_borders = true
+
+[node name="Music" type="HBoxContainer" parent="Options/CenterContainer/VBox"]
+margin_top = 352.0
+margin_right = 1800.0
+margin_bottom = 524.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Options/CenterContainer/VBox/Music"]
+margin_top = 79.0
+margin_right = 898.0
+margin_bottom = 93.0
+size_flags_horizontal = 3
+text = "Music"
+align = 2
+valign = 2
+
+[node name="Slider" type="HSlider" parent="Options/CenterContainer/VBox/Music"]
+margin_left = 902.0
+margin_right = 1800.0
+margin_bottom = 172.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Effects" type="HBoxContainer" parent="Options/CenterContainer/VBox"]
+margin_top = 528.0
+margin_right = 1800.0
+margin_bottom = 700.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Options/CenterContainer/VBox/Effects"]
+margin_top = 79.0
+margin_right = 898.0
+margin_bottom = 93.0
+size_flags_horizontal = 3
+text = "Effects"
+align = 2
+valign = 2
+
+[node name="Slider" type="HSlider" parent="Options/CenterContainer/VBox/Effects"]
+margin_left = 902.0
+margin_right = 1800.0
+margin_bottom = 172.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="Subtitles" type="HBoxContainer" parent="Options/CenterContainer/VBox"]
+margin_top = 704.0
+margin_right = 1800.0
+margin_bottom = 876.0
+rect_min_size = Vector2( 0, 100 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Subtitles" type="CheckButton" parent="Options/CenterContainer/VBox/Subtitles"]
+margin_right = 898.0
+margin_bottom = 172.0
+size_flags_horizontal = 3
+text = "Subtitles"
+align = 2
+
+[node name="Spacer" type="Control" parent="Options/CenterContainer/VBox/Subtitles"]
+margin_left = 902.0
+margin_right = 1800.0
+margin_bottom = 172.0
+size_flags_horizontal = 3
+
+[node name="Return" type="Button" parent="Options/CenterContainer/VBox"]
+margin_top = 880.0
+margin_right = 1800.0
+margin_bottom = 900.0
+text = "Return"
+
+[node name="QuitConfirm" type="ConfirmationDialog" parent="."]
+margin_right = 400.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 400, 140 )
+window_title = ""
+dialog_text = "Do you really want to leave Carol here?"
+
+[node name="OverwriteConfirm" type="ConfirmationDialog" parent="."]
+margin_right = 400.0
+margin_bottom = 140.0
+rect_min_size = Vector2( 400, 140 )
+window_title = ""
+dialog_text = "Are you sure you want to overwrite a saved game?"
+
+[node name="RestartConfirm" type="ConfirmationDialog" parent="."]
+margin_right = 200.0
+margin_bottom = 70.0
+window_title = ""
+dialog_text = "You will loose all progress when starting a new game. Do you really want to restart?"
+
+[node name="Speech" type="AudioStreamPlayer" parent="."]
+bus = "Speech"
+
+[node name="Effects" type="AudioStreamPlayer" parent="."]
+bus = "Effects"
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+bus = "Music"
+[connection signal="pressed" from="Control/Margin/VBox/MenuItems/Continue" to="." method="_on_Continue_pressed"]
+[connection signal="pressed" from="Control/Margin/VBox/MenuItems/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="Control/Margin/VBox/MenuItems/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="Control/Margin/VBox/MenuItems/Load" to="." method="_on_Load_pressed"]
+[connection signal="pressed" from="Control/Margin/VBox/MenuItems/Save" to="." method="_on_Save_pressed"]
+[connection signal="pressed" from="Control/Margin/VBox/MenuItems/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="Control/Margin/VBox/MenuItems/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="SaveSlots/VBox/HBox/Previous" to="." method="_on_Previous_pressed"]
+[connection signal="pressed" from="SaveSlots/VBox/HBox/Next" to="." method="_on_Next_pressed"]
+[connection signal="pressed" from="SaveSlots/VBox/Cancel" to="." method="_on_SaveLoad_Cancel_pressed"]
+[connection signal="value_changed" from="Options/CenterContainer/VBox/Speech/Slider" to="." method="_on_speech_Slider_value_changed"]
+[connection signal="value_changed" from="Options/CenterContainer/VBox/Music/Slider" to="." method="_on_music_Slider_value_changed"]
+[connection signal="value_changed" from="Options/CenterContainer/VBox/Effects/Slider" to="." method="_on_effects_Slider_value_changed"]
+[connection signal="toggled" from="Options/CenterContainer/VBox/Subtitles/Subtitles" to="." method="_on_Subtitles_toggled"]
+[connection signal="pressed" from="Options/CenterContainer/VBox/Return" to="." method="_on_Return_pressed"]
+[connection signal="confirmed" from="QuitConfirm" to="." method="_on_QuitConfirm_confirmed"]
+[connection signal="confirmed" from="OverwriteConfirm" to="." method="_on_OverwriteConfirm_confirmed"]
+[connection signal="confirmed" from="RestartConfirm" to="." method="_on_RestartConfirm_confirmed"]

@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://images/rooms/8keytaken.jpeg" type="Texture" id=1]
+[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=2]
+[ext_resource path="res://images/rooms/8key.jpeg" type="Texture" id=3]
+[ext_resource path="res://scenes/room8key.gd" type="Script" id=4]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="WithoutKeys" type="Sprite" parent="."]
+scale = Vector2( 0.635, 0.635 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="WithKeys" type="Sprite" parent="."]
+scale = Vector2( 0.635, 0.635 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Hotspot" type="TextureButton" parent="."]
+margin_left = 21.0
+margin_top = 226.0
+margin_right = 550.0
+margin_bottom = 1130.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = "go_backwards"
+target_scene = "res://scenes/room8.tscn"
+target_view = ""
+
+[node name="Keys" type="TextureButton" parent="."]
+margin_left = 915.0
+margin_top = 406.0
+margin_right = 1916.0
+margin_bottom = 1191.0
+script = ExtResource( 2 )
+hotspot_type = "action"
+target_scene = ""
+target_view = ""
+
+[node name="Audio" type="AudioStreamPlayer" parent="."]
+[connection signal="pressed" from="Keys" to="." method="_on_Keys_pressed"]

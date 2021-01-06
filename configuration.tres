@@ -1,0 +1,90 @@
+[gd_resource type="Resource" load_steps=29 format=2]
+
+[ext_resource path="res://addons/mdna_core/resources/game_configuration.gd" type="Script" id=1]
+[ext_resource path="res://music/credits.ogg" type="AudioStream" id=2]
+[ext_resource path="res://images/logo.png" type="Texture" id=3]
+[ext_resource path="res://sounds/slide.ogg" type="AudioStream" id=4]
+[ext_resource path="res://theme.tres" type="Theme" id=5]
+[ext_resource path="res://images/background.jpg" type="Texture" id=6]
+[ext_resource path="res://images/previous.png" type="Texture" id=7]
+[ext_resource path="res://images/next.png" type="Texture" id=8]
+[ext_resource path="res://sounds/cheers.ogg" type="AudioStream" id=9]
+[ext_resource path="res://voices/1_communicator_notification.1.ogg" type="AudioStream" id=10]
+[ext_resource path="res://inventory_configuration.tres" type="Resource" id=11]
+[ext_resource path="res://images/mouse/forward.png" type="Texture" id=12]
+[ext_resource path="res://images/mouse/right.png" type="Texture" id=13]
+[ext_resource path="res://images/mouse/left.png" type="Texture" id=14]
+[ext_resource path="res://addons/mdna_core/resources/hotspot_cursor.gd" type="Script" id=15]
+[ext_resource path="res://images/mouse/use.png" type="Texture" id=16]
+[ext_resource path="res://images/mouse/backward.png" type="Texture" id=17]
+[ext_resource path="res://images/mouse/magnifier.png" type="Texture" id=18]
+[ext_resource path="res://images/mouse/right_corner.png" type="Texture" id=19]
+[ext_resource path="res://images/mouse/left_corner.png" type="Texture" id=20]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 15 )
+hotspot_type = "go_forward"
+cursor = ExtResource( 12 )
+cursor_hotspot = Vector2( 32, 32 )
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 15 )
+hotspot_type = "turn_right"
+cursor = ExtResource( 13 )
+cursor_hotspot = Vector2( 32, 32 )
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 15 )
+hotspot_type = "turn_left"
+cursor = ExtResource( 14 )
+cursor_hotspot = Vector2( 32, 32 )
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 15 )
+hotspot_type = "go_backwards"
+cursor = ExtResource( 17 )
+cursor_hotspot = Vector2( 32, 32 )
+
+[sub_resource type="Resource" id=5]
+script = ExtResource( 15 )
+hotspot_type = "look"
+cursor = ExtResource( 18 )
+cursor_hotspot = Vector2( 22, 22 )
+
+[sub_resource type="Resource" id=6]
+script = ExtResource( 15 )
+hotspot_type = "action"
+cursor = ExtResource( 16 )
+cursor_hotspot = Vector2( 32, 32 )
+
+[sub_resource type="Resource" id=7]
+script = ExtResource( 15 )
+hotspot_type = "corner_right"
+cursor = ExtResource( 19 )
+cursor_hotspot = Vector2( 32, 32 )
+
+[sub_resource type="Resource" id=8]
+script = ExtResource( 15 )
+hotspot_type = "corner_left"
+cursor = ExtResource( 20 )
+cursor_hotspot = Vector2( 32, 32 )
+
+[resource]
+script = ExtResource( 1 )
+theme = ExtResource( 5 )
+logo = ExtResource( 3 )
+hotspot_cursors = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ]
+inventory_configuration = ExtResource( 11 )
+menu_background = ExtResource( 6 )
+menu_music = ExtResource( 2 )
+menu_switch_effect = ExtResource( 4 )
+menu_saveslots_background = ExtResource( 6 )
+menu_saveslots_previous_image = ExtResource( 7 )
+menu_saveslots_next_image = ExtResource( 8 )
+menu_saveslots_border_color = Color( 0, 0, 0, 1 )
+menu_options_background = ExtResource( 6 )
+menu_options_speech_sample = ExtResource( 10 )
+menu_options_effects_sample = ExtResource( 9 )
+scene_path = "res://scenes"
+scene_cache_count = 5
+scene_default_image_scaling = 0.635

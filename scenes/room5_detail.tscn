@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=1]
+[ext_resource path="res://images/rooms/5detail.jpeg" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.635, 0.635 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Hotspot" type="TextureButton" parent="."]
+margin_left = 833.716
+margin_top = 869.93
+margin_right = 1721.72
+margin_bottom = 1441.93
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = "go_backwards"
+target_scene = "res://scenes/room5.tscn"
+target_view = "left"

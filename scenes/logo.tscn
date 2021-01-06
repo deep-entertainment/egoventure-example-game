@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://images/background.jpg" type="Texture" id=1]
+[ext_resource path="res://RussoOne-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/logo.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 140
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 36
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Neue Animation"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "to_menu"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("VBoxContainer/RichTextLabel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+visible = false
+margin_top = 634.0
+margin_right = 2560.0
+margin_bottom = 805.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_fonts/normal_font = SubResource( 1 )
+custom_colors/default_color = Color( 0.85098, 0.886275, 0.164706, 1 )
+bbcode_enabled = true
+bbcode_text = "[center][color=#458343]MDNA[/color] [color=#d9e22a]GAMES[/color][/center]"
+text = "MDNA GAMES"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+visible = false
+margin_top = 786.523
+margin_right = 2560.0
+margin_bottom = 826.523
+size_flags_vertical = 0
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+bbcode_enabled = true
+bbcode_text = "[center](well, not really :))[/center]"
+text = "(well, not really :))"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Neue Animation"
+"anims/Neue Animation" = SubResource( 3 )

@@ -1,0 +1,120 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://images/rooms/15.jpeg" type="Texture" id=1]
+[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=2]
+[ext_resource path="res://scenes/room15.gd" type="Script" id=3]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="Sprite" parent="."]
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="BackgroundLeft" type="Sprite" parent="."]
+position = Vector2( -6551.16, 0 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="BackgroundRight" type="Sprite" parent="."]
+position = Vector2( 6551.16, 0 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Left" type="TextureButton" parent="CanvasLayer"]
+margin_right = 242.0
+margin_bottom = 1443.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = "turn_left"
+target_scene = ""
+target_view = ""
+
+[node name="Right" type="TextureButton" parent="CanvasLayer"]
+margin_left = 2311.48
+margin_top = -3.4812
+margin_right = 2553.48
+margin_bottom = 1439.52
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = "turn_right"
+target_scene = ""
+target_view = ""
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 14.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hotspot" type="TextureButton" parent="."]
+margin_left = 4508.0
+margin_top = 882.0
+margin_right = 5395.0
+margin_bottom = 1439.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = ""
+target_scene = "res://scenes/room14.tscn"
+target_view = "back"
+
+[node name="Hotspot2" type="TextureButton" parent="."]
+margin_left = -2045.49
+margin_top = 892.621
+margin_right = -1158.49
+margin_bottom = 1449.62
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = ""
+target_scene = "res://scenes/room14.tscn"
+target_view = "back"
+
+[node name="Me" type="TextureButton" parent="."]
+margin_left = 1899.0
+margin_top = 797.0
+margin_right = 2256.0
+margin_bottom = 1432.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = "look"
+target_scene = ""
+target_view = ""
+
+[node name="Me2" type="TextureButton" parent="."]
+margin_left = -4686.35
+margin_top = 813.995
+margin_right = -4329.35
+margin_bottom = 1448.99
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = "look"
+target_scene = ""
+target_view = ""
+[connection signal="mouse_entered" from="CanvasLayer/Left" to="." method="_on_Left_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Left" to="." method="_on_Left_mouse_exited"]
+[connection signal="mouse_entered" from="CanvasLayer/Right" to="." method="_on_Right_mouse_entered"]
+[connection signal="mouse_exited" from="CanvasLayer/Right" to="." method="_on_Right_mouse_exited"]
+[connection signal="pressed" from="Me" to="." method="_on_Me_pressed"]
+[connection signal="pressed" from="Me2" to="." method="_on_Me_pressed"]

@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://images/rooms/1r.jpg" type="Texture" id=1]
+[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=2]
+[ext_resource path="res://scenes/room1r.gd" type="Script" id=3]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 0, -240.311 )
+scale = Vector2( 0.636853, 0.636853 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="right" type="TextureButton" parent="."]
+margin_left = 1818.0
+margin_top = 64.0
+margin_right = 2552.0
+margin_bottom = 1377.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = "turn_right"
+
+[node name="left" type="TextureButton" parent="."]
+margin_left = -8.0
+margin_top = 74.0
+margin_right = 726.0
+margin_bottom = 1263.0
+script = ExtResource( 2 )
+hotspot_type = "turn_left"
+[connection signal="pressed" from="right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="left" to="." method="_on_left_pressed"]
