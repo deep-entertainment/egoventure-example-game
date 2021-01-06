@@ -44,19 +44,21 @@ func _pressed():
 	
 
 func _mouse_entered():
-	for cursor in MdnaCore.configuration.hotspot_cursors:
-		if (cursor as HotspotCursor).hotspot_type == hotspot_type:
-			var found_cursor = cursor as HotspotCursor
-			Input.set_custom_mouse_cursor(
-				found_cursor.cursor,
-				Input.CURSOR_ARROW,
-				found_cursor.cursor_hotspot
-			)
+	if MdnaInventory.selected_item == null:
+		for cursor in MdnaCore.configuration.hotspot_cursors:
+			if (cursor as HotspotCursor).hotspot_type == hotspot_type:
+				var found_cursor = cursor as HotspotCursor
+				Input.set_custom_mouse_cursor(
+					found_cursor.cursor,
+					Input.CURSOR_ARROW,
+					found_cursor.cursor_hotspot
+				)
 
 
 func _mouse_exited():
-	Input.set_custom_mouse_cursor(
-		MdnaCore.configuration.inventory_configuration.mouse_cursor,
-		Input.CURSOR_ARROW,
-		MdnaCore.configuration.inventory_configuration.hotspot_cursor
-	)
+	if MdnaInventory.selected_item == null:
+		Input.set_custom_mouse_cursor(
+			MdnaCore.configuration.inventory_configuration.mouse_cursor,
+			Input.CURSOR_ARROW,
+			MdnaCore.configuration.inventory_configuration.hotspot_cursor
+		)

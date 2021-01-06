@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=20 format=2]
+[gd_resource type="Theme" load_steps=21 format=2]
 
 [ext_resource path="res://RussoOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://images/volume.png" type="Texture" id=2]
@@ -61,6 +61,9 @@ region_rect = Rect2( 0, 0, 517, 69 )
 bg_color = Color( 1, 1, 1, 0.278431 )
 border_width_top = 2
 border_color = Color( 0.619608, 0.619608, 0.619608, 1 )
+
+[sub_resource type="StyleBoxFlat" id=18]
+bg_color = Color( 0.407843, 0.407843, 0.407843, 1 )
 
 [sub_resource type="StyleBoxFlat" id=15]
 bg_color = Color( 1, 1, 1, 0.254902 )
@@ -133,5 +136,6 @@ Label/constants/shadow_offset_y = 2
 Label/fonts/font = null
 Label/styles/normal = SubResource( 10 )
 Panel/styles/dialog_panel = SubResource( 14 )
+Panel/styles/inventory_panel = SubResource( 18 )
 Panel/styles/saveslot_panel = SubResource( 15 )
 RichTextLabel/fonts/dialog_font = SubResource( 16 )

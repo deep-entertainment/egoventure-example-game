@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=1]
 [ext_resource path="res://images/rooms/5detail.jpeg" type="Texture" id=2]
 [ext_resource path="res://addons/mdna_inventory/types/trigger_hotspot.gd" type="Script" id=3]
+[ext_resource path="res://inventory/keys.tres" type="Resource" id=4]
 [ext_resource path="res://scenes/room5_detail.gd" type="Script" id=5]
 
 [node name="Node2D" type="Node2D"]
@@ -36,5 +37,5 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-valid_inventory_items = [  ]
+valid_inventory_items = [ ExtResource( 4 ) ]
 [connection signal="item_used" from="TriggerHotspot" to="." method="_on_TriggerHotspot_item_used"]

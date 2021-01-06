@@ -53,7 +53,7 @@ __meta__ = {
 [node name="InventoryPanel" type="HBoxContainer" parent="Canvas/Panel"]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 1017.0
+margin_right = 2553.0
 margin_bottom = 85.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -77,7 +77,7 @@ __meta__ = {
 
 [node name="Inventory" type="HBoxContainer" parent="Canvas/Panel/InventoryPanel"]
 margin_left = 8.0
-margin_right = 1010.0
+margin_right = 2546.0
 margin_bottom = 78.0
 size_flags_horizontal = 3
 

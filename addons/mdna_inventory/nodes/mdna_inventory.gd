@@ -80,6 +80,11 @@ func configure(p_configuration: InventoryConfiguration):
 	$Canvas/Panel.theme = configuration.theme
 	$Canvas/Panel.margin_top = configuration.size * -1
 	$Canvas/Panel.rect_min_size.y = configuration.size
+	$Canvas/Panel.add_stylebox_override(
+		"panel",
+		$Canvas/Panel.get_stylebox("inventory_panel", "Panel")
+	)
+	
 	var animation: Animation = $Animations.get_animation("Activate")
 	animation.track_set_key_value(0,0,Vector2(0, configuration.size * -1))
 	animation.track_set_key_value(1,1,configuration.size)
