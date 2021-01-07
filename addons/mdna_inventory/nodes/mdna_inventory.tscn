@@ -45,7 +45,8 @@ __meta__ = {
 
 [node name="Panel" type="PanelContainer" parent="Canvas"]
 anchor_right = 1.0
-margin_top = -92.0
+margin_top = -72.0
+margin_bottom = 20.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
