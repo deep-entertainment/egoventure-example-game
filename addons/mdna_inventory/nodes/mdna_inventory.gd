@@ -45,6 +45,7 @@ func _input(event):
 			(event as InputEventMouseButton).pressed:
 		selected_item.texture_normal = \
 				(selected_item.item as InventoryItem).image_normal
+		selected_item.modulate.a = 1
 		selected_item = null
 		Input.set_custom_mouse_cursor(
 			configuration.mouse_cursor, 
@@ -57,6 +58,7 @@ func _input(event):
 			(event as InputEventScreenTouch).pressed:
 		selected_item.texture_normal = \
 				(selected_item.item as InventoryItem).image_normal
+		selected_item.modulate.a = 1
 		selected_item = null
 	elif ! is_touch and event is InputEventMouse and $Timer.is_stopped():
 		# Activate the inventory when reaching the upper screen border
@@ -108,11 +110,6 @@ func add_item(item: InventoryItem):
 	var inventory_item_node = InventoryItemNode.new()
 	inventory_item_node.configure(item)
 	inventory_item_node.connect(
-		"triggered_hotspot", 
-		self, 
-		"_on_triggered_hotspost"
-	)
-	inventory_item_node.connect(
 		"triggered_inventory_item",
 		self,
 		"_on_triggered_inventory_item"
@@ -160,13 +157,6 @@ func _on_Notepad_pressed():
 func _on_Menu_pressed():
 	emit_signal("menu_pressed")
 
-
-# Emit signal, that a hotspot was triggered
-func _on_triggered_hotspost(
-	trigger_hotspot: TriggerHotspot, 
-	item: InventoryItem
-):
-	emit_signal("triggered_hotspot", trigger_hotspot, item)
 
 # Emit a signal, that one item was triggered on another item	
 func _on_triggered_inventory_item(

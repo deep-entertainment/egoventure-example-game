@@ -3,9 +3,6 @@ class_name InventoryItemNode
 extends TextureButton
 
 
-# Emitted, when a hotspot was triggered
-signal triggered_hotspot
-
 # Emitted, when another inventory item was triggered
 signal triggered_inventory_item
 
@@ -39,10 +36,10 @@ func _on_InventoryItem_pressed():
 		)
 	else:
 		# Select this inventory item
-		texture_normal = null
 		MdnaInventory.selected_item = self
 		if _is_touch:
 			texture_normal = item.image_active
 		else:
+			modulate.a = 0
 			Input.set_custom_mouse_cursor(item.image_normal)
 
