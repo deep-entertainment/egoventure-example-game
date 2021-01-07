@@ -125,6 +125,17 @@ func add_item(item: InventoryItem):
 		_toggle_inventory()
 
 
+# Remove item from the inventory
+func remove_item(item: InventoryItem):
+	var found_index = -1
+	for index in range(_inventory_items.size()):
+		if (_inventory_items[index] as InventoryItemNode).item == item:
+			found_index = index
+	if found_index != -1:
+		_inventory_items.remove(found_index)
+		_update()
+
+
 # Returns the current list of inventory items
 func get_items() -> Array:
 	var items = [] 
