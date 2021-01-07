@@ -48,7 +48,8 @@ func update_progress():
 	if _queued_items.size() > 0:
 		var _still_waiting = 0.0
 		for item in _queued_items:
-			if _resource_queue.get_progress(item) < 1.0:
+			var progress = _resource_queue.get_progress(item)
+			if progress > -1 and progress < 1.0:
 				_still_waiting = _still_waiting + 1
 		var resource_queue_size: float = float(_resource_queue.queue.size())
 		var current_progress: float = \
@@ -56,7 +57,6 @@ func update_progress():
 		WaitingScreen.set_progress(current_progress)
 		if _still_waiting == 0:
 			_queued_items = []
-			WaitingScreen.hide()
 			emit_signal("queue_complete")
 
 
@@ -120,6 +120,11 @@ func update_cache(current_scene: String):
 		path = "res://scenes/%s" % scene
 		
 	scene_directory.list_dir_end()
+	
+	if _queued_items.size() == 0:
+		WaitingScreen.hide()
+		emit_signal("queue_complete")
+		
 
 
 # Extract index from filename
