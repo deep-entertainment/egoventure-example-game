@@ -23,6 +23,7 @@ func _ready():
 # Set the button we're extending from to flat
 func _enter_tree():
 	flat = true
+	enabled_focus_mode = Control.FOCUS_NONE
 
 
 # If an inventory item was selected and it is in the list of valid inventory 
