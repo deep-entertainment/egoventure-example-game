@@ -43,23 +43,12 @@ func _input(event):
 			 event is InputEventMouseButton and \
 			(event as InputEventMouseButton).button_index == BUTTON_RIGHT and \
 			(event as InputEventMouseButton).pressed:
-		selected_item.texture_normal = \
-				(selected_item.item as InventoryItem).image_normal
-		selected_item.modulate.a = 1
-		selected_item = null
-		Input.set_custom_mouse_cursor(
-			configuration.mouse_cursor, 
-			Input.CURSOR_ARROW,
-			configuration.hotspot_cursor
-		)
+		release_item()
 	elif MdnaInventory.selected_item != null and \
 			event is InputEventScreenTouch and \
 			(event as InputEventScreenTouch).index == 2 and \
 			(event as InputEventScreenTouch).pressed:
-		selected_item.texture_normal = \
-				(selected_item.item as InventoryItem).image_normal
-		selected_item.modulate.a = 1
-		selected_item = null
+		release_item()
 	elif ! is_touch and event is InputEventMouse and $Timer.is_stopped():
 		# Activate the inventory when reaching the upper screen border
 		if ! activated and get_viewport().get_mouse_position().y <= 10:
@@ -135,6 +124,19 @@ func remove_item(item: InventoryItem):
 		_inventory_items.remove(found_index)
 		_update()
 
+
+# Release the currently selected item
+func release_item():
+	selected_item.texture_normal = \
+			(selected_item.item as InventoryItem).image_normal
+	selected_item.modulate.a = 1
+	selected_item = null
+	if not is_touch:
+		Input.set_custom_mouse_cursor(
+			configuration.mouse_cursor, 
+			Input.CURSOR_ARROW,
+			configuration.hotspot_cursor
+		)
 
 # Returns the current list of inventory items
 func get_items() -> Array:
