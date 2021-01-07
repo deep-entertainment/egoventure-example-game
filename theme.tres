@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=21 format=2]
+[gd_resource type="Theme" load_steps=24 format=2]
 
 [ext_resource path="res://RussoOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://images/volume.png" type="Texture" id=2]
@@ -75,6 +75,16 @@ border_color = Color( 0.513726, 0.513726, 0.513726, 1 )
 shadow_size = 2
 shadow_offset = Vector2( 2, 2 )
 
+[sub_resource type="Gradient" id=19]
+colors = PoolColorArray( 0, 1, 0.0390625, 1, 0.393235, 1, 0.445379, 1 )
+
+[sub_resource type="GradientTexture" id=20]
+gradient = SubResource( 19 )
+
+[sub_resource type="StyleBoxTexture" id=21]
+texture = SubResource( 20 )
+region_rect = Rect2( 0, 0, 2048, 1 )
+
 [sub_resource type="DynamicFont" id=17]
 outline_size = 1
 font_data = ExtResource( 1 )
@@ -138,4 +148,9 @@ Label/styles/normal = SubResource( 10 )
 Panel/styles/dialog_panel = SubResource( 14 )
 Panel/styles/inventory_panel = SubResource( 15 )
 Panel/styles/saveslot_panel = SubResource( 16 )
+ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
+ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
+ProgressBar/fonts/font = null
+ProgressBar/styles/bg = null
+ProgressBar/styles/fg = SubResource( 21 )
 RichTextLabel/fonts/dialog_font = SubResource( 17 )
