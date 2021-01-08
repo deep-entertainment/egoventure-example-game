@@ -111,9 +111,9 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "BaseState": "",
-"CharacterResource": "",
-"DialogLineResource": "",
-"DialogResource": "",
+"CharacterResource": "res://addons/parrot/icons/character.svg",
+"DialogLineResource": "res://addons/parrot/icons/dialog_line.svg",
+"DialogResource": "res://addons/parrot/icons/dialog.svg",
 "FourSideRoom": "",
 "GameConfiguration": "",
 "GameState": "",
