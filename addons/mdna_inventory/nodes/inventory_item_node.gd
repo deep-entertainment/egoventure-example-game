@@ -41,5 +41,9 @@ func _on_InventoryItem_pressed():
 			texture_normal = item.image_active
 		else:
 			modulate.a = 0
-			Input.set_custom_mouse_cursor(item.image_normal)
+			Input.set_custom_mouse_cursor(
+				item.image_normal,
+				Input.CURSOR_ARROW,
+				(item.image_normal as Texture).get_size() / 2
+			)
 
