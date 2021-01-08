@@ -46,7 +46,6 @@ __meta__ = {
 [node name="Panel" type="PanelContainer" parent="Canvas"]
 anchor_right = 1.0
 margin_top = -72.0
-margin_bottom = 20.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -55,7 +54,7 @@ __meta__ = {
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 2553.0
-margin_bottom = 85.0
+margin_bottom = 65.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -63,7 +62,7 @@ __meta__ = {
 }
 
 [node name="Menu" type="TextureButton" parent="Canvas/Panel/InventoryPanel"]
-margin_bottom = 78.0
+margin_bottom = 58.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -71,7 +70,7 @@ __meta__ = {
 [node name="Notepad" type="TextureButton" parent="Canvas/Panel/InventoryPanel"]
 margin_left = 4.0
 margin_right = 4.0
-margin_bottom = 78.0
+margin_bottom = 58.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -79,7 +78,7 @@ __meta__ = {
 [node name="Inventory" type="HBoxContainer" parent="Canvas/Panel/InventoryPanel"]
 margin_left = 8.0
 margin_right = 2546.0
-margin_bottom = 78.0
+margin_bottom = 58.0
 size_flags_horizontal = 3
 
 [node name="Activate" type="TextureButton" parent="."]

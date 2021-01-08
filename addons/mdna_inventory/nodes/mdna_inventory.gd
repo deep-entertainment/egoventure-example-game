@@ -70,6 +70,7 @@ func configure(p_configuration: InventoryConfiguration):
 	$Activate.texture_normal = configuration.texture_activate
 	$Canvas/Panel.theme = configuration.theme
 	$Canvas/Panel.margin_top = configuration.size * -1
+	$Canvas/Panel.margin_bottom = 0
 	$Canvas/Panel.rect_min_size.y = configuration.size
 	$Canvas/Panel.add_stylebox_override(
 		"panel",
