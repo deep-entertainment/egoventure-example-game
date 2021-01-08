@@ -14,7 +14,7 @@ export(AudioStream) var location_music
 
 # Update cache blocking for the target scene, then jump there
 func _pressed():
-	if target_scene != "":
+	if MdnaInventory.selected_item == null and target_scene != "":
 		Boombox.play_music(location_music)
 		MdnaCore.target_view = target_view
 		WaitingScreen.set_image(loading_image)

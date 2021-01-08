@@ -38,10 +38,11 @@ func _ready():
 	
 	
 func _pressed():
-	MdnaCore.target_view = target_view
-	if target_scene != "":
-		MdnaCore.change_scene(target_scene)
-	
+	if MdnaInventory.selected_item == null:
+		MdnaCore.target_view = target_view
+		if target_scene != "":
+			MdnaCore.change_scene(target_scene)
+		
 
 func _mouse_entered():
 	if MdnaInventory.selected_item == null:

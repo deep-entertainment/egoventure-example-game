@@ -36,23 +36,26 @@ func _ready():
 
 # Show the look cursor
 func _on_mouse_entered():
-	Input.set_custom_mouse_cursor(
-		look_cursor.cursor,
-		Input.CURSOR_ARROW,
-		look_cursor.cursor_hotspot
-	)
-	
+	if MdnaInventory.selected_item == null:
+		Input.set_custom_mouse_cursor(
+			look_cursor.cursor,
+			Input.CURSOR_ARROW,
+			look_cursor.cursor_hotspot
+		)
+		
 
 # Show the default cursor again
 func _on_mouse_exited():
-	Input.set_custom_mouse_cursor(
-		default_cursor,
-		Input.CURSOR_ARROW,
-		default_cursor_hotspot
-	)
+	if MdnaInventory.selected_item == null:
+		Input.set_custom_mouse_cursor(
+			default_cursor,
+			Input.CURSOR_ARROW,
+			default_cursor_hotspot
+		)
 
 
 # The hotspot was clicked, play the dialog
 func _on_pressed():
-	Parrot.play(load(dialog))
+	if MdnaInventory.selected_item == null:
+		Parrot.play(load(dialog))
 	
