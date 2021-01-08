@@ -121,6 +121,8 @@ func remove_item(item: InventoryItem):
 		if (_inventory_items[index] as InventoryItemNode).item == item:
 			found_index = index
 	if found_index != -1:
+		if selected_item == _inventory_items[found_index]:
+			release_item()
 		_inventory_items.remove(found_index)
 		_update()
 
