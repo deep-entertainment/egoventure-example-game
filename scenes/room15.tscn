@@ -38,8 +38,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 hotspot_type = "turn_left"
-target_scene = ""
-target_view = ""
 
 [node name="Right" type="TextureButton" parent="CanvasLayer"]
 margin_left = 2311.48
@@ -51,8 +49,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 hotspot_type = "turn_right"
-target_scene = ""
-target_view = ""
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 margin_right = 40.0
@@ -97,8 +93,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 hotspot_type = "look"
-target_scene = ""
-target_view = ""
 
 [node name="Me2" type="TextureButton" parent="."]
 margin_left = -4686.35
@@ -110,8 +104,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 hotspot_type = "look"
-target_scene = ""
-target_view = ""
 [connection signal="mouse_entered" from="CanvasLayer/Left" to="." method="_on_Left_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Left" to="." method="_on_Left_mouse_exited"]
 [connection signal="mouse_entered" from="CanvasLayer/Right" to="." method="_on_Right_mouse_entered"]

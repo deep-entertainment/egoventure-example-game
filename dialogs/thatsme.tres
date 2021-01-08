@@ -1,13 +1,15 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" load_steps=6 format=2]
 
 [ext_resource path="res://addons/parrot/resources/dialog_resource.gd" type="Script" id=1]
 [ext_resource path="res://addons/parrot/resources/dialog_line_resource.gd" type="Script" id=2]
 [ext_resource path="res://characters/carol.tres" type="Resource" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
 character = ExtResource( 3 )
 text = "Hey! That's me!"
+image = ExtResource( 4 )
 
 [resource]
 script = ExtResource( 1 )
