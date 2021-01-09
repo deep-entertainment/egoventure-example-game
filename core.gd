@@ -8,7 +8,10 @@ func _ready():
 	Parrot.subtitles = MdnaCore.in_game_configuration.subtitles
 	Parrot.configure(MdnaCore.configuration.theme)
 	MainMenu.connect("new_game", self, "_on_new_game")
-
+	MdnaInventory.connect("triggered_inventory_item", self, "_on_triggered_inventory_item")
+	
+func _on_triggered_inventory_item(item1: InventoryItem, item2: InventoryItem):
+	pass
 
 func _on_new_game():
 	MdnaCore.update_cache("res://scenes/room1f.tscn", true)
