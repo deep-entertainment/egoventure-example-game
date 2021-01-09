@@ -25,3 +25,7 @@ func _on_left_pressed():
 	MdnaCore.change_scene("res://scenes/room1l.tscn")
 
 
+
+
+func _on_Hotspot_pressed():
+	MdnaInventory.add_item(preload("res://inventory/keys.tres"))

@@ -4,17 +4,9 @@ extends TextureButton
 
 
 # The hotspot type
-export(
-	String, 
-	"go_forward", 
-	"turn_right", 
-	"turn_left", 
-	"corner_right", 
-	"corner_left", 
-	"action", 
-	"go_backwards",
-	"look"
-) var hotspot_type = "go_forward"
+export(Cursors.Type) var hotspot_type = \
+		Cursors.Type.GO_FORWARD setget _set_hotspot_type
+
 
 # If set, changes to the given scene
 export(String, FILE, "*.tscn") var target_scene = ""
@@ -31,35 +23,17 @@ export(
 
 
 func _ready():
-	connect("mouse_entered", self, "_mouse_entered")
-	connect("mouse_exited", self, "_mouse_exited")
 	if target_scene != "":
 		connect("pressed", self, "_pressed")
+
+
+func _set_hotspot_type(type):
+	hotspot_type = type
+	mouse_default_cursor_shape = Cursors.CURSOR_MAP[type]
 	
 	
 func _pressed():
-	if MdnaInventory.selected_item == null:
-		MdnaCore.target_view = target_view
-		if target_scene != "":
-			MdnaCore.change_scene(target_scene)
-		
+	MdnaCore.target_view = target_view
+	if target_scene != "":
+		MdnaCore.change_scene(target_scene)
 
-func _mouse_entered():
-	if MdnaInventory.selected_item == null:
-		for cursor in MdnaCore.configuration.hotspot_cursors:
-			if (cursor as HotspotCursor).hotspot_type == hotspot_type:
-				var found_cursor = cursor as HotspotCursor
-				Input.set_custom_mouse_cursor(
-					found_cursor.cursor,
-					Input.CURSOR_ARROW,
-					found_cursor.cursor_hotspot
-				)
-
-
-func _mouse_exited():
-	if MdnaInventory.selected_item == null:
-		Input.set_custom_mouse_cursor(
-			MdnaCore.configuration.inventory_configuration.mouse_cursor,
-			Input.CURSOR_ARROW,
-			MdnaCore.configuration.inventory_configuration.hotspot_cursor
-		)

@@ -23,23 +23,22 @@ margin_left = 21.0
 margin_top = 226.0
 margin_right = 550.0
 margin_bottom = 1130.0
+mouse_default_cursor_shape = 14
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = "go_backwards"
+hotspot_type = 3
 target_scene = "res://scenes/room8.tscn"
-target_view = ""
 
 [node name="Keys" type="TextureButton" parent="."]
 margin_left = 915.0
 margin_top = 406.0
 margin_right = 1916.0
 margin_bottom = 1191.0
+mouse_default_cursor_shape = 2
 script = ExtResource( 2 )
-hotspot_type = "action"
-target_scene = ""
-target_view = ""
+hotspot_type = 6
 
 [node name="Audio" type="AudioStreamPlayer" parent="."]
 [connection signal="pressed" from="Keys" to="." method="_on_Keys_pressed"]

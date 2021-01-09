@@ -21,10 +21,12 @@ margin_left = 927.0
 margin_top = 2215.0
 margin_right = 1903.0
 margin_bottom = 2885.0
+mouse_default_cursor_shape = 6
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+hotspot_type = 1
 target_scene = "res://scenes/room6.tscn"
 target_view = "back"
 

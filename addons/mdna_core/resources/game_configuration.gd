@@ -81,7 +81,7 @@ func _get_property_list():
 	})
 	properties.append({
 		name = "hotspot_cursors",
-		type = TYPE_ARRAY,		
+		type = TYPE_ARRAY,
 		hint = 24,
 		hint_string = "17/17:HotspotCursor"
 	})

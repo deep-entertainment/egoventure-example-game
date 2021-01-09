@@ -33,22 +33,24 @@ current = true
 [node name="Left" type="TextureButton" parent="CanvasLayer"]
 margin_right = 242.0
 margin_bottom = 1443.0
+mouse_default_cursor_shape = 14
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = "turn_left"
+hotspot_type = 3
 
 [node name="Right" type="TextureButton" parent="CanvasLayer"]
 margin_left = 2311.48
 margin_top = -3.4812
 margin_right = 2553.48
 margin_bottom = 1439.52
+mouse_default_cursor_shape = 15
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = "turn_right"
+hotspot_type = 2
 
 [node name="Label" type="Label" parent="CanvasLayer"]
 margin_right = 40.0
@@ -62,11 +64,11 @@ margin_left = 4508.0
 margin_top = 882.0
 margin_right = 5395.0
 margin_bottom = 1439.0
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = ""
 target_scene = "res://scenes/room14.tscn"
 target_view = "back"
 
@@ -75,11 +77,11 @@ margin_left = -2045.49
 margin_top = 892.621
 margin_right = -1158.49
 margin_bottom = 1449.62
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = ""
 target_scene = "res://scenes/room14.tscn"
 target_view = "back"
 
@@ -88,22 +90,24 @@ margin_left = 1899.0
 margin_top = 797.0
 margin_right = 2256.0
 margin_bottom = 1432.0
+mouse_default_cursor_shape = 16
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = "look"
+hotspot_type = 7
 
 [node name="Me2" type="TextureButton" parent="."]
 margin_left = -4686.35
 margin_top = 813.995
 margin_right = -4329.35
 margin_bottom = 1448.99
+mouse_default_cursor_shape = 16
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = "look"
+hotspot_type = 7
 [connection signal="mouse_entered" from="CanvasLayer/Left" to="." method="_on_Left_mouse_entered"]
 [connection signal="mouse_exited" from="CanvasLayer/Left" to="." method="_on_Left_mouse_exited"]
 [connection signal="mouse_entered" from="CanvasLayer/Right" to="." method="_on_Right_mouse_entered"]

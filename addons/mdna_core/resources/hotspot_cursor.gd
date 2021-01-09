@@ -5,16 +5,8 @@ extends Resource
 
 # The hotspot type
 export(
-	String, 
-	"go_forward", 
-	"turn_right", 
-	"turn_left", 
-	"corner_right", 
-	"corner_left", 
-	"action", 
-	"go_backwards",
-	"look"
-) var hotspot_type = "go_forward"
+	preload("res://addons/mdna_core/cursors.gd").Type
+) var hotspot_type = preload("res://addons/mdna_core/cursors.gd").Type.GO_FORWARD
 
 # The mouse cursor image
 export(Texture) var cursor

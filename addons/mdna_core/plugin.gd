@@ -18,6 +18,10 @@ func _enter_tree():
 		'Boombox',
 		'res://addons/mdna_core/nodes/boombox.tscn'
 	)
+	add_autoload_singleton(
+		'Cursors',
+		'res://addons/mdna_core/cursors.gd'
+	)
 	add_autoload_singleton("MdnaCore", "res://addons/mdna_core/mdna_core.gd")
 	AudioServer.set_bus_layout(
 		preload("res://addons/mdna_core/default_bus_layout.tres")

@@ -18,11 +18,11 @@ margin_left = 715.171
 margin_top = 386.082
 margin_right = 1449.17
 margin_bottom = 988.082
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = ""
 target_scene = "res://scenes/room2.tscn"
 
 [node name="right" type="TextureButton" parent="."]
@@ -30,18 +30,32 @@ margin_left = 1818.0
 margin_top = 64.0
 margin_right = 2552.0
 margin_bottom = 1377.0
+mouse_default_cursor_shape = 15
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = "turn_right"
+hotspot_type = 2
 
 [node name="left" type="TextureButton" parent="."]
 margin_left = -8.0
 margin_top = 74.0
 margin_right = 726.0
 margin_bottom = 1263.0
+mouse_default_cursor_shape = 14
 script = ExtResource( 2 )
-hotspot_type = "turn_left"
+hotspot_type = 3
+
+[node name="Hotspot" type="TextureButton" parent="."]
+margin_left = 521.872
+margin_top = 593.207
+margin_right = 944.872
+margin_bottom = 1117.21
+mouse_default_cursor_shape = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]

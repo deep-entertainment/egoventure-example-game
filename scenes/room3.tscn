@@ -21,11 +21,12 @@ margin_left = 794.0
 margin_top = 1716.48
 margin_right = 1594.0
 margin_bottom = 2883.48
+mouse_default_cursor_shape = 6
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = ""
+hotspot_type = 1
 target_scene = "res://scenes/room2.tscn"
 target_view = "back"
 
@@ -34,10 +35,10 @@ margin_left = 949.943
 margin_top = -1189.94
 margin_right = 1749.94
 margin_bottom = -22.9448
+mouse_default_cursor_shape = 3
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = ""
 target_scene = "res://scenes/room4.tscn"
 target_view = "front"

@@ -37,11 +37,11 @@ texture = ExtResource( 1 )
 margin_left = 1031.0
 margin_top = -961.0
 margin_right = 1632.0
+mouse_default_cursor_shape = 3
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = ""
 target_scene = "res://scenes/room3.tscn"
 
 [node name="Backward" type="TextureButton" parent="."]
@@ -49,11 +49,12 @@ margin_left = 651.0
 margin_top = 1754.0
 margin_right = 1949.0
 margin_bottom = 2702.0
+mouse_default_cursor_shape = 6
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = ""
+hotspot_type = 1
 target_scene = "res://scenes/room1b.tscn"
 
 [node name="LookHotspot" type="TextureButton" parent="."]
@@ -61,6 +62,7 @@ margin_left = -1384.0
 margin_top = 362.0
 margin_right = -670.0
 margin_bottom = 1435.0
+mouse_default_cursor_shape = 16
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false

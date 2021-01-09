@@ -20,37 +20,36 @@ margin_left = 1818.0
 margin_top = 64.0
 margin_right = 2552.0
 margin_bottom = 1377.0
+mouse_default_cursor_shape = 15
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = "turn_right"
-target_scene = ""
-target_view = ""
+hotspot_type = 2
 
 [node name="left" type="TextureButton" parent="."]
 margin_left = 256.0
 margin_top = 90.0
 margin_right = 990.0
 margin_bottom = 1279.0
+mouse_default_cursor_shape = 14
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = "turn_left"
-target_scene = ""
-target_view = ""
+hotspot_type = 3
 
 [node name="MapHotspot" type="TextureButton" parent="."]
 margin_left = 508.0
 margin_top = 156.0
 margin_right = 1823.0
 margin_bottom = 914.0
+mouse_default_cursor_shape = 3
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = "action"
+hotspot_type = 0
 target_scene = "res://scenes/room2.tscn"
 target_view = ""
 loading_image = ExtResource( 4 )

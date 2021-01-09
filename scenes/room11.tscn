@@ -11,7 +11,6 @@
 
 [node name="Room" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0, -2.35864 )
-default_view = "front"
 front_texture = ExtResource( 5 )
 right_texture = ExtResource( 1 )
 back_texture = ExtResource( 2 )
@@ -23,23 +22,23 @@ margin_left = 1158.0
 margin_top = -610.0
 margin_right = 1765.0
 margin_bottom = -6.0
+mouse_default_cursor_shape = 3
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = ""
 target_scene = "res://scenes/room12.tscn"
-target_view = ""
 
 [node name="Backwards" type="TextureButton" parent="."]
 margin_left = 886.483
 margin_top = 2293.39
 margin_right = 1667.48
 margin_bottom = 2880.39
+mouse_default_cursor_shape = 6
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = ""
+hotspot_type = 1
 target_scene = "res://scenes/room10.tscn"
 target_view = "back"

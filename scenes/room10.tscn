@@ -10,7 +10,6 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Room" parent="." instance=ExtResource( 6 )]
-default_view = "front"
 front_texture = ExtResource( 4 )
 right_texture = ExtResource( 5 )
 back_texture = ExtResource( 3 )
@@ -22,11 +21,12 @@ margin_left = 905.393
 margin_top = 2174.85
 margin_right = 1473.39
 margin_bottom = 2884.85
+mouse_default_cursor_shape = 6
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = ""
+hotspot_type = 1
 target_scene = "res://scenes/room9.tscn"
 target_view = "back"
 
@@ -35,23 +35,22 @@ margin_left = -2056.33
 margin_top = 764.196
 margin_right = -705.327
 margin_bottom = 1431.2
+mouse_default_cursor_shape = 16
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = "look"
+hotspot_type = 7
 target_scene = "res://scenes/room10detail.tscn"
-target_view = ""
 
 [node name="Forward" type="TextureButton" parent="."]
 margin_left = 1203.0
 margin_top = -660.0
 margin_right = 1932.0
 margin_bottom = -7.0
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = ""
 target_scene = "res://scenes/room11.tscn"
-target_view = ""

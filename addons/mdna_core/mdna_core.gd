@@ -51,6 +51,7 @@ func configure(p_configuration: GameConfiguration):
 	configuration = p_configuration
 	MainMenu.configure(configuration)
 	MdnaInventory.configure(configuration.inventory_configuration)
+	Cursors.configure(configuration)
 	_scene_cache = SceneCache.new(
 		configuration.scene_cache_count, 
 		configuration.scene_path,
@@ -65,12 +66,6 @@ func configure(p_configuration: GameConfiguration):
 #
 # - path: The absolute path to the new scene
 func change_scene(path: String):
-	Input.set_custom_mouse_cursor(
-		configuration.inventory_configuration.mouse_cursor,
-		Input.CURSOR_ARROW,
-		configuration.inventory_configuration.hotspot_cursor
-	)
-	
 	get_tree().change_scene_to(_scene_cache.get_scene(path))
 	
 

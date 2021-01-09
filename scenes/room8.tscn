@@ -31,11 +31,12 @@ margin_left = 1701.0
 margin_top = -194.0
 margin_right = 1805.0
 margin_bottom = -104.0
+mouse_default_cursor_shape = 16
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = "look"
+hotspot_type = 7
 target_scene = "res://scenes/room8key.tscn"
 
 [node name="Backward" type="TextureButton" parent="."]
@@ -43,11 +44,12 @@ margin_left = 921.0
 margin_top = 2249.0
 margin_right = 1750.0
 margin_bottom = 2876.0
+mouse_default_cursor_shape = 6
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = ""
+hotspot_type = 1
 target_scene = "res://scenes/room7.tscn"
 target_view = "back"
 
@@ -56,9 +58,9 @@ margin_left = 822.0
 margin_top = -971.0
 margin_right = 1645.0
 margin_bottom = -16.0
+mouse_default_cursor_shape = 3
 script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = ""
 target_scene = "res://scenes/room9.tscn"
