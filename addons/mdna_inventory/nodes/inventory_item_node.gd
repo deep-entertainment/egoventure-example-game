@@ -15,10 +15,35 @@ var item: InventoryItem
 onready var _is_touch: bool = OS.has_touchscreen_ui_hint()
 
 
+# Configure the item
 func configure(p_item: InventoryItem):
 	item = p_item
 	texture_normal = item.image_normal
 	connect("pressed", self, "_on_InventoryItem_pressed")
+	connect("mouse_entered", self, "_on_mouse_entered")
+	connect("mouse_exited", self, "_on_mouse_exited")
+
+
+# Show active image on inventory item hover
+func _on_mouse_entered():
+	if MdnaInventory.selected_item != null and \
+			MdnaInventory.selected_item != self:
+		Input.set_custom_mouse_cursor(
+			MdnaInventory.selected_item.item.image_active,
+			Input.CURSOR_ARROW,
+			Vector2(32, 32)
+		)
+	
+	
+# Reset inventory item mouse cursor
+func _on_mouse_exited():
+	if MdnaInventory.selected_item != null and \
+			MdnaInventory.selected_item != self:
+		Input.set_custom_mouse_cursor(
+			MdnaInventory.selected_item.item.image_normal,
+			Input.CURSOR_ARROW,
+			Vector2(32, 32)
+		)
 
 
 # Handle clicks on another inventory item
