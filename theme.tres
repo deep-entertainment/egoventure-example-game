@@ -1,7 +1,9 @@
-[gd_resource type="Theme" load_steps=24 format=2]
+[gd_resource type="Theme" load_steps=26 format=2]
 
 [ext_resource path="res://RussoOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://images/volume.png" type="Texture" id=2]
+[ext_resource path="res://images/uncheck.svg" type="Texture" id=3]
+[ext_resource path="res://images/check.svg" type="Texture" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.329412, 0.329412, 0.329412, 1 )
@@ -119,9 +121,9 @@ CheckButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 CheckButton/constants/check_vadjust = 0
 CheckButton/constants/hseparation = 4
 CheckButton/fonts/font = null
-CheckButton/icons/off = null
+CheckButton/icons/off = ExtResource( 3 )
 CheckButton/icons/off_disabled = null
-CheckButton/icons/on = null
+CheckButton/icons/on = ExtResource( 4 )
 CheckButton/icons/on_disabled = null
 CheckButton/styles/disabled = null
 CheckButton/styles/focus = SubResource( 9 )

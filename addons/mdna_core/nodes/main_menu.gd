@@ -36,89 +36,88 @@ var _configuration: GameConfiguration
 
 # Default to hiding the menu
 func _ready():
-	$Control.hide()
-	$SaveSlots.hide()
-	$Options.hide()
-	for child in $Control/Margin/VBox/MenuItems.get_children():
+	$Menu.hide()
+	$Menu/MainMenu.show()
+	$Menu/SaveSlots.hide()
+	$Menu/Options.hide()
+	for child in $Menu/MainMenu/Margin/VBox/MenuItems.get_children():
 		(child as Button).connect("mouse_entered", self, "_on_menuitem_hover", [true, child])
 		(child as Button).connect("mouse_exited", self, "_on_menuitem_hover", [false, child])
 	var percent = _get_bus_percent("Effects")
-	$Options/CenterContainer/VBox/Effects/Slider.value = percent
+	$Menu/Options/CenterContainer/VBox/Effects/Slider.value = percent
 		
-	$Options/CenterContainer/VBox/Music/Slider.value = \
+	$Menu/Options/CenterContainer/VBox/Music/Slider.value = \
 		_get_bus_percent("Music")
-	$Options/CenterContainer/VBox/Speech/Slider.value = \
+	$Menu/Options/CenterContainer/VBox/Speech/Slider.value = \
 		_get_bus_percent("Speech")
 
 
 # React to the ui_menu action
 func _input(event):
 	if event.is_action_released("ui_menu"):
-		if $SaveSlots.visible:
-			$SaveSlots.hide()
+		if $Menu/SaveSlots.visible:
+			$Menu/SaveSlots.hide()
 		else:
 			toggle()
 
 
 # Handle saveable parameter
 func _process(delta):
-	$Control/Margin/VBox/MenuItems/Save.disabled = not saveable
+	$Menu/MainMenu/Margin/VBox/MenuItems/Save.disabled = not saveable
 
 
 # Configure the menu
 func configure(configuration: GameConfiguration):
 	_configuration = configuration
 	
-	$Control/Background.texture = configuration.menu_background
-	$Control/Margin/VBox/Logo.texture = configuration.logo
+	$Menu/MainMenu/Background.texture = configuration.menu_background
+	$Menu/MainMenu/Margin/VBox/Logo.texture = configuration.logo
 	
-	$SaveSlots/Background.texture = configuration.menu_saveslots_background
-	$SaveSlots/VBox/HBox/Previous.texture_normal = configuration.menu_saveslots_previous_image
-	$SaveSlots/VBox/HBox/Next.texture_normal = configuration.menu_saveslots_next_image
+	$Menu/SaveSlots/Background.texture = configuration.menu_saveslots_background
+	$Menu/SaveSlots/VBox/HBox/Previous.texture_normal = \
+			configuration.menu_saveslots_previous_image
+	$Menu/SaveSlots/VBox/HBox/Next.texture_normal = \
+			configuration.menu_saveslots_next_image
 	
-	$Options/Background.texture = configuration.menu_options_background
-	$Options/CenterContainer/VBox/Speech/Slider.value = \
+	$Menu/Options/Background.texture = configuration.menu_options_background
+	$Menu/Options/CenterContainer/VBox/Speech/Slider.value = \
 			_get_bus_percent("Speech")
-	$Options/CenterContainer/VBox/Music/Slider.value = \
+	$Menu/Options/CenterContainer/VBox/Music/Slider.value = \
 			_get_bus_percent("Music")
-	$Options/CenterContainer/VBox/Effects/Slider.value = \
+	$Menu/Options/CenterContainer/VBox/Effects/Slider.value = \
 			_get_bus_percent("Effects")
-	$Options/CenterContainer/VBox/Subtitles/Subtitles.pressed = \
+	$Menu/Options/CenterContainer/VBox/Subtitles/Subtitles.pressed = \
 			MdnaCore.in_game_configuration.subtitles
 			
 	# Apply theme
-	
-	$Control.theme = configuration.theme
-	$Options.theme = configuration.theme
-	$SaveSlots.theme = configuration.theme
-	$QuitConfirm.theme = configuration.theme
-	$OverwriteConfirm.theme = configuration.theme
-	$RestartConfirm.theme = configuration.theme
+	$Menu.theme = configuration.theme
 
 
 # Toggle the display of the menu and play the menu music
 func toggle():
 	if resumeable:
 		if MdnaCore.game_started:
-			$Control/Margin/VBox/MenuItems/Resume.show()
-			$Control/Margin/VBox/MenuItems/Continue.hide()
+			$Menu/MainMenu/Margin/VBox/MenuItems/Resume.show()
+			$Menu/MainMenu/Margin/VBox/MenuItems/Continue.hide()
 		else:
-			$Control/Margin/VBox/MenuItems/Continue.show()
-			$Control/Margin/VBox/MenuItems/Resume.hide()
+			$Menu/MainMenu/Margin/VBox/MenuItems/Continue.show()
+			$Menu/MainMenu/Margin/VBox/MenuItems/Resume.hide()
 			
 			if MdnaCore.in_game_configuration.resume_state == null:
-				$Control/Margin/VBox/MenuItems/Continue.disabled = true
+				$Menu/MainMenu/Margin/VBox/MenuItems/Continue.disabled = true
 			else:
-				$Control/Margin/VBox/MenuItems/Continue.disabled = false
+				$Menu/MainMenu/Margin/VBox/MenuItems/Continue.disabled = false
 		
-		$Control.visible = !$Control.visible
-		if _configuration.menu_music != null and $Control.visible:
-			Boombox.pause_music()
-			$Music.stream = _configuration.menu_music
-			$Music.play()
-		else:
-			$Music.stop()
-			Boombox.resume_music()
+		$Menu.visible = !$Menu.visible
+		get_tree().paused = !get_tree().paused
+		if _configuration.menu_music != null and $Menu.visible:
+			if $Menu/Music.stream == null:
+				$Menu/Music.stream = _configuration.menu_music
+				$Menu/Music.play()
+			else:
+				$Menu/Music.stream_paused = false
+		elif _configuration.menu_music != null:
+			$Menu/Music.stream_paused = true
 
 
 # Resume was pressed. Toggle the menu
@@ -128,7 +127,7 @@ func _on_Resume_pressed():
 
 # Quit was pressed. Show confirmation
 func _on_Quit_pressed():
-	$QuitConfirm.popup_centered()
+	$Menu/QuitConfirm.popup_centered()
 
 
 # Quit was confirmed. Just quit the game
@@ -138,23 +137,23 @@ func _on_QuitConfirm_confirmed():
 
 # Save was pressed. Show saveslots in save mode
 func _on_Save_pressed():
-	$SaveSlots/VBox/Title.text = "Save game"
+	$Menu/SaveSlots/VBox/Title.text = "Save game"
 	_is_save_mode = true
 	_refresh_saveslots()
-	$SaveSlots.show()
+	$Menu/SaveSlots.show()
 
 
 # Load was pressed. Show saveslots in load mode
 func _on_Load_pressed():
-	$SaveSlots/VBox/Title.text = "Load game"
+	$Menu/SaveSlots/VBox/Title.text = "Load game"
 	_is_save_mode = false
 	_refresh_saveslots()
-	$SaveSlots.show()
+	$Menu/SaveSlots.show()
 	
 
 # Cancel was pressed. Hide saveslots
 func _on_SaveLoad_Cancel_pressed():
-	$SaveSlots.hide()
+	$Menu/SaveSlots.hide()
 
 
 # A save slot was selected
@@ -163,20 +162,17 @@ func _on_slot_selected(slot: int, exists: bool):
 		if exists:
 			# This save slot exists, show the confirmation dialog
 			_selected_slot = slot
-			$OverwriteConfirm.popup_centered()
+			$Menu/OverwriteConfirm.popup_centered()
 		else:
 			# Briefly hide the menu to snapshot a picture of the current
 			# scene
-			$Control.hide()
-			$SaveSlots.hide()
+			$Menu.hide()
 			yield(get_tree().create_timer(1.0), "timeout")
 			MdnaCore.save(slot)
-			$Control.show()
-			$SaveSlots.show()
+			$Menu.show()
 			_refresh_saveslots()
 	else:
-		$Control.hide()
-		$SaveSlots.hide()
+		toggle()
 		MdnaCore.load(slot)
 
 
@@ -201,12 +197,12 @@ func _on_Previous_pressed():
 
 # Options was pressed
 func _on_Options_pressed():
-	$Options.show()
+	$Menu/Options.show()
 
 
 # Return was pressed on the options screen
 func _on_Return_pressed():
-	$Options.hide()
+	$Menu/Options.hide()
 
 
 # The speech slider was changed
@@ -214,9 +210,9 @@ func _on_speech_Slider_value_changed(value):
 	MdnaCore.in_game_configuration.speech_db = _percent_to_db(value)
 	MdnaCore.save_in_game_configuration()
 	MdnaCore.set_audio_levels()
-	if $Options.visible and _configuration.menu_options_speech_sample != null:
-		$Speech.stream = _configuration.menu_options_speech_sample
-		$Speech.play()
+	if $Menu/Options.visible and _configuration.menu_options_speech_sample != null:
+		$Menu/Speech.stream = _configuration.menu_options_speech_sample
+		$Menu/Speech.play()
 
 
 # The music slider was changed
@@ -231,18 +227,19 @@ func _on_effects_Slider_value_changed(value):
 	MdnaCore.in_game_configuration.effects_db = _percent_to_db(value)
 	MdnaCore.save_in_game_configuration()
 	MdnaCore.set_audio_levels()
-	if $Options.visible and _configuration.menu_options_effects_sample != null:
-		$Effects.stream = _configuration.menu_options_effects_sample
-		$Effects.play()
+	if $Menu/Options.visible and \
+			_configuration.menu_options_effects_sample != null:
+		$Menu/Effects.stream = _configuration.menu_options_effects_sample
+		$Menu/Effects.play()
 
 
 # The subtitles checkbox was changed
 func _on_Subtitles_toggled(button_pressed):
 	MdnaCore.in_game_configuration.subtitles = button_pressed
 	MdnaCore.save_in_game_configuration()
-	if $Options.visible and _configuration.menu_switch_effect != null:
-		$Effects.stream = _configuration.menu_switch_effect
-		$Effects.play()
+	if $Menu/Options.visible and _configuration.menu_switch_effect != null:
+		$Menu/Effects.stream = _configuration.menu_switch_effect
+		$Menu/Effects.play()
 
 
 # Exchange the theme's font with the hover font
@@ -303,7 +300,7 @@ func _refresh_saveslots():
 		var save_slot = _save_slot_page + slot
 		
 		# Set the slot stylebox
-		var slot_node = $SaveSlots/VBox/HBox/Slots.get_node(
+		var slot_node = $Menu/SaveSlots/VBox/HBox/Slots.get_node(
 			"Slot%d" % save_slot 
 		)
 		(slot_node.get_node("Slot/Panel") as Panel) \
@@ -375,7 +372,7 @@ func _on_Continue_pressed():
 # The New Game button was pressed
 func _on_NewGame_pressed():
 	if MdnaCore.in_game_configuration.resume_state != null:
-		$RestartConfirm.popup_centered()
+		$Menu/RestartConfirm.popup_centered()
 	else:
 		_on_RestartConfirm_confirmed()
 
