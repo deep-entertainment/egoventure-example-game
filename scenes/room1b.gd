@@ -1,19 +1,12 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	Cursors.override(Cursors.Type.GO_BACKWARDS, preload("res://icon.png"), Vector2(32, 32))
+	
+	
+func _exit_tree():
+	Cursors.reset(Cursors.Type.GO_BACKWARDS)
 
 
 func _on_right_pressed():
