@@ -9,8 +9,8 @@ signal new_game
 # The date format used for display in the save slots
 const DATE_FORMAT: String = "{month}/{day}/{year} {hour}:{minute}"
 
-# Lowest Audio level
 
+# Lowest Audio level
 const AUDIO_MIN: float = -50.0
 
 
@@ -40,20 +40,26 @@ func _ready():
 	$Menu/MainMenu.show()
 	$Menu/SaveSlots.hide()
 	$Menu/Options.hide()
+	# React to mouse hovers for advanced hovering designs
 	for child in $Menu/MainMenu/Margin/VBox/MenuItems.get_children():
 		(child as Button).connect("mouse_entered", self, "_on_menuitem_hover", [true, child])
 		(child as Button).connect("mouse_exited", self, "_on_menuitem_hover", [false, child])
-	var percent = _get_bus_percent("Effects")
-	$Menu/Options/CenterContainer/VBox/Effects/Slider.value = percent
-		
+	
+	# Set the audio levels to the stored values
+	$Menu/Options/CenterContainer/VBox/Effects/Slider.value = \
+			_get_bus_percent("Effects")	
 	$Menu/Options/CenterContainer/VBox/Music/Slider.value = \
-		_get_bus_percent("Music")
+			_get_bus_percent("Music")
 	$Menu/Options/CenterContainer/VBox/Speech/Slider.value = \
-		_get_bus_percent("Speech")
+			_get_bus_percent("Speech")
 
 
 # React to the ui_menu action
-func _input(event):
+#
+# ** Parameters **
+#
+# - event: The event that happened
+func _input(event: InputEvent):
 	if event.is_action_released("ui_menu"):
 		if $Menu/SaveSlots.visible:
 			$Menu/SaveSlots.hide()
@@ -61,25 +67,36 @@ func _input(event):
 			toggle()
 
 
-# Handle saveable parameter
-func _process(delta):
+# Handle wether the game is currently saveable
+#
+# ** parameters **
+#
+# - delta: Time in milliseconds since last call to _process
+func _process(_delta):
 	$Menu/MainMenu/Margin/VBox/MenuItems/Save.disabled = not saveable
 
 
 # Configure the menu
+# 
+# ** Parameters **
+#
+# - configuration: The game configuration resource
 func configure(configuration: GameConfiguration):
 	_configuration = configuration
 	
+	# Set the different textures
 	$Menu/MainMenu/Background.texture = configuration.menu_background
 	$Menu/MainMenu/Margin/VBox/Logo.texture = configuration.logo
-	
 	$Menu/SaveSlots/Background.texture = configuration.menu_saveslots_background
 	$Menu/SaveSlots/VBox/HBox/Previous.texture_normal = \
 			configuration.menu_saveslots_previous_image
 	$Menu/SaveSlots/VBox/HBox/Next.texture_normal = \
 			configuration.menu_saveslots_next_image
-	
 	$Menu/Options/Background.texture = configuration.menu_options_background
+	
+	$Menu.theme = configuration.theme
+	
+	# Set the options values
 	$Menu/Options/CenterContainer/VBox/Speech/Slider.value = \
 			_get_bus_percent("Speech")
 	$Menu/Options/CenterContainer/VBox/Music/Slider.value = \
@@ -88,9 +105,6 @@ func configure(configuration: GameConfiguration):
 			_get_bus_percent("Effects")
 	$Menu/Options/CenterContainer/VBox/Subtitles/Subtitles.pressed = \
 			MdnaCore.in_game_configuration.subtitles
-			
-	# Apply theme
-	$Menu.theme = configuration.theme
 
 
 # Toggle the display of the menu and play the menu music
@@ -157,6 +171,11 @@ func _on_SaveLoad_Cancel_pressed():
 
 
 # A save slot was selected
+#
+# ** Parameters **
+#
+# - slot: The save slot
+# - exists: Wether the slot already contains a savegame
 func _on_slot_selected(slot: int, exists: bool):
 	if _is_save_mode:
 		if exists:
@@ -206,6 +225,10 @@ func _on_Return_pressed():
 
 
 # The speech slider was changed
+# 
+# ** Parameters **
+# 
+# - value: new value
 func _on_speech_Slider_value_changed(value):
 	MdnaCore.in_game_configuration.speech_db = _percent_to_db(value)
 	MdnaCore.save_in_game_configuration()
@@ -216,6 +239,10 @@ func _on_speech_Slider_value_changed(value):
 
 
 # The music slider was changed
+# 
+# ** Parameters **
+# 
+# - value: new value
 func _on_music_Slider_value_changed(value):
 	MdnaCore.in_game_configuration.music_db = _percent_to_db(value)
 	MdnaCore.save_in_game_configuration()
@@ -223,6 +250,10 @@ func _on_music_Slider_value_changed(value):
 
 
 # The effects slider was changed
+# 
+# ** Parameters **
+# 
+# - value: new value
 func _on_effects_Slider_value_changed(value):
 	MdnaCore.in_game_configuration.effects_db = _percent_to_db(value)
 	MdnaCore.save_in_game_configuration()
@@ -234,15 +265,25 @@ func _on_effects_Slider_value_changed(value):
 
 
 # The subtitles checkbox was changed
-func _on_Subtitles_toggled(button_pressed):
-	MdnaCore.in_game_configuration.subtitles = button_pressed
+#
+# ** Parameters **
+#
+# - value: Wether the checkbox is checked or not
+func _on_Subtitles_toggled(value: bool):
+	MdnaCore.in_game_configuration.subtitles = value
 	MdnaCore.save_in_game_configuration()
 	if $Menu/Options.visible and _configuration.menu_switch_effect != null:
 		$Menu/Effects.stream = _configuration.menu_switch_effect
 		$Menu/Effects.play()
 
 
-# Exchange the theme's font with the hover font
+# React to mouse hovers over menu buttons to allow for more hover
+# effects
+#
+# ** Parameters **
+# 
+# - entered: Wether the button was entered or not
+# - node: The button in question
 func _on_menuitem_hover(entered: bool, node: Button):
 	if entered:
 		node.add_font_override("font", _configuration.menu_hover_font)

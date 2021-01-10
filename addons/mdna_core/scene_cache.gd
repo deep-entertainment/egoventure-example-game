@@ -4,6 +4,7 @@ class_name SceneCache
 extends Node
 
 
+# All pending resources were loaded
 signal queue_complete
 
 
@@ -28,7 +29,7 @@ var _queued_items: Array = []
 
 # Initialize the cache
 #
-# ** Arguments **
+# ** Parameters **
 #
 # - cache_count: The number of scenes to cache before and after the 
 #   current scene
@@ -44,6 +45,8 @@ func _init(cache_count: int, scene_path: String, scene_regex: String):
 	_resource_queue.start()
 
 
+# Update the current progress on the waiting screen and emit the queue_complete
+# signal when we're done
 func update_progress():
 	if _queued_items.size() > 0:
 		var _still_waiting = 0.0
@@ -63,7 +66,7 @@ func update_progress():
 # Retrieve a scene from the cache. If the scene wasn't already cached, 
 # this function will wait for it to be cached.
 #
-# ** Arguments **
+# ** Parameters **
 # 
 # - path: The path to the scene
 func get_scene(path: String) -> PackedScene:
@@ -76,7 +79,7 @@ func get_scene(path: String) -> PackedScene:
 # Update the cache. Start caching new scenes and remove scenes, that
 # are not used anymore
 #
-# ** Arguments **
+# ** Parameters **
 #
 # - current_scene: The path and filename of the current scene
 func update_cache(current_scene: String):
@@ -129,7 +132,7 @@ func update_cache(current_scene: String):
 
 # Extract index from filename
 #
-# ** Arguments **
+# ** Parameters **
 # 
 # filename: The path and filename of the scene
 func _get_index_from_filename(filename: String) -> int:

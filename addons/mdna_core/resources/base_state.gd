@@ -1,4 +1,4 @@
-# A base state used in all game states
+# A base state used as a base class in all game states
 class_name BaseState
 extends Resource
 

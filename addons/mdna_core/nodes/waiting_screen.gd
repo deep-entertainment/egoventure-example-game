@@ -1,3 +1,4 @@
+# A waiting screen shown when the scene cache is updatede
 extends CanvasLayer
 
 
@@ -18,6 +19,10 @@ func hide():
 
 
 # Update the progess on the screen
+#
+# ** Parameters **
+#
+# - value: The current progress as a percent number
 func set_progress(value: float):
 	$Screen/Panel/VBoxContainer/ProgressBar.value = value
 	if value == 100:
@@ -25,5 +30,9 @@ func set_progress(value: float):
 
 
 # Set the waiting image
+#
+# ** Parameters **
+#
+# - image: The image to set
 func set_image(image: Texture):
 	$Screen/Panel/VBoxContainer/TextureRect.texture = image

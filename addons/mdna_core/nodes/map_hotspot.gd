@@ -1,3 +1,5 @@
+# A hotspot supporting precaching of scenes and showing a loading
+# screen and playing a tune while doing so
 tool
 class_name MapHotspot, "res://addons/mdna_core/images/map_hotspot.svg"
 extends Hotspot

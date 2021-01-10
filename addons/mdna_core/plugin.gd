@@ -3,7 +3,7 @@ tool
 extends EditorPlugin
 
 
-# Add MdnaCore and the MainMenu as singletons, load the default audio bus
+# Add the required singletons, load the default audio bus
 # layout
 func _enter_tree():
 	add_autoload_singleton(

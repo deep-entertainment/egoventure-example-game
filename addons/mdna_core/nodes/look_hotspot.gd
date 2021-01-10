@@ -1,3 +1,4 @@
+# A hotspot that triggers a Parrot dialog for "look" actions
 tool
 class_name LookHotspot, "res://addons/mdna_core/images/look_hotspot.svg"
 extends TextureButton

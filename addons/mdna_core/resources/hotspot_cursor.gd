@@ -1,3 +1,4 @@
+# The mouse cursor configuration for hotspots
 tool
 class_name HotspotCursor
 extends Resource

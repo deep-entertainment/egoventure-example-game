@@ -35,18 +35,25 @@ var configuration: GameConfiguration
 var _scene_cache: SceneCache
 
 
+# Load the ingame configuration
 func _init():
-	AudioServer.set_bus_layout(
-		preload("res://addons/mdna_core/default_bus_layout.tres")
-	)
 	_load_in_game_configuration()
 	
-	
-func _process(delta):
+
+# Update the scene cache
+#
+# ** Parameters **
+#
+# - delta: The time since the last call to _process
+func _process(_delta):
 	_scene_cache.update_progress()
 
 
 # Configure the game from the game's core class
+#
+# ** Parameters **
+#
+# - p_configuration: The game configuration
 func configure(p_configuration: GameConfiguration):
 	configuration = p_configuration
 	MainMenu.configure(configuration)

@@ -1,3 +1,4 @@
+# Mouse cursor handling for MDNA games
 extends Node
 
 
@@ -39,6 +40,7 @@ const CURSOR_MAP: Dictionary = {
 }
 
 
+# A cache to hold the default cursors for easy resetting them
 var _default_cursors: Dictionary = {}
 
 
@@ -58,6 +60,13 @@ func configure(configuration: GameConfiguration):
 	)
 
 
+# Override a specific cursor type with a texture
+#
+# ** Parameters **
+#
+# - type: The type to override (based on the Type enum)
+# - texture: Texture to use for the overridden cursor
+# - hotspot: The cursor hotspot
 func override(type, texture: Texture, hotspot: Vector2):
 	Input.set_custom_mouse_cursor(
 		texture,
@@ -66,6 +75,11 @@ func override(type, texture: Texture, hotspot: Vector2):
 	)
 	
 
+# Reset the previously overridden cursor to its default form
+# 
+# ** Parameters **
+#
+# - type: The type to reset (based on the Type enum)
 func reset(type):
 	Input.set_custom_mouse_cursor(
 		_default_cursors[type].cursor,

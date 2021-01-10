@@ -1,7 +1,12 @@
+# Boombox - a singleton audio player framework
 extends Node
 
 
 # Play a new music file, if it isn't the current one.
+#
+# ** Parameters**
+#
+# - music: An audiostream of the music to play
 func play_music(music: AudioStream):
 	if music != $Music.stream or not $Music.playing:
 		$Music.stream = music
@@ -24,6 +29,10 @@ func stop_music():
 	
 
 # Play a background effect
+#
+# ** Parameters **
+#
+# - background: An audiostream of the background noise to play
 func play_background(background: AudioStream):
 	if background != $Background.stream or not $Background.playing:
 		$Background.stream = background
@@ -46,6 +55,11 @@ func stop_background():
 	
 	
 # Play a sound effect
+#
+# ** Parameters **
+#
+# - effect: An audiostream of the sound effect to play
+#   make sure it's set to "loop = false" in the import settings
 func play_effect(effect: AudioStream):
 	if effect != $Effects.stream or not $Effects.playing:
 		$Effects.stream = effect
