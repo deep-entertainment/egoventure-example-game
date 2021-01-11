@@ -1,6 +1,7 @@
 # The configuration resource of the mdna inventory system
 tool
-class_name InventoryConfiguration
+class_name InventoryConfiguration, \
+		"res://addons/mdna_inventory/images/inventory_configuration.svg"
 extends Resource
 
 

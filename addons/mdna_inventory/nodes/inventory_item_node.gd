@@ -1,4 +1,4 @@
-# The inventory item
+# The inventory item as a graphic node
 class_name InventoryItemNode
 extends TextureButton
 
@@ -15,7 +15,11 @@ var item: InventoryItem
 onready var _is_touch: bool = OS.has_touchscreen_ui_hint()
 
 
-# Configure the item
+# Configure this item and connect the required signals
+#
+# ** Parameters **
+#
+# - p_item: The InventoryItem resource this item is based on 
 func configure(p_item: InventoryItem):
 	item = p_item
 	texture_normal = item.image_normal

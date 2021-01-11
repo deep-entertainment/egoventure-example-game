@@ -107,7 +107,7 @@ _global_script_classes=[ {
 "base": "Button",
 "class": "TriggerHotspot",
 "language": "GDScript",
-"path": "res://addons/mdna_inventory/types/trigger_hotspot.gd"
+"path": "res://addons/mdna_inventory/nodes/trigger_hotspot.gd"
 } ]
 _global_script_class_icons={
 "BaseState": "",
@@ -121,7 +121,7 @@ _global_script_class_icons={
 "HotspotCursor": "",
 "Importer": "",
 "InGameConfiguration": "",
-"InventoryConfiguration": "",
+"InventoryConfiguration": "res://addons/mdna_inventory/images/inventory_configuration.svg",
 "InventoryItem": "res://addons/mdna_inventory/images/inventory_item.svg",
 "InventoryItemNode": "",
 "LookHotspot": "res://addons/mdna_core/images/look_hotspot.svg",

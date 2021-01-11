@@ -1,4 +1,5 @@
-# A trigger hotspot definition resource
+# A hotspot that reacts to inventory items and features a special
+# mouse cursor when no item is selected
 tool
 class_name TriggerHotspot, \
 		"res://addons/mdna_inventory/images/trigger_hotspot.svg"
