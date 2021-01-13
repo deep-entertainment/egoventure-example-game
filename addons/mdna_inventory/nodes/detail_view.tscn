@@ -23,17 +23,19 @@ size_flags_vertical = 3
 
 [node name="Image" type="TextureRect" parent="Panel/VBox"]
 margin_right = 2546.0
-margin_bottom = 1408.0
+margin_bottom = 948.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
 expand = true
-stretch_mode = 6
+stretch_mode = 4
 
 [node name="Description" type="Label" parent="Panel/VBox"]
-margin_top = 1412.0
+margin_top = 1182.0
 margin_right = 2546.0
-margin_bottom = 1426.0
+margin_bottom = 1196.0
 size_flags_horizontal = 3
+size_flags_vertical = 6
 align = 1
 valign = 1
 [connection signal="gui_input" from="Panel" to="." method="_on_panel_gui_input"]
