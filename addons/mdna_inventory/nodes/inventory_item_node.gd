@@ -15,6 +15,15 @@ var item: InventoryItem
 onready var _is_touch: bool = OS.has_touchscreen_ui_hint()
 
 
+func _gui_input(event):
+	if event is InputEventScreenTouch and \
+			(event as InputEventScreenTouch).index == 2:
+		show_detail()
+	elif event is InputEventMouseButton and \
+			(event as InputEventMouseButton).button_index == BUTTON_RIGHT:
+		show_detail()
+
+
 # Configure this item and connect the required signals
 #
 # ** Parameters **
@@ -26,6 +35,10 @@ func configure(p_item: InventoryItem):
 	connect("pressed", self, "_on_InventoryItem_pressed")
 	connect("mouse_entered", self, "_on_mouse_entered")
 	connect("mouse_exited", self, "_on_mouse_exited")
+
+
+func show_detail():
+	DetailView.show(item)
 
 
 # Show active image on inventory item hover

@@ -29,6 +29,7 @@ margin_bottom = 2.0
 
 [node name="MainMenu" type="CanvasLayer"]
 pause_mode = 2
+layer = 128
 script = ExtResource( 5 )
 
 [node name="Menu" type="Control" parent="."]

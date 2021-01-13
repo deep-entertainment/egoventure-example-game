@@ -10,3 +10,4 @@ title = "Keys"
 description = "Those are my keys."
 image_normal = ExtResource( 3 )
 image_active = ExtResource( 4 )
+image_big = ExtResource( 3 )

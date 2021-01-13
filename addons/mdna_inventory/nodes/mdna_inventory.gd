@@ -80,6 +80,8 @@ func configure(p_configuration: InventoryConfiguration):
 	var animation: Animation = $Animations.get_animation("Activate")
 	animation.track_set_key_value(0,0,Vector2(0, configuration.size * -1))
 	animation.track_set_key_value(1,1,configuration.size)
+	
+	DetailView.get_node("Panel").theme = p_configuration.theme
 
 
 # Disable the inventory system

@@ -6,40 +6,17 @@ extends Resource
 
 
 # The title of the inventory item
-var title: String
+export (String) var title: String
 
 # A description for the inventory item
-var description: String
+export (String, MULTILINE) var description: String
 
 # The image/mouse pointer for the inventory item
-var image_normal: Texture
+export (Texture) var image_normal: Texture
 
 # The image/mouse pointer for the inventory item if it's selected
-var image_active: Texture
+export (Texture) var image_active: Texture
 
+# The big image used in detail views
+export (Texture) var image_big: Texture
 
-# Get properties
-func _get_property_list():
-	var properties = []
-	properties.append({
-		"name": "title",
-		"type": TYPE_STRING
-	})
-	properties.append({
-		"name": "description",
-		"type": TYPE_STRING,
-		"hint": PROPERTY_HINT_MULTILINE_TEXT
-	})
-	properties.append({
-		"name": "image_normal",
-		type = TYPE_OBJECT,
-		hint = PROPERTY_HINT_RESOURCE_TYPE,
-		hint_string = "Texture"
-	})
-	properties.append({
-		"name": "image_active",
-		type = TYPE_OBJECT,
-		hint = PROPERTY_HINT_RESOURCE_TYPE,
-		hint_string = "Texture"
-	})
-	return properties

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=26 format=2]
+[gd_resource type="Theme" load_steps=27 format=2]
 
 [ext_resource path="res://RussoOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://images/volume.png" type="Texture" id=2]
@@ -60,14 +60,17 @@ texture = ExtResource( 2 )
 region_rect = Rect2( 0, 0, 517, 69 )
 
 [sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.176471, 0.176471, 0.176471, 0.658824 )
+
+[sub_resource type="StyleBoxFlat" id=15]
 bg_color = Color( 1, 1, 1, 0.278431 )
 border_width_top = 2
 border_color = Color( 0.619608, 0.619608, 0.619608, 1 )
 
-[sub_resource type="StyleBoxFlat" id=15]
+[sub_resource type="StyleBoxFlat" id=16]
 bg_color = Color( 0.407843, 0.407843, 0.407843, 1 )
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=17]
 bg_color = Color( 1, 1, 1, 0.254902 )
 border_width_left = 2
 border_width_top = 2
@@ -77,21 +80,21 @@ border_color = Color( 0.513726, 0.513726, 0.513726, 1 )
 shadow_size = 2
 shadow_offset = Vector2( 2, 2 )
 
-[sub_resource type="Gradient" id=17]
+[sub_resource type="Gradient" id=18]
 colors = PoolColorArray( 0, 1, 0.0390625, 1, 0.393235, 1, 0.445379, 1 )
 
-[sub_resource type="GradientTexture" id=18]
-gradient = SubResource( 17 )
+[sub_resource type="GradientTexture" id=19]
+gradient = SubResource( 18 )
 
-[sub_resource type="StyleBoxTexture" id=19]
-texture = SubResource( 18 )
+[sub_resource type="StyleBoxTexture" id=20]
+texture = SubResource( 19 )
 region_rect = Rect2( 0, 0, 2048, 1 )
 
-[sub_resource type="DynamicFont" id=20]
+[sub_resource type="DynamicFont" id=21]
 outline_size = 1
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=21]
+[sub_resource type="DynamicFont" id=22]
 size = 33
 outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_top = 10
@@ -99,7 +102,7 @@ extra_spacing_bottom = 10
 font_data = ExtResource( 1 )
 
 [resource]
-default_font = SubResource( 21 )
+default_font = SubResource( 22 )
 Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
 Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
 Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
@@ -147,12 +150,13 @@ Label/constants/shadow_offset_x = 2
 Label/constants/shadow_offset_y = 2
 Label/fonts/font = null
 Label/styles/normal = SubResource( 10 )
-Panel/styles/dialog_panel = SubResource( 14 )
-Panel/styles/inventory_panel = SubResource( 15 )
-Panel/styles/saveslot_panel = SubResource( 16 )
+Panel/styles/detail_view = SubResource( 14 )
+Panel/styles/dialog_panel = SubResource( 15 )
+Panel/styles/inventory_panel = SubResource( 16 )
+Panel/styles/saveslot_panel = SubResource( 17 )
 ProgressBar/colors/font_color = Color( 0.94, 0.94, 0.94, 1 )
 ProgressBar/colors/font_color_shadow = Color( 0, 0, 0, 1 )
 ProgressBar/fonts/font = null
 ProgressBar/styles/bg = null
-ProgressBar/styles/fg = SubResource( 19 )
-RichTextLabel/fonts/dialog_font = SubResource( 20 )
+ProgressBar/styles/fg = SubResource( 20 )
+RichTextLabel/fonts/dialog_font = SubResource( 21 )
