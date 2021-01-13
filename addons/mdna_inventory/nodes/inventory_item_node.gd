@@ -16,12 +16,14 @@ onready var _is_touch: bool = OS.has_touchscreen_ui_hint()
 
 
 func _gui_input(event):
-	if event is InputEventScreenTouch and \
-			(event as InputEventScreenTouch).index == 2:
-		show_detail()
-	elif event is InputEventMouseButton and \
-			(event as InputEventMouseButton).button_index == BUTTON_RIGHT:
-		show_detail()
+	if MdnaInventory.selected_item == null:
+		if event is InputEventScreenTouch and \
+				(event as InputEventScreenTouch).index == 2:
+			show_detail()
+		elif event is InputEventMouseButton and \
+				(event as InputEventMouseButton).button_index == BUTTON_RIGHT \
+				and not (event as InputEventMouseButton).pressed:
+			show_detail()
 
 
 # Configure this item and connect the required signals

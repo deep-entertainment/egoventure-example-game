@@ -38,26 +38,27 @@ func _ready():
 
 # Handle inventory drop events and border trigger for mouse
 func _input(event):
-	# Drop the inventory item on RMB and two finger touch
-	if MdnaInventory.selected_item != null and \
-			 event is InputEventMouseButton and \
-			(event as InputEventMouseButton).button_index == BUTTON_RIGHT and \
-			(event as InputEventMouseButton).pressed:
-		release_item()
-	elif MdnaInventory.selected_item != null and \
-			event is InputEventScreenTouch and \
-			(event as InputEventScreenTouch).index == 2 and \
-			(event as InputEventScreenTouch).pressed:
-		release_item()
-	elif ! is_touch and event is InputEventMouse and $Timer.is_stopped():
-		# Activate the inventory when reaching the upper screen border
-		if ! activated and get_viewport().get_mouse_position().y <= 10:
-			_toggle_inventory()
-		# Deactivate the inventory when the mouse is below it
-		elif activated and \
-				get_viewport().get_mouse_position().y \
-				> $Canvas/Panel.rect_size.y:
-			_toggle_inventory()
+	if not DetailView.is_visible:
+		# Drop the inventory item on RMB and two finger touch
+		if MdnaInventory.selected_item != null and \
+				 event is InputEventMouseButton and \
+				(event as InputEventMouseButton).button_index == BUTTON_RIGHT \
+				and (event as InputEventMouseButton).pressed:
+			release_item()
+		elif MdnaInventory.selected_item != null and \
+				event is InputEventScreenTouch and \
+				(event as InputEventScreenTouch).index == 2 and \
+				(event as InputEventScreenTouch).pressed:
+			release_item()
+		elif ! is_touch and event is InputEventMouse and $Timer.is_stopped():
+			# Activate the inventory when reaching the upper screen border
+			if ! activated and get_viewport().get_mouse_position().y <= 10:
+				toggle_inventory()
+			# Deactivate the inventory when the mouse is below it
+			elif activated and \
+					get_viewport().get_mouse_position().y \
+					> $Canvas/Panel.rect_size.y:
+				toggle_inventory()
 
 
 # Configure the inventory. Should be call by a game core singleton
@@ -110,11 +111,11 @@ func add_item(item: InventoryItem):
 	_update()
 	if ! activated:
 		# Briefly show the inventory when it is not activated
-		_toggle_inventory()
+		toggle_inventory()
 		$Timer.start()
 		yield($Timer,"timeout")
 		$Timer.stop()
-		_toggle_inventory()
+		toggle_inventory()
 
 
 # Remove item from the inventory
@@ -152,7 +153,7 @@ func get_items() -> Array:
 
 
 # Show or hide the inventory
-func _toggle_inventory():
+func toggle_inventory():
 	if activated:
 		$Animations.play_backwards("Activate")
 		activated = false
@@ -163,7 +164,7 @@ func _toggle_inventory():
 
 # Activate the inventory (on touch devices)
 func _on_Activate_pressed():
-	_toggle_inventory()
+	toggle_inventory()
 
 
 # Emit signal, that the notepad was pressed
