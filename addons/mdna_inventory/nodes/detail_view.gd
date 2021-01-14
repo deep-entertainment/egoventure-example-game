@@ -22,7 +22,7 @@ func _on_panel_gui_input(event: InputEvent):
 		$Panel.accept_event()
 		if event is InputEventMouseButton and \
 				event.is_pressed():
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			Speedy.hidden = false
 			$Panel.hide()
 			is_visible = false
 		
@@ -35,7 +35,7 @@ func _on_panel_gui_input(event: InputEvent):
 func show(item: InventoryItem):
 	$Panel/VBox/Image.texture = item.image_big
 	$Panel/VBox/Description.text = item.description
-	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	Speedy.hidden = true
 	$Panel.show()
 	is_visible = true
 	MdnaInventory.toggle_inventory()
