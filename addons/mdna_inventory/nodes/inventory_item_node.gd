@@ -87,6 +87,7 @@ func _on_InventoryItem_pressed():
 			Speedy.set_custom_mouse_cursor(
 				item.image_normal,
 				Input.CURSOR_ARROW,
-				(item.image_normal as Texture).get_size() / 2
+				(item.image_normal as Texture).get_size() / 2,
+				self.rect_global_position
 			)
 
