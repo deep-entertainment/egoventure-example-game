@@ -16,6 +16,9 @@ var hotspot_cursors: Array
 # Inventory configuration
 var inventory_configuration: InventoryConfiguration
 
+# The path to the hints csv file
+var hints_file: String
+
 # The menu background texture
 var menu_background: Texture
 
@@ -48,6 +51,15 @@ var menu_options_speech_sample: AudioStream
 
 # The sample to play when the effect slider is changed
 var menu_options_effects_sample: AudioStream
+
+# The texture in the notepad screen
+var notepad_background: Texture
+
+# The notepad goals label rect
+var notepad_goals_rect: Rect2
+
+# The notepad hints label rect
+var notepad_hints_rect: Rect2
 
 # The path where the scenes are stored
 var scene_path: String = "res://scenes"
@@ -90,6 +102,12 @@ func _get_property_list():
 		type = TYPE_OBJECT,
 		hint = PROPERTY_HINT_RESOURCE_TYPE,
 		hint_string = "InventoryConfiguration"
+	})
+	properties.append({
+		name = "hints_file",
+		type = TYPE_STRING,
+		hint = PROPERTY_HINT_FILE,
+		hint_string = "*.csv"
 	})
 	properties.append({
 		name = "Menu",
@@ -148,6 +166,26 @@ func _get_property_list():
 	properties.append({
 		name = "menu_saveslots_border_color",
 		type = TYPE_COLOR
+	})
+	properties.append({
+		name = "Notepad",
+		type = TYPE_NIL,
+		hint_string = "notepad",
+		usage = PROPERTY_USAGE_GROUP | PROPERTY_USAGE_SCRIPT_VARIABLE
+	})
+	properties.append({
+		name = "notepad_background",
+		type = TYPE_OBJECT,
+		hint = PROPERTY_HINT_RESOURCE_TYPE,
+		hint_string = "Texture"
+	})
+	properties.append({
+		name = "notepad_goals_rect",
+		type = TYPE_RECT2
+	})
+	properties.append({
+		name = "notepad_hints_rect",
+		type = TYPE_RECT2
 	})
 	properties.append({
 		name = "Options",

@@ -44,6 +44,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://game_state.gd"
 }, {
+"base": "Node",
+"class": "Goal",
+"language": "GDScript",
+"path": "res://addons/mdna_core/goal.gd"
+}, {
 "base": "TextureButton",
 "class": "Hotspot",
 "language": "GDScript",
@@ -117,6 +122,7 @@ _global_script_class_icons={
 "FourSideRoom": "",
 "GameConfiguration": "",
 "GameState": "",
+"Goal": "",
 "Hotspot": "res://addons/mdna_core/images/hotspot.svg",
 "HotspotCursor": "",
 "Importer": "",
@@ -143,12 +149,14 @@ config/icon="res://icon.png"
 Parrot="*res://addons/parrot/scenes/parrot_dialog.tscn"
 Core="*res://core.gd"
 WaitingScreen="*res://addons/mdna_core/nodes/waiting_screen.tscn"
-MainMenu="*res://addons/mdna_core/nodes/main_menu.tscn"
-Boombox="*res://addons/mdna_core/nodes/boombox.tscn"
 Cursors="*res://addons/mdna_core/cursors.gd"
-MdnaCore="*res://addons/mdna_core/mdna_core.gd"
 MdnaInventory="*res://addons/mdna_inventory/nodes/mdna_inventory.tscn"
 DetailView="*res://addons/mdna_inventory/nodes/detail_view.tscn"
+Notebook="*res://addons/mdna_core/nodes/notepad.tscn"
+MainMenu="*res://addons/mdna_core/nodes/main_menu.tscn"
+Boombox="*res://addons/mdna_core/nodes/boombox.tscn"
+MdnaCore="*res://addons/mdna_core/mdna_core.gd"
+Notepad="*res://addons/mdna_core/nodes/notepad.tscn"
 
 [display]
 

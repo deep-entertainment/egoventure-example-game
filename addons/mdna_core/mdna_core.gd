@@ -57,7 +57,9 @@ func _process(_delta):
 func configure(p_configuration: GameConfiguration):
 	configuration = p_configuration
 	MainMenu.configure(configuration)
+	Notepad.configure(configuration)
 	MdnaInventory.configure(configuration.inventory_configuration)
+	MdnaInventory.connect("notepad_pressed", self, "_on_notepad_pressed")
 	Cursors.configure(configuration)
 	_scene_cache = SceneCache.new(
 		configuration.scene_cache_count, 
@@ -188,3 +190,8 @@ func _get_current_scene() -> Node:
 
 func _on_queue_complete():
 	emit_signal("queue_complete")
+
+
+# Show the notepad
+func _on_notepad_pressed():
+	Notepad.show()

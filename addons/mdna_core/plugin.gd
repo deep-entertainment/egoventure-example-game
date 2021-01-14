@@ -23,6 +23,10 @@ func _enter_tree():
 		'res://addons/mdna_core/cursors.gd'
 	)
 	add_autoload_singleton("MdnaCore", "res://addons/mdna_core/mdna_core.gd")
+	add_autoload_singleton(
+		"Notepad", 
+		"res://addons/mdna_core/nodes/notepad.tscn"
+	)
 	AudioServer.set_bus_layout(
 		preload("res://addons/mdna_core/default_bus_layout.tres")
 	)
@@ -33,3 +37,4 @@ func _exit_tree():
 	remove_autoload_singleton('MdnaCore')
 	remove_autoload_singleton('MainMenu')
 	remove_autoload_singleton('Boombox')
+	remove_autoload_singleton('Notepad')

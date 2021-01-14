@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=29 format=2]
+[gd_resource type="Resource" load_steps=30 format=2]
 
 [ext_resource path="res://addons/mdna_core/resources/game_configuration.gd" type="Script" id=1]
 [ext_resource path="res://music/credits.ogg" type="AudioStream" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://images/mouse/magnifier.png" type="Texture" id=18]
 [ext_resource path="res://images/mouse/right_corner.png" type="Texture" id=19]
 [ext_resource path="res://images/mouse/left_corner.png" type="Texture" id=20]
+[ext_resource path="res://images/notebook.jpg" type="Texture" id=21]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 15 )
@@ -75,6 +76,7 @@ theme = ExtResource( 5 )
 logo = ExtResource( 3 )
 hotspot_cursors = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ]
 inventory_configuration = ExtResource( 11 )
+hints_file = "res://hints.csv"
 menu_background = ExtResource( 6 )
 menu_music = ExtResource( 2 )
 menu_switch_effect = ExtResource( 4 )
@@ -82,6 +84,9 @@ menu_saveslots_background = ExtResource( 6 )
 menu_saveslots_previous_image = ExtResource( 7 )
 menu_saveslots_next_image = ExtResource( 8 )
 menu_saveslots_border_color = Color( 0, 0, 0, 1 )
+notepad_background = ExtResource( 21 )
+notepad_goals_rect = Rect2( 486.962, 328.348, 559.998, 893.002 )
+notepad_hints_rect = Rect2( 1167.71, 251.597, 560, 893.003 )
 menu_options_background = ExtResource( 6 )
 menu_options_speech_sample = ExtResource( 10 )
 menu_options_effects_sample = ExtResource( 9 )
