@@ -157,6 +157,7 @@ MainMenu="*res://addons/mdna_core/nodes/main_menu.tscn"
 Boombox="*res://addons/mdna_core/nodes/boombox.tscn"
 MdnaCore="*res://addons/mdna_core/mdna_core.gd"
 Notepad="*res://addons/mdna_core/nodes/notepad.tscn"
+Speedy="*res://addons/speedy_gonzales/nodes/speedy.tscn"
 
 [display]
 
@@ -170,7 +171,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "mdna_core", "mdna_inventory", "parrot" )
+enabled=PoolStringArray( "mdna_core", "mdna_inventory", "parrot", "speedy_gonzales" )
 
 [importer_defaults]
 

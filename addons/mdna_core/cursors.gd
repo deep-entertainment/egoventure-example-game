@@ -48,12 +48,12 @@ var _default_cursors: Dictionary = {}
 func configure(configuration: GameConfiguration):
 	for cursor in configuration.hotspot_cursors:
 		_default_cursors[cursor.hotspot_type] = cursor
-		Input.set_custom_mouse_cursor(
+		Speedy.set_custom_mouse_cursor(
 			cursor.cursor,
 			CURSOR_MAP[cursor.hotspot_type],
 			cursor.cursor_hotspot
 		)
-	Input.set_custom_mouse_cursor(
+	Speedy.set_custom_mouse_cursor(
 		configuration.inventory_configuration.mouse_cursor,
 		Input.CURSOR_ARROW,
 		configuration.inventory_configuration.hotspot_cursor
@@ -68,7 +68,7 @@ func configure(configuration: GameConfiguration):
 # - texture: Texture to use for the overridden cursor
 # - hotspot: The cursor hotspot
 func override(type, texture: Texture, hotspot: Vector2):
-	Input.set_custom_mouse_cursor(
+	Speedy.set_custom_mouse_cursor(
 		texture,
 		CURSOR_MAP[type],
 		hotspot
@@ -81,7 +81,7 @@ func override(type, texture: Texture, hotspot: Vector2):
 #
 # - type: The type to reset (based on the Type enum)
 func reset(type):
-	Input.set_custom_mouse_cursor(
+	Speedy.set_custom_mouse_cursor(
 		_default_cursors[type].cursor,
 		CURSOR_MAP[type],
 		_default_cursors[type].cursor_hotspot
