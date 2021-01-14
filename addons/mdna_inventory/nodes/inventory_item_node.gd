@@ -15,6 +15,7 @@ var item: InventoryItem
 onready var _is_touch: bool = OS.has_touchscreen_ui_hint()
 
 
+# Handle detail view trigger
 func _gui_input(event):
 	if MdnaInventory.selected_item == null:
 		if event is InputEventScreenTouch and \
@@ -39,6 +40,7 @@ func configure(p_item: InventoryItem):
 	connect("mouse_exited", self, "_on_mouse_exited")
 
 
+# Show the detail view
 func show_detail():
 	DetailView.show(item)
 
