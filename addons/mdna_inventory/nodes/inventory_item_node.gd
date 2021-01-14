@@ -47,7 +47,7 @@ func show_detail():
 func _on_mouse_entered():
 	if MdnaInventory.selected_item != null and \
 			MdnaInventory.selected_item != self:
-		Input.set_custom_mouse_cursor(
+		Speedy.set_custom_mouse_cursor(
 			MdnaInventory.selected_item.item.image_active,
 			Input.CURSOR_ARROW,
 			Vector2(32, 32)
@@ -58,7 +58,7 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	if MdnaInventory.selected_item != null and \
 			MdnaInventory.selected_item != self:
-		Input.set_custom_mouse_cursor(
+		Speedy.set_custom_mouse_cursor(
 			MdnaInventory.selected_item.item.image_normal,
 			Input.CURSOR_ARROW,
 			Vector2(32, 32)
@@ -85,7 +85,7 @@ func _on_InventoryItem_pressed():
 			texture_normal = item.image_active
 		else:
 			modulate.a = 0
-			Input.set_custom_mouse_cursor(
+			Speedy.set_custom_mouse_cursor(
 				item.image_normal,
 				Input.CURSOR_ARROW,
 				(item.image_normal as Texture).get_size() / 2

@@ -138,7 +138,7 @@ func release_item():
 	selected_item.modulate.a = 1
 	selected_item = null
 	if not is_touch:
-		Input.set_custom_mouse_cursor(
+		Speedy.set_custom_mouse_cursor(
 			configuration.mouse_cursor, 
 			Input.CURSOR_ARROW,
 			configuration.hotspot_cursor

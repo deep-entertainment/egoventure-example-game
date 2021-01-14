@@ -10,6 +10,10 @@ var goals: Array
 var current_goal: int = 1
 
 
+# Wether the hints are currently shown
+var _hints_shown: bool = false
+
+
 # Basic style configuration
 func _ready():
 	$Control.hide()
@@ -119,4 +123,12 @@ func _show_hints():
 func _on_Goals_gui_input(event):
 	if event is InputEventMouseButton and \
 			not (event as InputEventMouseButton).pressed:
-		_show_hints()
+		if _hints_shown:
+			$Control/Hints.text = ""
+		else:
+			_show_hints()
+		_hints_shown = not _hints_shown
+
+
+func _on_Close_pressed():
+	$Control.hide()

@@ -39,19 +39,19 @@ func _on_mouse_entered():
 				found = true
 		
 		if found:
-			Input.set_custom_mouse_cursor(
+			Speedy.set_custom_mouse_cursor(
 				MdnaInventory.selected_item.item.image_active,
 				Input.CURSOR_ARROW,
 				MdnaInventory.selected_item.item.image_active.get_size() / 2
 			)
 		else:
-			Input.set_custom_mouse_cursor(
+			Speedy.set_custom_mouse_cursor(
 				MdnaInventory.selected_item.item.image_normal,
 				Input.CURSOR_ARROW,
 				MdnaInventory.selected_item.item.image_normal.get_size() / 2
 			)
 	else:
-		Input.set_custom_mouse_cursor(
+		Speedy.set_custom_mouse_cursor(
 			MdnaInventory.configuration.use_cursor,
 			Input.CURSOR_ARROW,
 			MdnaInventory.configuration.use_cursor_hotspot
@@ -62,13 +62,13 @@ func _on_mouse_entered():
 # the hotspot
 func _on_mouse_exited():
 	if MdnaInventory.selected_item != null:
-		Input.set_custom_mouse_cursor(
+		Speedy.set_custom_mouse_cursor(
 			MdnaInventory.selected_item.item.image_normal,
 			Input.CURSOR_ARROW,
 			MdnaInventory.selected_item.item.image_normal.get_size() / 2
 		)
 	else:
-		Input.set_custom_mouse_cursor(
+		Speedy.set_custom_mouse_cursor(
 			MdnaInventory.configuration.mouse_cursor,
 			Input.CURSOR_ARROW,
 			MdnaInventory.configuration.hotspot_cursor

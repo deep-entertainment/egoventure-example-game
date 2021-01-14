@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/mdna_core/nodes/notepad.gd" type="Script" id=1]
 [ext_resource path="res://images/notebook.jpg" type="Texture" id=2]
 [ext_resource path="res://theme.tres" type="Theme" id=3]
+[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=4]
 
 [node name="Notepad" type="CanvasLayer"]
 layer = 2
@@ -41,8 +42,6 @@ rect_rotation = -9.12779
 mouse_filter = 0
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "This is a test
-"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -55,4 +54,17 @@ margin_right = 1727.71
 margin_bottom = 1144.6
 rect_rotation = -9.12779
 autowrap = true
+
+[node name="Close" type="TextureButton" parent="Control"]
+margin_left = 1.0
+margin_top = 1290.0
+margin_right = 2560.0
+margin_bottom = 1440.0
+mouse_default_cursor_shape = 6
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 1
 [connection signal="gui_input" from="Control/Goals" to="." method="_on_Goals_gui_input"]
+[connection signal="pressed" from="Control/Close" to="." method="_on_Close_pressed"]
