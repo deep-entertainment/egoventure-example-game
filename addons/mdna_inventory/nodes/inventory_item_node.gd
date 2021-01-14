@@ -67,10 +67,9 @@ func _on_mouse_exited():
 
 # Handle clicks on another inventory item
 func _on_InventoryItem_pressed():
-	if MdnaInventory.selected_item == self:
+	if _is_touch and MdnaInventory.selected_item == self:
 		# On touch, selecting the same item again, deselects it
-		MdnaInventory.selected_item = null
-		texture_normal = item.image_normal
+		MdnaInventory.release_item()
 	elif MdnaInventory.selected_item != null:
 		# Another item was triggered with the current one
 		emit_signal(
