@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=30 format=2]
+[gd_resource type="Resource" load_steps=31 format=2]
 
 [ext_resource path="res://addons/mdna_core/resources/game_configuration.gd" type="Script" id=1]
 [ext_resource path="res://music/credits.ogg" type="AudioStream" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://images/mouse/right_corner.png" type="Texture" id=19]
 [ext_resource path="res://images/mouse/left_corner.png" type="Texture" id=20]
 [ext_resource path="res://images/notebook.jpg" type="Texture" id=21]
+[ext_resource path="res://icon.png" type="Texture" id=22]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 15 )
@@ -90,6 +91,8 @@ notepad_hints_rect = Rect2( 1167.71, 251.597, 560, 893.003 )
 menu_options_background = ExtResource( 6 )
 menu_options_speech_sample = ExtResource( 10 )
 menu_options_effects_sample = ExtResource( 9 )
+map_image = ExtResource( 22 )
+map_sound = ExtResource( 9 )
 scene_path = "res://scenes"
 scene_cache_count = 5
 scene_default_image_scaling = 0.635

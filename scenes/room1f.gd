@@ -28,5 +28,4 @@ func _on_left_pressed():
 
 
 func _on_Hotspot_pressed():
-	MdnaInventory.add_item(preload("res://inventory/keys.tres"))
-	MdnaInventory.add_item(preload("res://inventory/keys.tres"))
+	MapNotification.notify()

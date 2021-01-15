@@ -61,6 +61,7 @@ func configure(p_configuration: GameConfiguration):
 	MdnaInventory.configure(configuration.inventory_configuration)
 	MdnaInventory.connect("notepad_pressed", self, "_on_notepad_pressed")
 	Cursors.configure(configuration)
+	MapNotification.configure(configuration)
 	_scene_cache = SceneCache.new(
 		configuration.scene_cache_count, 
 		configuration.scene_path,

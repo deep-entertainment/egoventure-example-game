@@ -61,6 +61,12 @@ var notepad_goals_rect: Rect2
 # The notepad hints label rect
 var notepad_hints_rect: Rect2
 
+# The flashing map image
+var map_image: Texture
+
+# The sound to play when flashing the map
+var map_sound: AudioStream
+
 # The path where the scenes are stored
 var scene_path: String = "res://scenes"
 
@@ -207,6 +213,18 @@ func _get_property_list():
 	})
 	properties.append({
 		name = "menu_options_effects_sample",
+		type = TYPE_OBJECT,
+		hint = PROPERTY_HINT_RESOURCE_TYPE,
+		hint_string = "AudioStream"
+	})
+	properties.append({
+		name = "map_image",
+		type = TYPE_OBJECT,
+		hint = PROPERTY_HINT_RESOURCE_TYPE,
+		hint_string = "Texture"
+	})
+	properties.append({
+		name = "map_sound",
 		type = TYPE_OBJECT,
 		hint = PROPERTY_HINT_RESOURCE_TYPE,
 		hint_string = "AudioStream"

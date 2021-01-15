@@ -27,6 +27,10 @@ func _enter_tree():
 		"Notepad", 
 		"res://addons/mdna_core/nodes/notepad.tscn"
 	)
+	add_autoload_singleton(
+		"MapNotification",
+		"res://addons/mdna_core/nodes/map_notification.tscn"
+	)
 	AudioServer.set_bus_layout(
 		preload("res://addons/mdna_core/default_bus_layout.tres")
 	)
@@ -38,3 +42,4 @@ func _exit_tree():
 	remove_autoload_singleton('MainMenu')
 	remove_autoload_singleton('Boombox')
 	remove_autoload_singleton('Notepad')
+	remove_autoload_singleton('MapNotification')
