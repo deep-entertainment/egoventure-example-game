@@ -42,14 +42,14 @@ func _ready():
 		"font",
 		$Control/Goals.get_font(
 			"goals", 
-			"Font"
+			"Label"
 		)
 	)
 	$Control/Hints.add_font_override(
 		"font",
 		$Control/Hints.get_font(
 			"hints",
-			"Font"
+			"Label"
 		)
 	)
 
