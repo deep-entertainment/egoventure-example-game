@@ -34,9 +34,6 @@ var menu_switch_effect: AudioStream
 # The background texture for the save slots
 var menu_saveslots_background: Texture
 
-# The border color for the screenshots or empty slots
-var menu_saveslots_border_color: Color
-
 # The image for the "Previous page" button
 var menu_saveslots_previous_image: Texture
 
@@ -168,10 +165,6 @@ func _get_property_list():
 		type = TYPE_OBJECT,
 		hint = PROPERTY_HINT_RESOURCE_TYPE,
 		hint_string = "Texture"
-	})
-	properties.append({
-		name = "menu_saveslots_border_color",
-		type = TYPE_COLOR
 	})
 	properties.append({
 		name = "Notepad",

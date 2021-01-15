@@ -20,6 +20,10 @@ Additionally, the game uses Godot's default dialog boxes for confirmation and me
 
 In this document, each category and setting is described.
 
+## Default Font
+
+The default font that is used throughout the game
+
 ## Button
 
 | Subcategory | Setting              | Description                                          | Used in          |
