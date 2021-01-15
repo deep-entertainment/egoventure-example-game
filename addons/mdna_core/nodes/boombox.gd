@@ -5,30 +5,44 @@ extends Node
 var ignore_pause: bool setget _set_ignore_pause
 
 
+onready var active_music: Node = $Music1
+
+
 # Play a new music file, if it isn't the current one.
 #
 # ** Parameters**
 #
 # - music: An audiostream of the music to play
 func play_music(music: AudioStream):
-	if music != $Music.stream or not $Music.playing:
-		$Music.stream = music
-		$Music.play()
+	if music != active_music.stream or not active_music.playing:
+		if not active_music.playing:
+			active_music.stream = music
+			active_music.play()
+		elif active_music == $Music1:
+			$Music2.stream = music
+			$Music2.play()
+			$Fader.play("fadeto2")
+			active_music = $Music2
+		else:
+			$Music1.stream = music
+			$Music1.play()
+			$Fader.play("fadeto1")
+			active_music = $Music1
 
 
 # Pause playing music
 func pause_music():
-	$Music.stream_paused = true
+	active_music.stream_paused = true
 
 
 # Resume playing music
 func resume_music():
-	$Music.stream_paused = false
+	active_music.stream_paused = false
 	
 
 # Stop the currently playing music
 func stop_music():
-	$Music.stop()
+	active_music.stop()
 	
 
 # Play a background effect
