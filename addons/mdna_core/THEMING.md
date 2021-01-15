@@ -12,7 +12,7 @@ This document describes the available theming settings.
 
 Upon opening _theme.tres_ using the file system browser in Godot, the inspector shows the theme like this:
 
-<img title="" src="file:///var/folders/8j/h44wpsp14kdff86yx8gkl0t40000gn/T/se.razola.Glui2/8023F831-6FC8-49F2-AE6C-EAA6B588DD66-626-00018BC10AD474A9/2021-01-15%20at%2021.43.png" alt="" data-align="center">
+<img title="" src="docs/theme.png" alt="" data-align="center">
 
 The theme is categorized in different UI element types. Throughout the game, different aspects use different UI elements to achieve the desired result.
 
