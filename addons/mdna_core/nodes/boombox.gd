@@ -2,6 +2,9 @@
 extends Node
 
 
+var ignore_pause: bool setget _set_ignore_pause
+
+
 # Play a new music file, if it isn't the current one.
 #
 # ** Parameters**
@@ -79,3 +82,16 @@ func resume_effect():
 # Stop playing a sound a effect
 func stop_effect():
 	$Effects.stop
+
+
+# React to ignore_pause
+func _set_ignore_pause(value: bool):
+	ignore_pause = value
+	if ignore_pause:
+		$Music.pause_mode = Node.PAUSE_MODE_PROCESS
+		$Background.pause_mode = Node.PAUSE_MODE_PROCESS
+		$Effects.pause_mode = Node.PAUSE_MODE_PROCESS
+	else:
+		$Music.pause_mode = Node.PAUSE_MODE_STOP
+		$Background.pause_mode = Node.PAUSE_MODE_STOP
+		$Effects.pause_mode = Node.PAUSE_MODE_STOP
