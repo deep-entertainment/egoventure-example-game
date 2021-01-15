@@ -81,7 +81,7 @@ func configure(configuration: GameConfiguration):
 			current_goal.id = int(line[2])
 			current_goal.hint_visible = 1
 			current_goal.hints = []
-		elif line.size() >= 2:
+		elif line.size() >= 2 and line[1] != "":
 			current_goal.hints.append(line[1])
 
 
@@ -89,7 +89,7 @@ func configure(configuration: GameConfiguration):
 func finished_step(goal_id: int, step: int):
 	var goal = _get_goal(goal_id)
 	if step + 1 > goal.hint_visible:
-		goal.hint_visible = step
+		goal.hint_visible = step + 1
 		if goal.id == current_goal and \
 				goal.hint_visible > goal.hints.size():
 			current_goal = current_goal + 1
