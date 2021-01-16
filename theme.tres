@@ -37,7 +37,7 @@ bg_color = Color( 0.231373, 0.231373, 0.231373, 1 )
 expand_margin_left = 20.0
 expand_margin_right = 20.0
 
-[sub_resource type="StyleBoxEmpty" id=24]
+[sub_resource type="StyleBoxEmpty" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=10]
 content_margin_left = 10.0
@@ -119,7 +119,7 @@ Button/styles/normal = SubResource( 8 )
 Button/styles/pressed = null
 CheckButton/icons/off = ExtResource( 3 )
 CheckButton/icons/on = ExtResource( 4 )
-CheckButton/styles/focus = SubResource( 24 )
+CheckButton/styles/focus = SubResource( 9 )
 CheckButton/styles/hover = SubResource( 10 )
 CheckButton/styles/hover_pressed = SubResource( 10 )
 CheckButton/styles/normal = SubResource( 10 )
