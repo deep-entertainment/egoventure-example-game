@@ -6,8 +6,8 @@ extends TextureButton
 
 
 # The hotspot type
-export(Cursors.Type) var hotspot_type = \
-		Cursors.Type.GO_FORWARD setget _set_hotspot_type
+export(Cursors.Type) var hotspot_type = Cursors.Type.GO_FORWARD \
+		setget _set_hotspot_type
 
 
 # If set, changes to the given scene
@@ -28,6 +28,11 @@ export(
 func _ready():
 	if target_scene != "":
 		connect("pressed", self, "_pressed")
+
+
+# Set the default value of a new hotspot
+func _enter_tree():
+	_set_hotspot_type(hotspot_type)
 
 
 # Set the hotspot type
