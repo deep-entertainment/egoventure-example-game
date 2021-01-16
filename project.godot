@@ -72,12 +72,12 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "InventoryConfiguration",
 "language": "GDScript",
-"path": "res://addons/mdna_inventory/types/inventory_configuration.gd"
+"path": "res://addons/mdna_inventory/resources/inventory_configuration.gd"
 }, {
 "base": "Resource",
 "class": "InventoryItem",
 "language": "GDScript",
-"path": "res://addons/mdna_inventory/types/inventory_item.gd"
+"path": "res://addons/mdna_inventory/resources/inventory_item.gd"
 }, {
 "base": "TextureButton",
 "class": "InventoryItemNode",

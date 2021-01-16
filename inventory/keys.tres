@@ -1,8 +1,9 @@
 [gd_resource type="Resource" load_steps=4 format=2]
 
-[ext_resource path="res://addons/mdna_inventory/types/inventory_item.gd" type="Script" id=1]
+[ext_resource path="res://addons/mdna_inventory/resources/inventory_item.gd" type="Script" id=1]
 [ext_resource path="res://inventory/keys.png" type="Texture" id=3]
 [ext_resource path="res://inventory/keys_active.png" type="Texture" id=4]
+
 
 [resource]
 script = ExtResource( 1 )
