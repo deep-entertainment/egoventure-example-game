@@ -79,20 +79,22 @@ func configure(configuration: GameConfiguration):
 			current_goal = Goal.new()
 			current_goal.title = line[1]
 			current_goal.id = int(line[2])
-			current_goal.hint_visible = 1
+			current_goal.hints_fulfilled = []
 			current_goal.hints = []
 		elif line.size() >= 2 and line[1] != "":
 			current_goal.hints.append(line[1])
+			current_goal.hints_fulfilled.append(false)
 
 
 # A step of a goal was finished, advance the hints and perhaps switch the goal
 func finished_step(goal_id: int, step: int):
 	var goal = _get_goal(goal_id)
-	if step + 1 > goal.hint_visible:
-		goal.hint_visible = step + 1
-		if goal.id == current_goal and \
-				goal.hint_visible > goal.hints.size():
-			current_goal = current_goal + 1
+	goal.hints_fulfilled[step] = true
+	var last_hint = _find_last_fulfilled_hint(goal)
+	
+	if goal.id == current_goal and \
+			last_hint == goal.hints.size() - 1:
+		current_goal = current_goal + 1
 
 
 # Show the notepad
@@ -115,7 +117,8 @@ func _get_goal(id: int) -> Goal:
 func _show_hints():
 	$Control/Hints.text = ""
 	var goal: Goal = _get_goal(current_goal)
-	for index in range(goal.hint_visible):
+	var last_hint = _find_last_fulfilled_hint(goal)
+	for index in range(last_hint):
 		$Control/Hints.text = \
 				$Control/Hints.text + goal.hints[index] + "\n"
 
@@ -132,3 +135,12 @@ func _on_Goals_gui_input(event):
 
 func _on_Close_pressed():
 	$Control.hide()
+
+
+# Find the last fulfilled hint of a goal
+func _find_last_fulfilled_hint(goal: Goal):
+	var last_fulfilled_hint = 0
+	while goal.hints_fulfilled.size() <= last_fulfilled_hint and \
+			goal.hints_fulfilled[last_fulfilled_hint]:
+		last_fulfilled_hint = last_fulfilled_hint + 1
+	return last_fulfilled_hint - 1

@@ -15,4 +15,4 @@ export (Array, String) var hints
 
 
 # The last hint currently visible
-export (int) var hint_visible
+export (Array, bool) var hints_fulfilled
