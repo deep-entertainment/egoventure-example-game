@@ -21,10 +21,12 @@ func _gui_input(event):
 		if event is InputEventScreenTouch and \
 				(event as InputEventScreenTouch).index == 2:
 			show_detail()
+			accept_event()
 		elif event is InputEventMouseButton and \
 				(event as InputEventMouseButton).button_index == BUTTON_RIGHT \
 				and not (event as InputEventMouseButton).pressed:
 			show_detail()
+			accept_event()
 
 
 # Configure this item and connect the required signals

@@ -45,11 +45,13 @@ func _input(event):
 				(event as InputEventMouseButton).button_index == BUTTON_RIGHT \
 				and (event as InputEventMouseButton).pressed:
 			release_item()
+			accept_event()
 		elif MdnaInventory.selected_item != null and \
 				event is InputEventScreenTouch and \
 				(event as InputEventScreenTouch).index == 2 and \
 				(event as InputEventScreenTouch).pressed:
 			release_item()
+			accept_event()
 		elif ! is_touch and event is InputEventMouse and $Timer.is_stopped():
 			# Activate the inventory when reaching the upper screen border
 			if ! activated and get_viewport().get_mouse_position().y <= 10:
