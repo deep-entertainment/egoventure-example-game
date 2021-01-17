@@ -2,6 +2,9 @@
 extends Node
 
 
+signal cursors_configured
+
+
 # The available types of cursors
 enum Type {
 	GO_FORWARD,
@@ -58,6 +61,7 @@ func configure(configuration: GameConfiguration):
 		Input.CURSOR_ARROW,
 		configuration.inventory_configuration.hotspot_cursor
 	)
+	emit_signal("cursors_configured")
 
 
 # Override a specific cursor type with a texture
@@ -86,3 +90,15 @@ func reset(type):
 		CURSOR_MAP[type],
 		_default_cursors[type].cursor_hotspot
 	)
+
+
+# Return the texture of the specified hotspot type
+# 
+# ** Parameters **
+#
+# - type: The type to return the default texture of
+func get_cursor_texture(type):
+	if type in _default_cursors:
+		return _default_cursors[type].cursor
+	
+	return null
