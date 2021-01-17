@@ -51,14 +51,22 @@ func show_detail():
 func _on_mouse_entered():
 	if MdnaInventory.selected_item != null and \
 			MdnaInventory.selected_item != self:
+		var found = false
 		for combineable_item in item.combineable_with:
 			if MdnaInventory.selected_item.item.title == combineable_item.title:
-				Speedy.set_custom_mouse_cursor(
-					MdnaInventory.selected_item.item.image_active,
-					Input.CURSOR_ARROW,
-					Vector2(32, 32)
-				)
+				found = true
 				break
+		for combineable_item in \
+				MdnaInventory.selected_item.item.combineable_with:
+			if combineable_item.title == item.title:
+				found = true
+				break
+		if found:
+			Speedy.set_custom_mouse_cursor(
+				MdnaInventory.selected_item.item.image_active,
+				Input.CURSOR_ARROW,
+				Vector2(32, 32)
+			)
 			
 	
 # Reset inventory item mouse cursor
