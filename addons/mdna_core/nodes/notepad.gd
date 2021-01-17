@@ -86,15 +86,19 @@ func configure(configuration: GameConfiguration):
 			current_goal.hints_fulfilled.append(false)
 
 
-# A step of a goal was finished, advance the hints and perhaps switch the goal
+# A step of a goal was finished, advance the hints and
+# switch to the next goal until a goal with an unfinished step comes along
 func finished_step(goal_id: int, step: int):
 	var goal = _get_goal(goal_id)
-	goal.hints_fulfilled[step] = true
-	var last_hint = _find_last_fulfilled_hint(goal)
+	goal.hints_fulfilled[step - 1] = true
 	
-	if goal.id == current_goal and \
-			last_hint == goal.hints.size() - 1:
-		current_goal = current_goal + 1
+	if goal_id == current_goal:
+		goal = _get_goal(current_goal)
+		var first_unfulfilled_hint = _find_first_unfulfilled_hint(goal)
+		while first_unfulfilled_hint == goal.hints.size():
+			current_goal = current_goal + 1
+			goal = _get_goal(current_goal)
+			first_unfulfilled_hint = _find_first_unfulfilled_hint(goal)
 
 
 # Show the notepad
@@ -102,6 +106,7 @@ func show():
 	var goal: Goal = _get_goal(current_goal)
 	$Control/Goals.text = goal.title
 	$Control/Hints.text = ""
+	_hints_shown = false
 	$Control.show()
 
 
@@ -117,12 +122,13 @@ func _get_goal(id: int) -> Goal:
 func _show_hints():
 	$Control/Hints.text = ""
 	var goal: Goal = _get_goal(current_goal)
-	var last_hint = _find_last_fulfilled_hint(goal)
-	for index in range(last_hint):
+	var first_unfulfilled = _find_first_unfulfilled_hint(goal)
+	for index in range(first_unfulfilled + 1):
 		$Control/Hints.text = \
 				$Control/Hints.text + goal.hints[index] + "\n"
 
 
+# Toggle showing hints
 func _on_Goals_gui_input(event):
 	if event is InputEventMouseButton and \
 			not (event as InputEventMouseButton).pressed:
@@ -133,14 +139,15 @@ func _on_Goals_gui_input(event):
 		_hints_shown = not _hints_shown
 
 
+# Get out of notepad
 func _on_Close_pressed():
 	$Control.hide()
 
 
-# Find the last fulfilled hint of a goal
-func _find_last_fulfilled_hint(goal: Goal):
-	var last_fulfilled_hint = 0
-	while goal.hints_fulfilled.size() <= last_fulfilled_hint and \
-			goal.hints_fulfilled[last_fulfilled_hint]:
-		last_fulfilled_hint = last_fulfilled_hint + 1
-	return last_fulfilled_hint - 1
+# Find the first unfulfilled hint of a goal
+func _find_first_unfulfilled_hint(goal: Goal):
+	var first_unfulfilled_hint = 0
+	while first_unfulfilled_hint < goal.hints_fulfilled.size() and \
+			goal.hints_fulfilled[first_unfulfilled_hint]:
+		first_unfulfilled_hint = first_unfulfilled_hint + 1
+	return first_unfulfilled_hint
