@@ -123,9 +123,7 @@ func _show_hints():
 	$Control/Hints.text = ""
 	var goal: Goal = _get_goal(current_goal)
 	var first_unfulfilled = _find_first_unfulfilled_hint(goal)
-	for index in range(first_unfulfilled + 1):
-		$Control/Hints.text = \
-				$Control/Hints.text + goal.hints[index] + "\n"
+	$Control/Hints.text = goal.hints[first_unfulfilled]
 
 
 # Toggle showing hints
