@@ -4,7 +4,6 @@
 [ext_resource path="res://inventory/keys.png" type="Texture" id=3]
 [ext_resource path="res://inventory/keys_active.png" type="Texture" id=4]
 
-
 [resource]
 script = ExtResource( 1 )
 title = "Keys"
@@ -12,3 +11,4 @@ description = "Those are my keys."
 image_normal = ExtResource( 3 )
 image_active = ExtResource( 4 )
 image_big = ExtResource( 3 )
+combineable_with = [  ]
