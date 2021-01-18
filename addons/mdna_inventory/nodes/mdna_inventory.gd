@@ -171,7 +171,8 @@ func _on_Activate_pressed():
 
 # Emit signal, that the notepad was pressed
 func _on_Notepad_pressed():
-	emit_signal("notepad_pressed")
+	if selected_item == null:
+		emit_signal("notepad_pressed")
 
 
 # Emit signal, that the menu was pressed
