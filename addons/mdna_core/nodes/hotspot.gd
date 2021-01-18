@@ -35,7 +35,6 @@ func _init():
 	add_child(_hotspot_indicator)
 	_hotspot_indicator.hide()
 	_hotspot_indicator.position = rect_size / 2
-	Cursors.connect("cursors_configured", self, "_set_hotspot_indicator")
 
 
 # Connect the pressed signal
@@ -64,6 +63,10 @@ func _enter_tree():
 func _set_hotspot_type(type):
 	hotspot_type = type
 	mouse_default_cursor_shape = Cursors.CURSOR_MAP[type]
+	if Cursors.get_cursor_texture(hotspot_type) == null:
+		yield(Cursors, "cursors_configured")
+		
+	_hotspot_indicator.texture = Cursors.get_cursor_texture(hotspot_type) 
 
 
 # Switch to the target scene with the configured target view
@@ -72,9 +75,3 @@ func _pressed():
 	MdnaCore.target_view = target_view
 	if target_scene != "":
 		MdnaCore.change_scene(target_scene)
-
-
-# Set the texture of the hotspot indicator after the cursors have been 
-# configured
-func _set_hotspot_indicator():
-	_hotspot_indicator.texture = Cursors.get_cursor_texture(hotspot_type) 
