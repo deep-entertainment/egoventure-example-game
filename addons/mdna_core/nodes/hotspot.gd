@@ -45,8 +45,10 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("hotspot_indicator"):
+		Speedy.hidden = true
 		_hotspot_indicator.show()
 	elif event.is_action_released("hotspot_indicator"):
+		Speedy.hidden = false
 		_hotspot_indicator.hide()
 
 
