@@ -40,6 +40,7 @@ margin_right = 1046.96
 margin_bottom = 1221.35
 rect_rotation = -9.12779
 mouse_filter = 0
+mouse_default_cursor_shape = 2
 theme = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 autowrap = true
