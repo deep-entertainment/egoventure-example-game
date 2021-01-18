@@ -29,6 +29,7 @@ The default font that is used throughout the game
 | Subcategory | Setting              | Description                                          | Used in          |
 | ----------- | -------------------- | ---------------------------------------------------- | ---------------- |
 | Colors      | Font Color           | Color of the text on default buttons                 | Standard Dialogs |
+|             | Font Color Disabled  | Color of the text when a button is disabled          | Standard Dialogs |
 |             | Font Color Hover     | Color of the text when hovering over default buttons | Standard Dialogs |
 |             | Font Color Pressed   | Coloer of the text when pressing default buttons     | Standard Dialogs |
 | Styles      | Focus                | Fill style of default buttons                        | Standard Dialogs |
