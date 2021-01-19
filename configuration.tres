@@ -9,7 +9,7 @@
 [ext_resource path="res://images/previous.png" type="Texture" id=7]
 [ext_resource path="res://images/next.png" type="Texture" id=8]
 [ext_resource path="res://sounds/cheers.ogg" type="AudioStream" id=9]
-[ext_resource path="res://voices/1_communicator_notification.1.ogg" type="AudioStream" id=10]
+[ext_resource path="res://voices/keys-0.ogg" type="AudioStream" id=10]
 [ext_resource path="res://inventory_configuration.tres" type="Resource" id=11]
 [ext_resource path="res://images/mouse/forward.png" type="Texture" id=12]
 [ext_resource path="res://images/mouse/right.png" type="Texture" id=13]
@@ -23,6 +23,7 @@
 [ext_resource path="res://images/notebook.jpg" type="Texture" id=21]
 [ext_resource path="res://icon.png" type="Texture" id=22]
 [ext_resource path="res://images/mouse/map.png" type="Texture" id=23]
+
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 15 )
