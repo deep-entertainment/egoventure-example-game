@@ -34,10 +34,10 @@ __meta__ = {
 }
 
 [node name="Goals" type="Label" parent="Control"]
-margin_left = 486.962
-margin_top = 328.348
-margin_right = 1046.96
-margin_bottom = 1221.35
+margin_left = 504.0
+margin_top = 325.0
+margin_right = 1047.0
+margin_bottom = 531.0
 rect_rotation = -9.12779
 mouse_filter = 0
 mouse_default_cursor_shape = 12
