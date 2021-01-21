@@ -7,6 +7,7 @@ func _ready():
 	MdnaCore.configure(preload("res://configuration.tres"))
 	Parrot.subtitles = MdnaCore.in_game_configuration.subtitles
 	Parrot.configure(MdnaCore.configuration.theme)
+	Parrot. time_addendum_seconds=0.5
 	MainMenu.connect("new_game", self, "_on_new_game")
 	MdnaInventory.connect("triggered_inventory_item", self, "_on_triggered_inventory_item")
 	
