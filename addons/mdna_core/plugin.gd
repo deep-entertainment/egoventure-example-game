@@ -31,9 +31,6 @@ func _enter_tree():
 		"MapNotification",
 		"res://addons/mdna_core/nodes/map_notification.tscn"
 	)
-	AudioServer.set_bus_layout(
-		preload("res://addons/mdna_core/default_bus_layout.tres")
-	)
 
 
 # Remove the previously loaded singletons

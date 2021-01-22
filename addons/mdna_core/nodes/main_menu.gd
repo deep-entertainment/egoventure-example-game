@@ -44,14 +44,6 @@ func _ready():
 	for child in $Menu/MainMenu/Margin/VBox/MenuItems.get_children():
 		(child as Button).connect("mouse_entered", self, "_on_menuitem_hover", [true, child])
 		(child as Button).connect("mouse_exited", self, "_on_menuitem_hover", [false, child])
-	
-	# Set the audio levels to the stored values
-	$Menu/Options/CenterContainer/VBox/Effects/Slider.value = \
-			_get_bus_percent("Effects")	
-	$Menu/Options/CenterContainer/VBox/Music/Slider.value = \
-			_get_bus_percent("Music")
-	$Menu/Options/CenterContainer/VBox/Speech/Slider.value = \
-			_get_bus_percent("Speech")
 
 
 # React to the ui_menu action
