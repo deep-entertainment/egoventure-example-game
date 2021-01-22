@@ -26,3 +26,10 @@ func _ready():
 			"Button"
 		)
 	)
+	add_stylebox_override(
+		"pressed", 
+		get_stylebox(
+			"menu_button_pressed", 
+			"Button"
+		)
+	)

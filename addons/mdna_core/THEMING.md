@@ -31,7 +31,7 @@ The default font that is used throughout the game
 | Colors      | Dialog Hotspot Font Color Disabled | Color of the text on disabled dialog hotspots        | Dialog Hotspots  |
 |             | Dialog Hotspot Font Color Hover    | Color of the text on dialog hotspots when hovered    | Dialog Hotspots  |
 |             | Dialog Hotspot Font Color Normal   | Color of the text on dialog hotspots                 | Dialog Hotspots  |
-|             | Dialog Hotspot Font Color Pressed  | Color of the text on pressed dialog hotspots         | Parrot Dialogs   |
+|             | Dialog Hotspot Font Color Pressed  | Color of the text on pressed dialog hotspots         | Dialog Hotspots  |
 |             | Font Color                         | Color of the text on default buttons                 | Standard Dialogs |
 |             | Font Color Disabled                | Color of the text when a button is disabled          | Standard Dialogs |
 |             | Font Color Hover                   | Color of the text when hovering over default buttons | Standard Dialogs |
@@ -46,6 +46,7 @@ The default font that is used throughout the game
 |             | Menu Button Disabled               | Fill style of menu buttons when disabled             | Main menu        |
 |             | Menu Button Hover                  | Fill style of menu buttons when hovered              | Main menu        |
 |             | Menu Button Normal                 | Fill style of menu buttons                           | Main menu        |
+|             | Menu Button Pressed                | Fill style of pressed menu buttons                   | Main menu        |
 |             | Normal                             | Fill style of default buttons                        | Standard Dialogs |
 |             | Pressed                            | Fill style of default buttons                        | Standard Dialogs |
 

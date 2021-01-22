@@ -138,6 +138,7 @@ Button/styles/hover = SubResource( 6 )
 Button/styles/menu_button_disabled = null
 Button/styles/menu_button_hover = SubResource( 9 )
 Button/styles/menu_button_normal = SubResource( 12 )
+Button/styles/menu_button_pressed = null
 Button/styles/normal = SubResource( 13 )
 Button/styles/pressed = null
 CheckButton/icons/off = ExtResource( 3 )
