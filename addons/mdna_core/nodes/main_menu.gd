@@ -60,7 +60,8 @@ func _ready():
 #
 # - event: The event that happened
 func _input(event: InputEvent):
-	if event.is_action_released("ui_menu"):
+	if event.is_action_released("ui_menu") \
+			and MdnaInventory.selected_item == null:
 		if $Menu/SaveSlots.visible:
 			$Menu/SaveSlots.hide()
 		else:
