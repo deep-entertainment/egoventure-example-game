@@ -52,7 +52,8 @@ func _input(event):
 				not (event as InputEventScreenTouch).pressed:
 			release_item()
 			accept_event()
-		elif ! is_touch and event is InputEventMouse and $Timer.is_stopped():
+		elif ! is_touch and event is InputEventMouseMotion and \
+				$Timer.is_stopped():
 			# Activate the inventory when reaching the upper screen border
 			if ! activated and get_viewport().get_mouse_position().y <= 10:
 				toggle_inventory()
@@ -173,11 +174,13 @@ func _on_Activate_pressed():
 func _on_Notepad_pressed():
 	if selected_item == null:
 		emit_signal("notepad_pressed")
+		accept_event()
 
 
 # Emit signal, that the menu was pressed
 func _on_Menu_pressed():
 	emit_signal("menu_pressed")
+	accept_event()
 
 
 # Emit a signal, that one item was triggered on another item	

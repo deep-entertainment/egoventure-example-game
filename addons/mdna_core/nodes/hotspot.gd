@@ -35,6 +35,7 @@ func _init():
 	add_child(_hotspot_indicator)
 	_hotspot_indicator.hide()
 	_hotspot_indicator.position = rect_size / 2
+	mouse_filter = Control.MOUSE_FILTER_PASS
 
 
 # Connect the pressed signal
@@ -73,6 +74,7 @@ func _set_hotspot_type(type):
 
 # Switch to the target scene with the configured target view
 func _pressed():
+	accept_event()
 	release_focus()
 	MdnaCore.target_view = target_view
 	if target_scene != "":

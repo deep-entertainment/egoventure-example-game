@@ -59,9 +59,8 @@ func _ready():
 # ** Parameters **
 #
 # - event: The event that happened
-func _input(event: InputEvent):
-	if event.is_action_released("ui_menu") \
-			and MdnaInventory.selected_item == null:
+func _unhandled_input(event: InputEvent):
+	if event.is_action_released("ui_menu"):
 		if $Menu/SaveSlots.visible:
 			$Menu/SaveSlots.hide()
 		else:
@@ -423,3 +422,8 @@ func _on_NewGame_pressed():
 func _on_RestartConfirm_confirmed():
 	toggle()
 	emit_signal("new_game")
+
+
+func _on_Menu_gui_input(event):
+	if event.is_action_released("ui_menu"):
+		toggle()

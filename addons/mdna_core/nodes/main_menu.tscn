@@ -42,6 +42,7 @@ __meta__ = {
 [node name="MainMenu" type="Control" parent="Menu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -49,6 +50,7 @@ __meta__ = {
 [node name="Background" type="TextureRect" parent="Menu/MainMenu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 expand = true
@@ -59,6 +61,7 @@ __meta__ = {
 [node name="Margin" type="MarginContainer" parent="Menu/MainMenu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 custom_constants/margin_right = 200
 custom_constants/margin_top = 50
 custom_constants/margin_left = 200
@@ -953,6 +956,7 @@ bus = "Effects"
 
 [node name="Music" type="AudioStreamPlayer" parent="Menu"]
 bus = "Music"
+[connection signal="gui_input" from="Menu" to="." method="_on_Menu_gui_input"]
 [connection signal="pressed" from="Menu/MainMenu/Margin/VBox/MenuItems/Continue" to="." method="_on_Continue_pressed"]
 [connection signal="pressed" from="Menu/MainMenu/Margin/VBox/MenuItems/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="Menu/MainMenu/Margin/VBox/MenuItems/NewGame" to="." method="_on_NewGame_pressed"]
