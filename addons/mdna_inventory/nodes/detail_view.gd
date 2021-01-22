@@ -13,6 +13,13 @@ func _ready():
 			"Panel"
 		)
 	)
+	$Panel/VBox/Description.add_font_override(
+		"font",
+		$Panel/VBox/Description.get_font(
+			"detail_view", 
+			"Label"
+		)
+	)
 	$Panel.hide()
 
 

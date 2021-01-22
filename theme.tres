@@ -156,6 +156,7 @@ HSlider/styles/grabber_area_highlight = SubResource( 17 )
 HSlider/styles/slider = SubResource( 18 )
 Label/colors/goals = Color( 0, 0, 0, 1 )
 Label/colors/hints = Color( 0, 0, 0, 1 )
+Label/fonts/detail_view = null
 Label/fonts/goals = null
 Label/fonts/hints = null
 Panel/styles/detail_view = SubResource( 19 )
