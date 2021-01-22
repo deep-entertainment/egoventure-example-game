@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://images/rooms/3l.jpeg" type="Texture" id=1]
 [ext_resource path="res://images/rooms/3r.jpeg" type="Texture" id=2]
@@ -6,6 +6,13 @@
 [ext_resource path="res://images/rooms/3b.jpeg" type="Texture" id=4]
 [ext_resource path="res://images/rooms/3f.jpeg" type="Texture" id=5]
 [ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=6]
+[ext_resource path="res://addons/parrot/nodes/dialog_hotspot.gd" type="Script" id=7]
+[ext_resource path="res://dialogs/keys.tres" type="Resource" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="Theme" id=2]
+Button/styles/normal = SubResource( 1 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -42,3 +49,17 @@ __meta__ = {
 }
 target_scene = "res://scenes/room4.tscn"
 target_view = "front"
+
+[node name="DialogHotspot" type="Button" parent="."]
+margin_left = 1394.86
+margin_top = -605.026
+margin_right = 2189.86
+margin_bottom = -471.026
+rect_rotation = -12.5473
+theme = SubResource( 2 )
+text = "Hello! What are you doing?"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+dialog = ExtResource( 8 )
