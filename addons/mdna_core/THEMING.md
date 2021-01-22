@@ -26,19 +26,28 @@ The default font that is used throughout the game
 
 ## Button
 
-| Subcategory | Setting              | Description                                          | Used in          |
-| ----------- | -------------------- | ---------------------------------------------------- | ---------------- |
-| Colors      | Font Color           | Color of the text on default buttons                 | Standard Dialogs |
-|             | Font Color Disabled  | Color of the text when a button is disabled          | Standard Dialogs |
-|             | Font Color Hover     | Color of the text when hovering over default buttons | Standard Dialogs |
-|             | Font Color Pressed   | Coloer of the text when pressing default buttons     | Standard Dialogs |
-| Styles      | Focus                | Fill style of default buttons                        | Standard Dialogs |
-|             | Hover                | Fill style used when hovering over default buttons   | Standard Dialogs |
-|             | Menu Button Disabled | Fill style of menu buttons when disabled             | Main menu        |
-|             | Menu Button Hover    | Fill style of menu buttons when hovered              | Main menu        |
-|             | Menu Button Normal   | Fill style of menu buttons                           | Main menu        |
-|             | Normal               | Fill style of default buttons                        | Standard Dialogs |
-|             | Pressed              | Fill style of default buttons                        | Standard Dialogs |
+| Subcategory | Setting                            | Description                                          | Used in          |
+| ----------- | ---------------------------------- | ---------------------------------------------------- | ---------------- |
+| Colors      | Dialog Hotspot Font Color Disabled | Color of the text on disabled dialog hotspots        | Dialog Hotspots  |
+|             | Dialog Hotspot Font Color Hover    | Color of the text on dialog hotspots when hovered    | Dialog Hotspots  |
+|             | Dialog Hotspot Font Color Normal   | Color of the text on dialog hotspots                 | Dialog Hotspots  |
+|             | Dialog Hotspot Font Color Pressed  | Color of the text on pressed dialog hotspots         | Parrot Dialogs   |
+|             | Font Color                         | Color of the text on default buttons                 | Standard Dialogs |
+|             | Font Color Disabled                | Color of the text when a button is disabled          | Standard Dialogs |
+|             | Font Color Hover                   | Color of the text when hovering over default buttons | Standard Dialogs |
+|             | Font Color Pressed                 | Color of the text when pressing default buttons      | Standard Dialogs |
+| Fonts       | Dialog Hotspot Font                | Font used in Dialog Hotspot                          | Parrot Dialog    |
+| Styles      | Dialog Hotspot Disabled            | Fill style of disabled dialog hotspots               | Dialog Hotspots  |
+|             | Dialog Hotspot Hover               | Fill style of dialog hotspots when hovered           | Dialog Hotspots  |
+|             | Dialog Hotspot Normal              | Fill style of dialog hotspots                        | Dialog Hotspots  |
+|             | Dialog Hotspot Pressed             | Fill style of pressed dialog hotspots                | Dialog Hotspots  |
+|             | Focus                              | Fill style of default buttons                        | Standard Dialogs |
+|             | Hover                              | Fill style used when hovering over default buttons   | Standard Dialogs |
+|             | Menu Button Disabled               | Fill style of menu buttons when disabled             | Main menu        |
+|             | Menu Button Hover                  | Fill style of menu buttons when hovered              | Main menu        |
+|             | Menu Button Normal                 | Fill style of menu buttons                           | Main menu        |
+|             | Normal                             | Fill style of default buttons                        | Standard Dialogs |
+|             | Pressed                            | Fill style of default buttons                        | Standard Dialogs |
 
 ## Check Button
 
