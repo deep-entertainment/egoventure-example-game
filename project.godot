@@ -19,10 +19,10 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/parrot/resources/character_resource.gd"
 }, {
-"base": "Button",
+"base": "RichTextLabel",
 "class": "DialogHotspot",
 "language": "GDScript",
-"path": "res://addons/parrot/nodes/dialog_hotspot.gd"
+"path": "res://addons/mdna_core/nodes/dialog_hotspot.gd"
 }, {
 "base": "Resource",
 "class": "DialogLineResource",
@@ -122,7 +122,7 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "BaseState": "",
 "CharacterResource": "res://addons/parrot/images/character.svg",
-"DialogHotspot": "res://addons/parrot/images/dialog_hotspot.svg",
+"DialogHotspot": "res://addons/mdna_core/images/dialog_hotspot.svg",
 "DialogLineResource": "res://addons/parrot/images/dialog_line.svg",
 "DialogResource": "res://addons/parrot/images/dialog.svg",
 "FourSideRoom": "",
