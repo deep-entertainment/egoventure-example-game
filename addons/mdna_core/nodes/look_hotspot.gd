@@ -15,6 +15,11 @@ func _ready():
 
 
 # The hotspot was clicked, play the dialog
-func _on_pressed():
-	Parrot.play(load(dialog))
+func _gui_input(event):
+	if event is InputEventMouseButton:
+		if (event as InputEventMouseButton).button_index == BUTTON_LEFT:
+			accept_event()
+			Parrot.play(load(dialog))
+		else:
+			MainMenu.toggle()
 	
