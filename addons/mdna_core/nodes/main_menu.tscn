@@ -84,7 +84,7 @@ __meta__ = {
 
 [node name="Logo" type="TextureRect" parent="Menu/MainMenu/Margin/VBox"]
 margin_right = 2160.0
-margin_bottom = 620.0
+margin_bottom = 450.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
@@ -92,16 +92,17 @@ expand = true
 stretch_mode = 6
 
 [node name="MenuItems" type="VBoxContainer" parent="Menu/MainMenu/Margin/VBox"]
-margin_top = 670.0
+margin_top = 500.0
 margin_right = 2160.0
-margin_bottom = 980.0
+margin_bottom = 1177.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
 custom_constants/separation = 30
 
 [node name="Continue" type="Button" parent="Menu/MainMenu/Margin/VBox/MenuItems"]
 margin_right = 2160.0
-margin_bottom = 18.0
+margin_bottom = 71.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
@@ -112,9 +113,9 @@ text = "Continue"
 script = ExtResource( 3 )
 
 [node name="Resume" type="Button" parent="Menu/MainMenu/Margin/VBox/MenuItems"]
-margin_top = 48.0
+margin_top = 101.0
 margin_right = 2160.0
-margin_bottom = 67.0
+margin_bottom = 172.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
@@ -125,9 +126,9 @@ text = "Continue"
 script = ExtResource( 3 )
 
 [node name="NewGame" type="Button" parent="Menu/MainMenu/Margin/VBox/MenuItems"]
-margin_top = 97.0
+margin_top = 202.0
 margin_right = 2160.0
-margin_bottom = 115.0
+margin_bottom = 273.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
@@ -138,9 +139,9 @@ text = "New Game"
 script = ExtResource( 3 )
 
 [node name="Load" type="Button" parent="Menu/MainMenu/Margin/VBox/MenuItems"]
-margin_top = 145.0
+margin_top = 303.0
 margin_right = 2160.0
-margin_bottom = 164.0
+margin_bottom = 374.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
@@ -151,9 +152,9 @@ text = "Load"
 script = ExtResource( 3 )
 
 [node name="Save" type="Button" parent="Menu/MainMenu/Margin/VBox/MenuItems"]
-margin_top = 194.0
+margin_top = 404.0
 margin_right = 2160.0
-margin_bottom = 212.0
+margin_bottom = 475.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
@@ -164,9 +165,9 @@ text = "Save"
 script = ExtResource( 3 )
 
 [node name="Options" type="Button" parent="Menu/MainMenu/Margin/VBox/MenuItems"]
-margin_top = 242.0
+margin_top = 505.0
 margin_right = 2160.0
-margin_bottom = 261.0
+margin_bottom = 576.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
@@ -177,9 +178,9 @@ text = "Options"
 script = ExtResource( 3 )
 
 [node name="Quit" type="Button" parent="Menu/MainMenu/Margin/VBox/MenuItems"]
-margin_top = 291.0
+margin_top = 606.0
 margin_right = 2160.0
-margin_bottom = 310.0
+margin_bottom = 677.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
@@ -190,10 +191,11 @@ text = "Quit"
 script = ExtResource( 3 )
 
 [node name="Spacer" type="Control" parent="Menu/MainMenu/Margin/VBox"]
-margin_top = 1030.0
+margin_top = 1227.0
 margin_right = 2160.0
 margin_bottom = 1340.0
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
 
 [node name="SaveSlots" type="Control" parent="Menu"]
 visible = false
