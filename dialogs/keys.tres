@@ -11,5 +11,4 @@ text = "Why would I want to throw that into the bush?"
 
 [resource]
 script = ExtResource( 1 )
-id = "keys"
 lines = [ SubResource( 1 ) ]

@@ -13,5 +13,4 @@ image = ExtResource( 4 )
 
 [resource]
 script = ExtResource( 1 )
-id = "thatsme"
 lines = [ SubResource( 1 ) ]
