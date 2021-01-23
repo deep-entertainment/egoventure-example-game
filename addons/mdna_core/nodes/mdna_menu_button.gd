@@ -33,3 +33,7 @@ func _ready():
 			"Button"
 		)
 	)
+	add_stylebox_override(
+		"focus",
+		StyleBoxEmpty.new()
+	)
