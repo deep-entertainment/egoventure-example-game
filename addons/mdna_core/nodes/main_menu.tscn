@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://addons/mdna_core/images/empty.png" type="Texture" id=1]
 [ext_resource path="res://addons/mdna_core/nodes/mdna_menu_button.gd" type="Script" id=3]
 [ext_resource path="res://addons/mdna_core/nodes/main_menu.gd" type="Script" id=5]
 
-[sub_resource type="Image" id=4]
+[sub_resource type="Image" id=16]
 data = {
 "data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
 "format": "LumAlpha8",
@@ -16,7 +16,7 @@ data = {
 [sub_resource type="ImageTexture" id=2]
 flags = 4
 flags = 4
-image = SubResource( 4 )
+image = SubResource( 16 )
 size = Vector2( 16, 16 )
 
 [sub_resource type="StyleBoxTexture" id=3]
@@ -26,6 +26,26 @@ margin_left = 2.0
 margin_right = 2.0
 margin_top = 2.0
 margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=13]
 
 [node name="MainMenu" type="CanvasLayer"]
 pause_mode = 2
@@ -107,6 +127,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 5 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Continue"
@@ -120,6 +141,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 6 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Continue"
@@ -133,6 +155,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 7 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "New Game"
@@ -146,6 +169,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Load"
@@ -159,6 +183,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 9 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Save"
@@ -172,6 +197,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 10 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Options"
@@ -185,6 +211,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 11 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Quit"
@@ -787,6 +814,7 @@ margin_right = 2560.0
 margin_bottom = 1440.0
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 12 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Cancel"
@@ -811,46 +839,35 @@ __meta__ = {
 }
 
 [node name="VBox" type="VBoxContainer" parent="Menu/Options/CenterContainer"]
-margin_left = 380.0
-margin_top = 270.0
-margin_right = 2180.0
-margin_bottom = 1170.0
-rect_min_size = Vector2( 1800, 900 )
+margin_left = 987.0
+margin_top = 602.0
+margin_right = 1573.0
+margin_bottom = 838.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="Label" parent="Menu/Options/CenterContainer/VBox"]
-margin_top = 79.0
-margin_right = 1800.0
-margin_bottom = 93.0
-size_flags_vertical = 6
-text = "Options"
-align = 1
-valign = 1
+[node name="Grid" type="GridContainer" parent="Menu/Options/CenterContainer/VBox"]
+margin_right = 586.0
+margin_bottom = 170.0
+custom_constants/vseparation = 30
+custom_constants/hseparation = 30
+columns = 2
 
-[node name="Speech" type="HBoxContainer" parent="Menu/Options/CenterContainer/VBox"]
-margin_top = 176.0
-margin_right = 1800.0
-margin_bottom = 348.0
-rect_min_size = Vector2( 0, 100 )
+[node name="SpeechLabel" type="Label" parent="Menu/Options/CenterContainer/VBox/Grid"]
+margin_right = 56.0
+margin_bottom = 16.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="Menu/Options/CenterContainer/VBox/Speech"]
-margin_top = 79.0
-margin_right = 898.0
-margin_bottom = 93.0
-size_flags_horizontal = 3
+size_flags_vertical = 1
 text = "Sound"
 align = 2
 valign = 2
 
-[node name="Slider" type="HSlider" parent="Menu/Options/CenterContainer/VBox/Speech"]
-margin_left = 902.0
-margin_right = 1800.0
-margin_bottom = 172.0
-rect_min_size = Vector2( 0, 30 )
+[node name="SpeechSlider" type="HSlider" parent="Menu/Options/CenterContainer/VBox/Grid"]
+margin_left = 86.0
+margin_right = 586.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 500, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 1
 value = 50.0
@@ -858,81 +875,74 @@ rounded = true
 tick_count = 10
 ticks_on_borders = true
 
-[node name="Music" type="HBoxContainer" parent="Menu/Options/CenterContainer/VBox"]
-margin_top = 352.0
-margin_right = 1800.0
-margin_bottom = 525.0
-rect_min_size = Vector2( 0, 100 )
+[node name="MusicLabel" type="Label" parent="Menu/Options/CenterContainer/VBox/Grid"]
+margin_top = 46.0
+margin_right = 56.0
+margin_bottom = 62.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="Menu/Options/CenterContainer/VBox/Music"]
-margin_top = 79.0
-margin_right = 898.0
-margin_bottom = 93.0
-size_flags_horizontal = 3
+size_flags_vertical = 1
 text = "Music"
 align = 2
 valign = 2
 
-[node name="Slider" type="HSlider" parent="Menu/Options/CenterContainer/VBox/Music"]
-margin_left = 902.0
-margin_right = 1800.0
-margin_bottom = 173.0
+[node name="MusicSlider" type="HSlider" parent="Menu/Options/CenterContainer/VBox/Grid"]
+margin_left = 86.0
+margin_top = 46.0
+margin_right = 586.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 500, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 1
 
-[node name="Effects" type="HBoxContainer" parent="Menu/Options/CenterContainer/VBox"]
-margin_top = 529.0
-margin_right = 1800.0
-margin_bottom = 701.0
-rect_min_size = Vector2( 0, 100 )
+[node name="EffectsLabel" type="Label" parent="Menu/Options/CenterContainer/VBox/Grid"]
+margin_top = 92.0
+margin_right = 56.0
+margin_bottom = 108.0
 size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Label" type="Label" parent="Menu/Options/CenterContainer/VBox/Effects"]
-margin_top = 79.0
-margin_right = 898.0
-margin_bottom = 93.0
-size_flags_horizontal = 3
+size_flags_vertical = 1
 text = "Effects"
 align = 2
 valign = 2
 
-[node name="Slider" type="HSlider" parent="Menu/Options/CenterContainer/VBox/Effects"]
-margin_left = 902.0
-margin_right = 1800.0
-margin_bottom = 172.0
+[node name="EffectsSlider" type="HSlider" parent="Menu/Options/CenterContainer/VBox/Grid"]
+margin_left = 86.0
+margin_top = 92.0
+margin_right = 586.0
+margin_bottom = 108.0
+rect_min_size = Vector2( 500, 0 )
 size_flags_horizontal = 3
 size_flags_vertical = 1
 
-[node name="Subtitles" type="HBoxContainer" parent="Menu/Options/CenterContainer/VBox"]
-margin_top = 705.0
-margin_right = 1800.0
-margin_bottom = 877.0
-rect_min_size = Vector2( 0, 100 )
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Subtitles" type="CheckButton" parent="Menu/Options/CenterContainer/VBox/Subtitles"]
-margin_right = 898.0
-margin_bottom = 172.0
-size_flags_horizontal = 3
+[node name="SubtitlesLabel" type="Label" parent="Menu/Options/CenterContainer/VBox/Grid"]
+margin_top = 138.0
+margin_right = 56.0
+margin_bottom = 170.0
+size_flags_vertical = 1
 text = "Subtitles"
-align = 2
+valign = 2
 
-[node name="Spacer" type="Control" parent="Menu/Options/CenterContainer/VBox/Subtitles"]
-margin_left = 902.0
-margin_right = 1800.0
-margin_bottom = 172.0
-size_flags_horizontal = 3
+[node name="Subtitles" type="CheckButton" parent="Menu/Options/CenterContainer/VBox/Grid"]
+margin_left = 86.0
+margin_top = 138.0
+margin_right = 150.0
+margin_bottom = 170.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_styles/normal = SubResource( 15 )
+
+[node name="Spacer" type="Control" parent="Menu/Options/CenterContainer/VBox"]
+margin_top = 174.0
+margin_right = 586.0
+margin_bottom = 214.0
+rect_min_size = Vector2( 0, 40 )
 
 [node name="Return" type="Button" parent="Menu/Options/CenterContainer/VBox"]
-margin_top = 881.0
-margin_right = 1800.0
-margin_bottom = 899.0
+margin_top = 218.0
+margin_right = 586.0
+margin_bottom = 236.0
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 13 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Return"
@@ -978,10 +988,10 @@ bus = "Music"
 [connection signal="pressed" from="Menu/SaveSlots/VBox/HBox/Previous" to="." method="_on_Previous_pressed"]
 [connection signal="pressed" from="Menu/SaveSlots/VBox/HBox/Next" to="." method="_on_Next_pressed"]
 [connection signal="pressed" from="Menu/SaveSlots/VBox/Cancel" to="." method="_on_SaveLoad_Cancel_pressed"]
-[connection signal="value_changed" from="Menu/Options/CenterContainer/VBox/Speech/Slider" to="." method="_on_speech_Slider_value_changed"]
-[connection signal="value_changed" from="Menu/Options/CenterContainer/VBox/Music/Slider" to="." method="_on_music_Slider_value_changed"]
-[connection signal="value_changed" from="Menu/Options/CenterContainer/VBox/Effects/Slider" to="." method="_on_effects_Slider_value_changed"]
-[connection signal="toggled" from="Menu/Options/CenterContainer/VBox/Subtitles/Subtitles" to="." method="_on_Subtitles_toggled"]
+[connection signal="value_changed" from="Menu/Options/CenterContainer/VBox/Grid/SpeechSlider" to="." method="_on_speech_Slider_value_changed"]
+[connection signal="value_changed" from="Menu/Options/CenterContainer/VBox/Grid/MusicSlider" to="." method="_on_music_Slider_value_changed"]
+[connection signal="value_changed" from="Menu/Options/CenterContainer/VBox/Grid/EffectsSlider" to="." method="_on_effects_Slider_value_changed"]
+[connection signal="toggled" from="Menu/Options/CenterContainer/VBox/Grid/Subtitles" to="." method="_on_Subtitles_toggled"]
 [connection signal="pressed" from="Menu/Options/CenterContainer/VBox/Return" to="." method="_on_Return_pressed"]
 [connection signal="confirmed" from="Menu/QuitConfirm" to="." method="_on_QuitConfirm_confirmed"]
 [connection signal="confirmed" from="Menu/OverwriteConfirm" to="." method="_on_OverwriteConfirm_confirmed"]

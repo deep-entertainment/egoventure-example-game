@@ -89,13 +89,13 @@ func configure(configuration: GameConfiguration):
 	$Menu.theme = configuration.theme
 	
 	# Set the options values
-	$Menu/Options/CenterContainer/VBox/Speech/Slider.value = \
+	$Menu/Options/CenterContainer/VBox/Grid/SpeechSlider.value = \
 			_get_bus_percent("Speech")
-	$Menu/Options/CenterContainer/VBox/Music/Slider.value = \
+	$Menu/Options/CenterContainer/VBox/Grid/MusicSlider.value = \
 			_get_bus_percent("Music")
-	$Menu/Options/CenterContainer/VBox/Effects/Slider.value = \
+	$Menu/Options/CenterContainer/VBox/Grid/EffectsSlider.value = \
 			_get_bus_percent("Effects")
-	$Menu/Options/CenterContainer/VBox/Subtitles/Subtitles.pressed = \
+	$Menu/Options/CenterContainer/VBox/Grid/Subtitles.pressed = \
 			MdnaCore.in_game_configuration.subtitles
 
 
