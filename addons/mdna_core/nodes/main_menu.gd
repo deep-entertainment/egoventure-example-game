@@ -36,14 +36,18 @@ var _configuration: GameConfiguration
 
 # Default to hiding the menu
 func _ready():
-	$Menu.hide()
-	$Menu/MainMenu.show()
-	$Menu/SaveSlots.hide()
-	$Menu/Options.hide()
 	# React to mouse hovers for advanced hovering designs
 	for child in $Menu/MainMenu/Margin/VBox/MenuItems.get_children():
 		(child as Button).connect("mouse_entered", self, "_on_menuitem_hover", [true, child])
 		(child as Button).connect("mouse_exited", self, "_on_menuitem_hover", [false, child])
+
+
+# Hide everything upon startup
+func _enter_tree():
+	$Menu.hide()
+	$Menu/MainMenu.show()
+	$Menu/SaveSlots.hide()
+	$Menu/Options.hide()
 
 
 # React to the ui_menu action
