@@ -27,7 +27,7 @@ func _update_color():
 	if Engine.editor_hint:
 		add_color_override(
 			"default_color",
-			Color.white
+			Color.black
 		)
 	elif enabled:
 		add_color_override(
