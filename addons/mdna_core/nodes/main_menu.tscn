@@ -40,6 +40,7 @@ __meta__ = {
 }
 
 [node name="MainMenu" type="Control" parent="Menu"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -104,6 +105,7 @@ margin_bottom = 18.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Continue"
@@ -116,6 +118,7 @@ margin_bottom = 67.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Continue"
@@ -128,6 +131,7 @@ margin_bottom = 115.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "New Game"
@@ -140,6 +144,7 @@ margin_bottom = 164.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Load"
@@ -152,6 +157,7 @@ margin_bottom = 212.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Save"
@@ -164,6 +170,7 @@ margin_bottom = 261.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Options"
@@ -176,6 +183,7 @@ margin_bottom = 310.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Quit"
@@ -776,13 +784,13 @@ margin_top = 1422.0
 margin_right = 2560.0
 margin_bottom = 1440.0
 custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Cancel"
 script = ExtResource( 3 )
 
 [node name="Options" type="Control" parent="Menu"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -851,7 +859,7 @@ ticks_on_borders = true
 [node name="Music" type="HBoxContainer" parent="Menu/Options/CenterContainer/VBox"]
 margin_top = 352.0
 margin_right = 1800.0
-margin_bottom = 524.0
+margin_bottom = 525.0
 rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -868,14 +876,14 @@ valign = 2
 [node name="Slider" type="HSlider" parent="Menu/Options/CenterContainer/VBox/Music"]
 margin_left = 902.0
 margin_right = 1800.0
-margin_bottom = 172.0
+margin_bottom = 173.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 
 [node name="Effects" type="HBoxContainer" parent="Menu/Options/CenterContainer/VBox"]
-margin_top = 528.0
+margin_top = 529.0
 margin_right = 1800.0
-margin_bottom = 700.0
+margin_bottom = 701.0
 rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -897,9 +905,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 1
 
 [node name="Subtitles" type="HBoxContainer" parent="Menu/Options/CenterContainer/VBox"]
-margin_top = 704.0
+margin_top = 705.0
 margin_right = 1800.0
-margin_bottom = 876.0
+margin_bottom = 877.0
 rect_min_size = Vector2( 0, 100 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -918,10 +926,11 @@ margin_bottom = 172.0
 size_flags_horizontal = 3
 
 [node name="Return" type="Button" parent="Menu/Options/CenterContainer/VBox"]
-margin_top = 880.0
+margin_top = 881.0
 margin_right = 1800.0
-margin_bottom = 900.0
+margin_bottom = 899.0
 custom_styles/hover = SubResource( 3 )
+custom_styles/pressed = SubResource( 3 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Return"
