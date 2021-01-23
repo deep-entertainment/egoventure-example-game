@@ -4,7 +4,7 @@
 [ext_resource path="res://addons/mdna_core/nodes/mdna_menu_button.gd" type="Script" id=3]
 [ext_resource path="res://addons/mdna_core/nodes/main_menu.gd" type="Script" id=5]
 
-[sub_resource type="Image" id=16]
+[sub_resource type="Image" id=14]
 data = {
 "data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
 "format": "LumAlpha8",
@@ -16,7 +16,7 @@ data = {
 [sub_resource type="ImageTexture" id=2]
 flags = 4
 flags = 4
-image = SubResource( 16 )
+image = SubResource( 14 )
 size = Vector2( 16, 16 )
 
 [sub_resource type="StyleBoxTexture" id=3]
@@ -26,6 +26,8 @@ margin_left = 2.0
 margin_right = 2.0
 margin_top = 2.0
 margin_bottom = 2.0
+
+[sub_resource type="StyleBoxEmpty" id=4]
 
 [sub_resource type="StyleBoxEmpty" id=5]
 
@@ -42,8 +44,6 @@ margin_bottom = 2.0
 [sub_resource type="StyleBoxEmpty" id=11]
 
 [sub_resource type="StyleBoxEmpty" id=12]
-
-[sub_resource type="StyleBoxEmpty" id=15]
 
 [sub_resource type="StyleBoxEmpty" id=13]
 
@@ -127,7 +127,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 5 )
+custom_styles/focus = SubResource( 4 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Continue"
@@ -141,7 +141,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 6 )
+custom_styles/focus = SubResource( 5 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Continue"
@@ -155,7 +155,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 7 )
+custom_styles/focus = SubResource( 6 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "New Game"
@@ -169,7 +169,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 8 )
+custom_styles/focus = SubResource( 7 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Load"
@@ -183,7 +183,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 9 )
+custom_styles/focus = SubResource( 8 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Save"
@@ -197,7 +197,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 10 )
+custom_styles/focus = SubResource( 9 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Options"
@@ -211,7 +211,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 11 )
+custom_styles/focus = SubResource( 10 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Quit"
@@ -814,7 +814,7 @@ margin_right = 2560.0
 margin_bottom = 1440.0
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
-custom_styles/focus = SubResource( 12 )
+custom_styles/focus = SubResource( 11 )
 custom_styles/disabled = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
 text = "Cancel"
@@ -834,6 +834,8 @@ anchor_bottom = 1.0
 [node name="CenterContainer" type="CenterContainer" parent="Menu/Options"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -1.05933
+margin_right = -1.05933
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -859,7 +861,7 @@ margin_right = 56.0
 margin_bottom = 16.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Sound"
+text = "Speech"
 align = 2
 valign = 2
 
@@ -928,7 +930,7 @@ margin_right = 150.0
 margin_bottom = 170.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
-custom_styles/normal = SubResource( 15 )
+custom_styles/normal = SubResource( 12 )
 
 [node name="Spacer" type="Control" parent="Menu/Options/CenterContainer/VBox"]
 margin_top = 174.0
