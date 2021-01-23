@@ -1,22 +1,9 @@
-[gd_resource type="Theme" load_steps=33 format=2]
+[gd_resource type="Theme" load_steps=28 format=2]
 
 [ext_resource path="res://RussoOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://images/volume.png" type="Texture" id=2]
 [ext_resource path="res://images/uncheck.svg" type="Texture" id=3]
 [ext_resource path="res://images/check.svg" type="Texture" id=4]
-
-[sub_resource type="DynamicFont" id=1]
-size = 32
-use_filter = true
-font_data = ExtResource( 1 )
-
-[sub_resource type="StyleBoxEmpty" id=2]
-
-[sub_resource type="StyleBoxEmpty" id=3]
-
-[sub_resource type="StyleBoxEmpty" id=4]
-
-[sub_resource type="StyleBoxEmpty" id=5]
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.329412, 0.329412, 0.329412, 1 )
@@ -120,19 +107,10 @@ font_data = ExtResource( 1 )
 
 [resource]
 default_font = SubResource( 28 )
-Button/colors/dialog_hotspot_font_color_disabled = Color( 0, 0, 0, 0.643137 )
-Button/colors/dialog_hotspot_font_color_hover = Color( 0.384314, 0.384314, 0.384314, 1 )
-Button/colors/dialog_hotspot_font_color_normal = Color( 0, 0, 0, 1 )
-Button/colors/dialog_hotspot_font_color_pressed = Color( 0, 0, 0, 1 )
 Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 Button/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 Button/colors/font_color_hover = Color( 0.941176, 0.941176, 0.941176, 1 )
 Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
-Button/fonts/dialog_hotspot_font = SubResource( 1 )
-Button/styles/dialog_hotspot_disabled = SubResource( 2 )
-Button/styles/dialog_hotspot_hover = SubResource( 3 )
-Button/styles/dialog_hotspot_normal = SubResource( 4 )
-Button/styles/dialog_hotspot_pressed = SubResource( 5 )
 Button/styles/focus = null
 Button/styles/hover = SubResource( 6 )
 Button/styles/menu_button_disabled = null
@@ -166,4 +144,8 @@ Panel/styles/notepad_panel = SubResource( 22 )
 Panel/styles/saveslot_panel = SubResource( 23 )
 ProgressBar/styles/bg = null
 ProgressBar/styles/fg = SubResource( 26 )
+RichTextLabel/colors/dialog_hotspot_disabled_font_color = Color( 0, 0, 0, 1 )
+RichTextLabel/colors/dialog_hotspot_font_color = Color( 0, 0, 0, 1 )
 RichTextLabel/fonts/dialog_font = SubResource( 27 )
+RichTextLabel/fonts/dialog_hotspot_bold_font = null
+RichTextLabel/fonts/dialog_hotspot_normal_font = null
