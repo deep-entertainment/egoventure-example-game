@@ -24,7 +24,12 @@ func _set_enabled(value: bool):
 	
 
 func _update_color():
-	if enabled:
+	if Engine.editor_hint:
+		add_color_override(
+			"default_color",
+			Color.white
+		)
+	elif enabled:
 		add_color_override(
 			"default_color",
 			get_color(
@@ -64,6 +69,22 @@ func _enter_tree():
 		)
 		_update_color()
 		mouse_default_cursor_shape = Parrot.dialog_hotspot_cursor_shape
+	else:
+		add_font_override(
+			"normal_font",
+			preload("res://addons/mdna_core/font/default_font.tres")
+		)
+		var stylebox = StyleBoxFlat.new()
+		stylebox.draw_center = false
+		stylebox.border_width_left = 2
+		stylebox.border_width_top = 2
+		stylebox.border_width_right = 2
+		stylebox.border_width_bottom = 2
+		stylebox.border_color = Color.red
+		add_stylebox_override(
+			"normal",
+			stylebox
+		)
 
 
 # Play dialog
