@@ -24,6 +24,7 @@ margin_top = 226.0
 margin_right = 550.0
 margin_bottom = 1130.0
 mouse_default_cursor_shape = 14
+button_mask = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -37,6 +38,7 @@ margin_top = 406.0
 margin_right = 1916.0
 margin_bottom = 1191.0
 mouse_default_cursor_shape = 2
+button_mask = 3
 script = ExtResource( 2 )
 hotspot_type = 6
 
