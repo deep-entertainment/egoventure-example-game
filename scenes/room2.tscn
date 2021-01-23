@@ -17,6 +17,12 @@ back_texture = ExtResource( 2 )
 left_texture = ExtResource( 1 )
 image_scale = 0.635
 
+[node name="Left" parent="Room/CanvasLayer" index="0"]
+button_mask = 3
+
+[node name="Right" parent="Room/CanvasLayer" index="1"]
+button_mask = 3
+
 [node name="Front" parent="Room/Views" index="0"]
 scale = Vector2( 0.635, 0.635 )
 texture = ExtResource( 3 )
@@ -38,6 +44,7 @@ margin_left = 1031.0
 margin_top = -961.0
 margin_right = 1632.0
 mouse_default_cursor_shape = 3
+button_mask = 3
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -50,6 +57,7 @@ margin_top = 1754.0
 margin_right = 1949.0
 margin_bottom = 2702.0
 mouse_default_cursor_shape = 6
+button_mask = 3
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false

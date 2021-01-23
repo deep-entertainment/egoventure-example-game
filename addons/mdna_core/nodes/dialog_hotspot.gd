@@ -14,15 +14,18 @@ var enabled: bool = true setget _set_enabled
 
 # Connect the pressed signal to the pressed func
 func _ready():
-	connect("pressed", self, "_on_pressed")
+	connect("mouse_entered", self, "_set_hover")
+	connect("mouse_exited", self, "_update_color")
 	_set_enabled(enabled)
 
 
+# Set the enabled value and update the color
 func _set_enabled(value: bool):
 	enabled = value
 	_update_color()
-	
 
+
+# Update the color based on enabled/disabled
 func _update_color():
 	if Engine.editor_hint:
 		add_color_override(
@@ -42,6 +45,18 @@ func _update_color():
 			"default_color",
 			get_color(
 				"dialog_hotspot_disabled_font_color",
+				"RichTextLabel"
+			)
+		)
+		
+
+# Set hover font color
+func _set_hover():
+	if enabled:
+		add_color_override(
+			"default_color",
+			get_color(
+				"dialog_hotspot_hover_font_color",
 				"RichTextLabel"
 			)
 		)
@@ -66,6 +81,10 @@ func _enter_tree():
 				"dialog_hotspot_bold_font",
 				"RichTextLabel"
 			)
+		)
+		add_stylebox_override(
+			"normal",
+			StyleBoxEmpty.new()
 		)
 		_update_color()
 		mouse_default_cursor_shape = Parrot.dialog_hotspot_cursor_shape
@@ -96,7 +115,7 @@ func _gui_input(event):
 		else:
 			release_focus()
 			Parrot.play(dialog)
-			
+
 
 # Return properties
 func _get_property_list():

@@ -99,7 +99,8 @@ Used in the game options for the "Volume"-settings
 
 | Subcategory | Setting                            | Description                                             | Used in         |
 | ----------- | ---------------------------------- | ------------------------------------------------------- | --------------- |
-| Colors      | Dialog Hotspot Disabled Font Color | The Color of the font when a dialog hotspot is disabled | Dialog Hotspots |
+| Colors      | Dialog Hotspot Disabled Font Color | The color of the font when a dialog hotspot is disabled | Dialog Hotspots |
+|             | Dialog Hotspot Hover Font Color    | The color of the font when a dialog hotspot is hovered  | Dialog Hotspots |
 |             | Dialog Hotspot Font Color          | The normal color of the dialog hotspot font             | Dialog Hotspots |
 | Fonts       | Dialog Font                        | Font used in the parrot dialogs                         | Dialogs         |
 |             | Dialog Hotspot Bold Font           | Bold font used in dialog hotspots                       | Dialog Hotspots |

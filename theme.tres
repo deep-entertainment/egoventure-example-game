@@ -62,6 +62,7 @@ texture = SubResource( 13 )
 region_rect = Rect2( 0, 0, 2048, 1 )
 
 [sub_resource type="DynamicFont" id=15]
+size = 32
 outline_size = 1
 font_data = ExtResource( 1 )
 
@@ -115,6 +116,7 @@ ProgressBar/styles/bg = null
 ProgressBar/styles/fg = SubResource( 14 )
 RichTextLabel/colors/dialog_hotspot_disabled_font_color = Color( 0.47451, 0.47451, 0.47451, 1 )
 RichTextLabel/colors/dialog_hotspot_font_color = Color( 1, 1, 1, 1 )
+RichTextLabel/colors/dialog_hotspot_hover_font_color = Color( 0, 0, 0, 1 )
 RichTextLabel/fonts/dialog_font = SubResource( 15 )
 RichTextLabel/fonts/dialog_hotspot_bold_font = null
 RichTextLabel/fonts/dialog_hotspot_normal_font = null
