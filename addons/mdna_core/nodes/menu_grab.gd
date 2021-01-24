@@ -11,7 +11,7 @@ func set_top(top: float):
 # React to mouse button events on the control
 func _input(event):
 	if MdnaInventory.selected_item == null and \
-			event.is_action_released("ui_menu"):
+			event.is_action_pressed("ui_menu"):
 		if get_viewport().get_mouse_position().y >= $Control.margin_top:
 			get_tree().set_input_as_handled()
 			MainMenu.toggle()

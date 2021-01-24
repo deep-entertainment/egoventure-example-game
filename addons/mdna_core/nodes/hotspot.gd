@@ -68,7 +68,6 @@ func _set_hotspot_type(type):
 
 
 # Switch to the target scene with the configured target view
-# On Right mouse click, show the main menu
 func _on_pressed():
 	release_focus()
 	if MdnaInventory.selected_item == null:
