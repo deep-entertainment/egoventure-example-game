@@ -11,6 +11,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Room" parent="." instance=ExtResource( 5 )]
+default_view = "front"
 front_texture = ExtResource( 3 )
 right_texture = ExtResource( 6 )
 back_texture = ExtResource( 2 )
@@ -19,9 +20,13 @@ image_scale = 0.635
 
 [node name="Left" parent="Room/CanvasLayer" index="0"]
 button_mask = 3
+target_scene = ""
+target_view = ""
 
 [node name="Right" parent="Room/CanvasLayer" index="1"]
 button_mask = 3
+target_scene = ""
+target_view = ""
 
 [node name="Front" parent="Room/Views" index="0"]
 scale = Vector2( 0.635, 0.635 )
@@ -44,12 +49,13 @@ margin_left = 1031.0
 margin_top = -961.0
 margin_right = 1632.0
 mouse_default_cursor_shape = 3
-button_mask = 3
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+hotspot_type = 0
 target_scene = "res://scenes/room3.tscn"
+target_view = ""
 
 [node name="Backward" type="TextureButton" parent="."]
 margin_left = 651.0
@@ -57,13 +63,13 @@ margin_top = 1754.0
 margin_right = 1949.0
 margin_bottom = 2702.0
 mouse_default_cursor_shape = 6
-button_mask = 3
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 hotspot_type = 1
 target_scene = "res://scenes/room1b.tscn"
+target_view = ""
 
 [node name="LookHotspot" type="TextureButton" parent="."]
 margin_left = -1384.0
