@@ -14,17 +14,18 @@ export(Texture) var loading_image
 export(AudioStream) var location_music
 
 
+func _ready():
+	connect("pressed", self, "_on_pressed")
+
+
 # Update cache blocking for the target scene, then jump there
-func _gui_input(event):
-	if event is InputEventMouseButton:
-		if (event as InputEventMouseButton).button_index == BUTTON_LEFT and \
-				 MdnaInventory.selected_item == null and target_scene != "":
-			accept_event()
-			Boombox.play_music(location_music)
-			MdnaCore.target_view = target_view
-			WaitingScreen.set_image(loading_image)
-			MdnaCore.update_cache(target_scene, true)
-			yield(MdnaCore, "queue_complete")
-			MdnaCore.change_scene(target_scene)
-		elif (event as InputEventMouseButton).button_index == BUTTON_RIGHT:
-			MainMenu.toggle()
+func _on_pressed():
+	release_focus()
+	if MdnaInventory.selected_item == null:
+		accept_event()
+		Boombox.play_music(location_music)
+		MdnaCore.target_view = target_view
+		WaitingScreen.set_image(loading_image)
+		MdnaCore.update_cache(target_scene, true)
+		yield(MdnaCore, "queue_complete")
+		MdnaCore.change_scene(target_scene)

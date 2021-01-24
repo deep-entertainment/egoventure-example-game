@@ -31,6 +31,10 @@ func _enter_tree():
 		"MapNotification",
 		"res://addons/mdna_core/nodes/map_notification.tscn"
 	)
+	add_autoload_singleton(
+		"MenuGrab",
+		"res://addons/mdna_core/nodes/menu_grab.tscn"
+	)
 
 
 # Remove the previously loaded singletons

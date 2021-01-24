@@ -67,6 +67,7 @@ func configure(p_configuration: GameConfiguration):
 		configuration.scene_path,
 		SCENE_REGEX
 	)
+	MenuGrab.set_top(configuration.inventory_configuration.size)
 	_scene_cache.connect("queue_complete", self, "_on_queue_complete")
 
 

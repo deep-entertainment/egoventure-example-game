@@ -35,7 +35,8 @@ func _init():
 	add_child(_hotspot_indicator)
 	_hotspot_indicator.hide()
 	_hotspot_indicator.position = rect_size / 2
-	button_mask = BUTTON_MASK_LEFT | BUTTON_MASK_RIGHT
+	button_mask = BUTTON_MASK_LEFT
+	connect("pressed", self, "_on_pressed")
 		
 
 func _input(event):
@@ -68,13 +69,9 @@ func _set_hotspot_type(type):
 
 # Switch to the target scene with the configured target view
 # On Right mouse click, show the main menu
-func _gui_input(event):
-	if event is InputEventMouseButton:
-		accept_event()
-		if (event as InputEventMouseButton).button_index == BUTTON_RIGHT:
-			MainMenu.toggle()
-		else:
-			release_focus()
+func _on_pressed():
+	release_focus()
+	if MdnaInventory.selected_item == null:
+		if target_scene != "":
 			MdnaCore.target_view = target_view
-			if target_scene != "":
-				MdnaCore.change_scene(target_scene)
+			MdnaCore.change_scene(target_scene)

@@ -164,6 +164,7 @@ Boombox="*res://addons/mdna_core/nodes/boombox.tscn"
 MdnaCore="*res://addons/mdna_core/mdna_core.gd"
 Notepad="*res://addons/mdna_core/nodes/notepad.tscn"
 MapNotification="*res://addons/mdna_core/nodes/map_notification.tscn"
+MenuGrab="*res://addons/mdna_core/nodes/menu_grab.tscn"
 
 [display]
 

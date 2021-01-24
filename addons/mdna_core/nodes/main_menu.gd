@@ -50,19 +50,6 @@ func _enter_tree():
 	$Menu/Options.hide()
 
 
-# React to the ui_menu action
-#
-# ** Parameters **
-#
-# - event: The event that happened
-func _unhandled_input(event: InputEvent):
-	if event.is_action_released("ui_menu"):
-		if $Menu/SaveSlots.visible:
-			$Menu/SaveSlots.hide()
-		else:
-			toggle()
-
-
 # Handle wether the game is currently saveable
 #
 # ** parameters **
