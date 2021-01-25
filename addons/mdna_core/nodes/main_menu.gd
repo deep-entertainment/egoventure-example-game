@@ -115,6 +115,9 @@ func toggle():
 				$Menu/Music.stream_paused = false
 		elif _configuration.menu_music != null:
 			$Menu/Music.stream_paused = true
+		
+		if not $Menu.visible:
+			$Menu/SaveSlots.visible = false
 
 
 # Resume was pressed. Toggle the menu

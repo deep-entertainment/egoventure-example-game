@@ -17,6 +17,9 @@ const SCENE_REGEX = "^[a-z]+(?<index>\\d+)\\D?.*$"
 # The current state of the game
 var state: BaseState
 
+# The current view of the four side room
+var current_view: String = ""
+
 # The target view for the next room
 var target_view: String = ""
 
@@ -90,16 +93,18 @@ func save(slot: int):
 	screenshot.flip_y()
 	screenshot.save_png("user://save_%d.png" % slot)
 	
-	state.current_scene = _get_current_scene().filename
-	state.inventory_items = MdnaInventory.get_items()
-	ResourceSaver.save("user://save_%d.tres" % slot, state)
+	MdnaCore.state.current_scene = _get_current_scene().filename
+	MdnaCore.state.target_view = MdnaCore.current_view
+	MdnaCore.state.inventory_items = MdnaInventory.get_items()
+	ResourceSaver.save("user://save_%d.tres" % slot, MdnaCore.state)
 
 
 # Save the "resume" slot
 func save_resume():
-	state.current_scene = _get_current_scene().filename
-	state.inventory_items = MdnaInventory.get_items()
-	in_game_configuration.resume_state = state.duplicate(true)
+	MdnaCore.state.current_scene = _get_current_scene().filename
+	MdnaCore.state.target_view = MdnaCore.current_view
+	MdnaCore.state.inventory_items = MdnaInventory.get_items()
+	in_game_configuration.resume_state = MdnaCore.state.duplicate(true)
 	save_in_game_configuration()
 
 
@@ -109,7 +114,7 @@ func save_resume():
 #
 # -slot: The save slot index to load
 func load(slot: int):
-	_load(ResourceLoader.load("user://save_%d.tres" % slot))
+	_load(ResourceLoader.load("user://save_%d.tres" % slot, "", true))
 	
 
 # Load the game from the resume state
@@ -163,12 +168,18 @@ func update_cache(scene: String = "", blocking = false):
 #
 # - p_state: The state to load
 func _load(p_state: BaseState):
-	state = p_state.duplicate(true)
+	for item in MdnaInventory.get_items():
+		MdnaInventory.remove_item(item)
+	MdnaCore.state = p_state
+	MdnaCore.target_view = MdnaCore.state.target_view
 	for item in state.inventory_items:
 		MdnaInventory.add_item(item)
-	update_cache(state.current_scene, true)
+	update_cache(MdnaCore.state.current_scene, true)
 	yield(_scene_cache, "queue_complete")
-	change_scene(state.current_scene)
+	change_scene(MdnaCore.state.current_scene)
+	game_started = true
+	MdnaInventory.enable()
+	MainMenu.saveable = true
 	save_resume()
 	emit_signal("game_loaded")
 

@@ -8,3 +8,6 @@ export(String) var current_scene: String
 
 # Current list of inventory items
 export(Array) var inventory_items: Array
+
+# Target view of the stored scene
+export(String) var target_view: String
