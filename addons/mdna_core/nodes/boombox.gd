@@ -45,6 +45,11 @@ func stop_music():
 	active_music.stop()
 	
 
+# Get the current music
+func get_music() -> AudioStream:
+	return active_music.stream
+	
+
 # Play a background effect
 #
 # ** Parameters **
@@ -69,8 +74,13 @@ func resume_background():
 # Stop playing a background effect
 func stop_background():
 	$Background.stop()
-	
-	
+
+
+# Get the current background
+func get_background() -> AudioStream:
+	return $Background.stream
+
+
 # Play a sound effect
 #
 # ** Parameters **

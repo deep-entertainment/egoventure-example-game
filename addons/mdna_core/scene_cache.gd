@@ -82,7 +82,7 @@ func get_scene(path: String) -> PackedScene:
 # ** Parameters **
 #
 # - current_scene: The path and filename of the current scene
-func update_cache(current_scene: String):
+func update_cache(current_scene: String) -> int:
 	var scene_index = _get_index_from_filename(current_scene)
 	
 	var first_index = scene_index - _cache_count
@@ -127,6 +127,8 @@ func update_cache(current_scene: String):
 	if _queued_items.size() == 0:
 		WaitingScreen.hide()
 		emit_signal("queue_complete")
+	
+	return _queued_items.size()
 		
 
 

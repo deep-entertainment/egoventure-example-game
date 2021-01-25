@@ -41,6 +41,7 @@ var _scene_cache: SceneCache
 # Load the ingame configuration
 func _init():
 	_load_in_game_configuration()
+	pause_mode = Node.PAUSE_MODE_PROCESS
 	
 
 # Update the scene cache
@@ -81,6 +82,9 @@ func configure(p_configuration: GameConfiguration):
 # - path: The absolute path to the new scene
 func change_scene(path: String):
 	get_tree().change_scene_to(_scene_cache.get_scene(path))
+	# Wait a bit two let the scene's ready script run
+	yield(get_tree().create_timer(2), "timeout")
+	save_resume()
 	
 
 # Save the current state of the game
@@ -92,18 +96,13 @@ func save(slot: int):
 	var screenshot = get_viewport().get_texture().get_data()
 	screenshot.flip_y()
 	screenshot.save_png("user://save_%d.png" % slot)
-	
-	MdnaCore.state.current_scene = _get_current_scene().filename
-	MdnaCore.state.target_view = MdnaCore.current_view
-	MdnaCore.state.inventory_items = MdnaInventory.get_items()
+	_update_state()
 	ResourceSaver.save("user://save_%d.tres" % slot, MdnaCore.state)
 
 
 # Save the "resume" slot
 func save_resume():
-	MdnaCore.state.current_scene = _get_current_scene().filename
-	MdnaCore.state.target_view = MdnaCore.current_view
-	MdnaCore.state.inventory_items = MdnaInventory.get_items()
+	_update_state()
 	in_game_configuration.resume_state = MdnaCore.state.duplicate(true)
 	save_in_game_configuration()
 
@@ -153,12 +152,21 @@ func set_audio_levels():
 # - scene: The scene path and filename. If empty, will be set to the
 #   current scene
 # - blocking: Wether to display a waiting screen while caching
-func update_cache(scene: String = "", blocking = false):
+func update_cache(scene: String = "", blocking = false) -> int:
 	if scene == "":
 		scene = _get_current_scene().filename
 	if blocking:
 		WaitingScreen.show()
-	_scene_cache.update_cache(scene)
+	return _scene_cache.update_cache(scene)
+
+
+# Update the state with the current values
+func _update_state():
+	MdnaCore.state.current_scene = _get_current_scene().filename
+	MdnaCore.state.target_view = MdnaCore.current_view
+	MdnaCore.state.inventory_items = MdnaInventory.get_items()
+	MdnaCore.state.current_music = Boombox.get_music()
+	MdnaCore.state.current_background = Boombox.get_background()
 
 
 # the previously saved state, add the inventory items, switch to the saved
@@ -168,19 +176,24 @@ func update_cache(scene: String = "", blocking = false):
 #
 # - p_state: The state to load
 func _load(p_state: BaseState):
-	for item in MdnaInventory.get_items():
-		MdnaInventory.remove_item(item)
 	MdnaCore.state = p_state
 	MdnaCore.target_view = MdnaCore.state.target_view
+	
+	for item in MdnaInventory.get_items():
+		MdnaInventory.remove_item(item)
 	for item in state.inventory_items:
-		MdnaInventory.add_item(item)
-	update_cache(MdnaCore.state.current_scene, true)
-	yield(_scene_cache, "queue_complete")
-	change_scene(MdnaCore.state.current_scene)
+		MdnaInventory.add_item(item, true)
+		
 	game_started = true
 	MdnaInventory.enable()
 	MainMenu.saveable = true
-	save_resume()
+	MainMenu.resumeable = true
+	
+	var cached_items = update_cache(MdnaCore.state.current_scene, true)
+	if cached_items > 0:
+		yield(self, "queue_complete")
+	
+	change_scene(MdnaCore.state.current_scene)
 	emit_signal("game_loaded")
 
 

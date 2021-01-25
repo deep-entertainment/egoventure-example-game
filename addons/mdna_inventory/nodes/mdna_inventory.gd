@@ -100,7 +100,7 @@ func enable():
 
 
 # Add an item to the inventory
-func add_item(item: InventoryItem):
+func add_item(item: InventoryItem, skip_show: bool = false):
 	var inventory_item_node = InventoryItemNode.new()
 	inventory_item_node.configure(item)
 	inventory_item_node.connect(
@@ -110,7 +110,7 @@ func add_item(item: InventoryItem):
 	)
 	_inventory_items.append(inventory_item_node)
 	_update()
-	if ! activated:
+	if not activated and not skip_show:
 		# Briefly show the inventory when it is not activated
 		toggle_inventory()
 		$Timer.start()

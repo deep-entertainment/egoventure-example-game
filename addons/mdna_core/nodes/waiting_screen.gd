@@ -16,6 +16,11 @@ func show():
 # Hide the waiting screen
 func hide():
 	$Screen.hide()
+	
+
+# Is the waiting screen visible currently?
+func is_visible():
+	return $Screen.visible
 
 
 # Update the progess on the screen

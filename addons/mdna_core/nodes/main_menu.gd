@@ -36,6 +36,7 @@ var _configuration: GameConfiguration
 
 # Default to hiding the menu
 func _ready():
+	MdnaCore.connect("game_loaded", self, "toggle")
 	# React to mouse hovers for advanced hovering designs
 	for child in $Menu/MainMenu/Margin/VBox/MenuItems.get_children():
 		(child as Button).connect("mouse_entered", self, "_on_menuitem_hover", [true, child])
@@ -177,7 +178,6 @@ func _on_slot_selected(slot: int, exists: bool):
 			$Menu.show()
 			_refresh_saveslots()
 	else:
-		toggle()
 		MdnaCore.load(slot)
 
 

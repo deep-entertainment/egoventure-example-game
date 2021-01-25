@@ -3,7 +3,8 @@
 [ext_resource path="res://addons/mdna_core/nodes/waiting_screen.gd" type="Script" id=1]
 
 [node name="WaitingScreen" type="CanvasLayer"]
-layer = 99
+pause_mode = 2
+layer = 126
 script = ExtResource( 1 )
 
 [node name="Screen" type="Control" parent="."]
