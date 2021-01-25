@@ -37,6 +37,9 @@ var configuration: GameConfiguration
 # A cache of scenes for faster switching
 var _scene_cache: SceneCache
 
+# A thread to store the in game configuration
+onready var _save_thread: Thread = Thread.new()
+
 
 # Load the ingame configuration
 func _init():
@@ -51,6 +54,11 @@ func _init():
 # - delta: The time since the last call to _process
 func _process(_delta):
 	_scene_cache.update_progress()
+	
+
+# Wait for the possible open save thread
+func _exit_tree():
+	_save_thread.wait_to_finish()
 
 
 # Configure the game from the game's core class
@@ -104,7 +112,9 @@ func save(slot: int):
 func save_resume():
 	_update_state()
 	in_game_configuration.resume_state = MdnaCore.state.duplicate(true)
-	save_in_game_configuration()
+	if _save_thread.is_active():
+		_save_thread.wait_to_finish()
+	_save_thread.start(self, "save_in_game_configuration")
 
 
 # Load a game from a savefile
@@ -194,6 +204,13 @@ func _load(p_state: BaseState):
 		yield(self, "queue_complete")
 	
 	change_scene(MdnaCore.state.current_scene)
+	
+	if MdnaCore.state.current_music != null:
+		Boombox.play_music(MdnaCore.state.current_music)
+		
+	if MdnaCore.state.current_background != null:
+		Boombox.play_background(MdnaCore.state.current_background)
+	
 	emit_signal("game_loaded")
 
 
