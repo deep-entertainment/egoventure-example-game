@@ -198,6 +198,7 @@ func _load(p_state: BaseState):
 	MdnaInventory.enable()
 	MainMenu.saveable = true
 	MainMenu.resumeable = true
+	Parrot.cancel()
 	
 	var cached_items = update_cache(MdnaCore.state.current_scene, true)
 	if cached_items > 0:
