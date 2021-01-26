@@ -17,3 +17,9 @@ export(AudioStream) var current_music: AudioStream
 
 # Current background
 export(AudioStream) var current_background: AudioStream
+
+# Current notepad goal
+export(int) var current_goal: int = 1
+
+# An array of FulfillmentRecords
+export(Array) var goals_fulfilled: Array

@@ -40,6 +40,11 @@ _global_script_classes=[ {
 "path": "res://addons/mdna_core/nodes/four_side_room.gd"
 }, {
 "base": "Resource",
+"class": "FulfillmentRecord",
+"language": "GDScript",
+"path": "res://addons/mdna_core/fulfillment_record.gd"
+}, {
+"base": "Resource",
 "class": "GameConfiguration",
 "language": "GDScript",
 "path": "res://addons/mdna_core/resources/game_configuration.gd"
@@ -126,6 +131,7 @@ _global_script_class_icons={
 "DialogLineResource": "res://addons/parrot/images/dialog_line.svg",
 "DialogResource": "res://addons/parrot/images/dialog.svg",
 "FourSideRoom": "",
+"FulfillmentRecord": "",
 "GameConfiguration": "",
 "GameState": "",
 "Goal": "",

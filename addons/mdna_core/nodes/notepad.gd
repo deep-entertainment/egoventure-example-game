@@ -6,10 +6,6 @@ extends CanvasLayer
 var goals: Array
 
 
-# The id of the current goal
-var current_goal: int = 1
-
-
 # Wether the hints are currently shown
 var _hints_shown: bool = false
 
@@ -79,31 +75,37 @@ func configure(configuration: GameConfiguration):
 			current_goal = Goal.new()
 			current_goal.title = line[1]
 			current_goal.id = int(line[2])
-			current_goal.hints_fulfilled = []
 			current_goal.hints = []
+			var fulfillment_record = FulfillmentRecord.new()
+			fulfillment_record.goal_id = current_goal.id
+			fulfillment_record.fulfilled = []
+			MdnaCore.state.goals_fulfilled.append(fulfillment_record)
 		elif line.size() >= 2 and line[1] != "":
 			current_goal.hints.append(line[1])
-			current_goal.hints_fulfilled.append(false)
 
 
 # A step of a goal was finished, advance the hints and
 # switch to the next goal until a goal with an unfinished step comes along
 func finished_step(goal_id: int, step: int):
+	var state = MdnaCore.state
 	var goal = _get_goal(goal_id)
-	goal.hints_fulfilled[step - 1] = true
+	var fulfillment_record = _get_fulfillment_record(goal)
+	fulfillment_record.fulfilled.append(step - 1)
 	
-	if goal_id == current_goal:
-		goal = _get_goal(current_goal)
+	if goal_id == MdnaCore.state.current_goal:
+		goal = _get_goal(MdnaCore.state.current_goal)
 		var first_unfulfilled_hint = _find_first_unfulfilled_hint(goal)
 		while first_unfulfilled_hint == goal.hints.size():
-			current_goal = current_goal + 1
-			goal = _get_goal(current_goal)
+			MdnaCore.state.current_goal = MdnaCore.state.current_goal + 1
+			goal = _get_goal(MdnaCore.state.current_goal)
 			first_unfulfilled_hint = _find_first_unfulfilled_hint(goal)
+	
+	MdnaCore.save_resume()
 
 
 # Show the notepad
 func show():
-	var goal: Goal = _get_goal(current_goal)
+	var goal: Goal = _get_goal(MdnaCore.state.current_goal)
 	$Control/Goals.text = goal.title
 	$Control/Hints.text = ""
 	_hints_shown = false
@@ -121,12 +123,16 @@ func _get_goal(id: int) -> Goal:
 # Show the hints of a goal
 func _show_hints():
 	$Control/Hints.text = ""
-	var goal: Goal = _get_goal(current_goal)
+	var goal: Goal = _get_goal(MdnaCore.state.current_goal)
 	var first_unfulfilled = _find_first_unfulfilled_hint(goal)
 	$Control/Hints.text = goal.hints[first_unfulfilled]
 
 
 # Toggle showing hints
+#
+# ** Arguments **
+# 
+# - event: The input event
 func _on_Goals_gui_input(event):
 	if event is InputEventMouseButton and \
 			not (event as InputEventMouseButton).pressed:
@@ -143,9 +149,31 @@ func _on_Close_pressed():
 
 
 # Find the first unfulfilled hint of a goal
-func _find_first_unfulfilled_hint(goal: Goal):
+# 
+# ** Arguments **
+#
+# - goal: The goal to look for
+#
+# *Returns* The first unfulfilled hint. If all hints are fulfilled
+# returns the size of the hints
+func _find_first_unfulfilled_hint(goal: Goal) -> int:
+	var fulfilled = _get_fulfillment_record(goal)
 	var first_unfulfilled_hint = 0
-	while first_unfulfilled_hint < goal.hints_fulfilled.size() and \
-			goal.hints_fulfilled[first_unfulfilled_hint]:
+	while first_unfulfilled_hint in fulfilled.fulfilled and \
+			first_unfulfilled_hint < goal.hints.size():
 		first_unfulfilled_hint = first_unfulfilled_hint + 1
 	return first_unfulfilled_hint
+
+
+# Get the fulfillment record of the corresonding goal
+#
+# ** Arguments **
+#
+# - goal: The goal to get the fulfillment record for
+#
+# *Returns* The fulfillment record or NULL
+func _get_fulfillment_record(goal: Goal) -> FulfillmentRecord:
+	for fulfilled in MdnaCore.state.goals_fulfilled:
+		if (fulfilled as FulfillmentRecord).goal_id == goal.id:
+			return fulfilled
+	return null

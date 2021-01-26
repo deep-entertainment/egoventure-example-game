@@ -132,7 +132,11 @@ func load_resume():
 	
 
 # Save the in game configuration
-func save_in_game_configuration():
+#
+# ** Arguments **
+#
+# - _first: Bogus argument, because Thread.start requires one
+func save_in_game_configuration(_first = null):
 	ResourceSaver.save(
 		"user://in_game_configuration.tres", 
 		in_game_configuration
