@@ -324,11 +324,11 @@ func _refresh_saveslots():
 	save_dir.open("user://")
 	
 	for slot in range(0, 12):
-		var save_slot = _save_slot_page + slot
+		var save_slot = ((_save_slot_page - 1) * 12) + slot
 		
 		# Set the slot stylebox
 		var slot_node = $Menu/SaveSlots/VBox/HBox/Slots.get_node(
-			"Slot%d" % save_slot 
+			"Slot%d" % (slot + 1)
 		)
 		(slot_node.get_node("Slot/Panel") as Panel) \
 				.add_stylebox_override(
