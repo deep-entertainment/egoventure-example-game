@@ -90,9 +90,8 @@ func configure(p_configuration: GameConfiguration):
 # - path: The absolute path to the new scene
 func change_scene(path: String):
 	get_tree().change_scene_to(_scene_cache.get_scene(path))
-	# Wait a bit two let the scene's ready script run
-	yield(get_tree().create_timer(2), "timeout")
-	save_resume()
+	if game_started:
+		save_resume()
 	
 
 # Save the current state of the game
@@ -190,7 +189,7 @@ func _update_state():
 #
 # - p_state: The state to load
 func _load(p_state: BaseState):
-	MdnaCore.state = p_state
+	MdnaCore.state = p_state.duplicate()
 	MdnaCore.target_view = MdnaCore.state.target_view
 	
 	for item in MdnaInventory.get_items():
@@ -224,9 +223,10 @@ func _load_in_game_configuration():
 	var conf_path = Directory.new()
 	conf_path.open("user://")
 	if conf_path.file_exists("in_game_configuration.tres"):
-		in_game_configuration = load("user://in_game_configuration.tres")
+		in_game_configuration = ResourceLoader.load("user://in_game_configuration.tres", "", true)
 	else:
 		in_game_configuration = InGameConfiguration.new()
+	var tmp = in_game_configuration.resume_state
 	set_audio_levels()
 
 
