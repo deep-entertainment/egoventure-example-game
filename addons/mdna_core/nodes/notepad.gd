@@ -90,7 +90,8 @@ func finished_step(goal_id: int, step: int):
 	var state = MdnaCore.state
 	var goal = _get_goal(goal_id)
 	var fulfillment_record = _get_fulfillment_record(goal)
-	fulfillment_record.fulfilled.append(step - 1)
+	if not (step - 1) in fulfillment_record.fulfilled:
+		fulfillment_record.fulfilled.append(step - 1)
 	
 	if goal_id == MdnaCore.state.current_goal:
 		goal = _get_goal(MdnaCore.state.current_goal)

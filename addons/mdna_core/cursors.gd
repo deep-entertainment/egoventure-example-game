@@ -1,3 +1,4 @@
+tool
 # Mouse cursor handling for MDNA games
 extends Node
 
