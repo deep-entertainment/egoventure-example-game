@@ -115,6 +115,7 @@ func _set_image_scale(value: float):
 func _set_current_view(value: String):
 	current_view = value
 	MdnaCore.current_view = value
+	MdnaCore.save_resume()
 	match current_view:
 		VIEW_FRONT: $Camera.position = Vector2(0, _viewport_size.y * -1)
 		VIEW_RIGHT: $Camera.position = Vector2(_viewport_size.x, 0)
