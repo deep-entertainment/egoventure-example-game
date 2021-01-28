@@ -88,7 +88,7 @@ func configure(configuration: GameConfiguration):
 	$Menu/Options/CenterContainer/VBox/Grid/EffectsSlider.value = \
 			_get_bus_percent("Effects")
 	$Menu/Options/CenterContainer/VBox/Grid/Subtitles.pressed = \
-			MdnaCore.in_game_configuration.subtitles
+			MdnaCore.options_get_subtitles()
 
 
 # Toggle the display of the menu and play the menu music
@@ -101,10 +101,10 @@ func toggle():
 			$Menu/MainMenu/Margin/VBox/MenuItems/Continue.show()
 			$Menu/MainMenu/Margin/VBox/MenuItems/Resume.hide()
 			
-			if MdnaCore.in_game_configuration.resume_state == null:
-				$Menu/MainMenu/Margin/VBox/MenuItems/Continue.disabled = true
-			else:
+			if MdnaCore.has_resume_state():
 				$Menu/MainMenu/Margin/VBox/MenuItems/Continue.disabled = false
+			else:
+				$Menu/MainMenu/Margin/VBox/MenuItems/Continue.disabled = true
 		
 		$Menu.visible = !$Menu.visible
 		get_tree().paused = !get_tree().paused
@@ -216,8 +216,7 @@ func _on_Return_pressed():
 # 
 # - value: new value
 func _on_speech_Slider_value_changed(value):
-	MdnaCore.in_game_configuration.speech_db = _percent_to_db(value)
-	MdnaCore.save_in_game_configuration()
+	MdnaCore.options_set_speech_level(_percent_to_db(value))
 	MdnaCore.set_audio_levels()
 	if $Menu/Options.visible and _configuration.menu_options_speech_sample != null:
 		$Menu/Speech.stream = _configuration.menu_options_speech_sample
@@ -230,8 +229,7 @@ func _on_speech_Slider_value_changed(value):
 # 
 # - value: new value
 func _on_music_Slider_value_changed(value):
-	MdnaCore.in_game_configuration.music_db = _percent_to_db(value)
-	MdnaCore.save_in_game_configuration()
+	MdnaCore.options_set_music_level(_percent_to_db(value))
 	MdnaCore.set_audio_levels()
 
 
@@ -241,8 +239,7 @@ func _on_music_Slider_value_changed(value):
 # 
 # - value: new value
 func _on_effects_Slider_value_changed(value):
-	MdnaCore.in_game_configuration.effects_db = _percent_to_db(value)
-	MdnaCore.save_in_game_configuration()
+	MdnaCore.options_set_effects_level(_percent_to_db(value))
 	MdnaCore.set_audio_levels()
 	if $Menu/Options.visible and \
 			_configuration.menu_options_effects_sample != null:
@@ -256,8 +253,7 @@ func _on_effects_Slider_value_changed(value):
 #
 # - value: Wether the checkbox is checked or not
 func _on_Subtitles_toggled(value: bool):
-	MdnaCore.in_game_configuration.subtitles = value
-	MdnaCore.save_in_game_configuration()
+	MdnaCore.options_set_subtitles(value)
 	if $Menu/Options.visible and _configuration.menu_switch_effect != null:
 		$Menu/Effects.stream = _configuration.menu_switch_effect
 		$Menu/Effects.play()
@@ -398,7 +394,7 @@ func _on_Continue_pressed():
 
 # The New Game button was pressed
 func _on_NewGame_pressed():
-	if MdnaCore.in_game_configuration.resume_state != null:
+	if MdnaCore.has_resume_state():
 		$Menu/RestartConfirm.popup_centered()
 	else:
 		_on_RestartConfirm_confirmed()

@@ -11,7 +11,6 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Room" parent="." instance=ExtResource( 5 )]
-default_view = "front"
 front_texture = ExtResource( 3 )
 right_texture = ExtResource( 6 )
 back_texture = ExtResource( 2 )

@@ -37,15 +37,23 @@ var configuration: GameConfiguration
 # A cache of scenes for faster switching
 var _scene_cache: SceneCache
 
+# Exit the save thread
+var _exit_save_thread: bool = false
+
 # A thread to store the in game configuration
-onready var _save_thread: Thread = Thread.new()
+var _save_thread: Thread
+
+# The semaphore used in the save thread
+var _save_semaphore: Semaphore
+
+# The mutex used in the save thread
+var _save_mutex: Mutex
 
 
 # Load the ingame configuration
 func _init():
-	_load_in_game_configuration()
 	pause_mode = Node.PAUSE_MODE_PROCESS
-	
+
 
 # Update the scene cache
 #
@@ -58,6 +66,11 @@ func _process(_delta):
 
 # Wait for the possible open save thread
 func _exit_tree():
+	_save_mutex.lock()
+	_exit_save_thread = true
+	_save_mutex.unlock()
+	
+	_save_semaphore.post()
 	_save_thread.wait_to_finish()
 
 
@@ -68,6 +81,11 @@ func _exit_tree():
 # - p_configuration: The game configuration
 func configure(p_configuration: GameConfiguration):
 	configuration = p_configuration
+	_save_mutex = Mutex.new()
+	_save_semaphore = Semaphore.new()
+	_save_thread = Thread.new()
+	_load_in_game_configuration()
+	_save_thread.start(self, "_save_worker")
 	MainMenu.configure(configuration)
 	Notepad.configure(configuration)
 	MdnaInventory.configure(configuration.inventory_configuration)
@@ -110,10 +128,10 @@ func save(slot: int):
 # Save the "resume" slot
 func save_resume():
 	_update_state()
+	_save_mutex.lock()
 	in_game_configuration.resume_state = MdnaCore.state.duplicate(true)
-	if _save_thread.is_active():
-		_save_thread.wait_to_finish()
-	_save_thread.start(self, "save_in_game_configuration")
+	_save_mutex.unlock()
+	_save_semaphore.post()
 
 
 # Load a game from a savefile
@@ -127,34 +145,25 @@ func load(slot: int):
 
 # Load the game from the resume state
 func load_resume():
-	_load(in_game_configuration.resume_state)
-	
-
-# Save the in game configuration
-#
-# ** Arguments **
-#
-# - _first: Bogus argument, because Thread.start requires one
-func save_in_game_configuration(_first = null):
-	ResourceSaver.save(
-		"user://in_game_configuration.tres", 
-		in_game_configuration
-	)
+	_save_mutex.lock()
+	var state = in_game_configuration.resume_state
+	_save_mutex.unlock()	
+	_load(state)
 
 
 # Set the audio levels based on the in game configuration
 func set_audio_levels():
 	AudioServer.set_bus_volume_db(
 		AudioServer.get_bus_index("Speech"), 
-		in_game_configuration.speech_db
+		options_get_speech_level()
 	)
 	AudioServer.set_bus_volume_db(
 		AudioServer.get_bus_index("Music"),
-		in_game_configuration.music_db
+		options_get_music_level()
 	)
 	AudioServer.set_bus_volume_db(
 		AudioServer.get_bus_index("Effects"),
-		in_game_configuration.effects_db
+		options_get_effects_level()
 	)
 	
 
@@ -171,6 +180,122 @@ func update_cache(scene: String = "", blocking = false) -> int:
 	if blocking:
 		WaitingScreen.show()
 	return _scene_cache.update_cache(scene)
+
+
+# Check if a resume state exists
+func has_resume_state() -> bool:
+	_save_mutex.lock()
+	var resume_state = in_game_configuration.resume_state
+	_save_mutex.unlock()
+	return resume_state != null
+
+
+# Set the subtitle
+#
+# ** Arguments **
+#
+# - value: Enable or disable subtitles
+func options_set_subtitles(value: bool):
+	_save_mutex.lock()
+	in_game_configuration.subtitles = value
+	_save_mutex.unlock()
+	_save_semaphore.post()
+
+
+# Get subtitle
+#
+# *Returns* The current subtitle setting
+func options_get_subtitles() -> bool:
+	_save_mutex.lock()
+	var value = in_game_configuration.subtitles
+	_save_mutex.unlock()
+	return value
+
+
+# Set the speech volume
+#
+# ** Arguments **
+#
+# - value: The new value
+func options_set_speech_level(value: float):
+	_save_mutex.lock()
+	in_game_configuration.speech_db = value
+	_save_mutex.unlock()
+	_save_semaphore.post()
+	
+
+# Return the current speech volume
+#
+# *Returns* The current value
+func options_get_speech_level() -> float:
+	_save_mutex.lock()
+	var value = in_game_configuration.speech_db
+	_save_mutex.unlock()
+	return value
+
+
+# Set the music volume
+#
+# ** Arguments **
+#
+# - value: The new value
+func options_set_music_level(value: float):
+	_save_mutex.lock()
+	in_game_configuration.music_db = value
+	_save_mutex.unlock()
+	_save_semaphore.post()
+	
+
+# Return the current music volume
+#
+# *Returns* The current value
+func options_get_music_level() -> float:
+	_save_mutex.lock()
+	var value = in_game_configuration.music_db
+	_save_mutex.unlock()
+	return value
+
+
+# Set the effects volume
+#
+# ** Arguments **
+#
+# - value: The new value
+func options_set_effects_level(value: float):
+	_save_mutex.lock()
+	in_game_configuration.effects_db = value
+	_save_mutex.unlock()
+	_save_semaphore.post()
+	
+
+# Return the current speech volume
+#
+# *Returns* The current value
+func options_get_effects_level() -> float:
+	_save_mutex.lock()
+	var value = in_game_configuration.effects_db
+	_save_mutex.unlock()
+	return value
+
+
+# The save worker
+func _save_worker():
+	while true:
+		_save_semaphore.wait()
+		
+		_save_mutex.lock()
+		var should_exit = _exit_save_thread
+		_save_mutex.unlock()
+		
+		if should_exit:
+			break
+			
+		_save_mutex.lock()
+		ResourceSaver.save(
+			"user://in_game_configuration.tres", 
+			in_game_configuration
+		)
+		_save_mutex.unlock()
 
 
 # Update the state with the current values
@@ -223,10 +348,13 @@ func _load_in_game_configuration():
 	var conf_path = Directory.new()
 	conf_path.open("user://")
 	if conf_path.file_exists("in_game_configuration.tres"):
+		_save_mutex.lock()
 		in_game_configuration = ResourceLoader.load("user://in_game_configuration.tres", "", true)
+		_save_mutex.unlock()
 	else:
+		_save_mutex.lock()
 		in_game_configuration = InGameConfiguration.new()
-	var tmp = in_game_configuration.resume_state
+		_save_mutex.unlock()
 	set_audio_levels()
 
 
