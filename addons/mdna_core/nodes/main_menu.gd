@@ -133,6 +133,7 @@ func _on_Quit_pressed():
 
 # Quit was confirmed. Just quit the game
 func _on_QuitConfirm_confirmed():
+	MdnaCore.save_resume()
 	get_tree().quit()
 
 
