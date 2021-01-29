@@ -93,3 +93,7 @@ func _on_Hotspot20_pressed():
 
 func _on_Hotspot21_pressed():
 	Notepad.finished_step(8, 2)
+
+
+func _on_Hotspot22_pressed():
+	MdnaCore.save_resume()

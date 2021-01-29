@@ -265,6 +265,18 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Hotspot22" type="TextureButton" parent="."]
+margin_left = 696.623
+margin_top = 140.63
+margin_right = 760.623
+margin_bottom = 204.63
+mouse_default_cursor_shape = 3
+texture_normal = ExtResource( 3 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Hotspot2" to="." method="_on_Hotspot2_pressed"]
 [connection signal="pressed" from="Hotspot3" to="." method="_on_Hotspot3_pressed"]
 [connection signal="pressed" from="Hotspot4" to="." method="_on_Hotspot4_pressed"]
@@ -285,3 +297,4 @@ __meta__ = {
 [connection signal="pressed" from="Hotspot19" to="." method="_on_Hotspot19_pressed"]
 [connection signal="pressed" from="Hotspot20" to="." method="_on_Hotspot20_pressed"]
 [connection signal="pressed" from="Hotspot21" to="." method="_on_Hotspot21_pressed"]
+[connection signal="pressed" from="Hotspot22" to="." method="_on_Hotspot22_pressed"]
