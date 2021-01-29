@@ -53,3 +53,43 @@ func _on_Hotspot10_pressed():
 
 func _on_Hotspot11_pressed():
 	Notepad.finished_step(5, 5)
+
+
+func _on_Hotspot12_pressed():
+	Notepad.finished_step(6, 1)
+
+
+func _on_Hotspot13_pressed():
+	Notepad.finished_step(6, 2)
+
+
+func _on_Hotspot14_pressed():
+	Notepad.finished_step(6, 3)
+
+
+func _on_Hotspot15_pressed():
+	Notepad.finished_step(6, 4)
+
+
+func _on_Hotspot16_pressed():
+	Notepad.finished_step(6, 5)
+
+
+func _on_Hotspot17_pressed():
+	Notepad.finished_step(6, 6)
+
+
+func _on_Hotspot18_pressed():
+	Notepad.finished_step(7, 1)
+
+
+func _on_Hotspot19_pressed():
+	Notepad.finished_step(7, 2)
+
+
+func _on_Hotspot20_pressed():
+	Notepad.finished_step(8, 1)
+
+
+func _on_Hotspot21_pressed():
+	Notepad.finished_step(8, 2)
