@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=1]
 [ext_resource path="res://images/rooms/6detail.jpeg" type="Texture" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://scenes/room6_detail.gd" type="Script" id=4]
+[ext_resource path="res://icon2.png" type="Texture" id=5]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 4 )
@@ -33,6 +34,7 @@ margin_right = 378.0
 margin_bottom = 598.0
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -45,6 +47,7 @@ margin_right = 530.0
 margin_bottom = 636.0
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -57,6 +60,7 @@ margin_right = 720.0
 margin_bottom = 748.0
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -69,6 +73,7 @@ margin_right = 892.0
 margin_bottom = 788.0
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -81,6 +86,7 @@ margin_right = 1102.0
 margin_bottom = 858.0
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -93,6 +99,7 @@ margin_right = 1292.0
 margin_bottom = 916.0
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -105,6 +112,7 @@ margin_right = 1478.0
 margin_bottom = 976.0
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -117,6 +125,7 @@ margin_right = 1676.0
 margin_bottom = 1032.0
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -129,6 +138,7 @@ margin_right = 1902.0
 margin_bottom = 1110.0
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -141,6 +151,7 @@ margin_right = 2126.0
 margin_bottom = 1134.0
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -153,6 +164,7 @@ margin_right = 322.321
 margin_bottom = 729.562
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -165,6 +177,7 @@ margin_right = 489.276
 margin_bottom = 778.551
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -177,6 +190,7 @@ margin_right = 656.669
 margin_bottom = 827.528
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -189,6 +203,7 @@ margin_right = 827.528
 margin_bottom = 884.927
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -201,6 +216,7 @@ margin_right = 1001.06
 margin_bottom = 943.659
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -213,6 +229,7 @@ margin_right = 1189.27
 margin_bottom = 1005.06
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -225,6 +242,7 @@ margin_right = 1369.47
 margin_bottom = 1070.47
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -237,6 +255,7 @@ margin_right = 1549.68
 margin_bottom = 1123.86
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -249,6 +268,7 @@ margin_right = 1737.89
 margin_bottom = 1194.61
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -261,6 +281,7 @@ margin_right = 1935.45
 margin_bottom = 1264.02
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -273,6 +294,7 @@ margin_right = 760.623
 margin_bottom = 204.63
 mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
