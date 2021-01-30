@@ -249,6 +249,9 @@ func _update_state():
 # - p_state: The state to load
 func _load(p_state: BaseState):
 	MdnaCore.state = p_state.duplicate()
+	MdnaCore.state.goals_fulfilled = []
+	for goal_fulfilled in p_state.goals_fulfilled:
+		MdnaCore.state.goals_fulfilled.append(goal_fulfilled.duplicate())
 	MdnaCore.target_view = MdnaCore.state.target_view
 	
 	for item in MdnaInventory.get_items():
