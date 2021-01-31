@@ -105,7 +105,7 @@ func resume_effect():
 
 # Stop playing a sound a effect
 func stop_effect():
-	$Effects.stop
+	$Effects.stop()
 
 
 # React to ignore_pause
