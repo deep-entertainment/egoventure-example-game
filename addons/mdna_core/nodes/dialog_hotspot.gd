@@ -8,31 +8,31 @@ extends RichTextLabel
 # The dialog to play
 var dialog: DialogResource
 
-# Wether the dialog is enabled
-var enabled: bool = true setget _set_enabled
+# Wether the question was already asked
+var asked: bool = true setget _set_asked
 
 
 # Connect the pressed signal to the pressed func
 func _ready():
 	connect("mouse_entered", self, "_set_hover")
 	connect("mouse_exited", self, "_update_color")
-	_set_enabled(enabled)
+	_set_asked(asked)
 
 
-# Set the enabled value and update the color
-func _set_enabled(value: bool):
-	enabled = value
+# Set the asked value and update the color
+func _set_asked(value: bool):
+	asked = value
 	_update_color()
 
 
-# Update the color based on enabled/disabled
+# Update the color based on asked/not asked
 func _update_color():
 	if Engine.editor_hint:
 		add_color_override(
 			"default_color",
 			Color.black
 		)
-	elif enabled:
+	elif asked:
 		add_color_override(
 			"default_color",
 			get_color(
@@ -44,7 +44,7 @@ func _update_color():
 		add_color_override(
 			"default_color",
 			get_color(
-				"dialog_hotspot_disabled_font_color",
+				"dialog_hotspot_asked_font_color",
 				"RichTextLabel"
 			)
 		)
@@ -52,7 +52,7 @@ func _update_color():
 
 # Set hover font color
 func _set_hover():
-	if enabled:
+	if asked:
 		add_color_override(
 			"default_color",
 			get_color(
@@ -125,6 +125,6 @@ func _get_property_list():
 		"hint": PROPERTY_HINT_RESOURCE_TYPE,
 		"hint_string": "DialogResource"
 	}, {
-		"name": "enabled",
+		"name": "asked",
 		"type": TYPE_BOOL
 	}]

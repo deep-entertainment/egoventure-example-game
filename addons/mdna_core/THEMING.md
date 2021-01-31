@@ -97,11 +97,11 @@ Used in the game options for the "Volume"-settings
 
 ## Rich Text Label
 
-| Subcategory | Setting                            | Description                                             | Used in         |
-| ----------- | ---------------------------------- | ------------------------------------------------------- | --------------- |
-| Colors      | Dialog Hotspot Disabled Font Color | The color of the font when a dialog hotspot is disabled | Dialog Hotspots |
-|             | Dialog Hotspot Hover Font Color    | The color of the font when a dialog hotspot is hovered  | Dialog Hotspots |
-|             | Dialog Hotspot Font Color          | The normal color of the dialog hotspot font             | Dialog Hotspots |
-| Fonts       | Dialog Font                        | Font used in the parrot dialogs                         | Dialogs         |
-|             | Dialog Hotspot Bold Font           | Bold font used in dialog hotspots                       | Dialog Hotspots |
-|             | Dialog Hotspot Normal Font         | Normal font used in dialog hotspots                     | Dialog Hotspots |
+| Subcategory | Setting                         | Description                                                                 | Used in         |
+| ----------- | ------------------------------- | --------------------------------------------------------------------------- | --------------- |
+| Colors      | Dialog Hotspot Asked Font Color | The color of the font when a question of a dialog hotspot was already asked | Dialog Hotspots |
+|             | Dialog Hotspot Hover Font Color | The color of the font when a dialog hotspot is hovered                      | Dialog Hotspots |
+|             | Dialog Hotspot Font Color       | The normal color of the dialog hotspot font                                 | Dialog Hotspots |
+| Fonts       | Dialog Font                     | Font used in the parrot dialogs                                             | Dialogs         |
+|             | Dialog Hotspot Bold Font        | Bold font used in dialog hotspots                                           | Dialog Hotspots |
+|             | Dialog Hotspot Normal Font      | Normal font used in dialog hotspots                                         | Dialog Hotspots |
