@@ -88,9 +88,11 @@ func get_background() -> AudioStream:
 # - effect: An audiostream of the sound effect to play
 #   make sure it's set to "loop = false" in the import settings
 func play_effect(effect: AudioStream):
-	if effect != $Effects.stream or not $Effects.playing:
-		$Effects.stream = effect
-		$Effects.play()
+	if $Effects.playing:
+		$Effects.stop()
+	
+	$Effects.stream = effect
+	$Effects.play()
 
 
 # Pause playing the sound effect
