@@ -10,11 +10,13 @@ extends Node2D
 func _ready():
 	Parrot.connect("finished_dialog", self, "_on_finished_dialog")
 	$DialogHotspot2.hide()
+	$DialogHotspot3.hide()
 	
 func _process(_delta):
 	var state = MdnaCore.state
 	if state.DialogHotspot2:
 		$DialogHotspot2.show()
+		$DialogHotspot.asked = true
 	else:
 		$DialogHotspot2.hide()
 	if state.DialogHotspot3:

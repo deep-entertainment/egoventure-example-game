@@ -7,14 +7,6 @@
 [ext_resource path="res://scenes/dia/dia.gd" type="Script" id=5]
 [ext_resource path="res://dialogs/bro1_02.tres" type="Resource" id=6]
 
-[sub_resource type="StyleBoxFlat" id=1]
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 1, 0, 0, 1 )
-
 [sub_resource type="StyleBoxFlat" id=2]
 draw_center = false
 border_width_left = 2
@@ -31,30 +23,20 @@ border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 1, 0, 0, 1 )
 
+[sub_resource type="StyleBoxFlat" id=4]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
-
-[node name="DialogHotspot" type="RichTextLabel" parent="."]
-margin_left = 305.0
-margin_top = 365.0
-margin_right = 786.0
-margin_bottom = 577.0
-rect_rotation = -7.4
-custom_styles/normal = SubResource( 1 )
-custom_fonts/normal_font = ExtResource( 4 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "I understand that Kevo has been living in your house for some time.
-"
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-dialog = ExtResource( 2 )
-enabled = true
 
 [node name="DialogHotspot2" type="RichTextLabel" parent="."]
 margin_left = 330.179
@@ -71,7 +53,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 dialog = ExtResource( 6 )
-enabled = true
+asked = false
 
 [node name="DialogHotspot3" type="RichTextLabel" parent="."]
 margin_left = 368.077
@@ -87,4 +69,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 dialog = null
-enabled = true
+asked = false
+
+[node name="DialogHotspot" type="RichTextLabel" parent="."]
+margin_left = 295.524
+margin_top = 339.923
+margin_right = 783.524
+margin_bottom = 500.923
+rect_rotation = -7.4
+rect_clip_content = false
+custom_styles/normal = SubResource( 4 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "I understand that Kevo has been living in your house for some time."
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+dialog = ExtResource( 2 )
+asked = false
