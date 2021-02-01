@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bro1_02-0.ogg-6148075391680c3e01fc717b83170c75.oggstr"
+
+[deps]
+
+source_file="res://voices/bro1_02-0.ogg"
+dest_files=[ "res://.import/bro1_02-0.ogg-6148075391680c3e01fc717b83170c75.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
