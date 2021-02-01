@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=22 format=2]
+[gd_resource type="Theme" load_steps=23 format=2]
 
 [ext_resource path="res://RussoOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://misc/fonts/LadylikeBB.ttf" type="DynamicFontData" id=2]
@@ -73,6 +73,11 @@ size = 32
 outline_size = 1
 font_data = ExtResource( 1 )
 
+[sub_resource type="DynamicFont" id=19]
+size = 45
+use_filter = true
+font_data = ExtResource( 2 )
+
 [sub_resource type="DynamicFont" id=18]
 size = 70
 outline_size = 2
@@ -122,8 +127,8 @@ Panel/styles/saveslot_panel = SubResource( 13 )
 ProgressBar/styles/bg = null
 ProgressBar/styles/fg = SubResource( 16 )
 RichTextLabel/colors/dialog_hotspot_asked_font_color = Color( 0.439216, 0.439216, 0.439216, 1 )
-RichTextLabel/colors/dialog_hotspot_font_color = Color( 1, 1, 1, 1 )
-RichTextLabel/colors/dialog_hotspot_hover_font_color = Color( 0, 0, 0, 1 )
+RichTextLabel/colors/dialog_hotspot_font_color = Color( 0, 0, 0, 1 )
+RichTextLabel/colors/dialog_hotspot_hover_font_color = Color( 0.286275, 0.0509804, 0.0509804, 1 )
 RichTextLabel/fonts/dialog_font = SubResource( 17 )
 RichTextLabel/fonts/dialog_hotspot_bold_font = null
-RichTextLabel/fonts/dialog_hotspot_normal_font = null
+RichTextLabel/fonts/dialog_hotspot_normal_font = SubResource( 19 )
