@@ -6,10 +6,10 @@ extends RichTextLabel
 
 
 # The dialog to play
-var dialog: DialogResource
+var dialog: DialogResource 
 
 # Wether the question was already asked
-var asked: bool = true setget _set_asked
+var asked: bool = false setget _set_asked
 
 
 # Connect the pressed signal to the pressed func
@@ -52,14 +52,13 @@ func _update_color():
 
 # Set hover font color
 func _set_hover():
-	if asked:
-		add_color_override(
-			"default_color",
-			get_color(
-				"dialog_hotspot_hover_font_color",
-				"RichTextLabel"
-			)
+	add_color_override(
+		"default_color",
+		get_color(
+			"dialog_hotspot_hover_font_color",
+			"RichTextLabel"
 		)
+	)
 
 
 # Set theme and add overrides
