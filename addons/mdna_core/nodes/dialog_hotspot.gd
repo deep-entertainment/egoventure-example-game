@@ -32,7 +32,7 @@ func _update_color():
 			"default_color",
 			Color.black
 		)
-	elif asked:
+	elif not asked:
 		add_color_override(
 			"default_color",
 			get_color(
