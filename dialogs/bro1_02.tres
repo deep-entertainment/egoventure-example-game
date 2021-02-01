@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=10 format=2]
+
+[ext_resource path="res://addons/parrot/resources/dialog_resource.gd" type="Script" id=1]
+[ext_resource path="res://scenes/dia/bro1_02a.jpg" type="Texture" id=2]
+[ext_resource path="res://scenes/dia/bro1_02c.jpg" type="Texture" id=3]
+[ext_resource path="res://scenes/dia/bro1_02b.jpg" type="Texture" id=4]
+[ext_resource path="res://characters/carol.tres" type="Resource" id=5]
+[ext_resource path="res://addons/parrot/resources/dialog_line_resource.gd" type="Script" id=6]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 6 )
+character = ExtResource( 5 )
+text = "Well, he couldn’t pay his rent."
+image = ExtResource( 2 )
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 6 )
+character = ExtResource( 5 )
+text = "He’s been struggling with gambling addiction for most of his life, and is constantly in debt."
+image = ExtResource( 4 )
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 6 )
+character = ExtResource( 5 )
+text = "Plus, his landlord didn’t like that he kept a cat in his apartment."
+image = ExtResource( 3 )
+
+[resource]
+script = ExtResource( 1 )
+lines = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]

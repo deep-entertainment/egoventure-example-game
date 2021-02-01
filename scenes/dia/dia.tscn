@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/dia/bro_main.jpg" type="Texture" id=1]
+[ext_resource path="res://dialogs/bro1_01.tres" type="Resource" id=2]
+[ext_resource path="res://addons/mdna_core/nodes/dialog_hotspot.gd" type="Script" id=3]
+[ext_resource path="res://addons/mdna_core/font/default_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://scenes/dia/dia.gd" type="Script" id=5]
+[ext_resource path="res://dialogs/bro1_02.tres" type="Resource" id=6]
+
+[sub_resource type="StyleBoxFlat" id=1]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="DialogHotspot" type="RichTextLabel" parent="."]
+margin_left = 305.0
+margin_top = 365.0
+margin_right = 786.0
+margin_bottom = 577.0
+rect_rotation = -7.4
+custom_styles/normal = SubResource( 1 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "I understand that Kevo has been living in your house for some time.
+"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+dialog = ExtResource( 2 )
+enabled = true
+
+[node name="DialogHotspot2" type="RichTextLabel" parent="."]
+margin_left = 330.179
+margin_top = 536.542
+margin_right = 776.179
+margin_bottom = 655.542
+rect_rotation = -7.4
+custom_styles/normal = SubResource( 2 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "Why was he evicted?"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+dialog = ExtResource( 6 )
+enabled = true
+
+[node name="DialogHotspot3" type="RichTextLabel" parent="."]
+margin_left = 368.077
+margin_top = 723.951
+margin_right = 751.077
+margin_bottom = 900.951
+custom_styles/normal = SubResource( 3 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "TEST."
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+dialog = null
+enabled = true

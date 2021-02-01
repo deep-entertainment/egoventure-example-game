@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://addons/parrot/resources/dialog_resource.gd" type="Script" id=1]
+[ext_resource path="res://scenes/dia/bro1_01a.jpg" type="Texture" id=2]
+[ext_resource path="res://characters/carol.tres" type="Resource" id=3]
+[ext_resource path="res://addons/parrot/resources/dialog_line_resource.gd" type="Script" id=4]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 4 )
+character = ExtResource( 3 )
+text = "Yes, his landlord evicted him, and he's been staying in our guest house since then."
+image = ExtResource( 2 )
+
+[resource]
+script = ExtResource( 1 )
+lines = [ SubResource( 1 ) ]
