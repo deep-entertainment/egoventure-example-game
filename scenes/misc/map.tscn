@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://images/map.jpg" type="Texture" id=1]
+[ext_resource path="res://images/rooms/test.jpg" type="Texture" id=2]
+[ext_resource path="res://addons/mdna_core/nodes/map_hotspot.gd" type="Script" id=3]
+[ext_resource path="res://images/dia.png" type="Texture" id=4]
+[ext_resource path="res://images/house.png" type="Texture" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -3.1748, 0 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="MapHotspot" type="TextureButton" parent="."]
+margin_left = 686.0
+margin_top = 387.0
+margin_right = 948.0
+margin_bottom = 471.0
+mouse_default_cursor_shape = 12
+texture_normal = ExtResource( 4 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 10
+target_scene = "res://scenes/dia/dia.tscn"
+loading_image = ExtResource( 2 )
+location = "dia"
+
+[node name="MapHotspot2" type="TextureButton" parent="."]
+margin_left = 1197.0
+margin_top = 422.0
+margin_right = 1284.0
+margin_bottom = 466.0
+mouse_default_cursor_shape = 12
+texture_normal = ExtResource( 5 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 10
+target_scene = "res://scenes/cache_test/cache_test_01.tscn"
+loading_image = ExtResource( 2 )
+location = "cache_test"

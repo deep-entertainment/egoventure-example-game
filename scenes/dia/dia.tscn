@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/dia/bro_main.jpg" type="Texture" id=1]
 [ext_resource path="res://dialogs/bro1_01.tres" type="Resource" id=2]
@@ -6,6 +6,16 @@
 [ext_resource path="res://addons/mdna_core/font/default_font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://scenes/dia/dia.gd" type="Script" id=5]
 [ext_resource path="res://dialogs/bro1_02.tres" type="Resource" id=6]
+[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=7]
+[ext_resource path="res://images/map.png" type="Texture" id=8]
+
+[sub_resource type="StyleBoxFlat" id=1]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 1, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
 draw_center = false
@@ -16,14 +26,6 @@ border_width_bottom = 2
 border_color = Color( 1, 0, 0, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
-draw_center = false
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 1, 0, 0, 1 )
-
-[sub_resource type="StyleBoxFlat" id=4]
 draw_center = false
 border_width_left = 2
 border_width_top = 2
@@ -44,7 +46,7 @@ margin_top = 536.542
 margin_right = 776.179
 margin_bottom = 655.542
 rect_rotation = -7.4
-custom_styles/normal = SubResource( 2 )
+custom_styles/normal = SubResource( 1 )
 custom_fonts/normal_font = ExtResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Why was he evicted?"
@@ -60,7 +62,7 @@ margin_left = 368.077
 margin_top = 723.951
 margin_right = 751.077
 margin_bottom = 900.951
-custom_styles/normal = SubResource( 3 )
+custom_styles/normal = SubResource( 2 )
 custom_fonts/normal_font = ExtResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "TEST."
@@ -78,7 +80,7 @@ margin_right = 783.524
 margin_bottom = 500.923
 rect_rotation = -7.4
 rect_clip_content = false
-custom_styles/normal = SubResource( 4 )
+custom_styles/normal = SubResource( 3 )
 custom_fonts/normal_font = ExtResource( 4 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "I understand that Kevo has been living in your house for some time."
@@ -88,3 +90,16 @@ __meta__ = {
 }
 dialog = ExtResource( 2 )
 asked = false
+
+[node name="Hotspot" type="TextureButton" parent="."]
+margin_left = 517.493
+margin_top = 927.043
+margin_right = 878.493
+margin_bottom = 1062.04
+mouse_default_cursor_shape = 3
+texture_normal = ExtResource( 8 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+target_scene = "res://scenes/misc/map.tscn"
