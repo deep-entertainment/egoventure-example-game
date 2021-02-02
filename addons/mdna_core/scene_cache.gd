@@ -107,10 +107,15 @@ func update_cache(current_scene: String) -> int:
 	scene_directory.list_dir_begin(true, true)
 	
 	var scene: String = scene_directory.get_next()
-	var path = "res://scenes/%s" % scene
+	var path: String
+	
+	if MdnaCore.current_location == "":
+		path = "%s/%s" % [_scene_path, scene]
+	else:
+		path = "%s/%s/%s" % [_scene_path, MdnaCore.current_location, scene]
 	
 	while scene != "":
-		if not path in _cache.keys():
+		if not path in _cache.keys() and path.get_extension() == "tscn":
 			var current_index = _get_index_from_filename(scene)
 			if current_index >= first_index \
 					and current_index <= last_index \
@@ -120,7 +125,10 @@ func update_cache(current_scene: String) -> int:
 				_queued_items.append(path)
 				
 		scene = scene_directory.get_next()
-		path = "res://scenes/%s" % scene
+		if MdnaCore.current_location == "":
+			path = "%s/%s" % [_scene_path, scene]
+		else:
+			path = "%s/%s/%s" % [_scene_path, MdnaCore.current_location, scene]
 		
 	scene_directory.list_dir_end()
 	

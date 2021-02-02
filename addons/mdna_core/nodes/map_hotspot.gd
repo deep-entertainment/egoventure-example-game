@@ -9,9 +9,11 @@ extends Hotspot
 # cached
 export(Texture) var loading_image
 
-
 # The music that should be played while loading
 export(AudioStream) var location_music
+
+# The new location (subdirectory of the scene files)
+export(String) var location = ""
 
 
 func _ready():
@@ -25,6 +27,7 @@ func _on_pressed():
 		accept_event()
 		Boombox.play_music(location_music)
 		MdnaCore.target_view = target_view
+		MdnaCore.current_location = location
 		WaitingScreen.set_image(loading_image)
 		MdnaCore.update_cache(target_scene, true)
 		yield(MdnaCore, "queue_complete")

@@ -23,6 +23,9 @@ var current_view: String = ""
 # The target view for the next room
 var target_view: String = ""
 
+# Current location (subfolder in scenes folder)
+var current_location: String = ""
+
 # Wether the game has started. Should be set to true in the first interactive 
 # scene
 var game_started: bool = false
