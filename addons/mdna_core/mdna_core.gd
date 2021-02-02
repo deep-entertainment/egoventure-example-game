@@ -239,6 +239,7 @@ func options_get_effects_level() -> float:
 func _update_state():
 	MdnaCore.state.current_scene = _get_current_scene().filename
 	MdnaCore.state.target_view = MdnaCore.current_view
+	MdnaCore.state.target_location = MdnaCore.current_location
 	MdnaCore.state.inventory_items = MdnaInventory.get_items()
 	MdnaCore.state.current_music = Boombox.get_music()
 	MdnaCore.state.current_background = Boombox.get_background()
@@ -256,6 +257,7 @@ func _load(p_state: BaseState):
 	for goal_fulfilled in p_state.goals_fulfilled:
 		MdnaCore.state.goals_fulfilled.append(goal_fulfilled.duplicate())
 	MdnaCore.target_view = MdnaCore.state.target_view
+	MdnaCore.current_location = MdnaCore.state.target_location
 	
 	for item in MdnaInventory.get_items():
 		MdnaInventory.remove_item(item)

@@ -12,6 +12,9 @@ export(Array) var inventory_items: Array
 # Target view of the stored scene
 export(String) var target_view: String
 
+# Target location of the stored scene
+export(String) var target_location: String
+
 # Current music playing
 export(AudioStream) var current_music: AudioStream
 
