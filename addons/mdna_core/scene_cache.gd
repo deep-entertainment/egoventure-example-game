@@ -95,24 +95,32 @@ func update_cache(current_scene: String) -> int:
 		"Caching scenes from index %d to %d" % [first_index, last_index]
 	)
 	
-	for cache_item in _cache.keys():
-		var cache_index = _get_index_from_filename(cache_item)
-		if cache_index < first_index or cache_index > last_index:
-			print_debug("Removing scene %s from cache" % cache_item)
-			_cache.erase(cache_item)
+	var base_path
 	
+	if MdnaCore.current_location == "":
+		base_path = _scene_path
+	else:
+		base_path = "%s/%s" % [_scene_path, MdnaCore.current_location]
+	
+	for cache_item in _cache.keys():
+		if cache_item.get_basename() != base_path:
+			_cache.erase(cache_item)
+		else:
+			var cache_index = _get_index_from_filename(cache_item)
+			if cache_index < first_index or cache_index > last_index:
+				print_debug("Removing scene %s from cache" % cache_item)
+				_cache.erase(cache_item)
+		
 	var scene_directory = Directory.new()
-	scene_directory.open(_scene_path)
+	
+	scene_directory.open(base_path)
 	
 	scene_directory.list_dir_begin(true, true)
 	
 	var scene: String = scene_directory.get_next()
 	var path: String
 	
-	if MdnaCore.current_location == "":
-		path = "%s/%s" % [_scene_path, scene]
-	else:
-		path = "%s/%s/%s" % [_scene_path, MdnaCore.current_location, scene]
+	path = "%s/%s" % [base_path, scene]
 	
 	while scene != "":
 		if not path in _cache.keys() and path.get_extension() == "tscn":
@@ -125,10 +133,7 @@ func update_cache(current_scene: String) -> int:
 				_queued_items.append(path)
 				
 		scene = scene_directory.get_next()
-		if MdnaCore.current_location == "":
-			path = "%s/%s" % [_scene_path, scene]
-		else:
-			path = "%s/%s/%s" % [_scene_path, MdnaCore.current_location, scene]
+		path = "%s/%s" % [base_path, scene]
 		
 	scene_directory.list_dir_end()
 	
@@ -146,7 +151,7 @@ func update_cache(current_scene: String) -> int:
 # 
 # filename: The path and filename of the scene
 func _get_index_from_filename(filename: String) -> int:
-	filename = filename.replace(_scene_path + "/", "")
+	filename = filename.get_file()
 	var result = _scene_index_regex.search(filename)
 	if result == null:
 		return -1

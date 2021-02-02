@@ -11,7 +11,7 @@ signal queue_complete
 
 # A regex to search for the scene index in a scene filename.
 # e.g.: home04b.tscn has the index 4, castle12detail1.tscn has the index 12.
-const SCENE_REGEX = "^[a-z]+(?<index>\\d+)\\D?.*$"
+const SCENE_REGEX = "^[a-z_-]+(?<index>\\d+)\\D?.*$"
 
 
 # The current state of the game

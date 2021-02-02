@@ -57,3 +57,4 @@ __meta__ = {
 }
 target_scene = "res://scenes/cache_test/cache_test_01.tscn"
 loading_image = ExtResource( 7 )
+location = "cache_test"
