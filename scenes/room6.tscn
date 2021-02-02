@@ -40,7 +40,7 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-target_scene = "res://scenes/room7.tscn"
+target_scene = "res://scenes/cache_test/cache_test_01.tscn"
 
 [node name="Bench" type="TextureButton" parent="."]
 margin_left = 1691.0

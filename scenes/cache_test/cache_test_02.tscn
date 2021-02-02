@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://addons/mdna_core/nodes/four_side_room.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/cache_test/cache_test_02.gd" type="Script" id=2]
+[ext_resource path="res://images/cache_test/man02c.jpg" type="Texture" id=3]
+[ext_resource path="res://images/cache_test/man02a.jpg" type="Texture" id=4]
+[ext_resource path="res://images/cache_test/man02d.jpg" type="Texture" id=5]
+[ext_resource path="res://images/cache_test/man02b.jpg" type="Texture" id=6]
+[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=7]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Room" parent="." instance=ExtResource( 1 )]
+position = Vector2( -5.65674, 0 )
+front_texture = ExtResource( 4 )
+right_texture = ExtResource( 6 )
+back_texture = ExtResource( 3 )
+left_texture = ExtResource( 5 )
+
+[node name="Hotspot" type="TextureButton" parent="."]
+margin_left = 678.324
+margin_top = 1957.06
+margin_right = 3564.32
+margin_bottom = 3688.06
+mouse_default_cursor_shape = 3
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+target_scene = "res://scenes/cache_test/cache_test_01.tscn"
+target_view = "back"
