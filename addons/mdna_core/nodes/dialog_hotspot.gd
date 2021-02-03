@@ -12,10 +12,14 @@ var dialog: DialogResource
 var asked: bool = false setget _set_asked
 
 
-# Connect the pressed signal to the pressed func
-func _ready():
+# Connect hover signals
+func _init():
 	connect("mouse_entered", self, "_set_hover")
 	connect("mouse_exited", self, "_update_color")
+
+
+# Set default value for asked
+func _ready():
 	_set_asked(asked)
 
 

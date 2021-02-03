@@ -16,7 +16,8 @@ export(AudioStream) var location_music
 export(String) var location = ""
 
 
-func _ready():
+# Connect the pressed signal
+func _init():
 	connect("pressed", self, "_on_pressed")
 
 
@@ -29,6 +30,7 @@ func _on_pressed():
 		MdnaCore.target_view = target_view
 		MdnaCore.current_location = location
 		WaitingScreen.set_image(loading_image)
-		MdnaCore.update_cache(target_scene, true)
-		yield(MdnaCore, "queue_complete")
+		var caches = MdnaCore.update_cache(target_scene, true)
+		if caches > 0:
+			yield(MdnaCore, "queue_complete")
 		MdnaCore.change_scene(target_scene)

@@ -9,7 +9,7 @@ export (String, FILE, "*.tres") var dialog
 
 
 # Connect to the relevant signals and gather the cursors from configuration
-func _ready():
+func _init():
 	connect("pressed", self, "_on_pressed")
 	mouse_default_cursor_shape = Cursors.CURSOR_MAP[Cursors.Type.LOOK]
 
