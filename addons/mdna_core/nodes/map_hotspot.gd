@@ -23,7 +23,6 @@ export(String) var location = ""
 # Connect the pressed signal
 func _init():
 	hotspot_type = Cursors.Type.MAP
-	connect("pressed", self, "_on_pressed")
 
 
 # Update cache blocking for the target scene, then jump there
@@ -49,5 +48,6 @@ func _on_pressed():
 				),
 				"timeout"
 			)
+			WaitingScreen.hide()
 		Speedy.hidden = false
 		MdnaCore.change_scene(target_scene)
