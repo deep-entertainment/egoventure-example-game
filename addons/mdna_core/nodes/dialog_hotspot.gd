@@ -5,6 +5,9 @@ class_name DialogHotspot, \
 extends RichTextLabel
 
 
+signal pressed
+
+
 # The dialog to play
 var dialog: DialogResource 
 
@@ -117,7 +120,10 @@ func _gui_input(event):
 			MainMenu.toggle()
 		else:
 			release_focus()
-			Parrot.play(dialog)
+			if (dialog):			
+				Parrot.play(dialog)
+			else:
+				emit_signal("pressed")
 
 
 # Return properties
