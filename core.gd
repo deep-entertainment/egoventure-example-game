@@ -1,8 +1,8 @@
 # Carol Reed - Sins Of The Fathers (Godot Demo)
 extends Node
 
-
 func _ready():
+	MdnaCore.state = GameState.new()
 	MdnaCore.configure(preload("res://configuration.tres"))
 	Parrot.subtitles = MdnaCore.options_get_subtitles()
 	Parrot.configure(MdnaCore.configuration.theme)
