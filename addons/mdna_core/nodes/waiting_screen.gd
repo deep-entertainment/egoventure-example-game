@@ -29,7 +29,7 @@ func is_visible():
 #
 # - value: The current progress as a percent number
 func set_progress(value: float):
-	$Screen/Panel/VBoxContainer/ProgressBar.value = value
+	$Screen/Panel/ProgressBar.value = value
 	if value == 100:
 		hide()
 
@@ -40,4 +40,4 @@ func set_progress(value: float):
 #
 # - image: The image to set
 func set_image(image: Texture):
-	$Screen/Panel/VBoxContainer/TextureRect.texture = image
+	$Screen/Panel/TextureRect.texture = image
