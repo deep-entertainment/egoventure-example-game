@@ -5,6 +5,7 @@ class_name DialogHotspot, \
 extends RichTextLabel
 
 
+# Emitted when the button is clicked but no dialog is selected
 signal pressed
 
 
@@ -120,7 +121,7 @@ func _gui_input(event):
 			MainMenu.toggle()
 		else:
 			release_focus()
-			if (dialog):			
+			if (dialog):	
 				Parrot.play(dialog)
 			else:
 				emit_signal("pressed")
