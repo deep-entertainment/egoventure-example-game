@@ -17,8 +17,9 @@ func _on_triggered_inventory_item(item1: InventoryItem, item2: InventoryItem):
 func _on_new_game():
 	var state = GameState.new()
 	MdnaCore.state = state
-	MdnaCore.update_cache("res://scenes/room1f.tscn", true)
-	yield(MdnaCore, "queue_complete")
+	var items = MdnaCore.update_cache("res://scenes/room1f.tscn", true)
+	if items > 0:
+		yield(MdnaCore, "queue_complete")
 	MdnaCore.change_scene("res://scenes/intro.tscn")
 
 func _on_load():
