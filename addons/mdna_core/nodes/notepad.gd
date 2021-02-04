@@ -76,10 +76,6 @@ func configure(configuration: GameConfiguration):
 			current_goal.title = line[1]
 			current_goal.id = int(line[2])
 			current_goal.hints = []
-			var fulfillment_record = FulfillmentRecord.new()
-			fulfillment_record.goal_id = current_goal.id
-			fulfillment_record.fulfilled = []
-			MdnaCore.state.goals_fulfilled.append(fulfillment_record)
 		elif line.size() >= 2 and line[1] != "":
 			current_goal.hints.append(line[1])
 
@@ -177,4 +173,8 @@ func _get_fulfillment_record(goal: Goal) -> FulfillmentRecord:
 	for fulfilled in MdnaCore.state.goals_fulfilled:
 		if (fulfilled as FulfillmentRecord).goal_id == goal.id:
 			return fulfilled
-	return null
+	var fulfillment_record = FulfillmentRecord.new()
+	fulfillment_record.goal_id = goal.id
+	fulfillment_record.fulfilled = []
+	MdnaCore.state.goals_fulfilled.append(fulfillment_record)
+	return fulfillment_record
