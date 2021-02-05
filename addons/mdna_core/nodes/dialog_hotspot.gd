@@ -115,7 +115,8 @@ func _enter_tree():
 
 # Play dialog
 func _gui_input(event):
-	if event is InputEventMouseButton and \
+	if MdnaInventory.selected_item == null and \
+			event is InputEventMouseButton and \
 			not (event as InputEventMouseButton).pressed:
 		if (event as InputEventMouseButton).button_index == BUTTON_RIGHT:
 			MainMenu.toggle()
