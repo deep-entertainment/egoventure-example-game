@@ -2,7 +2,7 @@
 extends Node
 
 func _ready():
-	MdnaCore.state = GameState.new()
+	_initialization()
 	MdnaCore.configure(preload("res://configuration.tres"))
 	Parrot.subtitles = MdnaCore.options_get_subtitles()
 	Parrot.configure(MdnaCore.configuration.theme)
@@ -15,12 +15,15 @@ func _on_triggered_inventory_item(item1: InventoryItem, item2: InventoryItem):
 	pass
 
 func _on_new_game():
-	var state = GameState.new()
-	MdnaCore.state = state
+	_initialization()
 	var items = MdnaCore.update_cache("res://scenes/room1f.tscn", true)
 	if items > 0:
 		yield(MdnaCore, "queue_complete")
 	MdnaCore.change_scene("res://scenes/intro.tscn")
+
+func _initialization():
+	var state = GameState.new()
+	MdnaCore.state = state
 
 func _on_load():
 	pass
