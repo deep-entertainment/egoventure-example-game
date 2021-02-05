@@ -174,9 +174,15 @@ func _on_slot_selected(slot: int, exists: bool):
 			# Briefly hide the menu to snapshot a picture of the current
 			# scene
 			$Menu.hide()
-			yield(get_tree().create_timer(1.0), "timeout")
-			MdnaCore.save(slot)
+			yield(VisualServer, "frame_post_draw")
+			var screenshot = get_viewport().get_texture().get_data()
 			$Menu.show()
+			WaitingScreen.show()
+			yield(VisualServer, "frame_post_draw")
+			screenshot.flip_y()
+			screenshot.save_png("user://save_%d.png" % slot)
+			MdnaCore.save(slot)
+			WaitingScreen.hide()
 			_refresh_saveslots()
 	else:
 		MdnaCore.load(slot)

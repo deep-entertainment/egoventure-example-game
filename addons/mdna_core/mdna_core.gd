@@ -93,9 +93,6 @@ func change_scene(path: String):
 #
 # - slot: The save slot index
 func save(slot: int):
-	var screenshot = get_viewport().get_texture().get_data()
-	screenshot.flip_y()
-	screenshot.save_png("user://save_%d.png" % slot)
 	_update_state()
 	ResourceSaver.save("user://save_%d.tres" % slot, MdnaCore.state)
 
