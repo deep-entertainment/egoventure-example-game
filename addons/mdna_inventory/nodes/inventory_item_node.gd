@@ -99,6 +99,7 @@ func _on_InventoryItem_pressed():
 			texture_normal = item.image_active
 		else:
 			modulate.a = 0
+			Speedy.keep_shape = true
 			Speedy.set_custom_mouse_cursor(
 				item.image_normal,
 				Input.CURSOR_ARROW,

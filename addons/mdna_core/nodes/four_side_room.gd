@@ -124,20 +124,22 @@ func _set_current_view(value: String):
 
 # Handle camera move when the right hotspot was pressed
 func _on_right_pressed():
-	match current_view:
-		VIEW_FRONT: _set_current_view(VIEW_RIGHT)
-		VIEW_RIGHT: _set_current_view(VIEW_BACK)
-		VIEW_BACK: _set_current_view(VIEW_LEFT)
-		VIEW_LEFT: _set_current_view(VIEW_FRONT)
+	if MdnaInventory.selected_item == null:
+		match current_view:
+			VIEW_FRONT: _set_current_view(VIEW_RIGHT)
+			VIEW_RIGHT: _set_current_view(VIEW_BACK)
+			VIEW_BACK: _set_current_view(VIEW_LEFT)
+			VIEW_LEFT: _set_current_view(VIEW_FRONT)
 
 
 # Handle camera move when the left hotspot was pressed
 func _on_left_pressed():
-	match current_view:
-		VIEW_FRONT: _set_current_view(VIEW_LEFT)
-		VIEW_LEFT: _set_current_view(VIEW_BACK)
-		VIEW_BACK: _set_current_view(VIEW_RIGHT)
-		VIEW_RIGHT: _set_current_view(VIEW_FRONT)
+	if MdnaInventory.selected_item == null:
+		match current_view:
+			VIEW_FRONT: _set_current_view(VIEW_LEFT)
+			VIEW_LEFT: _set_current_view(VIEW_BACK)
+			VIEW_BACK: _set_current_view(VIEW_RIGHT)
+			VIEW_RIGHT: _set_current_view(VIEW_FRONT)
 
 
 # Set the texture for the front view
