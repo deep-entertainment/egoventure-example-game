@@ -3,7 +3,7 @@
 tool
 class_name TriggerHotspot, \
 		"res://addons/mdna_inventory/images/trigger_hotspot.svg"
-extends Button
+extends TextureButton
 
 
 # Emitted when a validitem was used on the hotspot
@@ -23,7 +23,6 @@ func _ready():
 
 # Set the button we're extending from to flat
 func _enter_tree():
-	flat = true
 	enabled_focus_mode = Control.FOCUS_NONE
 
 
