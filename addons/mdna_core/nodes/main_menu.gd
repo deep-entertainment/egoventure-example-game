@@ -176,10 +176,12 @@ func _on_slot_selected(slot: int, exists: bool):
 			toggle()
 			yield(VisualServer, "frame_post_draw")
 			var screenshot = get_viewport().get_texture().get_data()
+			screenshot.shrink_x2()
+			screenshot.shrink_x2()
 			screenshot.flip_y()
 			screenshot.save_png("user://save_%d.png" % slot)
+			yield(VisualServer, "frame_post_draw")
 			MdnaCore.save(slot)
-			_refresh_saveslots()
 	else:
 		MdnaCore.load(slot)
 
