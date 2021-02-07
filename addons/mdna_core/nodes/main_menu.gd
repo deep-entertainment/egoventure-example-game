@@ -337,6 +337,14 @@ func _refresh_saveslots():
 						"Panel"
 					)
 				)
+		(slot_node.get_node("Slot/Date") as Label) \
+				.add_font_override(
+					"font",
+					(slot_node.get_node("Slot/Date") as Label).get_font(
+						"saveslots_date",
+						"Label"
+					)
+				)
 		
 		var slot_panel_image: TextureButton
 		var connect_signals: bool = true
