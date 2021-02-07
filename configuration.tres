@@ -53,7 +53,7 @@ cursor_hotspot = Vector2( 42, 42 )
 script = ExtResource( 15 )
 hotspot_type = 7
 cursor = ExtResource( 18 )
-cursor_hotspot = Vector2( 32, 32 )
+cursor_hotspot = Vector2( 50, 32 )
 
 [sub_resource type="Resource" id=6]
 script = ExtResource( 15 )
