@@ -111,11 +111,9 @@ func toggle():
 		if _configuration.menu_music != null and $Menu.visible:
 			if $Menu/Music.stream == null:
 				$Menu/Music.stream = _configuration.menu_music
-				$Menu/Music.play()
-			else:
-				$Menu/Music.stream_paused = false
+			$Menu/Music.play()
 		elif _configuration.menu_music != null:
-			$Menu/Music.stream_paused = true
+			$Menu/Music.stop()
 		
 		if not $Menu.visible:
 			$Menu/SaveSlots.visible = false
