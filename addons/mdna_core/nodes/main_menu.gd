@@ -174,6 +174,7 @@ func _on_slot_selected(slot: int, exists: bool):
 			# Briefly hide the menu to snapshot a picture of the current
 			# scene
 			toggle()
+			Speedy.hidden = true
 			yield(VisualServer, "frame_post_draw")
 			var screenshot = get_viewport().get_texture().get_data()
 			screenshot.shrink_x2()
@@ -181,6 +182,7 @@ func _on_slot_selected(slot: int, exists: bool):
 			screenshot.flip_y()
 			screenshot.save_png("user://save_%d.png" % slot)
 			yield(VisualServer, "frame_post_draw")
+			Speedy.hidden = false
 			MdnaCore.save(slot)
 	else:
 		MdnaCore.load(slot)
@@ -323,6 +325,11 @@ func _get_date_from_file(file: String) -> String:
 func _refresh_saveslots():
 	var save_dir = Directory.new()
 	save_dir.open("user://")
+	
+	if _save_slot_page == 1:
+		$Menu/SaveSlots/VBox/HBox/Previous.modulate = Color(1, 1, 1, 0)
+	else:
+		$Menu/SaveSlots/VBox/HBox/Previous.modulate = Color(1, 1, 1, 1)
 	
 	for slot in range(0, 12):
 		var save_slot = ((_save_slot_page - 1) * 12) + slot
