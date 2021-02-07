@@ -327,8 +327,10 @@ func _refresh_saveslots():
 	
 	if _save_slot_page == 1:
 		$Menu/SaveSlots/VBox/HBox/Previous.modulate = Color(1, 1, 1, 0)
+		$Menu/SaveSlots/VBox/HBox/Previous.mouse_default_cursor_shape = Control.CURSOR_ARROW
 	else:
 		$Menu/SaveSlots/VBox/HBox/Previous.modulate = Color(1, 1, 1, 1)
+		$Menu/SaveSlots/VBox/HBox/Previous.mouse_default_cursor_shape = Control.CURSOR_FDIAGSIZE
 	
 	for slot in range(0, 12):
 		var save_slot = ((_save_slot_page - 1) * 12) + slot

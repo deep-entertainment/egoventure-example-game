@@ -247,9 +247,8 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="Menu/SaveSlots/VBox"]
-margin_top = -1.0
 margin_right = 2560.0
-margin_bottom = 199.0
+margin_bottom = 200.0
 rect_min_size = Vector2( 0, 200 )
 text = "Load/Save Game"
 align = 1
@@ -266,16 +265,17 @@ __meta__ = {
 }
 
 [node name="Previous" type="TextureButton" parent="Menu/SaveSlots/VBox/HBox"]
-margin_right = 319.0
+margin_right = 302.0
 margin_bottom = 1032.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 texture_normal = ExtResource( 4 )
 expand = true
 stretch_mode = 3
 
 [node name="Slots" type="GridContainer" parent="Menu/SaveSlots/VBox/HBox"]
-margin_left = 323.0
-margin_right = 2237.0
+margin_left = 306.0
+margin_right = 2254.0
 margin_bottom = 1032.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -283,7 +283,7 @@ size_flags_stretch_ratio = 6.0
 columns = 4
 
 [node name="Slot1" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_right = 475.0
+margin_right = 484.0
 margin_bottom = 341.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -295,20 +295,23 @@ custom_constants/margin_bottom = 10
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot1"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 465.0
+margin_right = 474.0
 margin_bottom = 331.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot1/Slot"]
-margin_right = 455.0
-margin_bottom = 303.0
+margin_right = 464.0
+margin_bottom = 268.0
+rect_min_size = Vector2( 464, 268 )
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="Image" type="TextureButton" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot1/Slot/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 expand = true
@@ -318,14 +321,15 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot1/Slot"]
-margin_top = 307.0
-margin_right = 455.0
-margin_bottom = 321.0
+margin_top = 272.0
+margin_right = 464.0
+margin_bottom = 286.0
+mouse_default_cursor_shape = 12
 align = 1
 
 [node name="Slot2" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 479.0
-margin_right = 954.0
+margin_left = 488.0
+margin_right = 972.0
 margin_bottom = 341.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -337,20 +341,23 @@ custom_constants/margin_bottom = 10
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot2"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 465.0
+margin_right = 474.0
 margin_bottom = 331.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot2/Slot"]
-margin_right = 455.0
-margin_bottom = 303.0
+margin_right = 464.0
+margin_bottom = 268.0
+rect_min_size = Vector2( 464, 268 )
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="Image" type="TextureButton" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot2/Slot/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 expand = true
@@ -360,14 +367,15 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot2/Slot"]
-margin_top = 307.0
-margin_right = 455.0
-margin_bottom = 321.0
+margin_top = 272.0
+margin_right = 464.0
+margin_bottom = 286.0
+mouse_default_cursor_shape = 12
 align = 1
 
 [node name="Slot3" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 958.0
-margin_right = 1433.0
+margin_left = 976.0
+margin_right = 1460.0
 margin_bottom = 341.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -379,20 +387,23 @@ custom_constants/margin_bottom = 10
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot3"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 465.0
+margin_right = 474.0
 margin_bottom = 331.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot3/Slot"]
-margin_right = 455.0
-margin_bottom = 303.0
+margin_right = 464.0
+margin_bottom = 268.0
+rect_min_size = Vector2( 464, 268 )
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="Image" type="TextureButton" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot3/Slot/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 expand = true
@@ -402,14 +413,15 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot3/Slot"]
-margin_top = 307.0
-margin_right = 455.0
-margin_bottom = 321.0
+margin_top = 272.0
+margin_right = 464.0
+margin_bottom = 286.0
+mouse_default_cursor_shape = 12
 align = 1
 
 [node name="Slot4" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 1437.0
-margin_right = 1912.0
+margin_left = 1464.0
+margin_right = 1948.0
 margin_bottom = 341.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -421,20 +433,23 @@ custom_constants/margin_bottom = 10
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot4"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 465.0
+margin_right = 474.0
 margin_bottom = 331.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot4/Slot"]
-margin_right = 455.0
-margin_bottom = 303.0
+margin_right = 464.0
+margin_bottom = 268.0
+rect_min_size = Vector2( 464, 268 )
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="Image" type="TextureButton" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot4/Slot/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 expand = true
@@ -444,14 +459,15 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot4/Slot"]
-margin_top = 307.0
-margin_right = 455.0
-margin_bottom = 321.0
+margin_top = 272.0
+margin_right = 464.0
+margin_bottom = 286.0
+mouse_default_cursor_shape = 12
 align = 1
 
 [node name="Slot5" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
 margin_top = 345.0
-margin_right = 475.0
+margin_right = 484.0
 margin_bottom = 686.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -463,20 +479,23 @@ custom_constants/margin_bottom = 10
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot5"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 465.0
+margin_right = 474.0
 margin_bottom = 331.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot5/Slot"]
-margin_right = 455.0
-margin_bottom = 303.0
+margin_right = 464.0
+margin_bottom = 268.0
+rect_min_size = Vector2( 464, 268 )
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="Image" type="TextureButton" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot5/Slot/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 expand = true
@@ -486,15 +505,16 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot5/Slot"]
-margin_top = 307.0
-margin_right = 455.0
-margin_bottom = 321.0
+margin_top = 272.0
+margin_right = 464.0
+margin_bottom = 286.0
+mouse_default_cursor_shape = 12
 align = 1
 
 [node name="Slot6" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 479.0
+margin_left = 488.0
 margin_top = 345.0
-margin_right = 954.0
+margin_right = 972.0
 margin_bottom = 686.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -506,20 +526,23 @@ custom_constants/margin_bottom = 10
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot6"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 465.0
+margin_right = 474.0
 margin_bottom = 331.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot6/Slot"]
-margin_right = 455.0
-margin_bottom = 303.0
+margin_right = 464.0
+margin_bottom = 268.0
+rect_min_size = Vector2( 464, 268 )
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="Image" type="TextureButton" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot6/Slot/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 expand = true
@@ -529,15 +552,16 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot6/Slot"]
-margin_top = 307.0
-margin_right = 455.0
-margin_bottom = 321.0
+margin_top = 272.0
+margin_right = 464.0
+margin_bottom = 286.0
+mouse_default_cursor_shape = 12
 align = 1
 
 [node name="Slot7" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 958.0
+margin_left = 976.0
 margin_top = 345.0
-margin_right = 1433.0
+margin_right = 1460.0
 margin_bottom = 686.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -549,20 +573,23 @@ custom_constants/margin_bottom = 10
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot7"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 465.0
+margin_right = 474.0
 margin_bottom = 331.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot7/Slot"]
-margin_right = 455.0
-margin_bottom = 303.0
+margin_right = 464.0
+margin_bottom = 268.0
+rect_min_size = Vector2( 464, 268 )
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="Image" type="TextureButton" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot7/Slot/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 expand = true
@@ -572,15 +599,16 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot7/Slot"]
-margin_top = 307.0
-margin_right = 455.0
-margin_bottom = 321.0
+margin_top = 272.0
+margin_right = 464.0
+margin_bottom = 286.0
+mouse_default_cursor_shape = 12
 align = 1
 
 [node name="Slot8" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 1437.0
+margin_left = 1464.0
 margin_top = 345.0
-margin_right = 1912.0
+margin_right = 1948.0
 margin_bottom = 686.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -592,20 +620,23 @@ custom_constants/margin_bottom = 10
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot8"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 465.0
+margin_right = 474.0
 margin_bottom = 331.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot8/Slot"]
-margin_right = 455.0
-margin_bottom = 303.0
+margin_right = 464.0
+margin_bottom = 268.0
+rect_min_size = Vector2( 464, 268 )
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="Image" type="TextureButton" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot8/Slot/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 expand = true
@@ -615,14 +646,15 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot8/Slot"]
-margin_top = 307.0
-margin_right = 455.0
-margin_bottom = 321.0
+margin_top = 272.0
+margin_right = 464.0
+margin_bottom = 286.0
+mouse_default_cursor_shape = 12
 align = 1
 
 [node name="Slot9" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
 margin_top = 690.0
-margin_right = 475.0
+margin_right = 484.0
 margin_bottom = 1031.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -634,20 +666,23 @@ custom_constants/margin_bottom = 10
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot9"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 465.0
+margin_right = 474.0
 margin_bottom = 331.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot9/Slot"]
-margin_right = 455.0
-margin_bottom = 303.0
+margin_right = 464.0
+margin_bottom = 268.0
+rect_min_size = Vector2( 464, 268 )
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="Image" type="TextureButton" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot9/Slot/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 expand = true
@@ -657,15 +692,16 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot9/Slot"]
-margin_top = 307.0
-margin_right = 455.0
-margin_bottom = 321.0
+margin_top = 272.0
+margin_right = 464.0
+margin_bottom = 286.0
+mouse_default_cursor_shape = 12
 align = 1
 
 [node name="Slot10" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 479.0
+margin_left = 488.0
 margin_top = 690.0
-margin_right = 954.0
+margin_right = 972.0
 margin_bottom = 1031.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -677,20 +713,23 @@ custom_constants/margin_bottom = 10
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot10"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 465.0
+margin_right = 474.0
 margin_bottom = 331.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot10/Slot"]
-margin_right = 455.0
-margin_bottom = 303.0
+margin_right = 464.0
+margin_bottom = 268.0
+rect_min_size = Vector2( 464, 268 )
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="Image" type="TextureButton" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot10/Slot/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 expand = true
@@ -700,15 +739,16 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot10/Slot"]
-margin_top = 307.0
-margin_right = 455.0
-margin_bottom = 321.0
+margin_top = 272.0
+margin_right = 464.0
+margin_bottom = 286.0
+mouse_default_cursor_shape = 12
 align = 1
 
 [node name="Slot11" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 958.0
+margin_left = 976.0
 margin_top = 690.0
-margin_right = 1433.0
+margin_right = 1460.0
 margin_bottom = 1031.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -720,20 +760,23 @@ custom_constants/margin_bottom = 10
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot11"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 465.0
+margin_right = 474.0
 margin_bottom = 331.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot11/Slot"]
-margin_right = 455.0
-margin_bottom = 303.0
+margin_right = 464.0
+margin_bottom = 268.0
+rect_min_size = Vector2( 464, 268 )
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="Image" type="TextureButton" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot11/Slot/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 expand = true
@@ -743,15 +786,16 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot11/Slot"]
-margin_top = 307.0
-margin_right = 455.0
-margin_bottom = 321.0
+margin_top = 272.0
+margin_right = 464.0
+margin_bottom = 286.0
+mouse_default_cursor_shape = 12
 align = 1
 
 [node name="Slot12" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 1437.0
+margin_left = 1464.0
 margin_top = 690.0
-margin_right = 1912.0
+margin_right = 1948.0
 margin_bottom = 1031.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -763,20 +807,23 @@ custom_constants/margin_bottom = 10
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot12"]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 465.0
+margin_right = 474.0
 margin_bottom = 331.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot12/Slot"]
-margin_right = 455.0
-margin_bottom = 303.0
+margin_right = 464.0
+margin_bottom = 268.0
+rect_min_size = Vector2( 464, 268 )
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="Image" type="TextureButton" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot12/Slot/Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 size_flags_vertical = 3
 expand = true
@@ -786,15 +833,17 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot12/Slot"]
-margin_top = 307.0
-margin_right = 455.0
-margin_bottom = 321.0
+margin_top = 272.0
+margin_right = 464.0
+margin_bottom = 286.0
+mouse_default_cursor_shape = 12
 align = 1
 
 [node name="Next" type="TextureButton" parent="Menu/SaveSlots/VBox/HBox"]
-margin_left = 2241.0
+margin_left = 2258.0
 margin_right = 2560.0
 margin_bottom = 1032.0
+mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 texture_normal = ExtResource( 2 )
 expand = true
