@@ -21,7 +21,7 @@ var texture_notepad: Texture
 var texture_activate: Texture
 
 # Default mouse cursor
-var mouse_cursor: Texture
+var mouse_cursor: SpriteFrames
 
 # Default mouse cursor
 var hotspot_cursor: Vector2
@@ -69,7 +69,7 @@ func _get_property_list():
 		"name": "mouse_cursor",
 		"type": TYPE_OBJECT,
 		"hint": PROPERTY_HINT_RESOURCE_TYPE,
-		"hint_string": "Texture"
+		"hint_string": "SpriteFrames"
 	})
 	properties.append({
 		"name": "hotspot_cursor",

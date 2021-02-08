@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=6 format=2]
+[gd_resource type="Resource" load_steps=7 format=2]
 
 [ext_resource path="res://addons/mdna_inventory/resources/inventory_configuration.gd" type="Script" id=1]
 [ext_resource path="res://theme.tres" type="Theme" id=2]
@@ -6,12 +6,20 @@
 [ext_resource path="res://images/mouse/use.png" type="Texture" id=4]
 [ext_resource path="res://images/notepad_icon.png" type="Texture" id=5]
 
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
 [resource]
 script = ExtResource( 1 )
 size = 92
 theme = ExtResource( 2 )
 texture_notepad = ExtResource( 5 )
-mouse_cursor = ExtResource( 3 )
+mouse_cursor = SubResource( 1 )
 hotspot_cursor = Vector2( 32, 32 )
 use_cursor = ExtResource( 4 )
 use_cursor_hotspot = Vector2( 32, 32 )
