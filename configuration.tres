@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=46 format=2]
+[gd_resource type="Resource" load_steps=75 format=2]
 
 [ext_resource path="res://addons/mdna_core/resources/game_configuration.gd" type="Script" id=1]
 [ext_resource path="res://music/credits.ogg" type="AudioStream" id=2]
@@ -24,6 +24,35 @@
 [ext_resource path="res://icon.png" type="Texture" id=22]
 [ext_resource path="res://images/mouse/map.png" type="Texture" id=23]
 [ext_resource path="res://images/mouse/hand.png" type="Texture" id=24]
+[ext_resource path="res://images/mouse/magnifier2.png" type="Texture" id=25]
+[ext_resource path="res://images/mouse/gears/27.png" type="Texture" id=26]
+[ext_resource path="res://images/mouse/gears/28.png" type="Texture" id=27]
+[ext_resource path="res://images/mouse/gears/04.png" type="Texture" id=28]
+[ext_resource path="res://images/mouse/gears/10.png" type="Texture" id=29]
+[ext_resource path="res://images/mouse/gears/23.png" type="Texture" id=30]
+[ext_resource path="res://images/mouse/gears/05.png" type="Texture" id=31]
+[ext_resource path="res://images/mouse/gears/15.png" type="Texture" id=32]
+[ext_resource path="res://images/mouse/gears/19.png" type="Texture" id=33]
+[ext_resource path="res://images/mouse/gears/08.png" type="Texture" id=34]
+[ext_resource path="res://images/mouse/gears/01.png" type="Texture" id=35]
+[ext_resource path="res://images/mouse/gears/02.png" type="Texture" id=36]
+[ext_resource path="res://images/mouse/gears/21.png" type="Texture" id=37]
+[ext_resource path="res://images/mouse/gears/25.png" type="Texture" id=38]
+[ext_resource path="res://images/mouse/gears/17.png" type="Texture" id=39]
+[ext_resource path="res://images/mouse/gears/06.png" type="Texture" id=40]
+[ext_resource path="res://images/mouse/gears/07.png" type="Texture" id=41]
+[ext_resource path="res://images/mouse/gears/18.png" type="Texture" id=42]
+[ext_resource path="res://images/mouse/gears/13.png" type="Texture" id=43]
+[ext_resource path="res://images/mouse/gears/20.png" type="Texture" id=44]
+[ext_resource path="res://images/mouse/gears/24.png" type="Texture" id=45]
+[ext_resource path="res://images/mouse/gears/26.png" type="Texture" id=46]
+[ext_resource path="res://images/mouse/gears/12.png" type="Texture" id=47]
+[ext_resource path="res://images/mouse/gears/22.png" type="Texture" id=48]
+[ext_resource path="res://images/mouse/gears/09.png" type="Texture" id=49]
+[ext_resource path="res://images/mouse/gears/16.png" type="Texture" id=50]
+[ext_resource path="res://images/mouse/gears/03.png" type="Texture" id=51]
+[ext_resource path="res://images/mouse/gears/11.png" type="Texture" id=52]
+[ext_resource path="res://images/mouse/gears/14.png" type="Texture" id=53]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -83,10 +112,10 @@ cursor_hotspot = Vector2( 42, 42 )
 
 [sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ ExtResource( 18 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 3.0
 } ]
 
 [sub_resource type="Resource" id=10]
@@ -97,10 +126,10 @@ cursor_hotspot = Vector2( 50, 32 )
 
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ ExtResource( 16 ) ],
+"frames": [ ExtResource( 35 ), ExtResource( 36 ), ExtResource( 51 ), ExtResource( 28 ), ExtResource( 31 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 34 ), ExtResource( 49 ), ExtResource( 29 ), ExtResource( 52 ), ExtResource( 47 ), ExtResource( 43 ), ExtResource( 53 ), ExtResource( 32 ), ExtResource( 50 ), ExtResource( 39 ), ExtResource( 42 ), ExtResource( 33 ), ExtResource( 44 ), ExtResource( 37 ), ExtResource( 48 ), ExtResource( 30 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 46 ), ExtResource( 26 ), ExtResource( 27 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 26.0
 } ]
 
 [sub_resource type="Resource" id=12]
