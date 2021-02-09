@@ -26,6 +26,9 @@ var _resource_queue: ResourceQueue
 # Current items in the cache
 var _queued_items: Array = []
 
+# Do not remove these scenes from the cache
+var _permanent_cache: PoolStringArray = []
+
 
 # Initialize the cache
 #
@@ -36,9 +39,15 @@ var _queued_items: Array = []
 # - scene_path: The absolute path where scenes are stored
 # - scene_regex: A regex to search for the scene index in the scene filename
 #   has to include a named group called "index"
-func _init(cache_count: int, scene_path: String, scene_regex: String):
+func _init(
+	cache_count: int, 
+	scene_path: String, 
+	scene_regex: String,
+	permanent_cache: PoolStringArray
+):
 	_cache_count = cache_count
 	_scene_path = scene_path
+	_permanent_cache = permanent_cache
 	_scene_index_regex = RegEx.new()
 	_scene_index_regex.compile(scene_regex)
 	_resource_queue = ResourceQueue.new()
@@ -95,6 +104,12 @@ func update_cache(current_scene: String) -> int:
 		"Caching scenes from index %d to %d" % [first_index, last_index]
 	)
 	
+	for scene in _permanent_cache:
+		if not _cache.has(scene):
+			print_debug("Queueing load of permanent scene %s" % scene)
+			_resource_queue.queue_resource(scene)
+			_queued_items.append(scene)
+	
 	var base_path
 	
 	if MdnaCore.current_location == "":
@@ -103,13 +118,14 @@ func update_cache(current_scene: String) -> int:
 		base_path = "%s/%s" % [_scene_path, MdnaCore.current_location]
 	
 	for cache_item in _cache.keys():
-		if cache_item.get_basename() != base_path:
-			_cache.erase(cache_item)
-		else:
-			var cache_index = _get_index_from_filename(cache_item)
-			if cache_index < first_index or cache_index > last_index:
-				print_debug("Removing scene %s from cache" % cache_item)
+		if not cache_item in _permanent_cache:
+			if cache_item.get_basename() != base_path:
 				_cache.erase(cache_item)
+			else:
+				var cache_index = _get_index_from_filename(cache_item)
+				if cache_index < first_index or cache_index > last_index:
+					print_debug("Removing scene %s from cache" % cache_item)
+					_cache.erase(cache_item)
 		
 	var scene_directory = Directory.new()
 	

@@ -73,6 +73,9 @@ var scene_cache_count: int = 3
 # Default image scaling
 var scene_default_image_scaling: float = 1.0
 
+# A list of scenes (as path to the scene files) that are always cached
+var advanced_permanent_cache: PoolStringArray = []
+
 
 # Build the property list
 func _get_property_list():
@@ -110,7 +113,7 @@ func _get_property_list():
 		name = "hints_file",
 		type = TYPE_STRING,
 		hint = PROPERTY_HINT_FILE,
-		hint_string = "*.csv"
+		hint_string = "*.txt"
 	})
 	properties.append({
 		name = "Menu",
@@ -234,5 +237,15 @@ func _get_property_list():
 	properties.append({
 		name = "scene_default_image_scaling",
 		type = TYPE_REAL
+	})
+	properties.append({
+		name = "Advanced",
+		type = TYPE_NIL,
+		hint_string = "advanced",
+		usage = PROPERTY_USAGE_GROUP | PROPERTY_USAGE_SCRIPT_VARIABLE
+	})
+	properties.append({
+		name = "advanced_permanent_cache",
+		type = TYPE_STRING_ARRAY,
 	})
 	return properties
