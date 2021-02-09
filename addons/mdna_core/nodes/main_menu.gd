@@ -431,6 +431,21 @@ func _on_RestartConfirm_confirmed():
 	emit_signal("new_game")
 
 
+# Toggle menu when rmb button clicked or esc pushed
 func _on_Menu_gui_input(event):
 	if event.is_action_released("ui_menu"):
 		toggle()
+
+
+# Stop speech sample on mouse release
+func _on_SpeechSlider_gui_input(event):
+	if event is InputEventMouseButton and not \
+			(event as InputEventMouseButton).pressed:
+		$Menu/Speech.stop()
+
+
+# Stop effects sample on mouse release
+func _on_EffectsSlider_gui_input(event):
+	if event is InputEventMouseButton and not \
+			(event as InputEventMouseButton).pressed:
+		$Menu/Effects.stop()
