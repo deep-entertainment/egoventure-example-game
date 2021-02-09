@@ -37,10 +37,6 @@ var _configuration: GameConfiguration
 # Default to hiding the menu
 func _ready():
 	MdnaCore.connect("game_loaded", self, "toggle")
-	# React to mouse hovers for advanced hovering designs
-	for child in $Menu/MainMenu/Margin/VBox/MenuItems.get_children():
-		(child as Button).connect("mouse_entered", self, "_on_menuitem_hover", [true, child])
-		(child as Button).connect("mouse_exited", self, "_on_menuitem_hover", [false, child])
 
 
 # Hide everything upon startup
@@ -79,6 +75,23 @@ func configure(configuration: GameConfiguration):
 	$Menu/Options/Background.texture = configuration.menu_options_background
 	
 	$Menu.theme = configuration.theme
+	
+	# Set option labels to the menu button style
+	for label in [
+		"SpeechLabel", 
+		"MusicLabel", 
+		"EffectsLabel", 
+		"SubtitlesLabel",
+		"Subtitles"
+	]:
+		var node = get_node("Menu/Options/CenterContainer/VBox/Grid/%s" % label)
+		node.add_font_override(
+			"font",
+			$Menu.get_font(
+				"menu_button",
+				"Button"
+			)
+		)
 	
 	# Set the options values
 	$Menu/Options/CenterContainer/VBox/Grid/SpeechSlider.value = \
@@ -261,20 +274,6 @@ func _on_Subtitles_toggled(value: bool):
 	if $Menu/Options.visible and _configuration.menu_switch_effect != null:
 		$Menu/Effects.stream = _configuration.menu_switch_effect
 		$Menu/Effects.play()
-
-
-# React to mouse hovers over menu buttons to allow for more hover
-# effects
-#
-# ** Parameters **
-# 
-# - entered: Wether the button was entered or not
-# - node: The button in question
-func _on_menuitem_hover(entered: bool, node: Button):
-	if entered:
-		node.add_font_override("font", _configuration.menu_hover_font)
-	else:
-		node.add_font_override("font", null)
 
 
 # Get the current volume level in db and convert it to a slider percent

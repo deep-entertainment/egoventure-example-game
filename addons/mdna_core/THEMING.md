@@ -32,6 +32,8 @@ The default font that is used throughout the game
 |             | Font Color Disabled  | Color of the text when a button is disabled          | Standard Dialogs |
 |             | Font Color Hover     | Color of the text when hovering over default buttons | Standard Dialogs |
 |             | Font Color Pressed   | Color of the text when pressing default buttons      | Standard Dialogs |
+| Fonts       | Menu Button          | Font for menu buttons                                | Main menu        |
+|             | Menu Button Hover    | Font for menu buttons when hovered                   | Main menu        |
 | Styles      | Focus                | Fill style of default buttons                        | Standard Dialogs |
 |             | Hover                | Fill style used when hovering over default buttons   | Standard Dialogs |
 |             | Menu Button Disabled | Fill style of menu buttons when disabled             | Main menu        |

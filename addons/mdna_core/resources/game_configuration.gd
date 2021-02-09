@@ -25,9 +25,6 @@ var menu_background: Texture
 # The music playing when the menu is opened
 var menu_music: AudioStream
 
-# A different font used on hovering the menu items
-var menu_hover_font: Font
-
 # A sound effect to play when the something is pressed
 var menu_switch_effect: AudioStream
 
@@ -138,12 +135,6 @@ func _get_property_list():
 		type = TYPE_OBJECT,
 		hint = PROPERTY_HINT_RESOURCE_TYPE,
 		hint_string = "AudioStream"
-	})
-	properties.append({
-		name = "menu_hover_font",
-		type = TYPE_OBJECT,
-		hint = PROPERTY_HINT_RESOURCE_TYPE,
-		hint_string = "Font"
 	})
 	properties.append({
 		name = "Saveslots",

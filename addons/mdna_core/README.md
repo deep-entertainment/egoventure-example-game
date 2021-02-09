@@ -93,12 +93,11 @@ The _GameConfiguration_ resource type contains many properties that control vari
 
 ### Menu
 
-| Property      | Description                                              | Used in   |
-| ------------- | -------------------------------------------------------- | --------- |
-| Background    | The menu background                                      | Main menu |
-| Music         | The music playing in the main menu                       | Main menu |
-| Switch Effect | The sound effect playing when buttons are clicked        | Main menu |
-| Hover font    | A special font used when hovering over main menu buttons | Main menu |
+| Property      | Description                                       | Used in   |
+| ------------- | ------------------------------------------------- | --------- |
+| Background    | The menu background                               | Main menu |
+| Music         | The music playing in the main menu                | Main menu |
+| Switch Effect | The sound effect playing when buttons are clicked | Main menu |
 
 ### Save slots
 
