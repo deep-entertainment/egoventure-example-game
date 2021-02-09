@@ -122,8 +122,11 @@ func _gui_input(event):
 			MainMenu.toggle()
 		else:
 			release_focus()
-			if (dialog):	
+			if (dialog):
+				Speedy.hidden = true
 				Parrot.play(dialog)
+				yield(Parrot,"finished_dialog")
+				Speedy.hidden = false
 			else:
 				emit_signal("pressed")
 
