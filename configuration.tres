@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=46 format=2]
+[gd_resource type="Resource" load_steps=36 format=2]
 
 [ext_resource path="res://addons/mdna_core/resources/game_configuration.gd" type="Script" id=1]
 [ext_resource path="res://music/credits.ogg" type="AudioStream" id=2]
@@ -25,144 +25,64 @@
 [ext_resource path="res://images/mouse/map.png" type="Texture" id=23]
 [ext_resource path="res://images/mouse/hand.png" type="Texture" id=24]
 
-[sub_resource type="SpriteFrames" id=12]
-animations = [ {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
 [sub_resource type="Resource" id=1]
 script = ExtResource( 15 )
 hotspot_type = 0
-cursor = SubResource( 12 )
+cursor = ExtResource( 12 )
 cursor_hotspot = Vector2( 32, 32 )
-
-[sub_resource type="SpriteFrames" id=13]
-animations = [ {
-"frames": [ ExtResource( 13 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [sub_resource type="Resource" id=2]
 script = ExtResource( 15 )
 hotspot_type = 2
-cursor = SubResource( 13 )
+cursor = ExtResource( 13 )
 cursor_hotspot = Vector2( 32, 32 )
-
-[sub_resource type="SpriteFrames" id=14]
-animations = [ {
-"frames": [ ExtResource( 14 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [sub_resource type="Resource" id=3]
 script = ExtResource( 15 )
 hotspot_type = 3
-cursor = SubResource( 14 )
+cursor = ExtResource( 14 )
 cursor_hotspot = Vector2( 32, 32 )
-
-[sub_resource type="SpriteFrames" id=15]
-animations = [ {
-"frames": [ ExtResource( 17 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [sub_resource type="Resource" id=4]
 script = ExtResource( 15 )
 hotspot_type = 1
-cursor = SubResource( 15 )
+cursor = ExtResource( 17 )
 cursor_hotspot = Vector2( 42, 42 )
-
-[sub_resource type="SpriteFrames" id=16]
-animations = [ {
-"frames": [ ExtResource( 18 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [sub_resource type="Resource" id=5]
 script = ExtResource( 15 )
 hotspot_type = 7
-cursor = SubResource( 16 )
+cursor = ExtResource( 18 )
 cursor_hotspot = Vector2( 50, 32 )
-
-[sub_resource type="SpriteFrames" id=17]
-animations = [ {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [sub_resource type="Resource" id=6]
 script = ExtResource( 15 )
 hotspot_type = 6
-cursor = SubResource( 17 )
+cursor = ExtResource( 16 )
 cursor_hotspot = Vector2( 32, 32 )
-
-[sub_resource type="SpriteFrames" id=18]
-animations = [ {
-"frames": [ ExtResource( 19 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [sub_resource type="Resource" id=7]
 script = ExtResource( 15 )
 hotspot_type = 4
-cursor = SubResource( 18 )
+cursor = ExtResource( 19 )
 cursor_hotspot = Vector2( 32, 32 )
-
-[sub_resource type="SpriteFrames" id=19]
-animations = [ {
-"frames": [ ExtResource( 20 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [sub_resource type="Resource" id=8]
 script = ExtResource( 15 )
 hotspot_type = 5
-cursor = SubResource( 19 )
+cursor = ExtResource( 20 )
 cursor_hotspot = Vector2( 32, 32 )
-
-[sub_resource type="SpriteFrames" id=20]
-animations = [ {
-"frames": [ ExtResource( 23 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [sub_resource type="Resource" id=9]
 script = ExtResource( 15 )
 hotspot_type = 10
-cursor = SubResource( 20 )
+cursor = ExtResource( 23 )
 cursor_hotspot = Vector2( 34, 36 )
-
-[sub_resource type="SpriteFrames" id=21]
-animations = [ {
-"frames": [ ExtResource( 16 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
 
 [sub_resource type="Resource" id=10]
 script = ExtResource( 15 )
 hotspot_type = 8
-cursor = SubResource( 21 )
+cursor = ExtResource( 16 )
 cursor_hotspot = Vector2( 32, 32 )
 
 [sub_resource type="Resource" id=11]
@@ -177,7 +97,7 @@ theme = ExtResource( 5 )
 logo = ExtResource( 3 )
 hotspot_cursors = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ]
 inventory_configuration = ExtResource( 11 )
-hints_file = "res://hints.txt"
+hints_file = "Yres://hints.txt"
 menu_background = ExtResource( 6 )
 menu_music = ExtResource( 2 )
 menu_switch_effect = ExtResource( 4 )
