@@ -113,4 +113,5 @@ Used in the game options for the "Volume"-settings
 | Subcategory | Setting         | Description                                                                                                      | Used in          |
 | ----------- | --------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------- |
 | Icons       | Close           | The icon used as a close icon in dialog boxes. Should be set to an empty image as we're not using it             | Standard dialogs |
-|             | Close Highlight | The icon used as a highlighted close icon in dialog boxes. Should be set to an empty image as we're not using it |                  |
+|             | Close Highlight | The icon used as a highlighted close icon in dialog boxes. Should be set to an empty image as we're not using it | Standard dialogs |
+| Styles      | Panel           | The window panel                                                                                                 |                  |
