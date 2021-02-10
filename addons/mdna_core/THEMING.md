@@ -107,3 +107,10 @@ Used in the game options for the "Volume"-settings
 | Fonts       | Dialog Font                     | Font used in the parrot dialogs                                             | Dialogs         |
 |             | Dialog Hotspot Bold Font        | Bold font used in dialog hotspots                                           | Dialog Hotspots |
 |             | Dialog Hotspot Normal Font      | Normal font used in dialog hotspots                                         | Dialog Hotspots |
+
+## Window Dialog
+
+| Subcategory | Setting         | Description                                                                                                      | Used in          |
+| ----------- | --------------- | ---------------------------------------------------------------------------------------------------------------- | ---------------- |
+| Icons       | Close           | The icon used as a close icon in dialog boxes. Should be set to an empty image as we're not using it             | Standard dialogs |
+|             | Close Highlight | The icon used as a highlighted close icon in dialog boxes. Should be set to an empty image as we're not using it |                  |
