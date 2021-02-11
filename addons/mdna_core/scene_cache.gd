@@ -63,6 +63,8 @@ func update_progress():
 			var progress = _resource_queue.get_progress(item)
 			if progress > -1 and progress < 1.0:
 				_still_waiting = _still_waiting + 1
+			elif progress == 1.0:
+				_cache[item] = _resource_queue.get_resource(item)
 		var resource_queue_size: float = float(_resource_queue.queue.size())
 		var current_progress: float = \
 				100 - (_still_waiting / float(_queued_items.size()) * 100.0)
@@ -119,7 +121,7 @@ func update_cache(current_scene: String) -> int:
 	
 	for cache_item in _cache.keys():
 		if not cache_item in _permanent_cache:
-			if cache_item.get_basename() != base_path:
+			if cache_item.get_base_dir() != base_path:
 				_cache.erase(cache_item)
 			else:
 				var cache_index = _get_index_from_filename(cache_item)

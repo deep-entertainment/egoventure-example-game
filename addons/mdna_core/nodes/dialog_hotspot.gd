@@ -18,6 +18,10 @@ export (bool) var asked: bool = false setget _set_asked
 
 # Connect hover signals
 func _init():
+	add_stylebox_override(
+		"normal",
+		StyleBoxEmpty.new()
+	)
 	if not is_connected("mouse_entered", self, "_set_hover"):
 		connect("mouse_entered", self, "_set_hover")
 	if not is_connected("mouse_exited", self, "_update_color"):
@@ -26,7 +30,6 @@ func _init():
 
 # Set default value for asked
 func _ready():
-	_set_asked(asked)
 	add_font_override(
 		"normal_font",
 		get_font(
@@ -41,11 +44,7 @@ func _ready():
 			"RichTextLabel"
 		)
 	)
-	add_stylebox_override(
-		"normal",
-		StyleBoxEmpty.new()
-	)
-	_update_color()
+	_set_asked(asked)
 	mouse_default_cursor_shape = Parrot.dialog_hotspot_cursor_shape
 
 
