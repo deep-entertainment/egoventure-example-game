@@ -10,16 +10,18 @@ signal pressed
 
 
 # The dialog to play
-var dialog: DialogResource 
+export(String, FILE, "*.tres") var dialog: String
 
 # Wether the question was already asked
-var asked: bool = false setget _set_asked
+export (bool) var asked: bool = false setget _set_asked
 
 
 # Connect hover signals
 func _init():
-	connect("mouse_entered", self, "_set_hover")
-	connect("mouse_exited", self, "_update_color")
+	if not is_connected("mouse_entered", self, "_set_hover"):
+		connect("mouse_entered", self, "_set_hover")
+	if not is_connected("mouse_exited", self, "_update_color"):
+		connect("mouse_exited", self, "_update_color")
 
 
 # Set default value for asked
@@ -98,23 +100,11 @@ func _gui_input(event):
 			MainMenu.toggle()
 		else:
 			release_focus()
-			if (dialog):
+			if (dialog != ''):
 				Speedy.hidden = true
-				Parrot.play(dialog)
+				Parrot.play(load(dialog))
 				yield(Parrot,"finished_dialog")
 				Speedy.hidden = false
 			else:
 				emit_signal("pressed")
 
-
-# Return properties
-func _get_property_list():
-	return [{
-		"name": "dialog",
-		"type": TYPE_OBJECT,
-		"hint": PROPERTY_HINT_RESOURCE_TYPE,
-		"hint_string": "DialogResource"
-	}, {
-		"name": "asked",
-		"type": TYPE_BOOL
-	}]
