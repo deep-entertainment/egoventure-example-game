@@ -1,7 +1,8 @@
-[gd_resource type="Theme" load_steps=29 format=2]
+[gd_resource type="Theme" load_steps=30 format=2]
 
 [ext_resource path="res://RussoOne-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://misc/fonts/LadylikeBB.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://addons/mdna_core/images/empty.png" type="Texture" id=3]
 [ext_resource path="res://misc/fonts/Flareserif821BT-fixed.ttf" type="DynamicFontData" id=5]
 
 [sub_resource type="DynamicFont" id=1]
@@ -167,6 +168,6 @@ RichTextLabel/colors/dialog_hotspot_hover_font_color = Color( 0.286275, 0.050980
 RichTextLabel/fonts/dialog_font = SubResource( 22 )
 RichTextLabel/fonts/dialog_hotspot_bold_font = null
 RichTextLabel/fonts/dialog_hotspot_normal_font = SubResource( 23 )
-WindowDialog/icons/close = null
-WindowDialog/icons/close_highlight = null
+WindowDialog/icons/close = ExtResource( 3 )
+WindowDialog/icons/close_highlight = ExtResource( 3 )
 WindowDialog/styles/panel = SubResource( 24 )
