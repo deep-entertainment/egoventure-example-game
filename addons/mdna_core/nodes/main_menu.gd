@@ -92,6 +92,14 @@ func configure(configuration: GameConfiguration):
 				"Button"
 			)
 		)
+		
+	$Menu/SaveSlots/VBox/Title.add_font_override(
+		"font",
+		$Menu/SaveSlots/VBox/Title.get_font(
+			"menu_button",
+			"Button"
+		)
+	)
 	
 	# Set the options values
 	$Menu/Options/CenterContainer/VBox/Grid/SpeechSlider.value = \
