@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://addons/mdna_core/nodes/four_side_room.tscn" type="PackedScene" id=1]
+[ext_resource path="res://images/man/man01b.jpg" type="Texture" id=2]
+[ext_resource path="res://images/man/man01c.jpg" type="Texture" id=3]
+[ext_resource path="res://images/man/man01a.jpg" type="Texture" id=4]
+[ext_resource path="res://images/man/man01d.jpg" type="Texture" id=5]
+[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=6]
+[ext_resource path="res://scenes/man/man01.gd" type="Script" id=7]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="Room" parent="." instance=ExtResource( 1 )]
+default_view = "front"
+front_texture = ExtResource( 4 )
+right_texture = ExtResource( 2 )
+back_texture = ExtResource( 3 )
+left_texture = ExtResource( 5 )
+image_scale = 1.0
+
+[node name="Hotspot" type="TextureButton" parent="."]
+margin_left = 884.254
+margin_top = -755.474
+margin_right = 1679.25
+margin_bottom = -309.474
+mouse_default_cursor_shape = 13
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+target_scene = "res://scenes/man/man02.tscn"
+
+[node name="Hotspot2" type="TextureButton" parent="."]
+margin_left = 3500.1
+margin_top = 569.183
+margin_right = 4343.1
+margin_bottom = 1256.18
+mouse_default_cursor_shape = 11
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 9
+target_scene = "res://scenes/misc/map.tscn"
+[connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]

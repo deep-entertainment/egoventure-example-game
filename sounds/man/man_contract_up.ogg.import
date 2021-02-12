@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/man_contract_up.ogg-e17d4231e4a5d174e1ea1d856e04fd8e.oggstr"
+
+[deps]
+
+source_file="res://sounds/man/man_contract_up.ogg"
+dest_files=[ "res://.import/man_contract_up.ogg-e17d4231e4a5d174e1ea1d856e04fd8e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

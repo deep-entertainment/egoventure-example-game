@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/man_screwdriver_fail.ogg-922fbfcadb3f7f9b1f43355afb4b28e5.oggstr"
+
+[deps]
+
+source_file="res://sounds/man/man_screwdriver_fail.ogg"
+dest_files=[ "res://.import/man_screwdriver_fail.ogg-922fbfcadb3f7f9b1f43355afb4b28e5.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

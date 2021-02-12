@@ -14,7 +14,7 @@ dest_files=[ "res://.import/8keytaken.jpeg-8c8b8419dd918920403936d21f2e3b2a.stex
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/man_gate.ogg-19682c99f82aa59fc52e31e806065ae8.oggstr"
+
+[deps]
+
+source_file="res://sounds/man/man_gate.ogg"
+dest_files=[ "res://.import/man_gate.ogg-19682c99f82aa59fc52e31e806065ae8.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

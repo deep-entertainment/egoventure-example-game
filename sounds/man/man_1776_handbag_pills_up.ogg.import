@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/man_1776_handbag_pills_up.ogg-83d3761810024ff617d01fd012e8ea1f.oggstr"
+
+[deps]
+
+source_file="res://sounds/man/man_1776_handbag_pills_up.ogg"
+dest_files=[ "res://.import/man_1776_handbag_pills_up.ogg-83d3761810024ff617d01fd012e8ea1f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

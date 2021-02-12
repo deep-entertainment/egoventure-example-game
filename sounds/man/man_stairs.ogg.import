@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/man_stairs.ogg-a439c7ed3f40290c27b51fca46b02e8d.oggstr"
+
+[deps]
+
+source_file="res://sounds/man/man_stairs.ogg"
+dest_files=[ "res://.import/man_stairs.ogg-a439c7ed3f40290c27b51fca46b02e8d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

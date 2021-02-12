@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/man_green_book_cl.ogg-0e3bf25cd5cd3bffda5c48d02d8a61c1.oggstr"
+
+[deps]
+
+source_file="res://sounds/man/man_green_book_cl.ogg"
+dest_files=[ "res://.import/man_green_book_cl.ogg-0e3bf25cd5cd3bffda5c48d02d8a61c1.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

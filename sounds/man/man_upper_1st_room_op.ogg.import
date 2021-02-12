@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/man_upper_1st_room_op.ogg-b6d425bba6adc438602fbb37c89fa4af.oggstr"
+
+[deps]
+
+source_file="res://sounds/man/man_upper_1st_room_op.ogg"
+dest_files=[ "res://.import/man_upper_1st_room_op.ogg-b6d425bba6adc438602fbb37c89fa4af.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

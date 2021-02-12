@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/man_bedroom_insex_used.ogg-ece1b5536716130c90644ddb66e5d391.oggstr"
+
+[deps]
+
+source_file="res://sounds/man/man_bedroom_insex_used.ogg"
+dest_files=[ "res://.import/man_bedroom_insex_used.ogg-ece1b5536716130c90644ddb66e5d391.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=1]
+[ext_resource path="res://images/man/man03b_cl.jpg" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Hotspot" type="TextureButton" parent="."]
+margin_left = -17.0
+margin_top = 1066.0
+margin_right = 2585.0
+margin_bottom = 1451.0
+mouse_default_cursor_shape = 6
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 1
+target_scene = "res://scenes/man/man03.tscn"
+target_view = "right"

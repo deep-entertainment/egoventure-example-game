@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/man_fridge_op.ogg-b841d2226cf558570a9fdb5ef7fbc2dd.oggstr"
+
+[deps]
+
+source_file="res://sounds/man/man_fridge_op.ogg"
+dest_files=[ "res://.import/man_fridge_op.ogg-b841d2226cf558570a9fdb5ef7fbc2dd.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

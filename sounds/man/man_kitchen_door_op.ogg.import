@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/man_kitchen_door_op.ogg-bee459ab202631d5c281ca7f2d67308b.oggstr"
+
+[deps]
+
+source_file="res://sounds/man/man_kitchen_door_op.ogg"
+dest_files=[ "res://.import/man_kitchen_door_op.ogg-bee459ab202631d5c281ca7f2d67308b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://images/map.jpg" type="Texture" id=1]
 [ext_resource path="res://images/rooms/test.jpg" type="Texture" id=2]
 [ext_resource path="res://addons/mdna_core/nodes/map_hotspot.gd" type="Script" id=3]
 [ext_resource path="res://images/dia.png" type="Texture" id=4]
 [ext_resource path="res://images/house.png" type="Texture" id=5]
+[ext_resource path="res://images/man/man_intro.jpg" type="Texture" id=6]
+[ext_resource path="res://music/piano.ogg" type="AudioStream" id=7]
 
 [node name="Node2D" type="Node2D"]
 
@@ -26,7 +28,9 @@ __meta__ = {
 }
 hotspot_type = 10
 target_scene = "res://scenes/dia/dia.tscn"
+target_view = ""
 loading_image = ExtResource( 2 )
+location_music = null
 location = "dia"
 
 [node name="MapHotspot2" type="TextureButton" parent="."]
@@ -41,6 +45,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 hotspot_type = 10
-target_scene = "res://scenes/cache_test/cache_test_01.tscn"
-loading_image = ExtResource( 2 )
-location = "cache_test"
+target_scene = "res://scenes/man/man01.tscn"
+target_view = ""
+loading_image = ExtResource( 6 )
+location_music = ExtResource( 7 )
+location = "man"

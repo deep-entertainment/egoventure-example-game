@@ -176,6 +176,7 @@ MenuGrab="*res://addons/mdna_core/nodes/menu_grab.tscn"
 
 window/size/width=2560
 window/size/height=1440
+window/size/fullscreen=true
 window/dpi/allow_hidpi=true
 mouse_cursor/custom_image="res://images/mouse/common.png"
 window/stretch/mode="2d"

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/man_upper_hall_boxroom_op.ogg-3c92a4632674486fc2de90f763436ecc.oggstr"
+
+[deps]
+
+source_file="res://sounds/man/man_upper_hall_boxroom_op.ogg"
+dest_files=[ "res://.import/man_upper_hall_boxroom_op.ogg-3c92a4632674486fc2de90f763436ecc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

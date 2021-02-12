@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/man_bath_cupb_op.ogg-00486c9619371ba46c7f094d5f82d23c.oggstr"
+
+[deps]
+
+source_file="res://sounds/man/man_bath_cupb_op.ogg"
+dest_files=[ "res://.import/man_bath_cupb_op.ogg-00486c9619371ba46c7f094d5f82d23c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

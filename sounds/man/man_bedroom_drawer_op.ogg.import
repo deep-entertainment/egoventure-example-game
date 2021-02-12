@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/man_bedroom_drawer_op.ogg-59f519ce2ecb9c72bd7223d6827566a4.oggstr"
+
+[deps]
+
+source_file="res://sounds/man/man_bedroom_drawer_op.ogg"
+dest_files=[ "res://.import/man_bedroom_drawer_op.ogg-59f519ce2ecb9c72bd7223d6827566a4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
