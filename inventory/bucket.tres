@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://addons/mdna_inventory/resources/inventory_item.gd" type="Script" id=1]
+[ext_resource path="res://inventory/bucket.png" type="Texture" id=2]
+[ext_resource path="res://inventory/bucket_big.png" type="Texture" id=3]
+[ext_resource path="res://inventory/bucket_red.png" type="Texture" id=4]
+
+[resource]
+script = ExtResource( 1 )
+title = "bucket"
+description = "Paint bucket"
+image_normal = ExtResource( 2 )
+image_active = ExtResource( 4 )
+image_big = ExtResource( 3 )
+combineable_with = [  ]

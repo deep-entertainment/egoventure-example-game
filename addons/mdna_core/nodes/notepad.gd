@@ -89,6 +89,7 @@ func finished_step(goal_id: int, step: int):
 		fulfillment_record.fulfilled.append(step - 1)
 		fulfillment_record.fulfilled.sort()
 	
+
 	if goal_id == MdnaCore.state.current_goal:
 		goal = _get_goal(MdnaCore.state.current_goal)
 		var first_unfulfilled_hint = _find_first_unfulfilled_hint(goal)

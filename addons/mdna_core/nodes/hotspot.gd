@@ -1,3 +1,4 @@
+
 # A simple hotspot which can also move to a target scene upon
 # pressing
 tool

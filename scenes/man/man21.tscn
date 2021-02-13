@@ -10,10 +10,12 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Room" parent="." instance=ExtResource( 1 )]
+default_view = "front"
 front_texture = ExtResource( 4 )
 right_texture = ExtResource( 3 )
 back_texture = ExtResource( 5 )
 left_texture = ExtResource( 2 )
+image_scale = 1.0
 
 [node name="Hotspot" type="TextureButton" parent="."]
 margin_left = 1067.27
