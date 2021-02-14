@@ -101,9 +101,9 @@ hotspot_type = 11
 
 [node name="Hotspot3" type="TextureButton" parent="."]
 margin_left = 1411.0
-margin_top = 304.0
+margin_top = 309.657
 margin_right = 1493.0
-margin_bottom = 370.0
+margin_bottom = 375.657
 mouse_default_cursor_shape = 13
 script = ExtResource( 12 )
 __meta__ = {

@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/cigbox_m.png-cc4761d20b3b0b74d7a2b16f0b90d166.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://images/man/hs/cigbox_m.png"
+dest_files=[ "res://.import/cigbox_m.png-cc4761d20b3b0b74d7a2b16f0b90d166.stex" ]
+
+[params]
+
+compress/mode=1
+compress/lossy_quality=0.85
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0

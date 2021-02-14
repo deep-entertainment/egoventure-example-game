@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/cigbox_click.ogg-4297d0bbfb63d27677ce7c3e60028184.oggstr"
+
+[deps]
+
+source_file="res://sounds/man/cigbox_click.ogg"
+dest_files=[ "res://.import/cigbox_click.ogg-4297d0bbfb63d27677ce7c3e60028184.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
