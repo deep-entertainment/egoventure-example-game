@@ -180,3 +180,6 @@ func _back_texture_set(value: Texture):
 func _left_texture_set(value: Texture):
 	left_texture = value
 	$Views/Left.texture = left_texture
+
+
+

@@ -1,0 +1,15 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/mdna_core/nodes/four_side_room.tscn" type="PackedScene" id=1]
+[ext_resource path="res://images/man/man09c.jpg" type="Texture" id=2]
+[ext_resource path="res://images/man/man09a.jpg" type="Texture" id=3]
+[ext_resource path="res://images/man/man09d.jpg" type="Texture" id=4]
+[ext_resource path="res://images/man/man09b.jpg" type="Texture" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Room" parent="." instance=ExtResource( 1 )]
+front_texture = ExtResource( 3 )
+right_texture = ExtResource( 5 )
+back_texture = ExtResource( 2 )
+left_texture = ExtResource( 4 )

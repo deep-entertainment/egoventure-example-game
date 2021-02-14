@@ -10,24 +10,22 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Room" parent="." instance=ExtResource( 1 )]
-default_view = "front"
 front_texture = ExtResource( 5 )
 right_texture = ExtResource( 3 )
 back_texture = ExtResource( 4 )
 left_texture = ExtResource( 2 )
-image_scale = 1.0
 
 [node name="Hotspot" type="TextureButton" parent="."]
 margin_left = 3324.39
 margin_top = 627.192
 margin_right = 4426.39
 margin_bottom = 1380.19
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 16
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
+hotspot_type = 7
 target_scene = "res://scenes/man/man03b_cl.tscn"
 
 [node name="Hotspot2" type="TextureButton" parent="."]

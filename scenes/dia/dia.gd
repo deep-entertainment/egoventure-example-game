@@ -21,6 +21,7 @@ func _process(_delta):
 		$DialogHotspot2.hide()
 	if state.DialogHotspot3:
 		$DialogHotspot3.show()
+		$DialogHotspot2.asked = true
 	else:
 		$DialogHotspot3.hide()
 	

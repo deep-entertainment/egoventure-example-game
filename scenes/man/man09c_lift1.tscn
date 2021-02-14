@@ -1,0 +1,193 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://images/man/man09c_lift1.jpg" type="Texture" id=1]
+[ext_resource path="res://images/man/hs/diary_black.png" type="Texture" id=2]
+[ext_resource path="res://images/man/hs/diary_pink.png" type="Texture" id=3]
+[ext_resource path="res://images/man/hs/diary_white.png" type="Texture" id=4]
+[ext_resource path="res://images/man/hs/diary_blue.png" type="Texture" id=5]
+[ext_resource path="res://images/man/hs/diary_purple.png" type="Texture" id=6]
+[ext_resource path="res://images/man/hs/diary_green.png" type="Texture" id=7]
+[ext_resource path="res://images/man/hs/diary_red.png" type="Texture" id=8]
+[ext_resource path="res://images/man/hs/diary_orange.png" type="Texture" id=9]
+[ext_resource path="res://images/man/hs/diary_yel.png" type="Texture" id=10]
+[ext_resource path="res://scenes/man/man09c_lift1.gd" type="Script" id=11]
+[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=12]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 11 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="diary_pink" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( 1438, 128 )
+
+[node name="diary_yel" type="Sprite" parent="."]
+visible = false
+position = Vector2( 1.1189, 0 )
+texture = ExtResource( 10 )
+centered = false
+offset = Vector2( 1490, 220 )
+
+[node name="diary_blue" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 1384, 273 )
+
+[node name="diary_red" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 8 )
+centered = false
+offset = Vector2( 1507, 445 )
+
+[node name="diary_green" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 7 )
+centered = false
+offset = Vector2( 1395, 639 )
+
+[node name="diary_black" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( 1422, 804 )
+
+[node name="diary_orange" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 9 )
+centered = false
+offset = Vector2( 1516, 883 )
+
+[node name="diary_white" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 1479, 1036 )
+
+[node name="diary_purple" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 6 )
+centered = false
+offset = Vector2( 1449, 1161 )
+
+[node name="Hotspot" type="TextureButton" parent="."]
+margin_left = 1458.52
+margin_top = 144.0
+margin_right = 1543.52
+margin_bottom = 232.0
+mouse_default_cursor_shape = 13
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+
+[node name="Hotspot2" type="TextureButton" parent="."]
+margin_left = 1508.92
+margin_top = 241.52
+margin_right = 1583.92
+margin_bottom = 309.52
+mouse_default_cursor_shape = 13
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+
+[node name="Hotspot3" type="TextureButton" parent="."]
+margin_left = 1411.0
+margin_top = 304.0
+margin_right = 1493.0
+margin_bottom = 370.0
+mouse_default_cursor_shape = 13
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+
+[node name="Hotspot4" type="TextureButton" parent="."]
+margin_left = 1536.88
+margin_top = 476.633
+margin_right = 1606.88
+margin_bottom = 545.633
+mouse_default_cursor_shape = 13
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+
+[node name="Hotspot5" type="TextureButton" parent="."]
+margin_left = 1427.0
+margin_top = 666.0
+margin_right = 1501.0
+margin_bottom = 738.0
+mouse_default_cursor_shape = 13
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+
+[node name="Hotspot6" type="TextureButton" parent="."]
+margin_left = 1455.1
+margin_top = 841.877
+margin_right = 1518.1
+margin_bottom = 908.877
+mouse_default_cursor_shape = 13
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+
+[node name="Hotspot7" type="TextureButton" parent="."]
+margin_left = 1552.11
+margin_top = 914.0
+margin_right = 1611.11
+margin_bottom = 986.0
+mouse_default_cursor_shape = 13
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+
+[node name="Hotspot8" type="TextureButton" parent="."]
+margin_left = 1512.45
+margin_top = 1070.22
+margin_right = 1581.45
+margin_bottom = 1140.22
+mouse_default_cursor_shape = 13
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+
+[node name="Hotspot9" type="TextureButton" parent="."]
+margin_left = 1483.66
+margin_top = 1200.61
+margin_right = 1544.66
+margin_bottom = 1276.61
+mouse_default_cursor_shape = 13
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+[connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]
+[connection signal="pressed" from="Hotspot2" to="." method="_on_Hotspot2_pressed"]
+[connection signal="pressed" from="Hotspot3" to="." method="_on_Hotspot3_pressed"]
+[connection signal="pressed" from="Hotspot4" to="." method="_on_Hotspot4_pressed"]
+[connection signal="pressed" from="Hotspot5" to="." method="_on_Hotspot5_pressed"]
+[connection signal="pressed" from="Hotspot6" to="." method="_on_Hotspot6_pressed"]
+[connection signal="pressed" from="Hotspot7" to="." method="_on_Hotspot7_pressed"]
+[connection signal="pressed" from="Hotspot8" to="." method="_on_Hotspot8_pressed"]
+[connection signal="pressed" from="Hotspot9" to="." method="_on_Hotspot9_pressed"]
