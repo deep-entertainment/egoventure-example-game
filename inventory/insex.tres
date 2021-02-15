@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://addons/mdna_inventory/resources/inventory_item.gd" type="Script" id=1]
+[ext_resource path="res://inventory/insex_red.png" type="Texture" id=2]
+[ext_resource path="res://inventory/insex.png" type="Texture" id=3]
+[ext_resource path="res://inventory/insex_big.png" type="Texture" id=4]
+
+[resource]
+script = ExtResource( 1 )
+title = "insex"
+description = "Hex key"
+image_normal = ExtResource( 3 )
+image_active = ExtResource( 2 )
+image_big = ExtResource( 4 )
+combineable_with = [  ]

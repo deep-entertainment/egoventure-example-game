@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=1]
+[ext_resource path="res://scenes/man/man09c_cl2_lift5.gd" type="Script" id=2]
+[ext_resource path="res://images/man/man09c_cl2_lift1.jpg" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="Hotspot" type="TextureButton" parent="."]
+margin_left = -2.51978
+margin_top = 1098.65
+margin_right = 2577.48
+margin_bottom = 1481.65
+mouse_default_cursor_shape = 6
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 1
+[connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]

@@ -182,6 +182,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 hotspot_type = 11
+
+[node name="Hotspot10" type="TextureButton" parent="."]
+margin_left = 2.62744
+margin_top = 1286.72
+margin_right = 2588.63
+margin_bottom = 1473.72
+mouse_default_cursor_shape = 6
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 1
 [connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]
 [connection signal="pressed" from="Hotspot2" to="." method="_on_Hotspot2_pressed"]
 [connection signal="pressed" from="Hotspot3" to="." method="_on_Hotspot3_pressed"]
@@ -191,3 +203,4 @@ hotspot_type = 11
 [connection signal="pressed" from="Hotspot7" to="." method="_on_Hotspot7_pressed"]
 [connection signal="pressed" from="Hotspot8" to="." method="_on_Hotspot8_pressed"]
 [connection signal="pressed" from="Hotspot9" to="." method="_on_Hotspot9_pressed"]
+[connection signal="pressed" from="Hotspot10" to="." method="_on_Hotspot10_pressed"]

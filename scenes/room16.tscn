@@ -41,6 +41,7 @@ margin_left = -30.3278
 margin_top = -895.695
 margin_right = 798.672
 margin_bottom = 59.3053
+mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 8 )
 script = ExtResource( 3 )
 __meta__ = {

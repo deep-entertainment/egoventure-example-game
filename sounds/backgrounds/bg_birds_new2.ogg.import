@@ -11,5 +11,5 @@ dest_files=[ "res://.import/bg_birds_new2.ogg-5dc454967d49b9393b527d9f2a647627.o
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

@@ -106,7 +106,7 @@ func _on_Hotspot6_pressed():
 
 
 func _on_Hotspot7_pressed():
-	if man_diary_open == 2:
+	if man_diary_open == 2 && (MdnaCore.state as GameState).tapestry_seen == 1:
 		Boombox.ignore_pause = true
 		get_tree().paused = true
 		Boombox.play_effect(preload("res://sounds/man/beep.ogg"))
@@ -156,3 +156,9 @@ func _on_Hotspot9_pressed():
 	get_tree().paused = false
 	Boombox.ignore_pause = false
 	man_diary_open = 0
+
+
+func _on_Hotspot10_pressed():
+	Boombox.play_effect(preload("res://sounds/man/man_book_back.ogg"))
+	MdnaCore.change_scene("res://scenes/man/man09c_cl1.tscn")
+
