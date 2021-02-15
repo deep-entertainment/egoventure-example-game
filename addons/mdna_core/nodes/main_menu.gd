@@ -6,6 +6,10 @@ extends CanvasLayer
 signal new_game
 
 
+# Emitted when the user wants to quit the game
+signal quit_game
+
+
 # The date format used for display in the save slots
 const DATE_FORMAT: String = "{month}/{day}/{year} {hour}:{minute}"
 
@@ -152,8 +156,7 @@ func _on_Quit_pressed():
 
 # Quit was confirmed. Just quit the game
 func _on_QuitConfirm_confirmed():
-	MdnaCore.save_resume()
-	get_tree().quit()
+	emit_signal("quit_game")
 
 
 # Save was pressed. Show saveslots in save mode

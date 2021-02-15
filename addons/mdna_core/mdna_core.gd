@@ -64,6 +64,7 @@ func configure(p_configuration: GameConfiguration):
 	configuration = p_configuration
 	_load_in_game_configuration()
 	MainMenu.configure(configuration)
+	MainMenu.connect("quit_game", self, "_on_quit_game")
 	Notepad.configure(configuration)
 	MdnaInventory.configure(configuration.inventory_configuration)
 	MdnaInventory.connect("notepad_pressed", self, "_on_notepad_pressed")
@@ -306,6 +307,7 @@ func _get_current_scene() -> Node:
 	return root.get_child(root.get_child_count() - 1)
 
 
+# Transport the queue complete signal
 func _on_queue_complete():
 	emit_signal("queue_complete")
 
@@ -313,3 +315,9 @@ func _on_queue_complete():
 # Show the notepad
 func _on_notepad_pressed():
 	Notepad.show()
+
+
+# The player wants to quit the game. Save the resume and quit
+func _on_quit_game():
+	MdnaCore.save_resume()
+	get_tree().quit()
