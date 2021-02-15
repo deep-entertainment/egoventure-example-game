@@ -86,7 +86,6 @@ func configure(p_configuration: GameConfiguration):
 # - path: The absolute path to the new scene
 func change_scene(path: String):
 	get_tree().change_scene_to(_scene_cache.get_scene(path))
-	Speedy.update_shape()
 	
 
 # Save the current state of the game
