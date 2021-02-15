@@ -24,6 +24,9 @@ var resumeable: bool = true
 # Wether the a game can be saved
 var saveable: bool = true
 
+# Wether the menu can be displayed at all
+var disabled: bool = false
+
 
 # Currently selected save slot (used for overwrite confirmation dialog)
 var _selected_slot: int
@@ -118,7 +121,7 @@ func configure(configuration: GameConfiguration):
 
 # Toggle the display of the menu and play the menu music
 func toggle():
-	if resumeable:
+	if resumeable and not disabled:
 		if MdnaCore.game_started:
 			$Menu/MainMenu/Margin/VBox/MenuItems/Resume.show()
 			$Menu/MainMenu/Margin/VBox/MenuItems/Continue.hide()
