@@ -239,8 +239,14 @@ func _update_state():
 	MdnaCore.state.target_view = MdnaCore.current_view
 	MdnaCore.state.target_location = MdnaCore.current_location
 	MdnaCore.state.inventory_items = MdnaInventory.get_items()
-	MdnaCore.state.current_music = Boombox.get_music().resource_path
-	MdnaCore.state.current_background = Boombox.get_background().resource_path
+	if Boombox.get_music():
+		MdnaCore.state.current_music = Boombox.get_music().resource_path
+	else:
+		MdnaCore.state.current_music = ""
+	if Boombox.get_background():
+		MdnaCore.state.current_background = Boombox.get_background().resource_path
+	else:
+		MdnaCore.state.current_background = ""
 
 
 # the previously saved state, add the inventory items, switch to the saved
@@ -274,10 +280,10 @@ func _load(p_state: BaseState):
 	
 	change_scene(MdnaCore.state.current_scene)
 	
-	if MdnaCore.state.current_music != null:
+	if MdnaCore.state.current_music != "":
 		Boombox.play_music(load(MdnaCore.state.current_music))
 		
-	if MdnaCore.state.current_background != null:
+	if MdnaCore.state.current_background != "":
 		Boombox.play_background(load(MdnaCore.state.current_background))
 	
 	emit_signal("game_loaded")
