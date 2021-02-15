@@ -61,7 +61,7 @@ func get_progress(path):
 	_lock("get_progress")
 	var ret = -1
 	if path in pending:
-		if pending[path] is ResourceInteractiveLoader:
+		if pending[path] is ResourceInteractiveLoader and float(pending[path].get_stage_count()) > 0:
 			ret = float(pending[path].get_stage()) / float(pending[path].get_stage_count())
 		else:
 			ret = 1.0
