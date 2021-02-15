@@ -96,13 +96,17 @@ func change_scene(path: String):
 # - slot: The save slot index
 func save(slot: int):
 	_update_state()
-	ResourceSaver.save("user://save_%d.tres" % slot, MdnaCore.state)
+	ResourceSaver.save(
+		"user://save_%d.tres" % slot, 
+		MdnaCore.state,
+		ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS
+	)
 
 
 # Save the "continue" slot
 func save_continue():
 	_update_state()
-	in_game_configuration.continue_state = MdnaCore.state.duplicate(true)
+	in_game_configuration.continue_state = MdnaCore.state.duplicate()
 	save_in_game_configuration()
 
 
@@ -110,7 +114,8 @@ func save_continue():
 func save_in_game_configuration():
 	ResourceSaver.save(
 		"user://in_game_configuration.tres", 
-		in_game_configuration
+		in_game_configuration,
+		ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS
 	)
 
 
