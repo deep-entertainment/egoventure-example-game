@@ -98,7 +98,7 @@ func finished_step(goal_id: int, step: int):
 			goal = _get_goal(MdnaCore.state.current_goal)
 			first_unfulfilled_hint = _find_first_unfulfilled_hint(goal)
 	
-	MdnaCore.save_resume()
+	MdnaCore.save_continue()
 
 
 # Show the notepad

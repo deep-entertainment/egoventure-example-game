@@ -429,7 +429,7 @@ func _refresh_saveslots():
 func _on_Continue_pressed():
 	if disabled:
 		disabled = false
-	MdnaCore.load_resume()
+	MdnaCore.load_continue()
 
 
 # The New Game button was pressed

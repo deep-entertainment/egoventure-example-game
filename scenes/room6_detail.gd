@@ -97,4 +97,4 @@ func _on_Hotspot21_pressed():
 
 
 func _on_Hotspot22_pressed():
-	MdnaCore.save_resume()
+	MdnaCore.save_continue()

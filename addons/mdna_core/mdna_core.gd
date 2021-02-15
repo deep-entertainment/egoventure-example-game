@@ -99,8 +99,8 @@ func save(slot: int):
 	ResourceSaver.save("user://save_%d.tres" % slot, MdnaCore.state)
 
 
-# Save the "resume" slot
-func save_resume():
+# Save the "continue" slot
+func save_continue():
 	_update_state()
 	in_game_configuration.continue_state = MdnaCore.state.duplicate(true)
 	save_in_game_configuration()
@@ -123,8 +123,8 @@ func load(slot: int):
 	_load(ResourceLoader.load("user://save_%d.tres" % slot, "", true))
 	
 
-# Load the game from the resume state
-func load_resume():
+# Load the game from the continue state
+func load_continue():
 	var state = in_game_configuration.continue_state
 	_load(state)
 
@@ -317,7 +317,7 @@ func _on_notepad_pressed():
 	Notepad.show()
 
 
-# The player wants to quit the game. Save the resume and quit
+# The player wants to quit the game. Save the continue state and quit
 func _on_quit_game():
-	MdnaCore.save_resume()
+	MdnaCore.save_continue()
 	get_tree().quit()
