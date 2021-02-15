@@ -15,8 +15,8 @@ var music_db: float = 0.0
 # The volume of the effects channel in db
 var effects_db: float = 0.0
 
-# The resume state, that is saved automatically
-var resume_state: BaseState = null
+# The continue state, that is saved automatically
+var continue_state: BaseState = null
 
 
 func _get_property_list():
@@ -38,7 +38,7 @@ func _get_property_list():
 		"type": TYPE_REAL
 	})
 	properties.append({
-		"name": "resume_state",
+		"name": "continue_state",
 		"type": TYPE_OBJECT,
 		"hint": PROPERTY_HINT_RESOURCE_TYPE,
 		"hint_string": "BaseState"

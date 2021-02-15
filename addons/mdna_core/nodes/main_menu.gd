@@ -122,7 +122,7 @@ func toggle():
 			$Menu/MainMenu/Margin/VBox/MenuItems/Continue.show()
 			$Menu/MainMenu/Margin/VBox/MenuItems/Resume.hide()
 			
-			if MdnaCore.has_resume_state():
+			if MdnaCore.has_continue_state():
 				$Menu/MainMenu/Margin/VBox/MenuItems/Continue.disabled = false
 			else:
 				$Menu/MainMenu/Margin/VBox/MenuItems/Continue.disabled = true
@@ -420,7 +420,7 @@ func _on_Continue_pressed():
 
 # The New Game button was pressed
 func _on_NewGame_pressed():
-	if MdnaCore.has_resume_state():
+	if MdnaCore.has_continue_state():
 		$Menu/RestartConfirm.popup_centered()
 	else:
 		_on_RestartConfirm_confirmed()

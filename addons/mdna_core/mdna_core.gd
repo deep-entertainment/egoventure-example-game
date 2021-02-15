@@ -101,7 +101,7 @@ func save(slot: int):
 # Save the "resume" slot
 func save_resume():
 	_update_state()
-	in_game_configuration.resume_state = MdnaCore.state.duplicate(true)
+	in_game_configuration.continue_state = MdnaCore.state.duplicate(true)
 	save_in_game_configuration()
 
 
@@ -124,7 +124,7 @@ func load(slot: int):
 
 # Load the game from the resume state
 func load_resume():
-	var state = in_game_configuration.resume_state
+	var state = in_game_configuration.continue_state
 	_load(state)
 
 
@@ -159,10 +159,10 @@ func update_cache(scene: String = "", blocking = false) -> int:
 	return _scene_cache.update_cache(scene)
 
 
-# Check if a resume state exists
-func has_resume_state() -> bool:
-	var resume_state = in_game_configuration.resume_state
-	return resume_state != null
+# Check if a continue state exists
+func has_continue_state() -> bool:
+	var continue_state = in_game_configuration.continue_state
+	return continue_state != null
 
 
 # Set the subtitle
