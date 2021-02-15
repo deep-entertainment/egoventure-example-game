@@ -149,6 +149,8 @@ func toggle():
 
 # Resume was pressed. Toggle the menu
 func _on_Resume_pressed():
+	if disabled:
+		disabled = false
 	toggle()
 
 
@@ -196,6 +198,8 @@ func _on_slot_selected(slot: int, exists: bool):
 			_selected_slot = slot
 			$Menu/OverwriteConfirm.popup_centered()
 		else:
+			if disabled:
+				disabled = false
 			# Briefly hide the menu to snapshot a picture of the current
 			# scene
 			toggle()
@@ -209,6 +213,8 @@ func _on_slot_selected(slot: int, exists: bool):
 			Speedy.hidden = false
 			MdnaCore.save(slot)
 	else:
+		if disabled:
+			disabled = false
 		MdnaCore.load(slot)
 
 
@@ -421,6 +427,8 @@ func _refresh_saveslots():
 
 # The continue button was pressed
 func _on_Continue_pressed():
+	if disabled:
+		disabled = false
 	MdnaCore.load_resume()
 
 
@@ -434,6 +442,8 @@ func _on_NewGame_pressed():
 
 # Restarting the game was confirmed
 func _on_RestartConfirm_confirmed():
+	if disabled:
+		disabled = false
 	toggle()
 	# Reset State and inventory
 	for item in MdnaInventory.get_items():
