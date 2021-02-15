@@ -15,11 +15,11 @@ export(String) var target_view: String
 # Target location of the stored scene
 export(String) var target_location: String
 
-# Current music playing
-export(AudioStream) var current_music: AudioStream
+# Path to current music playing
+export(String) var current_music: String
 
-# Current background
-export(AudioStream) var current_background: AudioStream
+# Path to current background playing
+export(String) var current_background: String
 
 # Current notepad goal
 export(int) var current_goal: int = 1
