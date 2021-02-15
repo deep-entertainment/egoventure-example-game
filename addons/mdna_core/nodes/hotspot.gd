@@ -10,10 +10,8 @@ extends TextureButton
 export(Cursors.Type) var hotspot_type = Cursors.Type.GO_FORWARD \
 		setget _set_hotspot_type
 
-
 # If set, changes to the given scene
 export(String, FILE, "*.tscn") var target_scene = ""
-
 
 # If set, changes the target view before going to the target scene
 export(
@@ -23,6 +21,10 @@ export(
 	"back",
 	"left"
 ) var target_view = FourSideRoom.VIEW_UNSET
+
+# If set, plays a sound effect when the hotspot is pressed and the
+# scene is changed
+export(AudioStream) var effect = null
 
 
 # The hotspot indicator
@@ -73,5 +75,7 @@ func _on_pressed():
 	release_focus()
 	if MdnaInventory.selected_item == null:
 		if target_scene != "":
+			if effect:
+				Boombox.play_effect(effect)
 			MdnaCore.target_view = target_view
 			MdnaCore.change_scene(target_scene)
