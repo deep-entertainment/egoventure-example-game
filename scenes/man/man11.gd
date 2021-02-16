@@ -49,5 +49,6 @@ func _on_TriggerHotspot_item_used(item):
 	get_tree().paused = false
 	Boombox.ignore_pause = false
 	MdnaInventory.remove_item(preload("res://inventory/matchkey.tres"))
+	(MdnaCore.state as GameState).upper_door_hs = true
 	MdnaCore.change_scene("res://scenes/man/man12.tscn")
 

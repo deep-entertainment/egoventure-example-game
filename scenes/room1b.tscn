@@ -52,6 +52,7 @@ __meta__ = {
 hotspot_type = 1
 target_scene = "res://scenes/room2.tscn"
 target_view = ""
+effect = null
 loading_image = ExtResource( 4 )
 location_music = null
 location = ""

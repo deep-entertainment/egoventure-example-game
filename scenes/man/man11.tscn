@@ -76,10 +76,10 @@ __meta__ = {
 hotspot_type = 11
 
 [node name="upper_door_hs" type="TextureButton" parent="."]
-margin_left = 413.057
-margin_top = -615.817
-margin_right = 942.057
-margin_bottom = -153.817
+margin_left = 390.833
+margin_top = -612.642
+margin_right = 919.833
+margin_bottom = -150.642
 focus_mode = 0
 enabled_focus_mode = 0
 script = ExtResource( 9 )

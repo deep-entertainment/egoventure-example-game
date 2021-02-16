@@ -22,3 +22,8 @@ func _on_right_pressed():
 
 func _on_left_pressed():
 	MdnaCore.change_scene("res://scenes/room1b.tscn")
+
+
+func _on_Hotspot2_pressed():
+	Boombox.play_effect(preload("res://sounds/cheers.ogg"))
+	MdnaCore.change_scene("res://scenes/room15.tscn")
