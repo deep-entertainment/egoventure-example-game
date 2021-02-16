@@ -1,13 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://images/rooms/1r.jpg" type="Texture" id=1]
 [ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=2]
 [ext_resource path="res://scenes/room1r.gd" type="Script" id=3]
 [ext_resource path="res://icon.png" type="Texture" id=4]
-
-[sub_resource type="AudioStreamOGGVorbis" id=1]
-
-[sub_resource type="AudioStreamOGGVorbis" id=2]
+[ext_resource path="res://sounds/man/man_gate.ogg" type="AudioStream" id=5]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -54,7 +51,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 target_scene = "res://scenes/room1f.tscn"
-effect = SubResource( 1 )
+effect = ExtResource( 5 )
 
 [node name="Hotspot2" type="TextureButton" parent="."]
 margin_left = 995.0
@@ -68,6 +65,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 target_scene = "res://scenes/room1l.tscn"
-effect = SubResource( 2 )
+effect = ExtResource( 5 )
 [connection signal="pressed" from="right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="left" to="." method="_on_left_pressed"]
