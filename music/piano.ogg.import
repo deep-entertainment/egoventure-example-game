@@ -11,5 +11,5 @@ dest_files=[ "res://.import/piano.ogg-602f57d4990192de77ef3342b8d9390c.oggstr" ]
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0

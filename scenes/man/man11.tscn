@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/mdna_core/nodes/four_side_room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://images/man/man11d.jpg" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://images/misc/black.jpg" type="Texture" id=6]
 [ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=7]
 [ext_resource path="res://scenes/man/man11.gd" type="Script" id=8]
+[ext_resource path="res://addons/mdna_inventory/nodes/trigger_hotspot.gd" type="Script" id=9]
+[ext_resource path="res://inventory/matchkey.tres" type="Resource" id=10]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 8 )
@@ -35,4 +37,68 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 hotspot_type = 12
+
+[node name="Hotspot2" type="TextureButton" parent="."]
+margin_left = 685.622
+margin_top = 1663.97
+margin_right = 1255.62
+margin_bottom = 2318.97
+mouse_default_cursor_shape = 16
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 7
+target_scene = "res://scenes/man/man11c_cl.tscn"
+
+[node name="Hotspot3" type="TextureButton" parent="."]
+margin_left = -1212.77
+margin_top = 527.017
+margin_right = -835.774
+margin_bottom = 894.017
+mouse_default_cursor_shape = 13
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+
+[node name="Hotspot4" type="TextureButton" parent="."]
+margin_left = 3847.86
+margin_top = 434.948
+margin_right = 4328.86
+margin_bottom = 928.948
+mouse_default_cursor_shape = 13
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+
+[node name="upper_door_hs" type="TextureButton" parent="."]
+margin_left = 413.057
+margin_top = -615.817
+margin_right = 942.057
+margin_bottom = -153.817
+focus_mode = 0
+enabled_focus_mode = 0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+valid_inventory_items = [ ExtResource( 10 ) ]
+
+[node name="Hotspot5" type="TextureButton" parent="."]
+margin_left = 1320.45
+margin_top = -1013.12
+margin_right = 1859.45
+margin_bottom = -513.124
+mouse_default_cursor_shape = 3
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]
+[connection signal="pressed" from="Hotspot3" to="." method="_on_Hotspot3_pressed"]
+[connection signal="pressed" from="Hotspot4" to="." method="_on_Hotspot4_pressed"]
+[connection signal="item_used" from="upper_door_hs" to="." method="_on_TriggerHotspot_item_used"]

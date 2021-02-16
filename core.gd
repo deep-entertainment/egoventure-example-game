@@ -24,7 +24,6 @@ func _on_new_game():
 func _initialization():
 	var state = GameState.new()
 	MdnaCore.state = state
-	MdnaInventory.add_item(preload("res://inventory/insex.tres"))
 
 func _on_load():
 	pass

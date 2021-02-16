@@ -13,3 +13,4 @@ func _on_Hotspot4_pressed():
 func _on_Hotspot5_pressed():
 	Boombox.play_effect(preload("res://sounds/man/man_skarbrade_up.ogg"))
 	MdnaCore.change_scene("res://scenes/man/man07b_lift1.tscn")
+
