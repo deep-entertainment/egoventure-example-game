@@ -1,13 +1,24 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://images/map.jpg" type="Texture" id=1]
-[ext_resource path="res://images/rooms/test.jpg" type="Texture" id=2]
+[ext_resource path="res://images/dia/bro_intro.jpg" type="Texture" id=2]
 [ext_resource path="res://addons/mdna_core/nodes/map_hotspot.gd" type="Script" id=3]
-[ext_resource path="res://images/dia.png" type="Texture" id=4]
-[ext_resource path="res://images/house.png" type="Texture" id=5]
+[ext_resource path="res://images/map/kevo.png" type="Texture" id=4]
+[ext_resource path="res://images/map/map_brother.png" type="Texture" id=5]
 [ext_resource path="res://images/man/man_intro.jpg" type="Texture" id=6]
 [ext_resource path="res://music/piano.ogg" type="AudioStream" id=7]
 [ext_resource path="res://scenes/misc/map.gd" type="Script" id=8]
+[ext_resource path="res://music/brother.ogg" type="AudioStream" id=9]
+[ext_resource path="res://images/misc/trans.png" type="Texture" id=10]
+[ext_resource path="res://images/misc/map_highlight.png" type="Texture" id=11]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 1.0
+} ]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 8 )
@@ -18,31 +29,31 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="MapHotspot" type="TextureButton" parent="."]
-margin_left = 686.0
-margin_top = 387.0
-margin_right = 948.0
-margin_bottom = 471.0
+margin_left = 346.0
+margin_top = 340.0
+margin_right = 638.0
+margin_bottom = 429.0
 mouse_default_cursor_shape = 12
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 5 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 hotspot_type = 10
-target_scene = "res://scenes/dia/dia.tscn"
+target_scene = "res://scenes/brother/bro1.tscn"
 target_view = ""
 effect = null
 loading_image = ExtResource( 2 )
-location_music = null
-location = "dia"
+location_music = ExtResource( 9 )
+location = "brother"
 
-[node name="MapHotspot2" type="TextureButton" parent="."]
-margin_left = 1197.0
+[node name="map_kevo" type="TextureButton" parent="."]
+margin_left = 1199.59
 margin_top = 422.0
-margin_right = 1284.0
-margin_bottom = 466.0
+margin_right = 1774.59
+margin_bottom = 511.0
 mouse_default_cursor_shape = 12
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 4 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -54,3 +65,9 @@ effect = null
 loading_image = ExtResource( 6 )
 location_music = ExtResource( 7 )
 location = "man"
+
+[node name="map_kevo_new" type="AnimatedSprite" parent="."]
+position = Vector2( 1162.01, 455.205 )
+frames = SubResource( 1 )
+playing = true
+[connection signal="pressed" from="map_kevo" to="." method="_on_map_kevo_pressed"]

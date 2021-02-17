@@ -1,0 +1,30 @@
+[gd_resource type="Resource" load_steps=10 format=2]
+
+[ext_resource path="res://addons/parrot/resources/dialog_resource.gd" type="Script" id=1]
+[ext_resource path="res://addons/parrot/resources/dialog_line_resource.gd" type="Script" id=2]
+[ext_resource path="res://characters/carol.tres" type="Resource" id=3]
+[ext_resource path="res://images/dia/bro1_q2-0.jpg" type="Texture" id=4]
+[ext_resource path="res://images/dia/bro1_q2-1.jpg" type="Texture" id=5]
+[ext_resource path="res://images/dia/bro1_q2-2.jpg" type="Texture" id=6]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+character = ExtResource( 3 )
+text = "It’s somewhere at the countryside."
+image = ExtResource( 4 )
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 2 )
+character = ExtResource( 3 )
+text = "He wanted me to know where he was in case something happened, so he gave me this note with the address."
+image = ExtResource( 5 )
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 2 )
+character = ExtResource( 3 )
+text = ""
+image = ExtResource( 6 )
+
+[resource]
+script = ExtResource( 1 )
+lines = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ]

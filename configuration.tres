@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=41 format=2]
+[gd_resource type="Resource" load_steps=42 format=2]
 
 [ext_resource path="res://addons/mdna_core/resources/game_configuration.gd" type="Script" id=1]
 [ext_resource path="res://music/credits.ogg" type="AudioStream" id=2]
@@ -21,11 +21,12 @@
 [ext_resource path="res://images/mouse/right_corner.png" type="Texture" id=19]
 [ext_resource path="res://images/mouse/left_corner.png" type="Texture" id=20]
 [ext_resource path="res://images/notebook.jpg" type="Texture" id=21]
-[ext_resource path="res://icon.png" type="Texture" id=22]
+[ext_resource path="res://images/misc/map_icon.png" type="Texture" id=22]
 [ext_resource path="res://images/mouse/map.png" type="Texture" id=23]
 [ext_resource path="res://images/mouse/hand.png" type="Texture" id=24]
 [ext_resource path="res://images/mouse/exit.png" type="Texture" id=25]
 [ext_resource path="res://images/mouse/common.png" type="Texture" id=26]
+[ext_resource path="res://sounds/misc/map_icon.ogg" type="AudioStream" id=27]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 15 )
@@ -130,8 +131,8 @@ menu_options_background = ExtResource( 6 )
 menu_options_speech_sample = ExtResource( 10 )
 menu_options_effects_sample = ExtResource( 9 )
 map_image = ExtResource( 22 )
-map_sound = ExtResource( 9 )
+map_sound = ExtResource( 27 )
 scene_path = "res://scenes"
 scene_cache_count = 5
 scene_default_image_scaling = 1.0
-advanced_permanent_cache = PoolStringArray( "res://scenes/room1f.tscn" )
+advanced_permanent_cache = PoolStringArray( "res://scenes/misc/map.tscn" )

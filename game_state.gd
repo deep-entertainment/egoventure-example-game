@@ -11,4 +11,8 @@ export (int) var tapestry_seen
 export(bool) var match_takeable = false
 export(bool) var upper_door_hs = false
 export(bool) var hs_on_ins = false
-
+export(bool) var bro_q1_hs = false
+export(bool) var bro_q2_hs = false
+export(bool) var bro_q3_hs = false
+export(bool) var map_kevo_new = false
+export(bool) var map_kevo = false
