@@ -36,6 +36,9 @@ var in_game_configuration: InGameConfiguration
 # The game's configuration
 var configuration: GameConfiguration
 
+# Wether at least one savegame exists
+var saves_exist: bool = false
+
 
 # A cache of scenes for faster switching
 var _scene_cache: SceneCache
@@ -44,6 +47,16 @@ var _scene_cache: SceneCache
 # Load the ingame configuration
 func _init():
 	pause_mode = Node.PAUSE_MODE_PROCESS
+	var userdir = Directory.new()
+	userdir.open("user://")
+	userdir.list_dir_begin(true, true)
+	var file = userdir.get_next()
+	while file != "":
+		if file.match("save_*.tres"):
+			saves_exist = true
+			break
+		file = userdir.get_next()
+	userdir.list_dir_end()
 
 
 # Update the scene cache
@@ -95,6 +108,7 @@ func change_scene(path: String):
 #
 # - slot: The save slot index
 func save(slot: int):
+	saves_exist = true
 	_update_state()
 	ResourceSaver.save(
 		"user://save_%d.tres" % slot, 

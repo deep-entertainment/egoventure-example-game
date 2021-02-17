@@ -134,6 +134,9 @@ func toggle():
 			else:
 				$Menu/MainMenu/Margin/VBox/MenuItems/Continue.disabled = true
 		
+		$Menu/MainMenu/Margin/VBox/MenuItems/Load.disabled = \
+				not MdnaCore.saves_exist
+		
 		$Menu.visible = !$Menu.visible
 		get_tree().paused = !get_tree().paused
 		if _configuration.menu_music != null and $Menu.visible:
