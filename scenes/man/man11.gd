@@ -6,6 +6,18 @@ func _process(_delta):
 		$upper_door_hs.hide()
 	else:
 		$upper_door_hs.show()
+	if state.eye_on_door:
+		$eye_on_door.hide()
+	else:
+		$eye_on_door.show()
+	if state.hand_on_door:
+		$hand_on_door.show()
+	else:
+		$hand_on_door.hide()
+	if state.hand_on_first_door:
+		$hand_on_first_door.show()
+	else:
+		$hand_on_first_door.hide()
 
 
 func _ready():
@@ -50,5 +62,6 @@ func _on_TriggerHotspot_item_used(item):
 	Boombox.ignore_pause = false
 	MdnaInventory.remove_item(preload("res://inventory/matchkey.tres"))
 	(MdnaCore.state as GameState).upper_door_hs = true
+	(MdnaCore.state as GameState).hand_on_first_door = true
 	MdnaCore.change_scene("res://scenes/man/man12.tscn")
 

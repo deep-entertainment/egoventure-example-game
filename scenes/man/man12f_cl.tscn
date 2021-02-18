@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://images/man/man12f_cl.jpg" type="Texture" id=1]
 [ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=2]
 [ext_resource path="res://scenes/man/man12f_cl.gd" type="Script" id=3]
+[ext_resource path="res://images/man/hs/bur_1.png" type="Texture" id=4]
+[ext_resource path="res://images/man/hs/bur_6.png" type="Texture" id=5]
+[ext_resource path="res://images/man/hs/bur_k.png" type="Texture" id=6]
+[ext_resource path="res://images/man/hs/bur_7b.png" type="Texture" id=7]
+[ext_resource path="res://images/man/hs/bur_b.png" type="Texture" id=8]
+[ext_resource path="res://images/man/hs/bur_j.png" type="Texture" id=9]
+[ext_resource path="res://images/man/hs/bur_7a.png" type="Texture" id=10]
+[ext_resource path="res://sounds/man/man_1776_op.ogg" type="AudioStream" id=11]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -10,6 +18,9 @@ script = ExtResource( 3 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Hotspot" type="TextureButton" parent="."]
 margin_left = -6.34961
@@ -24,3 +35,150 @@ __meta__ = {
 hotspot_type = 1
 target_scene = "res://scenes/man/man12.tscn"
 target_view = "left"
+
+[node name="bur_j" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 9 )
+centered = false
+offset = Vector2( 827, 448 )
+
+[node name="bur_1" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 821, 774 )
+
+[node name="bur_k" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 6 )
+centered = false
+offset = Vector2( 1086, 431 )
+
+[node name="bur_b" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 8 )
+centered = false
+offset = Vector2( 1453, 407 )
+
+[node name="bur_7a" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 10 )
+centered = false
+offset = Vector2( 957, 762 )
+
+[node name="bur_7b" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 7 )
+centered = false
+offset = Vector2( 1217, 766 )
+
+[node name="bur_6" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 1478, 768 )
+
+[node name="Hotspot2" type="TextureButton" parent="."]
+margin_left = 830.0
+margin_top = 451.0
+margin_right = 1059.0
+margin_bottom = 723.0
+mouse_default_cursor_shape = 13
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+
+[node name="Hotspot3" type="TextureButton" parent="."]
+margin_left = 1092.32
+margin_top = 438.0
+margin_right = 1367.32
+margin_bottom = 721.0
+mouse_default_cursor_shape = 13
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+
+[node name="Hotspot4" type="TextureButton" parent="."]
+margin_left = 965.757
+margin_top = 768.135
+margin_right = 1186.76
+margin_bottom = 1024.14
+mouse_default_cursor_shape = 13
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+
+[node name="Hotspot5" type="TextureButton" parent="."]
+margin_left = 1231.0
+margin_top = 780.0
+margin_right = 1433.0
+margin_bottom = 1035.0
+mouse_default_cursor_shape = 13
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+
+[node name="Hotspot6" type="TextureButton" parent="."]
+margin_left = 1464.0
+margin_top = 424.0
+margin_right = 1738.0
+margin_bottom = 713.0
+mouse_default_cursor_shape = 13
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+
+[node name="Hotspot7" type="TextureButton" parent="."]
+margin_left = 1465.0
+margin_top = 775.0
+margin_right = 1646.0
+margin_bottom = 1040.0
+mouse_default_cursor_shape = 13
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+
+[node name="Hotspot8" type="TextureButton" parent="."]
+margin_left = 781.238
+margin_top = 770.902
+margin_right = 925.238
+margin_bottom = 1034.9
+mouse_default_cursor_shape = 13
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+
+[node name="man_hand_on_bur" type="TextureButton" parent="."]
+margin_left = 261.65
+margin_top = 223.923
+margin_right = 2287.65
+margin_bottom = 1239.92
+mouse_default_cursor_shape = 13
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+target_scene = "res://scenes/man/man12f_op.tscn"
+effect = ExtResource( 11 )
+[connection signal="pressed" from="Hotspot2" to="." method="_on_Hotspot2_pressed"]
+[connection signal="pressed" from="Hotspot3" to="." method="_on_Hotspot3_pressed"]
+[connection signal="pressed" from="Hotspot4" to="." method="_on_Hotspot4_pressed"]
+[connection signal="pressed" from="Hotspot5" to="." method="_on_Hotspot5_pressed"]
+[connection signal="pressed" from="Hotspot6" to="." method="_on_Hotspot6_pressed"]
+[connection signal="pressed" from="Hotspot7" to="." method="_on_Hotspot7_pressed"]
+[connection signal="pressed" from="Hotspot8" to="." method="_on_Hotspot8_pressed"]

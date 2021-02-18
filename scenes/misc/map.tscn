@@ -69,5 +69,6 @@ location = "man"
 [node name="map_kevo_new" type="AnimatedSprite" parent="."]
 position = Vector2( 1162.01, 455.205 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 [connection signal="pressed" from="map_kevo" to="." method="_on_map_kevo_pressed"]

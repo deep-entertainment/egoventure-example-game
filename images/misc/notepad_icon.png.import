@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/man_rag.png-3982f419a8175f3a6820989378bee9bb.stex"
+path="res://.import/notepad_icon.png-1504a0b1e60dcb4e6ca70962caf8bea9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/man/hs/man_rag.png"
-dest_files=[ "res://.import/man_rag.png-3982f419a8175f3a6820989378bee9bb.stex" ]
+source_file="res://images/misc/notepad_icon.png"
+dest_files=[ "res://.import/notepad_icon.png-1504a0b1e60dcb4e6ca70962caf8bea9.stex" ]
 
 [params]
 

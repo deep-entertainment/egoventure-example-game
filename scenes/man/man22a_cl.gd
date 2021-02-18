@@ -12,4 +12,4 @@ func _ready():
 
 
 func _on_man_rag_pressed():
-	Boombox.play_effect(preload("res://sounds/man/man_rag_up.ogg"))
+	Boombox.play_effect(preload("res://sounds/man/man_file_up.ogg"))

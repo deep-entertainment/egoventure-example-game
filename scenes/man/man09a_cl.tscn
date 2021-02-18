@@ -10,6 +10,9 @@ script = ExtResource( 3 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Hotspot" type="TextureButton" parent="."]
 margin_left = -11.3135

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://addons/mdna_inventory/resources/inventory_item.gd" type="Script" id=1]
+[ext_resource path="res://inventory/screwdriver.png" type="Texture" id=2]
+[ext_resource path="res://inventory/screwdriver_mod_big.png" type="Texture" id=3]
+[ext_resource path="res://inventory/screwdriver_red.png" type="Texture" id=4]
+
+[resource]
+script = ExtResource( 1 )
+title = "screwdriver_mod"
+description = "Modified screwdriver"
+image_normal = ExtResource( 2 )
+image_active = ExtResource( 4 )
+image_big = ExtResource( 3 )
+combineable_with = [  ]

@@ -1,9 +1,27 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://images/man/man12f_op.jpg" type="Texture" id=1]
+[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=2]
+[ext_resource path="res://sounds/man/man_1776_cl.ogg" type="AudioStream" id=3]
+[ext_resource path="res://scenes/man/man12f_op.gd" type="Script" id=4]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
+
+[node name="Hotspot" type="TextureButton" parent="."]
+margin_left = -10.0
+margin_top = 1121.0
+margin_right = 2583.0
+margin_bottom = 1466.0
+mouse_default_cursor_shape = 6
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 1
+target_scene = "res://scenes/man/man12f_cl.tscn"
+effect = ExtResource( 3 )

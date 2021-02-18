@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/brother/bro1.gd" type="Script" id=1]
 [ext_resource path="res://images/dia/bro_main.jpg" type="Texture" id=2]
@@ -27,8 +27,6 @@ font_data = ExtResource( 5 )
 
 [sub_resource type="StyleBoxEmpty" id=6]
 
-[sub_resource type="StyleBoxEmpty" id=7]
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -36,33 +34,14 @@ script = ExtResource( 1 )
 texture = ExtResource( 2 )
 centered = false
 
-[node name="bro_q0_hs" type="RichTextLabel" parent="."]
-margin_left = 321.0
-margin_top = 348.0
-margin_right = 794.0
-margin_bottom = 478.0
+[node name="bro_q1_hs" type="RichTextLabel" parent="."]
+margin_left = 317.444
+margin_top = 351.436
+margin_right = 805.444
+margin_bottom = 482.436
 rect_rotation = -7.4
 theme = ExtResource( 4 )
 custom_styles/normal = SubResource( 4 )
-custom_fonts/bold_font = SubResource( 2 )
-custom_fonts/normal_font = SubResource( 3 )
-custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "You had some news about Kevo?"
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-dialog = "res://dialogs/bro1_q0.tres"
-asked = false
-
-[node name="bro_q1_hs" type="RichTextLabel" parent="."]
-margin_left = 333.0
-margin_top = 507.0
-margin_right = 821.0
-margin_bottom = 638.0
-rect_rotation = -7.4
-theme = ExtResource( 4 )
-custom_styles/normal = SubResource( 5 )
 custom_fonts/bold_font = SubResource( 2 )
 custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
@@ -75,13 +54,13 @@ dialog = "res://dialogs/bro1_q1.tres"
 asked = false
 
 [node name="bro_q2_hs" type="RichTextLabel" parent="."]
-margin_left = 353.141
-margin_top = 665.383
-margin_right = 818.141
-margin_bottom = 791.383
+margin_left = 338.999
+margin_top = 505.577
+margin_right = 803.999
+margin_bottom = 631.577
 rect_rotation = -7.4
 theme = ExtResource( 4 )
-custom_styles/normal = SubResource( 6 )
+custom_styles/normal = SubResource( 5 )
 custom_fonts/bold_font = SubResource( 2 )
 custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
@@ -94,13 +73,13 @@ dialog = "res://dialogs/bro1_q2.tres"
 asked = false
 
 [node name="bro_q3_hs" type="RichTextLabel" parent="."]
-margin_left = 374.197
-margin_top = 829.028
-margin_right = 801.197
-margin_bottom = 981.028
+margin_left = 362.883
+margin_top = 659.322
+margin_right = 789.883
+margin_bottom = 811.322
 rect_rotation = -7.4
 theme = ExtResource( 4 )
-custom_styles/normal = SubResource( 7 )
+custom_styles/normal = SubResource( 6 )
 custom_fonts/bold_font = SubResource( 2 )
 custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )

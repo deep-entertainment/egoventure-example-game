@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/comb_screw_file.ogg-ae7ecf330a84e4b04639ef3d92d4ce1c.oggstr"
+
+[deps]
+
+source_file="res://sounds/man/comb_screw_file.ogg"
+dest_files=[ "res://.import/comb_screw_file.ogg-ae7ecf330a84e4b04639ef3d92d4ce1c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -2,13 +2,16 @@ extends Node2D
 
 func _ready():
 	Parrot.connect("finished_dialog", self, "_on_finished_dialog")
+	Speedy.hidden = true
+	Parrot.play(preload("res://dialogs/bro1_q0.tres"))
+	yield(Parrot, "finished_dialog")
+	Speedy.hidden = false
 	_update_hotspots()
 
 func _update_hotspots():
 	var state = MdnaCore.state
 	if state.bro_q1_hs:
 		$bro_q1_hs.show()
-		$bro_q0_hs.asked = true
 	else:
 		$bro_q1_hs.hide()
 	if state.bro_q2_hs:

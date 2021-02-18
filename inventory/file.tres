@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://addons/mdna_inventory/resources/inventory_item.gd" type="Script" id=1]
+[ext_resource path="res://inventory/file.png" type="Texture" id=2]
+[ext_resource path="res://inventory/file_red.png" type="Texture" id=3]
+[ext_resource path="res://inventory/file_big.png" type="Texture" id=4]
+[ext_resource path="res://inventory/screwdriver.tres" type="Resource" id=5]
+
+[resource]
+script = ExtResource( 1 )
+title = "file"
+description = "File"
+image_normal = ExtResource( 2 )
+image_active = ExtResource( 3 )
+image_big = ExtResource( 4 )
+combineable_with = [ ExtResource( 5 ) ]

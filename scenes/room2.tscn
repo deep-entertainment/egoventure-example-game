@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://images/rooms/2l.jpeg" type="Texture" id=1]
 [ext_resource path="res://images/rooms/2b.jpeg" type="Texture" id=2]
@@ -6,9 +6,11 @@
 [ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=4]
 [ext_resource path="res://addons/mdna_core/nodes/four_side_room.tscn" type="PackedScene" id=5]
 [ext_resource path="res://images/rooms/2r.jpeg" type="Texture" id=6]
+[ext_resource path="res://scenes/room2.gd" type="Script" id=7]
 [ext_resource path="res://addons/mdna_core/nodes/look_hotspot.gd" type="Script" id=8]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="Room" parent="." instance=ExtResource( 5 )]
 front_texture = ExtResource( 3 )

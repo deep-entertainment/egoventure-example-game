@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/carol_large-0.ogg-5650b8687a22fa984639ecdff3deff1c.oggstr"
+
+[deps]
+
+source_file="res://voices/carol_large-0.ogg"
+dest_files=[ "res://.import/carol_large-0.ogg-5650b8687a22fa984639ecdff3deff1c.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
