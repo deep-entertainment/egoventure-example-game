@@ -19,6 +19,9 @@ export(AudioStream) var location_music
 # The new location (subdirectory of the scene files)
 export(String) var location = ""
 
+# Set the boolean value of this variable in the state to true
+export(String) var state_variable = ""
+
 
 # Connect the pressed signal
 func _init():
@@ -31,6 +34,8 @@ func _on_pressed():
 	if MdnaInventory.selected_item == null:
 		Speedy.hidden = true
 		accept_event()
+		if state_variable:
+			MdnaCore.state.set(state_variable, true)
 		Boombox.play_music(location_music)
 		MdnaCore.target_view = target_view
 		MdnaCore.current_location = location
