@@ -7,6 +7,7 @@
 script = ExtResource( 6 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 0
 
 [node name="Left" type="TextureButton" parent="CanvasLayer"]
 margin_left = -7.0
