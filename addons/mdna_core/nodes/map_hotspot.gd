@@ -35,7 +35,7 @@ func _on_pressed():
 		Speedy.hidden = true
 		accept_event()
 		if state_variable:
-			MdnaCore.state.set(state_variable, true)
+			MdnaCore.state.set(state_variable, false)
 		Boombox.play_music(location_music)
 		MdnaCore.target_view = target_view
 		MdnaCore.current_location = location
