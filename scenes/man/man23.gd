@@ -22,4 +22,3 @@ func _on_Hotspot4_pressed():
 	Boombox.play_effect(preload("res://sounds/man/man_bath_cupb_op.ogg"))
 	MdnaCore.target_view = "right"
 	MdnaCore.change_scene("res://scenes/man/man23d_op2.tscn")
-

@@ -8,7 +8,8 @@
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )
 character = ExtResource( 3 )
-text = "No, but he must have let him stay there for free, since he couldn’t possibly have afforded it."
+text = "No, but he must have let him stay there for free,
+since he couldn’t possibly have afforded it."
 image = ExtResource( 4 )
 
 [resource]

@@ -24,6 +24,10 @@ func _on_left_pressed():
 	MdnaCore.change_scene("res://scenes/room1b.tscn")
 
 
-func _on_Hotspot2_pressed():
-	Boombox.play_effect(preload("res://sounds/cheers.ogg"))
-	MdnaCore.change_scene("res://scenes/room15.tscn")
+
+
+func _on_TriggerHotspot_item_used(item: InventoryItem):
+	if item.title == "Keys":
+		Parrot.play(preload("res://dialogs/keys.tres"))
+	elif item.title == "screwdriver":
+		Boombox.play_effect(preload("res://sounds/cheers.ogg"))

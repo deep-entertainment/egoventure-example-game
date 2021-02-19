@@ -25,3 +25,16 @@ __meta__ = {
 hotspot_type = 1
 target_scene = "res://scenes/man/man12f_cl.tscn"
 effect = ExtResource( 3 )
+
+[node name="Hotspot2" type="TextureButton" parent="."]
+margin_left = 688.933
+margin_top = 352.403
+margin_right = 1852.93
+margin_bottom = 1036.4
+mouse_default_cursor_shape = 13
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 11
+[connection signal="pressed" from="Hotspot2" to="." method="_on_Hotspot2_pressed"]

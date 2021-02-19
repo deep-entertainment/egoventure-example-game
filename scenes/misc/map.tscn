@@ -6,7 +6,7 @@
 [ext_resource path="res://images/map/kevo.png" type="Texture" id=4]
 [ext_resource path="res://images/map/map_brother.png" type="Texture" id=5]
 [ext_resource path="res://images/man/man_intro.jpg" type="Texture" id=6]
-[ext_resource path="res://music/piano.ogg" type="AudioStream" id=7]
+[ext_resource path="res://music/guitar.ogg" type="AudioStream" id=7]
 [ext_resource path="res://scenes/misc/map.gd" type="Script" id=8]
 [ext_resource path="res://music/brother.ogg" type="AudioStream" id=9]
 [ext_resource path="res://images/misc/trans.png" type="Texture" id=10]
@@ -46,6 +46,7 @@ effect = null
 loading_image = ExtResource( 2 )
 location_music = ExtResource( 9 )
 location = "brother"
+state_variable = ""
 
 [node name="map_kevo" type="TextureButton" parent="."]
 margin_left = 1199.59
@@ -65,10 +66,10 @@ effect = null
 loading_image = ExtResource( 6 )
 location_music = ExtResource( 7 )
 location = "man"
+state_variable = "map_kevo_new"
 
 [node name="map_kevo_new" type="AnimatedSprite" parent="."]
 position = Vector2( 1162.01, 455.205 )
 frames = SubResource( 1 )
 frame = 1
 playing = true
-[connection signal="pressed" from="map_kevo" to="." method="_on_map_kevo_pressed"]

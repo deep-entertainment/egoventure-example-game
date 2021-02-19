@@ -16,5 +16,4 @@ func _ready():
 
 
 
-func _on_map_kevo_pressed():
-	(MdnaCore.state as GameState).map_kevo_new = false
+

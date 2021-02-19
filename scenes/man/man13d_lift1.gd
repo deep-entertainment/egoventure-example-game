@@ -107,7 +107,7 @@ func _on_Hotspot6_pressed():
 
 
 func _on_Hotspot7_pressed():
-	if cigbox_opened == 3:
+	if cigbox_opened == 3 && (MdnaCore.state as GameState).raze_seen == 1:
 		Boombox.ignore_pause = true
 		get_tree().paused = true
 		Boombox.play_effect(preload("res://sounds/man/cigbox_click.ogg"))

@@ -20,7 +20,7 @@
 [ext_resource path="res://images/mouse/magnifier.png" type="Texture" id=18]
 [ext_resource path="res://images/mouse/right_corner.png" type="Texture" id=19]
 [ext_resource path="res://images/mouse/left_corner.png" type="Texture" id=20]
-[ext_resource path="res://images/notebook.jpg" type="Texture" id=21]
+[ext_resource path="res://images/misc/journal.jpg" type="Texture" id=21]
 [ext_resource path="res://images/misc/map_icon.png" type="Texture" id=22]
 [ext_resource path="res://images/mouse/map.png" type="Texture" id=23]
 [ext_resource path="res://images/mouse/hand.png" type="Texture" id=24]
@@ -125,8 +125,8 @@ menu_saveslots_background = ExtResource( 6 )
 menu_saveslots_previous_image = ExtResource( 7 )
 menu_saveslots_next_image = ExtResource( 8 )
 notepad_background = ExtResource( 21 )
-notepad_goals_rect = Rect2( 504, 325, 543, 206 )
-notepad_hints_rect = Rect2( 1167.71, 251.597, 560, 893.003 )
+notepad_goals_rect = Rect2( 578, 302, 552, 207 )
+notepad_hints_rect = Rect2( 1223, 198, 545, 893 )
 menu_options_background = ExtResource( 6 )
 menu_options_speech_sample = ExtResource( 10 )
 menu_options_effects_sample = ExtResource( 9 )

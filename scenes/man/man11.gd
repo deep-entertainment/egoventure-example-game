@@ -26,6 +26,7 @@ func _ready():
 
 
 func _on_Hotspot_pressed():
+	Speedy.hidden = true
 	Boombox.ignore_pause = true
 	get_tree().paused = true
 	$man_stairs.show()
@@ -34,6 +35,7 @@ func _on_Hotspot_pressed():
 	get_tree().paused = false
 	Boombox.ignore_pause = false
 	MdnaCore.target_view = "back"
+	Speedy.hidden = false
 	MdnaCore.change_scene("res://scenes/man/man05.tscn")
 
 

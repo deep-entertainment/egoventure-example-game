@@ -23,3 +23,5 @@ export(bool) var hand_on_first_door = false
 export (int) var bor_opened
 export (int) var man_folder_seen
 export(bool) var man_hand_on_bur = false
+export(bool) var screwdr_hs = false
+export (int) var raze_seen

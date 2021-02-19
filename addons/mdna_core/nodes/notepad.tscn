@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/mdna_core/nodes/notepad.gd" type="Script" id=1]
-[ext_resource path="res://images/notebook.jpg" type="Texture" id=2]
+[ext_resource path="res://images/misc/journal.jpg" type="Texture" id=2]
 [ext_resource path="res://theme.tres" type="Theme" id=3]
 [ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=4]
 
@@ -34,10 +34,10 @@ __meta__ = {
 }
 
 [node name="Goals" type="Label" parent="Control"]
-margin_left = 504.0
-margin_top = 325.0
-margin_right = 1047.0
-margin_bottom = 531.0
+margin_left = 578.0
+margin_top = 302.0
+margin_right = 1130.0
+margin_bottom = 509.0
 rect_rotation = -9.12779
 mouse_filter = 0
 mouse_default_cursor_shape = 12
@@ -49,12 +49,15 @@ __meta__ = {
 }
 
 [node name="Hints" type="Label" parent="Control"]
-margin_left = 1167.71
-margin_top = 251.597
-margin_right = 1727.71
-margin_bottom = 1144.6
+margin_left = 1223.0
+margin_top = 198.0
+margin_right = 1768.0
+margin_bottom = 1091.0
 rect_rotation = -9.12779
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Close" type="TextureButton" parent="Control"]
 margin_left = 1.0

@@ -2,6 +2,7 @@ extends Node2D
 
 func _ready():
 	$man_stairs.hide()
+	Boombox.play_music(preload("res://music/piano.ogg"))
 
 
 func _on_Hotspot_pressed():
@@ -9,6 +10,7 @@ func _on_Hotspot_pressed():
 
 
 func _on_Hotspot4_pressed():
+	Speedy.hidden = true
 	Boombox.ignore_pause = true
 	get_tree().paused = true
 	$man_stairs.show()
@@ -17,5 +19,6 @@ func _on_Hotspot4_pressed():
 	get_tree().paused = false
 	Boombox.ignore_pause = false
 	MdnaCore.target_view = "front"
+	Speedy.hidden = false
 	MdnaCore.change_scene("res://scenes/man/man11.tscn")
 
