@@ -1,10 +1,12 @@
-[gd_resource type="Theme" load_steps=31 format=2]
+[gd_resource type="Theme" load_steps=33 format=2]
 
 [ext_resource path="res://images/misc/stripes_sized.png" type="Texture" id=1]
 [ext_resource path="res://misc/fonts/LadylikeBB.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://addons/mdna_core/images/empty.png" type="Texture" id=3]
-[ext_resource path="res://images/mouse/common.png" type="Texture" id=4]
+[ext_resource path="res://images/misc/volume_control.png" type="Texture" id=4]
 [ext_resource path="res://misc/fonts/Flareserif821BT-fixed.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://images/misc/check.png" type="Texture" id=6]
+[ext_resource path="res://images/misc/check_un.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
@@ -124,8 +126,8 @@ font_data = ExtResource( 5 )
 default_font = SubResource( 25 )
 Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 Button/colors/font_color_disabled = Color( 0.392157, 0.415686, 0.423529, 1 )
-Button/colors/font_color_hover = Color( 0.458824, 0.294118, 0.247059, 1 )
-Button/colors/font_color_pressed = Color( 0.458824, 0.294118, 0.247059, 1 )
+Button/colors/font_color_hover = Color( 0.694118, 0.501961, 0.435294, 1 )
+Button/colors/font_color_pressed = Color( 0.694118, 0.501961, 0.435294, 1 )
 Button/fonts/menu_button = SubResource( 1 )
 Button/fonts/menu_button_hover = SubResource( 2 )
 Button/styles/focus = SubResource( 3 )
@@ -136,8 +138,8 @@ Button/styles/menu_button_normal = null
 Button/styles/menu_button_pressed = null
 Button/styles/normal = SubResource( 5 )
 Button/styles/pressed = SubResource( 6 )
-CheckButton/icons/off = null
-CheckButton/icons/on = null
+CheckButton/icons/off = ExtResource( 7 )
+CheckButton/icons/on = ExtResource( 6 )
 CheckButton/styles/focus = SubResource( 7 )
 CheckButton/styles/hover = SubResource( 8 )
 CheckButton/styles/hover_pressed = SubResource( 8 )

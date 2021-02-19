@@ -61,10 +61,10 @@ tracks/1/keys = {
 script = ExtResource( 1 )
 
 [node name="Music1" type="AudioStreamPlayer" parent="."]
+volume_db = -50.0
 bus = "Music"
 
 [node name="Music2" type="AudioStreamPlayer" parent="."]
-volume_db = -50.0
 bus = "Music"
 
 [node name="Background" type="AudioStreamPlayer" parent="."]

@@ -51,7 +51,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 dialog = "res://dialogs/bro1_q1.tres"
-asked = false
 
 [node name="bro_q2_hs" type="RichTextLabel" parent="."]
 margin_left = 338.999
@@ -70,7 +69,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 dialog = "res://dialogs/bro1_q2.tres"
-asked = false
 
 [node name="bro_q3_hs" type="RichTextLabel" parent="."]
 margin_left = 362.883
@@ -88,6 +86,4 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-dialog = ""
-asked = false
 [connection signal="pressed" from="bro_q3_hs" to="." method="_on_bro_q3_hs_pressed"]
