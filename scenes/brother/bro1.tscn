@@ -7,9 +7,9 @@
 [ext_resource path="res://misc/fonts/LadylikeBB.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://misc/fonts/Flareserif821BT-fixed.ttf" type="DynamicFontData" id=6]
 
-[sub_resource type="StyleBoxEmpty" id=25]
+[sub_resource type="StyleBoxEmpty" id=26]
 
-[sub_resource type="DynamicFont" id=24]
+[sub_resource type="DynamicFont" id=25]
 size = 48
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -18,14 +18,14 @@ extra_spacing_top = 10
 extra_spacing_bottom = 10
 font_data = ExtResource( 6 )
 
-[sub_resource type="DynamicFont" id=22]
+[sub_resource type="DynamicFont" id=23]
 size = 60
 use_filter = true
 font_data = ExtResource( 5 )
 
-[sub_resource type="StyleBoxEmpty" id=26]
-
 [sub_resource type="StyleBoxEmpty" id=27]
+
+[sub_resource type="StyleBoxEmpty" id=28]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -41,9 +41,9 @@ margin_right = 805.444
 margin_bottom = 482.436
 rect_rotation = -7.4
 theme = ExtResource( 4 )
-custom_styles/normal = SubResource( 25 )
-custom_fonts/bold_font = SubResource( 24 )
-custom_fonts/normal_font = SubResource( 22 )
+custom_styles/normal = SubResource( 26 )
+custom_fonts/bold_font = SubResource( 25 )
+custom_fonts/normal_font = SubResource( 23 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Do you know which friend?"
 script = ExtResource( 3 )
@@ -60,9 +60,9 @@ margin_right = 803.999
 margin_bottom = 631.577
 rect_rotation = -7.4
 theme = ExtResource( 4 )
-custom_styles/normal = SubResource( 26 )
-custom_fonts/bold_font = SubResource( 24 )
-custom_fonts/normal_font = SubResource( 22 )
+custom_styles/normal = SubResource( 27 )
+custom_fonts/bold_font = SubResource( 25 )
+custom_fonts/normal_font = SubResource( 23 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Did he tell you where the house is?"
 script = ExtResource( 3 )
@@ -79,9 +79,9 @@ margin_right = 789.883
 margin_bottom = 811.322
 rect_rotation = -7.4
 theme = ExtResource( 4 )
-custom_styles/normal = SubResource( 27 )
-custom_fonts/bold_font = SubResource( 24 )
-custom_fonts/normal_font = SubResource( 22 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/bold_font = SubResource( 25 )
+custom_fonts/normal_font = SubResource( 23 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Thank you for your help."
 script = ExtResource( 3 )
