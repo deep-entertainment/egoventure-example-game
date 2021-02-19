@@ -258,7 +258,9 @@ func _on_Return_pressed():
 func _on_speech_Slider_value_changed(value):
 	MdnaCore.options_set_speech_level(_percent_to_db(value))
 	MdnaCore.set_audio_levels()
-	if $Menu/Options.visible and _configuration.menu_options_speech_sample != null:
+	if $Menu/Options.visible \
+			and _configuration.menu_options_speech_sample != null \
+			and not $Menu/Speech.playing:
 		$Menu/Speech.stream = _configuration.menu_options_speech_sample
 		$Menu/Speech.play()
 
@@ -281,8 +283,9 @@ func _on_music_Slider_value_changed(value):
 func _on_effects_Slider_value_changed(value):
 	MdnaCore.options_set_effects_level(_percent_to_db(value))
 	MdnaCore.set_audio_levels()
-	if $Menu/Options.visible and \
-			_configuration.menu_options_effects_sample != null:
+	if $Menu/Options.visible \
+			and _configuration.menu_options_effects_sample != null \
+			and not $Menu/Effects.playing:
 		$Menu/Effects.stream = _configuration.menu_options_effects_sample
 		$Menu/Effects.play()
 
