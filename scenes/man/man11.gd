@@ -65,5 +65,6 @@ func _on_TriggerHotspot_item_used(item):
 	MdnaInventory.remove_item(preload("res://inventory/matchkey.tres"))
 	(MdnaCore.state as GameState).upper_door_hs = true
 	(MdnaCore.state as GameState).hand_on_first_door = true
+	Notepad.finished_step(2, 2)
 	MdnaCore.change_scene("res://scenes/man/man12.tscn")
 

@@ -35,6 +35,7 @@ func _on_finished_dialog(dialog_id: String):
 		(MdnaCore.state as GameState).map_kevo_new = true
 		(MdnaCore.state as GameState).map_kevo = true
 		(MdnaCore.state as GameState).bro_q3_hs = true
+		Notepad.finished_step(1, 1)
 	_update_hotspots()
 
 

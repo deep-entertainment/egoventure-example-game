@@ -102,9 +102,9 @@ __meta__ = {
 
 [node name="hand_on_door" type="TextureButton" parent="."]
 margin_left = 670.973
-margin_top = 1797.91
+margin_top = 1794.13
 margin_right = 1093.97
-margin_bottom = 2298.91
+margin_bottom = 2295.13
 mouse_default_cursor_shape = 13
 script = ExtResource( 7 )
 __meta__ = {

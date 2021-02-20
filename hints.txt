@@ -1,99 +1,22 @@
-New Goal;I want my telephone;1;0;S;;
-;I must find my phone. I think it's in the bedroom.;;;;;home08b_lift4
+New Goal;Speak to Kevo's brother;1;;;;
+;Kevo's brother wants to speak to me. I'd better hear what he has to say.;;;;;bro1
 ;;;;;;
-New Goal;Visit Jonna Brand;2;1.1;S;;
-;I must hear what this woman has to say, even though I definitely think that she should have contacted the police.;;;;;wm05a
+New Goal;Search Kevo's house;2;;;;
+;I should look in the matchbox in the living room on the ground floor. It's next to the tiled stove in the corner. ;;;;;man09c_cl2_lift3
+;I can reach the upper floor from the small hallway. Maybe one of the doors there can be opened with the key I found.;;;;;man11
+;The yellow porcelain tray in the upper floor bedroom holds something of interest.;;;;;man12d_lift
 ;;;;;;
-New Goal;Search Jonna's and Alvin's house;3;2.1;S;;
-;I'm pretty sure I'll find something in the house that will further my investigation. I can reach the upper floor from the hallway.;;;;;wm11a
-;I've located Alvin's room. I see something worth examining in front of the TV.;;;;;wm11b_lift2
+New Goal;Open the cupboard on the upper floor;3;;;;
+;I'd better try the hex key on the dresser in the ground floor bedroom, and see what's in it. ;;;;;man06c_cl
+;I think I can open the corner cupboard in the upper floor bedroom with the code written down in the folder with the will. It's 'BJ61'. If I find something in the cupboard that will get me further, I'll take it.;;;;;
 ;;;;;;
-New Goal;Check out Green Tile Skatepark;4;3.2;S;;
-;This is one big jumble of concrete. But there might be something interesting at the very end of the area.;;;;;fin11d_lift
+New Goal;Access the inner room on the upper floor;4;;;;
+;I need to explore the area outside the house. I have to follow the path to the left of the house, all the way down to the jetty.;;;;;man22a_lift
+;I can use the file on the screwdriver to make it slightly slimmer.;;;;;combo
+;I will try the screwdriver on the door.;;;;;man11c_cl
 ;;;;;;
-New Goal;Collect general information about Alvin;5;4.1;S;;
-;I think I have the code to the drawer in Alvin's room now. It must be 'ALRQ'.;;;;;wm11a_op
-;There's a plastic card of some kind in Alvin's drawer.;;;;;wm11a_card2
-;A passcard to a train museum is not something you find among every teenager's belongings. They must know something about Alvin there. ;;;;;ho1_05b
-;It's a long shot, but I'll see if there's something left of the Old Railway Museum.;;;;;train09c
-;If I examine the Old Railway Museum and the Train Museum closely, I might be able to find clues for accessing the tablet in Alvin's drawer. I think the solution is 29 (square), 36 (open numbers), 7 (circle), and 62 (triangle).;;;;;wm11a_tab3
+New Goal;Unlock the diary in the living room;5;;;;
+;I must check the room behind the previously locked door on the upper floor thoroughly. The colours on the hanging tapestry might have a meaning. I think they open the diary under the TV in the living room on the ground floor.;;;;;man09c_lift1
 ;;;;;;
-New Goal;Trace Alvin's footsteps;6;5.5;S;;
-;I must see if I can find something under the Dogwood ramp.;;;;;wm11a_tab3_message
-;I will examine that tennis court. I mustn't miss the concrete slab at the left side of the court.;;;;;lot05d_lift
-;There's a metal lid on a green pipe at the far wall of the tennis court. I bet that the key from under the slab opens it.;;;;;lot05a_xcl_op
-;I must switch on the smartphone at the tennis court.;;;;;lot_quiz1
-;I'd better go to the Acorn skatespot.;;;;;ek01a
-;It's time to solve the quiz on the smartphone at the tennis court. I think that the answers are 3, 1, 2, and 1.;;;;;lot_quiz6
-;;;;;;
-New Goal;Trace Alvin's footsteps;7;6.5,6.6;S;;
-;It looks like there's a notice on the Acorn ramp.;;;;;ek04b_cl
-;I need to know where the city's lousiest skatespot is. Maybe that Jasper fellow knows that?;;;;;jas_04b
-;;;;;;
-New Goal;Examine the skatespot in Twin Oaks;8;6.5,6.6,7.2;S;;
-;There's a torn piece of plywood I should check out at the beginning of the skateboarding area. ;;;;;sme15c_lift2
-;If I continue down the pavement and then turn to the right by a small transformer station (small electrical power station), I'll eventually reach a second transformer station. There must be some meaning to it, since it was mentioned on the piece of plywood.;;;;;sme14d
-;;;;;;
-New Goal;Visit Aneby Arena;9;6.5,6.6,7.2,8.2;S;;
-;I think I'll find something useful behind the ramp.;;;;;aby05d_cl
-;;;;;;
-New Goal;Explore the skatespot in Twin Oaks;10;6.5,6.6,7.2,8.2,9.1;S;;
-;At the end of the skateboard area, there's a smartphone hidden at the left side of the concrete bank. I can unlock it by studying the painting of the compass by Aneby Arena, and the letters at a box at the skatespot in Twin Oaks, VOSN. The solution is grey, blue, red, and yellow.;;;;;sme20b_lift4
-;;;;;;
-New Goal;Experience the Adventure Golf;11;6.5,6.6,7.2,8.2,9.1,10.1;S;;
-;I'm looking for the tallest chimney here.;;;;;golf06d_cl
-;;;;;;
-New Goal;Continue to the heating plant;12;6.5,6.6,7.2,8.2,9.1,10.1,11.1;S;;
-;Maybe I should take a small detour to the empty parking lot. The concrete roadblocks might be hiding something.;;;;;plant08c_xcl2_lift
-;;;;;;
-New Goal;Explore the skatespot in Twin Oaks;13;6.5,6.6,7.2,8.2,9.1,10.1,11.1,12.1;S;;
-;The triangle tool will hopefully open the metal cabinet behind the transformer station in Twin Oaks.;;;;;sme14d_op1
-;I think I missed something at the Adventure Golf. It's close to the tram.;;;;;golf14d_cl
-;I can unlock the smartphone in the metal cabinet behind the transformer station in Twin Oaks using the colours on the podium on the Adventure Golf. Number 2 is blue, number 1 is green, and number 3 is red.;;;;;sme14d_op4
-;;;;;;
-New Goal;Enter the heating plant;14;7.2,8.2,9.1,10.1,11.1,12.1,13.3;S;;
-;I can now enter the heating plant using the code 8735.;;;;;plant07a_cl
-;I wonder if the metal hatch can be opened?;;;;;plant09d_op
-;;;;;;
-New Goal;Go to Mariehof;15;7.2,8.2,9.1,10.1,11.1,12.1,13.3,14.2;S;;
-;I hope I can find the ramp there. Maybe I can ask someone?;;;;;bi1_05b
-;;;;;;
-New Goal;Pick up some garbage;16;7.2,8.2,9.1,10.1,11.1,12.1,13.3,14.2,15.1;S;;
-;I can see several trashy objects in the beginning of the park. One is left of the playground slide, one to the left of the sandbox, and one close to the small creek. Before I cross the bridge, I must go to the right to find something. Immediately after having passed the bridge, there's a small object to the right. Further up, there is a yogurt bottle to the right, and at the end of the area, a soft drink can.;;;;;several
-;;;;;;
-New Goal;One last stop at Twin Oaks;17;7.2,8.2,9.1,10.1,11.1,12.1,13.3,14.2,15.1,16.1;S;;
-;There's something green on top of the cable tunnel leading from the second transformer station. I can fetch it with the reacher.;;;;;sme13a_lift3
-;;;;;;
-New Goal;Report to my team leader;18;7.2,8.2,9.1,10.1,11.1,12.1,13.3,14.2,15.1,16.1,17.1;S;;
-;It's time to go back to Mariehof. If he doesn't show me the ramp now, I will meticulously put back all the garbage in Yonder Park.;;;;;bi2_02a
-;;;;;;
-New Goal;Check out the Mariehof ramp;19;7.2,8.2,9.1,10.1,11.1,12.1,13.3,14.2,15.1,16.1,17.1,18.1;S;;
-;It's obvious from the photo I found that I have to look in the metal pipe at the top of the ramp. I must check all four corners.;;;;;mar09b_lift
-;;;;;;
-New Goal;Canvass the Carver Fountain;20;7.2,8.2,9.1,10.1,11.1,12.1,13.3,14.2,15.1,16.1,17.1,18.1,19.1;S;;
-;After entering the area, I can follow a path to the right. I might find something useful there.;;;;;pool11b_lift
-;I think I missed something behind the Acorn ramp that I will need here.;;;;;ek09b_lift
-;There is a metal plate at the far end of the fountain. I can try to loosen its rusty nuts with the small wrench.;;;;;pool07a_xcl1_op, pool07a_xcl2_op
-;I can now use the putty knife to lift the metal plate and see what's under it.;;;;;pool07a_tab1
-;I think that the solution is turtle and sheep.;;;;;pool07a_tab1
-;I simply have to give them my phone number.;;;;;pool07a_tab3
-;;;;;;
-New Goal;Revisit the Mariehof ramp;21;7.2,8.2,9.1,10.1,11.1,12.1,13.3,14.2,15.1,16.1,17.1,18.1,19.1,20.6;S;;
-;I think I have to look close to the spot where I previously found the piece of paper in the metal pipe.;;;;;mar09b_cl2_lift
-;;;;;;
-New Goal;Continue searching Jonna's and Alvin's house;22;8.2,9.1,10.1,11.1,12.1,13.3,14.2,15.1,16.1,17.1,18.1,19.1,20.6,21.1;S;;
-;I think there's something inside one of the skateboard wheels in front of Alvin's computer monitor. Maybe that skateboard tool can loosen the ball-bearing in the wheel, and open it up.;;;;;wm11d_lift3
-;I can try to insert the memory card into Alvin's tablet in his drawer.;;;;;wm11a_tab1
-;I can now use the code I found on the tablet to enter the basement. It's red, red, purple, yellow, and teal.;;;;;wm05d_cl
-;There's a laundry in the basement. I must search it for handy items.;;;;;wm15d_lift
-;;;;;;
-New Goal;Find out more about Jonna in her house;23;8.2,9.1,10.1,11.1,12.1,13.3,14.2,15.1,16.1,17.1,18.1,19.1,20.6,21.1,22.4;S;;
-;Something is lying on the kitchen fan.;;;;;wm08b_lift
-;There's a trap door in the attic. I can reach it by placing the stepladder under it.;;;;;wm12d
-;I can open the trap door in the attic with the handle I found on the kitchen fan.;;;;;wm12d_op
-;I must read all the documents in the attic.;;;;;wm12d_lift5
-;;;;;;
-New Goal;Visit Stina at the library;24;8.2,9.1,10.1,11.1,12.1,13.3,14.2,15.1,16.1,17.1,18.1,19.1,20.6,21.1,22.4,23.4;S;;
-;Stina can dig up all sorts of information.;;;;;stina1_03c
-;;;;;;
-
+New Goal;Open the cigar box;6;;;;
+;There's a cigar box in a closet in the room behind the previously locked door on August's upper floor. I think I have enough information on how to open the box in August's letter to his father. The code is probably 'RAZE'. I must take a good look at what's inside the box.;;;;;

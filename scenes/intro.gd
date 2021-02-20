@@ -3,7 +3,6 @@ extends Control
 func _ready():
 	Speedy.hidden = true
 	MdnaInventory.disable()
-	Boombox.play_music(preload("res://sounds/misc/silence.ogg"))
 	MainMenu.saveable = true
 	$cred2.hide()
 	Boombox.ignore_pause = true

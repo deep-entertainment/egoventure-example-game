@@ -56,5 +56,6 @@ effect = null
 loading_image = ExtResource( 4 )
 location_music = null
 location = ""
+state_variable = ""
 [connection signal="pressed" from="right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="left" to="." method="_on_left_pressed"]

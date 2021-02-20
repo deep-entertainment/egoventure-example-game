@@ -116,6 +116,7 @@ func _on_Hotspot7_pressed():
 		Boombox.play_effect(preload("res://sounds/man/man_green_book_open.ogg"))
 		get_tree().paused = false
 		Boombox.ignore_pause = false
+		Notepad.finished_step(5, 1)
 		MdnaCore.change_scene("res://scenes/man/man09c_lift1_op.tscn")
 	else:
 		Boombox.ignore_pause = true
