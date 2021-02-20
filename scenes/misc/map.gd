@@ -2,6 +2,8 @@ extends Node2D
 
 
 func _ready():
+	MdnaCore.game_started = true
+	MdnaInventory.enable()
 	Boombox.play_music(preload("res://music/blue.ogg"))
 	Boombox.stop_background()
 	var state = MdnaCore.state
