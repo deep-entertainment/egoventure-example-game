@@ -259,11 +259,11 @@ func _update_state():
 	MdnaCore.state.target_view = MdnaCore.current_view
 	MdnaCore.state.target_location = MdnaCore.current_location
 	MdnaCore.state.inventory_items = MdnaInventory.get_items()
-	if Boombox.get_music():
+	if Boombox.is_music_playing() and Boombox.get_music():
 		MdnaCore.state.current_music = Boombox.get_music().resource_path
 	else:
 		MdnaCore.state.current_music = ""
-	if Boombox.get_background():
+	if Boombox.is_background_playing() and Boombox.get_background():
 		MdnaCore.state.current_background = Boombox.get_background().resource_path
 	else:
 		MdnaCore.state.current_background = ""

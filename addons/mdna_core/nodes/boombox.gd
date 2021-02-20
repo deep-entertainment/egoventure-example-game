@@ -49,6 +49,11 @@ func stop_music():
 func get_music() -> AudioStream:
 	return active_music.stream
 	
+	
+# Get wether boombox is currently playing music
+func is_music_playing() -> bool:
+	return active_music.playing
+	
 
 # Play a background effect
 #
@@ -79,6 +84,11 @@ func stop_background():
 # Get the current background
 func get_background() -> AudioStream:
 	return $Background.stream
+
+
+# Get wether boombox is currently playing background
+func is_background_playing() -> bool:
+	return $Background.playing
 
 
 # Play a sound effect
