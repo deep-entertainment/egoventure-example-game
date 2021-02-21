@@ -16,9 +16,9 @@ back_texture = ExtResource( 4 )
 left_texture = ExtResource( 2 )
 
 [node name="Hotspot" type="TextureButton" parent="."]
-margin_left = 3324.39
+margin_left = 3326.39
 margin_top = 627.192
-margin_right = 4426.39
+margin_right = 4428.39
 margin_bottom = 1380.19
 mouse_default_cursor_shape = 16
 script = ExtResource( 6 )

@@ -152,9 +152,10 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Carol Reed - Sins Of The Fathers"
+config/name="Carol Refurbished"
 run/main_scene="res://scenes/logo.tscn"
-config/icon="res://icon.png"
+config/icon="res://images/misc/icon.png"
+config/windows_native_icon="res://images/misc/icon.ico"
 
 [autoload]
 

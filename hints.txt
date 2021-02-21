@@ -7,16 +7,17 @@ New Goal;Search Kevo's house;2;;;;
 ;The yellow porcelain tray in the upper floor bedroom holds something of interest.;;;;;man12d_lift
 ;;;;;;
 New Goal;Open the cupboard on the upper floor;3;;;;
-;I'd better try the hex key on the dresser in the ground floor bedroom, and see what's in it. ;;;;;man06c_cl
-;I think I can open the corner cupboard in the upper floor bedroom with the code written down in the folder with the will. It's 'BJ61'. If I find something in the cupboard that will get me further, I'll take it.;;;;;
+;I'd better try the hex key on the dresser in the ground floor bedroom, and see what's in it. ;;;;;man06c_lift2
+;I think I can open the corner cupboard in the upper floor bedroom with the code written down in the folder with the will. It's 'BJ61'. If I find something in the cupboard that will get me further, I'll take it.;;;;;man12f_lift2
 ;;;;;;
 New Goal;Access the inner room on the upper floor;4;;;;
 ;I need to explore the area outside the house. I have to follow the path to the left of the house, all the way down to the jetty.;;;;;man22a_lift
 ;I can use the file on the screwdriver to make it slightly slimmer.;;;;;combo
-;I will try the screwdriver on the door.;;;;;man11c_cl
+;I will try the screwdriver on the door on the upper floor now.;;;;;man11c_cl
 ;;;;;;
 New Goal;Unlock the diary in the living room;5;;;;
 ;I must check the room behind the previously locked door on the upper floor thoroughly. The colours on the hanging tapestry might have a meaning. I think they open the diary under the TV in the living room on the ground floor.;;;;;man09c_lift1
 ;;;;;;
 New Goal;Open the cigar box;6;;;;
 ;There's a cigar box in a closet in the room behind the previously locked door on August's upper floor. I think I have enough information on how to open the box in August's letter to his father. The code is probably 'RAZE'. I must take a good look at what's inside the box.;;;;;
+;Test.;;;;;

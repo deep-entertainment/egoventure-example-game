@@ -2,19 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bucket_big.png-34a17e2715ea07f3b8d38b99f5f9b8f1.stex"
+path="res://.import/icon.png-e5fba87b5cedff5da5283523e147d702.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://inventory/bucket_big.png"
-dest_files=[ "res://.import/bucket_big.png-34a17e2715ea07f3b8d38b99f5f9b8f1.stex" ]
+source_file="res://images/misc/icon.png"
+dest_files=[ "res://.import/icon.png-e5fba87b5cedff5da5283523e147d702.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.85
 compress/hdr_mode=0
 compress/bptc_ldr=0

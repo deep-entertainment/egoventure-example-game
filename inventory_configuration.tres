@@ -4,11 +4,11 @@
 [ext_resource path="res://theme.tres" type="Theme" id=2]
 [ext_resource path="res://images/mouse/common.png" type="Texture" id=3]
 [ext_resource path="res://images/mouse/use.png" type="Texture" id=4]
-[ext_resource path="res://images/misc/notepad_icon2.png" type="Texture" id=5]
+[ext_resource path="res://images/misc/notepad_icon.png" type="Texture" id=5]
 
 [resource]
 script = ExtResource( 1 )
-size = 92
+size = 113
 theme = ExtResource( 2 )
 texture_notepad = ExtResource( 5 )
 mouse_cursor = ExtResource( 3 )
