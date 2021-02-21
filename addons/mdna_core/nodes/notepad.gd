@@ -78,6 +78,8 @@ func configure(configuration: GameConfiguration):
 			current_goal.hints = []
 		elif line.size() >= 2 and line[1] != "":
 			current_goal.hints.append(line[1])
+	
+	goals.append(current_goal)
 
 
 # A step of a goal was finished, advance the hints and
