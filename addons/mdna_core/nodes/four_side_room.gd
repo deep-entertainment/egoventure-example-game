@@ -70,6 +70,7 @@ func _ready():
 		_set_image_scale(
 			MdnaCore.configuration.scene_default_image_scaling
 		)
+	MdnaCore.check_cursor($Camera.position)
 
 
 # Properly position the different views and apply the image scale

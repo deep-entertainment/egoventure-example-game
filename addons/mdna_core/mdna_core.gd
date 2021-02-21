@@ -93,6 +93,25 @@ func configure(p_configuration: GameConfiguration):
 	_scene_cache.connect("queue_complete", self, "_on_queue_complete")
 
 
+# Checks wether the mouse cursor needs to be changed
+#
+# ** Arguments **
+# 
+# - offset: A vector to add to the mouse position for calculation
+func check_cursor(offset: Vector2 = Vector2(0,0)):
+	var target_shape = Input.CURSOR_ARROW
+	var mousePos = get_viewport().get_mouse_position() + offset
+	
+	var current_scene = get_tree().get_current_scene()
+	for child in current_scene.get_children():
+		if "mouse_default_cursor_shape" in child:
+			var global_rect = child.get_global_rect()
+			if global_rect.has_point(mousePos):
+				target_shape = child.mouse_default_cursor_shape
+	
+	Speedy.set_shape(target_shape)
+
+
 # Switch the current scene to the new scene
 #
 # ** Arguments **
@@ -340,3 +359,4 @@ func _on_notepad_pressed():
 func _on_quit_game():
 	MdnaCore.save_continue()
 	get_tree().quit()
+
