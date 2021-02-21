@@ -155,6 +155,7 @@ _global_script_class_icons={
 config/name="Carol Refurbished"
 run/main_scene="res://scenes/logo.tscn"
 config/icon="res://images/misc/icon.png"
+config/macos_native_icon="res://images/misc/icon.icns"
 config/windows_native_icon="res://images/misc/icon.ico"
 
 [autoload]
