@@ -97,18 +97,27 @@ func finished_step(goal_id: int, step: int):
 		var first_unfulfilled_hint = _find_first_unfulfilled_hint(goal)
 		while first_unfulfilled_hint == goal.hints.size():
 			MdnaCore.state.current_goal = MdnaCore.state.current_goal + 1
-			goal = _get_goal(MdnaCore.state.current_goal)
-			first_unfulfilled_hint = _find_first_unfulfilled_hint(goal)
+			if MdnaCore.state.current_goal < goals.size():
+				goal = _get_goal(MdnaCore.state.current_goal)
+				first_unfulfilled_hint = _find_first_unfulfilled_hint(goal)
+			else:
+				MdnaCore.state.current_goal = -1
+				break
 	
 	MdnaCore.save_continue()
 
 
 # Show the notepad
 func show():
-	var goal: Goal = _get_goal(MdnaCore.state.current_goal)
-	$Control/Goals.text = goal.title
-	$Control/Hints.text = ""
-	_hints_shown = false
+	if MdnaCore.state.current_goal != -1:
+		var goal: Goal = _get_goal(MdnaCore.state.current_goal)
+		$Control/Goals.text = goal.title
+		$Control/Hints.text = ""
+		_hints_shown = false
+	else:
+		$Control/Goals.text = ""
+		$Control/Hints.text = ""
+		_hints_shown = true
 	$Control.show()
 
 
@@ -135,7 +144,8 @@ func _show_hints():
 # - event: The input event
 func _on_Goals_gui_input(event):
 	if event is InputEventMouseButton and \
-			not (event as InputEventMouseButton).pressed:
+			not (event as InputEventMouseButton).pressed and \
+			MdnaCore.state.current_goal != -1:
 		if _hints_shown:
 			$Control/Hints.text = ""
 		else:
