@@ -2,20 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/temp.jpg-514b0333b70edbec8cb1aeca2f519a72.stex"
+path="res://.import/transparent.png-51cebe06e4a86e1733a28f98c180b022.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/temp.jpg"
-dest_files=[ "res://.import/temp.jpg-514b0333b70edbec8cb1aeca2f519a72.stex" ]
+source_file="res://images/mouse/transparent.png"
+dest_files=[ "res://.import/transparent.png-51cebe06e4a86e1733a28f98c180b022.stex" ]
 
 [params]
 
 compress/mode=1
-compress/lossy_quality=0.9
+compress/lossy_quality=0.85
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

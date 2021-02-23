@@ -20,4 +20,3 @@ New Goal;Unlock the diary in the living room;5;;;;
 ;;;;;;
 New Goal;Open the cigar box;6;;;;
 ;There's a cigar box in a closet in the room behind the previously locked door on August's upper floor. I think I have enough information on how to open the box in August's letter to his father. The code is probably 'RAZE'. I must take a good look at what's inside the box.;;;;;
-;Test.;;;;;

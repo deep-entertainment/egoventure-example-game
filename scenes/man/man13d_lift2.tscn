@@ -1,3 +1,29 @@
-[gd_scene format=2]
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://images/man/man13d_lift2.jpg" type="Texture" id=1]
+[ext_resource path="res://scenes/man/man13d_lift2.gd" type="Script" id=2]
+[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=3]
+[ext_resource path="res://images/man/hs/quit_hov.png" type="Texture" id=4]
+[ext_resource path="res://images/man/hs/quit.png" type="Texture" id=5]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Hotspot" type="TextureButton" parent="Sprite"]
+margin_left = 1119.0
+margin_top = 897.0
+margin_right = 1265.0
+margin_bottom = 969.0
+mouse_default_cursor_shape = 12
+texture_normal = ExtResource( 5 )
+texture_hover = ExtResource( 4 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 10
+target_scene = "res://scenes/man/man13d_lift3.tscn"

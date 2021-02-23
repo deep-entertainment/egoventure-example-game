@@ -2,20 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/uncheck.svg-6a36164b9fcc427a8fd43485052f8258.stex"
+path="res://.import/man13d_lift2.jpg-a73f35d6e214182f6cb82000dbe3493c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/uncheck.svg"
-dest_files=[ "res://.import/uncheck.svg-6a36164b9fcc427a8fd43485052f8258.stex" ]
+source_file="res://images/man/man13d_lift2.jpg"
+dest_files=[ "res://.import/man13d_lift2.jpg-a73f35d6e214182f6cb82000dbe3493c.stex" ]
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.85
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

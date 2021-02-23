@@ -2,20 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/check.svg-4aabfd655608d223782f0694a978ec18.stex"
+path="res://.import/quit_hov.png-33cd6b7c94a568057486a6a90b90cf7f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/check.svg"
-dest_files=[ "res://.import/check.svg-4aabfd655608d223782f0694a978ec18.stex" ]
+source_file="res://images/man/hs/quit_hov.png"
+dest_files=[ "res://.import/quit_hov.png-33cd6b7c94a568057486a6a90b90cf7f.stex" ]
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.85
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

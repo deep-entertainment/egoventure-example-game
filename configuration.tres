@@ -134,4 +134,4 @@ map_sound = ExtResource( 27 )
 scene_path = "res://scenes"
 scene_cache_count = 5
 scene_default_image_scaling = 1.0
-advanced_permanent_cache = PoolStringArray( "res://scenes/misc/map.tscn" )
+advanced_permanent_cache = PoolStringArray( "res://scenes/misc/map.tscn", "res://scenes/man/man14.tscn", "res://scenes/man/man10.tscn" )

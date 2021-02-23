@@ -2,20 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/notebook.jpg-f094cc05814cdce6d37fdf59d8c6b93d.stex"
+path="res://.import/quit.png-156c987f9c7db270950b2e1afaa9c61c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/notebook.jpg"
-dest_files=[ "res://.import/notebook.jpg-f094cc05814cdce6d37fdf59d8c6b93d.stex" ]
+source_file="res://images/man/hs/quit.png"
+dest_files=[ "res://.import/quit.png-156c987f9c7db270950b2e1afaa9c61c.stex" ]
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.85
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

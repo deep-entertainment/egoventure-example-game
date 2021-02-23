@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://images/map.jpg" type="Texture" id=1]
+[ext_resource path="res://images/map/map.jpg" type="Texture" id=1]
 [ext_resource path="res://images/dia/bro_intro.jpg" type="Texture" id=2]
 [ext_resource path="res://addons/mdna_core/nodes/map_hotspot.gd" type="Script" id=3]
 [ext_resource path="res://images/map/kevo.png" type="Texture" id=4]
@@ -71,5 +71,4 @@ state_variable = "map_kevo_new"
 [node name="map_kevo_new" type="AnimatedSprite" parent="."]
 position = Vector2( 1162.01, 455.205 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
