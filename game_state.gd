@@ -25,3 +25,5 @@ export (int) var man_folder_seen
 export(bool) var man_hand_on_bur = false
 export(bool) var screwdr_hs = false
 export (int) var raze_seen
+export (int) var inv_info_seen
+export (int) var use_info_will_be_seen

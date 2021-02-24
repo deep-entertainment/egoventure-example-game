@@ -39,3 +39,16 @@ __meta__ = {
 }
 target_scene = "res://scenes/man/man16.tscn"
 target_view = "back"
+
+[node name="Hotspot3" type="TextureButton" parent="."]
+margin_left = 3454.58
+margin_top = 532.345
+margin_right = 4136.58
+margin_bottom = 1312.34
+mouse_default_cursor_shape = 16
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 7
+target_scene = "res://scenes/man/man17b_cl.tscn"

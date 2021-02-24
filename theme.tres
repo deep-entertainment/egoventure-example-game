@@ -1,12 +1,7 @@
-[gd_resource type="Theme" load_steps=33 format=2]
+[gd_resource type="Theme" load_steps=28 format=2]
 
-[ext_resource path="res://images/misc/stripes_sized.png" type="Texture" id=1]
 [ext_resource path="res://misc/fonts/LadylikeBB.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://addons/mdna_core/images/empty.png" type="Texture" id=3]
-[ext_resource path="res://images/misc/volume_control.png" type="Texture" id=4]
 [ext_resource path="res://misc/fonts/Flareserif821BT-fixed.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://images/misc/check.png" type="Texture" id=6]
-[ext_resource path="res://images/misc/check_un.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
@@ -47,7 +42,6 @@ content_margin_bottom = 10.0
 [sub_resource type="StyleBoxEmpty" id=10]
 
 [sub_resource type="StyleBoxTexture" id=11]
-texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 485, 69 )
 
 [sub_resource type="DynamicFont" id=12]
@@ -138,15 +132,15 @@ Button/styles/menu_button_normal = null
 Button/styles/menu_button_pressed = null
 Button/styles/normal = SubResource( 5 )
 Button/styles/pressed = SubResource( 6 )
-CheckButton/icons/off = ExtResource( 7 )
-CheckButton/icons/on = ExtResource( 6 )
+CheckButton/icons/off = null
+CheckButton/icons/on = null
 CheckButton/styles/focus = SubResource( 7 )
 CheckButton/styles/hover = SubResource( 8 )
 CheckButton/styles/hover_pressed = SubResource( 8 )
 CheckButton/styles/normal = SubResource( 8 )
 CheckButton/styles/pressed = SubResource( 8 )
-HSlider/icons/grabber = ExtResource( 4 )
-HSlider/icons/grabber_highlight = ExtResource( 4 )
+HSlider/icons/grabber = null
+HSlider/icons/grabber_highlight = null
 HSlider/icons/tick = null
 HSlider/styles/grabber_area = SubResource( 9 )
 HSlider/styles/grabber_area_highlight = SubResource( 10 )
@@ -170,6 +164,6 @@ RichTextLabel/colors/dialog_hotspot_hover_font_color = Color( 0.133333, 0.470588
 RichTextLabel/fonts/dialog_font = SubResource( 22 )
 RichTextLabel/fonts/dialog_hotspot_bold_font = null
 RichTextLabel/fonts/dialog_hotspot_normal_font = SubResource( 23 )
-WindowDialog/icons/close = ExtResource( 3 )
-WindowDialog/icons/close_highlight = ExtResource( 3 )
+WindowDialog/icons/close = null
+WindowDialog/icons/close_highlight = null
 WindowDialog/styles/panel = SubResource( 24 )

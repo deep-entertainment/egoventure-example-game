@@ -2,20 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon2.png-2294dfe885793d4711fc20bee13a3760.stex"
+path="res://.import/man09c_cl2_lift4_inf.jpg-fbd43017df19ec433af8fa59a7b7312a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon2.png"
-dest_files=[ "res://.import/icon2.png-2294dfe885793d4711fc20bee13a3760.stex" ]
+source_file="res://images/man/man09c_cl2_lift4_inf.jpg"
+dest_files=[ "res://.import/man09c_cl2_lift4_inf.jpg-fbd43017df19ec433af8fa59a7b7312a.stex" ]
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.85
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

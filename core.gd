@@ -37,6 +37,5 @@ func _initialization():
 	var state = GameState.new()
 	MdnaCore.state = state
 	
-
 func _on_load():
 	pass

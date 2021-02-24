@@ -2,5 +2,7 @@ extends Node2D
 
 
 func _ready():
-	Boombox.play_music(preload("res://music/brother.ogg"))
 	Speedy.hidden = true
+	yield(get_tree().create_timer(7), "timeout")
+	get_tree().quit()
+	
