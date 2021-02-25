@@ -31,7 +31,9 @@ func _on_Hotspot4_pressed():
 		yield(get_tree().create_timer(1.5), "timeout")
 		get_tree().paused = false
 		Boombox.ignore_pause = false
-		MdnaCore.target_view = "front"
 		Speedy.hidden = false
+		MdnaCore.check_cursor()
+		MdnaCore.target_view = "front"
 		MdnaCore.change_scene("res://scenes/man/man11.tscn")
+
 

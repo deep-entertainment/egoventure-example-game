@@ -8,7 +8,7 @@ func _process(_delta):
 		$man_rag.show()
 
 func _ready():
-	pass
+	MdnaCore.check_cursor()
 
 
 func _on_man_rag_pressed():

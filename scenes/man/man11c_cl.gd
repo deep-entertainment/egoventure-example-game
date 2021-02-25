@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _ready():
-	pass
+	MdnaCore.check_cursor()
 
 
 func _on_TriggerHotspot_item_used(item: InventoryItem):

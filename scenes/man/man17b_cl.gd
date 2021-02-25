@@ -2,5 +2,5 @@ extends Node2D
 
 
 func _ready():
-	pass
+	MdnaCore.check_cursor()
 

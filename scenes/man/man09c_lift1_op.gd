@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
+	MdnaCore.check_cursor()
 	(MdnaCore.state as GameState).raze_seen = 1
 
 func _on_Hotspot_pressed():

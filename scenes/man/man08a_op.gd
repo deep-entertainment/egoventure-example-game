@@ -2,6 +2,7 @@ extends Node2D
 
 
 func _ready():
+	MdnaCore.check_cursor()
 	Boombox.play_background(preload("res://sounds/man/home_fridge_bg.ogg")) 
 
 

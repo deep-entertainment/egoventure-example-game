@@ -1,4 +1,4 @@
-extends Node2D
+extends Sprite
 
 
 func _ready():

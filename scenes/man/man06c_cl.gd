@@ -9,7 +9,7 @@ func _process(_delta):
 
 
 func _ready():
-	pass
+	MdnaCore.check_cursor()
 
 
 func _on_TriggerHotspot_item_used(item):

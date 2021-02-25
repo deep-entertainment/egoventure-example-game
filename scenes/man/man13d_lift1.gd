@@ -3,6 +3,7 @@ var cigbox_opened
 
 
 func _ready():
+	MdnaCore.check_cursor()
 	$cigbox_a.hide()
 	$cigbox_m.hide()
 	$cigbox_b.hide()

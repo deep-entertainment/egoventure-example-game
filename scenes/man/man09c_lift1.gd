@@ -3,6 +3,7 @@ extends Node2D
 var man_diary_open
 
 func _ready():
+	MdnaCore.check_cursor()
 	$diary_pink.hide()
 	$diary_yel.hide()
 	$diary_blue.hide()

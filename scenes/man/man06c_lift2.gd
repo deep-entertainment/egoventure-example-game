@@ -2,6 +2,7 @@ extends Node2D
 
 
 func _ready():
+	MdnaCore.check_cursor()
 	(MdnaCore.state as GameState).man_folder_seen = 1
 	Notepad.finished_step(3, 1)
 
