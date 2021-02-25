@@ -97,7 +97,7 @@ func finished_step(goal_id: int, step: int):
 		var first_unfulfilled_hint = _find_first_unfulfilled_hint(goal)
 		while first_unfulfilled_hint == goal.hints.size():
 			MdnaCore.state.current_goal = MdnaCore.state.current_goal + 1
-			if MdnaCore.state.current_goal < goals.size():
+			if MdnaCore.state.current_goal <= goals.size():
 				goal = _get_goal(MdnaCore.state.current_goal)
 				first_unfulfilled_hint = _find_first_unfulfilled_hint(goal)
 			else:
