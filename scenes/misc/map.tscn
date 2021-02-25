@@ -24,14 +24,16 @@ animations = [ {
 script = ExtResource( 8 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -3.1748, 0 )
 texture = ExtResource( 1 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="MapHotspot" type="TextureButton" parent="."]
-margin_left = 346.0
+margin_left = 344.811
 margin_top = 340.0
-margin_right = 638.0
+margin_right = 1030.81
 margin_bottom = 429.0
 mouse_default_cursor_shape = 12
 texture_normal = ExtResource( 5 )
@@ -46,7 +48,7 @@ effect = null
 loading_image = ExtResource( 2 )
 location_music = ExtResource( 9 )
 location = "brother"
-state_variable = ""
+state_variable = "map_bro_new"
 
 [node name="map_kevo" type="TextureButton" parent="."]
 margin_left = 1199.59
@@ -70,5 +72,11 @@ state_variable = "map_kevo_new"
 
 [node name="map_kevo_new" type="AnimatedSprite" parent="."]
 position = Vector2( 1162.01, 455.205 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="map_bro_new" type="AnimatedSprite" parent="."]
+position = Vector2( 308.996, 374.547 )
 frames = SubResource( 1 )
 playing = true

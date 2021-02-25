@@ -27,3 +27,7 @@ export(bool) var screwdr_hs = false
 export (int) var raze_seen
 export (int) var inv_info_seen
 export (int) var use_info_will_be_seen
+export(bool) var eye_info_hs = false
+export(bool) var eye_info_hs2 = false
+export(bool) var space_info = false
+export(bool) var map_bro_new = false

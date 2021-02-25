@@ -1,23 +1,25 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://images/man/man22a_inf.jpg" type="Texture" id=1]
+[ext_resource path="res://images/misc/map_info.jpg" type="Texture" id=1]
 [ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=2]
+[ext_resource path="res://scenes/misc/map_info.gd" type="Script" id=3]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Hotspot" type="TextureButton" parent="."]
-margin_left = 1167.65
-margin_top = 993.175
-margin_right = 1410.65
-margin_bottom = 1128.17
+margin_left = 1162.0
+margin_top = 1074.0
+margin_right = 1422.0
+margin_bottom = 1174.0
 mouse_default_cursor_shape = 12
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 hotspot_type = 10
-target_scene = "res://scenes/man/man22a_cl.tscn"
+target_scene = "res://scenes/misc/map.tscn"

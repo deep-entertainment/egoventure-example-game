@@ -14,4 +14,4 @@ func _ready():
 	get_tree().paused = false
 	Boombox.ignore_pause = false
 	Speedy.hidden = false
-	MdnaCore.change_scene("res://scenes/misc/map.tscn")
+	MdnaCore.change_scene("res://scenes/misc/map_info.tscn")

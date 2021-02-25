@@ -2,11 +2,11 @@ extends Node2D
 
 
 func _ready():
-	MdnaCore.game_started = true
-	MdnaInventory.enable()
-	Boombox.play_music(preload("res://music/blue.ogg"))
-	Boombox.stop_background()
 	var state = MdnaCore.state
+	if state.map_bro_new:
+		$map_bro_new.show()
+	else:
+		$map_bro_new.hide()
 	if state.map_kevo:
 		$map_kevo.show()
 	else:
@@ -15,6 +15,7 @@ func _ready():
 		$map_kevo_new.show()
 	else:
 		$map_kevo_new.hide()
+		
 
 
 
