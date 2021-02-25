@@ -109,7 +109,11 @@ func check_cursor(offset: Vector2 = Vector2(0,0)):
 			if global_rect.has_point(mousePos):
 				target_shape = child.mouse_default_cursor_shape
 	
+	Speedy.hidden = true
+	yield(VisualServer, 'frame_post_draw')
 	Speedy.set_shape(target_shape)
+	yield(VisualServer, 'frame_post_draw')
+	Speedy.hidden = false
 
 
 # Switch the current scene to the new scene
