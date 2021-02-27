@@ -18,6 +18,11 @@ right_texture = ExtResource( 2 )
 back_texture = ExtResource( 3 )
 left_texture = ExtResource( 5 )
 
+[node name="space_info" type="Sprite" parent="."]
+texture = ExtResource( 8 )
+centered = false
+offset = Vector2( 0, -1440 )
+
 [node name="Hotspot" type="TextureButton" parent="."]
 margin_left = 884.254
 margin_top = -755.474
@@ -43,9 +48,4 @@ __meta__ = {
 }
 hotspot_type = 9
 target_scene = "res://scenes/misc/map.tscn"
-
-[node name="space_info" type="Sprite" parent="."]
-texture = ExtResource( 8 )
-centered = false
-offset = Vector2( 0, -1440 )
 [connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]

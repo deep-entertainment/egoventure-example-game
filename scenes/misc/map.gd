@@ -2,6 +2,7 @@ extends Node2D
 
 
 func _ready():
+	MdnaCore.check_cursor()
 	var state = MdnaCore.state
 	if state.map_bro_new:
 		$map_bro_new.show()

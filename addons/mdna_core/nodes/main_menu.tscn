@@ -1,8 +1,8 @@
 [gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://images/next.png" type="Texture" id=2]
+[ext_resource path="res://images/misc/arrow_previous.png" type="Texture" id=1]
+[ext_resource path="res://images/misc/arrow_next.png" type="Texture" id=2]
 [ext_resource path="res://addons/mdna_core/nodes/mdna_menu_button.gd" type="Script" id=3]
-[ext_resource path="res://images/previous.png" type="Texture" id=4]
 [ext_resource path="res://addons/mdna_core/nodes/main_menu.gd" type="Script" id=5]
 
 [sub_resource type="Image" id=17]
@@ -295,7 +295,7 @@ margin_right = 302.0
 margin_bottom = 1032.0
 mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
-texture_normal = ExtResource( 4 )
+texture_normal = ExtResource( 1 )
 expand = true
 stretch_mode = 3
 

@@ -37,7 +37,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 hotspot_type = 7
-target_scene = "res://scenes/man/man22a_xcl.tscn"
 
 [node name="Hotspot2" type="TextureButton" parent="."]
 margin_left = -9.52441
@@ -53,3 +52,4 @@ hotspot_type = 1
 target_scene = "res://scenes/man/man22.tscn"
 target_view = "front"
 [connection signal="pressed" from="man_rag" to="." method="_on_man_rag_pressed"]
+[connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]

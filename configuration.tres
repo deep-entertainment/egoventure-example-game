@@ -2,13 +2,13 @@
 
 [ext_resource path="res://addons/mdna_core/resources/game_configuration.gd" type="Script" id=1]
 [ext_resource path="res://music/mold.ogg" type="AudioStream" id=2]
+[ext_resource path="res://images/misc/arrow_previous.png" type="Texture" id=3]
 [ext_resource path="res://sounds/slide.ogg" type="AudioStream" id=4]
 [ext_resource path="res://theme.tres" type="Theme" id=5]
 [ext_resource path="res://images/misc/menu_bg.jpg" type="Texture" id=6]
-[ext_resource path="res://images/previous.png" type="Texture" id=7]
-[ext_resource path="res://images/next.png" type="Texture" id=8]
-[ext_resource path="res://sounds/cheers.ogg" type="AudioStream" id=9]
-[ext_resource path="res://voices/keys-0.ogg" type="AudioStream" id=10]
+[ext_resource path="res://images/misc/arrow_next.png" type="Texture" id=7]
+[ext_resource path="res://sounds/misc/testing_voice.ogg" type="AudioStream" id=8]
+[ext_resource path="res://sounds/misc/testing_effects.ogg" type="AudioStream" id=9]
 [ext_resource path="res://inventory_configuration.tres" type="Resource" id=11]
 [ext_resource path="res://images/mouse/forward.png" type="Texture" id=12]
 [ext_resource path="res://images/mouse/right.png" type="Texture" id=13]
@@ -121,13 +121,13 @@ menu_background = ExtResource( 6 )
 menu_music = ExtResource( 2 )
 menu_switch_effect = ExtResource( 4 )
 menu_saveslots_background = ExtResource( 28 )
-menu_saveslots_previous_image = ExtResource( 7 )
-menu_saveslots_next_image = ExtResource( 8 )
+menu_saveslots_previous_image = ExtResource( 3 )
+menu_saveslots_next_image = ExtResource( 7 )
 notepad_background = ExtResource( 21 )
 notepad_goals_rect = Rect2( 578, 302, 552, 207 )
 notepad_hints_rect = Rect2( 1223, 198, 545, 893 )
 menu_options_background = ExtResource( 28 )
-menu_options_speech_sample = ExtResource( 10 )
+menu_options_speech_sample = ExtResource( 8 )
 menu_options_effects_sample = ExtResource( 9 )
 map_image = ExtResource( 22 )
 map_sound = ExtResource( 27 )

@@ -2,6 +2,7 @@ extends Node2D
 
 
 func _ready():
+	MdnaCore.check_cursor()
 	MdnaCore.game_started = true
 	MdnaInventory.enable()
 	(MdnaCore.state as GameState).map_bro_new = true
