@@ -101,7 +101,7 @@ func configure(p_configuration: GameConfiguration):
 func check_cursor(offset: Vector2 = Vector2(0,0)):
 	var target_shape = Input.CURSOR_ARROW
 	var mousePos = get_viewport().get_mouse_position() + offset
-	
+
 	var current_scene = get_tree().get_current_scene()
 	for child in current_scene.get_children():
 		if "mouse_default_cursor_shape" in child:
