@@ -32,16 +32,15 @@ hotspot_type = 7
 target_scene = "res://scenes/man/man03b_cl.tscn"
 
 [node name="Hotspot2" type="TextureButton" parent="."]
-margin_left = 905.151
-margin_top = -862.389
-margin_right = 1629.15
-margin_bottom = -145.389
+margin_left = 977.195
+margin_top = -820.011
+margin_right = 1701.19
+margin_bottom = -103.011
 mouse_default_cursor_shape = 3
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-target_scene = "res://scenes/man/man04.tscn"
 
 [node name="Hotspot3" type="TextureButton" parent="."]
 margin_left = 955.509
@@ -81,3 +80,4 @@ __meta__ = {
 }
 hotspot_type = 3
 target_scene = "res://scenes/man/man03b_inf.tscn"
+[connection signal="pressed" from="Hotspot2" to="." method="_on_Hotspot2_pressed"]

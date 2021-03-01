@@ -73,10 +73,10 @@ state_variable = "map_kevo_new"
 [node name="map_kevo_new" type="AnimatedSprite" parent="."]
 position = Vector2( 1162.01, 455.205 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="map_bro_new" type="AnimatedSprite" parent="."]
 position = Vector2( 308.996, 374.547 )
 frames = SubResource( 1 )
-frame = 1
 playing = true

@@ -12,7 +12,6 @@
 script = ExtResource( 7 )
 
 [node name="Room" parent="." instance=ExtResource( 6 )]
-position = Vector2( -5.99316, 0 )
 front_texture = ExtResource( 4 )
 right_texture = ExtResource( 3 )
 back_texture = ExtResource( 2 )

@@ -31,3 +31,4 @@ export(bool) var eye_info_hs = false
 export(bool) var eye_info_hs2 = false
 export(bool) var space_info = false
 export(bool) var map_bro_new = false
+export (int) var menu_info_seen
