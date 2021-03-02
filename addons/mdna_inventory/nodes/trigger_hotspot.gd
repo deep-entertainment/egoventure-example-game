@@ -14,11 +14,35 @@ signal item_used(item)
 var valid_inventory_items: Array = []
 
 
+# The hotspot indicator
+var _hotspot_indicator: Sprite
+
+
+# Connect to the cursors_configured signal to set the hotspot indicator
+# texture
+func _init():
+	_hotspot_indicator = Sprite.new()
+	add_child(_hotspot_indicator)
+	_hotspot_indicator.hide()
+	_hotspot_indicator.position = rect_size / 2
+
+
+# Handle the hotspot indicator
+func _input(event):
+	if event.is_action_pressed("hotspot_indicator"):
+		Speedy.hidden = true
+		_hotspot_indicator.show()
+	elif event.is_action_released("hotspot_indicator"):
+		Speedy.hidden = false
+		_hotspot_indicator.hide()
+
+
 # Connect the required events
 func _ready():
 	connect("mouse_entered", self, "on_mouse_entered")
 	connect("mouse_exited", self, "_on_mouse_exited")
 	connect("pressed", self, "_on_pressed")
+	_hotspot_indicator.texture = MdnaInventory.configuration.use_cursor
 
 
 # Set the button we're extending from to flat
