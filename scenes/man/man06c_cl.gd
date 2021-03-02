@@ -1,15 +1,21 @@
 extends Node2D
 
+
+func _ready():
+	check_hotspots()
+	MdnaCore.check_cursor()
+	
+
 func _process(_delta):
+	check_hotspots()
+	
+
+func check_hotspots():
 	var state = MdnaCore.state
 	if state.man_hand_on_insex:
 		$man_hand_on_insex.show()
 	else:
 		$man_hand_on_insex.hide()
-
-
-func _ready():
-	MdnaCore.check_cursor()
 
 
 func _on_TriggerHotspot_item_used(item):

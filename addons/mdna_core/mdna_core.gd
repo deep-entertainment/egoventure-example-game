@@ -104,9 +104,11 @@ func check_cursor(offset: Vector2 = Vector2(0,0)):
 
 	var current_scene = get_tree().get_current_scene()
 	for child in current_scene.get_children():
-		if "mouse_default_cursor_shape" in child:
+		if "mouse_default_cursor_shape" in child and child.visible:
 			var global_rect = child.get_global_rect()
 			if global_rect.has_point(mousePos):
+				if child is TriggerHotspot:
+					child.on_mouse_entered()
 				target_shape = child.mouse_default_cursor_shape
 	Speedy.set_shape(target_shape)
 

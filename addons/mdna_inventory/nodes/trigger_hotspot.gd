@@ -16,7 +16,7 @@ var valid_inventory_items: Array = []
 
 # Connect the required events
 func _ready():
-	connect("mouse_entered", self, "_on_mouse_entered")
+	connect("mouse_entered", self, "on_mouse_entered")
 	connect("mouse_exited", self, "_on_mouse_exited")
 	connect("pressed", self, "_on_pressed")
 
@@ -28,7 +28,7 @@ func _enter_tree():
 
 # If an inventory item was selected and it is in the list of valid inventory 
 # items, show it as active
-func _on_mouse_entered():
+func on_mouse_entered():
 	if MdnaInventory.selected_item != null:
 		var found = false
 		
