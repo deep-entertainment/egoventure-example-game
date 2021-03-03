@@ -48,6 +48,14 @@ func _ready():
 # Set the button we're extending from to flat
 func _enter_tree():
 	enabled_focus_mode = Control.FOCUS_NONE
+	
+
+func _exit_tree():
+	Speedy.set_custom_mouse_cursor(
+		MdnaInventory.configuration.mouse_cursor,
+		Input.CURSOR_ARROW,
+		MdnaInventory.configuration.hotspot_cursor
+	)
 
 
 # If an inventory item was selected and it is in the list of valid inventory 
