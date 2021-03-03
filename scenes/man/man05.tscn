@@ -34,9 +34,9 @@ target_view = "back"
 
 [node name="Hotspot2" type="TextureButton" parent="."]
 margin_left = 3329.64
-margin_top = 417.184
+margin_top = 409.633
 margin_right = 4270.64
-margin_bottom = 1284.18
+margin_bottom = 1276.63
 mouse_default_cursor_shape = 3
 script = ExtResource( 6 )
 __meta__ = {

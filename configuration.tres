@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=42 format=2]
+[gd_resource type="Resource" load_steps=45 format=2]
 
 [ext_resource path="res://addons/mdna_core/resources/game_configuration.gd" type="Script" id=1]
 [ext_resource path="res://music/mold.ogg" type="AudioStream" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://images/misc/arrow_next.png" type="Texture" id=7]
 [ext_resource path="res://sounds/misc/testing_voice.ogg" type="AudioStream" id=8]
 [ext_resource path="res://sounds/misc/testing_effects.ogg" type="AudioStream" id=9]
+[ext_resource path="res://images/mouse/common.png" type="Texture" id=10]
 [ext_resource path="res://inventory_configuration.tres" type="Resource" id=11]
 [ext_resource path="res://images/mouse/forward.png" type="Texture" id=12]
 [ext_resource path="res://images/mouse/right.png" type="Texture" id=13]
@@ -24,7 +25,6 @@
 [ext_resource path="res://images/mouse/map.png" type="Texture" id=23]
 [ext_resource path="res://images/mouse/hand.png" type="Texture" id=24]
 [ext_resource path="res://images/mouse/exit.png" type="Texture" id=25]
-[ext_resource path="res://images/mouse/common.png" type="Texture" id=26]
 [ext_resource path="res://sounds/misc/map_icon.ogg" type="AudioStream" id=27]
 [ext_resource path="res://images/misc/background.jpg" type="Texture" id=28]
 
@@ -85,7 +85,7 @@ cursor_hotspot = Vector2( 49, 48 )
 [sub_resource type="Resource" id=10]
 script = ExtResource( 15 )
 hotspot_type = 8
-cursor = ExtResource( 16 )
+cursor = ExtResource( 12 )
 cursor_hotspot = Vector2( 32, 32 )
 
 [sub_resource type="Resource" id=11]
@@ -102,19 +102,38 @@ cursor_hotspot = Vector2( 75, 40 )
 
 [sub_resource type="Resource" id=13]
 script = ExtResource( 15 )
-hotspot_type = 8
-cursor_hotspot = Vector2( 0, 0 )
+hotspot_type = 12
+cursor = ExtResource( 12 )
+cursor_hotspot = Vector2( 32, 32 )
 
 [sub_resource type="Resource" id=14]
 script = ExtResource( 15 )
-hotspot_type = 12
-cursor = ExtResource( 26 )
-cursor_hotspot = Vector2( 32, 32 )
+hotspot_type = 13
+cursor = ExtResource( 10 )
+cursor_hotspot = Vector2( 0, 0 )
+
+[sub_resource type="Resource" id=15]
+script = ExtResource( 15 )
+hotspot_type = 14
+cursor = ExtResource( 10 )
+cursor_hotspot = Vector2( 0, 0 )
+
+[sub_resource type="Resource" id=16]
+script = ExtResource( 15 )
+hotspot_type = 15
+cursor = ExtResource( 10 )
+cursor_hotspot = Vector2( 0, 0 )
+
+[sub_resource type="Resource" id=17]
+script = ExtResource( 15 )
+hotspot_type = 16
+cursor = ExtResource( 10 )
+cursor_hotspot = Vector2( 0, 0 )
 
 [resource]
 script = ExtResource( 1 )
 theme = ExtResource( 5 )
-hotspot_cursors = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ]
+hotspot_cursors = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ]
 inventory_configuration = ExtResource( 11 )
 hints_file = "res://hints.txt"
 menu_background = ExtResource( 6 )

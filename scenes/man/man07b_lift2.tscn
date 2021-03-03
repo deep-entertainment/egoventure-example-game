@@ -33,6 +33,6 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 12
+hotspot_type = 13
 [connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]
 [connection signal="pressed" from="Hotspot2" to="." method="_on_Hotspot2_pressed"]

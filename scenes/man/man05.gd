@@ -3,6 +3,7 @@ extends Node2D
 func _ready():
 	$man_stairs.hide()
 	Boombox.play_music(preload("res://music/piano.ogg"))
+	Cursors.override(Cursors.Type.CUSTOM1, preload("res://images/mouse/hand.png"), Vector2(46, 32))
 
 
 func _on_Hotspot_pressed():

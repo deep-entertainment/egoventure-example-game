@@ -14,10 +14,10 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="TriggerHotspot" type="TextureButton" parent="."]
-margin_left = 955.636
-margin_top = 444.975
-margin_right = 1665.64
-margin_bottom = 937.975
+margin_left = 938.685
+margin_top = 447.094
+margin_right = 1648.69
+margin_bottom = 940.094
 focus_mode = 0
 enabled_focus_mode = 0
 script = ExtResource( 4 )
@@ -41,10 +41,10 @@ target_scene = "res://scenes/man/man06.tscn"
 target_view = "back"
 
 [node name="man_hand_on_insex" type="TextureButton" parent="."]
-margin_left = 932.0
-margin_top = 375.0
-margin_right = 1742.0
-margin_bottom = 955.0
+margin_left = 906.573
+margin_top = 413.141
+margin_right = 1716.57
+margin_bottom = 993.137
 mouse_default_cursor_shape = 13
 script = ExtResource( 2 )
 __meta__ = {

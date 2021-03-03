@@ -1,14 +1,18 @@
 extends Node2D
 
+func _ready():
+	check_hotspots()
+	MdnaCore.check_cursor()
+	
 func _process(_delta):
+	check_hotspots()
+	
+func check_hotspots():
 	var state = MdnaCore.state
 	if state.man_rag:
 		$man_rag.hide()
 	else:
 		$man_rag.show()
-
-func _ready():
-	MdnaCore.check_cursor()
 
 
 func _on_man_rag_pressed():

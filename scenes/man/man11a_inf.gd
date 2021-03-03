@@ -3,6 +3,7 @@ extends Node2D
 
 func _ready():
 	MdnaCore.check_cursor()
+	Cursors.override(Cursors.Type.CORNER_LEFT, preload("res://images/mouse/common.png"), Vector2(32, 32))
 
 func _on_TriggerHotspot_item_used(item):
 	Boombox.ignore_pause = true
@@ -17,3 +18,6 @@ func _on_TriggerHotspot_item_used(item):
 	(MdnaCore.state as GameState).use_info_will_be_seen = 0
 	Notepad.finished_step(2, 2)
 	MdnaCore.change_scene("res://scenes/man/man12.tscn")
+
+func _exit_tree():
+	Cursors.reset(Cursors.Type.CORNER_LEFT)

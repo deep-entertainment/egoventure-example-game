@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/man/man17b_cl.gd" type="Script" id=1]
 [ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=2]
 [ext_resource path="res://images/man/man17b_cl.jpg" type="Texture" id=3]
+[ext_resource path="res://images/mouse/exit.png" type="Texture" id=4]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -24,3 +25,16 @@ __meta__ = {
 hotspot_type = 1
 target_scene = "res://scenes/man/man17.tscn"
 target_view = "right"
+
+[node name="test_hs" type="TextureButton" parent="."]
+margin_left = 539.429
+margin_top = 174.04
+margin_right = 1022.43
+margin_bottom = 683.04
+mouse_default_cursor_shape = 5
+texture_normal = ExtResource( 4 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+hotspot_type = 12

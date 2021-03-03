@@ -23,15 +23,15 @@ __meta__ = {
 hotspot_type = 1
 
 [node name="Hotspot2" type="TextureButton" parent="."]
-margin_left = 627.91
+margin_left = 622.253
 margin_top = 305.469
-margin_right = 1957.91
+margin_right = 1952.25
 margin_bottom = 1046.47
 mouse_default_cursor_shape = 7
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 12
+hotspot_type = 13
 [connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]
 [connection signal="pressed" from="Hotspot2" to="." method="_on_Hotspot2_pressed"]

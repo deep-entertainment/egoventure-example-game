@@ -29,7 +29,7 @@ target_scene = "res://scenes/man/man20.tscn"
 target_view = "right"
 
 [node name="Hotspot2" type="TextureButton" parent="."]
-margin_left = 1167.0
+margin_left = 1095.0
 margin_top = -828.0
 margin_right = 2187.0
 margin_bottom = -288.0
