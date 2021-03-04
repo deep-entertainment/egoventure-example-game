@@ -29,9 +29,9 @@ target_scene = "res://scenes/man/man21.tscn"
 
 [node name="Hotspot2" type="TextureButton" parent="."]
 margin_left = 1157.0
-margin_top = 2015.0
-margin_right = 2218.0
-margin_bottom = 2900.0
+margin_top = 2011.0
+margin_right = 2105.0
+margin_bottom = 2896.0
 mouse_default_cursor_shape = 3
 script = ExtResource( 6 )
 __meta__ = {

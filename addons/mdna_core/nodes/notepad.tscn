@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://addons/mdna_core/nodes/notepad.gd" type="Script" id=1]
 [ext_resource path="res://addons/mdna_core/nodes/mdna_menu_button.gd" type="Script" id=2]
 [ext_resource path="res://theme.tres" type="Theme" id=3]
+[ext_resource path="res://images/misc/journal.jpg" type="Texture" id=4]
 
 [sub_resource type="Image" id=8]
 data = {
@@ -69,6 +70,7 @@ __meta__ = {
 [node name="BackgroundPicture" type="TextureRect" parent="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+texture = ExtResource( 4 )
 expand = true
 stretch_mode = 6
 __meta__ = {
@@ -76,10 +78,10 @@ __meta__ = {
 }
 
 [node name="Goals" type="Label" parent="Control"]
-margin_left = 578.0
-margin_top = 302.0
-margin_right = 1130.0
-margin_bottom = 509.0
+margin_left = 588.488
+margin_top = 375.417
+margin_right = 1140.49
+margin_bottom = 582.417
 rect_rotation = -9.12779
 mouse_filter = 0
 mouse_default_cursor_shape = 12
@@ -91,10 +93,10 @@ __meta__ = {
 }
 
 [node name="Hints" type="Label" parent="Control"]
-margin_left = 1223.0
-margin_top = 198.0
-margin_right = 1768.0
-margin_bottom = 1091.0
+margin_left = 1243.98
+margin_top = 325.356
+margin_right = 1788.98
+margin_bottom = 1088.36
 rect_rotation = -9.12779
 autowrap = true
 __meta__ = {
