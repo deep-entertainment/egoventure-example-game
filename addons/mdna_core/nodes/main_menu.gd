@@ -458,6 +458,7 @@ func _on_RestartConfirm_confirmed():
 	MdnaCore.current_view = ""
 	MdnaCore.target_view = ""
 	MdnaCore.game_started = false
+	Boombox.reset()
 	emit_signal("new_game")
 
 

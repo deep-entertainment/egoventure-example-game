@@ -8,6 +8,18 @@ var ignore_pause: bool setget _set_ignore_pause
 onready var active_music: Node = $Music1
 
 
+# Reset the settings. Stop all music, sounds and backgrounds
+# Used when starting a new game
+func reset():
+	active_music.stop()
+	if active_music != $Music1:
+		$Fader.current_animation = "fadeto2"
+		$Fader.seek(0, true)
+		active_music = $Muic1
+	$Background.stop()
+	$Effects.stop()
+
+
 # Play a new music file, if it isn't the current one.
 #
 # ** Parameters**
