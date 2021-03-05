@@ -273,6 +273,18 @@ func options_get_effects_level() -> float:
 	return in_game_configuration.effects_db
 
 
+# Reset the game to the default
+func reset():
+	# Reset State and inventory
+	for item in MdnaInventory.get_items():
+		MdnaInventory.remove_item(item)
+	MdnaCore.current_location = ""
+	MdnaCore.current_view = ""
+	MdnaCore.target_view = ""
+	MdnaCore.game_started = false
+	Boombox.reset()
+
+
 # Update the state with the current values
 func _update_state():
 	MdnaCore.state.current_scene = _get_current_scene().filename
@@ -296,6 +308,7 @@ func _update_state():
 #
 # - p_state: The state to load
 func _load(p_state: BaseState):
+	reset()
 	MdnaCore.state = p_state.duplicate()
 	MdnaCore.state.goals_fulfilled = []
 	for goal_fulfilled in p_state.goals_fulfilled:

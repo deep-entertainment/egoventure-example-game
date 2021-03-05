@@ -448,17 +448,10 @@ func _on_NewGame_pressed():
 
 # Restarting the game was confirmed
 func _on_RestartConfirm_confirmed():
+	MdnaCore.reset()
 	if disabled:
 		disabled = false
 	toggle()
-	# Reset State and inventory
-	for item in MdnaInventory.get_items():
-		MdnaInventory.remove_item(item)
-	MdnaCore.current_location = ""
-	MdnaCore.current_view = ""
-	MdnaCore.target_view = ""
-	MdnaCore.game_started = false
-	Boombox.reset()
 	emit_signal("new_game")
 
 
