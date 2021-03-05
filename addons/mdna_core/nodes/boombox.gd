@@ -15,7 +15,7 @@ func reset():
 	if active_music != $Music1:
 		$Fader.current_animation = "fadeto2"
 		$Fader.seek(0, true)
-		active_music = $Muic1
+		active_music = $Music1
 	$Background.stop()
 	$Effects.stop()
 
@@ -34,11 +34,15 @@ func play_music(music: AudioStream):
 			$Music2.stream = music
 			$Music2.play()
 			$Fader.play("fadeto2")
+			yield($Fader, "animation_finished")
+			active_music.stop()
 			active_music = $Music2
 		else:
 			$Music1.stream = music
 			$Music1.play()
 			$Fader.play("fadeto1")
+			yield($Fader, "animation_finished")
+			active_music.stop()
 			active_music = $Music1
 
 
