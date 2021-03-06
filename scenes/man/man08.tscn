@@ -43,10 +43,10 @@ __meta__ = {
 hotspot_type = 11
 
 [node name="Hotspot3" type="TextureButton" parent="."]
-margin_left = 1465.03
-margin_top = -520.627
-margin_right = 1844.03
-margin_bottom = -107.627
+margin_left = 1510.29
+margin_top = -481.027
+margin_right = 1889.29
+margin_bottom = -68.0275
 mouse_default_cursor_shape = 13
 script = ExtResource( 6 )
 __meta__ = {

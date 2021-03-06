@@ -8,7 +8,7 @@
 [ext_resource path="res://images/man/man_intro.jpg" type="Texture" id=6]
 [ext_resource path="res://music/guitar.ogg" type="AudioStream" id=7]
 [ext_resource path="res://scenes/misc/map.gd" type="Script" id=8]
-[ext_resource path="res://music/brother.ogg" type="AudioStream" id=9]
+[ext_resource path="res://music/piano.ogg" type="AudioStream" id=9]
 [ext_resource path="res://images/misc/trans.png" type="Texture" id=10]
 [ext_resource path="res://images/misc/map_highlight.png" type="Texture" id=11]
 
