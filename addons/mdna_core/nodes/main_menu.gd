@@ -148,6 +148,8 @@ func toggle():
 		
 		if not $Menu.visible:
 			$Menu/SaveSlots.visible = false
+		else:
+			Speedy.set_shape(Input.CURSOR_ARROW)
 
 
 # Resume was pressed. Toggle the menu
