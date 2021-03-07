@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Control
+
+var is_piano: bool = false
+
+func _on_Switch_pressed():
+	if is_piano:
+		Boombox.play_music(preload('res://music/piano.ogg'))
+	else:
+		Boombox.play_music(preload('res://music/guitar.ogg'))
+	is_piano = ! is_piano
+"
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Switch" type="Button" parent="."]
+margin_left = 869.814
+margin_top = 406.153
+margin_right = 1451.81
+margin_bottom = 947.153
+text = "Switch"
+[connection signal="pressed" from="Switch" to="." method="_on_Switch_pressed"]
