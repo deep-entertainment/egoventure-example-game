@@ -4,9 +4,6 @@ extends Node
 func _ready():
 	_initialization()
 	MdnaCore.configure(preload("res://configuration.tres"))
-	Parrot.subtitles = MdnaCore.options_get_subtitles()
-	Parrot.configure(MdnaCore.configuration.theme)
-	Parrot.time_addendum_seconds=0.5
 	MainMenu.connect("new_game", self, "_on_new_game")
 	MdnaInventory.connect("triggered_inventory_item", self, "_on_triggered_inventory_item")
 	MdnaCore.connect("game_loaded", self, "_on_load")

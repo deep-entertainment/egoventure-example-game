@@ -91,6 +91,8 @@ func configure(p_configuration: GameConfiguration):
 	)
 	MenuGrab.set_top(configuration.inventory_configuration.size)
 	_scene_cache.connect("queue_complete", self, "_on_queue_complete")
+	Parrot.configure(MdnaCore.configuration.theme)
+	Parrot.time_addendum_seconds=0.5
 
 
 # Checks wether the mouse cursor needs to be changed
@@ -212,6 +214,7 @@ func has_continue_state() -> bool:
 # - value: Enable or disable subtitles
 func options_set_subtitles(value: bool):
 	in_game_configuration.subtitles = value
+	Parrot.subtitles = value
 	save_in_game_configuration()
 
 
