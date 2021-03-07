@@ -33,6 +33,7 @@ func play_music(music: AudioStream):
 			active_music.play()
 		elif active_music == $Music1:
 			$Music2.stream = music
+			$Music2.seek(0)
 			$Music2.play()
 			$Fader.play("fadeto2")
 			yield($Fader, "animation_finished")
@@ -40,6 +41,7 @@ func play_music(music: AudioStream):
 			active_music = $Music2
 		else:
 			$Music1.stream = music
+			$Music1.seek(0)
 			$Music1.play()
 			$Fader.play("fadeto1")
 			yield($Fader, "animation_finished")
