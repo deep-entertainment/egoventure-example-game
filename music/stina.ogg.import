@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/stina.ogg-1be18b84df71721df8a707c23ceafd0b.oggstr"
+
+[deps]
+
+source_file="res://music/stina.ogg"
+dest_files=[ "res://.import/stina.ogg-1be18b84df71721df8a707c23ceafd0b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -8,7 +8,7 @@
 [ext_resource path="res://images/man/man_intro.jpg" type="Texture" id=6]
 [ext_resource path="res://music/guitar.ogg" type="AudioStream" id=7]
 [ext_resource path="res://scenes/misc/map.gd" type="Script" id=8]
-[ext_resource path="res://music/piano.ogg" type="AudioStream" id=9]
+[ext_resource path="res://music/stina.ogg" type="AudioStream" id=9]
 [ext_resource path="res://images/misc/trans.png" type="Texture" id=10]
 [ext_resource path="res://images/misc/map_highlight.png" type="Texture" id=11]
 
@@ -73,10 +73,10 @@ state_variable = "map_kevo_new"
 [node name="map_kevo_new" type="AnimatedSprite" parent="."]
 position = Vector2( 1162.01, 455.205 )
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="map_bro_new" type="AnimatedSprite" parent="."]
 position = Vector2( 308.996, 374.547 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
