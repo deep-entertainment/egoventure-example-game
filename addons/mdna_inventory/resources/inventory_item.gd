@@ -23,6 +23,12 @@ var image_big: Texture
 # The items this item can be combined with
 var combineable_with: Array
 
+# A scene to load for the detail view instead of the big image
+var detail_scene: String = ""
+
+# Wether to show the mouse cursor in the detail view
+var detail_show_mouse: bool = false
+
 
 func _get_property_list():
 	var properties = []
@@ -58,5 +64,15 @@ func _get_property_list():
 		"type": TYPE_ARRAY,
 		"hint": 24,
 		"hint_string": "17/17:InventoryItem"
+	})
+	properties.append({
+		"name": "detail_scene",
+		"type": TYPE_STRING,
+		"hint": PROPERTY_HINT_FILE,
+		"hint_string": "*.tscn"
+	})	
+	properties.append({
+		"name": "detail_show_mouse",
+		"type": TYPE_BOOL
 	})
 	return properties

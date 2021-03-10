@@ -14,3 +14,5 @@ image_normal = ExtResource( 2 )
 image_active = ExtResource( 3 )
 image_big = ExtResource( 4 )
 combineable_with = [ ExtResource( 5 ) ]
+detail_scene = ""
+detail_show_mouse = false
