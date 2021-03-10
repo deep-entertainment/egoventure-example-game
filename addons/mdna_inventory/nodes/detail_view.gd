@@ -30,7 +30,7 @@ func _ready():
 
 # Hide the view again on click/touch
 func _on_panel_gui_input(event: InputEvent):
-	if $Panel.visible and _item.detail_scene != '':
+	if $Panel.visible and not _item.detail_show_mouse:
 		$Panel.accept_event()
 		if event is InputEventMouseButton and \
 				event.is_pressed():
