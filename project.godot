@@ -123,6 +123,11 @@ _global_script_classes=[ {
 "class": "TriggerHotspot",
 "language": "GDScript",
 "path": "res://addons/mdna_inventory/nodes/trigger_hotspot.gd"
+}, {
+"base": "Hotspot",
+"class": "WalkHotspot",
+"language": "GDScript",
+"path": "res://addons/mdna_core/nodes/walk_hotspot.gd"
 } ]
 _global_script_class_icons={
 "BaseState": "",
@@ -147,8 +152,13 @@ _global_script_class_icons={
 "MdnaMenuButton": "",
 "ResourceQueue": "",
 "SceneCache": "",
-"TriggerHotspot": "res://addons/mdna_inventory/images/trigger_hotspot.svg"
+"TriggerHotspot": "res://addons/mdna_inventory/images/trigger_hotspot.svg",
+"WalkHotspot": "res://addons/mdna_core/images/walk_hotspot.svg"
 }
+
+[EgoVenture]
+
+hotspots/walk_hotspot_size=Vector2( 700, 740 )
 
 [application]
 
