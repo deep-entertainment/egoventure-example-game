@@ -44,13 +44,11 @@ func _on_panel_gui_input(event: InputEvent):
 # - item: The inventory item to display
 func show(item: InventoryItem):
 	_item = item
+	$Panel/VBox/Description.text = item.description
 	if item.detail_scene == '':
 		$Panel/VBox/Image.texture = item.image_big
-		$Panel/VBox/Description.text = item.description
-		$Panel/VBox.show()
 	else:
-		$Panel/DetailScene.add_child(load(item.detail_scene).instance())
-		$Panel/VBox.hide()
+		$Panel/VBox/DetailScene.add_child(load(item.detail_scene).instance())
 	if not item.detail_show_mouse:
 		Speedy.hidden = true
 	$Panel.show()
@@ -63,6 +61,6 @@ func hide():
 	if Speedy.hidden:
 		Speedy.hidden = false
 	$Panel.hide()
-	for child in $Panel/DetailScene.get_children():
-		$Panel/DetailScene.remove_child(child)
+	for child in $Panel/VBox/DetailScene.get_children():
+		$Panel/VBox/DetailScene.remove_child(child)
 	is_visible = false
