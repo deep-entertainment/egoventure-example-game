@@ -7,3 +7,4 @@ func _ready():
 	Boombox.play_music(preload("res://music/blue.ogg"))
 	Notepad.finished_step(6, 1)
 
+

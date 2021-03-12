@@ -2,20 +2,20 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/keys.png-a11f74aa003901f67b6a71c6657cbc5d.stex"
+path="res://.import/license.jpg-78a01dd1ab37f5f2dbe08f09f304d9d2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://inventory/keys.png"
-dest_files=[ "res://.import/keys.png-a11f74aa003901f67b6a71c6657cbc5d.stex" ]
+source_file="res://images/misc/license.jpg"
+dest_files=[ "res://.import/license.jpg-78a01dd1ab37f5f2dbe08f09f304d9d2.stex" ]
 
 [params]
 
-compress/mode=0
-compress/lossy_quality=0.7
+compress/mode=1
+compress/lossy_quality=0.85
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0

@@ -164,6 +164,8 @@ hotspots/walk_hotspot_size=Vector2( 700, 740 )
 
 config/name="Carol Refurbished"
 run/main_scene="res://scenes/logo.tscn"
+boot_splash/image="res://images/mouse/transparent.png"
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://images/misc/icon.png"
 config/macos_native_icon="res://images/misc/icon.icns"
 config/windows_native_icon="res://images/misc/icon.ico"
