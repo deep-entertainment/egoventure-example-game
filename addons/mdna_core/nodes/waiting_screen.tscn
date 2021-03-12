@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://addons/mdna_core/nodes/waiting_screen.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=1]
 
 [node name="WaitingScreen" type="CanvasLayer"]
 pause_mode = 2
@@ -20,6 +22,7 @@ centered = false
 [node name="Panel" type="Panel" parent="Screen"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
