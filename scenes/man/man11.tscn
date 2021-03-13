@@ -1,16 +1,20 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://addons/mdna_core/nodes/four_side_room.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/egoventure/nodes/four_side_room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://images/man/man11d.jpg" type="Texture" id=2]
 [ext_resource path="res://images/man/man11c.jpg" type="Texture" id=3]
 [ext_resource path="res://images/man/man11b.jpg" type="Texture" id=4]
 [ext_resource path="res://images/man/man11a.jpg" type="Texture" id=5]
 [ext_resource path="res://images/misc/black.jpg" type="Texture" id=6]
-[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=7]
+[ext_resource path="res://addons/egoventure/nodes/hotspots/trigger_hotspot.gd" type="Script" id=7]
 [ext_resource path="res://scenes/man/man11.gd" type="Script" id=8]
-[ext_resource path="res://addons/mdna_inventory/nodes/trigger_hotspot.gd" type="Script" id=9]
+[ext_resource path="res://addons/egoventure/nodes/hotspots/trigger_hotspot.gd" type="Script" id=9]
 [ext_resource path="res://inventory/matchkey.tres" type="Resource" id=10]
 [ext_resource path="res://sounds/man/man_upper_1st_room_op.ogg" type="AudioStream" id=11]
+
+
+
+
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 8 )
@@ -37,7 +41,7 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 13
+hotspots/hotspot_type = 13
 
 [node name="eye_on_door" type="TextureButton" parent="."]
 margin_left = 685.622
@@ -49,7 +53,7 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 7
+hotspots/hotspot_type = 7
 target_scene = "res://scenes/man/man11c_cl.tscn"
 
 [node name="Hotspot3" type="TextureButton" parent="."]
@@ -62,7 +66,7 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
+hotspots/hotspot_type = 11
 
 [node name="Hotspot4" type="TextureButton" parent="."]
 margin_left = 3847.86
@@ -74,7 +78,7 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
+hotspots/hotspot_type = 11
 
 [node name="hand_on_door" type="TextureButton" parent="."]
 margin_left = 670.973
@@ -86,7 +90,7 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
+hotspots/hotspot_type = 11
 target_scene = "res://scenes/man/man13.tscn"
 effect = ExtResource( 11 )
 
@@ -113,7 +117,7 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
+hotspots/hotspot_type = 11
 target_scene = "res://scenes/man/man12.tscn"
 effect = ExtResource( 11 )
 [connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]

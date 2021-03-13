@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _ready():
-	(MdnaCore.state as GameState).space_info = true
+	(EgoVenture.state as GameState).space_info = true
 
 
 func _on_Hotspot_pressed():

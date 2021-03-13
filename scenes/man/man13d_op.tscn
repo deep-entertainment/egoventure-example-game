@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://images/man/man13d_op.jpg" type="Texture" id=1]
-[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=2]
+[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=2]
 [ext_resource path="res://scenes/man/man13d_op.gd" type="Script" id=3]
 [ext_resource path="res://sounds/man/man_upper_hall_boxroom_cl.ogg" type="AudioStream" id=4]
 [ext_resource path="res://sounds/man/man_cigar_up.ogg" type="AudioStream" id=5]
@@ -18,12 +18,11 @@ margin_left = -45.3057
 margin_top = 1057.14
 margin_right = 2614.69
 margin_bottom = 1505.14
-mouse_default_cursor_shape = 6
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 1
 target_scene = "res://scenes/man/man13.tscn"
 target_view = "left"
 effect = ExtResource( 4 )
@@ -33,11 +32,10 @@ margin_left = 1069.08
 margin_top = 517.485
 margin_right = 1488.08
 margin_bottom = 750.485
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 target_scene = "res://scenes/man/man13d_lift1.tscn"
 effect = ExtResource( 5 )

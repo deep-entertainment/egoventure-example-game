@@ -2,7 +2,7 @@
 
 [ext_resource path="res://images/man/man03b_inf.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/man/man03b_inf.gd" type="Script" id=2]
-[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=3]
+[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=3]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -16,10 +16,9 @@ margin_left = 696.205
 margin_top = 799.246
 margin_right = 1742.21
 margin_bottom = 1346.25
-mouse_default_cursor_shape = 16
+mouse_default_cursor_shape = 3
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 7
 target_scene = "res://scenes/man/man03b_cl.tscn"

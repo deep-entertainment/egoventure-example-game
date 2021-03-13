@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://images/man/man22a_inf.jpg" type="Texture" id=1]
-[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=2]
+[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=2]
 [ext_resource path="res://scenes/man/man22a_inf.gd" type="Script" id=3]
 
 [node name="Node2D" type="Node2D"]
@@ -16,10 +16,9 @@ margin_left = 1167.65
 margin_top = 993.175
 margin_right = 1410.65
 margin_bottom = 1128.17
-mouse_default_cursor_shape = 12
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 10
 target_scene = "res://scenes/man/man22a_cl.tscn"

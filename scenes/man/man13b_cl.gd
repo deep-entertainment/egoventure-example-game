@@ -2,7 +2,7 @@ extends Node2D
 
 
 func _ready():
-	MdnaCore.check_cursor()
+	EgoVenture.check_cursor()
 
 
 func _on_Hotspot2_pressed():
@@ -12,4 +12,4 @@ func _on_Hotspot2_pressed():
 	yield(get_tree().create_timer(0.3), "timeout")
 	get_tree().paused = false
 	Boombox.ignore_pause = false
-	MdnaCore.change_scene("res://scenes/man/man13b_op.tscn")
+	EgoVenture.change_scene("res://scenes/man/man13b_op.tscn")

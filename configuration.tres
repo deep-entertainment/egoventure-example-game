@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=45 format=2]
 
-[ext_resource path="res://addons/mdna_core/resources/game_configuration.gd" type="Script" id=1]
+[ext_resource path="res://addons/egoventure/resources/game_configuration.gd" type="Script" id=1]
 [ext_resource path="res://music/mold.ogg" type="AudioStream" id=2]
 [ext_resource path="res://images/misc/arrow_previous.png" type="Texture" id=3]
 [ext_resource path="res://sounds/slide.ogg" type="AudioStream" id=4]
@@ -10,11 +10,11 @@
 [ext_resource path="res://sounds/misc/testing_voice.ogg" type="AudioStream" id=8]
 [ext_resource path="res://sounds/misc/testing_effects.ogg" type="AudioStream" id=9]
 [ext_resource path="res://images/mouse/common.png" type="Texture" id=10]
-[ext_resource path="res://inventory_configuration.tres" type="Resource" id=11]
+[ext_resource path="res://images/misc/notepad_icon.png" type="Texture" id=11]
 [ext_resource path="res://images/mouse/forward.png" type="Texture" id=12]
 [ext_resource path="res://images/mouse/right.png" type="Texture" id=13]
 [ext_resource path="res://images/mouse/left.png" type="Texture" id=14]
-[ext_resource path="res://addons/mdna_core/resources/hotspot_cursor.gd" type="Script" id=15]
+[ext_resource path="res://addons/egoventure/resources/cursor.gd" type="Script" id=15]
 [ext_resource path="res://images/mouse/use.png" type="Texture" id=16]
 [ext_resource path="res://images/mouse/backward.png" type="Texture" id=17]
 [ext_resource path="res://images/mouse/magnifier.png" type="Texture" id=18]
@@ -30,127 +30,127 @@
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 15 )
-hotspot_type = 0
+type = 1
 cursor = ExtResource( 12 )
 cursor_hotspot = Vector2( 32, 32 )
 
 [sub_resource type="Resource" id=2]
 script = ExtResource( 15 )
-hotspot_type = 2
+type = 3
 cursor = ExtResource( 13 )
 cursor_hotspot = Vector2( 32, 32 )
 
 [sub_resource type="Resource" id=3]
 script = ExtResource( 15 )
-hotspot_type = 3
+type = 4
 cursor = ExtResource( 14 )
 cursor_hotspot = Vector2( 32, 32 )
 
 [sub_resource type="Resource" id=4]
 script = ExtResource( 15 )
-hotspot_type = 1
+type = 2
 cursor = ExtResource( 17 )
 cursor_hotspot = Vector2( 42, 42 )
 
 [sub_resource type="Resource" id=5]
 script = ExtResource( 15 )
-hotspot_type = 7
+type = 8
 cursor = ExtResource( 18 )
 cursor_hotspot = Vector2( 48, 32 )
 
 [sub_resource type="Resource" id=6]
 script = ExtResource( 15 )
-hotspot_type = 6
+type = 7
 cursor = ExtResource( 16 )
 cursor_hotspot = Vector2( 32, 32 )
 
 [sub_resource type="Resource" id=7]
 script = ExtResource( 15 )
-hotspot_type = 4
+type = 5
 cursor = ExtResource( 19 )
 cursor_hotspot = Vector2( 32, 32 )
 
 [sub_resource type="Resource" id=8]
 script = ExtResource( 15 )
-hotspot_type = 5
+type = 6
 cursor = ExtResource( 20 )
 cursor_hotspot = Vector2( 32, 32 )
 
 [sub_resource type="Resource" id=9]
 script = ExtResource( 15 )
-hotspot_type = 10
+type = 11
 cursor = ExtResource( 23 )
 cursor_hotspot = Vector2( 49, 48 )
 
 [sub_resource type="Resource" id=10]
 script = ExtResource( 15 )
-hotspot_type = 8
+type = 9
 cursor = ExtResource( 10 )
 cursor_hotspot = Vector2( 32, 32 )
 
 [sub_resource type="Resource" id=11]
 script = ExtResource( 15 )
-hotspot_type = 11
+type = 12
 cursor = ExtResource( 24 )
 cursor_hotspot = Vector2( 46, 32 )
 
 [sub_resource type="Resource" id=12]
 script = ExtResource( 15 )
-hotspot_type = 9
+type = 10
 cursor = ExtResource( 25 )
 cursor_hotspot = Vector2( 75, 40 )
 
 [sub_resource type="Resource" id=13]
 script = ExtResource( 15 )
-hotspot_type = 12
+type = 13
 cursor = ExtResource( 12 )
 cursor_hotspot = Vector2( 32, 32 )
 
 [sub_resource type="Resource" id=14]
 script = ExtResource( 15 )
-hotspot_type = 13
+type = 14
 cursor = ExtResource( 10 )
 cursor_hotspot = Vector2( 0, 0 )
 
 [sub_resource type="Resource" id=15]
 script = ExtResource( 15 )
-hotspot_type = 14
+type = 15
 cursor = ExtResource( 10 )
 cursor_hotspot = Vector2( 0, 0 )
 
 [sub_resource type="Resource" id=16]
 script = ExtResource( 15 )
-hotspot_type = 15
+type = 16
 cursor = ExtResource( 10 )
 cursor_hotspot = Vector2( 0, 0 )
 
 [sub_resource type="Resource" id=17]
 script = ExtResource( 15 )
-hotspot_type = 16
+type = 0
 cursor = ExtResource( 10 )
-cursor_hotspot = Vector2( 0, 0 )
+cursor_hotspot = Vector2( 32, 32 )
 
 [resource]
 script = ExtResource( 1 )
-theme = ExtResource( 5 )
-hotspot_cursors = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ]
-inventory_configuration = ExtResource( 11 )
-hints_file = "res://hints.txt"
+design_theme = ExtResource( 5 )
+design_cursors = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ]
 menu_background = ExtResource( 6 )
 menu_music = ExtResource( 2 )
 menu_switch_effect = ExtResource( 4 )
 menu_saveslots_background = ExtResource( 28 )
 menu_saveslots_previous_image = ExtResource( 3 )
 menu_saveslots_next_image = ExtResource( 7 )
-notepad_background = ExtResource( 21 )
-notepad_goals_rect = Rect2( 588, 375, 552, 207 )
-notepad_hints_rect = Rect2( 1243, 325, 545, 763 )
+inventory_size = 113
+inventory_texture_notepad = ExtResource( 11 )
 menu_options_background = ExtResource( 28 )
 menu_options_speech_sample = ExtResource( 8 )
 menu_options_effects_sample = ExtResource( 9 )
-map_image = ExtResource( 22 )
-map_sound = ExtResource( 27 )
-scene_path = "res://scenes"
-scene_cache_count = 5
-scene_default_image_scaling = 1.0
-advanced_permanent_cache = PoolStringArray( "res://scenes/misc/map.tscn", "res://scenes/man/man14.tscn", "res://scenes/man/man10.tscn" )
+notepad_hints_file = "res://hints.txt"
+notepad_background = ExtResource( 21 )
+notepad_goals_rect = Rect2( 588, 375, 552, 207 )
+notepad_hints_rect = Rect2( 1243, 325, 545, 763 )
+tools_map_image = ExtResource( 22 )
+tools_map_sound = ExtResource( 27 )
+cache_scene_path = "res://scenes"
+cache_scene_count = 3
+cache_permanent = PoolStringArray( "res://scenes/misc/map.tscn", "res://scenes/man/man14.tscn", "res://scenes/man/man10.tscn" )

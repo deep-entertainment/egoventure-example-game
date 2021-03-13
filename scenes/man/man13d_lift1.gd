@@ -3,7 +3,7 @@ var cigbox_opened
 
 
 func _ready():
-	MdnaCore.check_cursor()
+	EgoVenture.check_cursor()
 	$cigbox_a.hide()
 	$cigbox_m.hide()
 	$cigbox_b.hide()
@@ -108,7 +108,7 @@ func _on_Hotspot6_pressed():
 
 
 func _on_Hotspot7_pressed():
-	if cigbox_opened == 3 && (MdnaCore.state as GameState).raze_seen == 1:
+	if cigbox_opened == 3 && (EgoVenture.state as GameState).raze_seen == 1:
 		Boombox.ignore_pause = true
 		get_tree().paused = true
 		Boombox.play_effect(preload("res://sounds/man/cigbox_click.ogg"))
@@ -118,7 +118,7 @@ func _on_Hotspot7_pressed():
 		get_tree().paused = false
 		Boombox.ignore_pause = false
 		Boombox.play_effect(preload("res://sounds/man/man_cigar_op.ogg"))
-		MdnaCore.change_scene("res://scenes/man/man13d_lift2.tscn")
+		EgoVenture.change_scene("res://scenes/man/man13d_lift2.tscn")
 	else:
 		Boombox.ignore_pause = true
 		get_tree().paused = true

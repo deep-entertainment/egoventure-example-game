@@ -2,7 +2,7 @@ extends Node2D
 
 func _process(_delta):
 	Cursors.override(Cursors.Type.CORNER_LEFT, preload("res://images/mouse/common.png"), Vector2(32, 32))
-	var state = MdnaCore.state
+	var state = EgoVenture.state
 	if state.upper_door_hs:
 		$upper_door_hs.hide()
 	else:
@@ -35,15 +35,15 @@ func _on_Hotspot_pressed():
 	yield(get_tree().create_timer(1.5), "timeout")
 	get_tree().paused = false
 	Boombox.ignore_pause = false
-	MdnaCore.target_view = "back"
+	EgoVenture.target_view = "back"
 	Speedy.hidden = false
-	MdnaCore.change_scene("res://scenes/man/man05.tscn")
+	EgoVenture.change_scene("res://scenes/man/man05.tscn")
 
 
 func _on_Hotspot3_pressed():
 	Boombox.play_effect(preload("res://sounds/man/man_upper_boiler_room_op.ogg"))
-	MdnaCore.target_view = "left"
-	MdnaCore.change_scene("res://scenes/man/man11d_op.tscn")
+	EgoVenture.target_view = "left"
+	EgoVenture.change_scene("res://scenes/man/man11d_op.tscn")
 
 
 func _on_Hotspot4_pressed():
@@ -53,7 +53,7 @@ func _on_Hotspot4_pressed():
 	yield(get_tree().create_timer(0.4), "timeout")
 	get_tree().paused = false
 	Boombox.ignore_pause = false
-	MdnaCore.change_scene("res://scenes/man/man11b_op.tscn")
+	EgoVenture.change_scene("res://scenes/man/man11b_op.tscn")
 
 
 func _on_TriggerHotspot_item_used(item):
@@ -63,11 +63,11 @@ func _on_TriggerHotspot_item_used(item):
 	yield(get_tree().create_timer(0.4), "timeout")
 	get_tree().paused = false
 	Boombox.ignore_pause = false
-	MdnaInventory.remove_item(preload("res://inventory/matchkey.tres"))
-	(MdnaCore.state as GameState).upper_door_hs = true
-	(MdnaCore.state as GameState).hand_on_first_door = true
+	Inventory.remove_item(preload("res://inventory/matchkey.tres"))
+	(EgoVenture.state as GameState).upper_door_hs = true
+	(EgoVenture.state as GameState).hand_on_first_door = true
 	Notepad.finished_step(2, 2)
-	MdnaCore.change_scene("res://scenes/man/man12.tscn")
+	EgoVenture.change_scene("res://scenes/man/man12.tscn")
 	
 	
 

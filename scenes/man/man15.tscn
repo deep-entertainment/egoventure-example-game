@@ -4,8 +4,8 @@
 [ext_resource path="res://images/man/man15b.jpg" type="Texture" id=2]
 [ext_resource path="res://images/man/man15c.jpg" type="Texture" id=3]
 [ext_resource path="res://images/man/man15d.jpg" type="Texture" id=4]
-[ext_resource path="res://addons/mdna_core/nodes/four_side_room.tscn" type="PackedScene" id=5]
-[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=6]
+[ext_resource path="res://addons/egoventure/nodes/four_side_room.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=6]
 
 [node name="Node2D" type="Node2D"]
 

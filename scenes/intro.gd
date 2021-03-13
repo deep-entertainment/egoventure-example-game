@@ -2,7 +2,7 @@ extends Control
 
 func _ready():
 	Speedy.hidden = true
-	MdnaInventory.disable()
+	Inventory.disable()
 	MainMenu.saveable = true
 	$cred2.hide()
 	Boombox.ignore_pause = true
@@ -14,4 +14,4 @@ func _ready():
 	get_tree().paused = false
 	Boombox.ignore_pause = false
 	Speedy.hidden = false
-	MdnaCore.change_scene("res://scenes/misc/map_info.tscn")
+	EgoVenture.change_scene("res://scenes/misc/map_info.tscn")

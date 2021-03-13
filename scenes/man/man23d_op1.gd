@@ -2,11 +2,11 @@ extends Node2D
 
 
 func _ready():
-	MdnaCore.check_cursor()
+	EgoVenture.check_cursor()
 
 
 func _on_Hotspot_pressed():
 	Boombox.play_effect(preload("res://sounds/man/man_bath_cupb_cl.ogg"))
-	MdnaCore.target_view = "left"
-	MdnaCore.change_scene("res://scenes/man/man23.tscn")
+	EgoVenture.target_view = "left"
+	EgoVenture.change_scene("res://scenes/man/man23.tscn")
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://images/man/man12f_cl.jpg" type="Texture" id=1]
-[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=2]
+[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=2]
 [ext_resource path="res://scenes/man/man12f_cl.gd" type="Script" id=3]
 [ext_resource path="res://images/man/hs/bur_1.png" type="Texture" id=4]
 [ext_resource path="res://images/man/hs/bur_6.png" type="Texture" id=5]
@@ -27,12 +27,11 @@ margin_left = -6.34961
 margin_top = 1127.06
 margin_right = 2608.65
 margin_bottom = 1475.06
-mouse_default_cursor_shape = 6
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 1
 target_scene = "res://scenes/man/man12.tscn"
 target_view = "left"
 
@@ -83,96 +82,88 @@ margin_left = 830.0
 margin_top = 451.0
 margin_right = 1059.0
 margin_bottom = 748.0
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 
 [node name="Hotspot3" type="TextureButton" parent="."]
 margin_left = 1101.49
 margin_top = 436.041
 margin_right = 1376.49
 margin_bottom = 766.041
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 
 [node name="Hotspot4" type="TextureButton" parent="."]
 margin_left = 966.0
 margin_top = 768.0
 margin_right = 1187.0
 margin_bottom = 1067.0
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 
 [node name="Hotspot5" type="TextureButton" parent="."]
 margin_left = 1231.0
 margin_top = 780.0
 margin_right = 1433.0
 margin_bottom = 1069.0
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 
 [node name="Hotspot6" type="TextureButton" parent="."]
 margin_left = 1464.0
 margin_top = 422.0
 margin_right = 1738.0
 margin_bottom = 749.0
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 
 [node name="Hotspot7" type="TextureButton" parent="."]
 margin_left = 1465.0
 margin_top = 775.0
 margin_right = 1646.0
 margin_bottom = 1071.0
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 
 [node name="Hotspot8" type="TextureButton" parent="."]
 margin_left = 781.0
 margin_top = 771.0
 margin_right = 925.0
 margin_bottom = 1057.0
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 
 [node name="man_hand_on_bur" type="TextureButton" parent="."]
 margin_left = 262.0
 margin_top = 224.0
 margin_right = 2288.0
 margin_bottom = 1161.0
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 target_scene = "res://scenes/man/man12f_op.tscn"
 effect = ExtResource( 11 )
 [connection signal="pressed" from="Hotspot2" to="." method="_on_Hotspot2_pressed"]

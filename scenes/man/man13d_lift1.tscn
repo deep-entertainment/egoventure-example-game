@@ -3,7 +3,7 @@
 [ext_resource path="res://images/man/man13d_lift1.jpg" type="Texture" id=1]
 [ext_resource path="res://scenes/man/man13d_lift1.gd" type="Script" id=2]
 [ext_resource path="res://images/man/hs/cigbox_a.png" type="Texture" id=3]
-[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=4]
+[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=4]
 [ext_resource path="res://images/man/hs/cigbox_m.png" type="Texture" id=5]
 [ext_resource path="res://images/man/hs/cigbox_b.png" type="Texture" id=6]
 [ext_resource path="res://images/man/hs/cigbox_e.png" type="Texture" id=7]
@@ -30,12 +30,11 @@ margin_left = 1049.0
 margin_top = 413.0
 margin_right = 1133.0
 margin_bottom = 504.0
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 
 [node name="cigbox_m" type="Sprite" parent="."]
 visible = false
@@ -48,12 +47,11 @@ margin_left = 1125.0
 margin_top = 411.0
 margin_right = 1228.0
 margin_bottom = 502.0
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 
 [node name="cigbox_b" type="Sprite" parent="."]
 visible = false
@@ -66,12 +64,11 @@ margin_left = 1231.83
 margin_top = 414.0
 margin_right = 1308.83
 margin_bottom = 497.0
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 
 [node name="cigbox_e" type="Sprite" parent="."]
 visible = false
@@ -84,12 +81,11 @@ margin_left = 1313.59
 margin_top = 414.0
 margin_right = 1375.59
 margin_bottom = 498.0
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 
 [node name="cigbox_r" type="Sprite" parent="."]
 visible = false
@@ -102,12 +98,11 @@ margin_left = 1390.0
 margin_top = 412.172
 margin_right = 1462.0
 margin_bottom = 503.172
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 
 [node name="cigbox_t" type="Sprite" parent="."]
 visible = false
@@ -120,12 +115,11 @@ margin_left = 1460.0
 margin_top = 417.0
 margin_right = 1533.0
 margin_bottom = 499.0
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 
 [node name="cigbox_z" type="Sprite" parent="."]
 visible = false
@@ -138,24 +132,22 @@ margin_left = 1533.0
 margin_top = 419.0
 margin_right = 1595.0
 margin_bottom = 499.0
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 
 [node name="Hotspot8" type="TextureButton" parent="."]
 margin_left = -16.0
 margin_top = 1116.0
 margin_right = 2581.0
 margin_bottom = 1455.0
-mouse_default_cursor_shape = 6
+mouse_default_cursor_shape = 3
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 1
 target_scene = "res://scenes/man/man13d_op.tscn"
 effect = ExtResource( 11 )
 [connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]

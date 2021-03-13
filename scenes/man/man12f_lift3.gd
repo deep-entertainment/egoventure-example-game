@@ -2,8 +2,8 @@ extends Node2D
 
 
 func _ready():
-	MdnaCore.check_cursor()
-	var state = MdnaCore.state
+	EgoVenture.check_cursor()
+	var state = EgoVenture.state
 	if state.screwdr_hs:
 		$screwdr_hs.hide()
 	else:

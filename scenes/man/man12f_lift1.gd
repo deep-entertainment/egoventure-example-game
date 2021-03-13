@@ -2,8 +2,8 @@ extends Node2D
 
 
 func _ready():
-	MdnaCore.check_cursor()
-	var state = MdnaCore.state
+	EgoVenture.check_cursor()
+	var state = EgoVenture.state
 	if state.screwdr_hs:
 		$screwdr_hs.hide()
 	else:
@@ -17,5 +17,5 @@ func _on_Hotspot_pressed():
 	yield(get_tree().create_timer(0.5), "timeout")
 	get_tree().paused = false
 	Boombox.ignore_pause = false
-	MdnaCore.change_scene("res://scenes/man/man12f_lift0.tscn")
+	EgoVenture.change_scene("res://scenes/man/man12f_lift0.tscn")
 

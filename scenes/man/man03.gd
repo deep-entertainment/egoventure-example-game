@@ -1,7 +1,7 @@
 extends Node2D
 
 func _process(_delta):
-	var state = MdnaCore.state
+	var state = EgoVenture.state
 	if state.eye_info_hs:
 		$eye_info_hs.hide()
 	else:
@@ -16,9 +16,9 @@ func _ready():
 
 
 func _on_Hotspot2_pressed():
-	if (MdnaCore.state as GameState).menu_info_seen == 1:
-		MdnaCore.target_view = "front"
-		MdnaCore.change_scene("res://scenes/man/man04.tscn")
+	if (EgoVenture.state as GameState).menu_info_seen == 1:
+		EgoVenture.target_view = "front"
+		EgoVenture.change_scene("res://scenes/man/man04.tscn")
 	else:
-		(MdnaCore.state as GameState).menu_info_seen = 1
-		MdnaCore.change_scene("res://scenes/man/man04a_inf.tscn")
+		(EgoVenture.state as GameState).menu_info_seen = 1
+		EgoVenture.change_scene("res://scenes/man/man04a_inf.tscn")

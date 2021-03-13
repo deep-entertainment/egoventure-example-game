@@ -3,7 +3,7 @@ extends Node2D
 var man_diary_open
 
 func _ready():
-	MdnaCore.check_cursor()
+	EgoVenture.check_cursor()
 	$diary_pink.hide()
 	$diary_yel.hide()
 	$diary_blue.hide()
@@ -107,7 +107,7 @@ func _on_Hotspot6_pressed():
 
 
 func _on_Hotspot7_pressed():
-	if man_diary_open == 2 && (MdnaCore.state as GameState).tapestry_seen == 1:
+	if man_diary_open == 2 && (EgoVenture.state as GameState).tapestry_seen == 1:
 		Boombox.ignore_pause = true
 		get_tree().paused = true
 		Boombox.play_effect(preload("res://sounds/man/beep.ogg"))
@@ -118,7 +118,7 @@ func _on_Hotspot7_pressed():
 		get_tree().paused = false
 		Boombox.ignore_pause = false
 		Notepad.finished_step(5, 1)
-		MdnaCore.change_scene("res://scenes/man/man09c_lift1_op.tscn")
+		EgoVenture.change_scene("res://scenes/man/man09c_lift1_op.tscn")
 	else:
 		Boombox.ignore_pause = true
 		get_tree().paused = true
@@ -162,5 +162,5 @@ func _on_Hotspot9_pressed():
 
 func _on_Hotspot10_pressed():
 	Boombox.play_effect(preload("res://sounds/man/man_book_back.ogg"))
-	MdnaCore.change_scene("res://scenes/man/man09c_cl1.tscn")
+	EgoVenture.change_scene("res://scenes/man/man09c_cl1.tscn")
 

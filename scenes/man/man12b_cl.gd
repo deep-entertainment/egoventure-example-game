@@ -2,4 +2,4 @@ extends Node2D
 
 
 func _ready():
-	MdnaCore.check_cursor()
+	EgoVenture.check_cursor()

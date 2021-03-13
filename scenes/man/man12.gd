@@ -2,7 +2,7 @@
 extends Node2D
 
 func _process(_delta):
-	var state = MdnaCore.state
+	var state = EgoVenture.state
 	if state.hs_on_ins:
 		$hs_on_ins.hide()
 	else:

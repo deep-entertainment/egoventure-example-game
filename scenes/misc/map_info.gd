@@ -2,8 +2,8 @@ extends Node2D
 
 
 func _ready():
-	MdnaCore.check_cursor()
-	MdnaCore.game_started = true
-	MdnaInventory.enable()
-	(MdnaCore.state as GameState).map_bro_new = true
+	EgoVenture.check_cursor()
+	EgoVenture.game_started = true
+	Inventory.enable()
+	(EgoVenture.state as GameState).map_bro_new = true
 	Boombox.play_music(preload("res://music/blue.ogg"))

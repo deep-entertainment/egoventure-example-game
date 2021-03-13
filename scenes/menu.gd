@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	MdnaInventory.disable()
+	Inventory.disable()
 	MainMenu.toggle()
 	MainMenu.disabled = true
 	MainMenu.saveable = false

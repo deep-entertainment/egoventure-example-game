@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/man/man12f_lift3.gd" type="Script" id=1]
 [ext_resource path="res://images/man/man12f_lift3.jpg" type="Texture" id=2]
-[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=3]
+[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=3]
 [ext_resource path="res://sounds/man/man_1776_handbag_pills_back.ogg" type="AudioStream" id=4]
 [ext_resource path="res://images/man/hs/screwdr_hs.png" type="Texture" id=5]
 
@@ -21,12 +21,11 @@ margin_left = -9.52441
 margin_top = 1085.78
 margin_right = 2573.48
 margin_bottom = 1465.78
-mouse_default_cursor_shape = 6
+mouse_default_cursor_shape = 3
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 1
 target_scene = "res://scenes/man/man12f_lift1.tscn"
 effect = ExtResource( 4 )
 

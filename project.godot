@@ -9,20 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Resource",
+"base": "Reference",
 "class": "BaseState",
 "language": "GDScript",
-"path": "res://addons/mdna_core/resources/base_state.gd"
+"path": "res://addons/egoventure/resources/base_state.gd"
 }, {
 "base": "Resource",
 "class": "CharacterResource",
 "language": "GDScript",
 "path": "res://addons/parrot/resources/character_resource.gd"
 }, {
+"base": "Resource",
+"class": "Cursor",
+"language": "GDScript",
+"path": "res://addons/egoventure/resources/cursor.gd"
+}, {
 "base": "RichTextLabel",
 "class": "DialogHotspot",
 "language": "GDScript",
-"path": "res://addons/mdna_core/nodes/dialog_hotspot.gd"
+"path": "res://addons/egoventure/nodes/hotspots/dialog_hotspot.gd"
 }, {
 "base": "Resource",
 "class": "DialogLineResource",
@@ -34,40 +39,40 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/parrot/resources/dialog_resource.gd"
 }, {
+"base": "Button",
+"class": "EgoVentureMenuButton",
+"language": "GDScript",
+"path": "res://addons/egoventure/nodes/egoventure_menu_button.gd"
+}, {
 "base": "Node2D",
 "class": "FourSideRoom",
 "language": "GDScript",
-"path": "res://addons/mdna_core/nodes/four_side_room.gd"
+"path": "res://addons/egoventure/nodes/four_side_room.gd"
 }, {
 "base": "Resource",
 "class": "FulfillmentRecord",
 "language": "GDScript",
-"path": "res://addons/mdna_core/fulfillment_record.gd"
+"path": "res://addons/egoventure/resources/fulfillment_record.gd"
 }, {
 "base": "Resource",
 "class": "GameConfiguration",
 "language": "GDScript",
-"path": "res://addons/mdna_core/resources/game_configuration.gd"
+"path": "res://addons/egoventure/resources/game_configuration.gd"
 }, {
 "base": "BaseState",
 "class": "GameState",
 "language": "GDScript",
 "path": "res://game_state.gd"
 }, {
-"base": "Node",
+"base": "Resource",
 "class": "Goal",
 "language": "GDScript",
-"path": "res://addons/mdna_core/goal.gd"
+"path": "res://addons/egoventure/resources/goal.gd"
 }, {
 "base": "TextureButton",
 "class": "Hotspot",
 "language": "GDScript",
-"path": "res://addons/mdna_core/nodes/hotspot.gd"
-}, {
-"base": "Resource",
-"class": "HotspotCursor",
-"language": "GDScript",
-"path": "res://addons/mdna_core/resources/hotspot_cursor.gd"
+"path": "res://addons/egoventure/nodes/hotspots/hotspot.gd"
 }, {
 "base": "Control",
 "class": "Importer",
@@ -77,83 +82,72 @@ _global_script_classes=[ {
 "base": "Resource",
 "class": "InGameConfiguration",
 "language": "GDScript",
-"path": "res://addons/mdna_core/resources/in_game_configuration.gd"
-}, {
-"base": "Resource",
-"class": "InventoryConfiguration",
-"language": "GDScript",
-"path": "res://addons/mdna_inventory/resources/inventory_configuration.gd"
+"path": "res://addons/egoventure/resources/in_game_configuration.gd"
 }, {
 "base": "Resource",
 "class": "InventoryItem",
 "language": "GDScript",
-"path": "res://addons/mdna_inventory/resources/inventory_item.gd"
+"path": "res://addons/egoventure/resources/inventory_item.gd"
 }, {
 "base": "TextureButton",
 "class": "InventoryItemNode",
 "language": "GDScript",
-"path": "res://addons/mdna_inventory/nodes/inventory_item_node.gd"
+"path": "res://addons/egoventure/nodes/inventory/inventory_item_node.gd"
 }, {
 "base": "TextureButton",
 "class": "LookHotspot",
 "language": "GDScript",
-"path": "res://addons/mdna_core/nodes/look_hotspot.gd"
+"path": "res://addons/egoventure/nodes/hotspots/look_hotspot.gd"
 }, {
 "base": "Hotspot",
 "class": "MapHotspot",
 "language": "GDScript",
-"path": "res://addons/mdna_core/nodes/map_hotspot.gd"
-}, {
-"base": "Button",
-"class": "MdnaMenuButton",
-"language": "GDScript",
-"path": "res://addons/mdna_core/nodes/mdna_menu_button.gd"
+"path": "res://addons/egoventure/nodes/hotspots/map_hotspot.gd"
 }, {
 "base": "Reference",
 "class": "ResourceQueue",
 "language": "GDScript",
-"path": "res://addons/mdna_core/resource_queue.gd"
+"path": "res://addons/egoventure/cache/resource_queue.gd"
 }, {
 "base": "Node",
 "class": "SceneCache",
 "language": "GDScript",
-"path": "res://addons/mdna_core/scene_cache.gd"
+"path": "res://addons/egoventure/cache/scene_cache.gd"
 }, {
 "base": "TextureButton",
 "class": "TriggerHotspot",
 "language": "GDScript",
-"path": "res://addons/mdna_inventory/nodes/trigger_hotspot.gd"
+"path": "res://addons/egoventure/nodes/hotspots/trigger_hotspot.gd"
 }, {
 "base": "Hotspot",
 "class": "WalkHotspot",
 "language": "GDScript",
-"path": "res://addons/mdna_core/nodes/walk_hotspot.gd"
+"path": "res://addons/egoventure/nodes/hotspots/walk_hotspot.gd"
 } ]
 _global_script_class_icons={
 "BaseState": "",
 "CharacterResource": "res://addons/parrot/images/character.svg",
-"DialogHotspot": "res://addons/mdna_core/images/dialog_hotspot.svg",
+"Cursor": "",
+"DialogHotspot": "res://addons/egoventure/images/dialog_hotspot.svg",
 "DialogLineResource": "res://addons/parrot/images/dialog_line.svg",
 "DialogResource": "res://addons/parrot/images/dialog.svg",
+"EgoVentureMenuButton": "",
 "FourSideRoom": "",
 "FulfillmentRecord": "",
 "GameConfiguration": "",
 "GameState": "",
 "Goal": "",
-"Hotspot": "res://addons/mdna_core/images/hotspot.svg",
-"HotspotCursor": "",
+"Hotspot": "res://addons/egoventure/images/hotspot.svg",
 "Importer": "",
 "InGameConfiguration": "",
-"InventoryConfiguration": "res://addons/mdna_inventory/images/inventory_configuration.svg",
-"InventoryItem": "res://addons/mdna_inventory/images/inventory_item.svg",
+"InventoryItem": "res://addons/egoventure/images/inventory_item.svg",
 "InventoryItemNode": "",
-"LookHotspot": "res://addons/mdna_core/images/look_hotspot.svg",
-"MapHotspot": "res://addons/mdna_core/images/map_hotspot.svg",
-"MdnaMenuButton": "",
+"LookHotspot": "res://addons/egoventure/images/look_hotspot.svg",
+"MapHotspot": "res://addons/egoventure/images/map_hotspot.svg",
 "ResourceQueue": "",
 "SceneCache": "",
-"TriggerHotspot": "res://addons/mdna_inventory/images/trigger_hotspot.svg",
-"WalkHotspot": "res://addons/mdna_core/images/walk_hotspot.svg"
+"TriggerHotspot": "res://addons/egoventure/images/trigger_hotspot.svg",
+"WalkHotspot": "res://addons/egoventure/images/walk_hotspot.svg"
 }
 
 [EgoVenture]
@@ -173,18 +167,18 @@ config/windows_native_icon="res://images/misc/icon.ico"
 [autoload]
 
 Core="*res://core.gd"
-WaitingScreen="*res://addons/mdna_core/nodes/waiting_screen.tscn"
-Cursors="*res://addons/mdna_core/cursors.gd"
-MdnaInventory="*res://addons/mdna_inventory/nodes/mdna_inventory.tscn"
-DetailView="*res://addons/mdna_inventory/nodes/detail_view.tscn"
+WaitingScreen="*res://addons/egoventure/nodes/waiting_screen.tscn"
+Cursors="*res://addons/egoventure/types/cursors.gd"
 Speedy="*res://addons/speedy_gonzales/nodes/speedy.tscn"
 Parrot="*res://addons/parrot/nodes/parrot_dialog.tscn"
-MainMenu="*res://addons/mdna_core/nodes/main_menu.tscn"
-Boombox="*res://addons/mdna_core/nodes/boombox.tscn"
-MdnaCore="*res://addons/mdna_core/mdna_core.gd"
-Notepad="*res://addons/mdna_core/nodes/notepad.tscn"
-MapNotification="*res://addons/mdna_core/nodes/map_notification.tscn"
-MenuGrab="*res://addons/mdna_core/nodes/menu_grab.tscn"
+MenuGrab="*res://addons/egoventure/nodes/menu_grab.tscn"
+MainMenu="*res://addons/egoventure/nodes/main_menu.tscn"
+Boombox="*res://addons/egoventure/nodes/boombox.tscn"
+EgoVenture="*res://addons/egoventure/egoventure.gd"
+Notepad="*res://addons/egoventure/nodes/notepad.tscn"
+MapNotification="*res://addons/egoventure/nodes/map_notification.tscn"
+Inventory="*res://addons/egoventure/nodes/inventory/inventory.tscn"
+DetailView="*res://addons/egoventure/nodes/inventory/detail_view.tscn"
 
 [display]
 
@@ -198,7 +192,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "mdna_core", "mdna_inventory", "parrot", "speedy_gonzales" )
+enabled=PoolStringArray( "egoventure", "parrot", "speedy_gonzales" )
 
 [importer_defaults]
 

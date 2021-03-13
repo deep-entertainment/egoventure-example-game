@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://images/man/man09c_cl2_lift1.jpg" type="Texture" id=1]
-[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=2]
+[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=2]
 [ext_resource path="res://scenes/man/man09c_cl2_lift1.gd" type="Script" id=3]
 
 [node name="Node2D" type="Node2D"]
@@ -16,10 +16,9 @@ margin_left = 670.278
 margin_top = 385.536
 margin_right = 1375.28
 margin_bottom = 1083.54
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 [connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]

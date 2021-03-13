@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://addons/mdna_core/nodes/hotspot.gd" type="Script" id=1]
+[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=1]
 [ext_resource path="res://scenes/man/man12f_lift1.gd" type="Script" id=2]
 [ext_resource path="res://images/man/man12f_lift1.jpg" type="Texture" id=3]
 [ext_resource path="res://sounds/man/man_1776_handbag_pills_up.ogg" type="AudioStream" id=4]
@@ -22,24 +22,22 @@ margin_left = -32.1748
 margin_top = 1070.0
 margin_right = 2591.83
 margin_bottom = 1485.0
-mouse_default_cursor_shape = 6
+mouse_default_cursor_shape = 3
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 1
 
 [node name="Hotspot2" type="TextureButton" parent="."]
 margin_left = 1453.7
 margin_top = 168.398
 margin_right = 1750.7
 margin_bottom = 360.398
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 target_scene = "res://scenes/man/man12f_lift3.tscn"
 effect = ExtResource( 4 )
 
@@ -48,13 +46,12 @@ margin_left = 1017.0
 margin_top = 112.0
 margin_right = 1188.0
 margin_bottom = 285.0
-mouse_default_cursor_shape = 13
+mouse_default_cursor_shape = 3
 texture_normal = ExtResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
 target_scene = "res://scenes/man/man12f_lift2.tscn"
 effect = ExtResource( 6 )
 [connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]
