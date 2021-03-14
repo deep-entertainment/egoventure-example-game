@@ -14,15 +14,16 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Hotspot" type="TextureButton" parent="."]
-margin_left = -45.3057
-margin_top = 1057.14
-margin_right = 2614.69
-margin_bottom = 1505.14
-mouse_default_cursor_shape = 3
+margin_left = -48.1342
+margin_top = 1059.97
+margin_right = 2611.86
+margin_bottom = 1507.97
+mouse_default_cursor_shape = 6
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 2
 target_scene = "res://scenes/man/man13.tscn"
 target_view = "left"
 effect = ExtResource( 4 )
@@ -32,10 +33,12 @@ margin_left = 1069.08
 margin_top = 517.485
 margin_right = 1488.08
 margin_bottom = 750.485
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 13
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 12
 target_scene = "res://scenes/man/man13d_lift1.tscn"
+target_view = ""
 effect = ExtResource( 5 )

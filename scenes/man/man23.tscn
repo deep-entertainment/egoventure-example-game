@@ -13,6 +13,7 @@ script = ExtResource( 7 )
 
 [node name="Room" parent="." instance=ExtResource( 1 )]
 position = Vector2( 25.1985, 0 )
+default_view = "front"
 front_texture = ExtResource( 4 )
 right_texture = ExtResource( 5 )
 back_texture = ExtResource( 2 )
@@ -28,7 +29,10 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
+cursor_type = 12
+target_scene = ""
+target_view = ""
+effect = null
 
 [node name="Hotspot2" type="TextureButton" parent="."]
 margin_left = 1558.0
@@ -40,7 +44,10 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 1
 target_scene = "res://scenes/man/man24.tscn"
+target_view = ""
+effect = null
 
 [node name="Hotspot3" type="TextureButton" parent="."]
 margin_left = -1592.87
@@ -52,7 +59,10 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
+cursor_type = 12
+target_scene = ""
+target_view = ""
+effect = null
 
 [node name="Hotspot4" type="TextureButton" parent="."]
 margin_left = -1131.66
@@ -64,7 +74,10 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
+cursor_type = 12
+target_scene = ""
+target_view = ""
+effect = null
 [connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]
 [connection signal="pressed" from="Hotspot3" to="." method="_on_Hotspot3_pressed"]
 [connection signal="pressed" from="Hotspot4" to="." method="_on_Hotspot4_pressed"]

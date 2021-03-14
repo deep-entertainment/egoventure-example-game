@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://images/man/man06c_cl1.jpg" type="Texture" id=1]
+[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=2]
 [ext_resource path="res://scenes/man/man06c_cl.gd" type="Script" id=3]
 [ext_resource path="res://addons/egoventure/nodes/hotspots/trigger_hotspot.gd" type="Script" id=4]
 [ext_resource path="res://inventory/insex.tres" type="Resource" id=5]
@@ -26,32 +27,34 @@ __meta__ = {
 }
 valid_inventory_items = [ ExtResource( 5 ) ]
 
-[node name="Hotspot" type="TextureButton" parent="."]
-margin_left = -4.23779
-margin_top = 1004.5
-margin_right = 2588.76
-margin_bottom = 1468.51
-focus_mode = 0
-mouse_default_cursor_shape = 2
-enabled_focus_mode = 0
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-valid_inventory_items = [  ]
-
 [node name="man_hand_on_insex" type="TextureButton" parent="."]
-margin_left = 906.573
-margin_top = 413.141
-margin_right = 1716.57
-margin_bottom = 993.137
-focus_mode = 0
-mouse_default_cursor_shape = 2
-enabled_focus_mode = 0
-script = ExtResource( 4 )
+margin_left = 816.0
+margin_top = 368.0
+margin_right = 1818.0
+margin_bottom = 991.0
+mouse_default_cursor_shape = 13
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-valid_inventory_items = [  ]
+cursor_type = 12
+target_scene = ""
+target_view = ""
+effect = null
+
+[node name="Hotspot" type="TextureButton" parent="."]
+margin_left = -17.1189
+margin_top = 1014.88
+margin_right = 2569.88
+margin_bottom = 1457.88
+mouse_default_cursor_shape = 6
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+cursor_type = 2
+target_scene = "res://scenes/man/man06.tscn"
+target_view = "back"
+effect = null
 [connection signal="item_used" from="TriggerHotspot" to="." method="_on_TriggerHotspot_item_used"]
 [connection signal="pressed" from="man_hand_on_insex" to="." method="_on_man_hand_on_insex_pressed"]

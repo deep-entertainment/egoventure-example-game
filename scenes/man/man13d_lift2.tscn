@@ -25,4 +25,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 1
 target_scene = "res://scenes/man/man13d_lift3.tscn"
+target_view = ""
+effect = null

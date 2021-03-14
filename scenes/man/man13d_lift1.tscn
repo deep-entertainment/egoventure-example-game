@@ -27,14 +27,18 @@ offset = Vector2( 1050, 413 )
 
 [node name="Hotspot" type="TextureButton" parent="."]
 margin_left = 1049.0
-margin_top = 413.0
+margin_top = 411.74
 margin_right = 1133.0
-margin_bottom = 504.0
-mouse_default_cursor_shape = 3
+margin_bottom = 502.74
+mouse_default_cursor_shape = 13
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 12
+target_scene = ""
+target_view = ""
+effect = null
 
 [node name="cigbox_m" type="Sprite" parent="."]
 visible = false
@@ -47,11 +51,15 @@ margin_left = 1125.0
 margin_top = 411.0
 margin_right = 1228.0
 margin_bottom = 502.0
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 13
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 12
+target_scene = ""
+target_view = ""
+effect = null
 
 [node name="cigbox_b" type="Sprite" parent="."]
 visible = false
@@ -64,11 +72,15 @@ margin_left = 1231.83
 margin_top = 414.0
 margin_right = 1308.83
 margin_bottom = 497.0
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 13
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 12
+target_scene = ""
+target_view = ""
+effect = null
 
 [node name="cigbox_e" type="Sprite" parent="."]
 visible = false
@@ -81,11 +93,15 @@ margin_left = 1313.59
 margin_top = 414.0
 margin_right = 1375.59
 margin_bottom = 498.0
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 13
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 12
+target_scene = ""
+target_view = ""
+effect = null
 
 [node name="cigbox_r" type="Sprite" parent="."]
 visible = false
@@ -98,11 +114,15 @@ margin_left = 1390.0
 margin_top = 412.172
 margin_right = 1462.0
 margin_bottom = 503.172
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 13
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 12
+target_scene = ""
+target_view = ""
+effect = null
 
 [node name="cigbox_t" type="Sprite" parent="."]
 visible = false
@@ -115,11 +135,15 @@ margin_left = 1460.0
 margin_top = 417.0
 margin_right = 1533.0
 margin_bottom = 499.0
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 13
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 12
+target_scene = ""
+target_view = ""
+effect = null
 
 [node name="cigbox_z" type="Sprite" parent="."]
 visible = false
@@ -132,23 +156,29 @@ margin_left = 1533.0
 margin_top = 419.0
 margin_right = 1595.0
 margin_bottom = 499.0
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 13
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 12
+target_scene = ""
+target_view = ""
+effect = null
 
 [node name="Hotspot8" type="TextureButton" parent="."]
 margin_left = -16.0
 margin_top = 1116.0
 margin_right = 2581.0
 margin_bottom = 1455.0
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 6
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 2
 target_scene = "res://scenes/man/man13d_op.tscn"
+target_view = ""
 effect = ExtResource( 11 )
 [connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]
 [connection signal="pressed" from="Hotspot2" to="." method="_on_Hotspot2_pressed"]

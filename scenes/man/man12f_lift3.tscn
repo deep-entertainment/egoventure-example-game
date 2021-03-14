@@ -18,15 +18,17 @@ __meta__ = {
 
 [node name="Hotspot" type="TextureButton" parent="."]
 margin_left = -9.52441
-margin_top = 1085.78
+margin_top = 1088.95
 margin_right = 2573.48
-margin_bottom = 1465.78
-mouse_default_cursor_shape = 3
+margin_bottom = 1468.95
+mouse_default_cursor_shape = 6
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 2
 target_scene = "res://scenes/man/man12f_lift1.tscn"
+target_view = ""
 effect = ExtResource( 4 )
 
 [node name="screwdr_hs" type="Sprite" parent="."]

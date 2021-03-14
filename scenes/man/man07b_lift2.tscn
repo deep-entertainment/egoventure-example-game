@@ -16,21 +16,29 @@ margin_left = -23.0
 margin_top = 1052.0
 margin_right = 2597.0
 margin_bottom = 1465.0
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 6
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 2
+target_scene = ""
+target_view = ""
+effect = null
 
 [node name="Hotspot2" type="TextureButton" parent="."]
-margin_left = 554.371
-margin_top = 294.156
-margin_right = 1980.37
-margin_bottom = 1098.16
-mouse_default_cursor_shape = 3
+margin_left = 588.312
+margin_top = 311.126
+margin_right = 2014.31
+margin_bottom = 1115.13
+mouse_default_cursor_shape = 7
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 14
+target_scene = ""
+target_view = ""
+effect = null
 [connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]
 [connection signal="pressed" from="Hotspot2" to="." method="_on_Hotspot2_pressed"]

@@ -15,22 +15,28 @@ centered = false
 margin_top = 1057.83
 margin_right = 2591.0
 margin_bottom = 1453.83
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 6
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 2
 target_scene = "res://scenes/man/man09.tscn"
 target_view = "back"
+effect = null
 
 [node name="match_takeable" type="TextureButton" parent="."]
 margin_left = 1154.06
 margin_top = 220.343
 margin_right = 1550.06
 margin_bottom = 594.343
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 13
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 12
+target_scene = ""
+target_view = ""
+effect = null
 [connection signal="pressed" from="match_takeable" to="." method="_on_match_takeable_pressed"]

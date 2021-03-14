@@ -69,12 +69,12 @@ margin_left = 2102.0
 margin_top = -1446.0
 margin_right = 2573.0
 margin_bottom = 31.0
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 15
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-cursor_type = 1
+cursor_type = 3
 target_scene = "res://scenes/man/man03b_inf.tscn"
 target_view = ""
 effect = null
@@ -84,12 +84,12 @@ margin_left = -11.7755
 margin_top = 1430.22
 margin_right = 451.224
 margin_bottom = 2901.22
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 14
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-cursor_type = 1
+cursor_type = 4
 target_scene = "res://scenes/man/man03b_inf.tscn"
 target_view = ""
 effect = null

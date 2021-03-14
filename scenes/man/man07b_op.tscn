@@ -12,13 +12,17 @@ texture = ExtResource( 1 )
 centered = false
 
 [node name="Hotspot" type="TextureButton" parent="."]
-margin_left = -11.314
-margin_top = 1018.23
-margin_right = 2608.69
-margin_bottom = 1454.23
-mouse_default_cursor_shape = 3
+margin_left = -16.9707
+margin_top = 1023.89
+margin_right = 2603.03
+margin_bottom = 1459.89
+mouse_default_cursor_shape = 6
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 2
+target_scene = ""
+target_view = ""
+effect = null
 [connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]

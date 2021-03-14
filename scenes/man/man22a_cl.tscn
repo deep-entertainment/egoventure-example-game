@@ -17,36 +17,45 @@ margin_left = 706.0
 margin_top = 582.0
 margin_right = 1067.0
 margin_bottom = 952.0
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 16
 texture_normal = ExtResource( 3 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 8
 target_scene = "res://scenes/man/man22a_lift.tscn"
+target_view = ""
+effect = null
 
 [node name="Hotspot" type="TextureButton" parent="."]
 margin_left = 1869.96
 margin_top = 466.696
 margin_right = 2230.96
 margin_bottom = 820.696
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 16
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 8
+target_scene = ""
+target_view = ""
+effect = null
 
 [node name="Hotspot2" type="TextureButton" parent="."]
 margin_left = -9.52441
 margin_top = 1101.66
 margin_right = 2586.48
 margin_bottom = 1455.66
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 6
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 2
 target_scene = "res://scenes/man/man22.tscn"
 target_view = "front"
+effect = null
 [connection signal="pressed" from="man_rag" to="." method="_on_man_rag_pressed"]
 [connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]
