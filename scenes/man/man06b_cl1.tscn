@@ -16,22 +16,28 @@ margin_left = -6.0
 margin_top = 1168.99
 margin_right = 2605.0
 margin_bottom = 1484.99
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 6
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 2
 target_scene = "res://scenes/man/man06.tscn"
 target_view = "right"
+effect = null
 
 [node name="Hotspot2" type="TextureButton" parent="."]
 margin_left = 1006.95
 margin_top = 773.0
 margin_right = 1490.95
 margin_bottom = 1131.0
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 13
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 12
+target_scene = ""
+target_view = ""
+effect = null
 [connection signal="pressed" from="Hotspot2" to="." method="_on_Hotspot2_pressed"]
