@@ -18,3 +18,9 @@ The following things have changed while moving from the old code to the EgoVentu
 
 * The property "Hotspot type" was changed to "Cursor type" for clarity
 * I had to remove Type.CUSTOM4 and the cursor shape for CUSTOM3 changed from Input.CURSOR_ARROW to Input.CURSOR_WAIT
+
+# Game configuration overhaul
+
+* The inventory configuration is merged into the game configuration
+
+* All configuration options are now categorized. I hope, everything's still easy (or even easier) to find
