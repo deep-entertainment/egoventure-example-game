@@ -50,7 +50,7 @@ texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 485, 69 )
 
 [sub_resource type="DynamicFont" id=12]
-size = 68
+size = 64
 use_filter = true
 font_data = ExtResource( 2 )
 
