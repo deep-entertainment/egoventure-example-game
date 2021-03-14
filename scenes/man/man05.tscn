@@ -13,6 +13,7 @@
 script = ExtResource( 7 )
 
 [node name="Room" parent="." instance=ExtResource( 1 )]
+default_view = "front"
 front_texture = ExtResource( 5 )
 right_texture = ExtResource( 4 )
 back_texture = ExtResource( 2 )
@@ -23,13 +24,15 @@ margin_left = 750.079
 margin_top = 2055.15
 margin_right = 1624.08
 margin_bottom = 2724.15
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 13
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 12
 target_scene = "res://scenes/man/man04.tscn"
 target_view = "back"
+effect = null
 
 [node name="Hotspot2" type="TextureButton" parent="."]
 margin_left = 3329.64
@@ -41,8 +44,10 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 1
 target_scene = "res://scenes/man/man10.tscn"
 target_view = "left"
+effect = null
 
 [node name="Hotspot3" type="TextureButton" parent="."]
 margin_left = -1409.36
@@ -54,18 +59,25 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 1
 target_scene = "res://scenes/man/man06.tscn"
+target_view = ""
+effect = null
 
 [node name="Hotspot4" type="TextureButton" parent="."]
 margin_left = 513.082
 margin_top = -1263.68
 margin_right = 1702.08
 margin_bottom = -244.682
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 9
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 6
+target_scene = ""
+target_view = ""
+effect = null
 
 [node name="man_stairs" type="Sprite" parent="."]
 visible = false

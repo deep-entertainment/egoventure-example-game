@@ -16,9 +16,12 @@ margin_left = 696.205
 margin_top = 799.246
 margin_right = 1742.21
 margin_bottom = 1346.25
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 16
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 8
 target_scene = "res://scenes/man/man03b_cl.tscn"
+target_view = ""
+effect = null

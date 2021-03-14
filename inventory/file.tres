@@ -6,7 +6,6 @@
 [ext_resource path="res://inventory/file_big.png" type="Texture" id=4]
 [ext_resource path="res://inventory/screwdriver.tres" type="Resource" id=5]
 
-
 [resource]
 script = ExtResource( 1 )
 title = "file"
