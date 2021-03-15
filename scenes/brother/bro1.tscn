@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/brother/bro1.gd" type="Script" id=1]
 [ext_resource path="res://images/dia/bro_main.jpg" type="Texture" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://theme.tres" type="Theme" id=4]
 [ext_resource path="res://misc/fonts/LadylikeBB.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://misc/fonts/Flareserif821BT-fixed.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -91,19 +90,4 @@ __meta__ = {
 }
 dialog = ""
 asked = false
-
-[node name="Hotspot" type="TextureButton" parent="."]
-margin_left = 976.896
-margin_top = 320.638
-margin_right = 1077.9
-margin_bottom = 418.638
-mouse_default_cursor_shape = 3
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-cursor_type = 1
-target_scene = ""
-target_view = ""
-effect = null
 [connection signal="pressed" from="bro_q3_hs" to="." method="_on_bro_q3_hs_pressed"]

@@ -7,7 +7,7 @@
 [ext_resource path="res://images/misc/check.png" type="Texture" id=6]
 [ext_resource path="res://images/misc/check_un.png" type="Texture" id=7]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=4]
 size = 72
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -16,7 +16,7 @@ extra_spacing_top = 10
 extra_spacing_bottom = 10
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=5]
 size = 72
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -24,42 +24,42 @@ use_filter = true
 extra_spacing_top = 10
 extra_spacing_bottom = 10
 font_data = ExtResource( 5 )
-
-[sub_resource type="StyleBoxEmpty" id=3]
-
-[sub_resource type="StyleBoxEmpty" id=4]
-
-[sub_resource type="StyleBoxEmpty" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=6]
 
 [sub_resource type="StyleBoxEmpty" id=7]
 
 [sub_resource type="StyleBoxEmpty" id=8]
-content_margin_left = 10.0
-content_margin_right = 10.0
-content_margin_top = 10.0
-content_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxEmpty" id=9]
 
 [sub_resource type="StyleBoxEmpty" id=10]
 
-[sub_resource type="StyleBoxTexture" id=11]
+[sub_resource type="StyleBoxEmpty" id=11]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxTexture" id=14]
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 485, 69 )
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=15]
 size = 64
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="DynamicFont" id=16]
 size = 50
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=17]
 size = 34
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -68,13 +68,13 @@ extra_spacing_top = 10
 extra_spacing_bottom = 10
 font_data = ExtResource( 5 )
 
-[sub_resource type="StyleBoxFlat" id=15]
+[sub_resource type="StyleBoxFlat" id=18]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=19]
 bg_color = Color( 0, 0, 0, 1 )
 
-[sub_resource type="StyleBoxFlat" id=17]
+[sub_resource type="StyleBoxFlat" id=20]
 bg_color = Color( 1, 1, 1, 0.254902 )
 border_width_left = 2
 border_width_top = 2
@@ -84,35 +84,36 @@ border_color = Color( 0.513726, 0.513726, 0.513726, 1 )
 shadow_size = 2
 shadow_offset = Vector2( 2, 2 )
 
-[sub_resource type="StyleBoxFlat" id=18]
+[sub_resource type="StyleBoxFlat" id=21]
 bg_color = Color( 0.6, 0.6, 0.6, 0 )
 
-[sub_resource type="Gradient" id=19]
-colors = PoolColorArray( 0, 1, 0.0390625, 1, 0.393235, 1, 0.445379, 1 )
+[sub_resource type="Gradient" id=22]
+offsets = PoolRealArray( 0.491686, 1 )
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 1 )
 
-[sub_resource type="GradientTexture" id=20]
-gradient = SubResource( 19 )
+[sub_resource type="GradientTexture" id=23]
+gradient = SubResource( 22 )
 
-[sub_resource type="StyleBoxTexture" id=21]
-texture = SubResource( 20 )
+[sub_resource type="StyleBoxTexture" id=24]
+texture = SubResource( 23 )
 region_rect = Rect2( 0, 0, 2048, 1 )
 
-[sub_resource type="DynamicFont" id=22]
+[sub_resource type="DynamicFont" id=25]
 size = 56
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=23]
+[sub_resource type="DynamicFont" id=3]
 size = 60
 use_filter = true
 font_data = ExtResource( 2 )
 
-[sub_resource type="StyleBoxFlat" id=24]
+[sub_resource type="StyleBoxFlat" id=26]
 bg_color = Color( 0.156863, 0.00784314, 0.00784314, 1 )
 
-[sub_resource type="DynamicFont" id=25]
+[sub_resource type="DynamicFont" id=2]
 size = 48
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -122,53 +123,53 @@ extra_spacing_bottom = 10
 font_data = ExtResource( 5 )
 
 [resource]
-default_font = SubResource( 25 )
+default_font = SubResource( 2 )
 Button/colors/font_color = Color( 0.878431, 0.878431, 0.878431, 1 )
 Button/colors/font_color_disabled = Color( 0.392157, 0.415686, 0.423529, 1 )
 Button/colors/font_color_hover = Color( 0.694118, 0.501961, 0.435294, 1 )
 Button/colors/font_color_pressed = Color( 0.694118, 0.501961, 0.435294, 1 )
-Button/fonts/menu_button = SubResource( 1 )
-Button/fonts/menu_button_hover = SubResource( 2 )
-Button/styles/focus = SubResource( 3 )
-Button/styles/hover = SubResource( 4 )
+Button/fonts/menu_button = SubResource( 4 )
+Button/fonts/menu_button_hover = SubResource( 5 )
+Button/styles/focus = SubResource( 6 )
+Button/styles/hover = SubResource( 7 )
 Button/styles/menu_button_disabled = null
 Button/styles/menu_button_hover = null
 Button/styles/menu_button_normal = null
 Button/styles/menu_button_pressed = null
-Button/styles/normal = SubResource( 5 )
-Button/styles/pressed = SubResource( 6 )
+Button/styles/normal = SubResource( 8 )
+Button/styles/pressed = SubResource( 9 )
 CheckButton/icons/off = ExtResource( 7 )
 CheckButton/icons/on = ExtResource( 6 )
-CheckButton/styles/focus = SubResource( 7 )
-CheckButton/styles/hover = SubResource( 8 )
-CheckButton/styles/hover_pressed = SubResource( 8 )
-CheckButton/styles/normal = SubResource( 8 )
-CheckButton/styles/pressed = SubResource( 8 )
+CheckButton/styles/focus = SubResource( 10 )
+CheckButton/styles/hover = SubResource( 11 )
+CheckButton/styles/hover_pressed = SubResource( 11 )
+CheckButton/styles/normal = SubResource( 11 )
+CheckButton/styles/pressed = SubResource( 11 )
 HSlider/icons/grabber = ExtResource( 4 )
 HSlider/icons/grabber_highlight = ExtResource( 4 )
 HSlider/icons/tick = null
-HSlider/styles/grabber_area = SubResource( 9 )
-HSlider/styles/grabber_area_highlight = SubResource( 10 )
-HSlider/styles/slider = SubResource( 11 )
+HSlider/styles/grabber_area = SubResource( 12 )
+HSlider/styles/grabber_area_highlight = SubResource( 13 )
+HSlider/styles/slider = SubResource( 14 )
 Label/colors/goals = Color( 0, 0, 0, 1 )
 Label/colors/hints = Color( 0, 0, 0, 1 )
 Label/fonts/detail_view = null
-Label/fonts/goals = SubResource( 12 )
-Label/fonts/hints = SubResource( 13 )
-Label/fonts/saveslots_date = SubResource( 14 )
+Label/fonts/goals = SubResource( 15 )
+Label/fonts/hints = SubResource( 16 )
+Label/fonts/saveslots_date = SubResource( 17 )
 Panel/styles/detail_view = null
 Panel/styles/dialog_panel = null
-Panel/styles/inventory_panel = SubResource( 15 )
-Panel/styles/notepad_panel = SubResource( 16 )
-Panel/styles/saveslot_panel = SubResource( 17 )
-ProgressBar/styles/bg = SubResource( 18 )
-ProgressBar/styles/fg = SubResource( 21 )
+Panel/styles/inventory_panel = SubResource( 18 )
+Panel/styles/notepad_panel = SubResource( 19 )
+Panel/styles/saveslot_panel = SubResource( 20 )
+ProgressBar/styles/bg = SubResource( 21 )
+ProgressBar/styles/fg = SubResource( 24 )
 RichTextLabel/colors/dialog_hotspot_asked_font_color = Color( 0.439216, 0.439216, 0.439216, 1 )
 RichTextLabel/colors/dialog_hotspot_font_color = Color( 0, 0, 0, 1 )
 RichTextLabel/colors/dialog_hotspot_hover_font_color = Color( 0.133333, 0.470588, 0.490196, 1 )
-RichTextLabel/fonts/dialog_font = SubResource( 22 )
+RichTextLabel/fonts/dialog_font = SubResource( 25 )
 RichTextLabel/fonts/dialog_hotspot_bold_font = null
-RichTextLabel/fonts/dialog_hotspot_normal_font = SubResource( 23 )
+RichTextLabel/fonts/dialog_hotspot_normal_font = SubResource( 3 )
 WindowDialog/icons/close = null
 WindowDialog/icons/close_highlight = null
-WindowDialog/styles/panel = SubResource( 24 )
+WindowDialog/styles/panel = SubResource( 26 )
