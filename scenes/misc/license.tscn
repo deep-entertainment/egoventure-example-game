@@ -16,9 +16,13 @@ margin_left = 1158.02
 margin_top = 1194.49
 margin_right = 1337.02
 margin_bottom = 1311.49
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 12
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+cursor_type = 11
+target_scene = ""
+target_view = ""
+effect = null
 [connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]
