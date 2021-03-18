@@ -31,7 +31,7 @@ jobs:
           CHANNEL: windows
           ITCH_GAME: carol-refurbished
           ITCH_USER: deepgames
-          PACKAGE: build/windows/$EXPORT_NAME.exe
+          PACKAGE: /github/workspace/build/windows/$EXPORT_NAME.exe
 
   export-linux:
     name: Linux Export
@@ -58,7 +58,7 @@ jobs:
           CHANNEL: linux
           ITCH_GAME: carol-refurbished
           ITCH_USER: deepgames
-          PACKAGE: build/linux/$EXPORT_NAME.x86_64
+          PACKAGE: /github/workspace/build/linux/$EXPORT_NAME.x86_64
 
   export-mac:
     name: Mac Export
@@ -85,5 +85,5 @@ jobs:
           CHANNEL: osx
           ITCH_GAME: carol-refurbished
           ITCH_USER: deepgames
-          PACKAGE: build/mac/$EXPORT_NAME.zip
+          PACKAGE: /github/workspace/build/mac/$EXPORT_NAME.zip
 
