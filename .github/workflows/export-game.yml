@@ -24,11 +24,14 @@ jobs:
         run: |
           mkdir -v -p build/windows
           godot -v --export "Windows Desktop" build/windows/$EXPORT_NAME.exe
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: windows
-          path: build/windows
+      - name: Upload to itch.io
+        uses: josephbmanley/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: windows
+          ITCH_GAME: carol-refurbished
+          ITCH_USER: deepgames
+          PACKAGE: build/windows/$EXPORT_NAME.exe
 
   export-linux:
     name: Linux Export
@@ -48,11 +51,14 @@ jobs:
         run: |
           mkdir -v -p build/linux
           godot -v --export "Linux/X11" build/linux/$EXPORT_NAME.x86_64
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: linux
-          path: build/linux
+      - name: Upload to itch.io
+        uses: josephbmanley/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: linux
+          ITCH_GAME: carol-refurbished
+          ITCH_USER: deepgames
+          PACKAGE: build/linux/$EXPORT_NAME.x86_64
 
   export-mac:
     name: Mac Export
@@ -72,8 +78,12 @@ jobs:
         run: |
           mkdir -v -p build/mac
           godot -v --export "Mac OSX" build/mac/$EXPORT_NAME.zip
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v1
-        with:
-          name: mac
-          path: build/mac
+      - name: Upload to itch.io
+        uses: josephbmanley/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: macos
+          ITCH_GAME: carol-refurbished
+          ITCH_USER: deepgames
+          PACKAGE: build/mac/$EXPORT_NAME.zip
+
