@@ -3,7 +3,7 @@ on: push
 
 env:
   GODOT_VERSION: 3.2.3
-  EXPORT_NAME: carol-refurbished
+  EXPORT_NAME: mdnademo
 
 jobs:
   export-windows:
