@@ -3,6 +3,7 @@ extends Control
 func _ready():
 	Speedy.hidden = true
 	EgoVenture.game_started = true
+	MainMenu.disabled = true
 	Inventory.disable()
 	MainMenu.saveable = true
 	$cred2.hide()
