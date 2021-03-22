@@ -10,6 +10,8 @@ It showcases all features available in EgoVenture and its accompanying plugins [
 
 The game is automatically exported to Windows, macOS and Linux upon every push and made available on [its itch.io page](https://deepgames.itch.io/carol-refurbished).
 
+<iframe frameborder="0" src="https://itch.io/embed/962439" width="552" height="167"><a href="https://deepgames.itch.io/carol-refurbished">Carol refurbished by deep entertainment</a></iframe>
+
 ## Development
 
 This repository is used as a showcase for EgoVenture and also as a reference implementation of EgoVenture and its plugins.
@@ -19,5 +21,3 @@ So there's no active development here per se, but rather tests and optimizations
 Still, if you like to implement a new feature or fix a bug in the addons, feel free to fork and use the repository for that.
 
 We're happy to check out any pull request you might send. Thanks for your support!
-
-
