@@ -13,9 +13,12 @@ signal quit_game
 # The date format used for display in the save slots
 const DATE_FORMAT: String = "{month}/{day}/{year} {hour}:{minute}"
 
-
 # Lowest Audio level
 const AUDIO_MIN: float = -50.0
+
+# Minimum number of seconds a speech or background sample should
+# be played
+const MINIMUM_SAMPLE_TIME: float = 2.0
 
 
 # Wether the main menu can be hidden
@@ -81,6 +84,11 @@ func configure(configuration: GameConfiguration):
 			configuration.menu_saveslots_next_image
 	$Menu/Options/Background.texture = configuration.menu_options_background
 	
+	$Menu/QuitConfirm.dialog_text = configuration.menu_quit_confirmation
+	$Menu/OverwriteConfirm.dialog_text = \
+			configuration.menu_overwrite_confirmation
+	$Menu/RestartConfirm.dialog_text = configuration.menu_restart_confirmation
+	
 	$Menu.theme = configuration.design_theme
 	
 	# Set option labels to the menu button style
@@ -89,7 +97,9 @@ func configure(configuration: GameConfiguration):
 		"MusicLabel", 
 		"EffectsLabel", 
 		"SubtitlesLabel",
-		"Subtitles"
+		"Subtitles",
+		"FullscreenLabel",
+		"Fullscreen"
 	]:
 		var node = get_node("Menu/Options/CenterContainer/VBox/Grid/%s" % label)
 		node.add_font_override(
@@ -149,6 +159,8 @@ func toggle():
 		if not $Menu.visible:
 			$Menu/SaveSlots.visible = false
 		else:
+			$Menu/Options/CenterContainer/VBox/Grid/Fullscreen.pressed = \
+				EgoVenture.in_game_configuration.fullscreen
 			Speedy.set_shape(Input.CURSOR_ARROW)
 
 
@@ -467,6 +479,13 @@ func _on_Menu_gui_input(event):
 func _on_SpeechSlider_gui_input(event):
 	if event is InputEventMouseButton and not \
 			(event as InputEventMouseButton).pressed:
+		if $Menu/Speech.get_playback_position() < MINIMUM_SAMPLE_TIME:
+			yield(
+				get_tree().create_timer(
+					MINIMUM_SAMPLE_TIME - $Menu/Speech.get_playback_position()
+				), 
+				"timeout"
+			)
 		$Menu/Speech.stop()
 
 
@@ -474,4 +493,17 @@ func _on_SpeechSlider_gui_input(event):
 func _on_EffectsSlider_gui_input(event):
 	if event is InputEventMouseButton and not \
 			(event as InputEventMouseButton).pressed:
+		if $Menu/Effects.get_playback_position() < MINIMUM_SAMPLE_TIME:
+			yield(
+				get_tree().create_timer(
+					MINIMUM_SAMPLE_TIME - $Menu/Effects.get_playback_position()
+				), 
+				"timeout"
+			)
 		$Menu/Effects.stop()
+
+
+func _on_Fullscreen_toggled(button_pressed):
+	EgoVenture.in_game_configuration.fullscreen = button_pressed
+	EgoVenture.save_in_game_configuration()
+	EgoVenture.set_full_screen()

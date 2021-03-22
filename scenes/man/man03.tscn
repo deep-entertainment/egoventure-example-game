@@ -20,10 +20,10 @@ back_texture = ExtResource( 4 )
 left_texture = ExtResource( 2 )
 
 [node name="Hotspot" type="TextureButton" parent="."]
-margin_left = 3326.39
-margin_top = 627.192
-margin_right = 4428.39
-margin_bottom = 1380.19
+margin_left = 3317.91
+margin_top = 635.668
+margin_right = 4419.91
+margin_bottom = 1388.67
 mouse_default_cursor_shape = 16
 script = ExtResource( 6 )
 __meta__ = {
@@ -66,9 +66,9 @@ effect = null
 
 [node name="eye_info_hs" type="TextureButton" parent="."]
 margin_left = 2102.0
-margin_top = -1446.0
+margin_top = -1450.24
 margin_right = 2573.0
-margin_bottom = 31.0
+margin_bottom = 26.7622
 mouse_default_cursor_shape = 15
 script = ExtResource( 6 )
 __meta__ = {

@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/intro.gd" type="Script" id=1]
 [ext_resource path="res://images/misc/credits01.jpg" type="Texture" id=2]
 [ext_resource path="res://images/misc/credits02.jpg" type="Texture" id=3]
+[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=4]
 
 [node name="Node2D" type="Control"]
 anchor_right = 1.0
@@ -12,14 +13,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="Sprite" parent="."]
-texture = ExtResource( 2 )
-centered = false
+[node name="cred1" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 2 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+cursor_type = 0
+target_scene = ""
+target_view = ""
+effect = null
 
-[node name="cred2" type="Sprite" parent="."]
-texture = ExtResource( 3 )
-centered = false
+[node name="cred2" type="TextureButton" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture_normal = ExtResource( 3 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+cursor_type = 0
+target_scene = ""
+target_view = ""
+effect = null
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true
 bus = "Music"
+[connection signal="pressed" from="cred1" to="." method="_on_cred1_pressed"]
+[connection signal="pressed" from="cred2" to="." method="_on_cred2_pressed"]

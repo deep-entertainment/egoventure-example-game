@@ -18,14 +18,14 @@ margin_left = 1119.0
 margin_top = 897.0
 margin_right = 1265.0
 margin_bottom = 969.0
-mouse_default_cursor_shape = 3
+mouse_default_cursor_shape = 12
 texture_normal = ExtResource( 5 )
 texture_hover = ExtResource( 4 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-cursor_type = 1
+cursor_type = 11
 target_scene = "res://scenes/man/man13d_lift3.tscn"
 target_view = ""
 effect = null

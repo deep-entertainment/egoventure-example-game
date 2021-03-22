@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/theme.png-7dc53e29c3a5fd7533a9ed3184636845.stex"
+path="res://.import/menu_icon.png-d300b37b1907b113f7ed5f1bcd1b943b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/mdna_core/docs/theme.png"
-dest_files=[ "res://.import/theme.png-7dc53e29c3a5fd7533a9ed3184636845.stex" ]
+source_file="res://images/misc/menu_icon.png"
+dest_files=[ "res://.import/menu_icon.png-d300b37b1907b113f7ed5f1bcd1b943b.stex" ]
 
 [params]
 

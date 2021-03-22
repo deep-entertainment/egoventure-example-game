@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://images/misc/logo.jpg" type="Texture" id=1]
+[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=2]
 [ext_resource path="res://scenes/logo.gd" type="Script" id=3]
 
 [node name="Control" type="Control"]
@@ -14,3 +15,19 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 centered = false
+
+[node name="Hotspot" type="TextureButton" parent="."]
+margin_left = -22.4492
+margin_top = -17.9592
+margin_right = 2576.55
+margin_bottom = 1486.04
+mouse_default_cursor_shape = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+cursor_type = 1
+target_scene = ""
+target_view = ""
+effect = null
+[connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]
