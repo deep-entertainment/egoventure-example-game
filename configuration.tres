@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=45 format=2]
+[gd_resource type="Resource" load_steps=47 format=2]
 
 [ext_resource path="res://addons/egoventure/resources/game_configuration.gd" type="Script" id=1]
 [ext_resource path="res://music/mold.ogg" type="AudioStream" id=2]
@@ -25,8 +25,10 @@
 [ext_resource path="res://images/mouse/map.png" type="Texture" id=23]
 [ext_resource path="res://images/mouse/hand.png" type="Texture" id=24]
 [ext_resource path="res://images/mouse/exit.png" type="Texture" id=25]
+[ext_resource path="res://images/misc/menu_icon.png" type="Texture" id=26]
 [ext_resource path="res://sounds/misc/map_icon.ogg" type="AudioStream" id=27]
 [ext_resource path="res://images/misc/background.jpg" type="Texture" id=28]
+[ext_resource path="res://images/misc/inv_icon.png" type="Texture" id=29]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 15 )
@@ -144,7 +146,9 @@ menu_saveslots_background = ExtResource( 28 )
 menu_saveslots_previous_image = ExtResource( 3 )
 menu_saveslots_next_image = ExtResource( 7 )
 inventory_size = 113
+inventory_texture_menu = ExtResource( 26 )
 inventory_texture_notepad = ExtResource( 11 )
+inventory_texture_activate = ExtResource( 29 )
 menu_options_background = ExtResource( 28 )
 menu_options_speech_sample = ExtResource( 8 )
 menu_options_effects_sample = ExtResource( 9 )
