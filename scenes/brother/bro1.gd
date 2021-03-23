@@ -2,10 +2,12 @@ extends Node2D
 
 func _ready():
 	Parrot.connect("finished_dialog", self, "_on_finished_dialog")
-	Speedy.hidden = true
-	Parrot.play(preload("res://dialogs/bro1_q0.tres"))
-	yield(Parrot, "finished_dialog")
-	Speedy.hidden = false
+	if (EgoVenture.state as GameState).bro_spoken_to != 1:
+		Speedy.hidden = true
+		Parrot.play(preload("res://dialogs/bro1_q0.tres"))
+		yield(Parrot, "finished_dialog")
+		Speedy.hidden = false
+		(EgoVenture.state as GameState).bro_spoken_to = 1
 	_update_hotspots()
 
 func _update_hotspots():

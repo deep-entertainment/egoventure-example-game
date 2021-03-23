@@ -33,3 +33,4 @@ export(bool) var space_info = false
 export(bool) var map_bro_new = false
 export (int) var menu_info_seen
 export(bool) var test_hs = false
+export (int) var bro_spoken_to
