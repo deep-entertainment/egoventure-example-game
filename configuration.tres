@@ -159,5 +159,5 @@ notepad_hints_rect = Rect2( 1243, 325, 545, 763 )
 tools_map_image = ExtResource( 22 )
 tools_map_sound = ExtResource( 27 )
 cache_scene_path = "res://scenes"
-cache_scene_count = 3
+cache_scene_count = 2
 cache_permanent = PoolStringArray( "res://scenes/misc/map.tscn", "res://scenes/man/man14.tscn", "res://scenes/man/man10.tscn" )
