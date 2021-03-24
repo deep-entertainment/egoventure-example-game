@@ -22,5 +22,6 @@ func _on_cred1_pressed():
 
 
 func _on_cred2_pressed():
+	Boombox.ignore_pause = false
 	Speedy.hidden = false
 	EgoVenture.change_scene("res://scenes/misc/map_info.tscn")
