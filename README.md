@@ -6,6 +6,8 @@ This is a sample game made by [MDNA games](https://mdna-games.com) using the [Eg
 
 It showcases all features available in EgoVenture and its accompanying plugins [Parrot](https://github.com/deep-entertainment/parrot) and [Speedy Gonzales](https://github.com/deep-entertainment/speedy_gonzales) and is based on the [EgoVenture game template](https://github.com/deep-entertainment/egoventure-game-template).
 
+The game sources are licensed under the [MIT license](LICENSE), the included media is licensed under the [CC-BY-SA license](MEDIA-LICENSE.md).
+
 ## Automatic distribution
 
 The game is automatically exported to Windows, macOS and Linux upon every push and made available on [its itch.io page](https://deepgames.itch.io/carol-refurbished).
