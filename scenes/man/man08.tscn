@@ -63,4 +63,4 @@ target_scene = ""
 target_view = ""
 effect = null
 [connection signal="pressed" from="Hotspot2" to="." method="_on_Hotspot2_pressed"]
-[connection signal="pressed" from="Hotspot3" to="." method="_on_Hotspot3_pressed"]
+[connection signal="activate" from="Hotspot3" to="." method="_on_Hotspot3_activate"]

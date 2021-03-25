@@ -50,13 +50,11 @@ func _on_TriggerHotspot_item_used(item):
 	EgoVenture.change_scene("res://scenes/man/man12.tscn")
 	
 	
-
 func _exit_tree():
 	Cursors.reset(Cursors.Type.CORNER_LEFT)
 
 
-
-func _on_Hotspot2_pressed():
+func _on_Hotspot2_activate():
 	Boombox.ignore_pause = true
 	get_tree().paused = true
 	Boombox.play_effect(preload("res://sounds/man/man_upper_hall_boxroom_op.ogg"))
@@ -66,13 +64,13 @@ func _on_Hotspot2_pressed():
 	EgoVenture.change_scene("res://scenes/man/man11b_op.tscn")
 
 
-func _on_Hotspot3_pressed():
+func _on_Hotspot3_activate():
 	Boombox.play_effect(preload("res://sounds/man/man_upper_boiler_room_op.ogg"))
 	EgoVenture.target_view = "left"
 	EgoVenture.change_scene("res://scenes/man/man11d_op.tscn")
 
 
-func _on_Hotspot_pressed():
+func _on_Hotspot_activate():
 	Speedy.hidden = true
 	Boombox.ignore_pause = true
 	get_tree().paused = true

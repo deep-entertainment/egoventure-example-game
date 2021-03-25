@@ -39,4 +39,4 @@ cursor_type = 12
 target_scene = ""
 target_view = ""
 effect = null
-[connection signal="pressed" from="match_takeable" to="." method="_on_match_takeable_pressed"]
+[connection signal="activate" from="match_takeable" to="." method="_on_match_takeable_activate"]

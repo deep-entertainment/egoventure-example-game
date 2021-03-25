@@ -11,7 +11,8 @@ func _on_Hotspot2_pressed():
 	EgoVenture.change_scene("res://scenes/man/man23.tscn")
 
 
-func _on_Hotspot3_pressed():
+
+
+func _on_Hotspot3_activate():
 	Boombox.play_effect(preload("res://sounds/man/man_fridge_op.ogg"))
 	EgoVenture.change_scene("res://scenes/man/man08a_op.tscn")
-

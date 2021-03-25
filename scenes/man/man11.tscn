@@ -88,10 +88,10 @@ target_view = ""
 effect = ExtResource( 11 )
 
 [node name="Hotspot2" type="TextureButton" parent="."]
-margin_left = 3908.0
-margin_top = 432.0
-margin_right = 4424.0
-margin_bottom = 952.0
+margin_left = 3877.76
+margin_top = 502.556
+margin_right = 4393.76
+margin_bottom = 1022.56
 mouse_default_cursor_shape = 13
 script = ExtResource( 7 )
 __meta__ = {
@@ -132,6 +132,6 @@ target_scene = ""
 target_view = ""
 effect = null
 [connection signal="item_used" from="upper_door_hs" to="." method="_on_TriggerHotspot_item_used"]
-[connection signal="pressed" from="Hotspot2" to="." method="_on_Hotspot2_pressed"]
-[connection signal="pressed" from="Hotspot3" to="." method="_on_Hotspot3_pressed"]
-[connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]
+[connection signal="activate" from="Hotspot2" to="." method="_on_Hotspot2_activate"]
+[connection signal="activate" from="Hotspot3" to="." method="_on_Hotspot3_activate"]
+[connection signal="activate" from="Hotspot" to="." method="_on_Hotspot_activate"]

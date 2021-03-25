@@ -5,14 +5,8 @@ func _ready():
 	EgoVenture.check_cursor()
 
 
-func _on_Hotspot_pressed():
-	Boombox.play_effect(preload("res://sounds/man/man_upper_hall_boxroom_cl.ogg"))
-	EgoVenture.target_view = "right"
-	EgoVenture.change_scene("res://scenes/man/man11.tscn")
 
-
-
-func _on_Hotspot2_pressed():
+func _on_Hotspot2_activate():
 	Boombox.ignore_pause = true
 	get_tree().paused = true
 	Boombox.play_effect(preload("res://sounds/man/man_upper_hall_box_op.ogg"))
@@ -20,3 +14,9 @@ func _on_Hotspot2_pressed():
 	get_tree().paused = false
 	Boombox.ignore_pause = false
 	EgoVenture.change_scene("res://scenes/man/man11b_op_op.tscn")
+
+
+func _on_Hotspot_activate():
+	Boombox.play_effect(preload("res://sounds/man/man_upper_hall_boxroom_cl.ogg"))
+	EgoVenture.target_view = "right"
+	EgoVenture.change_scene("res://scenes/man/man11.tscn")
