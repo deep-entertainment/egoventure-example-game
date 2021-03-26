@@ -6,11 +6,10 @@ func _ready():
 	Cursors.override(Cursors.Type.CUSTOM1, preload("res://images/mouse/hand.png"), Vector2(46, 32))
 
 
-func _on_Hotspot_pressed():
-	Boombox.play_effect(preload("res://sounds/man/man_outer_door_op.ogg"))
 
 
-func _on_Hotspot4_pressed():
+
+func _on_Hotspot4_activate():
 	if (EgoVenture.state as GameState).use_info_will_be_seen == 1:
 		Speedy.hidden = true
 		Boombox.ignore_pause = true
@@ -36,5 +35,3 @@ func _on_Hotspot4_pressed():
 		EgoVenture.check_cursor()
 		EgoVenture.target_view = "front"
 		EgoVenture.change_scene("res://scenes/man/man11.tscn")
-
-

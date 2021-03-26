@@ -92,5 +92,5 @@ cursor_type = 12
 target_scene = ""
 target_view = ""
 effect = null
-[connection signal="pressed" from="Hotspot4" to="." method="_on_Hotspot4_pressed"]
-[connection signal="pressed" from="Hotspot5" to="." method="_on_Hotspot5_pressed"]
+[connection signal="activate" from="Hotspot4" to="." method="_on_Hotspot4_activate"]
+[connection signal="activate" from="Hotspot5" to="." method="_on_Hotspot5_activate"]

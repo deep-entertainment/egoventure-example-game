@@ -6,11 +6,13 @@ func _ready():
 	Cursors.override(Cursors.Type.CUSTOM1, preload("res://images/mouse/curv_right.png"), Vector2(32, 32))
 
 
-func _on_Hotspot_pressed():
+
+func _on_Hotspot2_activate():
+	EgoVenture.change_scene("res://scenes/man/man07b_lift2.tscn")
+
+
+func _on_Hotspot_activate():
 	Boombox.play_effect(preload("res://sounds/man/man_skarbrade_back.ogg"))
 	EgoVenture.target_view = "right"
 	EgoVenture.change_scene("res://scenes/man/man07.tscn")
 
-
-func _on_Hotspot2_pressed():
-	EgoVenture.change_scene("res://scenes/man/man07b_lift2.tscn")

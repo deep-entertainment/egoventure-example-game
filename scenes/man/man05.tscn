@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://addons/egoventure/nodes/four_side_room.tscn" type="PackedScene" id=1]
 [ext_resource path="res://images/man/man05d.jpg" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=6]
 [ext_resource path="res://scenes/man/man05.gd" type="Script" id=7]
 [ext_resource path="res://images/misc/black.jpg" type="Texture" id=8]
+[ext_resource path="res://sounds/man/man_outer_door_op.ogg" type="AudioStream" id=9]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 7 )
@@ -32,7 +33,7 @@ __meta__ = {
 cursor_type = 12
 target_scene = "res://scenes/man/man04.tscn"
 target_view = "back"
-effect = null
+effect = ExtResource( 9 )
 
 [node name="Hotspot2" type="TextureButton" parent="."]
 margin_left = 3329.64
@@ -84,5 +85,4 @@ visible = false
 position = Vector2( 0, -1440 )
 texture = ExtResource( 8 )
 centered = false
-[connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]
-[connection signal="pressed" from="Hotspot4" to="." method="_on_Hotspot4_pressed"]
+[connection signal="activate" from="Hotspot4" to="." method="_on_Hotspot4_activate"]
