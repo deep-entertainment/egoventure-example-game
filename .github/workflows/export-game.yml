@@ -33,6 +33,33 @@ jobs:
           ITCH_USER: deepgames
           PACKAGE: build/windows
 
+  export-windowsi386:
+    name: Windows Export
+    runs-on: ubuntu-latest
+    container:
+      image: barichello/godot-ci:3.2.3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/templates
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
+      - name: Windows Build
+        run: |
+          mkdir -v -p build/windows
+          godot -v --export "Windows Desktop i386" build/windows/$EXPORT_NAME.exe
+      - name: Upload to itch.io
+        uses: josephbmanley/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
+          CHANNEL: windows
+          ITCH_GAME: carol-refurbished
+          ITCH_USER: deepgames
+          PACKAGE: build/windows-i386
+
   export-linux:
     name: Linux Export
     runs-on: ubuntu-latest
