@@ -2,7 +2,6 @@ extends Node2D
 
 
 func _ready():
-	EgoVenture.check_cursor()
 	(EgoVenture.state as GameState).man_folder_seen = 1
 	Notepad.finished_step(3, 1)
 

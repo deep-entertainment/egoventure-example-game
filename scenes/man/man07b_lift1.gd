@@ -2,7 +2,6 @@ extends Node2D
 
 
 func _ready():
-	EgoVenture.check_cursor()
 	Cursors.override(Cursors.Type.CUSTOM1, preload("res://images/mouse/curv_right.png"), Vector2(32, 32))
 
 

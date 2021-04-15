@@ -2,7 +2,6 @@ extends Node2D
 
 
 func _ready():
-	EgoVenture.check_cursor()
 	$bur_j.hide()
 	$bur_k.hide()
 	$bur_b.hide()

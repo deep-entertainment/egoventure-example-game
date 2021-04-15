@@ -2,7 +2,6 @@ extends Node2D
 
 
 func _ready():
-	EgoVenture.check_cursor()
 	(EgoVenture.state as GameState).match_takeable = true
 
 

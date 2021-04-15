@@ -3,7 +3,6 @@ extends Node2D
 
 func _ready():
 	check_hotspots()
-	EgoVenture.check_cursor()
 	
 
 func _process(_delta):

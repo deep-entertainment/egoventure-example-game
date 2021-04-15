@@ -2,7 +2,6 @@ extends Node2D
 
 
 func _ready():
-	EgoVenture.check_cursor()
 	Cursors.override(Cursors.Type.CORNER_LEFT, preload("res://images/mouse/common.png"), Vector2(32, 32))
 
 func _on_TriggerHotspot_item_used(item):

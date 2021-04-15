@@ -2,7 +2,6 @@ extends Node2D
 
 
 func _ready():
-	EgoVenture.check_cursor()
 	Boombox.play_background(preload("res://sounds/man/home_fridge_bg.ogg")) 
 
 

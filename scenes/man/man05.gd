@@ -32,6 +32,5 @@ func _on_Hotspot4_activate():
 		get_tree().paused = false
 		Boombox.ignore_pause = false
 		Speedy.hidden = false
-		EgoVenture.check_cursor()
 		EgoVenture.target_view = "front"
 		EgoVenture.change_scene("res://scenes/man/man11.tscn")

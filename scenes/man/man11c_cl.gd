@@ -1,10 +1,5 @@
 extends Node2D
 
-
-func _ready():
-	EgoVenture.check_cursor()
-
-
 func _on_TriggerHotspot_item_used(item: InventoryItem):
 	if item.title == "screwdriver":
 		Boombox.ignore_pause = true

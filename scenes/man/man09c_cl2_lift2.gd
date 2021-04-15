@@ -1,11 +1,5 @@
 extends Node2D
 
-
-func _ready():
-	EgoVenture.check_cursor()
-
-
-
 func _on_Hotspot_activate():
 	Boombox.play_effect(preload("res://sounds/man/man_matchkey_up.ogg"))
 	(EgoVenture.state as GameState).use_info_will_be_seen = 1

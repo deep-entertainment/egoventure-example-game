@@ -3,7 +3,6 @@ extends Node2D
 var man_diary_open
 
 func _ready():
-	EgoVenture.check_cursor()
 	$diary_pink.hide()
 	$diary_yel.hide()
 	$diary_blue.hide()

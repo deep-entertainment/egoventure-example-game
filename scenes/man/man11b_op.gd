@@ -1,11 +1,6 @@
 extends Node2D
 
 
-func _ready():
-	EgoVenture.check_cursor()
-
-
-
 func _on_Hotspot2_activate():
 	Boombox.ignore_pause = true
 	get_tree().paused = true

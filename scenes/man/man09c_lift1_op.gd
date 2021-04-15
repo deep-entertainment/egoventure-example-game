@@ -1,7 +1,6 @@
 extends Node2D
 
 func _ready():
-	EgoVenture.check_cursor()
 	(EgoVenture.state as GameState).raze_seen = 1
 
 

@@ -2,7 +2,6 @@ extends Node2D
 
 
 func _ready():
-	EgoVenture.check_cursor()
 	MainMenu.disabled = false
 	EgoVenture.game_started = true
 	Inventory.enable()

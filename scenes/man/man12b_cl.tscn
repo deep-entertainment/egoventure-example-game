@@ -1,12 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://images/man/man12b_cl.jpg" type="Texture" id=1]
 [ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=2]
-[ext_resource path="res://scenes/man/man12b_cl.gd" type="Script" id=3]
 [ext_resource path="res://sounds/man/man_upper_right_cabinet_op.ogg" type="AudioStream" id=4]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -25,7 +23,6 @@ __meta__ = {
 cursor_type = 2
 target_scene = "res://scenes/man/man12.tscn"
 target_view = "right"
-effect = null
 
 [node name="Hotspot2" type="TextureButton" parent="."]
 margin_left = 784.177
@@ -39,5 +36,4 @@ __meta__ = {
 }
 cursor_type = 12
 target_scene = "res://scenes/man/man12b_op.tscn"
-target_view = ""
 effect = ExtResource( 4 )

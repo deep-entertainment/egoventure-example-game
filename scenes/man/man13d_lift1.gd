@@ -3,7 +3,6 @@ var cigbox_opened
 
 
 func _ready():
-	EgoVenture.check_cursor()
 	$cigbox_a.hide()
 	$cigbox_m.hide()
 	$cigbox_b.hide()
