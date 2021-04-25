@@ -2,7 +2,7 @@
   "title": "EgoVenture Sample Game",
   "description": "An example game by MDNA games made using the Egoventure framework",
   "category_id": "10",
-  "godot_version": "3.2",
+  "godot_version": "3.3",
   "version_string": "{{ context.release.tag_name }}",
   "cost": "MIT",
   "download_provider": "GitHub",
