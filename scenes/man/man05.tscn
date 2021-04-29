@@ -14,7 +14,6 @@
 script = ExtResource( 7 )
 
 [node name="Room" parent="." instance=ExtResource( 1 )]
-default_view = "front"
 front_texture = ExtResource( 5 )
 right_texture = ExtResource( 4 )
 back_texture = ExtResource( 2 )
@@ -40,15 +39,13 @@ margin_left = 3329.64
 margin_top = 409.633
 margin_right = 4270.64
 margin_bottom = 1276.63
-mouse_default_cursor_shape = 5
+mouse_default_cursor_shape = 3
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-cursor_type = 13
 target_scene = "res://scenes/man/man10.tscn"
 target_view = "left"
-effect = null
 
 [node name="Hotspot3" type="TextureButton" parent="."]
 margin_left = -1409.36
@@ -60,10 +57,7 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-cursor_type = 1
 target_scene = "res://scenes/man/man06.tscn"
-target_view = ""
-effect = null
 
 [node name="Hotspot4" type="TextureButton" parent="."]
 margin_left = 513.082
@@ -76,13 +70,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 6
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="man_stairs" type="Sprite" parent="."]
 visible = false
 position = Vector2( 0, -1440 )
 texture = ExtResource( 8 )
 centered = false
+
 [connection signal="activate" from="Hotspot4" to="." method="_on_Hotspot4_activate"]

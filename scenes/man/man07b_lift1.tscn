@@ -21,23 +21,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 2
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="Hotspot2" type="TextureButton" parent="."]
-margin_left = 622.253
-margin_top = 305.469
-margin_right = 1952.25
-margin_bottom = 1046.47
+margin_left = 616.596
+margin_top = 294.155
+margin_right = 1946.59
+margin_bottom = 1035.16
 mouse_default_cursor_shape = 7
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-cursor_type = 14
-target_scene = ""
-target_view = ""
-effect = null
+cursor_type = 13
+
 [connection signal="activate" from="Hotspot" to="." method="_on_Hotspot_activate"]
 [connection signal="activate" from="Hotspot2" to="." method="_on_Hotspot2_activate"]
