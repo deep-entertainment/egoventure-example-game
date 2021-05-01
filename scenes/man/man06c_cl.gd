@@ -3,6 +3,13 @@ extends Node2D
 
 func _ready():
 	check_hotspots()
+	get_tree().paused = true
+	Speedy.hidden = true
+	yield(get_tree().create_timer(1.4), "timeout")
+	Parrot.play(preload("res://dialogs/carol_shape.tres"))
+	Speedy.hidden = false
+	get_tree().paused = false
+
 	
 
 func _process(_delta):
