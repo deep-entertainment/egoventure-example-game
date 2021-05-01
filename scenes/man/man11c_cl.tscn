@@ -42,5 +42,5 @@ __meta__ = {
 cursor_type = 2
 target_scene = "res://scenes/man/man11.tscn"
 target_view = "back"
-effect = null
+
 [connection signal="item_used" from="TriggerHotspot" to="." method="_on_TriggerHotspot_item_used"]

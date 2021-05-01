@@ -23,5 +23,3 @@ __meta__ = {
 }
 cursor_type = 8
 target_scene = "res://scenes/man/man03b_cl.tscn"
-target_view = ""
-effect = null

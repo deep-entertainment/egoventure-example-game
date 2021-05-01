@@ -41,7 +41,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
+cursor_type = 11
 target_scene = "res://scenes/brother/bro1.tscn"
 loading_image = ExtResource( 2 )
 location_music = ExtResource( 9 )
@@ -59,7 +59,7 @@ script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-hotspot_type = 11
+cursor_type = 11
 target_scene = "res://scenes/man/man01.tscn"
 loading_image = ExtResource( 6 )
 location_music = ExtResource( 7 )
@@ -69,10 +69,10 @@ state_variable = "map_kevo_new"
 [node name="map_kevo_new" type="AnimatedSprite" parent="."]
 position = Vector2( 1162.01, 455.205 )
 frames = SubResource( 1 )
-frame = 1
 playing = true
 
 [node name="map_bro_new" type="AnimatedSprite" parent="."]
 position = Vector2( 308.996, 374.547 )
 frames = SubResource( 1 )
+frame = 1
 playing = true

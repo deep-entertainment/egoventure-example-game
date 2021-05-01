@@ -14,7 +14,6 @@ script = ExtResource( 8 )
 
 [node name="Room" parent="." instance=ExtResource( 1 )]
 position = Vector2( 4, 4 )
-default_view = "front"
 front_texture = ExtResource( 4 )
 right_texture = ExtResource( 2 )
 back_texture = ExtResource( 3 )
@@ -47,8 +46,6 @@ __meta__ = {
 }
 cursor_type = 8
 target_scene = "res://scenes/man/man12b_cl.tscn"
-target_view = ""
-effect = null
 
 [node name="Hotspot3" type="TextureButton" parent="."]
 margin_left = -1563.8
@@ -62,8 +59,6 @@ __meta__ = {
 }
 cursor_type = 8
 target_scene = "res://scenes/man/man12f_cl.tscn"
-target_view = ""
-effect = null
 
 [node name="hs_on_ins" type="TextureButton" parent="."]
 margin_left = 332.0
@@ -77,5 +72,3 @@ __meta__ = {
 }
 cursor_type = 8
 target_scene = "res://scenes/man/man12d_cl.tscn"
-target_view = ""
-effect = null

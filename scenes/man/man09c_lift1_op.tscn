@@ -21,9 +21,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 2
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="Sprite2" type="Sprite" parent="."]
 texture = ExtResource( 3 )
@@ -31,4 +28,5 @@ centered = false
 __meta__ = {
 "_edit_lock_": true
 }
+
 [connection signal="activate" from="Hotspot" to="." method="_on_Hotspot_activate"]

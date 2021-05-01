@@ -28,9 +28,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 2
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="Hotspot2" type="TextureButton" parent="."]
 margin_left = 1453.7
@@ -44,7 +41,6 @@ __meta__ = {
 }
 cursor_type = 12
 target_scene = "res://scenes/man/man12f_lift3.tscn"
-target_view = ""
 effect = ExtResource( 4 )
 
 [node name="screwdr_hs" type="TextureButton" parent="."]
@@ -60,6 +56,6 @@ __meta__ = {
 }
 cursor_type = 12
 target_scene = "res://scenes/man/man12f_lift2.tscn"
-target_view = ""
 effect = ExtResource( 6 )
+
 [connection signal="activate" from="Hotspot" to="." method="_on_Hotspot_activate"]

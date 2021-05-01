@@ -38,9 +38,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 12
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="Hotspot" type="TextureButton" parent="."]
 margin_left = -17.1189
@@ -55,6 +52,6 @@ __meta__ = {
 cursor_type = 2
 target_scene = "res://scenes/man/man06.tscn"
 target_view = "back"
-effect = null
+
 [connection signal="item_used" from="TriggerHotspot" to="." method="_on_TriggerHotspot_item_used"]
 [connection signal="activate" from="man_hand_on_insex" to="." method="_on_man_hand_on_insex_activate"]

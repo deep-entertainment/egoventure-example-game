@@ -28,7 +28,6 @@ __meta__ = {
 }
 cursor_type = 2
 target_scene = "res://scenes/man/man12f_lift1.tscn"
-target_view = ""
 effect = ExtResource( 4 )
 
 [node name="screwdr_hs" type="Sprite" parent="."]

@@ -36,9 +36,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 12
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="cigbox_m" type="Sprite" parent="."]
 visible = false
@@ -57,9 +54,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 12
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="cigbox_b" type="Sprite" parent="."]
 visible = false
@@ -78,9 +72,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 12
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="cigbox_e" type="Sprite" parent="."]
 visible = false
@@ -99,9 +90,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 12
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="cigbox_r" type="Sprite" parent="."]
 visible = false
@@ -120,9 +108,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 12
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="cigbox_t" type="Sprite" parent="."]
 visible = false
@@ -141,9 +126,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 12
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="cigbox_z" type="Sprite" parent="."]
 visible = false
@@ -162,9 +144,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 12
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="Hotspot8" type="TextureButton" parent="."]
 margin_left = -16.0
@@ -178,8 +157,8 @@ __meta__ = {
 }
 cursor_type = 2
 target_scene = "res://scenes/man/man13d_op.tscn"
-target_view = ""
 effect = ExtResource( 11 )
+
 [connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]
 [connection signal="pressed" from="Hotspot2" to="." method="_on_Hotspot2_pressed"]
 [connection signal="pressed" from="Hotspot3" to="." method="_on_Hotspot3_pressed"]

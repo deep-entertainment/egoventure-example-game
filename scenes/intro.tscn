@@ -22,9 +22,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 0
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="cred2" type="TextureButton" parent="."]
 margin_right = 40.0
@@ -35,12 +32,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 0
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 autoplay = true
 bus = "Music"
+
 [connection signal="pressed" from="cred1" to="." method="_on_cred1_pressed"]
 [connection signal="pressed" from="cred2" to="." method="_on_cred2_pressed"]

@@ -15,7 +15,6 @@
 script = ExtResource( 8 )
 
 [node name="Room" parent="." instance=ExtResource( 1 )]
-default_view = "front"
 front_texture = ExtResource( 3 )
 right_texture = ExtResource( 5 )
 back_texture = ExtResource( 4 )
@@ -33,7 +32,6 @@ __meta__ = {
 }
 cursor_type = 12
 target_scene = "res://scenes/man/man13d_op.tscn"
-target_view = ""
 effect = ExtResource( 7 )
 
 [node name="Hotspot2" type="TextureButton" parent="."]
@@ -46,9 +44,7 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-cursor_type = 1
 target_scene = "res://scenes/man/man11c_cl.tscn"
-target_view = ""
 effect = ExtResource( 9 )
 
 [node name="Hotspot3" type="TextureButton" parent="."]
@@ -61,9 +57,7 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-cursor_type = 1
 target_scene = "res://scenes/man/man11.tscn"
-target_view = ""
 effect = ExtResource( 10 )
 
 [node name="Hotspot4" type="TextureButton" parent="."]
@@ -78,5 +72,3 @@ __meta__ = {
 }
 cursor_type = 8
 target_scene = "res://scenes/man/man13b_cl.tscn"
-target_view = ""
-effect = null

@@ -25,4 +25,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 valid_inventory_items = [ ExtResource( 3 ) ]
+
 [connection signal="item_used" from="TriggerHotspot" to="." method="_on_TriggerHotspot_item_used"]

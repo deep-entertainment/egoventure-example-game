@@ -22,7 +22,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 2
-target_scene = ""
-target_view = ""
-effect = null
+
 [connection signal="activate" from="Hotspot" to="." method="_on_Hotspot_activate"]

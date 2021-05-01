@@ -24,7 +24,6 @@ __meta__ = {
 }
 cursor_type = 2
 target_scene = "res://scenes/man/man12f_cl.tscn"
-target_view = ""
 effect = ExtResource( 3 )
 
 [node name="Hotspot2" type="TextureButton" parent="."]
@@ -38,7 +37,5 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 12
-target_scene = ""
-target_view = ""
-effect = null
+
 [connection signal="activate" from="Hotspot2" to="." method="_on_Hotspot2_activate"]

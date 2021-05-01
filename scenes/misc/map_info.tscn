@@ -23,5 +23,3 @@ __meta__ = {
 }
 cursor_type = 11
 target_scene = "res://scenes/misc/map.tscn"
-target_view = ""
-effect = null

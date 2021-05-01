@@ -35,7 +35,6 @@ __meta__ = {
 cursor_type = 2
 target_scene = "res://scenes/man/man12.tscn"
 target_view = "left"
-effect = null
 
 [node name="bur_j" type="Sprite" parent="."]
 visible = false
@@ -90,9 +89,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 12
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="Hotspot3" type="TextureButton" parent="."]
 margin_left = 1101.49
@@ -105,9 +101,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 12
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="Hotspot4" type="TextureButton" parent="."]
 margin_left = 966.0
@@ -120,9 +113,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 12
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="Hotspot5" type="TextureButton" parent="."]
 margin_left = 1231.0
@@ -135,9 +125,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 12
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="Hotspot6" type="TextureButton" parent="."]
 margin_left = 1464.0
@@ -150,9 +137,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 12
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="Hotspot7" type="TextureButton" parent="."]
 margin_left = 1465.0
@@ -165,9 +149,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 12
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="Hotspot8" type="TextureButton" parent="."]
 margin_left = 781.0
@@ -180,9 +161,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 12
-target_scene = ""
-target_view = ""
-effect = null
 
 [node name="man_hand_on_bur" type="TextureButton" parent="."]
 margin_left = 262.0
@@ -196,8 +174,8 @@ __meta__ = {
 }
 cursor_type = 12
 target_scene = "res://scenes/man/man12f_op.tscn"
-target_view = ""
 effect = ExtResource( 11 )
+
 [connection signal="pressed" from="Hotspot2" to="." method="_on_Hotspot2_pressed"]
 [connection signal="pressed" from="Hotspot3" to="." method="_on_Hotspot3_pressed"]
 [connection signal="pressed" from="Hotspot4" to="." method="_on_Hotspot4_pressed"]

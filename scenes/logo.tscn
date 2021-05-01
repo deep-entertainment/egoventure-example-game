@@ -26,8 +26,5 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-cursor_type = 1
-target_scene = ""
-target_view = ""
-effect = null
+
 [connection signal="pressed" from="Hotspot" to="." method="_on_Hotspot_pressed"]
