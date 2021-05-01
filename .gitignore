@@ -9,6 +9,3 @@ export.cfg
 # Mono-specific ignores
 .mono/
 data_*/
-theme.tres
-scenes/logo.tscn
-scenes/misc/map.tscn
