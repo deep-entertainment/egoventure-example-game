@@ -150,6 +150,7 @@ menu_saveslots_previous_image = ExtResource( 3 )
 menu_saveslots_next_image = ExtResource( 7 )
 menu_saveslots_empty_color = Color( 0, 0, 0, 0.639216 )
 menu_saveslots_free_text = "Free save slot"
+menu_saveslots_date_format = "{month}/{day}/{year} {hour}:{minute}"
 inventory_size = 113
 inventory_texture_menu = ExtResource( 26 )
 inventory_texture_notepad = ExtResource( 11 )
