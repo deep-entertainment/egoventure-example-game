@@ -59,9 +59,7 @@ margin_left = 390.833
 margin_top = -618.635
 margin_right = 919.833
 margin_bottom = -156.635
-focus_mode = 0
 mouse_default_cursor_shape = 2
-enabled_focus_mode = 0
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -69,10 +67,10 @@ __meta__ = {
 valid_inventory_items = [ ExtResource( 10 ) ]
 
 [node name="hand_on_first_door" type="TextureButton" parent="."]
-margin_left = 504.0
-margin_top = -585.0
-margin_right = 887.0
-margin_bottom = -192.0
+margin_left = 349.205
+margin_top = -464.184
+margin_right = 732.205
+margin_bottom = -71.1841
 mouse_default_cursor_shape = 13
 script = ExtResource( 7 )
 __meta__ = {

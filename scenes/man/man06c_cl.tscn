@@ -18,9 +18,7 @@ margin_left = 938.685
 margin_top = 447.094
 margin_right = 1648.69
 margin_bottom = 940.094
-focus_mode = 0
 mouse_default_cursor_shape = 2
-enabled_focus_mode = 0
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
