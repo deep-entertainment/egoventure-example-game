@@ -5,3 +5,4 @@ func _ready():
 	MainMenu.toggle()
 	MainMenu.disabled = true
 	MainMenu.saveable = false
+	EgoVenture.check_cursor()
