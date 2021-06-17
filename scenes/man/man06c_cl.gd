@@ -1,21 +1,21 @@
 extends Node2D
 
 
-func _ready():
-	check_hotspots()
+#func _ready():
+#	check_hotspots()
 
 	
 
-func _process(_delta):
-	check_hotspots()
-	
-
-func check_hotspots():
-	var state = EgoVenture.state
-	if state.man_hand_on_insex:
-		$man_hand_on_insex.show()
-	else:
-		$man_hand_on_insex.hide()
+#func _process(_delta):
+#	check_hotspots()
+#
+#
+#func check_hotspots():
+#	var state = EgoVenture.state
+#	if state.man_hand_on_insex:
+#		$man_hand_on_insex.show()
+#	else:
+#		$man_hand_on_insex.hide()
 
 
 func _on_TriggerHotspot_item_used(item):

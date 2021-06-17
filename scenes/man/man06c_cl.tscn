@@ -18,6 +18,7 @@ margin_left = 938.685
 margin_top = 447.094
 margin_right = 1648.69
 margin_bottom = 940.094
+focus_mode = 0
 mouse_default_cursor_shape = 2
 script = ExtResource( 4 )
 __meta__ = {
@@ -36,6 +37,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 12
+visibility_state = "man_hand_on_insex"
 
 [node name="Hotspot" type="TextureButton" parent="."]
 margin_left = -17.1189
