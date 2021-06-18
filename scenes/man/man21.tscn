@@ -30,3 +30,16 @@ __meta__ = {
 }
 target_scene = "res://scenes/man/man20.tscn"
 target_view = "back"
+
+[node name="Hotspot2" type="TextureButton" parent="."]
+margin_left = 719.484
+margin_top = -1389.95
+margin_right = 1864.48
+margin_bottom = -106.945
+mouse_default_cursor_shape = 13
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+cursor_type = 12
+visibility_state = "temp_hand"
