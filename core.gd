@@ -34,6 +34,7 @@ func _on_new_game():
 func _initialization():
 	var state = GameState.new()
 	EgoVenture.state = state
+	(EgoVenture.state as GameState).map_kevo = true
 	
 func _on_load():
 	pass
