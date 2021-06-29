@@ -35,4 +35,3 @@ export (int) var menu_info_seen
 export(bool) var test_hs = false
 export (int) var bro_spoken_to
 export(bool) var temp_hand = false
-export (bool) var test_hotspot = false
