@@ -2,5 +2,5 @@ extends Node2D
 
 
 func _ready():
-	Boombox.play_music(preload("res://music/piano.ogg"))
+	Boombox.play_background(preload("res://sounds/backgrounds/bee_bg3.ogg")) 
 

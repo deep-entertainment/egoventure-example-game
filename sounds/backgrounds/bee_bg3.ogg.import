@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bee_bg3.ogg-6e29c7660ebf6bac903f7fd43302c104.oggstr"
+
+[deps]
+
+source_file="res://sounds/backgrounds/bee_bg3.ogg"
+dest_files=[ "res://.import/bee_bg3.ogg-6e29c7660ebf6bac903f7fd43302c104.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
