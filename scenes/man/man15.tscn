@@ -39,3 +39,30 @@ __meta__ = {
 }
 target_scene = "res://scenes/man/man14.tscn"
 target_view = "back"
+
+[node name="left_extra" type="TextureButton" parent="."]
+margin_left = 2535.0
+margin_top = -43.0
+margin_right = 3089.0
+margin_bottom = 1467.0
+mouse_default_cursor_shape = 13
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+cursor_type = 12
+target_scene = "res://scenes/man/man15.tscn"
+
+[node name="right_extra" type="TextureButton" parent="."]
+margin_left = 4661.0
+margin_top = -14.0
+margin_right = 5149.0
+margin_bottom = 1477.0
+mouse_default_cursor_shape = 13
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+cursor_type = 12
+target_scene = "res://scenes/man/man15.tscn"
+target_view = "back"
