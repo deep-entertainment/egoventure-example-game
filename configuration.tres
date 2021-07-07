@@ -165,6 +165,7 @@ notepad_hints_rect = Rect2( 1243, 325, 545, 763 )
 tools_map_image = ExtResource( 22 )
 tools_map_sound = ExtResource( 27 )
 tools_navigation_width = 420.0
+tools_dialog_stretch_ratio = 2.0
 tools_music_fader_seconds = 0.5
 tools_background_fader_seconds = 0.5
 cache_scene_path = "res://scenes"
