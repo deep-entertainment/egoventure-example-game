@@ -10,6 +10,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
+              with:
+                fetch-depth: 0
             - name: "Create Version"
               id: create_version
               uses: paulhatch/semantic-version@v4.0.2
