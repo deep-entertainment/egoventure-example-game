@@ -22,6 +22,9 @@ jobs:
                 format: "${major}.${minor}.${patch}-pre${increment}"
                 short_tags: false
                 bump_each_commit: false
+            - name: "Tag prerelease"
+              id: tag_version
+              run: git tag ${{steps.create_version.outputs.version}}
             - name: "Build Changelog"
               id: build_changelog
               uses: mikepenz/release-changelog-builder-action@v2.1.0
@@ -34,11 +37,14 @@ jobs:
                 then
                     CHANGELOG=$(cat CHANGELOG)
                 fi
-                echo -e "${{steps.create_version.outputs.version}}\n\n${{steps.build_changelog.outputs.changelog}}\n\n${CHANGELOG}" > CHANGELOG
+                echo -e "${{steps.create_version.outputs.version_tag}}\n\n${{steps.build_changelog.outputs.changelog}}\n\n${CHANGELOG}" > CHANGELOG
             - name: "Commit"
               uses: EndBug/add-and-commit@v7.2.1
               with:
                 message: 'chore: bumping version and storing changelog'
                 push: false
+            - name: "Tag release"
+              id: tag_version
+              run: git tag ${{steps.create_version.outputs.version_tag}}
             - name: Setup tmate session
               uses: mxschmitt/action-tmate@v3
