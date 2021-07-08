@@ -12,27 +12,11 @@ jobs:
             - uses: actions/checkout@v2
               with:
                 fetch-depth: 0
-            - name: "Create Version"
+            - name: Create version
               id: create_version
-              uses: paulhatch/semantic-version@v4.0.2
-              with:
-                tag_prefix: ""
-                major_pattern: "(MAJOR)"
-                minor_pattern: "(MINOR)"
-                format: "${major}.${minor}.${patch}-pre${increment}"
-                short_tags: false
-                bump_each_commit: false
-            - name: Bump version and push tag
-              id: tag_prerelease
               uses: mathieudutour/github-tag-action@v5.5
               with:
                 github_token: ${{ secrets.GITHUB_TOKEN }}
-                custom_tag: ${{steps.create_version.outputs.version}}
-            - name: "Build Changelog"
-              id: build_changelog
-              uses: mikepenz/release-changelog-builder-action@v2.1.0
-              env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             - name: "Write changelog"
               run: |
                 CHANGELOG=""
@@ -40,14 +24,11 @@ jobs:
                 then
                     CHANGELOG=$(cat CHANGELOG)
                 fi
-                echo -e "${{steps.create_version.outputs.version_tag}}\n\n${{steps.build_changelog.outputs.changelog}}\n\n${CHANGELOG}" > CHANGELOG
+                echo -e "${{steps.create_version.outputs.changelog}}\n\n${CHANGELOG}" > CHANGELOG
             - name: "Commit"
               uses: EndBug/add-and-commit@v7.2.1
               with:
                 message: 'chore: bumping version and storing changelog'
                 push: false
-            - name: "Tag release"
-              id: tag_release
-              run: git tag ${{steps.create_version.outputs.version_tag}}
             - name: Setup tmate session
               uses: mxschmitt/action-tmate@v3
