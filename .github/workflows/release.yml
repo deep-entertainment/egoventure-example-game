@@ -23,7 +23,7 @@ jobs:
                 short_tags: false
                 bump_each_commit: false
             - name: "Tag prerelease"
-              id: tag_version
+              id: tag_prerelease
               run: git tag ${{steps.create_version.outputs.version}}
             - name: "Build Changelog"
               id: build_changelog
@@ -44,7 +44,7 @@ jobs:
                 message: 'chore: bumping version and storing changelog'
                 push: false
             - name: "Tag release"
-              id: tag_version
+              id: tag_release
               run: git tag ${{steps.create_version.outputs.version_tag}}
             - name: Setup tmate session
               uses: mxschmitt/action-tmate@v3
