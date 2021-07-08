@@ -1,0 +1,41 @@
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    release:
+        name: Release
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: "Create Version"
+              id: create_version
+              uses: paulhatch/semantic-version@v4.0.2
+              with:
+                tag_prefix: ""
+                major_pattern: "(MAJOR)"
+                minor_pattern: "(MINOR)"
+                format: "${major}.${minor}.${patch}-pre${increment}"
+                short_tags: false
+                bump_each_commit: false
+            - name: "Build Changelog"
+              id: build_changelog
+              uses: mikepenz/release-changelog-builder-action@{latest-release}
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+            - name: "Write changelog"
+              run: |
+                CHANGELOG=""
+                if [ -e CHANGELOG ]
+                then
+                    CHANGELOG=$(cat CHANGELOG)
+                fi
+                echo -e "${{steps.create_version.outputs.version}}\n\n${{steps.build_changelog.outputs.changelog}}\n\n${CHANGELOG}" > CHANGELOG
+            - name: "Commit"
+              uses: EndBug/add-and-commit@v7
+              with:
+                message: 'chore: bumping version and storing changelog'
+                push: false
+            - name: Setup tmate session
+              uses: mxschmitt/action-tmate@v3
