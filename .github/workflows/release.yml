@@ -12,12 +12,13 @@ jobs:
             - uses: actions/checkout@v2
               with:
                 fetch-depth: 0
+                token: ${{ secrets.DEPLOYMENT_TOKEN }}
             - name: Create version
               id: create_version
               uses: mathieudutour/github-tag-action@v5.5
               with:
                 tag_prefix: ""
-                github_token: ${{ secrets.GITHUB_TOKEN }}
+                github_token: ${{ secrets.DEPLOYMENT_TOKEN }}
             - name: "Write changelog"
               run: |
                 CHANGELOG=""
@@ -31,11 +32,10 @@ jobs:
               with:
                 message: 'chore: bumping version and storing changelog'
                 push: true
-                github_token: ${{ secrets.GITHUB_TOKEN }}
             - name: Create a GitHub release
               uses: actions/create-release@v1
               env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_TOKEN }}
               with:
                 tag_name: ${{ steps.create_version.outputs.new_tag }}
                 release_name: ${{ steps.create_version.outputs.new_tag }}
