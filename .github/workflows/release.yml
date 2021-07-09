@@ -1,41 +1,60 @@
+name: "Release new version"
+
 on:
     push:
         branches:
             - main
 
 jobs:
+    prerelease:
+        if: "${{ github.event.head_commit.message != 'chore: storing version and changelog' }}"
+        name: Preparing release
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                fetch-depth: 0
+                token: ${{ secrets.DEPLOYMENT_TOKEN }}
+            - name: Calculate version
+              id: calculate_version
+              uses: mathieudutour/github-tag-action@v5.5
+              with:
+                tag_prefix: ""
+                github_token: ${{ secrets.DEPLOYMENT_TOKEN }}
+                dry_run: true
+            - name: "Write changelog"
+              run: |
+                CHANGELOG=""
+                if [ -e CHANGELOG.md ]
+                then
+                    CHANGELOG=$(cat CHANGELOG.md)
+                fi
+                echo -e "${{steps.calculate_version.outputs.changelog}}\n\n${CHANGELOG}" > CHANGELOG.md
+            - name: "Commit"
+              uses: EndBug/add-and-commit@v7.2.1
+              with:
+                message: 'chore: storing version and changelog'
+                push: true
     release:
+        if: "${{ github.event.head_commit.message == 'chore: storing version and changelog' }}"
         name: Release
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
-            - name: "Create Version"
+              with:
+                fetch-depth: 0
+                token: ${{ secrets.DEPLOYMENT_TOKEN }}
+            - name: Create version
               id: create_version
-              uses: paulhatch/semantic-version@v4.0.2
+              uses: mathieudutour/github-tag-action@v5.5
               with:
                 tag_prefix: ""
-                major_pattern: "(MAJOR)"
-                minor_pattern: "(MINOR)"
-                format: "${major}.${minor}.${patch}-pre${increment}"
-                short_tags: false
-                bump_each_commit: false
-            - name: "Build Changelog"
-              id: build_changelog
-              uses: mikepenz/release-changelog-builder-action@{latest-release}
+                github_token: ${{ secrets.DEPLOYMENT_TOKEN }}
+            - name: Create a GitHub release
+              uses: actions/create-release@v1
               env:
-                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            - name: "Write changelog"
-              run: |
-                CHANGELOG=""
-                if [ -e CHANGELOG ]
-                then
-                    CHANGELOG=$(cat CHANGELOG)
-                fi
-                echo -e "${{steps.create_version.outputs.version}}\n\n${{steps.build_changelog.outputs.changelog}}\n\n${CHANGELOG}" > CHANGELOG
-            - name: "Commit"
-              uses: EndBug/add-and-commit@v7
+                GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_TOKEN }}
               with:
-                message: 'chore: bumping version and storing changelog'
-                push: false
-            - name: Setup tmate session
-              uses: mxschmitt/action-tmate@v3
+                tag_name: ${{ steps.create_version.outputs.new_tag }}
+                release_name: ${{ steps.create_version.outputs.new_tag }}
+                body: ${{ steps.create_version.outputs.changelog }} 
