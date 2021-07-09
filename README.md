@@ -21,3 +21,12 @@ So there's no active development here per se, but rather tests and optimizations
 Still, if you like to implement a new feature or fix a bug in the addons, feel free to fork and use the repository for that.
 
 We're happy to check out any pull request you might send. Thanks for your support!
+
+This repository is also used as a starting point for modifications of the other plugins. To publish the changes from this repository to the other repositories, clone the following repositories into one directory and call `publish.sh` from this repository:
+
+* [egoventure](https://github.com/deep-entertainment/egoventure)
+* [parrot](https://github.com/deep-entertainment/parrot)
+* [speedy_gonzales](https://github.com/deep-entertainment/speedy_gonzales)
+* [egoventure-game-template](https://github.com/deep-entertainment/egoventure-game-template)
+
+This will sync the changes and update the API docs.
