@@ -1,5 +1,8 @@
 name: "Godot export"
-on: push
+on:
+    release:
+        types:
+          - published
 
 env:
   GODOT_VERSION: 3.3
