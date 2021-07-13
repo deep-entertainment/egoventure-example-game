@@ -34,6 +34,7 @@ func _on_new_game():
 func _initialization():
 	var state = GameState.new()
 	EgoVenture.state = state
+	Inventory.add_item(preload("res://inventory/matchkey.tres"))
 	
 func _on_load():
 	pass
