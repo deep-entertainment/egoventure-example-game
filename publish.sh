@@ -66,16 +66,6 @@ echo
 echo "Generating docs"
 echo "==============="
 
-echo "Generating EvoVenture API docs..."
-rm -rf egoventure/docs/api &>/dev/null
-if ! OUTPUT=$(docker run --rm -v $(pwd)/egoventure-example-game:/game -v $(pwd)/egoventure/docs/api:/export gdquest/gdscript-docs-maker:1 /game -o /export -d addons/egoventure 2>&1)
-then
-    echo "Error generating EgoVenture API docs"
-    echo
-    echo $OUTPUT
-    exit 1
-fi
-
 echo "Generating Parrot API docs..."
 rm -rf parrot/docs/api &>/dev/null
 if ! OUTPUT=$(docker run --rm -v $(pwd)/egoventure-example-game:/game -v $(pwd)/parrot/docs/api:/export gdquest/gdscript-docs-maker:1 /game -o /export -d addons/parrot 2>&1)
