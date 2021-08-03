@@ -1,3 +1,27 @@
+## [0.24.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.23.0...0.24.0) (2021-08-03)
+
+
+### Features
+
+* Added publish script and missing LICENSE files ([f9e26aa](https://github.com/deep-entertainment/egoventure-example-game/commit/f9e26aa5665d04a044d64693f5ea6af64fdae1dd))
+* Boombox supports from_position parameter for all assets now ([31975cf](https://github.com/deep-entertainment/egoventure-example-game/commit/31975cf79ac1eb3d90d2d30f80915e387bf27fb8))
+* Ignore pause-feature for the inventory ([0c30a73](https://github.com/deep-entertainment/egoventure-example-game/commit/0c30a733ec408ffcef1c86ddd6e4e6da24561c80))
+
+
+### Bug Fixes
+
+* Check for cursor after loading a game. ([39f374e](https://github.com/deep-entertainment/egoventure-example-game/commit/39f374e9d3b9ef74f2fb0e6478b119a5025402a6))
+* Fixed lingering mouse cursor in main menu ([282cecc](https://github.com/deep-entertainment/egoventure-example-game/commit/282ceccb9fc032bf1bead6a12a7c0a62445a5922))
+* Fixed save slots display and handling ([c0037e6](https://github.com/deep-entertainment/egoventure-example-game/commit/c0037e66afcb1c3f302d1e7f5674e5f1848e042d))
+* Fixed saveslots in save mode ([a00dbaa](https://github.com/deep-entertainment/egoventure-example-game/commit/a00dbaa34478b51f3e6c908cc630c9fa9d834764))
+* Fixed screenshot size ([dcd1007](https://github.com/deep-entertainment/egoventure-example-game/commit/dcd1007bd4c15aa5358020c7936300e4366b06b2))
+* Hide mouse cursors when lookspot is running ([33cb8b6](https://github.com/deep-entertainment/egoventure-example-game/commit/33cb8b6bd2394445b3ffca2fc5ab006b87113148))
+* Missing from_position parameter use ([bbc5567](https://github.com/deep-entertainment/egoventure-example-game/commit/bbc5567d259160315edd867f0230a82b5068a4ad))
+* Optimized release workflow ([6d5749c](https://github.com/deep-entertainment/egoventure-example-game/commit/6d5749c55b5aa54711c11df9eb2ac7cb0a7e77b0))
+* Wrong ignore pause value ([361be80](https://github.com/deep-entertainment/egoventure-example-game/commit/361be80de928eb9d67bb92080f7b701b22c47588))
+
+
+
 ## [0.23.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.22.0...0.23.0) (2021-07-08)
 
 
@@ -29,7 +53,3 @@
 * Optimized visibility check for hotspots ([ba6c2ea](https://github.com/deep-entertainment/egoventure-example-game/commit/ba6c2ea7aeaf68f7fce31e1d6d90c18647247125))
 * Resetting volumes in reset func ([7a50189](https://github.com/deep-entertainment/egoventure-example-game/commit/7a5018942452426eacc44a6548f78096cf3e6ad6))
 * Use only Boombox.reset in egoventure.ready ([dba4468](https://github.com/deep-entertainment/egoventure-example-game/commit/dba44685a130200f9c79af90952bfe2317b19eda))
-
-
-
-
