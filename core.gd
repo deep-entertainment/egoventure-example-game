@@ -6,6 +6,7 @@ func _ready():
 	EgoVenture.configure(preload("res://configuration.tres"))
 	MainMenu.connect("new_game", self, "_on_new_game")
 	Inventory.connect("triggered_inventory_item", self, "_on_triggered_inventory_item")
+	Inventory.connect("released_inventory_item", self, "_on_released_inventory_item")
 	EgoVenture.connect("game_loaded", self, "_on_load")
 	
 func _on_triggered_inventory_item(item1: InventoryItem, item2: InventoryItem):
@@ -25,15 +26,14 @@ func _on_triggered_inventory_item(item1: InventoryItem, item2: InventoryItem):
 		DetailView.show(preload("res://inventory/screwdriver_mod.tres"))
 
 func _on_new_game():
-	_initialization()
-	var items = EgoVenture.update_cache("res://scenes/misc/map_info.tscn", true)
-	if items > 0:
-		yield(EgoVenture, "queue_complete")
 	EgoVenture.change_scene("res://scenes/intro.tscn")
 
 func _initialization():
 	var state = GameState.new()
 	EgoVenture.state = state
+	
+func _on_released_inventory_item(item: InventoryItem):
+	print_debug("Released item %s" % item.title)
 	
 func _on_load():
 	pass
