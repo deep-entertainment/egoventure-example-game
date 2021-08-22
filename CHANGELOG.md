@@ -1,3 +1,20 @@
+## [0.25.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.24.0...0.25.0) (2021-08-22)
+
+
+### Features
+
+* Added signal when inventory item is released ([c4ab841](https://github.com/deep-entertainment/egoventure-example-game/commit/c4ab841bf2c511f9fa3e2534192294907a75b336))
+
+
+### Bug Fixes
+
+* Disable scrollbars in DialogHotspot ([cf9c0ec](https://github.com/deep-entertainment/egoventure-example-game/commit/cf9c0eca1ce4d5622db37365451d8fe9a9d4840c))
+* Ensuring the mouse cursor is always visible in the menu ([44651c9](https://github.com/deep-entertainment/egoventure-example-game/commit/44651c914ff5c4b20635c4ab8bd47eeaa0b4ab12))
+* Fixed caching items from the permanent cache ([d4ac341](https://github.com/deep-entertainment/egoventure-example-game/commit/d4ac34155ded51397abdde97dfbc32c784b4bd1d))
+* Optimized position of caching the permanent scenes ([174ff07](https://github.com/deep-entertainment/egoventure-example-game/commit/174ff074cf2f8c91150739f89b1c024895117623))
+
+
+
 ## [0.24.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.23.0...0.24.0) (2021-08-03)
 
 
