@@ -8,6 +8,8 @@ func _ready():
 		yield(Parrot, "finished_dialog")
 		Speedy.hidden = false
 		(EgoVenture.state as GameState).bro_spoken_to = 1
+	
+func _process(_delta):
 	_update_hotspots()
 
 func _update_hotspots():
