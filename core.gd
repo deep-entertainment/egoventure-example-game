@@ -2,7 +2,6 @@
 extends Node
 
 func _ready():
-	_initialization()
 	EgoVenture.configure(preload("res://configuration.tres"))
 	MainMenu.connect("new_game", self, "_on_new_game")
 	Inventory.connect("triggered_inventory_item", self, "_on_triggered_inventory_item")
@@ -26,6 +25,7 @@ func _on_triggered_inventory_item(item1: InventoryItem, item2: InventoryItem):
 		DetailView.show(preload("res://inventory/screwdriver_mod.tres"))
 
 func _on_new_game():
+	_initialization()
 	EgoVenture.change_scene("res://scenes/intro.tscn")
 
 func _initialization():
