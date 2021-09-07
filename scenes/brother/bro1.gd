@@ -16,6 +16,8 @@ func _update_hotspots():
 	var state = EgoVenture.state
 	if state.bro_q1_hs:
 		$bro_q1_hs.show()
+		if not state.bro_q2_hs:
+			$bro_q1_hs.asked = false
 	else:
 		$bro_q1_hs.hide()
 	if state.bro_q2_hs:
