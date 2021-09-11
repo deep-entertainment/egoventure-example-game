@@ -20,18 +20,4 @@ func _ready():
 
 
 func _on_Hotspot3_pressed() -> void:
-	Inventory.add_item(preload("res://inventory/file.tres"), false, true)
-	Inventory.add_item(preload("res://inventory/file.tres"), false, true)
-	Inventory.add_item(preload("res://inventory/file.tres"), false, true)
-	Inventory.add_item(preload("res://inventory/file.tres"), false, true)
-	Inventory.add_item(preload("res://inventory/file.tres"), false, true)
-	Inventory.add_item(preload("res://inventory/file.tres"), false, true)
-	Inventory.add_item(preload("res://inventory/file.tres"), false, true)
-	Inventory.add_item(preload("res://inventory/file.tres"), false, true)
-	Inventory.add_item(preload("res://inventory/file.tres"), false, true)
-	Inventory.add_item(preload("res://inventory/file.tres"), false, true)
-	Inventory.add_item(preload("res://inventory/file.tres"), false, true)
-	Inventory.add_item(preload("res://inventory/file.tres"), false, true)
-	Inventory.add_item(preload("res://inventory/file.tres"), false, true)
-	Inventory.add_item(preload("res://inventory/file.tres"), false, true)
-	Inventory.add_item(preload("res://inventory/file.tres"), false, true)
+	DetailView.show(preload("res://inventory/file.tres"))
