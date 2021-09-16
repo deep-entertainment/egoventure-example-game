@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=49 format=2]
+[gd_resource type="Resource" load_steps=50 format=2]
 
 [ext_resource path="res://addons/egoventure/resources/game_configuration.gd" type="Script" id=1]
 [ext_resource path="res://music/mold.ogg" type="AudioStream" id=2]
@@ -29,6 +29,7 @@
 [ext_resource path="res://sounds/misc/map_icon.ogg" type="AudioStream" id=27]
 [ext_resource path="res://images/misc/background.jpg" type="Texture" id=28]
 [ext_resource path="res://images/misc/reveal_icon.png" type="Texture" id=29]
+[ext_resource path="res://images/mouse/curv_right.png" type="Texture" id=30]
 [ext_resource path="res://images/mouse/curv_left.png" type="Texture" id=31]
 [ext_resource path="res://images/mouse/right_corner_down.png" type="Texture" id=32]
 
@@ -107,7 +108,7 @@ cursor_hotspot = Vector2( 75, 40 )
 [sub_resource type="Resource" id=13]
 script = ExtResource( 15 )
 type = 13
-cursor = ExtResource( 19 )
+cursor = ExtResource( 30 )
 cursor_hotspot = Vector2( 32, 32 )
 
 [sub_resource type="Resource" id=14]
