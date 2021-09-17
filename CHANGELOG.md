@@ -1,3 +1,33 @@
+## [0.26.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.25.0...0.26.0) (2021-09-17)
+
+
+### Features
+
+* Arrows for inventory items deep-entertainment/egoventure[#19](https://github.com/deep-entertainment/egoventure-example-game/issues/19) ([986d32e](https://github.com/deep-entertainment/egoventure-example-game/commit/986d32ef83446d9226a26b75063a073ad6d43428))
+* Store overridden cursors in savegame deep-entertainment/egoventure[#20](https://github.com/deep-entertainment/egoventure-example-game/issues/20) ([9d8b606](https://github.com/deep-entertainment/egoventure-example-game/commit/9d8b6063cb01abaeabf8c73b5d9d67242b7400f4))
+
+
+### Bug Fixes
+
+* Don't toggle inventory bar when it's not visible for the detail view ([18cad4d](https://github.com/deep-entertainment/egoventure-example-game/commit/18cad4d9a29eff748d9491d38ec25d7c722ca6d5))
+* Don't update the colors if the asked value didn't change ([778259f](https://github.com/deep-entertainment/egoventure-example-game/commit/778259f2c06059c0551664e7d0b02704b37d2fa4))
+* Fixed cursors ([bcdc6ab](https://github.com/deep-entertainment/egoventure-example-game/commit/bcdc6ab23f9e8d1f49f92c96ba8350d8e25c7dbb))
+* Fixed dialog not properly resetting when loading a game from the same scene ([0e420ba](https://github.com/deep-entertainment/egoventure-example-game/commit/0e420ba523f09e51ee54cf29efe8da866f2211c4))
+* FIxed dialog view layer. deep-entertainment/parrot[#6](https://github.com/deep-entertainment/egoventure-example-game/issues/6) ([34b6926](https://github.com/deep-entertainment/egoventure-example-game/commit/34b6926d6440e2d8c1a6dcbc9e685eb383db564e))
+* Fixed game not resetting the state. deep-entertainment/egoventure[#24](https://github.com/deep-entertainment/egoventure-example-game/issues/24) ([67d71fa](https://github.com/deep-entertainment/egoventure-example-game/commit/67d71fa7e636f4982308abd0291b72b1596e0259))
+* Hotspots didn't change when game was loaded from the same scene. deep-entertainment/egoventure[#23](https://github.com/deep-entertainment/egoventure-example-game/issues/23) ([4d79b96](https://github.com/deep-entertainment/egoventure-example-game/commit/4d79b964f27441a2ebf90f473d7537442807ff4e))
+* Inventory remove_item issue ([e7f136f](https://github.com/deep-entertainment/egoventure-example-game/commit/e7f136f09494c9f0987f9721dd3b3574b3654719))
+* Inventory remove_item issue ([da9f542](https://github.com/deep-entertainment/egoventure-example-game/commit/da9f54259a97b078fe47bce61a3df79cd5dd9512))
+* Resetting cursors on loading a game ([7ba4d66](https://github.com/deep-entertainment/egoventure-example-game/commit/7ba4d668ca57ca77d93f29293cda4e65600971d6))
+* Show hotspot indicator in detail view. deep-entertainment/egoventure[#21](https://github.com/deep-entertainment/egoventure-example-game/issues/21) ([38e3e10](https://github.com/deep-entertainment/egoventure-example-game/commit/38e3e1076881bd65f1408112479fcdf5b7a90baf))
+
+
+### Documentation
+
+* Changed add_item to be on one line again because the API doc couldn't be created ([0bd494a](https://github.com/deep-entertainment/egoventure-example-game/commit/0bd494aee19eb25394f18255bc57920a1847a87d))
+
+
+
 ## [0.25.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.24.0...0.25.0) (2021-08-22)
 
 
