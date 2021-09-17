@@ -13,5 +13,5 @@ image_normal = ExtResource( 2 )
 image_active = ExtResource( 3 )
 image_big = ExtResource( 4 )
 combineable_with = [  ]
-detail_scene = ""
-detail_show_mouse = false
+detail_scene = "res://inventory/screwdriver.tscn"
+detail_show_mouse = true

@@ -63,30 +63,6 @@ then
 fi
 
 echo
-echo "Generating docs"
-echo "==============="
-
-echo "Generating Parrot API docs..."
-rm -rf parrot/docs/api &>/dev/null
-if ! OUTPUT=$(docker run --rm -v $(pwd)/egoventure-example-game:/game -v $(pwd)/parrot/docs/api:/export gdquest/gdscript-docs-maker:1 /game -o /export -d addons/parrot 2>&1)
-then
-    echo "Error generating Parrot API docs..."
-    echo
-    echo $OUTPUT
-    exit 1
-fi
-
-echo "Generating Speedy API docs..."
-rm -rf speedy_gonzales/docs/api &>/dev/null
-if ! OUTPUT=$(docker run --rm -v $(pwd)/egoventure-example-game:/game -v $(pwd)/speedy_gonzales/docs/api:/export gdquest/gdscript-docs-maker:1 /game -o /export -d addons/speedy_gonzales)
-then
-    echo "Error generating Speedy API docs"
-    echo
-    echo $OUTPUT
-    exit 1
-fi
-
-echo
 echo "Displaying changes"
 echo "=================="
 

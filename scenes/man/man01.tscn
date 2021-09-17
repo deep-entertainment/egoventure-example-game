@@ -50,3 +50,16 @@ __meta__ = {
 }
 cursor_type = 10
 target_scene = "res://scenes/misc/map.tscn"
+
+[node name="Hotspot3" type="TextureButton" parent="."]
+margin_left = -1278.0
+margin_top = 1098.0
+margin_right = -1132.0
+margin_bottom = 1318.0
+mouse_default_cursor_shape = 3
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Hotspot3" to="." method="_on_Hotspot3_pressed"]

@@ -8,12 +8,16 @@ func _ready():
 		yield(Parrot, "finished_dialog")
 		Speedy.hidden = false
 		(EgoVenture.state as GameState).bro_spoken_to = 1
+	
+func _process(_delta):
 	_update_hotspots()
 
 func _update_hotspots():
 	var state = EgoVenture.state
 	if state.bro_q1_hs:
 		$bro_q1_hs.show()
+		if not state.bro_q2_hs:
+			$bro_q1_hs.asked = false
 	else:
 		$bro_q1_hs.hide()
 	if state.bro_q2_hs:

@@ -17,3 +17,7 @@ func _ready():
 	(EgoVenture.state as GameState).space_info = true
 
 
+
+
+func _on_Hotspot3_pressed() -> void:
+	DetailView.show(preload("res://inventory/file.tres"))
