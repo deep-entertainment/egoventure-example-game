@@ -1,0 +1,69 @@
+name: "Update API docs"
+
+on:
+  push:
+    branches:
+      - "develop"
+
+concurrency: api-${{ github.ref }}
+
+jobs:
+    apidoc:
+        strategy:
+            matrix:
+                parts:
+                    - dir: "addons/egoventure"
+                      repo: "deep-entertainment/egoventure-docs"
+                    - dir: "addons/parrot"
+                      repo: "deep-entertainment/parrot"
+                    - dir: "addons/speedy_gonzales"
+                      repo: "deep-entertainment/speedy_gonzales"
+        name: "Update API docs for ${{ matrix.parts.dir }} to ${{ matrix.parts.repo }}"
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+              with:
+                token: ${{ secrets.DEPLOYMENT_TOKEN }}
+                repository: deep-entertainment/egoventure-example-game
+                ref: "develop"
+                path: game
+            - name: "Checkout docs repo"
+              uses: actions/checkout@v2
+              with:
+                token: ${{ secrets.DEPLOYMENT_TOKEN }}
+                repository: ${{ matrix.parts.repo }}
+                ref: "develop"
+                fetch-depth: 0
+                path: docs
+            - name: Remove existing docs
+              run: |
+                INDEX_EXISTS=0
+                if [ -e docs/docs/api/index.md ]
+                then
+                    mv docs/docs/api/index.md .
+                    INDEX_EXISTS=1
+                fi
+                rm -rf docs/docs/api/*
+                if [ $INDEX_EXISTS -eq 1 ]
+                then
+                    mv index.md docs/docs/api
+                fi
+            - name: "Update docs"
+              uses: docker://gdquest/gdscript-docs-maker:1
+              with:
+                entrypoint: "bash"
+                args: "-c \"BASEDIR=$(pwd) && cd /app && ./generate_reference $BASEDIR/game -o $BASEDIR/docs/docs/api -d ${{ matrix.parts.dir }}\""
+            - name: test
+              run: |
+                cd docs
+                git status
+            - name: "Commit"
+              uses: EndBug/add-and-commit@v7.2.1
+              with:
+                add: '["docs/api"]'
+                message: 'docs: Automatic update of API docs'
+                push: true
+                cwd: "docs"
+                branch: "devel"
+
