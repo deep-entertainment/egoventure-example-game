@@ -44,6 +44,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/egoventure/nodes/egoventure_menu_button.gd"
 }, {
+"base": "Control",
+"class": "Exporter",
+"language": "GDScript",
+"path": "res://addons/parrot/nodes/exporter.gd"
+}, {
 "base": "Node2D",
 "class": "FourSideRoom",
 "language": "GDScript",
@@ -132,6 +137,7 @@ _global_script_class_icons={
 "DialogLineResource": "res://addons/parrot/images/dialog_line.svg",
 "DialogResource": "res://addons/parrot/images/dialog.svg",
 "EgoVentureMenuButton": "",
+"Exporter": "",
 "FourSideRoom": "",
 "FulfillmentRecord": "",
 "GameConfiguration": "",
@@ -174,7 +180,6 @@ Core="*res://core.gd"
 WaitingScreen="*res://addons/egoventure/nodes/waiting_screen.tscn"
 Cursors="*res://addons/egoventure/types/cursors.gd"
 Speedy="*res://addons/speedy_gonzales/nodes/speedy.tscn"
-Parrot="*res://addons/parrot/nodes/parrot_dialog.tscn"
 MenuGrab="*res://addons/egoventure/nodes/menu_grab.tscn"
 MainMenu="*res://addons/egoventure/nodes/main_menu.tscn"
 Boombox="*res://addons/egoventure/nodes/boombox.tscn"
@@ -183,6 +188,7 @@ Notepad="*res://addons/egoventure/nodes/notepad.tscn"
 MapNotification="*res://addons/egoventure/nodes/map_notification.tscn"
 Inventory="*res://addons/egoventure/nodes/inventory/inventory.tscn"
 DetailView="*res://addons/egoventure/nodes/inventory/detail_view.tscn"
+Parrot="*res://addons/parrot/nodes/parrot_dialog.tscn"
 
 [display]
 
@@ -195,7 +201,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "egoventure", "parrot", "speedy_gonzales" )
+enabled=PoolStringArray( "res://addons/egoventure/plugin.cfg", "res://addons/parrot/plugin.cfg", "res://addons/speedy_gonzales/plugin.cfg" )
 
 [importer_defaults]
 
