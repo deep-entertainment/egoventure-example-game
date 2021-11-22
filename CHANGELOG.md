@@ -1,3 +1,22 @@
+## [0.27.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.26.0...0.27.0) (2021-11-22)
+
+
+### Features
+
+* Dialog exporter ([9fb0a41](https://github.com/deep-entertainment/egoventure-example-game/commit/9fb0a41ebacbcac729aac97b3dc1dd776aef73b2))
+* Disable menu while a dialog is playing ([69c361b](https://github.com/deep-entertainment/egoventure-example-game/commit/69c361b4cc3f9c2c56872fa76588dbf776b59748))
+
+
+### Bug Fixes
+
+* Corrected hiding and showing of cursors ([487907d](https://github.com/deep-entertainment/egoventure-example-game/commit/487907de083639f21bd1a9f30ae16b2feacc292e))
+* Don't focus a dialog button ([69afcfa](https://github.com/deep-entertainment/egoventure-example-game/commit/69afcfa93a6d03a805cf7092a3790c600a4f1557))
+* Don't pass inputs after modal was closed ([2facfc3](https://github.com/deep-entertainment/egoventure-example-game/commit/2facfc30da8071ea123a44ae4c052cb70f26c49c)), closes [deep-entertainment/issues#5](https://github.com/deep-entertainment/issues/issues/5)
+* Enabled switch sound for toggling fullscreen ([2e0bb5f](https://github.com/deep-entertainment/egoventure-example-game/commit/2e0bb5fa6c57926d0c360ffe97869eef138dd97b))
+* Only react to left mouse button presses on dialog hotspot ([a82a2a7](https://github.com/deep-entertainment/egoventure-example-game/commit/a82a2a7280b8d2db218ffcbb5fe65f4e8affe61d))
+
+
+
 ## [0.26.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.25.0...0.26.0) (2021-09-17)
 
 
