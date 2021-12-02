@@ -1,3 +1,12 @@
+## [0.28.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.27.0...0.28.0) (2021-12-02)
+
+
+### Features
+
+* Eight side room ([346be9a](https://github.com/deep-entertainment/egoventure-example-game/commit/346be9abf45ffeecc7836becef0a3dcc301881e6))
+
+
+
 ## [0.27.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.26.0...0.27.0) (2021-11-22)
 
 
