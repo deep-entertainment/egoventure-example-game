@@ -1,3 +1,12 @@
+## [0.29.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.28.0...0.29.0) (2021-12-13)
+
+
+### Features
+
+* **main_menu:** start with save slot page last modified ([#9](https://github.com/deep-entertainment/egoventure-example-game/issues/9)) ([ae57ede](https://github.com/deep-entertainment/egoventure-example-game/commit/ae57edefe0175292451ec7915ee8e96167b7e27c))
+
+
+
 ## [0.28.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.27.0...0.28.0) (2021-12-02)
 
 
