@@ -36,7 +36,7 @@ jobs:
         uses: "actions/checkout@v2"
         with:
           repository: "deep-entertainment/egoventure-example-game"
-          ref: "develop"
+          ref: "main"
           path: "demo-game"
           token: "${{ secrets.DEPLOYMENT_TOKEN }}"
           fetch-depth: 0
