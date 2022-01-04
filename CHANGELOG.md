@@ -1,3 +1,7 @@
+### [0.29.1](https://github.com/deep-entertainment/egoventure-example-game/compare/0.29.0...0.29.1) (2021-12-14)
+
+
+
 ## [0.29.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.28.0...0.29.0) (2021-12-13)
 
 
