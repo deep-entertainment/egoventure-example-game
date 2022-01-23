@@ -1,3 +1,13 @@
+### [0.29.2](https://github.com/deep-entertainment/egoventure-example-game/compare/0.29.1...0.29.2) (2022-01-23)
+
+
+### Bug Fixes
+
+* Missing eight side room additions to project.gd ([2870f6b](https://github.com/deep-entertainment/egoventure-example-game/commit/2870f6bb68c7c458fe1d3440b4c54f93c0afb37b))
+* Voice bus volume doesn't work. ([cc6e5a6](https://github.com/deep-entertainment/egoventure-example-game/commit/cc6e5a6e64bba38edab92a05df4e47405d329f8b))
+
+
+
 ### [0.29.1](https://github.com/deep-entertainment/egoventure-example-game/compare/0.29.0...0.29.1) (2021-12-14)
 
 
