@@ -21,6 +21,14 @@ var effects_db: float = 0.0
 # The continue state, that is saved automatically
 var continue_state: BaseState = null
 
+# The selected locale
+var locale: String = ""
+
+
+# Set the current locale as a default
+func _init() -> void:
+	locale = TranslationServer.get_locale()
+
 
 func _get_property_list():
 	var properties = []
@@ -49,5 +57,9 @@ func _get_property_list():
 		"type": TYPE_OBJECT,
 		"hint": PROPERTY_HINT_RESOURCE_TYPE,
 		"hint_string": "BaseState"
+	})
+	properties.append({
+		"name": "locale",
+		"type": TYPE_STRING
 	})
 	return properties

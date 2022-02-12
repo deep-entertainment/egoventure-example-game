@@ -256,6 +256,12 @@ hotspot_indicator={
  ]
 }
 
+[locale]
+
+translations=PoolStringArray( "res://addons/egoventure/translation.de.translation", "res://addons/egoventure/translation.en.translation", "res://translation.de.translation", "res://translation.en.translation" )
+translation_remaps={
+}
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
