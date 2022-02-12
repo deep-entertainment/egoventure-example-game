@@ -260,7 +260,9 @@ hotspot_indicator={
 
 translations=PoolStringArray( "res://addons/egoventure/translation.de.translation", "res://addons/egoventure/translation.en.translation", "res://translation.de.translation", "res://translation.en.translation" )
 translation_remaps={
+"res://images/misc/map_info.jpg": PoolStringArray( "res://images/misc/map_info_de.jpg:de" )
 }
+locale_filter=[ 1, [ "de", "en" ] ]
 
 [rendering]
 
