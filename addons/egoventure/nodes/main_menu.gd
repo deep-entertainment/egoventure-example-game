@@ -132,38 +132,42 @@ func configure(configuration: GameConfiguration):
 	$Menu/Options/CenterContainer/VBox/Grid/Subtitles.pressed = \
 			EgoVenture.options_get_subtitles()
 	
-	var added_locales = []
-	
-	# Set languages
-	for locale in TranslationServer.get_loaded_locales():
-		if not locale in added_locales:
-			var locale_button = TextureButton.new()
-			locale_button.set_meta("locale", locale)
-			locale_button.expand = true
-			locale_button.stretch_mode = \
-					TextureButton.STRETCH_KEEP_ASPECT_CENTERED
-			locale_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-			locale_button.size_flags_vertical = Control.SIZE_EXPAND_FILL
-			locale_button.mouse_default_cursor_shape = Control.CURSOR_MOVE
-			locale_button.texture_normal = load(
-				"res://addons/egoventure/images/flags/%s.svg" % locale
-			)
-			locale_button.connect(
-				"pressed", 
-				self, 
-				"_on_locale_changed", 
-				[locale]
-			)
-			if locale == EgoVenture.in_game_configuration.locale:
-				locale_button.modulate = EgoVenture.configuration.\
-						menu_options_locale_button_modulate_selected
-			else:
-				locale_button.modulate = EgoVenture.configuration.\
-						menu_options_locale_button_modulate
-			$Menu/Options/CenterContainer/VBox/Grid/Locales.add_child(
-				locale_button
-			)
-			added_locales.push_back(locale)
+	if not configuration.menu_options_hide_language_selection:
+		var added_locales = []
+		
+		# Set languages
+		for locale in TranslationServer.get_loaded_locales():
+			if not locale in added_locales:
+				var locale_button = TextureButton.new()
+				locale_button.set_meta("locale", locale)
+				locale_button.expand = true
+				locale_button.stretch_mode = \
+						TextureButton.STRETCH_KEEP_ASPECT_CENTERED
+				locale_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+				locale_button.size_flags_vertical = Control.SIZE_EXPAND_FILL
+				locale_button.mouse_default_cursor_shape = Control.CURSOR_MOVE
+				locale_button.texture_normal = load(
+					"res://addons/egoventure/images/flags/%s.svg" % locale
+				)
+				locale_button.connect(
+					"pressed", 
+					self, 
+					"_on_locale_changed", 
+					[locale]
+				)
+				if locale == EgoVenture.in_game_configuration.locale:
+					locale_button.modulate = EgoVenture.configuration.\
+							menu_options_locale_button_modulate_selected
+				else:
+					locale_button.modulate = EgoVenture.configuration.\
+							menu_options_locale_button_modulate
+				$Menu/Options/CenterContainer/VBox/Grid/Locales.add_child(
+					locale_button
+				)
+				added_locales.push_back(locale)
+	else:
+		$Menu/Options/CenterContainer/VBox/Grid/LocaleLabel.hide()
+		$Menu/Options/CenterContainer/VBox/Grid/Locales.hide()
 	
 	# set save slot page to slot last modified
 	_save_slot_page = _get_save_slot_page_last_modified()

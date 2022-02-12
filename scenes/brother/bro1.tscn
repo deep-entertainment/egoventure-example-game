@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/brother/bro1.gd" type="Script" id=1]
 [ext_resource path="res://images/dia/bro_main.jpg" type="Texture" id=2]
 [ext_resource path="res://addons/egoventure/nodes/hotspots/dialog_hotspot.gd" type="Script" id=3]
 [ext_resource path="res://theme.tres" type="Theme" id=4]
-[ext_resource path="res://misc/fonts/LadylikeBB.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://misc/fonts/Flareserif821BT-fixed.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://misc/fonts/KALAM-REGULAR.TTF" type="DynamicFontData" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=28]
 
@@ -16,10 +15,10 @@ outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 extra_spacing_top = 10
 extra_spacing_bottom = 10
-font_data = ExtResource( 6 )
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=24]
-size = 60
+size = 46
 use_filter = true
 font_data = ExtResource( 5 )
 

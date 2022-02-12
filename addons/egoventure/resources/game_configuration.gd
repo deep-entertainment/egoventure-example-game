@@ -52,6 +52,9 @@ var menu_options_locale_button_modulate: Color = Color(1, 1, 1, .2)
 # The modulate color for selected locale flags
 var menu_options_locale_button_modulate_selected: Color = Color(1, 1, 1)
 
+# Hide the language selection from the options menu
+var menu_options_hide_language_selection: bool = false
+
 # The confirmation text for the quit confirmation prompt
 var menu_quit_confirmation: String = "DIALOG_QUIT"
 
@@ -290,6 +293,10 @@ func _get_property_list():
 	properties.append({
 		name = "menu_options_locale_button_modulate_selected",
 		type = TYPE_COLOR
+	})
+	properties.append({
+		name = "menu_options_hide_language_selection",
+		type = TYPE_BOOL
 	})
 	properties.append({
 		name = "Notepad",
