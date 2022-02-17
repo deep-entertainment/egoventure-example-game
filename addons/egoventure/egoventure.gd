@@ -176,10 +176,9 @@ func change_scene(path: String):
 		yield(get_tree(),"idle_frame")
 		var is_multi_side_room = false
 		for child in get_tree().current_scene.get_children():
-			if child.filename == \
-					"res://addons/egoventure/nodes/four_side_room.tscn" or \
-					child.filename == \
-					"res://addons/egoventure/nodes/eight_side_room.tscn":
+			if child.filename in \
+					["res://addons/egoventure/nodes/four_side_room.tscn",
+					"res://addons/egoventure/nodes/eight_side_room.tscn"]:
 				is_multi_side_room = true
 		if not is_multi_side_room:
 			check_cursor()
