@@ -28,6 +28,17 @@ var locale: String = ""
 # Set the current locale as a default
 func _init() -> void:
 	locale = TranslationServer.get_locale()
+	var found_approximate = ""
+	for loaded_locale in TranslationServer.get_loaded_locales():
+		if locale == loaded_locale:
+			return
+		elif loaded_locale in locale or locale in loaded_locale:
+			found_approximate = loaded_locale
+	
+	if found_approximate == "":
+		locale = "en"
+	else:
+		locale = found_approximate
 
 
 func _get_property_list():

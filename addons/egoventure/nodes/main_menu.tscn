@@ -866,30 +866,31 @@ __meta__ = {
 }
 
 [node name="VBox" type="VBoxContainer" parent="Menu/Options/CenterContainer"]
-margin_left = 943.0
+margin_left = 765.0
 margin_top = 549.0
-margin_right = 1616.0
+margin_right = 1795.0
 margin_bottom = 891.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Grid" type="GridContainer" parent="Menu/Options/CenterContainer/VBox"]
-margin_right = 673.0
+margin_right = 1030.0
 margin_bottom = 276.0
 custom_constants/vseparation = 30
 custom_constants/hseparation = 30
 columns = 2
 
 [node name="LocaleLabel" type="Label" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_right = 143.0
+margin_right = 500.0
 margin_bottom = 14.0
+rect_min_size = Vector2( 500, 0 )
 text = "OPTIONS_LOCALE"
 align = 2
 
 [node name="Locales" type="HBoxContainer" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_left = 173.0
-margin_right = 673.0
+margin_left = 530.0
+margin_right = 1030.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -899,7 +900,7 @@ __meta__ = {
 
 [node name="SpeechLabel" type="Label" parent="Menu/Options/CenterContainer/VBox/Grid"]
 margin_top = 44.0
-margin_right = 143.0
+margin_right = 500.0
 margin_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -908,9 +909,9 @@ align = 2
 valign = 2
 
 [node name="SpeechSlider" type="HSlider" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_left = 173.0
+margin_left = 530.0
 margin_top = 44.0
-margin_right = 673.0
+margin_right = 1030.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 500, 0 )
 mouse_default_cursor_shape = 13
@@ -923,7 +924,7 @@ ticks_on_borders = true
 
 [node name="MusicLabel" type="Label" parent="Menu/Options/CenterContainer/VBox/Grid"]
 margin_top = 90.0
-margin_right = 143.0
+margin_right = 500.0
 margin_bottom = 106.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -932,9 +933,9 @@ align = 2
 valign = 2
 
 [node name="MusicSlider" type="HSlider" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_left = 173.0
+margin_left = 530.0
 margin_top = 90.0
-margin_right = 673.0
+margin_right = 1030.0
 margin_bottom = 106.0
 rect_min_size = Vector2( 500, 0 )
 mouse_default_cursor_shape = 13
@@ -943,7 +944,7 @@ size_flags_vertical = 1
 
 [node name="EffectsLabel" type="Label" parent="Menu/Options/CenterContainer/VBox/Grid"]
 margin_top = 136.0
-margin_right = 143.0
+margin_right = 500.0
 margin_bottom = 152.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -952,9 +953,9 @@ align = 2
 valign = 2
 
 [node name="EffectsSlider" type="HSlider" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_left = 173.0
+margin_left = 530.0
 margin_top = 136.0
-margin_right = 673.0
+margin_right = 1030.0
 margin_bottom = 152.0
 rect_min_size = Vector2( 500, 0 )
 mouse_default_cursor_shape = 13
@@ -963,7 +964,7 @@ size_flags_vertical = 1
 
 [node name="SubtitlesLabel" type="Label" parent="Menu/Options/CenterContainer/VBox/Grid"]
 margin_top = 182.0
-margin_right = 143.0
+margin_right = 500.0
 margin_bottom = 214.0
 size_flags_vertical = 1
 text = "OPTIONS_SUBTITLES"
@@ -971,9 +972,9 @@ align = 2
 valign = 2
 
 [node name="Subtitles" type="CheckButton" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_left = 173.0
+margin_left = 530.0
 margin_top = 182.0
-margin_right = 237.0
+margin_right = 594.0
 margin_bottom = 214.0
 mouse_default_cursor_shape = 13
 size_flags_horizontal = 0
@@ -982,7 +983,7 @@ custom_styles/normal = SubResource( 15 )
 
 [node name="FullscreenLabel" type="Label" parent="Menu/Options/CenterContainer/VBox/Grid"]
 margin_top = 244.0
-margin_right = 143.0
+margin_right = 500.0
 margin_bottom = 276.0
 size_flags_vertical = 1
 text = "OPTIONS_FULLSCREEN"
@@ -993,9 +994,9 @@ __meta__ = {
 }
 
 [node name="Fullscreen" type="CheckButton" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_left = 173.0
+margin_left = 530.0
 margin_top = 244.0
-margin_right = 237.0
+margin_right = 594.0
 margin_bottom = 276.0
 mouse_default_cursor_shape = 13
 size_flags_horizontal = 0
@@ -1004,13 +1005,13 @@ custom_styles/normal = SubResource( 15 )
 
 [node name="Spacer" type="Control" parent="Menu/Options/CenterContainer/VBox"]
 margin_top = 280.0
-margin_right = 673.0
+margin_right = 1030.0
 margin_bottom = 320.0
 rect_min_size = Vector2( 0, 40 )
 
 [node name="Return" type="Button" parent="Menu/Options/CenterContainer/VBox"]
 margin_top = 324.0
-margin_right = 673.0
+margin_right = 1030.0
 margin_bottom = 342.0
 custom_styles/hover = SubResource( 3 )
 custom_styles/pressed = SubResource( 3 )
