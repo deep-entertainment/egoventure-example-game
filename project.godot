@@ -256,6 +256,23 @@ hotspot_indicator={
  ]
 }
 
+[locale]
+
+translations=PoolStringArray( "res://addons/egoventure/translation.de.translation", "res://addons/egoventure/translation.en.translation", "res://translation.de.translation", "res://translation.en.translation" )
+translation_remaps={
+"res://images/man/hs/man01a_inf.jpg": PoolStringArray( "res://images/man/hs/man01a_inf_de.jpg:de" ),
+"res://images/man/hs/quit.png": PoolStringArray( "res://images/man/hs/quit_de.png:de" ),
+"res://images/man/hs/quit_hov.png": PoolStringArray( "res://images/man/hs/quit_hov_de.png:de" ),
+"res://images/man/man03b_inf.jpg": PoolStringArray( "res://images/man/man03b_inf_de.jpg:de" ),
+"res://images/man/man04a_inf.jpg": PoolStringArray( "res://images/man/man04a_inf_de.jpg:de" ),
+"res://images/man/man06c_lift2.jpg": PoolStringArray( "res://images/man/man06c_lift2_de.jpg:de" ),
+"res://images/man/man09c_cl2_lift4_inf.jpg": PoolStringArray( "res://images/man/man09c_cl2_lift4_inf_de.jpg:de" ),
+"res://images/man/man11a_inf.jpg": PoolStringArray( "res://images/man/man11a_inf_de.jpg:de" ),
+"res://images/man/man22a_inf.jpg": PoolStringArray( "res://images/man/man22a_inf_de.jpg:de" ),
+"res://images/misc/map_info.jpg": PoolStringArray( "res://images/misc/map_info_de.jpg:de" )
+}
+locale_filter=[ 1, [ "de", "en" ] ]
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
