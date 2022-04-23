@@ -187,6 +187,7 @@ WaitingScreen="*res://addons/egoventure/nodes/waiting_screen.tscn"
 Cursors="*res://addons/egoventure/types/cursors.gd"
 Speedy="*res://addons/speedy_gonzales/nodes/speedy.tscn"
 MenuGrab="*res://addons/egoventure/nodes/menu_grab.tscn"
+Parrot="*res://addons/parrot/nodes/parrot_dialog.tscn"
 MainMenu="*res://addons/egoventure/nodes/main_menu.tscn"
 Boombox="*res://addons/egoventure/nodes/boombox.tscn"
 EgoVenture="*res://addons/egoventure/egoventure.gd"
@@ -194,7 +195,7 @@ Notepad="*res://addons/egoventure/nodes/notepad.tscn"
 MapNotification="*res://addons/egoventure/nodes/map_notification.tscn"
 Inventory="*res://addons/egoventure/nodes/inventory/inventory.tscn"
 DetailView="*res://addons/egoventure/nodes/inventory/detail_view.tscn"
-Parrot="*res://addons/parrot/nodes/parrot_dialog.tscn"
+CheckCursor="*res://addons/egoventure/nodes/check_cursor.tscn"
 
 [display]
 
