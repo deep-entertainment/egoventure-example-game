@@ -47,6 +47,7 @@ jobs:
                 default_bump: false
             - name: "Write changelog"
               run: |
+                echo "${{steps.calculate_version.outputs.new_tag}}"
                 CHANGELOG=""
                 if [ -e CHANGELOG.md ]
                 then
