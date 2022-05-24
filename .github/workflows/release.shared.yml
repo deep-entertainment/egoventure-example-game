@@ -44,6 +44,7 @@ jobs:
                 tag_prefix: ""
                 github_token: ${{ secrets.token }}
                 dry_run: true
+                default_bump: false
             - name: "Write changelog"
               run: |
                 CHANGELOG=""
@@ -76,6 +77,7 @@ jobs:
               with:
                 tag_prefix: ""
                 github_token: ${{ secrets.token }}
+                default_bump: false
             - name: Create a GitHub release
               uses: actions/create-release@v1
               env:
