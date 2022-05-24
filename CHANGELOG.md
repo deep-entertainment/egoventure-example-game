@@ -1,3 +1,16 @@
+## [1.0.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.29.2...1.0.0-develop.0) (2022-05-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* This is the first stable release of EgoVenture
+
+### Features
+
+* EgoVenture 1.0.0 ([e63da0a](https://github.com/deep-entertainment/egoventure-example-game/commit/e63da0acc85691f55b412d1b9306eb61e24448b6))
+
+
+
 ## [0.30.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.29.2...0.30.0-develop.0) (2022-05-24)
 
 
