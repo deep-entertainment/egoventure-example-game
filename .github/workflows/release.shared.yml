@@ -47,24 +47,23 @@ jobs:
                 default_bump: false
             - name: "Write changelog"
               run: |
-                echo "${{steps.calculate_version.outputs.new_tag}}"
                 CHANGELOG=""
                 if [ -e CHANGELOG.md ]
                 then
                     CHANGELOG=$(cat CHANGELOG.md)
                 fi
                 echo -e "${{steps.calculate_version.outputs.changelog}}\n\n${CHANGELOG}" > CHANGELOG.md
-              if: steps.calculate_version.outputs.new_tag != 'undefined'
+              if: steps.calculate_version.outputs.new_version != ''
             - name: "Update version in plugin.cfg"
               run: |
                 sed -i -re 's/version=".+$/version="${{ steps.calculate_version.outputs.new_version }}"/gi' addons/*/plugin.cfg 
-              if: inputs.updatePluginCfg && steps.calculate_version.outputs.new_tag != 'undefined'
+              if: inputs.updatePluginCfg && steps.calculate_version.outputs.new_version != ''
             - name: "Commit"
               uses: EndBug/add-and-commit@v7.2.1
               with:
                 message: 'chore: storing version and changelog'
                 push: true
-              if: steps.calculate_version.outputs.new_tag != 'undefined'
+              if: steps.calculate_version.outputs.new_version != ''
     release:
         if: "github.event.head_commit.message == 'chore: storing version and changelog'"
         name: Release
@@ -90,4 +89,4 @@ jobs:
                 release_name: ${{ steps.create_version.outputs.new_tag }}
                 body: ${{ steps.create_version.outputs.changelog }} 
                 prerelease: ${{ github.ref_name != 'main' }}
-              if: steps.create_version.outputs.new_tag != 'undefined'
+              if: steps.create_version.outputs.new_version != ''
