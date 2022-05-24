@@ -7,7 +7,7 @@ on:
 env:
   GODOT_VERSION: 3.3
   EXPORT_NAME: carol-refurbished
-  CHANNEL_SUFFIX: ${{ fromJson('{ "prereleased": "-develop", "released": "" }')[github.event.action] }}
+  CHANNEL_SUFFIX: "${{ fromJson('{ \"prereleased\": \"-develop\", \"released\": \"\" }')[github.event.action] }}"
 
 jobs:
   export-windows:
