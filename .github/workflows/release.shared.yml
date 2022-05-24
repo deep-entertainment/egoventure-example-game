@@ -7,13 +7,12 @@
 #     push:
 #         branches:
 #             - develop
-#             - main
 # 
 # jobs:
-#     release:
-#         runs-on: ubuntu-latest
-#         steps:
-#             - uses: deep-entertainment/egoventure-example-game/.github/workflows/release.shared.yml@${{ github.ref_name }}
+#     release-dev:
+#         uses: deep-entertainment/egoventure-example-game/.github/workflows/release.shared.yml@develop
+#         secrets:
+#             token: "${{ secrets.DEPLOYMENT_TOKEN }}"
 
 name: "Release new version"
 
