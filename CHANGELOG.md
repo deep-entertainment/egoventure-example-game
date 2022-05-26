@@ -9,8 +9,6 @@
 
 * EgoVenture 1.0.0 ([e63da0a](https://github.com/deep-entertainment/egoventure-example-game/commit/e63da0acc85691f55b412d1b9306eb61e24448b6))
 
-
-
 ## [0.30.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.29.2...0.30.0-develop.0) (2022-05-24)
 
 
@@ -30,7 +28,6 @@
 * Fixed optional parameter ([1cf18e0](https://github.com/deep-entertainment/egoventure-example-game/commit/1cf18e0e6892f8db0b2ad8121c1b45d5cf3ca352))
 * Hint theming error ([6d6210e](https://github.com/deep-entertainment/egoventure-example-game/commit/6d6210e9f8d1e998cbc96ff190ee2dec4d92732b)), closes [deep-entertainment/issues#14](https://github.com/deep-entertainment/issues/issues/14)
 * No check_cursor() for eight_side_room ([96cf60b](https://github.com/deep-entertainment/egoventure-example-game/commit/96cf60b7b0d55bd562dadae85bf13d5f6547a46a))
-
 
 
 ### [0.29.1](https://github.com/deep-entertainment/egoventure-example-game/compare/0.29.0...0.29.1) (2021-12-14)
