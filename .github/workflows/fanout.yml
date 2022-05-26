@@ -65,6 +65,6 @@ jobs:
           cd target
           git config --global user.email "info@deep-entertainment.de"
           git config --global user.name "deep entertainment merge bot"
-          git pull --rebase --strategy recursive --strategy-option=theirs ../demo-game ${{ github.ref_name }}
+          git pull --rebase --strategy recursive --strategy-option=ours ../demo-game ${{ github.ref_name }}
           git status
           git push --force
