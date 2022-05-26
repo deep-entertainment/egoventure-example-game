@@ -187,6 +187,7 @@ WaitingScreen="*res://addons/egoventure/nodes/waiting_screen.tscn"
 Cursors="*res://addons/egoventure/types/cursors.gd"
 Speedy="*res://addons/speedy_gonzales/nodes/speedy.tscn"
 MenuGrab="*res://addons/egoventure/nodes/menu_grab.tscn"
+Parrot="*res://addons/parrot/nodes/parrot_dialog.tscn"
 MainMenu="*res://addons/egoventure/nodes/main_menu.tscn"
 Boombox="*res://addons/egoventure/nodes/boombox.tscn"
 EgoVenture="*res://addons/egoventure/egoventure.gd"
@@ -194,7 +195,7 @@ Notepad="*res://addons/egoventure/nodes/notepad.tscn"
 MapNotification="*res://addons/egoventure/nodes/map_notification.tscn"
 Inventory="*res://addons/egoventure/nodes/inventory/inventory.tscn"
 DetailView="*res://addons/egoventure/nodes/inventory/detail_view.tscn"
-Parrot="*res://addons/parrot/nodes/parrot_dialog.tscn"
+CheckCursor="*res://addons/egoventure/nodes/check_cursor.tscn"
 
 [display]
 
@@ -255,6 +256,23 @@ hotspot_indicator={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[locale]
+
+translations=PoolStringArray( "res://addons/egoventure/translation.de.translation", "res://addons/egoventure/translation.en.translation", "res://translation.de.translation", "res://translation.en.translation" )
+translation_remaps={
+"res://images/man/hs/man01a_inf.jpg": PoolStringArray( "res://images/man/hs/man01a_inf_de.jpg:de" ),
+"res://images/man/hs/quit.png": PoolStringArray( "res://images/man/hs/quit_de.png:de" ),
+"res://images/man/hs/quit_hov.png": PoolStringArray( "res://images/man/hs/quit_hov_de.png:de" ),
+"res://images/man/man03b_inf.jpg": PoolStringArray( "res://images/man/man03b_inf_de.jpg:de" ),
+"res://images/man/man04a_inf.jpg": PoolStringArray( "res://images/man/man04a_inf_de.jpg:de" ),
+"res://images/man/man06c_lift2.jpg": PoolStringArray( "res://images/man/man06c_lift2_de.jpg:de" ),
+"res://images/man/man09c_cl2_lift4_inf.jpg": PoolStringArray( "res://images/man/man09c_cl2_lift4_inf_de.jpg:de" ),
+"res://images/man/man11a_inf.jpg": PoolStringArray( "res://images/man/man11a_inf_de.jpg:de" ),
+"res://images/man/man22a_inf.jpg": PoolStringArray( "res://images/man/man22a_inf_de.jpg:de" ),
+"res://images/misc/map_info.jpg": PoolStringArray( "res://images/misc/map_info_de.jpg:de" )
+}
+locale_filter=[ 1, [ "de", "en" ] ]
 
 [rendering]
 

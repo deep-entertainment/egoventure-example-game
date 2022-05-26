@@ -1,11 +1,33 @@
-### [0.29.2](https://github.com/deep-entertainment/egoventure-example-game/compare/0.29.1...0.29.2) (2022-01-23)
+## [1.0.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.29.2...1.0.0-develop.0) (2022-05-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* This is the first stable release of EgoVenture
+
+### Features
+
+* EgoVenture 1.0.0 ([e63da0a](https://github.com/deep-entertainment/egoventure-example-game/commit/e63da0acc85691f55b412d1b9306eb61e24448b6))
+
+## [0.30.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.29.2...0.30.0-develop.0) (2022-05-24)
+
+
+### Features
+
+* Adding shared release action ([67b284c](https://github.com/deep-entertainment/egoventure-example-game/commit/67b284cecc2ec93ee174953709446722b6a50a98))
+* Implement skipping of minimum waiting time ([750bdf6](https://github.com/deep-entertainment/egoventure-example-game/commit/750bdf6e684cc68f8efff04a7d2470ec9ed2b19d)), closes [deep-entertainment/issues#12](https://github.com/deep-entertainment/issues/issues/12)
+* Optimized cursor checking ([5cb25f0](https://github.com/deep-entertainment/egoventure-example-game/commit/5cb25f0fe4f8754ab662a1bcffb8dad51fb2fe1d)), closes [#17](https://github.com/deep-entertainment/egoventure-example-game/issues/17)
+* Optimized fullscreen/windowed mode switching ([730bebd](https://github.com/deep-entertainment/egoventure-example-game/commit/730bebd13b27483273ed09acffce219373c6049c))
+* Prevent inadvertently skipped dialog lines ([4b7d007](https://github.com/deep-entertainment/egoventure-example-game/commit/4b7d007d1589fd5b8771f4031e55300c3d2cc65a)), closes [deep-entertainment/issues#13](https://github.com/deep-entertainment/issues/issues/13)
+* Support disabling of hotspot indicator ([#14](https://github.com/deep-entertainment/egoventure-example-game/issues/14)) ([89c84e3](https://github.com/deep-entertainment/egoventure-example-game/commit/89c84e31581d6efdb6fe2a9db667414363e83a0b))
+* Translation support ([7acb92d](https://github.com/deep-entertainment/egoventure-example-game/commit/7acb92d7cc5db721c9daabea67a17dda7bf52b2b))
 
 
 ### Bug Fixes
 
-* Missing eight side room additions to project.gd ([2870f6b](https://github.com/deep-entertainment/egoventure-example-game/commit/2870f6bb68c7c458fe1d3440b4c54f93c0afb37b))
-* Voice bus volume doesn't work. ([cc6e5a6](https://github.com/deep-entertainment/egoventure-example-game/commit/cc6e5a6e64bba38edab92a05df4e47405d329f8b))
-
+* Fixed optional parameter ([1cf18e0](https://github.com/deep-entertainment/egoventure-example-game/commit/1cf18e0e6892f8db0b2ad8121c1b45d5cf3ca352))
+* Hint theming error ([6d6210e](https://github.com/deep-entertainment/egoventure-example-game/commit/6d6210e9f8d1e998cbc96ff190ee2dec4d92732b)), closes [deep-entertainment/issues#14](https://github.com/deep-entertainment/issues/issues/14)
+* No check_cursor() for eight_side_room ([96cf60b](https://github.com/deep-entertainment/egoventure-example-game/commit/96cf60b7b0d55bd562dadae85bf13d5f6547a46a))
 
 
 ### [0.29.1](https://github.com/deep-entertainment/egoventure-example-game/compare/0.29.0...0.29.1) (2021-12-14)

@@ -1,0 +1,92 @@
+# Shared workflow to release a new version
+#
+# Can be used like this:
+# name: "Release new version"
+# 
+# on:
+#     push:
+#         branches:
+#             - develop
+# 
+# jobs:
+#     release-dev:
+#         uses: deep-entertainment/egoventure-example-game/.github/workflows/release.shared.yml@develop
+#         secrets:
+#             token: "${{ secrets.DEPLOYMENT_TOKEN }}"
+
+name: "Release new version"
+
+on:
+    workflow_call:
+        inputs:
+            updatePluginCfg:
+                required: false
+                type: boolean
+                default: true
+        secrets:
+            token:
+                required: true
+
+jobs:
+    prerelease:
+        if: "github.event.head_commit.message != 'chore: storing version and changelog'"
+        name: Preparing release
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                fetch-depth: 0
+                token: ${{ secrets.token }}
+            - name: Calculate version
+              id: calculate_version
+              uses: mathieudutour/github-tag-action@v5.6
+              with:
+                tag_prefix: ""
+                github_token: ${{ secrets.token }}
+                dry_run: true
+                default_bump: false
+            - name: "Write changelog"
+              run: |
+                CHANGELOG=""
+                if [ -e CHANGELOG.md ]
+                then
+                    CHANGELOG=$(cat CHANGELOG.md)
+                fi
+                echo -e "${{steps.calculate_version.outputs.changelog}}\n\n${CHANGELOG}" > CHANGELOG.md
+              if: steps.calculate_version.outputs.new_version != ''
+            - name: "Update version in plugin.cfg"
+              run: |
+                sed -i -re 's/version=".+$/version="${{ steps.calculate_version.outputs.new_version }}"/gi' addons/*/plugin.cfg 
+              if: inputs.updatePluginCfg && steps.calculate_version.outputs.new_version != ''
+            - name: "Commit"
+              uses: EndBug/add-and-commit@v7.2.1
+              with:
+                message: 'chore: storing version and changelog'
+                push: true
+              if: steps.calculate_version.outputs.new_version != ''
+    release:
+        if: "github.event.head_commit.message == 'chore: storing version and changelog'"
+        name: Release
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+              with:
+                fetch-depth: 0
+                token: ${{ secrets.token }}
+            - name: Create version
+              id: create_version
+              uses: mathieudutour/github-tag-action@v5.5
+              with:
+                tag_prefix: ""
+                github_token: ${{ secrets.token }}
+                default_bump: false
+            - name: Create a GitHub release
+              uses: actions/create-release@v1
+              env:
+                GITHUB_TOKEN: ${{ secrets.token }}
+              with:
+                tag_name: ${{ steps.create_version.outputs.new_tag }}
+                release_name: ${{ steps.create_version.outputs.new_tag }}
+                body: ${{ steps.create_version.outputs.changelog }} 
+                prerelease: ${{ github.ref_name != 'main' }}
+              if: steps.create_version.outputs.new_version != ''

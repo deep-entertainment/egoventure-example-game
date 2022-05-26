@@ -59,11 +59,13 @@ margin_left = 390.833
 margin_top = -618.635
 margin_right = 919.833
 margin_bottom = -156.635
+focus_mode = 0
 mouse_default_cursor_shape = 2
 script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+visibility_state = ""
 valid_inventory_items = [ ExtResource( 10 ) ]
 
 [node name="hand_on_first_door" type="TextureButton" parent="."]
