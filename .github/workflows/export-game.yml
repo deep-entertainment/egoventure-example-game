@@ -14,7 +14,7 @@ jobs:
     name: Windows Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:${{env.GODOT_VERSION}}
+      image: ${{ format('barichello/godot-ci:{0}', env.GODOT_VERSION) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -32,7 +32,7 @@ jobs:
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-          CHANNEL: windows${{ env.CHANNEL_SUFFIX }}
+          CHANNEL: ${{ format('windows{0}', env.CHANNEL_SUFFIX) }}
           ITCH_GAME: carol-refurbished
           ITCH_USER: deepgames
           PACKAGE: build/windows
@@ -41,7 +41,7 @@ jobs:
     name: Windows i386 Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:3.3
+      image: ${{ format('barichello/godot-ci:{0}', env.GODOT_VERSION) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -59,7 +59,7 @@ jobs:
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-          CHANNEL: windows-i386${{ env.CHANNEL_SUFFIX }}
+          CHANNEL: ${{ format('windows-i386{0}', env.CHANNEL_SUFFIX) }}
           ITCH_GAME: carol-refurbished
           ITCH_USER: deepgames
           PACKAGE: build/windows
@@ -68,7 +68,7 @@ jobs:
     name: Linux Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:3.3
+      image: ${{ format('barichello/godot-ci:{0}', env.GODOT_VERSION) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -86,7 +86,7 @@ jobs:
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-          CHANNEL: linux${{ env.CHANNEL_SUFFIX }}
+          CHANNEL: ${{ format('linux{0}', env.CHANNEL_SUFFIX) }}
           ITCH_GAME: carol-refurbished
           ITCH_USER: deepgames
           PACKAGE: build/linux
@@ -95,7 +95,7 @@ jobs:
     name: Mac Export
     runs-on: ubuntu-latest
     container:
-      image: barichello/godot-ci:3.3
+      image: ${{ format('barichello/godot-ci:{0}', env.GODOT_VERSION) }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -113,7 +113,7 @@ jobs:
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
-          CHANNEL: osx${{ env.CHANNEL_SUFFIX }}
+          CHANNEL: ${{ format('osx{0}', env.CHANNEL_SUFFIX) }}
           ITCH_GAME: carol-refurbished
           ITCH_USER: deepgames
           PACKAGE: build/mac
