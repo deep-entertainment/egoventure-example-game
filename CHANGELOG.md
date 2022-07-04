@@ -1,3 +1,21 @@
+## [1.1.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.0.0...1.1.0) (2022-07-04)
+
+
+### Features
+
+* Disable navigation in four/eight side rooms ([5362245](https://github.com/deep-entertainment/egoventure-example-game/commit/536224508e597e536034000c95c97e9953af63a5)), closes [deep-entertainment/issues#19](https://github.com/deep-entertainment/issues/issues/19)
+
+
+### Bug Fixes
+
+* Compatiblilty with Godot 3.4 achieved ([0f4f54e](https://github.com/deep-entertainment/egoventure-example-game/commit/0f4f54e8283c58a61f1a3c3619d910c6ada2f6a3)), closes [deep-entertainment/issues#8](https://github.com/deep-entertainment/issues/issues/8)
+* Fix stopping  both music and background players ([1f60043](https://github.com/deep-entertainment/egoventure-example-game/commit/1f60043383060c4f2b6b60dae8e3f3dad74396f9)), closes [deep-entertainment/issues#18](https://github.com/deep-entertainment/issues/issues/18)
+* Fixed MapHotspot not playing an effect ([1909099](https://github.com/deep-entertainment/egoventure-example-game/commit/1909099dce28cedd4f8cfddd618a15b6868da7ea)), closes [deep-entertainment/issues#21](https://github.com/deep-entertainment/issues/issues/21)
+* Fixed mouse cursor display issues on iOS ([bc05018](https://github.com/deep-entertainment/egoventure-example-game/commit/bc050187a77923c81b54ce2ab079377b68f0fda5))
+* project updates for Godot 3.4 ([18ecf94](https://github.com/deep-entertainment/egoventure-example-game/commit/18ecf946fc34119b36f18f6c9fd2ea8af0c6714c))
+
+
+
 ## [1.1.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.0.0...1.1.0-develop.0) (2022-07-04)
 
 
