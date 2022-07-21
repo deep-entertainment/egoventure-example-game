@@ -1,3 +1,12 @@
+### [1.1.1-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.1.0...1.1.1-develop.0) (2022-07-21)
+
+
+### Bug Fixes
+
+* Fixed trigger hotspot mouse cursor handling for differently sized inventory items ([d2176d6](https://github.com/deep-entertainment/egoventure-example-game/commit/d2176d64d51b5cd671c99b47552da85220347915))
+
+
+
 ## [1.1.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.0.0...1.1.0-develop.0) (2022-07-04)
 
 
