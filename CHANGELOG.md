@@ -1,3 +1,17 @@
+## [1.2.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.1.1...1.2.0-develop.0) (2022-08-01)
+
+
+### Features
+
+* New theme item for touch inventory panel ([d080237](https://github.com/deep-entertainment/egoventure-example-game/commit/d0802376ac5c8ddbcc5ecaf75827403bf73220bc))
+
+
+### Bug Fixes
+
+* Detail view fixes for touch devices ([5721b3d](https://github.com/deep-entertainment/egoventure-example-game/commit/5721b3da620745854b4cf5536e52550cfc0c1f9c))
+
+
+
 ### [1.1.1](https://github.com/deep-entertainment/egoventure-example-game/compare/1.1.0...1.1.1) (2022-07-21)
 
 
