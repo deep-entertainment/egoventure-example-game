@@ -1,3 +1,12 @@
+## [1.3.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.1.1...1.3.0-develop.0) (2022-08-08)
+
+
+### Features
+
+* Add show_indicator to TriggerHotspot as well ([765f807](https://github.com/deep-entertainment/egoventure-example-game/commit/765f8078d5bf796f430ed2e9b2a702e34585b745)), closes [deep-entertainment/issues#22](https://github.com/deep-entertainment/issues/issues/22)
+
+
+
 ## [1.2.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.1.1...1.2.0-develop.0) (2022-08-01)
 
 
