@@ -1,3 +1,17 @@
+## [1.4.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.1.1...1.4.0-develop.0) (2022-08-09)
+
+
+### Features
+
+* Disable skipping dialog lines in Parrot ([66217ae](https://github.com/deep-entertainment/egoventure-example-game/commit/66217ae9b7ccc1e98cba7c31e98b04f55b68d926)), closes [deep-entertainment/issues#23](https://github.com/deep-entertainment/issues/issues/23)
+
+
+### Bug Fixes
+
+* Set _dialog_playing to false when the dialog is canceled. ([acd298e](https://github.com/deep-entertainment/egoventure-example-game/commit/acd298e479ba1d75988c250f9c49c484a53c2acf))
+
+
+
 ## [1.3.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.1.1...1.3.0-develop.0) (2022-08-08)
 
 
