@@ -22,7 +22,7 @@ func _on_triggered_inventory_item(item1: InventoryItem, item2: InventoryItem):
 		Inventory.remove_item(preload("res://inventory/file.tres"))
 		(EgoVenture.state as GameState).screw_comb = 1
 		Notepad.finished_step(4, 2)
-		DetailView.show(preload("res://inventory/screwdriver_mod.tres"))
+		DetailView.show_with_item(preload("res://inventory/screwdriver_mod.tres"))
 
 func _on_new_game():
 	_initialization()
