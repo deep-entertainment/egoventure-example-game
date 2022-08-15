@@ -523,7 +523,7 @@ func _warm_up_cache():
 #
 # - value: true: Game accepts input, false: Game does not accept input
 func _set_interactive(value: bool):
-	self.interactive = value
+	interactive = value
 	if self.interactive:
 		get_tree().paused = false
 		Speedy.hidden = false
