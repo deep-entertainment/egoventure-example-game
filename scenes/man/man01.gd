@@ -20,4 +20,4 @@ func _ready():
 
 
 func _on_Hotspot3_pressed() -> void:
-	DetailView.show(preload("res://inventory/file.tres"))
+	DetailView.show_with_item(preload("res://inventory/file.tres"))
