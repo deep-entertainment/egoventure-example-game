@@ -525,12 +525,12 @@ func _warm_up_cache():
 func _set_interactive(value: bool):
 	interactive = value
 	if self.interactive:
-		get_tree().paused = false
 		Speedy.hidden = false
 		Boombox.ignore_pause = false
 		Parrot.ignore_pause = false
+		get_tree().paused = false
 	else:
-		get_tree().paused = true
 		Speedy.hidden = true
 		Boombox.ignore_pause = true
 		Parrot.ignore_pause = true
+		get_tree().paused = true
