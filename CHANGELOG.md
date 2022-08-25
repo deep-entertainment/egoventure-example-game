@@ -1,3 +1,12 @@
+## [1.7.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.2.0...1.7.0-develop.0) (2022-08-25)
+
+
+### Features
+
+* Added sound effects for hover and clicking menu items ([97c3125](https://github.com/deep-entertainment/egoventure-example-game/commit/97c3125890dfcbf9bff64cc8b077bf82683689a3)), closes [deep-entertainment/issues#26](https://github.com/deep-entertainment/issues/issues/26)
+
+
+
 ## [1.6.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.2.0...1.6.0-develop.0) (2022-08-25)
 
 
