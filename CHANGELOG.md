@@ -1,3 +1,12 @@
+## [1.6.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.2.0...1.6.0-develop.0) (2022-08-25)
+
+
+### Features
+
+* Added interactive flag ([d8607bf](https://github.com/deep-entertainment/egoventure-example-game/commit/d8607bfce7c3be153735366a07612e0fbf879d34)), closes [deep-entertainment/issues#24](https://github.com/deep-entertainment/issues/issues/24)
+
+
+
 ## [1.4.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.1.1...1.4.0-develop.0) (2022-08-09)
 
 
