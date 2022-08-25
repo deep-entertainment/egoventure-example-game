@@ -1,3 +1,16 @@
+## [2.0.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.3.0...2.0.0-develop.0) (2022-08-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* This requires renaming the call to DetailView.show to DetailView.show_with_item in all code
+
+### Features
+
+* Rename DetailView.show to DetailView.show_with_item for Godot 3.5 compatibility ([8d897e8](https://github.com/deep-entertainment/egoventure-example-game/commit/8d897e8dcab4633136e7065bb5d686e0e11b8d9e))
+
+
+
 ## [1.7.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.2.0...1.7.0-develop.0) (2022-08-25)
 
 
