@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=50 format=2]
+[gd_resource type="Resource" load_steps=52 format=2]
 
 [ext_resource path="res://addons/egoventure/resources/game_configuration.gd" type="Script" id=1]
 [ext_resource path="res://music/mold.ogg" type="AudioStream" id=2]
@@ -32,6 +32,8 @@
 [ext_resource path="res://images/mouse/curv_right.png" type="Texture" id=30]
 [ext_resource path="res://images/mouse/curv_left.png" type="Texture" id=31]
 [ext_resource path="res://images/mouse/right_corner_down.png" type="Texture" id=32]
+[ext_resource path="res://sounds/man/beep.ogg" type="AudioStream" id=33]
+[ext_resource path="res://sounds/man/beep2.ogg" type="AudioStream" id=34]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 15 )
@@ -142,6 +144,8 @@ design_cursors = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubReso
 menu_background = ExtResource( 6 )
 menu_music = ExtResource( 2 )
 menu_switch_effect = ExtResource( 4 )
+menu_button_effect_hover = ExtResource( 33 )
+menu_button_effect_click = ExtResource( 34 )
 menu_quit_confirmation = "Do you really want to leave Carol here?"
 menu_overwrite_confirmation = "Are you sure you want to overwrite a saved game?"
 menu_restart_confirmation = "You will lose all progress when starting a new game. Do you really want to restart?"
