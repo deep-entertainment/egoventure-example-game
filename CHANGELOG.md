@@ -1,3 +1,12 @@
+## [4.1.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.0.0...4.1.0-develop.0) (2022-09-14)
+
+
+### Features
+
+* Support specifying the position in the list of inventory items where the new item should be placed ([43c3959](https://github.com/deep-entertainment/egoventure-example-game/commit/43c395976ff42f3d53c5fdfcd71a6498cdccc3b6)), closes [deep-entertainment/issues#28](https://github.com/deep-entertainment/issues/issues/28)
+
+
+
 ## [2.0.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.3.0...2.0.0-develop.0) (2022-08-25)
 
 
