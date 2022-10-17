@@ -192,10 +192,11 @@ MainMenu="*res://addons/egoventure/nodes/main_menu.tscn"
 Boombox="*res://addons/egoventure/nodes/boombox.tscn"
 EgoVenture="*res://addons/egoventure/egoventure.gd"
 Notepad="*res://addons/egoventure/nodes/notepad.tscn"
-MapNotification="*res://addons/egoventure/nodes/map_notification.tscn"
+MapNotification="*res://addons/egoventure/nodes/map_notification.gd"
 Inventory="*res://addons/egoventure/nodes/inventory/inventory.tscn"
 DetailView="*res://addons/egoventure/nodes/inventory/detail_view.tscn"
 CheckCursor="*res://addons/egoventure/nodes/check_cursor.tscn"
+Notification="*res://addons/egoventure/nodes/notification.tscn"
 
 [display]
 
