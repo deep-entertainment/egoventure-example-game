@@ -15,4 +15,4 @@ image_big = ExtResource( 4 )
 combineable_with = [  ]
 detail_scene = "res://inventory/screwdriver.tscn"
 detail_show_mouse = true
-grabbable = true
+grabbable = false

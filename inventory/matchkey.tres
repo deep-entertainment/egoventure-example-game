@@ -5,7 +5,6 @@
 [ext_resource path="res://inventory/matchkey_red.png" type="Texture" id=3]
 [ext_resource path="res://inventory/matchkey_big.png" type="Texture" id=4]
 
-
 [resource]
 script = ExtResource( 1 )
 title = "matchkey"
@@ -16,3 +15,4 @@ image_big = ExtResource( 4 )
 combineable_with = [  ]
 detail_scene = ""
 detail_show_mouse = false
+grabbable = true
