@@ -1,3 +1,12 @@
+### [4.1.1-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...4.1.1-develop.0) (2022-10-18)
+
+
+### Bug Fixes
+
+* cursor shape update while hidden ([c32db41](https://github.com/deep-entertainment/egoventure-example-game/commit/c32db41e09095c6bbe04b6c30de3f56473e07359))
+
+
+
 ## [4.1.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.0.0...4.1.0-develop.0) (2022-09-14)
 
 
