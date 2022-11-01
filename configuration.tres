@@ -146,6 +146,7 @@ menu_music = ExtResource( 2 )
 menu_switch_effect = ExtResource( 4 )
 menu_button_effect_hover = ExtResource( 33 )
 menu_button_effect_click = ExtResource( 34 )
+menu_item_separation = 30
 menu_quit_confirmation = "Do you really want to leave Carol here?"
 menu_overwrite_confirmation = "Are you sure you want to overwrite a saved game?"
 menu_restart_confirmation = "You will lose all progress when starting a new game. Do you really want to restart?"
