@@ -1,3 +1,12 @@
+### [4.3.1-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...4.3.1-develop.0) (2022-11-07)
+
+
+### Bug Fixes
+
+* set overridden cursors when loading savegame ([e613890](https://github.com/deep-entertainment/egoventure-example-game/commit/e6138900a87612e1cdaac07f7d12469eec4e653f))
+
+
+
 ## [4.3.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...4.3.0-develop.0) (2022-11-07)
 
 
