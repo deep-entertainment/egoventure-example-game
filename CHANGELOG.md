@@ -1,3 +1,12 @@
+## [4.4.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...4.4.0-develop.0) (2022-11-07)
+
+
+### Features
+
+* Add configuration for main menu item separation ([cbed829](https://github.com/deep-entertainment/egoventure-example-game/commit/cbed82965c3471c9f4390c8036cd710afcdf3ca1))
+
+
+
 ### [4.3.1-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...4.3.1-develop.0) (2022-11-07)
 
 
