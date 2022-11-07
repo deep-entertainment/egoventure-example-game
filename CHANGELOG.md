@@ -1,3 +1,12 @@
+## [4.3.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...4.3.0-develop.0) (2022-11-07)
+
+
+### Features
+
+* Added support for non-grabbable inventory items ([2107d39](https://github.com/deep-entertainment/egoventure-example-game/commit/2107d395c621b129d977ad85248bb4fa75679c4b))
+
+
+
 ## [4.2.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...4.2.0-develop.0) (2022-11-07)
 
 
