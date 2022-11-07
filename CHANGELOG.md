@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## [4.4.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...4.4.0-develop.0) (2022-11-07)
 
 
@@ -43,6 +44,8 @@
 
 
 
+=======
+>>>>>>> main
 ## [4.1.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.0.0...4.1.0-develop.0) (2022-09-14)
 
 
