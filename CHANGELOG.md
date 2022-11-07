@@ -1,3 +1,22 @@
+## [2.2.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...2.2.0) (2022-11-07)
+
+
+### Features
+
+* Add configuration for main menu item separation ([cbed829](https://github.com/deep-entertainment/egoventure-example-game/commit/cbed82965c3471c9f4390c8036cd710afcdf3ca1))
+* Added support for non-grabbable inventory items ([2107d39](https://github.com/deep-entertainment/egoventure-example-game/commit/2107d395c621b129d977ad85248bb4fa75679c4b))
+* Support for new Notification API ([772ef64](https://github.com/deep-entertainment/egoventure-example-game/commit/772ef64f1a72d2b40748dd5a968a147faffb3ec2))
+* Support specifying the position in the list of inventory items where the new item should be placed ([43c3959](https://github.com/deep-entertainment/egoventure-example-game/commit/43c395976ff42f3d53c5fdfcd71a6498cdccc3b6)), closes [deep-entertainment/issues#28](https://github.com/deep-entertainment/issues/issues/28)
+
+
+### Bug Fixes
+
+* cursor shape update while hidden ([c32db41](https://github.com/deep-entertainment/egoventure-example-game/commit/c32db41e09095c6bbe04b6c30de3f56473e07359))
+* set overridden cursors when loading savegame ([e613890](https://github.com/deep-entertainment/egoventure-example-game/commit/e6138900a87612e1cdaac07f7d12469eec4e653f))
+* Wrong handling of show_indicator on detail views ([3ce6a0d](https://github.com/deep-entertainment/egoventure-example-game/commit/3ce6a0da0f647b8ef4cfa8a5a1f6e2b78a32f68a)), closes [deep-entertainment/issues#27](https://github.com/deep-entertainment/issues/issues/27)
+
+
+
 <<<<<<< HEAD
 ## [4.4.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...4.4.0-develop.0) (2022-11-07)
 
