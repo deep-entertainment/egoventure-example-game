@@ -1,3 +1,12 @@
+## [4.2.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...4.2.0-develop.0) (2022-11-07)
+
+
+### Features
+
+* Support for new Notification API ([772ef64](https://github.com/deep-entertainment/egoventure-example-game/commit/772ef64f1a72d2b40748dd5a968a147faffb3ec2))
+
+
+
 ### [4.1.1-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...4.1.1-develop.0) (2022-10-18)
 
 
