@@ -7,12 +7,12 @@ func _ready():
 
 
 func _on_Hotspot2_activate():
-	EgoVenture.change_scene("res://scenes/man/man07b_lift2.tscn")
+	EgoVenture.change_scene_to_file("res://scenes/man/man07b_lift2.tscn")
 
 
 func _on_Hotspot_activate():
 	Boombox.play_effect(preload("res://sounds/man/man_skarbrade_back.ogg"))
 	Cursors.reset(Cursors.Type.CUSTOM1)
 	EgoVenture.target_view = "right"
-	EgoVenture.change_scene("res://scenes/man/man07.tscn")
+	EgoVenture.change_scene_to_file("res://scenes/man/man07.tscn")
 

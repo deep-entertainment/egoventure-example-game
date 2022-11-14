@@ -1,8 +1,9 @@
 [remap]
 
 importer="texture"
-type="StreamTexture"
-path="res://.import/stripes_sized.png-789a305eee734732fbf9db73fae307da.stex"
+type="CompressedTexture2D"
+uid="uid://b1lmpxk2u1v3k"
+path="res://.godot/imported/stripes_sized.png-789a305eee734732fbf9db73fae307da.ctex"
 metadata={
 "vram_texture": false
 }
@@ -10,25 +11,24 @@ metadata={
 [deps]
 
 source_file="res://images/misc/stripes_sized.png"
-dest_files=[ "res://.import/stripes_sized.png-789a305eee734732fbf9db73fae307da.stex" ]
+dest_files=["res://.godot/imported/stripes_sized.png-789a305eee734732fbf9db73fae307da.ctex"]
 
 [params]
 
 compress/mode=1
 compress/lossy_quality=0.85
-compress/hdr_mode=0
+compress/hdr_compression=1
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
-flags/filter=true
-flags/mipmaps=false
-flags/anisotropic=false
-flags/srgb=2
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
-process/HDR_as_SRGB=false
-process/invert_color=false
-stream=false
-size_limit=0
-detect_3d=true
-svg/scale=1.0
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

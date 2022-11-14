@@ -17,7 +17,7 @@ var _scene_index_regex: RegEx
 # Number of scenes to cache before and after the current scene
 var _cache_count: int
 
-# Path to scenes
+# Path3D to scenes
 var _scene_path: String
 
 # Resource queue
@@ -26,8 +26,8 @@ var _resource_queue: ResourceQueue
 # Current items in the cache
 var _queued_items: Array = []
 
-# Do not remove these scenes from the cache
-var _permanent_cache: PoolStringArray = []
+# Do not remove_at these scenes from the cache
+var _permanent_cache: PackedStringArray = []
 
 
 # Initialize the cache
@@ -43,7 +43,7 @@ func _init(
 	cache_count: int, 
 	scene_path: String, 
 	scene_regex: String,
-	permanent_cache: PoolStringArray
+	permanent_cache: PackedStringArray
 ):
 	_cache_count = cache_count
 	_scene_path = scene_path
@@ -54,7 +54,7 @@ func _init(
 	_resource_queue.start()
 
 
-# Update the current progress on the waiting screen and emit the queue_complete
+# Update the current progress checked the waiting screen and emit the queue_complete
 # signal when we're done
 func update_progress():
 	if _queued_items.size() > 0:
@@ -87,7 +87,7 @@ func get_scene(path: String) -> PackedScene:
 	return _cache[path]
 
 
-# Update the cache. Start caching new scenes and remove scenes, that
+# Update the cache. Start caching new scenes and remove_at scenes, that
 # are not used anymore
 #
 # ** Parameters **
@@ -131,11 +131,11 @@ func update_cache(current_scene: String) -> int:
 					print_debug("Removing scene %s from cache" % cache_item)
 					_cache.erase(cache_item)
 		
-	var scene_directory = Directory.new()
+	var scene_directory = DirAccess.new()
 	
 	scene_directory.open(base_path)
 	
-	scene_directory.list_dir_begin(true, true)
+	scene_directory.list_dir_begin() # TODOGODOT4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 	
 	var scene: String = scene_directory.get_next()
 	var path: String
@@ -175,4 +175,4 @@ func _get_index_from_filename(filename: String) -> int:
 	var result = _scene_index_regex.search(filename)
 	if result == null:
 		return -1
-	return int(result.get_string("index"))
+	return (result.get_string("index") as int)

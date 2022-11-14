@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/man_upper_1st_room_op.ogg-b6d425bba6adc438602fbb37c89fa4af.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://clxff3iqgm7lh"
+path="res://.godot/imported/man_upper_1st_room_op.ogg-b6d425bba6adc438602fbb37c89fa4af.oggvorbisstr"
 
 [deps]
 
 source_file="res://sounds/man/man_upper_1st_room_op.ogg"
-dest_files=[ "res://.import/man_upper_1st_room_op.ogg-b6d425bba6adc438602fbb37c89fa4af.oggstr" ]
+dest_files=["res://.godot/imported/man_upper_1st_room_op.ogg-b6d425bba6adc438602fbb37c89fa4af.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

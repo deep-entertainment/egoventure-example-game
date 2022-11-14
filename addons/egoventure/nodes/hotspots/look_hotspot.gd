@@ -1,27 +1,28 @@
 # A hotspot that triggers a Parrot dialog for "look" actions
-tool
-class_name LookHotspot, "res://addons/egoventure/images/look_hotspot.svg"
+@tool
+class_name LookHotspot
 extends TextureButton
+@icon("res://addons/egoventure/images/look_hotspot.svg")
 
 
 # The dialog resource that should be played by Parrot
-export (String, FILE, "*.tres") var dialog
+@export_file("*.tres") var dialog: String
 
-# Show this hotspot depending on the boolean value of this state
+# Show this hotspot depending checked the boolean value of this state
 # variable
-export(String) var visibility_state = ""
+@export var visibility_state: String = ""
 
 
 # The hotspot indicator
-var _hotspot_indicator: Sprite
+var _hotspot_indicator: Sprite2D
 
 
 # Connect to the relevant signals and gather the cursors from configuration
 func _init():
-	_hotspot_indicator = Sprite.new()
+	_hotspot_indicator = Sprite2D.new()
 	add_child(_hotspot_indicator)
 	_hotspot_indicator.hide()
-	connect("pressed", self, "_on_pressed")
+	connect("pressed",Callable(self,"_on_pressed"))
 	mouse_default_cursor_shape = Cursors.CURSOR_MAP[Cursors.Type.LOOK]
 	
 
@@ -31,9 +32,9 @@ func _init():
 #
 # - _delta: Unused
 func _process(_delta):
-	_hotspot_indicator.position = rect_size / 2
+	_hotspot_indicator.position = size / 2
 	_hotspot_indicator.texture = Cursors.get_cursor_texture(Cursors.Type.LOOK) 
-	_hotspot_indicator.rotation_degrees = rect_rotation * -1
+	_hotspot_indicator.rotation_degrees = rotation * -1
 	if not Engine.editor_hint:
 		_check_visibility()
 		
@@ -49,7 +50,7 @@ func _input(event):
 			_hotspot_indicator.hide()
 
 
-# Call _check_state on the next iteration
+# Call _check_state checked the next iteration
 func _enter_tree():
 	call_deferred("_check_state")
 
@@ -58,13 +59,12 @@ func _enter_tree():
 func _check_state():
 	if not Engine.editor_hint:
 		var state = EgoVenture.state
-		if not visibility_state.empty() and \
+		if not visibility_state.is_empty() and \
 				(
 					not (visibility_state in state) or
 					not state.get(visibility_state) is bool
 				):
-			assert(
-				false, 
+			push_error(
 				(
 					"Hotspot visibility state variable %s " +
 					"of node %s not found or is not bool"
@@ -82,13 +82,13 @@ func _on_pressed():
 	if Inventory.selected_item == null:
 		Speedy.hidden = true
 		Parrot.play(load(dialog))
-		yield(Parrot, "finished_dialog")
+		await Parrot.finished_dialog
 		Speedy.hidden = false
 	
 
 # Check wether the hotspot should be shown or hidden
 func _check_visibility():
-	if not visibility_state.empty() and "state" in EgoVenture:
+	if not visibility_state.is_empty() and "state" in EgoVenture:
 		if visibility_state in EgoVenture.state and \
 				EgoVenture.state.get(visibility_state) is bool:
 			if not visible == EgoVenture.state.get(visibility_state):

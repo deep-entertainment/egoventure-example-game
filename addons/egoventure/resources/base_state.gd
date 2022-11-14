@@ -4,31 +4,31 @@ extends Resource
 
 
 # The path of the currently shown scene
-export(String) var current_scene: String
+@export var current_scene: String
 
 # Current list of inventory items
-export(Array) var inventory_items: Array
+@export var inventory_items: Array
 
 # Target view of the stored scene
-export(String) var target_view: String
+@export var target_view: String
 
 # Target location of the stored scene
-export(String) var target_location: String
+@export var target_location: String
 
-# Path to current music playing
-export(String) var current_music: String
+# Path3D to current music playing
+@export var current_music: String
 
-# Path to current background playing
-export(String) var current_background: String
+# Path3D to current background playing
+@export var current_background: String
 
 # Current notepad goal
-export(int) var current_goal: int = 1
+@export var current_goal: int = 1
 
 # An array of FulfillmentRecords
-export(Array) var goals_fulfilled: Array
+@export var goals_fulfilled: Array
 
 # The currently overridden cursors
-export(Dictionary) var overridden_cursors: Dictionary = {}
+@export var overridden_cursors: Dictionary = {}
 
 # Whether skipping in Parrot is enabled
-export(bool) var parrot_skip_enabled: bool = true
+@export var parrot_skip_enabled: bool = true

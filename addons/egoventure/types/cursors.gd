@@ -1,4 +1,4 @@
-tool
+@tool
 # Mouse cursor handling for MDNA games
 extends Node
 
@@ -10,7 +10,7 @@ signal cursors_configured
 enum Type {
 	DEFAULT,
 	GO_FORWARD,
-	GO_BACKWARDS
+	GO_BACKWARDS,
 	TURN_RIGHT,
 	TURN_LEFT,
 	UP,
@@ -70,13 +70,13 @@ func configure(configuration: GameConfiguration):
 #
 # ** Parameters **
 #
-# - type: The type to override (based on the Type enum)
-# - texture: Texture to use for the overridden cursor
+# - type: The type to override (based checked the Type enum)
+# - texture: Texture2D to use for the overridden cursor
 # - hotspot: The cursor hotspot
 # - target_position: Warp the mouse cursor to this point
 func override(
 	type, 
-	texture: Texture, 
+	texture: Texture2D, 
 	hotspot: Vector2,
 	target_position = null
 ):
@@ -95,7 +95,7 @@ func override(
 # 
 # ** Parameters **
 #
-# - type: The type to reset (based on the Type enum)
+# - type: The type to reset (based checked the Type enum)
 func reset(type):
 	var target_mouse_position = null
 	if EgoVenture.get("state") \

@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/stina.ogg-1be18b84df71721df8a707c23ceafd0b.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://jqa3o4qxlx6b"
+path="res://.godot/imported/stina.ogg-1be18b84df71721df8a707c23ceafd0b.oggvorbisstr"
 
 [deps]
 
 source_file="res://music/stina.ogg"
-dest_files=[ "res://.import/stina.ogg-1be18b84df71721df8a707c23ceafd0b.oggstr" ]
+dest_files=["res://.godot/imported/stina.ogg-1be18b84df71721df8a707c23ceafd0b.oggvorbisstr"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

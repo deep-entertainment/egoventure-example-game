@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/man_1776_handbag_cl.ogg-11950524192fb87d71e4824bc1076b6b.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cvxu7pdpkxqfv"
+path="res://.godot/imported/man_1776_handbag_cl.ogg-11950524192fb87d71e4824bc1076b6b.oggvorbisstr"
 
 [deps]
 
 source_file="res://sounds/man/man_1776_handbag_cl.ogg"
-dest_files=[ "res://.import/man_1776_handbag_cl.ogg-11950524192fb87d71e4824bc1076b6b.oggstr" ]
+dest_files=["res://.godot/imported/man_1776_handbag_cl.ogg-11950524192fb87d71e4824bc1076b6b.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

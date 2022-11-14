@@ -1,17 +1,17 @@
 # A resource describing one line in a dialogue
-tool
-class_name DialogLineResource, \
-		"res://addons/parrot/images/dialog_line.svg"
+@tool
+class_name DialogLineResource
 extends Resource
+@icon("res://addons/parrot/images/dialog_line.svg")
 
 
 # The character speaking
-export(Resource) var character: Resource
+@export var character: CharacterResource
 
 
 # The text the character says
-export(String, MULTILINE) var text: String
+@export var text: String
 
 
 # An image that is displayed full screen while the line is shown
-export(Texture) var image: Texture
+@export var image: Texture2D

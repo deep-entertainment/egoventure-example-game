@@ -11,21 +11,21 @@ var _item: InventoryItem
 
 # Configure the panel
 func _ready():
-	$Panel.add_stylebox_override(
+	$Panel.add_theme_stylebox_override(
 		"panel",
 		$Panel.get_stylebox(
 			"detail_view",
 			"Panel"
 		)
 	)
-	$Panel/VBox/Description.add_font_override(
+	$Panel/VBox/Description.add_theme_font_override(
 		"font",
 		$Panel/VBox/Description.get_font(
 			"detail_view", 
 			"Label"
 		)
 	)
-	$Panel/VBox/Description.add_color_override(
+	$Panel/VBox/Description.add_theme_color_override(
 		"font_color",
 		$Panel/VBox/Description.get_color(
 			"detail_view_font_color", 
@@ -35,7 +35,7 @@ func _ready():
 	$Panel.hide()
 
 
-# Hide the view again on click/touch
+# Hide the view again checked click/touch
 #
 # ** Parameters **
 #
@@ -60,7 +60,7 @@ func show_with_item(item: InventoryItem):
 		$Panel/VBox/Image.texture = item.image_big
 		$Panel.mouse_filter = Control.MOUSE_FILTER_STOP
 	else:
-		$Panel/VBox/DetailScene.add_child(load(item.detail_scene).instance())
+		$Panel/VBox/DetailScene.add_child(load(item.detail_scene).instantiate())
 		$Panel.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	if not item.detail_show_mouse:
 		Speedy.hidden = true

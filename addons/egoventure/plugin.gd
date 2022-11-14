@@ -1,5 +1,5 @@
 # First person point and click adventure framework for Godot
-tool
+@tool
 extends EditorPlugin
 
 

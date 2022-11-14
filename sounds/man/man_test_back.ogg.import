@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/man_test_back.ogg-470b23d25004bc17fceae8ff5507a3bc.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cr53ojwesw0bl"
+path="res://.godot/imported/man_test_back.ogg-470b23d25004bc17fceae8ff5507a3bc.oggvorbisstr"
 
 [deps]
 
 source_file="res://sounds/man/man_test_back.ogg"
-dest_files=[ "res://.import/man_test_back.ogg-470b23d25004bc17fceae8ff5507a3bc.oggstr" ]
+dest_files=["res://.godot/imported/man_test_back.ogg-470b23d25004bc17fceae8ff5507a3bc.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

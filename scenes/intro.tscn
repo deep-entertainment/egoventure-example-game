@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/intro.gd" type="Script" id=1]
-[ext_resource path="res://images/misc/credits01.jpg" type="Texture" id=2]
-[ext_resource path="res://images/misc/credits02.jpg" type="Texture" id=3]
+[ext_resource path="res://images/misc/credits01.jpg" type="Texture2D" id=2]
+[ext_resource path="res://images/misc/credits02.jpg" type="Texture2D" id=3]
 [ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=4]
 
 [node name="Node2D" type="Control"]
@@ -14,8 +14,8 @@ __meta__ = {
 }
 
 [node name="cred1" type="TextureButton" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+offset_right = 40.0
+offset_bottom = 40.0
 texture_normal = ExtResource( 2 )
 script = ExtResource( 4 )
 __meta__ = {
@@ -24,8 +24,8 @@ __meta__ = {
 cursor_type = 0
 
 [node name="cred2" type="TextureButton" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+offset_right = 40.0
+offset_bottom = 40.0
 texture_normal = ExtResource( 3 )
 script = ExtResource( 4 )
 __meta__ = {

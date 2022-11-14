@@ -7,4 +7,4 @@ func _on_Hotspot_activate():
 	(EgoVenture.state as GameState).hs_on_ins = true
 	EgoVenture.target_view = "back"
 	Notepad.finished_step(2, 3)
-	EgoVenture.change_scene("res://scenes/man/man12.tscn")
+	EgoVenture.change_scene_to_file("res://scenes/man/man12.tscn")

@@ -39,10 +39,18 @@ var theme: Theme
 
 # Let parrot ignore game pausing. So dialog will continue
 # playing when a game is paused
-var ignore_pause: bool setget _set_ignore_pause
+var ignore_pause: bool :
+	get:
+		return ignore_pause # TODOConverter40 Non existent get function 
+	set(mod_value):
+		mod_value  # TODOConverter40 Copy here content of _set_ignore_pause
 
 # Enable skipping dialog lines
-var skip_enabled: bool = true setget _set_skip_enabled
+var skip_enabled: bool = true :
+	get:
+		return skip_enabled # TODOConverter40 Non existent get function 
+	set(mod_value):
+		mod_value  # TODOConverter40 Copy here content of _set_skip_enabled
 
 
 # The current dialog playing
@@ -63,7 +71,7 @@ func _ready():
 	$VBox.hide()
 
 
-# Skip the line on ui_skip action
+# Skip the line checked ui_skip action
 func _input(event):
 	if skip_enabled and _dialog_playing and \
 			event.is_action_released("ui_skip") and \
@@ -86,39 +94,39 @@ func configure(
 ):
 	theme = p_theme
 	$VBox/Skip/Panel.theme = theme
-	$VBox/Skip/Panel.add_stylebox_override(
+	$VBox/Skip/Panel.add_theme_stylebox_override(
 		"panel", 
 		$VBox/Skip/Panel.get_stylebox("dialog_panel", "Panel")
 	)
-	$VBox/Skip/Panel/Margin/Text.add_font_override(
+	$VBox/Skip/Panel/Margin/Text.add_theme_font_override(
 		"mono_font",
 		$VBox/Skip/Panel/Margin/Text.get_font(
 			"dialog_mono_font", 
 			"RichTextLabel"
 		)
 	)
-	$VBox/Skip/Panel/Margin/Text.add_font_override(
+	$VBox/Skip/Panel/Margin/Text.add_theme_font_override(
 		"bold_italics_font",
 		$VBox/Skip/Panel/Margin/Text.get_font(
 			"dialog_bold_italics_font", 
 			"RichTextLabel"
 		)
 	)
-	$VBox/Skip/Panel/Margin/Text.add_font_override(
+	$VBox/Skip/Panel/Margin/Text.add_theme_font_override(
 		"italics_font",
 		$VBox/Skip/Panel/Margin/Text.get_font(
 			"dialog_italics_font", 
 			"RichTextLabel"
 		)
 	)
-	$VBox/Skip/Panel/Margin/Text.add_font_override(
+	$VBox/Skip/Panel/Margin/Text.add_theme_font_override(
 		"bold_font",
 		$VBox/Skip/Panel/Margin/Text.get_font(
 			"dialog_bold_font", 
 			"RichTextLabel"
 		)
 	)
-	$VBox/Skip/Panel/Margin/Text.add_font_override(
+	$VBox/Skip/Panel/Margin/Text.add_theme_font_override(
 		"normal_font",
 		$VBox/Skip/Panel/Margin/Text.get_font(
 			"dialog_normal_font", 
@@ -238,7 +246,7 @@ func advance():
 		else:
 			print_debug(
 				"No voice file found. Calculating the time to advance " + \
-				"based on the reading speed."
+				"based checked the reading speed."
 			)
 			var words = text.split(' ', false).size()
 			line_length = \
@@ -254,7 +262,7 @@ func advance():
 		
 		if subtitles:
 			print_debug("Displaying subtitles")
-			$VBox/Skip/Panel/Margin/Text.bbcode_text = \
+			$VBox/Skip/Panel/Margin/Text.text = \
 				"[color=#%s][center]%s[/center][/color]" % [
 					character.color.to_html(false), 
 					text
@@ -274,9 +282,9 @@ func _on_Timer_timeout():
 func _set_ignore_pause(value: bool):
 	ignore_pause = value
 	if ignore_pause:
-		pause_mode = Node.PAUSE_MODE_PROCESS
+		process_mode = Node.PROCESS_MODE_ALWAYS
 	else:
-		pause_mode = Node.PAUSE_MODE_STOP
+		process_mode = Node.PROCESS_MODE_PAUSABLE
 
 
 # Set whether skipping is enabled or not

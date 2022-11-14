@@ -6,7 +6,7 @@ var _active: bool
 
 func _ready():
 	# continue processing also if game is paused
-	CheckCursor.pause_mode = Node.PAUSE_MODE_PROCESS
+	CheckCursor.process_mode = Node.PROCESS_MODE_ALWAYS
 	_active = true
 	
 	
@@ -40,7 +40,7 @@ func _process(_delta):
 							and child.visible
 							and child.is_class("Control")
 					):
-						if Rect2(Vector2(), child.rect_size).has_point(child.get_local_mouse_position()):
+						if Rect2(Vector2(), child.size).has_point(child.get_local_mouse_position()):
 							layer_processed = true
 							if child.get_class() == "TriggerHotspot":
 								child.on_mouse_entered()

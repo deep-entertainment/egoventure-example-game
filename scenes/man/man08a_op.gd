@@ -13,4 +13,4 @@ func _on_Hotspot_activate():
 	Boombox.play_effect(preload("res://sounds/man/man_fridge_cl.ogg"))
 	Boombox.stop_background()
 	EgoVenture.target_view = "front"
-	EgoVenture.change_scene("res://scenes/man/man08.tscn")
+	EgoVenture.change_scene_to_file("res://scenes/man/man08.tscn")

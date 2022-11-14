@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/beep2.ogg-bd0cc4da000ee85e5a9470aee6753194.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b5tiiwxerp3i8"
+path="res://.godot/imported/beep2.ogg-bd0cc4da000ee85e5a9470aee6753194.oggvorbisstr"
 
 [deps]
 
 source_file="res://sounds/man/beep2.ogg"
-dest_files=[ "res://.import/beep2.ogg-bd0cc4da000ee85e5a9470aee6753194.oggstr" ]
+dest_files=["res://.godot/imported/beep2.ogg-bd0cc4da000ee85e5a9470aee6753194.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

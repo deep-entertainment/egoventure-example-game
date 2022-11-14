@@ -15,7 +15,11 @@ var current_hotspot: Vector2
 var current_shape
 
 # Wether the mouse cursor is hidden currently
-var hidden: bool setget _set_hidden
+var hidden: bool :
+	get:
+		return hidden # TODOConverter40 Non existent get function 
+	set(mod_value):
+		mod_value  # TODOConverter40 Copy here content of _set_hidden
 
 # Keep the current cursor shape and don't update it
 var keep_shape: bool = false
@@ -24,7 +28,7 @@ var keep_shape: bool = false
 var keep_shape_once: bool = false
 
 
-# Helper variable if we're on a touch device
+# Helper variable if we're checked a touch device
 var is_touch: bool = false
 
 
@@ -70,7 +74,7 @@ func _input(event):
 # - hotspot: The hotspot position of the cursor
 # - target_position: Warp the mouse cursor to this point
 func set_custom_mouse_cursor(
-	image: Texture, 
+	image: Texture2D, 
 	shape = Input.CURSOR_ARROW, 
 	hotspot: Vector2 = Vector2(0,0),
 	target_position = null

@@ -8,7 +8,7 @@ extends CanvasLayer
 #
 # - icon: A texture showing the icon of the notification
 # - sound: Sound that should be played
-func notify(icon: Texture, sound: AudioStream = null):
+func notify(icon: Texture2D, sound: AudioStream = null):
 	$Icon.texture = icon
 	$Animation.play("notification")
 	if sound:

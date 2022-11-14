@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=2]
 
-[ext_resource path="res://images/misc/arrow_previous.png" type="Texture" id=1]
-[ext_resource path="res://images/misc/arrow_next.png" type="Texture" id=2]
+[ext_resource path="res://images/misc/arrow_previous.png" type="Texture2D" id=1]
+[ext_resource path="res://images/misc/arrow_next.png" type="Texture2D" id=2]
 [ext_resource path="res://addons/egoventure/nodes/egoventure_menu_button.gd" type="Script" id=3]
 [ext_resource path="res://addons/egoventure/nodes/main_menu.gd" type="Script" id=5]
 
@@ -18,15 +18,15 @@ data = {
 image = SubResource( 31 )
 size = Vector2( 128, 256 )
 
-[sub_resource type="BitmapFont" id=18]
+[sub_resource type="FontFile" id=18]
 textures = [ SubResource( 17 ) ]
-chars = PoolIntArray( 32, 0, 0, 0, 0, 0, 0, 11, 4, 160, 0, 1734439808, 0, 0, 0, 0, 11, 4, 96, 0, 2, 216, 3, 2, 3, 0, 8, 192, 0, 32, 16, 11, 13, -1, -2, 9, 224, 0, 85, 180, 5, 11, 1, 0, 7, 64, 0, 72, 34, 10, 11, 1, 1, 12, 97, 0, 76, 188, 5, 8, 1, 3, 7, 65, 0, 2, 16, 11, 10, -1, 1, 9, 161, 0, 2, 222, 2, 11, 1, 3, 4, 193, 0, 17, 16, 11, 13, -1, -2, 9, 225, 0, 112, 169, 5, 11, 1, 0, 7, 33, 0, 65, 234, 2, 10, 1, 1, 4, 34, 0, 49, 187, 5, 4, 1, 1, 6, 162, 0, 12, 136, 6, 10, 1, 1, 8, 66, 0, 46, 109, 7, 10, 1, 1, 9, 194, 0, 113, 2, 11, 13, -1, -2, 9, 226, 0, 72, 143, 6, 11, 1, 0, 7, 98, 0, 102, 165, 6, 11, 1, 0, 8, 99, 0, 40, 179, 5, 8, 1, 3, 7, 67, 0, 68, 115, 7, 10, 1, 1, 8, 227, 0, 2, 155, 6, 12, 1, -1, 7, 195, 0, 53, 2, 11, 14, -1, -3, 9, 163, 0, 22, 167, 6, 10, 1, 1, 8, 35, 0, 78, 66, 8, 10, 0, 1, 9, 164, 0, 14, 79, 8, 7, 0, 3, 8, 68, 0, 90, 66, 8, 10, 1, 1, 10, 100, 0, 82, 150, 6, 11, 1, 0, 8, 36, 0, 102, 137, 6, 12, 1, 0, 8, 196, 0, 98, 2, 11, 13, -1, -2, 9, 228, 0, 121, 169, 5, 11, 1, 0, 7, 101, 0, 32, 124, 6, 8, 1, 3, 8, 197, 0, 83, 2, 11, 12, -1, -1, 9, 229, 0, 20, 196, 5, 12, 1, -1, 7, 165, 0, 79, 98, 7, 10, 0, 1, 8, 69, 0, 29, 191, 5, 10, 1, 1, 7, 37, 0, 2, 30, 10, 10, 1, 1, 12, 230, 0, 58, 34, 10, 8, 1, 3, 12, 102, 0, 2, 201, 5, 11, 0, 0, 4, 166, 0, 95, 228, 2, 14, 3, 0, 7, 198, 0, 21, 2, 12, 10, -1, 1, 12, 70, 0, 101, 105, 6, 10, 1, 1, 7, 38, 0, 67, 49, 9, 10, 1, 1, 10, 39, 0, 119, 219, 2, 4, 1, 1, 3, 167, 0, 112, 131, 6, 11, 0, 0, 7, 103, 0, 13, 107, 7, 11, 1, 3, 7, 199, 0, 57, 97, 7, 13, 1, 1, 8, 231, 0, 2, 186, 5, 11, 1, 3, 7, 71, 0, 66, 65, 8, 10, 1, 1, 10, 168, 0, 77, 217, 4, 2, 2, 0, 8, 104, 0, 72, 158, 6, 11, 1, 0, 8, 40, 0, 93, 212, 4, 12, 1, 1, 4, 200, 0, 47, 195, 5, 13, 1, -2, 7, 232, 0, 62, 143, 6, 11, 1, 0, 8, 72, 0, 54, 65, 8, 10, 1, 1, 10, 105, 0, 109, 213, 3, 11, 0, 0, 4, 41, 0, 51, 226, 3, 12, 0, 1, 4, 201, 0, 56, 197, 5, 13, 1, -2, 7, 233, 0, 52, 142, 6, 11, 1, 0, 8, 169, 0, 44, 34, 10, 10, 1, 1, 12, 73, 0, 38, 191, 5, 10, 0, 1, 5, 170, 0, 29, 205, 4, 5, 0, 1, 5, 42, 0, 108, 80, 7, 6, 0, 0, 8, 202, 0, 65, 202, 5, 13, 1, -2, 7, 74, 0, 92, 195, 5, 13, -2, 1, 3, 106, 0, 101, 213, 4, 14, -1, 0, 4, 234, 0, 12, 181, 6, 11, 1, 0, 8, 171, 0, 22, 181, 5, 6, 1, 4, 7, 43, 0, 101, 94, 7, 7, 0, 3, 8, 107, 0, 112, 92, 7, 11, 1, 0, 7, 203, 0, 83, 200, 5, 13, 1, -2, 7, 235, 0, 2, 171, 6, 11, 1, 0, 8, 75, 0, 102, 66, 8, 10, 1, 1, 8, 44, 0, 107, 231, 2, 3, 1, 9, 4, 172, 0, 2, 104, 7, 4, 0, 6, 8, 108, 0, 113, 228, 2, 11, 1, 0, 4, 204, 0, 101, 196, 5, 13, 0, -2, 5, 236, 0, 30, 214, 3, 11, 0, 0, 4, 76, 0, 22, 124, 6, 10, 1, 1, 7, 173, 0, 16, 229, 3, 2, 1, 7, 5, 45, 0, 123, 201, 3, 2, 1, 7, 5, 109, 0, 68, 2, 11, 8, 1, 3, 13, 205, 0, 11, 211, 5, 13, 0, -2, 5, 237, 0, 37, 214, 3, 11, 1, 0, 4, 77, 0, 62, 20, 10, 10, 1, 1, 12, 46, 0, 101, 231, 2, 2, 1, 9, 4, 110, 0, 111, 107, 6, 8, 1, 3, 8, 206, 0, 20, 212, 5, 13, 0, -2, 5, 238, 0, 11, 196, 5, 11, -1, 0, 4, 174, 0, 30, 33, 10, 10, 1, 1, 12, 78, 0, 2, 79, 8, 10, 1, 1, 10, 175, 0, 35, 111, 7, 1, 0, -1, 7, 111, 0, 102, 153, 6, 8, 1, 3, 8, 207, 0, 119, 184, 5, 13, 0, -2, 5, 239, 0, 69, 219, 4, 11, 0, 0, 4, 79, 0, 41, 66, 9, 10, 1, 1, 11, 47, 0, 90, 105, 7, 10, -1, 1, 5, 176, 0, 61, 219, 4, 4, 1, 1, 6, 112, 0, 32, 150, 6, 11, 1, 3, 8, 240, 0, 82, 165, 6, 11, 1, 0, 8, 208, 0, 86, 33, 9, 10, 0, 1, 10, 80, 0, 52, 128, 6, 10, 1, 1, 8, 48, 0, 42, 135, 6, 10, 1, 1, 8, 177, 0, 46, 97, 7, 8, 0, 3, 8, 113, 0, 22, 152, 6, 11, 1, 3, 8, 241, 0, 2, 112, 6, 12, 1, -1, 8, 81, 0, 15, 59, 9, 13, 1, 1, 11, 209, 0, 74, 80, 8, 14, 1, -3, 10, 49, 0, 45, 212, 4, 10, 2, 1, 8, 178, 0, 58, 187, 5, 6, 0, 1, 5, 114, 0, 85, 217, 4, 8, 1, 3, 5, 210, 0, 2, 62, 9, 13, 1, -2, 11, 242, 0, 62, 165, 6, 11, 1, 0, 8, 82, 0, 35, 97, 7, 10, 1, 1, 8, 50, 0, 57, 114, 7, 10, 1, 1, 8, 179, 0, 53, 214, 4, 6, 0, 1, 5, 115, 0, 112, 146, 6, 8, 0, 3, 7, 211, 0, 106, 49, 9, 13, 1, -2, 11, 243, 0, 52, 172, 6, 11, 1, 0, 8, 83, 0, 24, 96, 7, 10, 0, 1, 7, 51, 0, 22, 138, 6, 10, 1, 1, 8, 180, 0, 9, 228, 3, 2, 3, 0, 8, 116, 0, 67, 188, 5, 10, 0, 1, 5, 212, 0, 93, 49, 9, 13, 1, -2, 11, 244, 0, 42, 164, 6, 11, 1, 0, 8, 84, 0, 13, 93, 7, 10, 0, 1, 7, 52, 0, 24, 110, 7, 10, 1, 1, 8, 245, 0, 12, 165, 6, 12, 1, -1, 8, 181, 0, 2, 140, 6, 11, 1, 3, 8, 117, 0, 42, 123, 6, 8, 1, 3, 8, 53, 0, 92, 119, 6, 10, 1, 1, 8, 85, 0, 114, 66, 8, 10, 1, 1, 10, 213, 0, 2, 44, 9, 14, 1, -3, 11, 118, 0, 15, 47, 9, 8, -1, 3, 7, 182, 0, 68, 98, 7, 13, 1, 0, 9, 214, 0, 80, 49, 9, 13, 1, -2, 11, 246, 0, 72, 173, 6, 11, 1, 0, 8, 86, 0, 76, 18, 10, 10, -1, 1, 8, 54, 0, 82, 121, 6, 10, 1, 1, 8, 183, 0, 77, 223, 2, 2, 1, 5, 4, 215, 0, 2, 93, 7, 7, 0, 3, 8, 247, 0, 90, 94, 7, 7, 0, 3, 8, 119, 0, 37, 2, 12, 8, -1, 3, 10, 87, 0, 2, 2, 15, 10, -1, 1, 13, 55, 0, 72, 129, 6, 10, 1, 1, 8, 184, 0, 116, 212, 3, 3, 0, 11, 3, 120, 0, 119, 80, 7, 8, 0, 3, 7, 248, 0, 2, 128, 6, 8, 1, 3, 8, 216, 0, 99, 33, 9, 12, 1, 0, 11, 88, 0, 90, 19, 10, 10, -1, 1, 8, 56, 0, 62, 129, 6, 10, 1, 1, 8, 185, 0, 23, 229, 3, 6, 0, 1, 5, 57, 0, 12, 122, 6, 10, 1, 1, 8, 121, 0, 112, 33, 9, 11, -1, 3, 7, 249, 0, 52, 157, 6, 11, 1, 0, 8, 217, 0, 38, 80, 8, 13, 1, -2, 10, 89, 0, 28, 65, 9, 10, -1, 1, 7, 186, 0, 37, 205, 4, 5, 0, 1, 5, 58, 0, 89, 229, 2, 8, 1, 3, 4, 122, 0, 112, 119, 6, 8, 1, 3, 7, 90, 0, 32, 136, 6, 10, 1, 1, 8, 250, 0, 42, 149, 6, 11, 1, 0, 8, 218, 0, 26, 79, 8, 13, 1, -2, 10, 187, 0, 31, 181, 5, 6, 1, 4, 7, 59, 0, 71, 234, 2, 9, 1, 3, 4, 251, 0, 12, 150, 6, 11, 1, 0, 8, 123, 0, 103, 180, 5, 12, 0, 1, 5, 91, 0, 58, 227, 3, 12, 1, 1, 4, 219, 0, 50, 80, 8, 13, 1, -2, 10, 60, 0, 92, 153, 6, 7, 1, 3, 8, 92, 0, 97, 80, 7, 10, -1, 1, 5, 252, 0, 92, 133, 6, 11, 1, 0, 8, 220, 0, 62, 79, 8, 13, 1, -2, 10, 124, 0, 83, 229, 2, 14, 3, 0, 7, 188, 0, 16, 33, 10, 10, 0, 1, 10, 61, 0, 79, 112, 7, 5, 0, 4, 8, 125, 0, 110, 196, 5, 12, 0, 1, 5, 93, 0, 44, 226, 3, 12, 0, 1, 4, 221, 0, 54, 48, 9, 13, -1, -2, 7, 253, 0, 28, 47, 9, 14, -1, 0, 7, 189, 0, 47, 20, 11, 10, 0, 1, 10, 126, 0, 62, 158, 6, 3, 1, 5, 8, 94, 0, 86, 80, 7, 6, 0, 1, 7, 62, 0, 112, 158, 6, 7, 1, 3, 8, 254, 0, 102, 119, 6, 14, 1, 0, 8, 222, 0, 32, 165, 6, 10, 1, 1, 8, 190, 0, 104, 19, 10, 10, 0, 1, 10, 95, 0, 92, 148, 6, 1, 0, 12, 6, 63, 0, 74, 202, 5, 10, 0, 1, 6, 191, 0, 94, 180, 5, 11, 0, 3, 6, 255, 0, 41, 48, 9, 14, -1, 0, 7, 223, 0, 82, 135, 6, 11, 1, 0, 8 )
+chars = PackedInt32Array( 32, 0, 0, 0, 0, 0, 0, 11, 4, 160, 0, 1734439808, 0, 0, 0, 0, 11, 4, 96, 0, 2, 216, 3, 2, 3, 0, 8, 192, 0, 32, 16, 11, 13, -1, -2, 9, 224, 0, 85, 180, 5, 11, 1, 0, 7, 64, 0, 72, 34, 10, 11, 1, 1, 12, 97, 0, 76, 188, 5, 8, 1, 3, 7, 65, 0, 2, 16, 11, 10, -1, 1, 9, 161, 0, 2, 222, 2, 11, 1, 3, 4, 193, 0, 17, 16, 11, 13, -1, -2, 9, 225, 0, 112, 169, 5, 11, 1, 0, 7, 33, 0, 65, 234, 2, 10, 1, 1, 4, 34, 0, 49, 187, 5, 4, 1, 1, 6, 162, 0, 12, 136, 6, 10, 1, 1, 8, 66, 0, 46, 109, 7, 10, 1, 1, 9, 194, 0, 113, 2, 11, 13, -1, -2, 9, 226, 0, 72, 143, 6, 11, 1, 0, 7, 98, 0, 102, 165, 6, 11, 1, 0, 8, 99, 0, 40, 179, 5, 8, 1, 3, 7, 67, 0, 68, 115, 7, 10, 1, 1, 8, 227, 0, 2, 155, 6, 12, 1, -1, 7, 195, 0, 53, 2, 11, 14, -1, -3, 9, 163, 0, 22, 167, 6, 10, 1, 1, 8, 35, 0, 78, 66, 8, 10, 0, 1, 9, 164, 0, 14, 79, 8, 7, 0, 3, 8, 68, 0, 90, 66, 8, 10, 1, 1, 10, 100, 0, 82, 150, 6, 11, 1, 0, 8, 36, 0, 102, 137, 6, 12, 1, 0, 8, 196, 0, 98, 2, 11, 13, -1, -2, 9, 228, 0, 121, 169, 5, 11, 1, 0, 7, 101, 0, 32, 124, 6, 8, 1, 3, 8, 197, 0, 83, 2, 11, 12, -1, -1, 9, 229, 0, 20, 196, 5, 12, 1, -1, 7, 165, 0, 79, 98, 7, 10, 0, 1, 8, 69, 0, 29, 191, 5, 10, 1, 1, 7, 37, 0, 2, 30, 10, 10, 1, 1, 12, 230, 0, 58, 34, 10, 8, 1, 3, 12, 102, 0, 2, 201, 5, 11, 0, 0, 4, 166, 0, 95, 228, 2, 14, 3, 0, 7, 198, 0, 21, 2, 12, 10, -1, 1, 12, 70, 0, 101, 105, 6, 10, 1, 1, 7, 38, 0, 67, 49, 9, 10, 1, 1, 10, 39, 0, 119, 219, 2, 4, 1, 1, 3, 167, 0, 112, 131, 6, 11, 0, 0, 7, 103, 0, 13, 107, 7, 11, 1, 3, 7, 199, 0, 57, 97, 7, 13, 1, 1, 8, 231, 0, 2, 186, 5, 11, 1, 3, 7, 71, 0, 66, 65, 8, 10, 1, 1, 10, 168, 0, 77, 217, 4, 2, 2, 0, 8, 104, 0, 72, 158, 6, 11, 1, 0, 8, 40, 0, 93, 212, 4, 12, 1, 1, 4, 200, 0, 47, 195, 5, 13, 1, -2, 7, 232, 0, 62, 143, 6, 11, 1, 0, 8, 72, 0, 54, 65, 8, 10, 1, 1, 10, 105, 0, 109, 213, 3, 11, 0, 0, 4, 41, 0, 51, 226, 3, 12, 0, 1, 4, 201, 0, 56, 197, 5, 13, 1, -2, 7, 233, 0, 52, 142, 6, 11, 1, 0, 8, 169, 0, 44, 34, 10, 10, 1, 1, 12, 73, 0, 38, 191, 5, 10, 0, 1, 5, 170, 0, 29, 205, 4, 5, 0, 1, 5, 42, 0, 108, 80, 7, 6, 0, 0, 8, 202, 0, 65, 202, 5, 13, 1, -2, 7, 74, 0, 92, 195, 5, 13, -2, 1, 3, 106, 0, 101, 213, 4, 14, -1, 0, 4, 234, 0, 12, 181, 6, 11, 1, 0, 8, 171, 0, 22, 181, 5, 6, 1, 4, 7, 43, 0, 101, 94, 7, 7, 0, 3, 8, 107, 0, 112, 92, 7, 11, 1, 0, 7, 203, 0, 83, 200, 5, 13, 1, -2, 7, 235, 0, 2, 171, 6, 11, 1, 0, 8, 75, 0, 102, 66, 8, 10, 1, 1, 8, 44, 0, 107, 231, 2, 3, 1, 9, 4, 172, 0, 2, 104, 7, 4, 0, 6, 8, 108, 0, 113, 228, 2, 11, 1, 0, 4, 204, 0, 101, 196, 5, 13, 0, -2, 5, 236, 0, 30, 214, 3, 11, 0, 0, 4, 76, 0, 22, 124, 6, 10, 1, 1, 7, 173, 0, 16, 229, 3, 2, 1, 7, 5, 45, 0, 123, 201, 3, 2, 1, 7, 5, 109, 0, 68, 2, 11, 8, 1, 3, 13, 205, 0, 11, 211, 5, 13, 0, -2, 5, 237, 0, 37, 214, 3, 11, 1, 0, 4, 77, 0, 62, 20, 10, 10, 1, 1, 12, 46, 0, 101, 231, 2, 2, 1, 9, 4, 110, 0, 111, 107, 6, 8, 1, 3, 8, 206, 0, 20, 212, 5, 13, 0, -2, 5, 238, 0, 11, 196, 5, 11, -1, 0, 4, 174, 0, 30, 33, 10, 10, 1, 1, 12, 78, 0, 2, 79, 8, 10, 1, 1, 10, 175, 0, 35, 111, 7, 1, 0, -1, 7, 111, 0, 102, 153, 6, 8, 1, 3, 8, 207, 0, 119, 184, 5, 13, 0, -2, 5, 239, 0, 69, 219, 4, 11, 0, 0, 4, 79, 0, 41, 66, 9, 10, 1, 1, 11, 47, 0, 90, 105, 7, 10, -1, 1, 5, 176, 0, 61, 219, 4, 4, 1, 1, 6, 112, 0, 32, 150, 6, 11, 1, 3, 8, 240, 0, 82, 165, 6, 11, 1, 0, 8, 208, 0, 86, 33, 9, 10, 0, 1, 10, 80, 0, 52, 128, 6, 10, 1, 1, 8, 48, 0, 42, 135, 6, 10, 1, 1, 8, 177, 0, 46, 97, 7, 8, 0, 3, 8, 113, 0, 22, 152, 6, 11, 1, 3, 8, 241, 0, 2, 112, 6, 12, 1, -1, 8, 81, 0, 15, 59, 9, 13, 1, 1, 11, 209, 0, 74, 80, 8, 14, 1, -3, 10, 49, 0, 45, 212, 4, 10, 2, 1, 8, 178, 0, 58, 187, 5, 6, 0, 1, 5, 114, 0, 85, 217, 4, 8, 1, 3, 5, 210, 0, 2, 62, 9, 13, 1, -2, 11, 242, 0, 62, 165, 6, 11, 1, 0, 8, 82, 0, 35, 97, 7, 10, 1, 1, 8, 50, 0, 57, 114, 7, 10, 1, 1, 8, 179, 0, 53, 214, 4, 6, 0, 1, 5, 115, 0, 112, 146, 6, 8, 0, 3, 7, 211, 0, 106, 49, 9, 13, 1, -2, 11, 243, 0, 52, 172, 6, 11, 1, 0, 8, 83, 0, 24, 96, 7, 10, 0, 1, 7, 51, 0, 22, 138, 6, 10, 1, 1, 8, 180, 0, 9, 228, 3, 2, 3, 0, 8, 116, 0, 67, 188, 5, 10, 0, 1, 5, 212, 0, 93, 49, 9, 13, 1, -2, 11, 244, 0, 42, 164, 6, 11, 1, 0, 8, 84, 0, 13, 93, 7, 10, 0, 1, 7, 52, 0, 24, 110, 7, 10, 1, 1, 8, 245, 0, 12, 165, 6, 12, 1, -1, 8, 181, 0, 2, 140, 6, 11, 1, 3, 8, 117, 0, 42, 123, 6, 8, 1, 3, 8, 53, 0, 92, 119, 6, 10, 1, 1, 8, 85, 0, 114, 66, 8, 10, 1, 1, 10, 213, 0, 2, 44, 9, 14, 1, -3, 11, 118, 0, 15, 47, 9, 8, -1, 3, 7, 182, 0, 68, 98, 7, 13, 1, 0, 9, 214, 0, 80, 49, 9, 13, 1, -2, 11, 246, 0, 72, 173, 6, 11, 1, 0, 8, 86, 0, 76, 18, 10, 10, -1, 1, 8, 54, 0, 82, 121, 6, 10, 1, 1, 8, 183, 0, 77, 223, 2, 2, 1, 5, 4, 215, 0, 2, 93, 7, 7, 0, 3, 8, 247, 0, 90, 94, 7, 7, 0, 3, 8, 119, 0, 37, 2, 12, 8, -1, 3, 10, 87, 0, 2, 2, 15, 10, -1, 1, 13, 55, 0, 72, 129, 6, 10, 1, 1, 8, 184, 0, 116, 212, 3, 3, 0, 11, 3, 120, 0, 119, 80, 7, 8, 0, 3, 7, 248, 0, 2, 128, 6, 8, 1, 3, 8, 216, 0, 99, 33, 9, 12, 1, 0, 11, 88, 0, 90, 19, 10, 10, -1, 1, 8, 56, 0, 62, 129, 6, 10, 1, 1, 8, 185, 0, 23, 229, 3, 6, 0, 1, 5, 57, 0, 12, 122, 6, 10, 1, 1, 8, 121, 0, 112, 33, 9, 11, -1, 3, 7, 249, 0, 52, 157, 6, 11, 1, 0, 8, 217, 0, 38, 80, 8, 13, 1, -2, 10, 89, 0, 28, 65, 9, 10, -1, 1, 7, 186, 0, 37, 205, 4, 5, 0, 1, 5, 58, 0, 89, 229, 2, 8, 1, 3, 4, 122, 0, 112, 119, 6, 8, 1, 3, 7, 90, 0, 32, 136, 6, 10, 1, 1, 8, 250, 0, 42, 149, 6, 11, 1, 0, 8, 218, 0, 26, 79, 8, 13, 1, -2, 10, 187, 0, 31, 181, 5, 6, 1, 4, 7, 59, 0, 71, 234, 2, 9, 1, 3, 4, 251, 0, 12, 150, 6, 11, 1, 0, 8, 123, 0, 103, 180, 5, 12, 0, 1, 5, 91, 0, 58, 227, 3, 12, 1, 1, 4, 219, 0, 50, 80, 8, 13, 1, -2, 10, 60, 0, 92, 153, 6, 7, 1, 3, 8, 92, 0, 97, 80, 7, 10, -1, 1, 5, 252, 0, 92, 133, 6, 11, 1, 0, 8, 220, 0, 62, 79, 8, 13, 1, -2, 10, 124, 0, 83, 229, 2, 14, 3, 0, 7, 188, 0, 16, 33, 10, 10, 0, 1, 10, 61, 0, 79, 112, 7, 5, 0, 4, 8, 125, 0, 110, 196, 5, 12, 0, 1, 5, 93, 0, 44, 226, 3, 12, 0, 1, 4, 221, 0, 54, 48, 9, 13, -1, -2, 7, 253, 0, 28, 47, 9, 14, -1, 0, 7, 189, 0, 47, 20, 11, 10, 0, 1, 10, 126, 0, 62, 158, 6, 3, 1, 5, 8, 94, 0, 86, 80, 7, 6, 0, 1, 7, 62, 0, 112, 158, 6, 7, 1, 3, 8, 254, 0, 102, 119, 6, 14, 1, 0, 8, 222, 0, 32, 165, 6, 10, 1, 1, 8, 190, 0, 104, 19, 10, 10, 0, 1, 10, 95, 0, 92, 148, 6, 1, 0, 12, 6, 63, 0, 74, 202, 5, 10, 0, 1, 6, 191, 0, 94, 180, 5, 11, 0, 3, 6, 255, 0, 41, 48, 9, 14, -1, 0, 7, 223, 0, 82, 135, 6, 11, 1, 0, 8 )
 height = 14.0
 ascent = 11.0
 
 [sub_resource type="Image" id=32]
 data = {
-"data": PoolByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
+"data": PackedByteArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
 "format": "LumAlpha8",
 "height": 16,
 "mipmaps": false,
@@ -42,10 +42,10 @@ size = Vector2( 16, 16 )
 [sub_resource type="StyleBoxTexture" id=21]
 texture = SubResource( 20 )
 region_rect = Rect2( 0, 0, 16, 16 )
-margin_left = 2.0
-margin_right = 2.0
-margin_top = 2.0
-margin_bottom = 2.0
+offset_left = 2.0
+offset_right = 2.0
+offset_top = 2.0
+offset_bottom = 2.0
 
 [sub_resource type="StyleBoxEmpty" id=22]
 
@@ -68,7 +68,7 @@ margin_bottom = 2.0
 [sub_resource type="StyleBoxEmpty" id=30]
 
 [node name="MainMenu" type="CanvasLayer"]
-pause_mode = 2
+process_mode = 2
 layer = 125
 script = ExtResource( 5 )
 
@@ -102,19 +102,19 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-custom_constants/margin_right = 200
-custom_constants/margin_top = 50
-custom_constants/margin_left = 200
-custom_constants/margin_bottom = 50
+custom_constants/offset_right = 200
+custom_constants/offset_top = 50
+custom_constants/offset_left = 200
+custom_constants/offset_bottom = 50
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBox" type="VBoxContainer" parent="Menu/MainMenu/Margin"]
-margin_left = 200.0
-margin_top = 50.0
-margin_right = 2360.0
-margin_bottom = 1390.0
+offset_left = 200.0
+offset_top = 50.0
+offset_right = 2360.0
+offset_bottom = 1390.0
 size_flags_vertical = 3
 custom_constants/separation = 50
 __meta__ = {
@@ -122,8 +122,8 @@ __meta__ = {
 }
 
 [node name="Logo" type="TextureRect" parent="Menu/MainMenu/Margin/VBox"]
-margin_right = 2160.0
-margin_bottom = 450.0
+offset_right = 2160.0
+offset_bottom = 450.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
@@ -131,17 +131,17 @@ expand = true
 stretch_mode = 6
 
 [node name="MenuItems" type="VBoxContainer" parent="Menu/MainMenu/Margin/VBox"]
-margin_top = 500.0
-margin_right = 2160.0
-margin_bottom = 1177.0
+offset_top = 500.0
+offset_right = 2160.0
+offset_bottom = 1177.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
 custom_constants/separation = 30
 
 [node name="Continue" type="Button" parent="Menu/MainMenu/Margin/VBox/MenuItems"]
-margin_right = 2160.0
-margin_bottom = 71.0
+offset_right = 2160.0
+offset_bottom = 71.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 18 )
@@ -154,9 +154,9 @@ text = "MENU_CONTINUE"
 script = ExtResource( 3 )
 
 [node name="Resume" type="Button" parent="Menu/MainMenu/Margin/VBox/MenuItems"]
-margin_top = 101.0
-margin_right = 2160.0
-margin_bottom = 172.0
+offset_top = 101.0
+offset_right = 2160.0
+offset_bottom = 172.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 18 )
@@ -169,9 +169,9 @@ text = "MENU_RESUME"
 script = ExtResource( 3 )
 
 [node name="NewGame" type="Button" parent="Menu/MainMenu/Margin/VBox/MenuItems"]
-margin_top = 202.0
-margin_right = 2160.0
-margin_bottom = 273.0
+offset_top = 202.0
+offset_right = 2160.0
+offset_bottom = 273.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 18 )
@@ -184,9 +184,9 @@ text = "MENU_NEW"
 script = ExtResource( 3 )
 
 [node name="Load" type="Button" parent="Menu/MainMenu/Margin/VBox/MenuItems"]
-margin_top = 303.0
-margin_right = 2160.0
-margin_bottom = 374.0
+offset_top = 303.0
+offset_right = 2160.0
+offset_bottom = 374.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 18 )
@@ -199,9 +199,9 @@ text = "MENU_LOAD"
 script = ExtResource( 3 )
 
 [node name="Save" type="Button" parent="Menu/MainMenu/Margin/VBox/MenuItems"]
-margin_top = 404.0
-margin_right = 2160.0
-margin_bottom = 475.0
+offset_top = 404.0
+offset_right = 2160.0
+offset_bottom = 475.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 18 )
@@ -214,9 +214,9 @@ text = "MENU_SAVE"
 script = ExtResource( 3 )
 
 [node name="Options" type="Button" parent="Menu/MainMenu/Margin/VBox/MenuItems"]
-margin_top = 505.0
-margin_right = 2160.0
-margin_bottom = 576.0
+offset_top = 505.0
+offset_right = 2160.0
+offset_bottom = 576.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 18 )
@@ -229,9 +229,9 @@ text = "MENU_OPTIONS"
 script = ExtResource( 3 )
 
 [node name="Quit" type="Button" parent="Menu/MainMenu/Margin/VBox/MenuItems"]
-margin_top = 606.0
-margin_right = 2160.0
-margin_bottom = 677.0
+offset_top = 606.0
+offset_right = 2160.0
+offset_bottom = 677.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 18 )
@@ -244,9 +244,9 @@ text = "MENU_QUIT"
 script = ExtResource( 3 )
 
 [node name="Spacer" type="Control" parent="Menu/MainMenu/Margin/VBox"]
-margin_top = 1227.0
-margin_right = 2160.0
-margin_bottom = 1340.0
+offset_top = 1227.0
+offset_right = 2160.0
+offset_bottom = 1340.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 
@@ -274,8 +274,8 @@ __meta__ = {
 }
 
 [node name="Title" type="Label" parent="Menu/SaveSlots/VBox"]
-margin_right = 2560.0
-margin_bottom = 14.0
+offset_right = 2560.0
+offset_bottom = 14.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "SAVESLOTS_TITLE"
@@ -283,9 +283,9 @@ align = 1
 valign = 1
 
 [node name="HBox" type="HBoxContainer" parent="Menu/SaveSlots/VBox"]
-margin_top = 18.0
-margin_right = 2560.0
-margin_bottom = 1418.0
+offset_top = 18.0
+offset_right = 2560.0
+offset_bottom = 1418.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
@@ -294,8 +294,8 @@ __meta__ = {
 }
 
 [node name="Previous" type="TextureButton" parent="Menu/SaveSlots/VBox/HBox"]
-margin_right = 319.0
-margin_bottom = 1400.0
+offset_right = 319.0
+offset_bottom = 1400.0
 mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 texture_normal = ExtResource( 1 )
@@ -303,35 +303,35 @@ expand = true
 stretch_mode = 3
 
 [node name="Slots" type="GridContainer" parent="Menu/SaveSlots/VBox/HBox"]
-margin_left = 323.0
-margin_right = 2237.0
-margin_bottom = 1400.0
+offset_left = 323.0
+offset_right = 2237.0
+offset_bottom = 1400.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 6.0
 columns = 4
 
 [node name="Slot1" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_right = 475.0
-margin_bottom = 464.0
+offset_right = 475.0
+offset_bottom = 464.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 10
-custom_constants/margin_top = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 10
+custom_constants/offset_right = 10
+custom_constants/offset_top = 10
+custom_constants/offset_left = 10
+custom_constants/offset_bottom = 10
 
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot1"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 465.0
-margin_bottom = 454.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 465.0
+offset_bottom = 454.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot1/Slot"]
-margin_right = 455.0
-margin_bottom = 426.0
+offset_right = 455.0
+offset_bottom = 426.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -347,33 +347,33 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot1/Slot"]
-margin_top = 430.0
-margin_right = 455.0
-margin_bottom = 444.0
+offset_top = 430.0
+offset_right = 455.0
+offset_bottom = 444.0
 align = 1
 
 [node name="Slot2" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 479.0
-margin_right = 954.0
-margin_bottom = 464.0
+offset_left = 479.0
+offset_right = 954.0
+offset_bottom = 464.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 10
-custom_constants/margin_top = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 10
+custom_constants/offset_right = 10
+custom_constants/offset_top = 10
+custom_constants/offset_left = 10
+custom_constants/offset_bottom = 10
 
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot2"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 465.0
-margin_bottom = 454.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 465.0
+offset_bottom = 454.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot2/Slot"]
-margin_right = 455.0
-margin_bottom = 426.0
+offset_right = 455.0
+offset_bottom = 426.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -389,33 +389,33 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot2/Slot"]
-margin_top = 430.0
-margin_right = 455.0
-margin_bottom = 444.0
+offset_top = 430.0
+offset_right = 455.0
+offset_bottom = 444.0
 align = 1
 
 [node name="Slot3" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 958.0
-margin_right = 1433.0
-margin_bottom = 464.0
+offset_left = 958.0
+offset_right = 1433.0
+offset_bottom = 464.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 10
-custom_constants/margin_top = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 10
+custom_constants/offset_right = 10
+custom_constants/offset_top = 10
+custom_constants/offset_left = 10
+custom_constants/offset_bottom = 10
 
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot3"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 465.0
-margin_bottom = 454.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 465.0
+offset_bottom = 454.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot3/Slot"]
-margin_right = 455.0
-margin_bottom = 426.0
+offset_right = 455.0
+offset_bottom = 426.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -431,33 +431,33 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot3/Slot"]
-margin_top = 430.0
-margin_right = 455.0
-margin_bottom = 444.0
+offset_top = 430.0
+offset_right = 455.0
+offset_bottom = 444.0
 align = 1
 
 [node name="Slot4" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 1437.0
-margin_right = 1912.0
-margin_bottom = 464.0
+offset_left = 1437.0
+offset_right = 1912.0
+offset_bottom = 464.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 10
-custom_constants/margin_top = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 10
+custom_constants/offset_right = 10
+custom_constants/offset_top = 10
+custom_constants/offset_left = 10
+custom_constants/offset_bottom = 10
 
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot4"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 465.0
-margin_bottom = 454.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 465.0
+offset_bottom = 454.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot4/Slot"]
-margin_right = 455.0
-margin_bottom = 426.0
+offset_right = 455.0
+offset_bottom = 426.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -473,33 +473,33 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot4/Slot"]
-margin_top = 430.0
-margin_right = 455.0
-margin_bottom = 444.0
+offset_top = 430.0
+offset_right = 455.0
+offset_bottom = 444.0
 align = 1
 
 [node name="Slot5" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_top = 468.0
-margin_right = 475.0
-margin_bottom = 932.0
+offset_top = 468.0
+offset_right = 475.0
+offset_bottom = 932.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 10
-custom_constants/margin_top = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 10
+custom_constants/offset_right = 10
+custom_constants/offset_top = 10
+custom_constants/offset_left = 10
+custom_constants/offset_bottom = 10
 
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot5"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 465.0
-margin_bottom = 454.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 465.0
+offset_bottom = 454.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot5/Slot"]
-margin_right = 455.0
-margin_bottom = 426.0
+offset_right = 455.0
+offset_bottom = 426.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -515,34 +515,34 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot5/Slot"]
-margin_top = 430.0
-margin_right = 455.0
-margin_bottom = 444.0
+offset_top = 430.0
+offset_right = 455.0
+offset_bottom = 444.0
 align = 1
 
 [node name="Slot6" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 479.0
-margin_top = 468.0
-margin_right = 954.0
-margin_bottom = 932.0
+offset_left = 479.0
+offset_top = 468.0
+offset_right = 954.0
+offset_bottom = 932.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 10
-custom_constants/margin_top = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 10
+custom_constants/offset_right = 10
+custom_constants/offset_top = 10
+custom_constants/offset_left = 10
+custom_constants/offset_bottom = 10
 
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot6"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 465.0
-margin_bottom = 454.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 465.0
+offset_bottom = 454.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot6/Slot"]
-margin_right = 455.0
-margin_bottom = 426.0
+offset_right = 455.0
+offset_bottom = 426.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -558,34 +558,34 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot6/Slot"]
-margin_top = 430.0
-margin_right = 455.0
-margin_bottom = 444.0
+offset_top = 430.0
+offset_right = 455.0
+offset_bottom = 444.0
 align = 1
 
 [node name="Slot7" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 958.0
-margin_top = 468.0
-margin_right = 1433.0
-margin_bottom = 932.0
+offset_left = 958.0
+offset_top = 468.0
+offset_right = 1433.0
+offset_bottom = 932.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 10
-custom_constants/margin_top = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 10
+custom_constants/offset_right = 10
+custom_constants/offset_top = 10
+custom_constants/offset_left = 10
+custom_constants/offset_bottom = 10
 
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot7"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 465.0
-margin_bottom = 454.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 465.0
+offset_bottom = 454.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot7/Slot"]
-margin_right = 455.0
-margin_bottom = 426.0
+offset_right = 455.0
+offset_bottom = 426.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -601,34 +601,34 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot7/Slot"]
-margin_top = 430.0
-margin_right = 455.0
-margin_bottom = 444.0
+offset_top = 430.0
+offset_right = 455.0
+offset_bottom = 444.0
 align = 1
 
 [node name="Slot8" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 1437.0
-margin_top = 468.0
-margin_right = 1912.0
-margin_bottom = 932.0
+offset_left = 1437.0
+offset_top = 468.0
+offset_right = 1912.0
+offset_bottom = 932.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 10
-custom_constants/margin_top = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 10
+custom_constants/offset_right = 10
+custom_constants/offset_top = 10
+custom_constants/offset_left = 10
+custom_constants/offset_bottom = 10
 
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot8"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 465.0
-margin_bottom = 454.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 465.0
+offset_bottom = 454.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot8/Slot"]
-margin_right = 455.0
-margin_bottom = 426.0
+offset_right = 455.0
+offset_bottom = 426.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -644,33 +644,33 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot8/Slot"]
-margin_top = 430.0
-margin_right = 455.0
-margin_bottom = 444.0
+offset_top = 430.0
+offset_right = 455.0
+offset_bottom = 444.0
 align = 1
 
 [node name="Slot9" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_top = 936.0
-margin_right = 475.0
-margin_bottom = 1400.0
+offset_top = 936.0
+offset_right = 475.0
+offset_bottom = 1400.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 10
-custom_constants/margin_top = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 10
+custom_constants/offset_right = 10
+custom_constants/offset_top = 10
+custom_constants/offset_left = 10
+custom_constants/offset_bottom = 10
 
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot9"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 465.0
-margin_bottom = 454.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 465.0
+offset_bottom = 454.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot9/Slot"]
-margin_right = 455.0
-margin_bottom = 426.0
+offset_right = 455.0
+offset_bottom = 426.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -686,34 +686,34 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot9/Slot"]
-margin_top = 430.0
-margin_right = 455.0
-margin_bottom = 444.0
+offset_top = 430.0
+offset_right = 455.0
+offset_bottom = 444.0
 align = 1
 
 [node name="Slot10" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 479.0
-margin_top = 936.0
-margin_right = 954.0
-margin_bottom = 1400.0
+offset_left = 479.0
+offset_top = 936.0
+offset_right = 954.0
+offset_bottom = 1400.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 10
-custom_constants/margin_top = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 10
+custom_constants/offset_right = 10
+custom_constants/offset_top = 10
+custom_constants/offset_left = 10
+custom_constants/offset_bottom = 10
 
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot10"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 465.0
-margin_bottom = 454.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 465.0
+offset_bottom = 454.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot10/Slot"]
-margin_right = 455.0
-margin_bottom = 426.0
+offset_right = 455.0
+offset_bottom = 426.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -729,34 +729,34 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot10/Slot"]
-margin_top = 430.0
-margin_right = 455.0
-margin_bottom = 444.0
+offset_top = 430.0
+offset_right = 455.0
+offset_bottom = 444.0
 align = 1
 
 [node name="Slot11" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 958.0
-margin_top = 936.0
-margin_right = 1433.0
-margin_bottom = 1400.0
+offset_left = 958.0
+offset_top = 936.0
+offset_right = 1433.0
+offset_bottom = 1400.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 10
-custom_constants/margin_top = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 10
+custom_constants/offset_right = 10
+custom_constants/offset_top = 10
+custom_constants/offset_left = 10
+custom_constants/offset_bottom = 10
 
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot11"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 465.0
-margin_bottom = 454.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 465.0
+offset_bottom = 454.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot11/Slot"]
-margin_right = 455.0
-margin_bottom = 426.0
+offset_right = 455.0
+offset_bottom = 426.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -772,34 +772,34 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot11/Slot"]
-margin_top = 430.0
-margin_right = 455.0
-margin_bottom = 444.0
+offset_top = 430.0
+offset_right = 455.0
+offset_bottom = 444.0
 align = 1
 
 [node name="Slot12" type="MarginContainer" parent="Menu/SaveSlots/VBox/HBox/Slots"]
-margin_left = 1437.0
-margin_top = 936.0
-margin_right = 1912.0
-margin_bottom = 1400.0
+offset_left = 1437.0
+offset_top = 936.0
+offset_right = 1912.0
+offset_bottom = 1400.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_right = 10
-custom_constants/margin_top = 10
-custom_constants/margin_left = 10
-custom_constants/margin_bottom = 10
+custom_constants/offset_right = 10
+custom_constants/offset_top = 10
+custom_constants/offset_left = 10
+custom_constants/offset_bottom = 10
 
 [node name="Slot" type="VBoxContainer" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot12"]
-margin_left = 10.0
-margin_top = 10.0
-margin_right = 465.0
-margin_bottom = 454.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 465.0
+offset_bottom = 454.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Panel" type="Panel" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot12/Slot"]
-margin_right = 455.0
-margin_bottom = 426.0
+offset_right = 455.0
+offset_bottom = 426.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -815,15 +815,15 @@ __meta__ = {
 }
 
 [node name="Date" type="Label" parent="Menu/SaveSlots/VBox/HBox/Slots/Slot12/Slot"]
-margin_top = 430.0
-margin_right = 455.0
-margin_bottom = 444.0
+offset_top = 430.0
+offset_right = 455.0
+offset_bottom = 444.0
 align = 1
 
 [node name="Next" type="TextureButton" parent="Menu/SaveSlots/VBox/HBox"]
-margin_left = 2241.0
-margin_right = 2560.0
-margin_bottom = 1400.0
+offset_left = 2241.0
+offset_right = 2560.0
+offset_bottom = 1400.0
 mouse_default_cursor_shape = 12
 size_flags_horizontal = 3
 texture_normal = ExtResource( 2 )
@@ -831,9 +831,9 @@ expand = true
 stretch_mode = 3
 
 [node name="Cancel" type="Button" parent="Menu/SaveSlots/VBox"]
-margin_top = 1422.0
-margin_right = 2560.0
-margin_bottom = 1440.0
+offset_top = 1422.0
+offset_right = 2560.0
+offset_bottom = 1440.0
 size_flags_horizontal = 3
 custom_fonts/font = SubResource( 18 )
 custom_styles/hover = SubResource( 21 )
@@ -860,39 +860,39 @@ expand = true
 [node name="CenterContainer" type="CenterContainer" parent="Menu/Options"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -1.05933
-margin_right = -1.05933
+offset_left = -1.05933
+offset_right = -1.05933
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="VBox" type="VBoxContainer" parent="Menu/Options/CenterContainer"]
-margin_left = 765.0
-margin_top = 549.0
-margin_right = 1795.0
-margin_bottom = 891.0
+offset_left = 765.0
+offset_top = 549.0
+offset_right = 1795.0
+offset_bottom = 891.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Grid" type="GridContainer" parent="Menu/Options/CenterContainer/VBox"]
-margin_right = 1030.0
-margin_bottom = 276.0
-custom_constants/vseparation = 30
-custom_constants/hseparation = 30
+offset_right = 1030.0
+offset_bottom = 276.0
+custom_constants/v_separation = 30
+custom_constants/h_separation = 30
 columns = 2
 
 [node name="LocaleLabel" type="Label" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_right = 500.0
-margin_bottom = 14.0
-rect_min_size = Vector2( 500, 0 )
+offset_right = 500.0
+offset_bottom = 14.0
+minimum_size = Vector2( 500, 0 )
 text = "OPTIONS_LOCALE"
 align = 2
 
 [node name="Locales" type="HBoxContainer" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_left = 530.0
-margin_right = 1030.0
-margin_bottom = 14.0
+offset_left = 530.0
+offset_right = 1030.0
+offset_bottom = 14.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
@@ -900,9 +900,9 @@ __meta__ = {
 }
 
 [node name="SpeechLabel" type="Label" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_top = 44.0
-margin_right = 500.0
-margin_bottom = 60.0
+offset_top = 44.0
+offset_right = 500.0
+offset_bottom = 60.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "OPTIONS_SPEECH"
@@ -910,11 +910,11 @@ align = 2
 valign = 2
 
 [node name="SpeechSlider" type="HSlider" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_left = 530.0
-margin_top = 44.0
-margin_right = 1030.0
-margin_bottom = 60.0
-rect_min_size = Vector2( 500, 0 )
+offset_left = 530.0
+offset_top = 44.0
+offset_right = 1030.0
+offset_bottom = 60.0
+minimum_size = Vector2( 500, 0 )
 mouse_default_cursor_shape = 13
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -924,9 +924,9 @@ tick_count = 10
 ticks_on_borders = true
 
 [node name="MusicLabel" type="Label" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_top = 90.0
-margin_right = 500.0
-margin_bottom = 106.0
+offset_top = 90.0
+offset_right = 500.0
+offset_bottom = 106.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "OPTIONS_MUSIC"
@@ -934,19 +934,19 @@ align = 2
 valign = 2
 
 [node name="MusicSlider" type="HSlider" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_left = 530.0
-margin_top = 90.0
-margin_right = 1030.0
-margin_bottom = 106.0
-rect_min_size = Vector2( 500, 0 )
+offset_left = 530.0
+offset_top = 90.0
+offset_right = 1030.0
+offset_bottom = 106.0
+minimum_size = Vector2( 500, 0 )
 mouse_default_cursor_shape = 13
 size_flags_horizontal = 3
 size_flags_vertical = 1
 
 [node name="EffectsLabel" type="Label" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_top = 136.0
-margin_right = 500.0
-margin_bottom = 152.0
+offset_top = 136.0
+offset_right = 500.0
+offset_bottom = 152.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "OPTIONS_EFFECTS"
@@ -954,38 +954,38 @@ align = 2
 valign = 2
 
 [node name="EffectsSlider" type="HSlider" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_left = 530.0
-margin_top = 136.0
-margin_right = 1030.0
-margin_bottom = 152.0
-rect_min_size = Vector2( 500, 0 )
+offset_left = 530.0
+offset_top = 136.0
+offset_right = 1030.0
+offset_bottom = 152.0
+minimum_size = Vector2( 500, 0 )
 mouse_default_cursor_shape = 13
 size_flags_horizontal = 3
 size_flags_vertical = 1
 
 [node name="SubtitlesLabel" type="Label" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_top = 182.0
-margin_right = 500.0
-margin_bottom = 214.0
+offset_top = 182.0
+offset_right = 500.0
+offset_bottom = 214.0
 size_flags_vertical = 1
 text = "OPTIONS_SUBTITLES"
 align = 2
 valign = 2
 
 [node name="Subtitles" type="CheckButton" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_left = 530.0
-margin_top = 182.0
-margin_right = 594.0
-margin_bottom = 214.0
+offset_left = 530.0
+offset_top = 182.0
+offset_right = 594.0
+offset_bottom = 214.0
 mouse_default_cursor_shape = 13
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_styles/normal = SubResource( 15 )
 
 [node name="FullscreenLabel" type="Label" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_top = 244.0
-margin_right = 500.0
-margin_bottom = 276.0
+offset_top = 244.0
+offset_right = 500.0
+offset_bottom = 276.0
 size_flags_vertical = 1
 text = "OPTIONS_FULLSCREEN"
 align = 2
@@ -995,25 +995,25 @@ __meta__ = {
 }
 
 [node name="Fullscreen" type="CheckButton" parent="Menu/Options/CenterContainer/VBox/Grid"]
-margin_left = 530.0
-margin_top = 244.0
-margin_right = 594.0
-margin_bottom = 276.0
+offset_left = 530.0
+offset_top = 244.0
+offset_right = 594.0
+offset_bottom = 276.0
 mouse_default_cursor_shape = 13
 size_flags_horizontal = 0
 size_flags_vertical = 0
 custom_styles/normal = SubResource( 15 )
 
 [node name="Spacer" type="Control" parent="Menu/Options/CenterContainer/VBox"]
-margin_top = 280.0
-margin_right = 1030.0
-margin_bottom = 320.0
-rect_min_size = Vector2( 0, 40 )
+offset_top = 280.0
+offset_right = 1030.0
+offset_bottom = 320.0
+minimum_size = Vector2( 0, 40 )
 
 [node name="Return" type="Button" parent="Menu/Options/CenterContainer/VBox"]
-margin_top = 324.0
-margin_right = 1030.0
-margin_bottom = 342.0
+offset_top = 324.0
+offset_right = 1030.0
+offset_bottom = 342.0
 custom_fonts/font = SubResource( 18 )
 custom_styles/hover = SubResource( 21 )
 custom_styles/pressed = SubResource( 21 )
@@ -1024,23 +1024,23 @@ text = "OPTIONS_RETURN"
 script = ExtResource( 3 )
 
 [node name="QuitConfirm" type="ConfirmationDialog" parent="Menu"]
-margin_right = 400.0
-margin_bottom = 140.0
-rect_min_size = Vector2( 400, 140 )
+offset_right = 400.0
+offset_bottom = 140.0
+minimum_size = Vector2( 400, 140 )
 input_pass_on_modal_close_click = false
 window_title = ""
 
 [node name="OverwriteConfirm" type="ConfirmationDialog" parent="Menu"]
-margin_right = 400.0
-margin_bottom = 140.0
-rect_min_size = Vector2( 400, 140 )
+offset_right = 400.0
+offset_bottom = 140.0
+minimum_size = Vector2( 400, 140 )
 input_pass_on_modal_close_click = false
 window_title = ""
 
 [node name="RestartConfirm" type="ConfirmationDialog" parent="Menu"]
-margin_right = 547.0
-margin_bottom = 140.0
-rect_min_size = Vector2( 400, 140 )
+offset_right = 547.0
+offset_bottom = 140.0
+minimum_size = Vector2( 400, 140 )
 input_pass_on_modal_close_click = false
 window_title = ""
 

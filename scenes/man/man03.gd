@@ -18,7 +18,7 @@ func _ready():
 func _on_Hotspot2_pressed():
 	if (EgoVenture.state as GameState).menu_info_seen == 1:
 		EgoVenture.target_view = "front"
-		EgoVenture.change_scene("res://scenes/man/man04.tscn")
+		EgoVenture.change_scene_to_file("res://scenes/man/man04.tscn")
 	else:
 		(EgoVenture.state as GameState).menu_info_seen = 1
-		EgoVenture.change_scene("res://scenes/man/man04a_inf.tscn")
+		EgoVenture.change_scene_to_file("res://scenes/man/man04a_inf.tscn")

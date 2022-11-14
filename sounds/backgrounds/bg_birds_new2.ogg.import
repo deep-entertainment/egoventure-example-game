@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/bg_birds_new2.ogg-5dc454967d49b9393b527d9f2a647627.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bqntreicg838q"
+path="res://.godot/imported/bg_birds_new2.ogg-5dc454967d49b9393b527d9f2a647627.oggvorbisstr"
 
 [deps]
 
 source_file="res://sounds/backgrounds/bg_birds_new2.ogg"
-dest_files=[ "res://.import/bg_birds_new2.ogg-5dc454967d49b9393b527d9f2a647627.oggstr" ]
+dest_files=["res://.godot/imported/bg_birds_new2.ogg-5dc454967d49b9393b527d9f2a647627.oggvorbisstr"]
 
 [params]
 
 loop=true
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

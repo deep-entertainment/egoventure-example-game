@@ -19,4 +19,4 @@ func _on_man_rag_pressed():
 
 
 func _on_Hotspot_pressed():
-	EgoVenture.change_scene("res://scenes/man/man22a_xcl.tscn")
+	EgoVenture.change_scene_to_file("res://scenes/man/man22a_xcl.tscn")

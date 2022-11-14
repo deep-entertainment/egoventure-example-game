@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/man/man13d_lift3.gd" type="Script" id=1]
-[ext_resource path="res://images/man/man13d_lift3.jpg" type="Texture" id=2]
+[ext_resource path="res://images/man/man13d_lift3.jpg" type="Texture2D" id=2]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource( 2 )
 centered = false

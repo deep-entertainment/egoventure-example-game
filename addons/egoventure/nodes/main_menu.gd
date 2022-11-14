@@ -49,7 +49,7 @@ var _mouse_was_hidden: bool = false
 
 # Default to hiding the menu
 func _ready():
-	EgoVenture.connect("game_loaded", self, "toggle")
+	EgoVenture.connect("game_loaded",Callable(self,"toggle"))
 
 
 # Hide everything upon startup
@@ -94,7 +94,7 @@ func configure(configuration: GameConfiguration):
 	
 	$Menu.theme = configuration.design_theme
 	
-	$Menu/MainMenu/Margin/VBox/MenuItems.add_constant_override("separation", configuration.menu_item_separation)
+	$Menu/MainMenu/Margin/VBox/MenuItems.add_theme_constant_override("separation", configuration.menu_item_separation)
 	
 	# Set option labels to the menu button style
 	for label in [
@@ -108,7 +108,7 @@ func configure(configuration: GameConfiguration):
 		"LocaleLabel"
 	]:
 		var node = get_node("Menu/Options/CenterContainer/VBox/Grid/%s" % label)
-		node.add_font_override(
+		node.add_theme_font_override(
 			"font",
 			$Menu.get_font(
 				"menu_button",
@@ -116,7 +116,7 @@ func configure(configuration: GameConfiguration):
 			)
 		)
 		
-	$Menu/SaveSlots/VBox/Title.add_font_override(
+	$Menu/SaveSlots/VBox/Title.add_theme_font_override(
 		"font",
 		$Menu/SaveSlots/VBox/Title.get_font(
 			"menu_button",
@@ -131,7 +131,7 @@ func configure(configuration: GameConfiguration):
 			_get_bus_percent("Music")
 	$Menu/Options/CenterContainer/VBox/Grid/EffectsSlider.value = \
 			_get_bus_percent("Effects")
-	$Menu/Options/CenterContainer/VBox/Grid/Subtitles.pressed = \
+	$Menu/Options/CenterContainer/VBox/Grid/Subtitles.button_pressed = \
 			EgoVenture.options_get_subtitles()
 	
 	if not configuration.menu_options_hide_language_selection:
@@ -151,11 +151,8 @@ func configure(configuration: GameConfiguration):
 				locale_button.texture_normal = load(
 					"res://addons/egoventure/images/flags/%s.svg" % locale
 				)
-				locale_button.connect(
-					"pressed", 
-					self, 
-					"_on_locale_changed", 
-					[locale]
+				locale_button.pressed.connect(
+					_on_locale_changed.bind(locale)
 				)
 				if locale == EgoVenture.in_game_configuration.locale:
 					locale_button.modulate = EgoVenture.configuration.\
@@ -223,7 +220,7 @@ func toggle():
 		if not $Menu.visible:
 			$Menu/SaveSlots.visible = false
 		else:
-			$Menu/Options/CenterContainer/VBox/Grid/Fullscreen.pressed = \
+			$Menu/Options/CenterContainer/VBox/Grid/Fullscreen.button_pressed = \
 				EgoVenture.in_game_configuration.fullscreen
 			Speedy.set_shape(Input.CURSOR_ARROW)
 			if EgoVenture.is_touch:
@@ -242,7 +239,7 @@ func _on_Resume_pressed():
 # Quit was pressed. Show confirmation
 func _on_Quit_pressed():
 	$Menu/QuitConfirm.popup_centered()
-	$Menu/QuitConfirm.get_ok().release_focus()
+	$Menu/QuitConfirm.get_ok_button().release_focus()
 
 
 # Quit was confirmed. Just quit the game
@@ -283,7 +280,7 @@ func _on_slot_selected(slot: int, exists: bool):
 			# This save slot exists, show the confirmation dialog
 			_selected_slot = slot
 			$Menu/OverwriteConfirm.popup_centered()
-			$Menu/OverwriteConfirm.get_ok().release_focus()
+			$Menu/OverwriteConfirm.get_ok_button().release_focus()
 		else:
 			if disabled:
 				disabled = false
@@ -291,12 +288,12 @@ func _on_slot_selected(slot: int, exists: bool):
 			# scene
 			toggle()
 			Speedy.hidden = true
-			yield(VisualServer, "frame_post_draw")
+			await RenderingServer.frame_post_draw
 			var screenshot = get_viewport().get_texture().get_data()
 			screenshot.resize(464, 261, Image.INTERPOLATE_NEAREST)
 			screenshot.flip_y()
 			screenshot.save_png("user://save_%d.png" % slot)
-			yield(VisualServer, "frame_post_draw")
+			await RenderingServer.frame_post_draw
 			Speedy.hidden = false
 			EgoVenture.save(slot)
 	else:
@@ -329,7 +326,7 @@ func _on_Options_pressed():
 	$Menu/Options.show()
 
 
-# Return was pressed on the options screen
+# Return was pressed checked the options screen
 func _on_Return_pressed():
 	$Menu/Options.hide()
 
@@ -412,7 +409,7 @@ func _percent_to_db(percent: float) -> float:
 
 
 # Get the last modified timestamp in a readable date format for the
-# save slots based on the format constant
+# save slots based checked the format constant
 #
 # ** Arguments **
 # - The slot file name
@@ -421,9 +418,9 @@ func _percent_to_db(percent: float) -> float:
 # - The last modification timestamp of the file in the date format as configured
 #   in the constant
 func _get_date_from_file(file: String) -> String:
-	var timezone = OS.get_time_zone_info()
-	var datetime = OS.get_datetime_from_unix_time(
-		File.new().get_modified_time(file) + (timezone.bias * 60)
+	var timezone = Time.get_time_zone_from_system()
+	var datetime = Time.get_datetime_dict_from_unix_time(
+		FileAccess.get_modified_time(file) + (timezone.bias * 60)
 	)
 	datetime['month'] = "%02d" % datetime['month']
 	datetime['day'] = "%02d" % datetime['day']
@@ -437,17 +434,17 @@ func _get_date_from_file(file: String) -> String:
 func _get_save_slot_page_last_modified() -> int:
 	var slot_last = 0
 	var time_last = 0
-	var save_dir = Directory.new()	
-	if save_dir.open("user://") == OK:
-		if save_dir.list_dir_begin(true) == OK:  # without navigational files
+	var save_dir = DirAccess.new()
+	if save_dir.open("user://"):
+		if save_dir.list_dir_begin()  == OK:  # without navigational files# TODOGODOT4 fill missing arguments https://github.com/godotengine/godot/pull/40547
 			# iterate through save files of save directory and compare modification time
 			var slot_filename = save_dir.get_next()
-			while !slot_filename.empty():
+			while !slot_filename.is_empty():
 				if !save_dir.current_is_dir():  # skip directories
 					if slot_filename.begins_with("save_") and slot_filename.ends_with(".tres"):
 						var slot_number = slot_filename.trim_prefix("save_").trim_suffix(".tres")
-						if slot_number.is_valid_integer():
-							var slot_time = File.new().get_modified_time("user://" + slot_filename)
+						if slot_number.is_valid_int():
+							var slot_time = FileAccess.get_modified_time("user://" + slot_filename)
 							if slot_time > time_last:
 								time_last = slot_time
 								slot_last = slot_number.to_int()
@@ -460,7 +457,7 @@ func _get_save_slot_page_last_modified() -> int:
 
 # Refresh the saveslots vie
 func _refresh_saveslots():
-	var save_dir = Directory.new()
+	var save_dir = DirAccess.new()
 	save_dir.open("user://")
 	
 	if _save_slot_page == 1:
@@ -478,7 +475,7 @@ func _refresh_saveslots():
 			"Slot%d" % (slot + 1)
 		)
 		(slot_node.get_node("Slot/Panel") as Panel) \
-				.add_stylebox_override(
+				.add_theme_stylebox_override(
 					"panel", 
 					(slot_node.get_node("Slot/Panel") as Panel).get_stylebox(
 						"saveslot_panel",
@@ -486,7 +483,7 @@ func _refresh_saveslots():
 					)
 				)
 		(slot_node.get_node("Slot/Date") as Label) \
-				.add_font_override(
+				.add_theme_font_override(
 					"font",
 					(slot_node.get_node("Slot/Date") as Label).get_font(
 						"saveslots_date",
@@ -546,23 +543,16 @@ func _refresh_saveslots():
 					Cursors.CURSOR_MAP[Cursors.Type.DEFAULT]
 			
 		# Connect the pressed signals for the slot in a clean way
-		if slot_panel_image.is_connected(
-			"pressed", 
-			self, 
-			"_on_slot_selected"
+		if slot_panel_image.pressed.is_connected(
+			_on_slot_selected
 		):
-			slot_panel_image.disconnect(
-				"pressed", 
-				self, 
-				"_on_slot_selected"
+			slot_panel_image.pressed.disconnect(
+				_on_slot_selected
 			)
 			
 		if connect_signals:
-			slot_panel_image.connect(
-				"pressed", 
-				self, 
-				"_on_slot_selected", 
-				[save_slot, slot_exists]
+			slot_panel_image.pressed.connect(
+				_on_slot_selected.bind(save_slot, slot_exists)
 			)
 
 
@@ -577,7 +567,7 @@ func _on_Continue_pressed():
 func _on_NewGame_pressed():
 	if EgoVenture.has_continue_state():
 		$Menu/RestartConfirm.popup_centered()
-		$Menu/RestartConfirm.get_ok().release_focus()
+		$Menu/RestartConfirm.get_ok_button().release_focus()
 	else:
 		_on_RestartConfirm_confirmed()
 
@@ -597,31 +587,25 @@ func _on_Menu_gui_input(event):
 		toggle()
 
 
-# Stop speech sample on mouse release
+# Stop speech sample checked mouse release
 func _on_SpeechSlider_gui_input(event):
 	if event is InputEventMouseButton and not \
 			(event as InputEventMouseButton).pressed:
 		if $Menu/Speech.get_playback_position() < MINIMUM_SAMPLE_TIME:
-			yield(
-				get_tree().create_timer(
-					MINIMUM_SAMPLE_TIME - $Menu/Speech.get_playback_position()
-				), 
-				"timeout"
-			)
+			await get_tree().create_timer(
+				MINIMUM_SAMPLE_TIME - $Menu/Speech.get_playback_position()
+			).timeout
 		$Menu/Speech.stop()
 
 
-# Stop effects sample on mouse release
+# Stop effects sample checked mouse release
 func _on_EffectsSlider_gui_input(event):
 	if event is InputEventMouseButton and not \
 			(event as InputEventMouseButton).pressed:
 		if $Menu/Effects.get_playback_position() < MINIMUM_SAMPLE_TIME:
-			yield(
-				get_tree().create_timer(
-					MINIMUM_SAMPLE_TIME - $Menu/Effects.get_playback_position()
-				), 
-				"timeout"
-			)
+			await get_tree().create_timer(
+				MINIMUM_SAMPLE_TIME - $Menu/Effects.get_playback_position()
+			).timeout
 		$Menu/Effects.stop()
 
 

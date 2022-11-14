@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/man_book_up.ogg-5667fe80e7048df7962c2411a6afd817.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b5nu83dekx2wp"
+path="res://.godot/imported/man_book_up.ogg-5667fe80e7048df7962c2411a6afd817.oggvorbisstr"
 
 [deps]
 
 source_file="res://sounds/man/man_book_up.ogg"
-dest_files=[ "res://.import/man_book_up.ogg-5667fe80e7048df7962c2411a6afd817.oggstr" ]
+dest_files=["res://.godot/imported/man_book_up.ogg-5667fe80e7048df7962c2411a6afd817.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,21 +1,21 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://images/man/man07b_lift2.jpg" type="Texture" id=1]
+[ext_resource path="res://images/man/man07b_lift2.jpg" type="Texture2D" id=1]
 [ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=2]
 [ext_resource path="res://scenes/man/man07b_lift2.gd" type="Script" id=3]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource( 1 )
 centered = false
 
 [node name="Hotspot" type="TextureButton" parent="."]
-margin_left = -23.0
-margin_top = 1052.0
-margin_right = 2597.0
-margin_bottom = 1465.0
+offset_left = -23.0
+offset_top = 1052.0
+offset_right = 2597.0
+offset_bottom = 1465.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 2 )
 __meta__ = {
@@ -24,10 +24,10 @@ __meta__ = {
 cursor_type = 2
 
 [node name="Hotspot2" type="TextureButton" parent="."]
-margin_left = 588.312
-margin_top = 311.126
-margin_right = 2014.31
-margin_bottom = 1115.13
+offset_left = 588.312
+offset_top = 311.126
+offset_right = 2014.31
+offset_bottom = 1115.13
 mouse_default_cursor_shape = 8
 script = ExtResource( 2 )
 __meta__ = {

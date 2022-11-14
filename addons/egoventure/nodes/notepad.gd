@@ -14,35 +14,35 @@ var _hints_shown: bool = false
 # Basic style configuration
 func _ready():
 	$Control.hide()
-	$Control/Panel.add_stylebox_override(
+	$Control/Panel.add_theme_stylebox_override(
 		"panel",
 		$Control/Panel.get_stylebox(
 			"notepad_panel",
 			"Panel"
 		)
 	)
-	$Control/Goals.add_color_override(
+	$Control/Goals.add_theme_color_override(
 		"font_color",
 		$Control/Goals.get_color(
 			"goals",
 			"Label"
 		)
 	)
-	$Control/Hints.add_color_override(
+	$Control/Hints.add_theme_color_override(
 		"font_color",
 		$Control/Goals.get_color(
 			"hints",
 			"Label"
 		)
 	)
-	$Control/Goals.add_font_override(
+	$Control/Goals.add_theme_font_override(
 		"font",
 		$Control/Goals.get_font(
 			"goals", 
 			"Label"
 		)
 	)
-	$Control/Hints.add_font_override(
+	$Control/Hints.add_theme_font_override(
 		"font",
 		$Control/Hints.get_font(
 			"hints",
@@ -56,14 +56,14 @@ func configure(configuration: GameConfiguration):
 	$Control.theme = configuration.design_theme
 	$Control/BackgroundPicture.texture = configuration.notepad_background
 	
-	$Control/Goals.rect_position = configuration.notepad_goals_rect.position
-	$Control/Goals.rect_size = configuration.notepad_goals_rect.size
-	$Control/Hints.rect_position = configuration.notepad_hints_rect.position
-	$Control/Hints.rect_size = configuration.notepad_hints_rect.size
+	$Control/Goals.position = configuration.notepad_goals_rect.position
+	$Control/Goals.size = configuration.notepad_goals_rect.size
+	$Control/Hints.position = configuration.notepad_hints_rect.position
+	$Control/Hints.size = configuration.notepad_hints_rect.size
 		
-	var file = File.new()
+	var file = FileAccess.new()
 	
-	file.open(configuration.notepad_hints_file, File.READ)
+	file.open(configuration.notepad_hints_file, FileAccess.READ)
 	
 	var current_goal: Goal = null
 	
@@ -75,7 +75,7 @@ func configure(configuration: GameConfiguration):
 				goals.append(current_goal)
 			current_goal = Goal.new()
 			current_goal.title = line[1]
-			current_goal.id = int(line[2])
+			current_goal.id = line[2] as int
 			current_goal.hints = []
 		elif line.size() >= 2 and line[1] != "":
 			current_goal.hints.append(line[1])

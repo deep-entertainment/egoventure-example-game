@@ -18,7 +18,7 @@ func _on_Hotspot_pressed():
 		get_tree().paused = true
 		Boombox.play_effect(preload("res://sounds/man/cigbox_click.ogg"))
 		$cigbox_a.show()
-		yield(get_tree().create_timer(0.5), "timeout")
+		await get_tree().create_timer(0.5).timeout
 		$cigbox_a.hide()
 		get_tree().paused = false
 		Boombox.ignore_pause = false
@@ -28,7 +28,7 @@ func _on_Hotspot_pressed():
 		get_tree().paused = true
 		Boombox.play_effect(preload("res://sounds/man/cigbox_click.ogg"))
 		$cigbox_a.show()
-		yield(get_tree().create_timer(0.5), "timeout")
+		await get_tree().create_timer(0.5).timeout
 		$cigbox_a.hide()
 		get_tree().paused = false
 		Boombox.ignore_pause = false
@@ -40,7 +40,7 @@ func _on_Hotspot2_pressed():
 	get_tree().paused = true
 	Boombox.play_effect(preload("res://sounds/man/cigbox_click.ogg"))
 	$cigbox_m.show()
-	yield(get_tree().create_timer(0.5), "timeout")
+	await get_tree().create_timer(0.5).timeout
 	$cigbox_m.hide()
 	get_tree().paused = false
 	Boombox.ignore_pause = false
@@ -52,7 +52,7 @@ func _on_Hotspot3_pressed():
 	get_tree().paused = true
 	Boombox.play_effect(preload("res://sounds/man/cigbox_click.ogg"))
 	$cigbox_b.show()
-	yield(get_tree().create_timer(0.5), "timeout")
+	await get_tree().create_timer(0.5).timeout
 	$cigbox_b.hide()
 	get_tree().paused = false
 	Boombox.ignore_pause = false
@@ -64,7 +64,7 @@ func _on_Hotspot4_pressed():
 	get_tree().paused = true
 	Boombox.play_effect(preload("res://sounds/man/cigbox_click.ogg"))
 	$cigbox_t.show()
-	yield(get_tree().create_timer(0.5), "timeout")
+	await get_tree().create_timer(0.5).timeout
 	$cigbox_t.hide()
 	get_tree().paused = false
 	Boombox.ignore_pause = false
@@ -76,7 +76,7 @@ func _on_Hotspot5_pressed():
 	get_tree().paused = true
 	Boombox.play_effect(preload("res://sounds/man/cigbox_click.ogg"))
 	$cigbox_r.show()
-	yield(get_tree().create_timer(0.5), "timeout")
+	await get_tree().create_timer(0.5).timeout
 	$cigbox_r.hide()
 	get_tree().paused = false
 	Boombox.ignore_pause = false
@@ -89,7 +89,7 @@ func _on_Hotspot6_pressed():
 		get_tree().paused = true
 		Boombox.play_effect(preload("res://sounds/man/cigbox_click.ogg"))
 		$cigbox_z.show()
-		yield(get_tree().create_timer(0.5), "timeout")
+		await get_tree().create_timer(0.5).timeout
 		$cigbox_z.hide()
 		get_tree().paused = false
 		Boombox.ignore_pause = false
@@ -99,7 +99,7 @@ func _on_Hotspot6_pressed():
 		get_tree().paused = true
 		Boombox.play_effect(preload("res://sounds/man/cigbox_click.ogg"))
 		$cigbox_z.show()
-		yield(get_tree().create_timer(0.5), "timeout")
+		await get_tree().create_timer(0.5).timeout
 		$cigbox_z.hide()
 		get_tree().paused = false
 		Boombox.ignore_pause = false
@@ -112,18 +112,18 @@ func _on_Hotspot7_pressed():
 		get_tree().paused = true
 		Boombox.play_effect(preload("res://sounds/man/cigbox_click.ogg"))
 		$cigbox_e.show()
-		yield(get_tree().create_timer(0.5), "timeout")
+		await get_tree().create_timer(0.5).timeout
 		$cigbox_e.hide()
 		get_tree().paused = false
 		Boombox.ignore_pause = false
 		Boombox.play_effect(preload("res://sounds/man/man_cigar_op.ogg"))
-		EgoVenture.change_scene("res://scenes/man/man13d_lift2.tscn")
+		EgoVenture.change_scene_to_file("res://scenes/man/man13d_lift2.tscn")
 	else:
 		Boombox.ignore_pause = true
 		get_tree().paused = true
 		Boombox.play_effect(preload("res://sounds/man/cigbox_click.ogg"))
 		$cigbox_e.show()
-		yield(get_tree().create_timer(0.5), "timeout")
+		await get_tree().create_timer(0.5).timeout
 		$cigbox_e.hide()
 		get_tree().paused = false
 		Boombox.ignore_pause = false

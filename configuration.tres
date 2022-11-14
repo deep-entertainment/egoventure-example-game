@@ -1,184 +1,184 @@
-[gd_resource type="Resource" load_steps=52 format=2]
+[gd_resource type="Resource" load_steps=52 format=3 uid="uid://dill46jsurh42"]
 
-[ext_resource path="res://addons/egoventure/resources/game_configuration.gd" type="Script" id=1]
-[ext_resource path="res://music/mold.ogg" type="AudioStream" id=2]
-[ext_resource path="res://images/misc/arrow_previous.png" type="Texture" id=3]
-[ext_resource path="res://sounds/slide.ogg" type="AudioStream" id=4]
-[ext_resource path="res://theme.tres" type="Theme" id=5]
-[ext_resource path="res://images/misc/menu_bg.jpg" type="Texture" id=6]
-[ext_resource path="res://images/misc/arrow_next.png" type="Texture" id=7]
-[ext_resource path="res://sounds/misc/testing_voice.ogg" type="AudioStream" id=8]
-[ext_resource path="res://sounds/misc/testing_effects.ogg" type="AudioStream" id=9]
-[ext_resource path="res://images/mouse/common.png" type="Texture" id=10]
-[ext_resource path="res://images/misc/notepad_icon.png" type="Texture" id=11]
-[ext_resource path="res://images/mouse/forward.png" type="Texture" id=12]
-[ext_resource path="res://images/mouse/right.png" type="Texture" id=13]
-[ext_resource path="res://images/mouse/left.png" type="Texture" id=14]
-[ext_resource path="res://addons/egoventure/resources/cursor.gd" type="Script" id=15]
-[ext_resource path="res://images/mouse/use.png" type="Texture" id=16]
-[ext_resource path="res://images/mouse/backward.png" type="Texture" id=17]
-[ext_resource path="res://images/mouse/magnifier.png" type="Texture" id=18]
-[ext_resource path="res://images/mouse/right_corner.png" type="Texture" id=19]
-[ext_resource path="res://images/mouse/left_corner.png" type="Texture" id=20]
-[ext_resource path="res://images/misc/journal.jpg" type="Texture" id=21]
-[ext_resource path="res://images/misc/map_icon.png" type="Texture" id=22]
-[ext_resource path="res://images/mouse/map.png" type="Texture" id=23]
-[ext_resource path="res://images/mouse/hand.png" type="Texture" id=24]
-[ext_resource path="res://images/mouse/exit.png" type="Texture" id=25]
-[ext_resource path="res://images/misc/menu_icon.png" type="Texture" id=26]
-[ext_resource path="res://sounds/misc/map_icon.ogg" type="AudioStream" id=27]
-[ext_resource path="res://images/misc/background.jpg" type="Texture" id=28]
-[ext_resource path="res://images/misc/reveal_icon.png" type="Texture" id=29]
-[ext_resource path="res://images/mouse/curv_right.png" type="Texture" id=30]
-[ext_resource path="res://images/mouse/curv_left.png" type="Texture" id=31]
-[ext_resource path="res://images/mouse/right_corner_down.png" type="Texture" id=32]
-[ext_resource path="res://sounds/man/beep.ogg" type="AudioStream" id=33]
-[ext_resource path="res://sounds/man/beep2.ogg" type="AudioStream" id=34]
+[ext_resource type="Script" path="res://addons/egoventure/resources/game_configuration.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://b2x34hd774pkk" path="res://music/mold.ogg" id="2"]
+[ext_resource type="Texture2D" uid="uid://br2uhl0woi2r5" path="res://images/misc/arrow_previous.png" id="3"]
+[ext_resource type="AudioStream" uid="uid://d1f3x3wou73l7" path="res://sounds/slide.ogg" id="4"]
+[ext_resource type="Theme" uid="uid://csqk5xdbiwfrq" path="res://theme.tres" id="5"]
+[ext_resource type="Texture2D" uid="uid://bd04fv3g77n6l" path="res://images/misc/menu_bg.jpg" id="6"]
+[ext_resource type="Texture2D" uid="uid://dmsefqtgpgy7y" path="res://images/misc/arrow_next.png" id="7"]
+[ext_resource type="AudioStream" uid="uid://j6xywym7o1ft" path="res://sounds/misc/testing_voice.ogg" id="8"]
+[ext_resource type="AudioStream" uid="uid://bmiva4dpcgumu" path="res://sounds/misc/testing_effects.ogg" id="9"]
+[ext_resource type="Texture2D" uid="uid://biddv534vign3" path="res://images/mouse/common.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://bwj76u1oio1bl" path="res://images/misc/notepad_icon.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://cnprew58qmyun" path="res://images/mouse/forward.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://dwyj83g0rxaie" path="res://images/mouse/right.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://hx5wfbjv8sr" path="res://images/mouse/left.png" id="14"]
+[ext_resource type="Script" path="res://addons/egoventure/resources/cursor.gd" id="15"]
+[ext_resource type="Texture2D" uid="uid://blwg410pmted1" path="res://images/mouse/use.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://cij8v6ele74y3" path="res://images/mouse/backward.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://cjhsm7uqn51bo" path="res://images/mouse/magnifier.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://i0cws56ib2id" path="res://images/mouse/right_corner.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://1gxdo7kf2uyx" path="res://images/mouse/left_corner.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://cotyr16d8krw0" path="res://images/misc/journal.jpg" id="21"]
+[ext_resource type="Texture2D" uid="uid://crt67y0oqutx8" path="res://images/misc/map_icon.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://ce8oygmvu1x4d" path="res://images/mouse/map.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://c6tmt73aof2ie" path="res://images/mouse/hand.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://bbc03r2vj4od6" path="res://images/mouse/exit.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://bkteghggk0c4l" path="res://images/misc/menu_icon.png" id="26"]
+[ext_resource type="AudioStream" uid="uid://go8dhcyb7mmr" path="res://sounds/misc/map_icon.ogg" id="27"]
+[ext_resource type="Texture2D" uid="uid://bn8dxsf46aftk" path="res://images/misc/background.jpg" id="28"]
+[ext_resource type="Texture2D" uid="uid://da80k8mcjq2ls" path="res://images/misc/reveal_icon.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://cpqkxlrlyodop" path="res://images/mouse/curv_right.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://cc185jk5qqglw" path="res://images/mouse/curv_left.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://cy5yl686ffsba" path="res://images/mouse/right_corner_down.png" id="32"]
+[ext_resource type="AudioStream" uid="uid://devebugnva4mc" path="res://sounds/man/beep.ogg" id="33"]
+[ext_resource type="AudioStream" uid="uid://b5tiiwxerp3i8" path="res://sounds/man/beep2.ogg" id="34"]
 
-[sub_resource type="Resource" id=1]
-script = ExtResource( 15 )
+[sub_resource type="Resource" id="1"]
+script = ExtResource("15")
 type = 1
-cursor = ExtResource( 12 )
-cursor_hotspot = Vector2( 32, 32 )
+cursor = ExtResource("12")
+cursor_hotspot = Vector2(32, 32)
 
-[sub_resource type="Resource" id=2]
-script = ExtResource( 15 )
+[sub_resource type="Resource" id="2"]
+script = ExtResource("15")
 type = 3
-cursor = ExtResource( 13 )
-cursor_hotspot = Vector2( 32, 32 )
+cursor = ExtResource("13")
+cursor_hotspot = Vector2(32, 32)
 
-[sub_resource type="Resource" id=3]
-script = ExtResource( 15 )
+[sub_resource type="Resource" id="3"]
+script = ExtResource("15")
 type = 4
-cursor = ExtResource( 14 )
-cursor_hotspot = Vector2( 32, 32 )
+cursor = ExtResource("14")
+cursor_hotspot = Vector2(32, 32)
 
-[sub_resource type="Resource" id=4]
-script = ExtResource( 15 )
+[sub_resource type="Resource" id="4"]
+script = ExtResource("15")
 type = 2
-cursor = ExtResource( 17 )
-cursor_hotspot = Vector2( 42, 42 )
+cursor = ExtResource("17")
+cursor_hotspot = Vector2(42, 42)
 
-[sub_resource type="Resource" id=5]
-script = ExtResource( 15 )
+[sub_resource type="Resource" id="5"]
+script = ExtResource("15")
 type = 8
-cursor = ExtResource( 18 )
-cursor_hotspot = Vector2( 48, 32 )
+cursor = ExtResource("18")
+cursor_hotspot = Vector2(48, 32)
 
-[sub_resource type="Resource" id=6]
-script = ExtResource( 15 )
+[sub_resource type="Resource" id="6"]
+script = ExtResource("15")
 type = 7
-cursor = ExtResource( 16 )
-cursor_hotspot = Vector2( 32, 32 )
+cursor = ExtResource("16")
+cursor_hotspot = Vector2(32, 32)
 
-[sub_resource type="Resource" id=7]
-script = ExtResource( 15 )
+[sub_resource type="Resource" id="7"]
+script = ExtResource("15")
 type = 5
-cursor = ExtResource( 19 )
-cursor_hotspot = Vector2( 32, 32 )
+cursor = ExtResource("19")
+cursor_hotspot = Vector2(32, 32)
 
-[sub_resource type="Resource" id=8]
-script = ExtResource( 15 )
+[sub_resource type="Resource" id="8"]
+script = ExtResource("15")
 type = 6
-cursor = ExtResource( 20 )
-cursor_hotspot = Vector2( 32, 32 )
+cursor = ExtResource("20")
+cursor_hotspot = Vector2(32, 32)
 
-[sub_resource type="Resource" id=9]
-script = ExtResource( 15 )
+[sub_resource type="Resource" id="9"]
+script = ExtResource("15")
 type = 11
-cursor = ExtResource( 23 )
-cursor_hotspot = Vector2( 49, 48 )
+cursor = ExtResource("23")
+cursor_hotspot = Vector2(49, 48)
 
-[sub_resource type="Resource" id=10]
-script = ExtResource( 15 )
+[sub_resource type="Resource" id="10"]
+script = ExtResource("15")
 type = 9
-cursor = ExtResource( 10 )
-cursor_hotspot = Vector2( 32, 32 )
+cursor = ExtResource("10")
+cursor_hotspot = Vector2(32, 32)
 
-[sub_resource type="Resource" id=11]
-script = ExtResource( 15 )
+[sub_resource type="Resource" id="11"]
+script = ExtResource("15")
 type = 12
-cursor = ExtResource( 24 )
-cursor_hotspot = Vector2( 46, 32 )
+cursor = ExtResource("24")
+cursor_hotspot = Vector2(46, 32)
 
-[sub_resource type="Resource" id=12]
-script = ExtResource( 15 )
+[sub_resource type="Resource" id="12"]
+script = ExtResource("15")
 type = 10
-cursor = ExtResource( 25 )
-cursor_hotspot = Vector2( 75, 40 )
+cursor = ExtResource("25")
+cursor_hotspot = Vector2(75, 40)
 
-[sub_resource type="Resource" id=13]
-script = ExtResource( 15 )
+[sub_resource type="Resource" id="13"]
+script = ExtResource("15")
 type = 13
-cursor = ExtResource( 30 )
-cursor_hotspot = Vector2( 32, 32 )
+cursor = ExtResource("30")
+cursor_hotspot = Vector2(32, 32)
 
-[sub_resource type="Resource" id=14]
-script = ExtResource( 15 )
+[sub_resource type="Resource" id="14"]
+script = ExtResource("15")
 type = 14
-cursor = ExtResource( 31 )
-cursor_hotspot = Vector2( 0, 0 )
+cursor = ExtResource("31")
+cursor_hotspot = Vector2(0, 0)
 
-[sub_resource type="Resource" id=15]
-script = ExtResource( 15 )
+[sub_resource type="Resource" id="15"]
+script = ExtResource("15")
 type = 15
-cursor = ExtResource( 32 )
-cursor_hotspot = Vector2( 0, 0 )
+cursor = ExtResource("32")
+cursor_hotspot = Vector2(0, 0)
 
-[sub_resource type="Resource" id=16]
-script = ExtResource( 15 )
+[sub_resource type="Resource" id="16"]
+script = ExtResource("15")
 type = 16
-cursor = ExtResource( 10 )
-cursor_hotspot = Vector2( 0, 0 )
+cursor = ExtResource("10")
+cursor_hotspot = Vector2(0, 0)
 
-[sub_resource type="Resource" id=17]
-script = ExtResource( 15 )
+[sub_resource type="Resource" id="17"]
+script = ExtResource("15")
 type = 0
-cursor = ExtResource( 10 )
-cursor_hotspot = Vector2( 32, 32 )
+cursor = ExtResource("10")
+cursor_hotspot = Vector2(32, 32)
 
 [resource]
-script = ExtResource( 1 )
-design_theme = ExtResource( 5 )
-design_cursors = [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ]
-menu_background = ExtResource( 6 )
-menu_music = ExtResource( 2 )
-menu_switch_effect = ExtResource( 4 )
-menu_button_effect_hover = ExtResource( 33 )
-menu_button_effect_click = ExtResource( 34 )
+script = ExtResource("1")
+design_theme = ExtResource("5")
+design_cursors = [SubResource("1"), SubResource("2"), SubResource("3"), SubResource("4"), SubResource("5"), SubResource("6"), SubResource("7"), SubResource("8"), SubResource("9"), SubResource("10"), SubResource("11"), SubResource("12"), SubResource("13"), SubResource("14"), SubResource("15"), SubResource("16"), SubResource("17")]
+menu_background = ExtResource("6")
+menu_music = ExtResource("2")
+menu_switch_effect = ExtResource("4")
+menu_button_effect_hover = ExtResource("33")
+menu_button_effect_click = ExtResource("34")
 menu_item_separation = 30
 menu_quit_confirmation = "Do you really want to leave Carol here?"
 menu_overwrite_confirmation = "Are you sure you want to overwrite a saved game?"
 menu_restart_confirmation = "You will lose all progress when starting a new game. Do you really want to restart?"
-menu_saveslots_background = ExtResource( 28 )
-menu_saveslots_previous_image = ExtResource( 3 )
-menu_saveslots_next_image = ExtResource( 7 )
-menu_saveslots_empty_color = Color( 0, 0, 0, 0.639216 )
+menu_saveslots_background = ExtResource("28")
+menu_saveslots_previous_image = ExtResource("3")
+menu_saveslots_next_image = ExtResource("7")
+menu_saveslots_empty_color = Color(0, 0, 0, 0.639216)
 menu_saveslots_free_text = "Free save slot"
 inventory_size = 128
-inventory_texture_menu = ExtResource( 26 )
-inventory_texture_notepad = ExtResource( 11 )
-inventory_texture_reveal = ExtResource( 29 )
-inventory_texture_left_arrow = ExtResource( 3 )
-inventory_texture_right_arrow = ExtResource( 7 )
-menu_options_background = ExtResource( 28 )
-menu_options_speech_sample = ExtResource( 8 )
-menu_options_effects_sample = ExtResource( 9 )
-menu_options_locale_button_modulate = Color( 1, 1, 1, 0.207843 )
-menu_options_locale_button_modulate_selected = Color( 1, 1, 1, 1 )
+inventory_texture_menu = ExtResource("26")
+inventory_texture_notepad = ExtResource("11")
+inventory_texture_reveal = ExtResource("29")
+inventory_texture_left_arrow = ExtResource("3")
+inventory_texture_right_arrow = ExtResource("7")
+menu_options_background = ExtResource("28")
+menu_options_speech_sample = ExtResource("8")
+menu_options_effects_sample = ExtResource("9")
+menu_options_locale_button_modulate = Color(1, 1, 1, 0.207843)
+menu_options_locale_button_modulate_selected = Color(1, 1, 1, 1)
 menu_options_hide_language_selection = false
 notepad_hints_file = "res://hints.txt"
-notepad_background = ExtResource( 21 )
-notepad_goals_rect = Rect2( 588, 375, 552, 207 )
-notepad_hints_rect = Rect2( 1243, 325, 545, 763 )
-tools_map_image = ExtResource( 22 )
-tools_map_sound = ExtResource( 27 )
+notepad_background = ExtResource("21")
+notepad_goals_rect = Rect2(588, 375, 552, 207)
+notepad_hints_rect = Rect2(1243, 325, 545, 763)
+tools_map_image = ExtResource("22")
+tools_map_sound = ExtResource("27")
 tools_navigation_width = 420.0
 tools_dialog_stretch_ratio = 2.0
 tools_music_fader_seconds = 0.5
 tools_background_fader_seconds = 0.5
 cache_scene_path = "res://scenes"
 cache_scene_count = 2
-cache_permanent = PoolStringArray( "res://scenes/misc/map.tscn", "res://scenes/man/man14.tscn", "res://scenes/man/man10.tscn" )
+cache_permanent = PackedStringArray("res://scenes/misc/map.tscn", "res://scenes/man/man14.tscn", "res://scenes/man/man10.tscn")
 cache_minimum_wait_seconds = 4
 cache_minimum_wait_skippable = false

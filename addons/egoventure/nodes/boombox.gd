@@ -2,10 +2,10 @@
 extends Node
 
 
-# The volume to fade to if the channel should be off
+# The volume to fade to if the channel should be unchecked
 const VOLUME_MIN = -80
 
-# The volume to fade to if hte channel should be on
+# The volume to fade to if hte channel should be checked
 const VOLUME_MAX = 0
 
 
@@ -15,7 +15,11 @@ signal effect_finished
 
 # Let Boombox ignore game pausing. So all sound will continue
 # playing when a game is paused
-var ignore_pause: bool setget _set_ignore_pause
+var ignore_pause: bool :
+	get:
+		return ignore_pause # TODOConverter40 Non existent get function 
+	set(mod_value):
+		mod_value  # TODOConverter40 Copy here content of _set_ignore_pause
 
 
 # The fader used for fading music
@@ -36,28 +40,19 @@ var _music_is_stopping: bool = false
 
 
 # The active music player
-onready var active_music: AudioStreamPlayer = $Music1
+@onready var active_music: AudioStreamPlayer = $Music1
 
 # The active background player
-onready var active_background: AudioStreamPlayer = $Background1
+@onready var active_background: AudioStreamPlayer = $Background1
 
 
 # Create the tween nodes
 func _ready():
-	_music_fader = Tween.new()
-	_music_fader.connect(
-		"tween_all_completed", 
-		self, 
-		"_handle_music_tween_completed"
-	)
-	add_child(_music_fader)
-	_background_fader = Tween.new()
-	_background_fader.connect(
-		"tween_all_completed",
-		self,
-		"_handle_background_tween_completed"
-	)
-	add_child(_background_fader)
+	_music_fader = get_tree().create_tween()
+	_music_fader.finished.connect(_handle_music_tween_completed)
+	
+	_background_fader = get_tree().create_tween()
+	_background_fader.finished.connect(_handle_background_tween_completed)
 
 
 # Check the queues and start the fades
@@ -258,23 +253,23 @@ func stop_effect():
 func _set_ignore_pause(value: bool):
 	ignore_pause = value
 	if ignore_pause:
-		pause_mode = Node.PAUSE_MODE_PROCESS
-		$Music1.pause_mode = Node.PAUSE_MODE_PROCESS
-		$Music2.pause_mode = Node.PAUSE_MODE_PROCESS
-		$Background1.pause_mode = Node.PAUSE_MODE_PROCESS
-		$Background2.pause_mode = Node.PAUSE_MODE_PROCESS
-		$Effects.pause_mode = Node.PAUSE_MODE_PROCESS
-		_background_fader.pause_mode = Node.PAUSE_MODE_PROCESS
-		_music_fader.pause_mode = Node.PAUSE_MODE_PROCESS
+		process_mode = Node.PROCESS_MODE_ALWAYS
+		$Music1.process_mode = Node.PROCESS_MODE_ALWAYS
+		$Music2.process_mode = Node.PROCESS_MODE_ALWAYS
+		$Background1.process_mode = Node.PROCESS_MODE_ALWAYS
+		$Background2.process_mode = Node.PROCESS_MODE_ALWAYS
+		$Effects.process_mode = Node.PROCESS_MODE_ALWAYS
+		_background_fader.process_mode = Node.PROCESS_MODE_ALWAYS
+		_music_fader.process_mode = Node.PROCESS_MODE_ALWAYS
 	else:
-		pause_mode = Node.PAUSE_MODE_STOP
-		$Music1.pause_mode = Node.PAUSE_MODE_STOP
-		$Music2.pause_mode = Node.PAUSE_MODE_STOP
-		$Background1.pause_mode = Node.PAUSE_MODE_STOP
-		$Background2.pause_mode = Node.PAUSE_MODE_STOP
-		$Effects.pause_mode = Node.PAUSE_MODE_STOP
-		_background_fader.pause_mode = Node.PAUSE_MODE_STOP
-		_music_fader.pause_mode = Node.PAUSE_MODE_STOP
+		process_mode = Node.PROCESS_MODE_PAUSABLE
+		$Music1.process_mode = Node.PROCESS_MODE_PAUSABLE
+		$Music2.process_mode = Node.PROCESS_MODE_PAUSABLE
+		$Background1.process_mode = Node.PROCESS_MODE_PAUSABLE
+		$Background2.process_mode = Node.PROCESS_MODE_PAUSABLE
+		$Effects.process_mode = Node.PROCESS_MODE_PAUSABLE
+		_background_fader.process_mode = Node.PROCESS_MODE_PAUSABLE
+		_music_fader.process_mode = Node.PROCESS_MODE_PAUSABLE
 
 
 # Emit effect_finished signal
@@ -288,7 +283,7 @@ func _on_Effects_finished():
 #
 # - fade_from: Fade from this channel
 # - fade_to: Fade to this channel
-# - stream: Stream to play on the fade_to channel
+# - stream: Stream to play checked the fade_to channel
 # - time: Time to take to fade
 # - fader: Tween node to fade with
 func _fade(

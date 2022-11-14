@@ -3,9 +3,9 @@
 [ext_resource path="res://addons/parrot/resources/dialog_resource.gd" type="Script" id=1]
 [ext_resource path="res://addons/parrot/resources/dialog_line_resource.gd" type="Script" id=2]
 [ext_resource path="res://characters/carol.tres" type="Resource" id=3]
-[ext_resource path="res://images/dia/bro1_q2-0.jpg" type="Texture" id=4]
-[ext_resource path="res://images/dia/bro1_q2-1.jpg" type="Texture" id=5]
-[ext_resource path="res://images/dia/bro1_q2-2.jpg" type="Texture" id=6]
+[ext_resource path="res://images/dia/bro1_q2-0.jpg" type="Texture2D" id=4]
+[ext_resource path="res://images/dia/bro1_q2-1.jpg" type="Texture2D" id=5]
+[ext_resource path="res://images/dia/bro1_q2-2.jpg" type="Texture2D" id=6]
 
 [sub_resource type="Resource" id=1]
 script = ExtResource( 2 )

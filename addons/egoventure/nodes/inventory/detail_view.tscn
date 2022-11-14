@@ -14,16 +14,16 @@ __meta__ = {
 }
 
 [node name="VBox" type="VBoxContainer" parent="Panel"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 2553.0
-margin_bottom = 1433.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 2553.0
+offset_bottom = 1433.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Image" type="TextureRect" parent="Panel/VBox"]
-margin_right = 2546.0
-margin_bottom = 1218.0
+offset_right = 2546.0
+offset_bottom = 1218.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 6.0
@@ -33,9 +33,9 @@ stretch_mode = 4
 [node name="DetailScene" type="Node" parent="Panel/VBox"]
 
 [node name="Description" type="Label" parent="Panel/VBox"]
-margin_top = 1317.0
-margin_right = 2546.0
-margin_bottom = 1331.0
+offset_top = 1317.0
+offset_right = 2546.0
+offset_bottom = 1331.0
 size_flags_horizontal = 3
 size_flags_vertical = 6
 align = 1

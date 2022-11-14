@@ -1,17 +1,17 @@
-[gd_resource type="Resource" load_steps=6 format=2]
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://blfa2oxapgbk3"]
 
-[ext_resource path="res://addons/parrot/resources/dialog_resource.gd" type="Script" id=1]
-[ext_resource path="res://addons/parrot/resources/dialog_line_resource.gd" type="Script" id=2]
-[ext_resource path="res://characters/carol.tres" type="Resource" id=3]
-[ext_resource path="res://images/dia/bro1_q0-0.jpg" type="Texture" id=4]
+[ext_resource type="Script" path="res://addons/parrot/resources/dialog_resource.gd" id="1"]
+[ext_resource type="Script" path="res://addons/parrot/resources/dialog_line_resource.gd" id="2"]
+[ext_resource type="Resource" path="res://characters/carol.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://wxk1c0wfkr42" path="res://images/dia/bro1_q0-0.jpg" id="4"]
 
-[sub_resource type="Resource" id=1]
-script = ExtResource( 2 )
-character = ExtResource( 3 )
+[sub_resource type="Resource" id="1"]
+script = ExtResource("2")
+character = ExtResource("3")
 text = "It just occurred to me that Kevo recently spent a lot of
 time at a holiday house that belongs to a friend of his."
-image = ExtResource( 4 )
+image = ExtResource("4")
 
 [resource]
-script = ExtResource( 1 )
-lines = [ SubResource( 1 ) ]
+script = ExtResource("1")
+lines = [SubResource("1")]

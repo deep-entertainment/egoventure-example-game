@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/man_rag_up.ogg-e945dac1d0fd2e6a4c1591695c5a57ad.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cm2s1gm1k2fqo"
+path="res://.godot/imported/man_rag_up.ogg-e945dac1d0fd2e6a4c1591695c5a57ad.oggvorbisstr"
 
 [deps]
 
 source_file="res://sounds/man/man_rag_up.ogg"
-dest_files=[ "res://.import/man_rag_up.ogg-e945dac1d0fd2e6a4c1591695c5a57ad.oggstr" ]
+dest_files=["res://.godot/imported/man_rag_up.ogg-e945dac1d0fd2e6a4c1591695c5a57ad.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

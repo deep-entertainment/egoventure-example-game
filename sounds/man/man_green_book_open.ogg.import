@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/man_green_book_open.ogg-db9efe95445353222fee6f9b7ab443e7.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://2p6qssf05b8b"
+path="res://.godot/imported/man_green_book_open.ogg-db9efe95445353222fee6f9b7ab443e7.oggvorbisstr"
 
 [deps]
 
 source_file="res://sounds/man/man_green_book_open.ogg"
-dest_files=[ "res://.import/man_green_book_open.ogg-db9efe95445353222fee6f9b7ab443e7.oggstr" ]
+dest_files=["res://.godot/imported/man_green_book_open.ogg-db9efe95445353222fee6f9b7ab443e7.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

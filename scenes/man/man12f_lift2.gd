@@ -5,4 +5,4 @@ func _on_Hotspot_activate():
 	Boombox.play_effect(preload("res://sounds/man/man_file_inv.ogg"))
 	Inventory.add_item(preload("res://inventory/screwdriver.tres"))
 	Notepad.finished_step(3, 2)
-	EgoVenture.change_scene("res://scenes/man/man12f_lift1.tscn")
+	EgoVenture.change_scene_to_file("res://scenes/man/man12f_lift1.tscn")

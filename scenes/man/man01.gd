@@ -11,7 +11,7 @@ func _process(_delta):
 
 func _ready():
 	Boombox.play_background(preload("res://sounds/backgrounds/bg_birds_new2.ogg")) 
-	yield(get_tree().create_timer(13), "timeout")
+	await get_tree().create_timer(13).timeout
 	Inventory.enable()
 	Speedy.hidden = false
 	(EgoVenture.state as GameState).space_info = true

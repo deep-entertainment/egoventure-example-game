@@ -1,9 +1,9 @@
 [gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://addons/egoventure/resources/inventory_item.gd" type="Script" id=1]
-[ext_resource path="res://inventory/matchkey.png" type="Texture" id=2]
-[ext_resource path="res://inventory/matchkey_red.png" type="Texture" id=3]
-[ext_resource path="res://inventory/matchkey_big.png" type="Texture" id=4]
+[ext_resource path="res://inventory/matchkey.png" type="Texture2D" id=2]
+[ext_resource path="res://inventory/matchkey_red.png" type="Texture2D" id=3]
+[ext_resource path="res://inventory/matchkey_big.png" type="Texture2D" id=4]
 
 [resource]
 script = ExtResource( 1 )

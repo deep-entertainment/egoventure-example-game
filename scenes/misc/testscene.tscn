@@ -7,18 +7,18 @@
 script = ExtResource( 2 )
 
 [node name="Hotspot" type="TextureButton" parent="."]
-margin_left = 53.0
-margin_top = 31.0
-margin_right = 201.0
-margin_bottom = 71.0
+offset_left = 53.0
+offset_top = 31.0
+offset_right = 201.0
+offset_bottom = 71.0
 mouse_default_cursor_shape = 3
 script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 64.2771
-margin_top = 44.6094
-margin_right = 185.277
-margin_bottom = 58.6094
+offset_left = 64.2771
+offset_top = 44.6094
+offset_right = 185.277
+offset_bottom = 58.6094
 text = "Test non grabbable"
 
 [connection signal="activate" from="Hotspot" to="." method="_on_Hotspot_activate"]

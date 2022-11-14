@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/man_matches_op.ogg-6783fb9a643713208b6e0364d330e998.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c4aj2k735w0rm"
+path="res://.godot/imported/man_matches_op.ogg-6783fb9a643713208b6e0364d330e998.oggvorbisstr"
 
 [deps]
 
 source_file="res://sounds/man/man_matches_op.ogg"
-dest_files=[ "res://.import/man_matches_op.ogg-6783fb9a643713208b6e0364d330e998.oggstr" ]
+dest_files=["res://.godot/imported/man_matches_op.ogg-6783fb9a643713208b6e0364d330e998.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

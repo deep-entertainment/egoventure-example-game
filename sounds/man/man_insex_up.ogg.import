@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/man_insex_up.ogg-b219768ecb7f637bf0910f5cd2abb046.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b04hm240a0qrt"
+path="res://.godot/imported/man_insex_up.ogg-b219768ecb7f637bf0910f5cd2abb046.oggvorbisstr"
 
 [deps]
 
 source_file="res://sounds/man/man_insex_up.ogg"
-dest_files=[ "res://.import/man_insex_up.ogg-b219768ecb7f637bf0910f5cd2abb046.oggstr" ]
+dest_files=["res://.godot/imported/man_insex_up.ogg-b219768ecb7f637bf0910f5cd2abb046.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,27 +1,27 @@
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=1]
-[ext_resource path="res://images/man/man04c.jpg" type="Texture" id=2]
-[ext_resource path="res://images/man/man04b.jpg" type="Texture" id=3]
-[ext_resource path="res://images/man/man04a.jpg" type="Texture" id=4]
-[ext_resource path="res://images/man/man04d.jpg" type="Texture" id=5]
+[ext_resource path="res://images/man/man04c.jpg" type="Texture2D" id=2]
+[ext_resource path="res://images/man/man04b.jpg" type="Texture2D" id=3]
+[ext_resource path="res://images/man/man04a.jpg" type="Texture2D" id=4]
+[ext_resource path="res://images/man/man04d.jpg" type="Texture2D" id=5]
 [ext_resource path="res://addons/egoventure/nodes/four_side_room.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/man/man04.gd" type="Script" id=7]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 7 )
 
-[node name="Room" parent="." instance=ExtResource( 6 )]
+[node name="Node3D" parent="." instance=ExtResource( 6 )]
 front_texture = ExtResource( 4 )
 right_texture = ExtResource( 3 )
 back_texture = ExtResource( 2 )
 left_texture = ExtResource( 5 )
 
 [node name="Hotspot" type="TextureButton" parent="."]
-margin_left = 1037.84
-margin_top = -909.102
-margin_right = 1452.84
-margin_bottom = -524.102
+offset_left = 1037.84
+offset_top = -909.102
+offset_right = 1452.84
+offset_bottom = -524.102
 mouse_default_cursor_shape = 13
 script = ExtResource( 1 )
 __meta__ = {
@@ -32,10 +32,10 @@ target_scene = "res://scenes/man/man05.tscn"
 target_view = "front"
 
 [node name="Hotspot2" type="TextureButton" parent="."]
-margin_left = 955.042
-margin_top = 2045.5
-margin_right = 1651.04
-margin_bottom = 2748.5
+offset_left = 955.042
+offset_top = 2045.5
+offset_right = 1651.04
+offset_bottom = 2748.5
 mouse_default_cursor_shape = 3
 script = ExtResource( 1 )
 __meta__ = {
@@ -45,10 +45,10 @@ target_scene = "res://scenes/man/man03.tscn"
 target_view = "back"
 
 [node name="Hotspot3" type="TextureButton" parent="."]
-margin_left = -1639.25
-margin_top = 506.03
-margin_right = -815.251
-margin_bottom = 1280.03
+offset_left = -1639.25
+offset_top = 506.03
+offset_right = -815.251
+offset_bottom = 1280.03
 mouse_default_cursor_shape = 3
 script = ExtResource( 1 )
 __meta__ = {

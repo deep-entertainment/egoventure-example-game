@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/bro1_q2-1.ogg-b5bae7d7e4be9969550be11f75aab724.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dj5b1nmcmg31d"
+path="res://.godot/imported/bro1_q2-1.ogg-b5bae7d7e4be9969550be11f75aab724.oggvorbisstr"
 
 [deps]
 
 source_file="res://voices/bro1_q2-1.ogg"
-dest_files=[ "res://.import/bro1_q2-1.ogg-b5bae7d7e4be9969550be11f75aab724.oggstr" ]
+dest_files=["res://.godot/imported/bro1_q2-1.ogg-b5bae7d7e4be9969550be11f75aab724.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

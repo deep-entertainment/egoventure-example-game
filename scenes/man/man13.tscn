@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://addons/egoventure/nodes/four_side_room.tscn" type="PackedScene" id=1]
-[ext_resource path="res://images/man/man13d.jpg" type="Texture" id=2]
-[ext_resource path="res://images/man/man13a.jpg" type="Texture" id=3]
-[ext_resource path="res://images/man/man13c.jpg" type="Texture" id=4]
-[ext_resource path="res://images/man/man13b.jpg" type="Texture" id=5]
+[ext_resource path="res://images/man/man13d.jpg" type="Texture2D" id=2]
+[ext_resource path="res://images/man/man13a.jpg" type="Texture2D" id=3]
+[ext_resource path="res://images/man/man13c.jpg" type="Texture2D" id=4]
+[ext_resource path="res://images/man/man13b.jpg" type="Texture2D" id=5]
 [ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=6]
 [ext_resource path="res://sounds/man/man_upper_inner_room_door_op.ogg" type="AudioStream" id=7]
 [ext_resource path="res://scenes/man/man13.gd" type="Script" id=8]
@@ -14,17 +14,17 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 8 )
 
-[node name="Room" parent="." instance=ExtResource( 1 )]
+[node name="Node3D" parent="." instance=ExtResource( 1 )]
 front_texture = ExtResource( 3 )
 right_texture = ExtResource( 5 )
 back_texture = ExtResource( 4 )
 left_texture = ExtResource( 2 )
 
 [node name="Hotspot" type="TextureButton" parent="."]
-margin_left = -2114.84
-margin_top = 654.009
-margin_right = -1718.84
-margin_bottom = 999.009
+offset_left = -2114.84
+offset_top = 654.009
+offset_right = -1718.84
+offset_bottom = 999.009
 mouse_default_cursor_shape = 13
 script = ExtResource( 6 )
 __meta__ = {
@@ -35,10 +35,10 @@ target_scene = "res://scenes/man/man13d_op.tscn"
 effect = ExtResource( 7 )
 
 [node name="Hotspot2" type="TextureButton" parent="."]
-margin_left = 876.246
-margin_top = 1654.07
-margin_right = 1180.25
-margin_bottom = 1977.07
+offset_left = 876.246
+offset_top = 1654.07
+offset_right = 1180.25
+offset_bottom = 1977.07
 mouse_default_cursor_shape = 3
 script = ExtResource( 6 )
 __meta__ = {
@@ -48,10 +48,10 @@ target_scene = "res://scenes/man/man11c_cl.tscn"
 effect = ExtResource( 9 )
 
 [node name="Hotspot3" type="TextureButton" parent="."]
-margin_left = 1451.0
-margin_top = 1889.0
-margin_right = 1952.0
-margin_bottom = 2758.0
+offset_left = 1451.0
+offset_top = 1889.0
+offset_right = 1952.0
+offset_bottom = 2758.0
 mouse_default_cursor_shape = 3
 script = ExtResource( 6 )
 __meta__ = {
@@ -61,10 +61,10 @@ target_scene = "res://scenes/man/man11.tscn"
 effect = ExtResource( 10 )
 
 [node name="Hotspot4" type="TextureButton" parent="."]
-margin_left = 3593.88
-margin_top = 552.416
-margin_right = 4081.88
-margin_bottom = 944.416
+offset_left = 3593.88
+offset_top = 552.416
+offset_right = 4081.88
+offset_bottom = 944.416
 mouse_default_cursor_shape = 16
 script = ExtResource( 6 )
 __meta__ = {

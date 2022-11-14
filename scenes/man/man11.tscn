@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://addons/egoventure/nodes/four_side_room.tscn" type="PackedScene" id=1]
-[ext_resource path="res://images/man/man11d.jpg" type="Texture" id=2]
-[ext_resource path="res://images/man/man11c.jpg" type="Texture" id=3]
-[ext_resource path="res://images/man/man11b.jpg" type="Texture" id=4]
-[ext_resource path="res://images/man/man11a.jpg" type="Texture" id=5]
-[ext_resource path="res://images/misc/black.jpg" type="Texture" id=6]
+[ext_resource path="res://images/man/man11d.jpg" type="Texture2D" id=2]
+[ext_resource path="res://images/man/man11c.jpg" type="Texture2D" id=3]
+[ext_resource path="res://images/man/man11b.jpg" type="Texture2D" id=4]
+[ext_resource path="res://images/man/man11a.jpg" type="Texture2D" id=5]
+[ext_resource path="res://images/misc/black.jpg" type="Texture2D" id=6]
 [ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=7]
 [ext_resource path="res://scenes/man/man11.gd" type="Script" id=8]
 [ext_resource path="res://addons/egoventure/nodes/hotspots/trigger_hotspot.gd" type="Script" id=9]
@@ -15,23 +15,23 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 8 )
 
-[node name="Room" parent="." instance=ExtResource( 1 )]
+[node name="Node3D" parent="." instance=ExtResource( 1 )]
 front_texture = ExtResource( 5 )
 right_texture = ExtResource( 4 )
 back_texture = ExtResource( 3 )
 left_texture = ExtResource( 2 )
 
-[node name="man_stairs" type="Sprite" parent="."]
+[node name="man_stairs" type="Sprite2D" parent="."]
 visible = false
 position = Vector2( 0, 1440 )
 texture = ExtResource( 6 )
 centered = false
 
 [node name="eye_on_door" type="TextureButton" parent="."]
-margin_left = 620.0
-margin_top = 1693.0
-margin_right = 1252.0
-margin_bottom = 2331.0
+offset_left = 620.0
+offset_top = 1693.0
+offset_right = 1252.0
+offset_bottom = 2331.0
 mouse_default_cursor_shape = 16
 script = ExtResource( 7 )
 __meta__ = {
@@ -41,10 +41,10 @@ cursor_type = 8
 target_scene = "res://scenes/man/man11c_cl.tscn"
 
 [node name="hand_on_door" type="TextureButton" parent="."]
-margin_left = 590.0
-margin_top = 1663.0
-margin_right = 1320.0
-margin_bottom = 2363.0
+offset_left = 590.0
+offset_top = 1663.0
+offset_right = 1320.0
+offset_bottom = 2363.0
 mouse_default_cursor_shape = 13
 script = ExtResource( 7 )
 __meta__ = {
@@ -55,10 +55,10 @@ target_scene = "res://scenes/man/man13.tscn"
 effect = ExtResource( 11 )
 
 [node name="upper_door_hs" type="TextureButton" parent="."]
-margin_left = 390.833
-margin_top = -618.635
-margin_right = 919.833
-margin_bottom = -156.635
+offset_left = 390.833
+offset_top = -618.635
+offset_right = 919.833
+offset_bottom = -156.635
 focus_mode = 0
 mouse_default_cursor_shape = 2
 script = ExtResource( 9 )
@@ -69,10 +69,10 @@ visibility_state = ""
 valid_inventory_items = [ ExtResource( 10 ) ]
 
 [node name="hand_on_first_door" type="TextureButton" parent="."]
-margin_left = 349.205
-margin_top = -464.184
-margin_right = 732.205
-margin_bottom = -71.1841
+offset_left = 349.205
+offset_top = -464.184
+offset_right = 732.205
+offset_bottom = -71.1841
 mouse_default_cursor_shape = 13
 script = ExtResource( 7 )
 __meta__ = {
@@ -83,10 +83,10 @@ target_scene = "res://scenes/man/man12.tscn"
 effect = ExtResource( 11 )
 
 [node name="Hotspot2" type="TextureButton" parent="."]
-margin_left = 3877.76
-margin_top = 502.556
-margin_right = 4393.76
-margin_bottom = 1022.56
+offset_left = 3877.76
+offset_top = 502.556
+offset_right = 4393.76
+offset_bottom = 1022.56
 mouse_default_cursor_shape = 13
 script = ExtResource( 7 )
 __meta__ = {
@@ -95,10 +95,10 @@ __meta__ = {
 cursor_type = 12
 
 [node name="Hotspot3" type="TextureButton" parent="."]
-margin_left = -1176.34
-margin_top = 525.311
-margin_right = -790.339
-margin_bottom = 938.311
+offset_left = -1176.34
+offset_top = 525.311
+offset_right = -790.339
+offset_bottom = 938.311
 mouse_default_cursor_shape = 13
 script = ExtResource( 7 )
 __meta__ = {
@@ -107,10 +107,10 @@ __meta__ = {
 cursor_type = 12
 
 [node name="Hotspot" type="TextureButton" parent="."]
-margin_left = 1423.0
-margin_top = 2153.0
-margin_right = 2135.0
-margin_bottom = 2804.0
+offset_left = 1423.0
+offset_top = 2153.0
+offset_right = 2135.0
+offset_bottom = 2804.0
 mouse_default_cursor_shape = 4
 script = ExtResource( 7 )
 __meta__ = {

@@ -7,7 +7,11 @@ signal skipped
 
 
 # Whether the loading is currently skippable
-var is_skippable: bool = false setget _change_skippable
+var is_skippable: bool = false :
+	get:
+		return is_skippable # TODOConverter40 Non existent get function 
+	set(mod_value):
+		mod_value  # TODOConverter40 Copy here content of _change_skippable
 
 
 # Hide the screen as default
@@ -31,7 +35,7 @@ func is_visible():
 	return $Screen.visible
 
 
-# Update the progess on the screen
+# Update the progess checked the screen
 #
 # ** Parameters **
 #
@@ -48,7 +52,7 @@ func set_progress(value: float):
 # ** Parameters **
 #
 # - image: The image to set
-func set_image(image: Texture):
+func set_image(image: Texture2D):
 	$Screen/Panel/TextureRect.texture = image
 
 

@@ -1,6 +1,6 @@
 # A scene, that can be instantiated in a scene and features a room
 # with up to eight different sides with automatic view navigation using a Camera2D
-tool
+@tool
 class_name EightSideRoom
 extends Node2D
 
@@ -29,23 +29,48 @@ var view_dict = {VIEW_FRONTLEFT : 0, VIEW_FRONT : 1, VIEW_FRONTRIGHT : 2, \
 				VIEW_BACKLEFT : 6, VIEW_LEFT : 7}
 
 # The default/starting view of the four views
-export (String, "frontleft", "front", "frontright", "right", "backright", "back", "backleft", "left") var default_view = VIEW_FRONT
+# issue https://github.com/godotengine/godot/issues/54828
+@export_enum("frontleft", "front", "frontright", "right", "backright", "back", "backleft", "left") var default_view: String = VIEW_FRONT
 
 # The texture for the front view
-export (Texture) var frontleft_texture setget _frontleft_texture_set
-export (Texture) var front_texture setget _front_texture_set
-export (Texture) var frontright_texture setget _frontright_texture_set
-export (Texture) var right_texture setget _right_texture_set
-export (Texture) var backright_texture setget _backright_texture_set
-export (Texture) var back_texture setget _back_texture_set
-export (Texture) var backleft_texture setget _backleft_texture_set
-export (Texture) var left_texture setget _left_texture_set
+@export var frontleft_texture: Texture2D:
+	set(mod_value):
+		_frontleft_texture_set(mod_value)
+@export var front_texture: Texture2D:
+	set(mod_value):
+		_front_texture_set(mod_value)
+@export var frontright_texture: Texture2D:
+	set(mod_value):
+		_frontright_texture_set(mod_value)
+@export var right_texture: Texture2D:
+	set(mod_value):
+		_right_texture_set(mod_value)
+@export var backright_texture: Texture2D:
+	set(mod_value):
+		_backright_texture_set(mod_value)
+@export var back_texture: Texture2D:
+	set(mod_value):
+		_back_texture_set(mod_value)
+@export var backleft_texture: Texture2D:
+	set(mod_value):
+		_backleft_texture_set(mod_value)
+@export var left_texture: Texture2D:
+	set(mod_value):
+		_left_texture_set(mod_value)
 
 # Whether navigation features are enabled in this room
-export (bool) var enable_navigation = true setget _set_navigation
+@export var enable_navigation: bool = true :
+	get:
+		return enable_navigation # TODOConverter40 Non existent get function 
+	set(mod_value):
+		mod_value  # TODOConverter40 Copy here content of _set_navigation
 
 # The current view shown to the player
-var current_view = VIEW_UNSET setget _set_current_view
+var current_view = VIEW_UNSET :
+	get:
+		return current_view # TODOConverter40 Non existent get function 
+	set(mod_value):
+		mod_value  # TODOConverter40 Copy here content of _set_current_view
 
 # The size of the viewport
 var _viewport_size
@@ -63,20 +88,20 @@ func _init():
 func _ready():
 	if not Engine.editor_hint:
 		EgoVenture.update_cache()
-		$Camera/Left.rect_position.x = 0
-		$Camera/Left.rect_position.y = EgoVenture.configuration.inventory_size
-		$Camera/Left.rect_size.x = EgoVenture.configuration\
+		$Camera3D/Left.position.x = 0
+		$Camera3D/Left.position.y = EgoVenture.configuration.inventory_size
+		$Camera3D/Left.size.x = EgoVenture.configuration\
 				.tools_navigation_width
-		$Camera/Left.rect_size.y = _viewport_size.y -\
+		$Camera3D/Left.size.y = _viewport_size.y -\
 				EgoVenture.configuration.inventory_size
-		$Camera/Right.rect_position.x = _viewport_size.x -\
+		$Camera3D/Right.position.x = _viewport_size.x -\
 				EgoVenture.configuration.tools_navigation_width
-		$Camera/Right.rect_position.y = EgoVenture.configuration.inventory_size
-		$Camera/Right.rect_size.x = EgoVenture.configuration\
+		$Camera3D/Right.position.y = EgoVenture.configuration.inventory_size
+		$Camera3D/Right.size.x = EgoVenture.configuration\
 				.tools_navigation_width
-		$Camera/Right.rect_size.y = _viewport_size.y -\
+		$Camera3D/Right.size.y = _viewport_size.y -\
 				EgoVenture.configuration.inventory_size
-		EgoVenture.connect("requested_view_change", self, "_set_current_view")
+		EgoVenture.connect("requested_view_change",Callable(self,"_set_current_view"))
 
 
 # Properly position the different views
@@ -109,14 +134,14 @@ func _set_current_view(value: String):
 	current_view = value
 	EgoVenture.current_view = value
 	match current_view:
-		VIEW_FRONT: $Camera.position = Vector2(0, _viewport_size.y * -1 - TEXTURE_DISTANCE)
-		VIEW_RIGHT: $Camera.position = Vector2(_viewport_size.x + TEXTURE_DISTANCE, 0)
-		VIEW_BACK: $Camera.position = Vector2(0, _viewport_size.y + TEXTURE_DISTANCE)
-		VIEW_LEFT: $Camera.position = Vector2(_viewport_size.x * -1 - TEXTURE_DISTANCE, 0)
-		VIEW_FRONTLEFT: $Camera.position = Vector2(_viewport_size.x * -1 - TEXTURE_DISTANCE, _viewport_size.y * -1 - TEXTURE_DISTANCE)
-		VIEW_FRONTRIGHT: $Camera.position = Vector2(_viewport_size.x + TEXTURE_DISTANCE, _viewport_size.y * -1 - TEXTURE_DISTANCE)
-		VIEW_BACKLEFT: $Camera.position = Vector2(_viewport_size.x * -1 - TEXTURE_DISTANCE, _viewport_size.y + TEXTURE_DISTANCE)
-		VIEW_BACKRIGHT: $Camera.position = Vector2(_viewport_size.x + TEXTURE_DISTANCE, _viewport_size.y + TEXTURE_DISTANCE)
+		VIEW_FRONT: $Camera3D.position = Vector2(0, _viewport_size.y * -1 - TEXTURE_DISTANCE)
+		VIEW_RIGHT: $Camera3D.position = Vector2(_viewport_size.x + TEXTURE_DISTANCE, 0)
+		VIEW_BACK: $Camera3D.position = Vector2(0, _viewport_size.y + TEXTURE_DISTANCE)
+		VIEW_LEFT: $Camera3D.position = Vector2(_viewport_size.x * -1 - TEXTURE_DISTANCE, 0)
+		VIEW_FRONTLEFT: $Camera3D.position = Vector2(_viewport_size.x * -1 - TEXTURE_DISTANCE, _viewport_size.y * -1 - TEXTURE_DISTANCE)
+		VIEW_FRONTRIGHT: $Camera3D.position = Vector2(_viewport_size.x + TEXTURE_DISTANCE, _viewport_size.y * -1 - TEXTURE_DISTANCE)
+		VIEW_BACKLEFT: $Camera3D.position = Vector2(_viewport_size.x * -1 - TEXTURE_DISTANCE, _viewport_size.y + TEXTURE_DISTANCE)
+		VIEW_BACKRIGHT: $Camera3D.position = Vector2(_viewport_size.x + TEXTURE_DISTANCE, _viewport_size.y + TEXTURE_DISTANCE)
 
 
 # Disable or enable navigation in this room
@@ -126,12 +151,12 @@ func _set_current_view(value: String):
 # - p_enable_navigation: Whether to enable the navigation features
 func _set_navigation(p_enable_navigation: bool):
 	enable_navigation = p_enable_navigation
-	$Camera/Left.show_indicator = enable_navigation
-	$Camera/Left.visible = enable_navigation
-	$Camera/Left.disabled = not enable_navigation
-	$Camera/Right.show_indicator = enable_navigation
-	$Camera/Right.visible = enable_navigation
-	$Camera/Right.disabled = not enable_navigation
+	$Camera3D/Left.show_indicator = enable_navigation
+	$Camera3D/Left.visible = enable_navigation
+	$Camera3D/Left.disabled = not enable_navigation
+	$Camera3D/Right.show_indicator = enable_navigation
+	$Camera3D/Right.visible = enable_navigation
+	$Camera3D/Right.disabled = not enable_navigation
 
 
 # Check whether texture for this view is defined
@@ -157,7 +182,7 @@ func _has_texture(index: int) -> bool:
 # ** Parameters **
 # 
 # - value: The texture to set
-func _frontleft_texture_set(value: Texture):
+func _frontleft_texture_set(value: Texture2D):
 	frontleft_texture = value
 	$Views/FrontLeft.texture = frontleft_texture
 
@@ -167,7 +192,7 @@ func _frontleft_texture_set(value: Texture):
 # ** Parameters **
 # 
 # - value: The texture to set
-func _front_texture_set(value: Texture):
+func _front_texture_set(value: Texture2D):
 	front_texture = value
 	$Views/Front.texture = front_texture
 
@@ -177,7 +202,7 @@ func _front_texture_set(value: Texture):
 # ** Parameters **
 # 
 # - value: The texture to set
-func _frontright_texture_set(value: Texture):
+func _frontright_texture_set(value: Texture2D):
 	frontright_texture = value
 	$Views/FrontRight.texture = frontright_texture
 
@@ -187,7 +212,7 @@ func _frontright_texture_set(value: Texture):
 # ** Parameters **
 # 
 # - value: The texture to set
-func _right_texture_set(value: Texture):
+func _right_texture_set(value: Texture2D):
 	right_texture = value
 	$Views/Right.texture = right_texture
 
@@ -197,7 +222,7 @@ func _right_texture_set(value: Texture):
 # ** Parameters **
 # 
 # - value: The texture to set
-func _backright_texture_set(value: Texture):
+func _backright_texture_set(value: Texture2D):
 	backright_texture = value
 	$Views/BackRight.texture = backright_texture
 
@@ -207,7 +232,7 @@ func _backright_texture_set(value: Texture):
 # ** Parameters **
 # 
 # - value: The texture to set
-func _back_texture_set(value: Texture):
+func _back_texture_set(value: Texture2D):
 	back_texture = value
 	$Views/Back.texture = back_texture
 
@@ -217,7 +242,7 @@ func _back_texture_set(value: Texture):
 # ** Parameters **
 # 
 # - value: The texture to set
-func _backleft_texture_set(value: Texture):
+func _backleft_texture_set(value: Texture2D):
 	backleft_texture = value
 	$Views/BackLeft.texture = backleft_texture
 
@@ -227,7 +252,7 @@ func _backleft_texture_set(value: Texture):
 # ** Parameters **
 # 
 # - value: The texture to set
-func _left_texture_set(value: Texture):
+func _left_texture_set(value: Texture2D):
 	left_texture = value
 	$Views/Left.texture = left_texture
 

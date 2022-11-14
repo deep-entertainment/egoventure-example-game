@@ -1,35 +1,35 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://images/man/man13d_lift1.jpg" type="Texture" id=1]
+[ext_resource path="res://images/man/man13d_lift1.jpg" type="Texture2D" id=1]
 [ext_resource path="res://scenes/man/man13d_lift1.gd" type="Script" id=2]
-[ext_resource path="res://images/man/hs/cigbox_a.png" type="Texture" id=3]
+[ext_resource path="res://images/man/hs/cigbox_a.png" type="Texture2D" id=3]
 [ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=4]
-[ext_resource path="res://images/man/hs/cigbox_m.png" type="Texture" id=5]
-[ext_resource path="res://images/man/hs/cigbox_b.png" type="Texture" id=6]
-[ext_resource path="res://images/man/hs/cigbox_e.png" type="Texture" id=7]
-[ext_resource path="res://images/man/hs/cigbox_z.png" type="Texture" id=8]
-[ext_resource path="res://images/man/hs/cigbox_r.png" type="Texture" id=9]
-[ext_resource path="res://images/man/hs/cigbox_t.png" type="Texture" id=10]
+[ext_resource path="res://images/man/hs/cigbox_m.png" type="Texture2D" id=5]
+[ext_resource path="res://images/man/hs/cigbox_b.png" type="Texture2D" id=6]
+[ext_resource path="res://images/man/hs/cigbox_e.png" type="Texture2D" id=7]
+[ext_resource path="res://images/man/hs/cigbox_z.png" type="Texture2D" id=8]
+[ext_resource path="res://images/man/hs/cigbox_r.png" type="Texture2D" id=9]
+[ext_resource path="res://images/man/hs/cigbox_t.png" type="Texture2D" id=10]
 [ext_resource path="res://sounds/man/man_cigar_back.ogg" type="AudioStream" id=11]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource( 1 )
 centered = false
 
-[node name="cigbox_a" type="Sprite" parent="."]
+[node name="cigbox_a" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource( 3 )
 centered = false
 offset = Vector2( 1050, 413 )
 
 [node name="Hotspot" type="TextureButton" parent="."]
-margin_left = 1049.0
-margin_top = 411.74
-margin_right = 1133.0
-margin_bottom = 502.74
+offset_left = 1049.0
+offset_top = 411.74
+offset_right = 1133.0
+offset_bottom = 502.74
 mouse_default_cursor_shape = 13
 script = ExtResource( 4 )
 __meta__ = {
@@ -37,17 +37,17 @@ __meta__ = {
 }
 cursor_type = 12
 
-[node name="cigbox_m" type="Sprite" parent="."]
+[node name="cigbox_m" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource( 5 )
 centered = false
 offset = Vector2( 1123, 415 )
 
 [node name="Hotspot2" type="TextureButton" parent="."]
-margin_left = 1125.0
-margin_top = 411.0
-margin_right = 1228.0
-margin_bottom = 502.0
+offset_left = 1125.0
+offset_top = 411.0
+offset_right = 1228.0
+offset_bottom = 502.0
 mouse_default_cursor_shape = 13
 script = ExtResource( 4 )
 __meta__ = {
@@ -55,17 +55,17 @@ __meta__ = {
 }
 cursor_type = 12
 
-[node name="cigbox_b" type="Sprite" parent="."]
+[node name="cigbox_b" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource( 6 )
 centered = false
 offset = Vector2( 1228, 414 )
 
 [node name="Hotspot3" type="TextureButton" parent="."]
-margin_left = 1231.83
-margin_top = 414.0
-margin_right = 1308.83
-margin_bottom = 497.0
+offset_left = 1231.83
+offset_top = 414.0
+offset_right = 1308.83
+offset_bottom = 497.0
 mouse_default_cursor_shape = 13
 script = ExtResource( 4 )
 __meta__ = {
@@ -73,17 +73,17 @@ __meta__ = {
 }
 cursor_type = 12
 
-[node name="cigbox_e" type="Sprite" parent="."]
+[node name="cigbox_e" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource( 7 )
 centered = false
 offset = Vector2( 1313, 415 )
 
 [node name="Hotspot7" type="TextureButton" parent="."]
-margin_left = 1313.59
-margin_top = 414.0
-margin_right = 1375.59
-margin_bottom = 498.0
+offset_left = 1313.59
+offset_top = 414.0
+offset_right = 1375.59
+offset_bottom = 498.0
 mouse_default_cursor_shape = 13
 script = ExtResource( 4 )
 __meta__ = {
@@ -91,17 +91,17 @@ __meta__ = {
 }
 cursor_type = 12
 
-[node name="cigbox_r" type="Sprite" parent="."]
+[node name="cigbox_r" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource( 9 )
 centered = false
 offset = Vector2( 1386, 415 )
 
 [node name="Hotspot5" type="TextureButton" parent="."]
-margin_left = 1390.0
-margin_top = 412.172
-margin_right = 1462.0
-margin_bottom = 503.172
+offset_left = 1390.0
+offset_top = 412.172
+offset_right = 1462.0
+offset_bottom = 503.172
 mouse_default_cursor_shape = 13
 script = ExtResource( 4 )
 __meta__ = {
@@ -109,17 +109,17 @@ __meta__ = {
 }
 cursor_type = 12
 
-[node name="cigbox_t" type="Sprite" parent="."]
+[node name="cigbox_t" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource( 10 )
 centered = false
 offset = Vector2( 1457, 416 )
 
 [node name="Hotspot4" type="TextureButton" parent="."]
-margin_left = 1460.0
-margin_top = 417.0
-margin_right = 1533.0
-margin_bottom = 499.0
+offset_left = 1460.0
+offset_top = 417.0
+offset_right = 1533.0
+offset_bottom = 499.0
 mouse_default_cursor_shape = 13
 script = ExtResource( 4 )
 __meta__ = {
@@ -127,17 +127,17 @@ __meta__ = {
 }
 cursor_type = 12
 
-[node name="cigbox_z" type="Sprite" parent="."]
+[node name="cigbox_z" type="Sprite2D" parent="."]
 visible = false
 texture = ExtResource( 8 )
 centered = false
 offset = Vector2( 1523, 416 )
 
 [node name="Hotspot6" type="TextureButton" parent="."]
-margin_left = 1533.0
-margin_top = 419.0
-margin_right = 1595.0
-margin_bottom = 499.0
+offset_left = 1533.0
+offset_top = 419.0
+offset_right = 1595.0
+offset_bottom = 499.0
 mouse_default_cursor_shape = 13
 script = ExtResource( 4 )
 __meta__ = {
@@ -146,10 +146,10 @@ __meta__ = {
 cursor_type = 12
 
 [node name="Hotspot8" type="TextureButton" parent="."]
-margin_left = -16.0
-margin_top = 1116.0
-margin_right = 2581.0
-margin_bottom = 1455.0
+offset_left = -16.0
+offset_top = 1116.0
+offset_right = 2581.0
+offset_bottom = 1455.0
 mouse_default_cursor_shape = 6
 script = ExtResource( 4 )
 __meta__ = {

@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/testing_effects.ogg-b3ea61abe3d9eb466754cca188530db7.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bmiva4dpcgumu"
+path="res://.godot/imported/testing_effects.ogg-b3ea61abe3d9eb466754cca188530db7.oggvorbisstr"
 
 [deps]
 
 source_file="res://sounds/misc/testing_effects.ogg"
-dest_files=[ "res://.import/testing_effects.ogg-b3ea61abe3d9eb466754cca188530db7.oggstr" ]
+dest_files=["res://.godot/imported/testing_effects.ogg-b3ea61abe3d9eb466754cca188530db7.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

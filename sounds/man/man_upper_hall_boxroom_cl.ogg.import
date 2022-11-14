@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/man_upper_hall_boxroom_cl.ogg-cec0645c974296abb8985b76a8c9060c.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dxgnx3twun0uq"
+path="res://.godot/imported/man_upper_hall_boxroom_cl.ogg-cec0645c974296abb8985b76a8c9060c.oggvorbisstr"
 
 [deps]
 
 source_file="res://sounds/man/man_upper_hall_boxroom_cl.ogg"
-dest_files=[ "res://.import/man_upper_hall_boxroom_cl.ogg-cec0645c974296abb8985b76a8c9060c.oggstr" ]
+dest_files=["res://.godot/imported/man_upper_hall_boxroom_cl.ogg-cec0645c974296abb8985b76a8c9060c.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

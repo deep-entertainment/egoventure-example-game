@@ -1,15 +1,19 @@
 [remap]
 
-importer="ogg_vorbis"
-type="AudioStreamOGGVorbis"
-path="res://.import/tunnel.ogg-d992166d2d992a4af911a9dfdf5a64ef.oggstr"
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://brwctet8u35ja"
+path="res://.godot/imported/tunnel.ogg-d992166d2d992a4af911a9dfdf5a64ef.oggvorbisstr"
 
 [deps]
 
 source_file="res://music/tunnel.ogg"
-dest_files=[ "res://.import/tunnel.ogg-d992166d2d992a4af911a9dfdf5a64ef.oggstr" ]
+dest_files=["res://.godot/imported/tunnel.ogg-d992166d2d992a4af911a9dfdf5a64ef.oggvorbisstr"]
 
 [params]
 
 loop=false
 loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

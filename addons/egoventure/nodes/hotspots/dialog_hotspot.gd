@@ -1,8 +1,8 @@
 # A button that triggers a dialog
-tool
-class_name DialogHotspot, \
-		"res://addons/egoventure/images/dialog_hotspot.svg"
+@tool
+class_name DialogHotspot
 extends RichTextLabel
+@icon("res://addons/egoventure/images/dialog_hotspot.svg")
 
 
 # Emitted when the button is clicked but no dialog is selected
@@ -10,26 +10,28 @@ signal pressed
 
 
 # The dialog to play
-export(String, FILE, "*.tres") var dialog: String
+@export var dialog: String # (String, FILE, "*.tres")
 
 # Wether the question was already asked
-export (bool) var asked: bool = false setget _set_asked
+@export var asked: bool = false:
+	set(mod_value):
+		_set_asked(mod_value)
 
-# Show this hotspot depending on the boolean value of this state
+# Show this hotspot depending checked the boolean value of this state
 # variable
-export(String) var visibility_state = ""
+@export var visibility_state: String = ""
 
 
 # Connect hover signals
 func _init():
-	add_stylebox_override(
+	add_theme_stylebox_override(
 		"normal",
 		StyleBoxEmpty.new()
 	)
-	if not is_connected("mouse_entered", self, "_set_hover"):
-		connect("mouse_entered", self, "_set_hover")
-	if not is_connected("mouse_exited", self, "_update_color"):
-		connect("mouse_exited", self, "_update_color")
+	if not is_connected("mouse_entered",Callable(self,"_set_hover")):
+		connect("mouse_entered",Callable(self,"_set_hover"))
+	if not is_connected("mouse_exited",Callable(self,"_update_color")):
+		connect("mouse_exited",Callable(self,"_update_color"))
 	_update_color()
 		
 
@@ -40,16 +42,16 @@ func _enter_tree():
 
 # Set default value for asked
 func _ready():
-	add_font_override(
+	add_theme_font_override(
 		"normal_font",
-		get_font(
+		get_theme_font(
 			"dialog_hotspot_normal_font",
 			"RichTextLabel"
 		)
 	)
-	add_font_override(
+	add_theme_font_override(
 		"bold_font",
-		get_font(
+		get_theme_font(
 			"dialog_hotspot_bold_font",
 			"RichTextLabel"
 		)
@@ -77,25 +79,25 @@ func _set_asked(value: bool):
 	_update_color()
 
 
-# Update the color based on asked/not asked
+# Update the color based checked asked/not asked
 func _update_color():
 	if Engine.editor_hint:
-		add_color_override(
+		add_theme_color_override(
 			"default_color",
-			Color.black
+			Color.BLACK
 		)
 	elif not asked:
-		add_color_override(
+		add_theme_color_override(
 			"default_color",
-			get_color(
+			get_theme_color(
 				"dialog_hotspot_font_color",
 				"RichTextLabel"
 			)
 		)
 	else:
-		add_color_override(
+		add_theme_color_override(
 			"default_color",
-			get_color(
+			get_theme_color(
 				"dialog_hotspot_asked_font_color",
 				"RichTextLabel"
 			)
@@ -104,9 +106,9 @@ func _update_color():
 
 # Set hover font color
 func _set_hover():
-	add_color_override(
+	add_theme_color_override(
 		"default_color",
-		get_color(
+		get_theme_color(
 			"dialog_hotspot_hover_font_color",
 			"RichTextLabel"
 		)
@@ -118,15 +120,15 @@ func _gui_input(event):
 	if Inventory.selected_item == null and \
 			event is InputEventMouseButton and \
 			not (event as InputEventMouseButton).pressed:
-		if (event as InputEventMouseButton).button_index == BUTTON_RIGHT:
+		if (event as InputEventMouseButton).button_index == MOUSE_BUTTON_RIGHT:
 			MainMenu.toggle()
-		elif (event as InputEventMouseButton).button_index == BUTTON_LEFT:
+		elif (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT:
 			release_focus()
 			if (dialog != ''):
 				Speedy.hidden = true
 				MainMenu.disabled = true
 				Parrot.play(load(dialog))
-				yield(Parrot,"finished_dialog")
+				await Parrot.finished_dialog
 				MainMenu.disabled = false
 				Speedy.hidden = false
 			else:
@@ -137,13 +139,12 @@ func _gui_input(event):
 func _check_state():
 	if not Engine.editor_hint:
 		var state = EgoVenture.state
-		if not visibility_state.empty() and \
+		if not visibility_state.is_empty() and \
 				(
 					not (visibility_state in state) or
 					not state.get(visibility_state) is bool
 				):
-			assert(
-				false, 
+			push_error(
 				(
 					"Hotspot visibility state variable %s " +
 					"of node %s not found or is not bool"
@@ -157,7 +158,7 @@ func _check_state():
 
 # Check wether the hotspot should be shown or hidden
 func _check_visibility():
-	if not visibility_state.empty() and "state" in EgoVenture:
+	if not visibility_state.is_empty() and "state" in EgoVenture:
 		if visibility_state in EgoVenture.state and \
 				EgoVenture.state.get(visibility_state) is bool:
 			if not visible == EgoVenture.state.get(visibility_state):

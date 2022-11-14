@@ -3,17 +3,17 @@ extends Node
 
 func _ready():
 	EgoVenture.configure(preload("res://configuration.tres"))
-	MainMenu.connect("new_game", self, "_on_new_game")
-	Inventory.connect("triggered_inventory_item", self, "_on_triggered_inventory_item")
-	Inventory.connect("released_inventory_item", self, "_on_released_inventory_item")
-	EgoVenture.connect("game_loaded", self, "_on_load")
+	MainMenu.connect("new_game",Callable(self,"_on_new_game"))
+	Inventory.connect("triggered_inventory_item",Callable(self,"_on_triggered_inventory_item"))
+	Inventory.connect("released_inventory_item",Callable(self,"_on_released_inventory_item"))
+	EgoVenture.connect("game_loaded",Callable(self,"_on_load"))
 	
 func _on_triggered_inventory_item(item1: InventoryItem, item2: InventoryItem):
 	if (item1.title == "screwdriver" and item2.title == "file") or (item1.title == "file" and item2.title == "screwdriver"):
 		Boombox.ignore_pause = true
 		get_tree().paused = true
 		Boombox.play_effect(preload("res://sounds/man/comb_screw_file.ogg"))
-		yield(get_tree().create_timer(1), "timeout")
+		await get_tree().create_timer(1).timeout
 		Inventory.add_item(preload("res://inventory/screwdriver_mod.tres"))
 		Inventory.release_item()
 		get_tree().paused = false
@@ -26,7 +26,7 @@ func _on_triggered_inventory_item(item1: InventoryItem, item2: InventoryItem):
 
 func _on_new_game():
 	_initialization()
-	EgoVenture.change_scene("res://scenes/intro.tscn")
+	EgoVenture.change_scene_to_file("res://scenes/intro.tscn")
 
 func _initialization():
 	var state = GameState.new()

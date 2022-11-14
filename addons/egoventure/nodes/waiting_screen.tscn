@@ -13,8 +13,8 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array( 0 ),
+"transitions": PackedFloat32Array( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
@@ -30,14 +30,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array( 0, 1, 2 ),
+"transitions": PackedFloat32Array( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
 [node name="WaitingScreen" type="CanvasLayer"]
-pause_mode = 2
+process_mode = 2
 layer = 126
 script = ExtResource( 1 )
 
@@ -48,7 +48,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Background" type="Sprite" parent="Screen"]
+[node name="Background" type="Sprite2D" parent="Screen"]
 centered = false
 
 [node name="Panel" type="Panel" parent="Screen"]
@@ -74,8 +74,8 @@ __meta__ = {
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -12.0
-rect_min_size = Vector2( 0, 12 )
+offset_top = -12.0
+minimum_size = Vector2( 0, 12 )
 size_flags_horizontal = 3
 size_flags_vertical = 1
 percent_visible = false

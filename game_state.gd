@@ -1,37 +1,37 @@
 class_name GameState
 extends BaseState
 
-export(bool) var has_keys = false
-export(bool) var DialogHotspot2 = false
-export(bool) var DialogHotspot3 = false
-export (int) var bro1_q2
-export(bool) var man_rag = false
-export(bool) var man_hand_on_insex = false
-export (int) var tapestry_seen
-export(bool) var match_takeable = false
-export(bool) var upper_door_hs = false
-export(bool) var hs_on_ins = false
-export(bool) var bro_q1_hs = false
-export(bool) var bro_q2_hs = false
-export(bool) var bro_q3_hs = false
-export(bool) var map_kevo_new = false
-export(bool) var map_kevo = false
-export (int) var screw_comb
-export(bool) var eye_on_door = false
-export(bool) var hand_on_door = false
-export(bool) var hand_on_first_door = false
-export (int) var bor_opened
-export (int) var man_folder_seen
-export(bool) var man_hand_on_bur = false
-export(bool) var screwdr_hs = false
-export (int) var raze_seen
-export (int) var inv_info_seen
-export (int) var use_info_will_be_seen
-export(bool) var eye_info_hs = false
-export(bool) var eye_info_hs2 = false
-export(bool) var space_info = false
-export(bool) var map_bro_new = false
-export (int) var menu_info_seen
-export(bool) var test_hs = false
-export (int) var bro_spoken_to
-export(bool) var temp_hand = false
+@export var has_keys: bool = false
+@export var DialogHotspot2: bool = false
+@export var DialogHotspot3: bool = false
+@export var bro1_q2: int = 0
+@export var man_rag: bool = false
+@export var man_hand_on_insex: bool = false
+@export var tapestry_seen: int = 0
+@export var match_takeable: bool = false
+@export var upper_door_hs: bool = false
+@export var hs_on_ins: bool = false
+@export var bro_q1_hs: bool = false
+@export var bro_q2_hs: bool = false
+@export var bro_q3_hs: bool = false
+@export var map_kevo_new: bool = false
+@export var map_kevo: bool = false
+@export var screw_comb: int = 0
+@export var eye_on_door: bool = false
+@export var hand_on_door: bool = false
+@export var hand_on_first_door: bool = false
+@export var bor_opened: int = 0
+@export var man_folder_seen: int = 0
+@export var man_hand_on_bur: bool = false
+@export var screwdr_hs: bool = false
+@export var raze_seen: int = 0
+@export var inv_info_seen: int = 0
+@export var use_info_will_be_seen: int = 0
+@export var eye_info_hs: bool = false
+@export var eye_info_hs2: bool = false
+@export var space_info: bool = false
+@export var map_bro_new: bool = false
+@export var menu_info_seen: int = 0
+@export var test_hs: bool = false
+@export var bro_spoken_to: int = 0
+@export var temp_hand: bool = false

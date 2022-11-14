@@ -4,16 +4,16 @@ extends Resource
 
 
 # The numeric id of this goal
-export (int) var id
+@export var id: int
 
 
 # The title of the goal
-export (String) var title
+@export var title: String
 
 
 # A list of hints
-export (Array, String) var hints
+@export var hints: Array[String]
 
 
 # The last hint currently visible
-export (Array, bool) var hints_fulfilled
+@export var hints_fulfilled: Array[bool]
