@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=33 format=2]
+[gd_resource type="Theme" load_steps=34 format=2]
 
 [ext_resource path="res://images/misc/stripes_sized.png" type="Texture" id=1]
 [ext_resource path="res://misc/fonts/KALAM-REGULAR.TTF" type="DynamicFontData" id=2]
@@ -78,6 +78,9 @@ font_data = ExtResource( 2 )
 
 [sub_resource type="StyleBoxFlat" id=17]
 bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 0, 0, 0, 0.639216 )
 
 [sub_resource type="StyleBoxFlat" id=18]
 bg_color = Color( 0, 0, 0, 1 )
@@ -162,6 +165,7 @@ Label/fonts/saveslots_date = SubResource( 16 )
 Panel/styles/detail_view = null
 Panel/styles/dialog_panel = null
 Panel/styles/inventory_panel = SubResource( 17 )
+Panel/styles/inventory_panel_touch = SubResource( 28 )
 Panel/styles/notepad_panel = SubResource( 18 )
 Panel/styles/saveslot_panel = SubResource( 19 )
 ProgressBar/styles/bg = SubResource( 20 )
