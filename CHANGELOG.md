@@ -31,132 +31,6 @@
 * Wrong handling of show_indicator on detail views ([3ce6a0d](https://github.com/deep-entertainment/egoventure-example-game/commit/3ce6a0da0f647b8ef4cfa8a5a1f6e2b78a32f68a)), closes [deep-entertainment/issues#27](https://github.com/deep-entertainment/issues/issues/27)
 
 
-
-<<<<<<< HEAD
-## [4.4.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...4.4.0-develop.0) (2022-11-07)
-
-
-### Features
-
-* Add configuration for main menu item separation ([cbed829](https://github.com/deep-entertainment/egoventure-example-game/commit/cbed82965c3471c9f4390c8036cd710afcdf3ca1))
-
-
-
-### [4.3.1-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...4.3.1-develop.0) (2022-11-07)
-
-
-### Bug Fixes
-
-* set overridden cursors when loading savegame ([e613890](https://github.com/deep-entertainment/egoventure-example-game/commit/e6138900a87612e1cdaac07f7d12469eec4e653f))
-
-
-
-## [4.3.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...4.3.0-develop.0) (2022-11-07)
-
-
-### Features
-
-* Added support for non-grabbable inventory items ([2107d39](https://github.com/deep-entertainment/egoventure-example-game/commit/2107d395c621b129d977ad85248bb4fa75679c4b))
-
-
-
-## [4.2.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...4.2.0-develop.0) (2022-11-07)
-
-
-### Features
-
-* Support for new Notification API ([772ef64](https://github.com/deep-entertainment/egoventure-example-game/commit/772ef64f1a72d2b40748dd5a968a147faffb3ec2))
-
-
-
-### [4.1.1-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...4.1.1-develop.0) (2022-10-18)
-
-
-### Bug Fixes
-
-* cursor shape update while hidden ([c32db41](https://github.com/deep-entertainment/egoventure-example-game/commit/c32db41e09095c6bbe04b6c30de3f56473e07359))
-
-
-
-=======
->>>>>>> main
-## [4.1.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.0.0...4.1.0-develop.0) (2022-09-14)
-
-
-### Features
-
-* Support specifying the position in the list of inventory items where the new item should be placed ([43c3959](https://github.com/deep-entertainment/egoventure-example-game/commit/43c395976ff42f3d53c5fdfcd71a6498cdccc3b6)), closes [deep-entertainment/issues#28](https://github.com/deep-entertainment/issues/issues/28)
-
-
-
-## [2.0.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.3.0...2.0.0-develop.0) (2022-08-25)
-
-
-### ⚠ BREAKING CHANGES
-
-* This requires renaming the call to DetailView.show to DetailView.show_with_item in all code
-
-### Features
-
-* Rename DetailView.show to DetailView.show_with_item for Godot 3.5 compatibility ([8d897e8](https://github.com/deep-entertainment/egoventure-example-game/commit/8d897e8dcab4633136e7065bb5d686e0e11b8d9e))
-
-
-
-## [1.7.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.2.0...1.7.0-develop.0) (2022-08-25)
-
-
-### Features
-
-* Added sound effects for hover and clicking menu items ([97c3125](https://github.com/deep-entertainment/egoventure-example-game/commit/97c3125890dfcbf9bff64cc8b077bf82683689a3)), closes [deep-entertainment/issues#26](https://github.com/deep-entertainment/issues/issues/26)
-
-
-
-## [1.6.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.2.0...1.6.0-develop.0) (2022-08-25)
-
-
-### Features
-
-* Added interactive flag ([d8607bf](https://github.com/deep-entertainment/egoventure-example-game/commit/d8607bfce7c3be153735366a07612e0fbf879d34)), closes [deep-entertainment/issues#24](https://github.com/deep-entertainment/issues/issues/24)
-
-
-
-## [1.4.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.1.1...1.4.0-develop.0) (2022-08-09)
-
-
-### Features
-
-* Disable skipping dialog lines in Parrot ([66217ae](https://github.com/deep-entertainment/egoventure-example-game/commit/66217ae9b7ccc1e98cba7c31e98b04f55b68d926)), closes [deep-entertainment/issues#23](https://github.com/deep-entertainment/issues/issues/23)
-
-
-### Bug Fixes
-
-* Set _dialog_playing to false when the dialog is canceled. ([acd298e](https://github.com/deep-entertainment/egoventure-example-game/commit/acd298e479ba1d75988c250f9c49c484a53c2acf))
-
-
-
-## [1.3.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.1.1...1.3.0-develop.0) (2022-08-08)
-
-
-### Features
-
-* Add show_indicator to TriggerHotspot as well ([765f807](https://github.com/deep-entertainment/egoventure-example-game/commit/765f8078d5bf796f430ed2e9b2a702e34585b745)), closes [deep-entertainment/issues#22](https://github.com/deep-entertainment/issues/issues/22)
-
-
-
-## [1.2.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.1.1...1.2.0-develop.0) (2022-08-01)
-
-
-### Features
-
-* New theme item for touch inventory panel ([d080237](https://github.com/deep-entertainment/egoventure-example-game/commit/d0802376ac5c8ddbcc5ecaf75827403bf73220bc))
-
-
-### Bug Fixes
-
-* Detail view fixes for touch devices ([5721b3d](https://github.com/deep-entertainment/egoventure-example-game/commit/5721b3da620745854b4cf5536e52550cfc0c1f9c))
-
-
-
 ### [1.1.1](https://github.com/deep-entertainment/egoventure-example-game/compare/1.1.0...1.1.1) (2022-07-21)
 
 
@@ -166,14 +40,6 @@
 
 
 
-### [1.1.1-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.1.0...1.1.1-develop.0) (2022-07-21)
-
-
-### Bug Fixes
-
-* Fixed trigger hotspot mouse cursor handling for differently sized inventory items ([d2176d6](https://github.com/deep-entertainment/egoventure-example-game/commit/d2176d64d51b5cd671c99b47552da85220347915))
-
-
 ## [1.1.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.0.0...1.1.0) (2022-07-04)
 
 
@@ -181,24 +47,6 @@
 
 * Disable navigation in four/eight side rooms ([5362245](https://github.com/deep-entertainment/egoventure-example-game/commit/536224508e597e536034000c95c97e9953af63a5)), closes [deep-entertainment/issues#19](https://github.com/deep-entertainment/issues/issues/19)
 
-
-
-### Bug Fixes
-
-* Compatiblilty with Godot 3.4 achieved ([0f4f54e](https://github.com/deep-entertainment/egoventure-example-game/commit/0f4f54e8283c58a61f1a3c3619d910c6ada2f6a3)), closes [deep-entertainment/issues#8](https://github.com/deep-entertainment/issues/issues/8)
-* Fix stopping  both music and background players ([1f60043](https://github.com/deep-entertainment/egoventure-example-game/commit/1f60043383060c4f2b6b60dae8e3f3dad74396f9)), closes [deep-entertainment/issues#18](https://github.com/deep-entertainment/issues/issues/18)
-* Fixed MapHotspot not playing an effect ([1909099](https://github.com/deep-entertainment/egoventure-example-game/commit/1909099dce28cedd4f8cfddd618a15b6868da7ea)), closes [deep-entertainment/issues#21](https://github.com/deep-entertainment/issues/issues/21)
-* Fixed mouse cursor display issues on iOS ([bc05018](https://github.com/deep-entertainment/egoventure-example-game/commit/bc050187a77923c81b54ce2ab079377b68f0fda5))
-* project updates for Godot 3.4 ([18ecf94](https://github.com/deep-entertainment/egoventure-example-game/commit/18ecf946fc34119b36f18f6c9fd2ea8af0c6714c))
-
-
-
-## [1.1.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/1.0.0...1.1.0-develop.0) (2022-07-04)
-
-
-### Features
-
-* Disable navigation in four/eight side rooms ([5362245](https://github.com/deep-entertainment/egoventure-example-game/commit/536224508e597e536034000c95c97e9953af63a5)), closes [deep-entertainment/issues#19](https://github.com/deep-entertainment/issues/issues/19)
 
 
 ### Bug Fixes
@@ -236,38 +84,6 @@
 * Hint theming error ([6d6210e](https://github.com/deep-entertainment/egoventure-example-game/commit/6d6210e9f8d1e998cbc96ff190ee2dec4d92732b)), closes [deep-entertainment/issues#14](https://github.com/deep-entertainment/issues/issues/14)
 * No check_cursor() for eight_side_room ([96cf60b](https://github.com/deep-entertainment/egoventure-example-game/commit/96cf60b7b0d55bd562dadae85bf13d5f6547a46a))
 
-
-
-## [1.0.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.29.2...1.0.0-develop.0) (2022-05-24)
-
-
-### ⚠ BREAKING CHANGES
-
-* This is the first stable release of EgoVenture
-
-### Features
-
-* EgoVenture 1.0.0 ([e63da0a](https://github.com/deep-entertainment/egoventure-example-game/commit/e63da0acc85691f55b412d1b9306eb61e24448b6))
-
-## [0.30.0-develop.0](https://github.com/deep-entertainment/egoventure-example-game/compare/0.29.2...0.30.0-develop.0) (2022-05-24)
-
-
-### Features
-
-* Adding shared release action ([67b284c](https://github.com/deep-entertainment/egoventure-example-game/commit/67b284cecc2ec93ee174953709446722b6a50a98))
-* Implement skipping of minimum waiting time ([750bdf6](https://github.com/deep-entertainment/egoventure-example-game/commit/750bdf6e684cc68f8efff04a7d2470ec9ed2b19d)), closes [deep-entertainment/issues#12](https://github.com/deep-entertainment/issues/issues/12)
-* Optimized cursor checking ([5cb25f0](https://github.com/deep-entertainment/egoventure-example-game/commit/5cb25f0fe4f8754ab662a1bcffb8dad51fb2fe1d)), closes [#17](https://github.com/deep-entertainment/egoventure-example-game/issues/17)
-* Optimized fullscreen/windowed mode switching ([730bebd](https://github.com/deep-entertainment/egoventure-example-game/commit/730bebd13b27483273ed09acffce219373c6049c))
-* Prevent inadvertently skipped dialog lines ([4b7d007](https://github.com/deep-entertainment/egoventure-example-game/commit/4b7d007d1589fd5b8771f4031e55300c3d2cc65a)), closes [deep-entertainment/issues#13](https://github.com/deep-entertainment/issues/issues/13)
-* Support disabling of hotspot indicator ([#14](https://github.com/deep-entertainment/egoventure-example-game/issues/14)) ([89c84e3](https://github.com/deep-entertainment/egoventure-example-game/commit/89c84e31581d6efdb6fe2a9db667414363e83a0b))
-* Translation support ([7acb92d](https://github.com/deep-entertainment/egoventure-example-game/commit/7acb92d7cc5db721c9daabea67a17dda7bf52b2b))
-
-
-### Bug Fixes
-
-* Fixed optional parameter ([1cf18e0](https://github.com/deep-entertainment/egoventure-example-game/commit/1cf18e0e6892f8db0b2ad8121c1b45d5cf3ca352))
-* Hint theming error ([6d6210e](https://github.com/deep-entertainment/egoventure-example-game/commit/6d6210e9f8d1e998cbc96ff190ee2dec4d92732b)), closes [deep-entertainment/issues#14](https://github.com/deep-entertainment/issues/issues/14)
-* No check_cursor() for eight_side_room ([96cf60b](https://github.com/deep-entertainment/egoventure-example-game/commit/96cf60b7b0d55bd562dadae85bf13d5f6547a46a))
 
 
 ### [0.29.1](https://github.com/deep-entertainment/egoventure-example-game/compare/0.29.0...0.29.1) (2021-12-14)
