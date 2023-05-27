@@ -1,3 +1,18 @@
+### [2.2.1](https://github.com/deep-entertainment/egoventure-example-game/compare/2.2.0...2.2.1) (2023-05-27)
+
+
+### Bug Fixes
+
+* Added style box for touch inventory ([e59039b](https://github.com/deep-entertainment/egoventure-example-game/commit/e59039b4175b06f8f8ff9484b095fc0b932240a0))
+* Calculate screenshot size ([b3a595b](https://github.com/deep-entertainment/egoventure-example-game/commit/b3a595b4788b346141a13b684a2bc00ecde262e0)), closes [deep-entertainment/issues#35](https://github.com/deep-entertainment/issues/issues/35)
+* cursor position calculation when resetting overridden cursor ([97d4b72](https://github.com/deep-entertainment/egoventure-example-game/commit/97d4b727d821f4152037c140542fb82d3cb4b18f))
+* Enhanced cross-fading of Boombox ([f182df6](https://github.com/deep-entertainment/egoventure-example-game/commit/f182df648b06848ad0a30f791911e568f0a86e38))
+* ignore inventory in check cursor when it is disabled ([0332dd1](https://github.com/deep-entertainment/egoventure-example-game/commit/0332dd1bcdc65af01a6cdd356b216f92800add07))
+* inventory items width calculation considering item separation ([b77732d](https://github.com/deep-entertainment/egoventure-example-game/commit/b77732da53c06f79c376d93debfc8bf299d198c6))
+* Use get_viewport instead of OS.window_size ([d1df588](https://github.com/deep-entertainment/egoventure-example-game/commit/d1df5889c99cd10e4508f6f8415a28649e47f4af))
+
+
+
 ## [2.2.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.1.0...2.2.0) (2022-11-07)
 
 
