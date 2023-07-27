@@ -29,6 +29,26 @@ var _queued_items: Array = []
 # Do not remove these scenes from the cache
 var _permanent_cache: PoolStringArray = []
 
+# Cache Map
+var _cache_map: CacheMap
+
+# Estimated Cache Size
+var _cache_size: int
+var _cache_max_size = 51200 # for prototype: set cache max size to 50 MB
+
+# Inner Class for cache management
+class CacheMgmt:
+	var age: int
+	var size: float
+	
+	func _init(age, size):
+		self.age = age
+		self.size = size
+
+var _cache_mgr: Dictionary
+
+var _cache_age: int
+var _cache_clear_age: int
 
 # Initialize the cache
 #
@@ -52,6 +72,15 @@ func _init(
 	_scene_index_regex.compile(scene_regex)
 	_resource_queue = ResourceQueue.new()
 	_resource_queue.start()
+	
+	_cache_size = 0
+	if ResourceLoader.exists("res://cache_map.tres"):
+		_cache_map = ResourceLoader.load("res://cache_map.tres")
+	
+	# initialize cache manager
+	_cache_age = 0
+	_cache_clear_age = 0
+	_cache_mgr.clear()
 
 
 # Update the current progress on the waiting screen and emit the queue_complete
@@ -100,69 +129,74 @@ func update_cache(current_scene: String) -> int:
 		_resource_queue.queue_resource(current_scene)
 		_queued_items.append(current_scene)
 		return 1
-
-	var scene_index = _get_index_from_filename(current_scene)
+		
+	var _cache_updated = false
 	
-	var first_index = scene_index - _cache_count
-	if first_index < 1:
-		first_index = 1
-	
-	var last_index = scene_index + _cache_count
-	
-	print_debug(
-		"Caching scenes from index %d to %d" % [first_index, last_index]
-	)
-	
-	var base_path
-	
-	if EgoVenture.current_location == "":
-		base_path = _scene_path
-	else:
-		base_path = "%s/%s" % [_scene_path, EgoVenture.current_location]
-	
-	for cache_item in _cache.keys():
-		if not cache_item in _permanent_cache:
-			if cache_item.get_base_dir() != base_path:
-				print_debug("Removing scene %s from cache" % cache_item)
-				_cache.erase(cache_item)
+	if _cache_map.map.has(current_scene):
+		for mapped_scene in _cache_map.map[current_scene][1]:
+			if not mapped_scene in _cache_mgr.keys():
+				if not mapped_scene in _permanent_cache: # mapped scenes in permanent cache don't have to be cached again
+					var mapped_scene_size = _cache_map.map[mapped_scene][0]
+					while (
+						_cache_size + mapped_scene_size > _cache_max_size and
+						_cache_age != _cache_clear_age
+						):
+						print("Current cache size %s + new scene size %s > max cache size %s" % [_cache_size, mapped_scene_size, _cache_max_size])
+						print("Remove scenes from cache with age %s" % _cache_clear_age)
+						_remove_scenes_from_cache(_cache_clear_age)
+						_cache_clear_age += 1
+						#print ("Cache Clear Age has been increased to: %s" % _cache_clear_age)
+					_cache_size += mapped_scene_size
+					_cache_mgr[mapped_scene] = CacheMgmt.new(_cache_age, mapped_scene_size)
+					print("Queueing load of mapped scene %s. Age: %s. Cache size: %s." % [mapped_scene.get_file(), _cache_age, _cache_size])
+					_resource_queue.queue_resource(mapped_scene)
+					_queued_items.append(mapped_scene)
+					_cache_updated = true
 			else:
-				var cache_index = _get_index_from_filename(cache_item)
-				if cache_index < first_index or cache_index > last_index:
-					print_debug("Removing scene %s from cache" % cache_item)
-					_cache.erase(cache_item)
-		
-	var scene_directory = Directory.new()
-	
-	scene_directory.open(base_path)
-	
-	scene_directory.list_dir_begin(true, true)
-	
-	var scene: String = scene_directory.get_next()
-	var path: String
-	
-	path = "%s/%s" % [base_path, scene]
-	
-	while scene != "":
-		if not path in _cache.keys() and path.get_extension() == "tscn":
-			var current_index = _get_index_from_filename(scene)
-			if current_index >= first_index \
-					and current_index <= last_index \
-					and not path in _resource_queue.pending.keys():
-				print_debug("Queueing load of scene %s" % scene)
-				_resource_queue.queue_resource(path)
-				_queued_items.append(path)
-				
-		scene = scene_directory.get_next()
-		path = "%s/%s" % [base_path, scene]
-		
-	scene_directory.list_dir_end()
+				# update age in _cache_manager
+				_cache_mgr[mapped_scene].age = _cache_age
+				_cache_updated = true
+				print("Updating age of scene %s to age %s." % [mapped_scene, _cache_age])
+		if _cache_updated:
+			_cache_age += 1
+			#print ("Cache Age has been increased to: %s" % _cache_age)
+			
+	# Check that _cache_size equals the _cache_manager's size
+	var calc_size = 0
+	for i in _cache_mgr:
+		calc_size += _cache_mgr[i].size
+	if calc_size != _cache_size:
+		printerr("Cache Size differs: Cache Manager size: %s, _cache_size: %s" % [calc_size, _cache_size])
 	
 	if _queued_items.size() == 0:
 		WaitingScreen.hide()
 		emit_signal("queue_complete")
 	
 	return _queued_items.size()
-		
+
+
+func _remove_scenes_from_cache(age_remove):
+	var scene_removal: Array
+	
+	for scene in _cache_mgr:
+		if(_cache_mgr[scene].age <= age_remove):
+			scene_removal.append(scene)
+	
+	for scene in scene_removal:
+			_cache_size -= _cache_mgr[scene].size
+			print_debug("Removing scene %s from cache. Age: %s. New cache size: %s" % [scene, _cache_mgr[scene].age, _cache_size])
+			_cache.erase(scene)
+			_cache_mgr.erase(scene)
+
+
+func print_cache_mgr():
+	var count = 0
+	var sum = 0
+	for scene in _cache_mgr:
+		print("Age: %s, Size: %s, Scene: %s" % [_cache_mgr[scene].age, _cache_mgr[scene].size, scene])
+		count += 1
+		sum += _cache_mgr[scene].size
+	print("Total scenes in cache: %s, Total cache size: %s" % [count, sum])
 
 
 # Extract index from filename
@@ -176,3 +210,21 @@ func _get_index_from_filename(filename: String) -> int:
 	if result == null:
 		return -1
 	return int(result.get_string("index"))
+
+
+func _get_linked_scenes(current_scene: String) -> Array:
+	
+	if _cache_map.map.has(current_scene):
+		return _cache_map.map[current_scene][2]
+	else:
+		return []
+
+
+func _get_all_children(node:Node)->Array:
+	var nodes: Array
+	for child in node.get_children():
+		nodes.append(child)
+		if child.get_child_count() > 0:
+			nodes.append_array(_get_all_children(child))
+	return nodes
+	

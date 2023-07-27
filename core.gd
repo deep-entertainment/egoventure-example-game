@@ -37,3 +37,7 @@ func _on_released_inventory_item(item: InventoryItem):
 	
 func _on_load():
 	pass
+
+func _unhandled_key_input(event):
+	if event.is_pressed() and event.get_scancode() == KEY_F1:
+		EgoVenture._scene_cache.print_cache_mgr()

@@ -165,7 +165,8 @@ func change_scene(path: String):
 					["res://addons/egoventure/nodes/four_side_room.tscn",
 					"res://addons/egoventure/nodes/eight_side_room.tscn"]:
 				is_multi_side_room = true
-	
+		# added to update cache also for single rooms
+		update_cache(path)
 
 # Set whether dialog line skipping is enabled in parrot
 #

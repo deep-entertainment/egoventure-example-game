@@ -15,6 +15,16 @@ _global_script_classes=[ {
 "path": "res://addons/egoventure/resources/base_state.gd"
 }, {
 "base": "Resource",
+"class": "CacheMap",
+"language": "GDScript",
+"path": "res://addons/egoventure/resources/cache_map.gd"
+}, {
+"base": "Control",
+"class": "CacheUpdateDialog",
+"language": "GDScript",
+"path": "res://addons/egoventure/cache/cache_update_dialog.gd"
+}, {
+"base": "Resource",
 "class": "CharacterResource",
 "language": "GDScript",
 "path": "res://addons/parrot/resources/character_resource.gd"
@@ -136,6 +146,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "BaseState": "",
+"CacheMap": "",
+"CacheUpdateDialog": "",
 "CharacterResource": "res://addons/parrot/images/character.svg",
 "Cursor": "",
 "DialogHotspot": "res://addons/egoventure/images/dialog_hotspot.svg",
@@ -168,7 +180,7 @@ hotspots/walk_hotspot_size=Vector2( 700, 740 )
 
 [application]
 
-config/name="Carol Refurbished"
+config/name="Carol Refurbished - New Caching Prototype"
 run/main_scene="res://scenes/logo.tscn"
 boot_splash/image="res://images/mouse/transparent.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
