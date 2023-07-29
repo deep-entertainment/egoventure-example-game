@@ -90,7 +90,7 @@ map = {
 "res://scenes/man/man24.tscn": [ 1061, [ "res://scenes/man/man23.tscn" ] ],
 "res://scenes/menu.tscn": [ 0, [  ] ],
 "res://scenes/misc/license.tscn": [ 1942, [  ] ],
-"res://scenes/misc/map.tscn": [ 1242, [ "res://scenes/brother/bro1.tscn", "res://scenes/man/man01.tscn" ] ],
+"res://scenes/misc/map.tscn": [ 1242, [  ] ],
 "res://scenes/misc/map_info.tscn": [ 1197, [ "res://scenes/misc/map.tscn" ] ],
 "res://scenes/misc/testscene.tscn": [ 0, [  ] ]
 }

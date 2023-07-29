@@ -124,16 +124,22 @@ func get_scene(path: String) -> PackedScene:
 # - current_scene: The path and filename of the current scene
 # **Returns** Number of cached scenes
 func update_cache(current_scene: String) -> int:
-	if current_scene in _permanent_cache:
-		# Directly cache permanent scenes
-		_resource_queue.queue_resource(current_scene)
-		_queued_items.append(current_scene)
-		return 1
-		
+	var scene_list: Array
 	var _cache_updated = false
+		
+	# add current scene to caching
+	if !current_scene in _permanent_cache:
+		scene_list.append(current_scene)
+		
+	# add surrounding scenes to caching
+	scene_list.append_array(_cache_map.map[current_scene][1])
 	
+	# test: add surrounding scenes of surrounding scenes to caching (not optimized, allows duplicates)
+#	for surr_scene in _cache_map.map[current_scene][1]:
+#		scene_list.append_array(_cache_map.map[surr_scene][1])
+		
 	if _cache_map.map.has(current_scene):
-		for mapped_scene in _cache_map.map[current_scene][1]:
+		for mapped_scene in scene_list:
 			if not mapped_scene in _cache_mgr.keys():
 				if not mapped_scene in _permanent_cache: # mapped scenes in permanent cache don't have to be cached again
 					var mapped_scene_size = _cache_map.map[mapped_scene][0]
@@ -160,19 +166,27 @@ func update_cache(current_scene: String) -> int:
 		if _cache_updated:
 			_cache_age += 1
 			#print ("Cache Age has been increased to: %s" % _cache_age)
-			
-	# Check that _cache_size equals the _cache_manager's size
+	
+	########### TO BE REMOVED IN FINAL VERSION ###########
+	# Consistency Check that _cache_size equals the _cache_manager's size
 	var calc_size = 0
 	for i in _cache_mgr:
 		calc_size += _cache_mgr[i].size
 	if calc_size != _cache_size:
 		printerr("Cache Size differs: Cache Manager size: %s, _cache_size: %s" % [calc_size, _cache_size])
+	######################################################
 	
 	if _queued_items.size() == 0:
 		WaitingScreen.hide()
 		emit_signal("queue_complete")
 	
 	return _queued_items.size()
+
+
+func update_permanent_cache(scene):
+	# Directly cache permanent scenes
+	_resource_queue.queue_resource(scene)
+	_queued_items.append(scene)
 
 
 func _remove_scenes_from_cache(age_remove):
@@ -192,12 +206,18 @@ func _remove_scenes_from_cache(age_remove):
 func print_cache_mgr():
 	var count = 0
 	var sum = 0
+	print("Scenes in cache manager:")
 	for scene in _cache_mgr:
 		print("Age: %s, Size: %s, Scene: %s" % [_cache_mgr[scene].age, _cache_mgr[scene].size, scene])
 		count += 1
 		sum += _cache_mgr[scene].size
-	print("Total scenes in cache: %s, Total cache size: %s" % [count, sum])
-
+	print("Total scenes in cache manager: %s, Total cache size: %s" % [count, sum])
+	count = 0
+	print("Scenes in cache:")
+	for scene in _cache:
+		print("Scene: %s" % scene)
+		count += 1
+	print("Total scenes in cache: %s" % count)
 
 # Extract index from filename
 #

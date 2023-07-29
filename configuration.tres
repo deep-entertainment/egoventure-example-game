@@ -179,6 +179,6 @@ tools_music_fader_seconds = 0.5
 tools_background_fader_seconds = 0.5
 cache_scene_path = "res://scenes"
 cache_scene_count = 2
-cache_permanent = PoolStringArray( "res://scenes/misc/map.tscn", "res://scenes/man/man14.tscn", "res://scenes/man/man10.tscn" )
+cache_permanent = PoolStringArray( "res://scenes/misc/map.tscn", "res://scenes/man/man14.tscn", "res://scenes/man/man10.tscn", "res://scenes/menu.tscn" )
 cache_minimum_wait_seconds = 4
 cache_minimum_wait_skippable = false

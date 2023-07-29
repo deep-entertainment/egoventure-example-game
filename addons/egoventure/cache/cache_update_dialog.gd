@@ -99,7 +99,10 @@ func _scan_scene(scene_node) -> Array:
 				file.close()
 				size_estimate += size
 		
-		if node.get_class() == "TextureButton" and "target_scene" in node:
+		if ( node.get_class() == "TextureButton"
+			and "target_scene" in node      # include Hotspot (and derived classes)
+			and not "loading_image" in node # but exclude MapHotspot
+		):
 			var scene_path = node.target_scene
 			if (
 				scene_path != "" 

@@ -514,7 +514,7 @@ func _on_quit_game():
 func _warm_up_cache():
 	for scene in configuration.cache_permanent:
 		print_debug("Queueing load of permanent scene %s" % scene)
-		update_cache(scene)
+		_scene_cache.update_permanent_cache(scene)
 
 
 # Sets whether the game is currently accepting input or not
