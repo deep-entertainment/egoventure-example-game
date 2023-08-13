@@ -19,6 +19,8 @@ func _on_Run_pressed():
 	var scene_index = 0
 	_cache_map.map.clear()
 	
+	print("\nUpdate of Cache Map started")
+	
 	yield(get_tree(),"idle_frame")
 	for scene_name in _scene_list:
 		
@@ -30,10 +32,10 @@ func _on_Run_pressed():
 		if scene.is_class("PackedScene"):
 			var scene_node = scene.instance()
 			if verbose:
-				print("\nScan scene " + scene_name)
+				print("Scan scene " + scene_name)
 			scan_result = _scan_scene(scene_node)
 			if verbose:
-				print("->" + String(scan_result))
+				print("[size(kB), [scene list]] -> " + String(scan_result))
 		_cache_map.map[scene_name] = scan_result
 
 		$CacheUpdateDialog/VBox/ProgressBar.set_value(float(scene_index) / _scene_list.size() * 100)
@@ -41,9 +43,9 @@ func _on_Run_pressed():
 	
 	var err = ResourceSaver.save("res://cache_map.tres", _cache_map)
 	if err:
-		printerr("Saving res://cache_map.tres failed. Error Code %s." % err)
+		printerr("Saving res://cache_map.tres failed. Error Code %s" % err)
 	else:
-		print("CacheMap successfully saved in res://cache_map.tres.")
+		print("Updated Cache Map successfully saved in res://cache_map.tres")
 	
 	$CacheUpdateDialog.hide()
 
@@ -77,6 +79,8 @@ func _scan_scene(scene_node) -> Array:
 	var size_estimate = 0
 	var linked_scenes: Array
 	var file = File.new()
+	var cache_include: String
+	var cache_exclude: String
 	
 	# Regular expression to select all comments in script
 	# The capturing groups are used to ensure that '#' in quotations are not excluded
@@ -116,18 +120,42 @@ func _scan_scene(scene_node) -> Array:
 	
 	if scene_script and scene_script.has_source_code():
 		source_code = scene_script.source_code
+		cache_include = ""
+		cache_exclude = ""
+		
 		var regex_matches = regex_comment.search_all(source_code)
 		for i in range(regex_matches.size() - 1, -1, -1):
 			# replace regex match only if group 1 and 3 are empty
 			if regex_matches[i].strings[1] == "" and regex_matches[i].strings[3] == "":
 				source_code = source_code.substr(0, regex_matches[i].get_start()) + source_code.substr(regex_matches[i].get_end(), -1)
-
+				if regex_matches[i].strings[0].begins_with("#EVcache-include"):
+					# scene(s) listed in this comment will be included in cache
+					cache_include += regex_matches[i].strings[0]
+				elif regex_matches[i].strings[0].begins_with("#EVcache-exclude"):
+					# scene(s) listed in this comment will be excluded from cache
+					cache_exclude += regex_matches[i].strings[0]
+		
+		# add scenes that need to be included to source code
+		source_code += cache_include
+		
 		# scan remaining source code for scene names
 		var scene_matches = regex_scene.search_all(source_code)
 		for scene in scene_matches:
 			var scene_path = scene.get_string()
-			if ResourceLoader.exists(scene_path) and not scene_path in linked_scenes:
-				linked_scenes.append(scene_path)
+			if ResourceLoader.exists(scene_path):
+				if not scene_path in linked_scenes:
+					linked_scenes.append(scene_path)
+			else:
+				print("Warning: %s: scene %s was not found" % [scene_script.resource_path, scene_path])
+		
+		# process cache exclusion
+		var scene_exclude_matches = regex_scene.search_all(cache_exclude)
+		for scene in scene_exclude_matches:
+			var scene_path = scene.get_string()
+			if scene_path in linked_scenes:
+				linked_scenes.erase(scene_path)
+			else:
+				print("Warning: %s: scene %s that should be excluded from cache was not part of cache map" % [scene_script.resource_path, scene_path])
 	
 	# convert size from Byte to kiloByte
 	size_estimate = size_estimate / 1024
