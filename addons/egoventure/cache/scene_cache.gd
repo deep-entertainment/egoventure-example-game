@@ -81,7 +81,7 @@ func _init(
 		_cache_map = ResourceLoader.load("res://cache_map.tres")
 	
 	# initialize cache manager
-	_cache_age = 0
+	_cache_age = _cache_depth # starting age is depth of cache
 	_cache_clear_age = 0
 	_cache_mgr.clear()
 
@@ -127,19 +127,18 @@ func get_scene(path: String) -> PackedScene:
 # - current_scene: The path and filename of the current scene
 # **Returns** Number of cached scenes
 func update_cache(current_scene: String) -> int:
-	var scene_list: Array
+	var scene_list: Dictionary # list of scenes read from cache map: Dictionary value = depth / distance
 	var _cache_updated = false
-		
+	
 	# add current scene to caching
 	if !current_scene in _permanent_cache:
-		scene_list.append(current_scene)
+		scene_list[current_scene] = 0
 		
 	# read surrounding scenes to caching
-	# note: array 'scene_list' is passed by reference and gets updated
+	# note: dictionary 'scene_list' is passed by reference and gets updated
 	_read_cache_map(scene_list, current_scene, _cache_depth) 
 		
-#	if _cache_map.map.has(current_scene):
-	for mapped_scene in scene_list:
+	for mapped_scene in scene_list.keys():
 		if not mapped_scene in _cache_mgr.keys():
 			if not mapped_scene in _permanent_cache: # mapped scenes in permanent cache don't have to be cached again
 				var mapped_scene_size = _cache_map.map[mapped_scene][0]
@@ -154,8 +153,8 @@ func update_cache(current_scene: String) -> int:
 					#print ("Cache Clear Age has been increased to: %s" % _cache_clear_age)
 				if _cache_size + mapped_scene_size <= _cache_max_size:
 					_cache_size += mapped_scene_size
-					_cache_mgr[mapped_scene] = CacheMgmt.new(_cache_age, mapped_scene_size)
-					print("Queueing load of mapped scene %s. Age: %s. Cache size: %s." % [mapped_scene.get_file(), _cache_age, _cache_size])
+					_cache_mgr[mapped_scene] = CacheMgmt.new(_cache_age - scene_list[mapped_scene], mapped_scene_size)
+					print("Queueing load of mapped scene %s. Age: %s. Cache size: %s." % [mapped_scene.get_file(), _cache_age - scene_list[mapped_scene], _cache_size])
 					_resource_queue.queue_resource(mapped_scene)
 					_queued_items.append(mapped_scene)
 					_cache_updated = true
@@ -163,9 +162,13 @@ func update_cache(current_scene: String) -> int:
 					print("Cache size %s kB reached. Scene %s coud not be cached!" % [_cache_max_size, mapped_scene.get_file()])
 		else:
 			# update age in _cache_manager
-			_cache_mgr[mapped_scene].age = _cache_age
-			_cache_updated = true
-			#print("Updating age of scene %s to age %s." % [mapped_scene, _cache_age])
+			if _cache_mgr[mapped_scene].age != _cache_age - scene_list[mapped_scene]:
+				_cache_mgr[mapped_scene].age = _cache_age - scene_list[mapped_scene]
+				_cache_updated = true
+#				print("Updating age of scene %s to age %s." % [mapped_scene, _cache_age - scene_list[mapped_scene]])
+#			else:
+#				print("Age of scene %s not changed." % mapped_scene)
+	
 	if _cache_updated:
 		_cache_age += 1
 		#print ("Cache Age has been increased to: %s" % _cache_age)
@@ -209,18 +212,20 @@ func _remove_scenes_from_cache(age_remove):
 func print_cache_mgr():
 	var count = 0
 	var sum = 0
+	
+	print("Scenes in cache:")
+	for scene in _cache:
+		print("Scene: %s" % scene)
+		count += 1
+	print("Total scenes in cache: %s" % count)
+	
+	count = 0
 	print("Scenes in cache manager:")
 	for scene in _cache_mgr:
 		print("Age: %s, Size: %s, Scene: %s" % [_cache_mgr[scene].age, _cache_mgr[scene].size, scene])
 		count += 1
 		sum += _cache_mgr[scene].size
 	print("Total scenes in cache manager: %s, Total cache size: %s" % [count, sum])
-	count = 0
-	print("Scenes in cache:")
-	for scene in _cache:
-		print("Scene: %s" % scene)
-		count += 1
-	print("Total scenes in cache: %s" % count)
 
 
 # Extract index from filename
@@ -236,9 +241,9 @@ func _get_index_from_filename(filename: String) -> int:
 	return int(result.get_string("index"))
 
 
-func _read_cache_map(scene_list: Array, current_scene: String, depth: int):
+func _read_cache_map(scene_list: Dictionary, current_scene: String, depth: int):
 	for surr_scene in _cache_map.map[current_scene][1]:
 		if not scene_list.has(surr_scene):
-			scene_list.append(surr_scene)
+			scene_list[surr_scene] = depth
 		if depth > 1:
 			_read_cache_map(scene_list, surr_scene, depth - 1)
