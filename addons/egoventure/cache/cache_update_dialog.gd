@@ -1,6 +1,6 @@
 tool
 class_name CacheUpdateDialog
-extends Control
+extends WindowDialog
 
 
 var _scene_list: Array
@@ -9,13 +9,14 @@ var _cache_map = CacheMap.new()
 # Show the import source dialog to get started
 func show_popup():
 	_scene_list = _read_scene_list("res://scenes")
-	$CacheUpdateDialog/VBox/SceneCount.text = "This project contains %s scenes." % _scene_list.size()
-	$CacheUpdateDialog/VBox/ProgressBar.value = 0.0
-	$CacheUpdateDialog.popup_centered()
+	$VBox/SceneCount.text = "This project contains %s scenes." % _scene_list.size()
+	$VBox/ProgressBar.value = 0.0
+	self.popup_centered()
+	self.set_size($VBox.get_rect().size+Vector2(20,20))
 
 
 func _on_Run_pressed():
-	var verbose = $CacheUpdateDialog/VBox/HBoxContainer/Verbose.pressed
+	var verbose = $VBox/HBoxContainer/Verbose.pressed
 	var scene_index = 0
 	_cache_map.map.clear()
 	
@@ -38,7 +39,7 @@ func _on_Run_pressed():
 				print("[size(kB), [scene list]] -> " + String(scan_result))
 		_cache_map.map[scene_name] = scan_result
 
-		$CacheUpdateDialog/VBox/ProgressBar.set_value(float(scene_index) / _scene_list.size() * 100)
+		$VBox/ProgressBar.set_value(float(scene_index) / _scene_list.size() * 100)
 		yield(get_tree(),"idle_frame")
 	
 	var err = ResourceSaver.save("res://cache_map.tres", _cache_map)
@@ -47,11 +48,11 @@ func _on_Run_pressed():
 	else:
 		print("Updated Cache Map successfully saved in res://cache_map.tres")
 	
-	$CacheUpdateDialog.hide()
+	self.hide()
 
 
 func _on_Cancel_pressed():
-	$CacheUpdateDialog.hide()
+	self.hide()
 
 
 func _read_scene_list(path: String) -> Array:

@@ -2,83 +2,84 @@
 
 [ext_resource path="res://addons/egoventure/cache/cache_update_dialog.gd" type="Script" id=1]
 
-[node name="Control" type="Control"]
-script = ExtResource( 1 )
-
-[node name="CacheUpdateDialog" type="WindowDialog" parent="."]
-visible = true
-margin_right = 600.0
-margin_bottom = 209.0
+[node name="CacheUpdateDialog" type="WindowDialog"]
+margin_right = 791.0
+margin_bottom = 186.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 popup_exclusive = true
 window_title = "EgoVenture - Update Cache Map"
+script = ExtResource( 1 )
 
-[node name="VBox" type="VBoxContainer" parent="CacheUpdateDialog"]
+[node name="VBox" type="VBoxContainer" parent="."]
 margin_left = 10.0
 margin_top = 10.0
-margin_right = 590.0
-margin_bottom = 180.0
+margin_right = 782.0
+margin_bottom = 172.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[node name="Header" type="RichTextLabel" parent="CacheUpdateDialog/VBox"]
-margin_right = 580.0
-margin_bottom = 30.0
+[node name="Header" type="RichTextLabel" parent="VBox"]
+margin_right = 772.0
+margin_bottom = 15.0
 text = "This will scan all scenes in folder res://scenes looking for adjacent scenes that will be added to the cache map."
 fit_content_height = true
 
-[node name="SceneCount" type="RichTextLabel" parent="CacheUpdateDialog/VBox"]
-margin_top = 34.0
-margin_right = 580.0
-margin_bottom = 49.0
+[node name="SceneCount" type="RichTextLabel" parent="VBox"]
+margin_top = 19.0
+margin_right = 772.0
+margin_bottom = 34.0
 text = "This project contains x scenes."
 fit_content_height = true
 
-[node name="Note" type="RichTextLabel" parent="CacheUpdateDialog/VBox"]
-margin_top = 53.0
-margin_right = 580.0
-margin_bottom = 83.0
+[node name="Note" type="RichTextLabel" parent="VBox"]
+margin_top = 38.0
+margin_right = 772.0
+margin_bottom = 68.0
 text = "Note: Depending on the size of the project the checks might run for several minutes. The result will be printed to Output / Console."
 fit_content_height = true
 
-[node name="Separator" type="HSeparator" parent="CacheUpdateDialog/VBox"]
-margin_top = 87.0
-margin_right = 580.0
-margin_bottom = 107.0
+[node name="Separator" type="HSeparator" parent="VBox"]
+margin_top = 72.0
+margin_right = 772.0
+margin_bottom = 92.0
 custom_constants/separation = 20
 
-[node name="ProgressBar" type="ProgressBar" parent="CacheUpdateDialog/VBox"]
-margin_top = 111.0
-margin_right = 580.0
-margin_bottom = 125.0
+[node name="ProgressBar" type="ProgressBar" parent="VBox"]
+margin_top = 96.0
+margin_right = 772.0
+margin_bottom = 110.0
 
-[node name="Separator2" type="HSeparator" parent="CacheUpdateDialog/VBox"]
-margin_top = 129.0
-margin_right = 580.0
-margin_bottom = 149.0
+[node name="Separator2" type="HSeparator" parent="VBox"]
+margin_top = 114.0
+margin_right = 772.0
+margin_bottom = 134.0
 custom_constants/separation = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CacheUpdateDialog/VBox"]
-margin_top = 153.0
-margin_right = 580.0
-margin_bottom = 177.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBox"]
+margin_top = 138.0
+margin_right = 772.0
+margin_bottom = 162.0
 grow_horizontal = 0
 custom_constants/separation = 20
 
-[node name="Run" type="Button" parent="CacheUpdateDialog/VBox/HBoxContainer"]
+[node name="Run" type="Button" parent="VBox/HBoxContainer"]
 margin_right = 131.0
 margin_bottom = 24.0
 text = "Update Cache Map"
 
-[node name="Cancel" type="Button" parent="CacheUpdateDialog/VBox/HBoxContainer"]
+[node name="Cancel" type="Button" parent="VBox/HBoxContainer"]
 margin_left = 151.0
 margin_right = 205.0
 margin_bottom = 24.0
 size_flags_horizontal = 2
 text = "Cancel"
 
-[node name="Verbose" type="CheckBox" parent="CacheUpdateDialog/VBox/HBoxContainer"]
-margin_left = 459.0
-margin_right = 580.0
+[node name="Verbose" type="CheckBox" parent="VBox/HBoxContainer"]
+margin_left = 651.0
+margin_right = 772.0
 margin_bottom = 24.0
 text = "Verbose mode"
 
-[connection signal="pressed" from="CacheUpdateDialog/VBox/HBoxContainer/Run" to="." method="_on_Run_pressed"]
-[connection signal="pressed" from="CacheUpdateDialog/VBox/HBoxContainer/Cancel" to="." method="_on_Cancel_pressed"]
+[connection signal="pressed" from="VBox/HBoxContainer/Run" to="." method="_on_Run_pressed"]
+[connection signal="pressed" from="VBox/HBoxContainer/Cancel" to="." method="_on_Cancel_pressed"]

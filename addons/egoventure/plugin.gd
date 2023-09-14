@@ -59,7 +59,7 @@ func _enter_tree():
 	
 	add_tool_menu_item("Update Cache Map", self, "_on_cache_update_menu_clicked")
 	_cache_update_dialog = preload("res://addons/egoventure/cache/cache_update_dialog.tscn").instance()
-	add_child(_cache_update_dialog)
+	get_editor_interface().get_editor_viewport().add_child(_cache_update_dialog)
 
 
 # Remove the previously loaded singletons
@@ -73,7 +73,11 @@ func _exit_tree():
 	remove_autoload_singleton('DetailView')
 	remove_autoload_singleton('CheckCursor')
 	remove_tool_menu_item("Update Cache Map")
-	remove_child(_cache_update_dialog)
+	_cache_update_dialog.queue_free()
+
+
+func get_plugin_name():
+	return "Cache Update Dialog Plugin"
 
 
 func _on_cache_update_menu_clicked(_ud):
