@@ -3,18 +3,25 @@ class_name CacheUpdateDialog
 extends WindowDialog
 
 
+# list of scenes in scene directory
 var _scene_list: Array
+
+# Cache map which gets generated
 var _cache_map = CacheMap.new()
 
-# Show the import source dialog to get started
+
+# Show the cache update dialog popup
 func show_popup():
-	_scene_list = _read_scene_list("res://scenes")
+	var configuration = preload("res://configuration.tres")
+	var scene_dir = configuration.cache_scene_path
+	_scene_list = _read_scene_list(scene_dir)
 	$VBox/SceneCount.text = "This project contains %s scenes." % _scene_list.size()
 	$VBox/ProgressBar.value = 0.0
 	self.popup_centered()
 	self.set_size($VBox.get_rect().size+Vector2(20,20))
 
 
+# Start updating the cache map
 func _on_Run_pressed():
 	var verbose = $VBox/HBoxContainer/Verbose.pressed
 	var scene_index = 0
@@ -51,30 +58,41 @@ func _on_Run_pressed():
 	self.hide()
 
 
+# Close popup when Cancel button is selected
 func _on_Cancel_pressed():
 	self.hide()
 
 
+# Recursively get all scene filenames from directory and subdirectories
+#
+# ** Parameters **
+#
+# - path: directory path
+# 
+# ** Returns ** List of scene filenames
 func _read_scene_list(path: String) -> Array:
 	var file_list: Array
 	var dir = Directory.new()
 	
-	dir.open(path)
-	dir.list_dir_begin(true)
-	var file = dir.get_next()
-	while file != "":
-		if !dir.current_is_dir():
-			if file.match("*.tscn"):
-				file_list.append(dir.get_current_dir() + "/" + file)
-		else:
-			file_list.append_array(_read_scene_list(dir.get_current_dir() + "/" + file))
-		file = dir.get_next()
-	dir.list_dir_end()
+	if dir.open(path) == OK:
+		dir.list_dir_begin(true)
+		var file = dir.get_next()
+		while file != "":
+			if !dir.current_is_dir():
+				if file.match("*.tscn"):
+					file_list.append(dir.get_current_dir() + "/" + file)
+			else:
+				file_list.append_array(_read_scene_list(dir.get_current_dir() + "/" + file))
+			file = dir.get_next()
+		dir.list_dir_end()
+	
+	else:
+		print("An error occurred when trying to open directory %s" % path)
+	
 	return file_list
 
 
-# This will scan the scene and will return a size estimate
-# and the adjacent scenes
+# This will scan the scene and will return a size estimate and the adjacent scenes
 # Array[0]: size estimate, Array[1]: array of adjacent scenes
 func _scan_scene(scene_node) -> Array:
 	var size_estimate = 0
@@ -164,6 +182,13 @@ func _scan_scene(scene_node) -> Array:
 	return [size_estimate, linked_scenes]
 
 
+# Recursive function to retrieve all child nodes
+#
+# ** Parameters **
+#
+# - node: starting node
+#
+# ** Returns ** list of all child nodes
 func _get_all_children(node:Node)->Array:
 	var nodes: Array
 	for child in node.get_children():

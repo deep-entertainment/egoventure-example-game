@@ -16,11 +16,6 @@ signal requested_view_change(to)
 signal waiting_completed
 
 
-# A regex to search for the scene index in a scene filename.
-# e.g.: home04b.tscn has the index 4, castle12detail1.tscn has the index 12.
-const SCENE_REGEX = "^[a-z_-]+(?<index>\\d+)\\D?.*$"
-
-
 # The current state of the game
 var state: BaseState
 
@@ -127,8 +122,8 @@ func configure(p_configuration: GameConfiguration):
 	_scene_cache = SceneCache.new(
 		configuration.cache_scene_count, 
 		configuration.cache_scene_path,
-		SCENE_REGEX,
-		configuration.cache_permanent
+		configuration.cache_permanent,
+		configuration.cache_maximum_size_megabyte
 	)
 	MenuGrab.set_top(configuration.inventory_size)
 	_scene_cache.connect("queue_complete", self, "_on_queue_complete")
