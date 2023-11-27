@@ -1,3 +1,33 @@
+## [3.0.0](https://github.com/deep-entertainment/egoventure-example-game/compare/2.2.1...3.0.0) (2023-11-27)
+
+
+### ⚠ BREAKING CHANGES
+
+* Adjust cache properties in configuration.tres and generate a cache map before export
+
+### Features
+
+* Introduce new scene cache management ([8db30fb](https://github.com/deep-entertainment/egoventure-example-game/commit/8db30fbf1cb6de9b602116158a431b9aaf286e05))
+
+
+### Bug Fixes
+
+* Added style box for touch inventory ([6337a0c](https://github.com/deep-entertainment/egoventure-example-game/commit/6337a0ce1337864da108750eecf3be593c19ff69))
+* Calculate screenshot size ([f65dacf](https://github.com/deep-entertainment/egoventure-example-game/commit/f65dacf6fb371819cba39236cf8bd8dda387003c)), closes [deep-entertainment/issues#35](https://github.com/deep-entertainment/issues/issues/35)
+* cursor position calculation when resetting overridden cursor ([675dce0](https://github.com/deep-entertainment/egoventure-example-game/commit/675dce033cdccdec12db0d18c9bc8c225e13136b))
+* Enhanced cross-fading of Boombox ([b5031fd](https://github.com/deep-entertainment/egoventure-example-game/commit/b5031fd1bcd52091da06ab37dcd02559c263ce2e))
+* ignore hotspot_indicator input event when WaitingScreen is visible ([11d1d5c](https://github.com/deep-entertainment/egoventure-example-game/commit/11d1d5c59fc230cfc85b583b8c9256c170f6a507))
+* ignore inventory in check cursor when it is disabled ([8b2ddb5](https://github.com/deep-entertainment/egoventure-example-game/commit/8b2ddb55b44747a92d9d34cdce8b01f2c1de04d7))
+* inventory items width calculation considering item separation ([c0ad80f](https://github.com/deep-entertainment/egoventure-example-game/commit/c0ad80f93ddbd52f5e80335fc359ed131f1b3644))
+* Use get_viewport instead of OS.window_size ([c735904](https://github.com/deep-entertainment/egoventure-example-game/commit/c73590495b35d3532bb1c76296c66b3fcea5b8f0))
+
+
+### Documentation
+
+* Removed develop releases ([0d8ba18](https://github.com/deep-entertainment/egoventure-example-game/commit/0d8ba1842f19101e555cdd39361d66b150931f1e))
+
+
+
 ### [2.2.1](https://github.com/deep-entertainment/egoventure-example-game/compare/2.2.0...2.2.1) (2023-05-27)
 
 
