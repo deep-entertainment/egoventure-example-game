@@ -1,7 +1,7 @@
+@tool
 # A dialog of characters speaking (or a monolog as well)
-tool
-class_name DialogResource, \
-		"res://addons/parrot/images/dialog.svg"
+@icon("res://addons/parrot/images/dialog.svg")
+class_name DialogResource
 extends Resource
 
 
@@ -9,5 +9,4 @@ extends Resource
 var id: String
 
 # A list of dialog lines to speak
-export(Array, Resource) var lines: Array
-
+@export var lines: Array # (Array, Resource)

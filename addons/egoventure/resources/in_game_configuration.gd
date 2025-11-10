@@ -24,6 +24,9 @@ var continue_state: BaseState = null
 # The selected locale
 var locale: String = ""
 
+# The wait time between test steps
+var test_step_wait_time: float = 0.2
+
 
 # Set the current locale as a default
 func _init() -> void:
@@ -53,15 +56,15 @@ func _get_property_list():
 	})
 	properties.append({
 		"name": "speech_db",
-		"type": TYPE_REAL
+		"type": TYPE_FLOAT
 	})
 	properties.append({
 		"name": "music_db",
-		"type": TYPE_REAL
+		"type": TYPE_FLOAT
 	})
 	properties.append({
 		"name": "effects_db",
-		"type": TYPE_REAL
+		"type": TYPE_FLOAT
 	})
 	properties.append({
 		"name": "continue_state",
@@ -72,5 +75,9 @@ func _get_property_list():
 	properties.append({
 		"name": "locale",
 		"type": TYPE_STRING
+	})
+	properties.append({
+		"name": "test_step_wait_time",
+		"type": TYPE_FLOAT
 	})
 	return properties

@@ -1,16 +1,17 @@
-tool
+@tool
 # Mouse cursor handling for MDNA games
+
+class_name CursorType
 extends Node
 
 
 signal cursors_configured
 
-
 # The available types of cursors
 enum Type {
 	DEFAULT,
 	GO_FORWARD,
-	GO_BACKWARDS
+	GO_BACKWARDS,
 	TURN_RIGHT,
 	TURN_LEFT,
 	UP,
@@ -52,6 +53,7 @@ const CURSOR_MAP: Dictionary = {
 
 # A cache to hold the default cursors for easy resetting them
 var _default_cursors: Dictionary = {}
+var additional_cursors: Array[CursorAdditional]
 
 
 # Configure the mouse cursors
@@ -63,6 +65,7 @@ func configure(configuration: GameConfiguration):
 			CURSOR_MAP[cursor.type],
 			cursor.cursor_hotspot
 		)
+	additional_cursors = configuration.design_additional_cursors
 	emit_signal("cursors_configured")
 
 
@@ -76,7 +79,7 @@ func configure(configuration: GameConfiguration):
 # - target_position: Warp the mouse cursor to this point
 func override(
 	type, 
-	texture: Texture, 
+	texture: Texture2D, 
 	hotspot: Vector2,
 	target_position = null
 ):
@@ -89,7 +92,7 @@ func override(
 		hotspot,
 		target_position
 	)
-	
+
 
 # Reset the previously overridden cursor to its default form
 # 

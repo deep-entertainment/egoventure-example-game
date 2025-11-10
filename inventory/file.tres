@@ -1,19 +1,19 @@
-[gd_resource type="Resource" load_steps=6 format=2]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=6 format=3 uid="uid://beuw33h31kv87"]
 
-[ext_resource path="res://addons/egoventure/resources/inventory_item.gd" type="Script" id=1]
-[ext_resource path="res://inventory/file.png" type="Texture" id=2]
-[ext_resource path="res://inventory/file_red.png" type="Texture" id=3]
-[ext_resource path="res://inventory/file_big.png" type="Texture" id=4]
-[ext_resource path="res://inventory/screwdriver.tres" type="Resource" id=5]
+[ext_resource type="Script" uid="uid://dw7ddrdwt26n7" path="res://addons/egoventure/resources/inventory_item.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dejf4kw3hu5px" path="res://inventory/file.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dhcjcmlnmjanq" path="res://inventory/file_red.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://c6ra6hr0v4l2f" path="res://inventory/file_big.png" id="4"]
+[ext_resource type="Resource" path="res://inventory/screwdriver.tres" id="5"]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 title = "file"
 description = "File"
-image_normal = ExtResource( 2 )
-image_active = ExtResource( 3 )
-image_big = ExtResource( 4 )
-combineable_with = [ ExtResource( 5 ) ]
+image_normal = ExtResource("2")
+image_active = ExtResource("3")
+image_big = ExtResource("4")
+combineable_with = [ExtResource("5")]
 detail_scene = ""
 detail_show_mouse = false
 grabbable = true

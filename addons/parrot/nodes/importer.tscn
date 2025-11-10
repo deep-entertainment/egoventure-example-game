@@ -1,36 +1,31 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://c31mk3ha0nfmh"]
 
-[ext_resource path="res://addons/parrot/nodes/importer.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://b7du5se6ggyfj" path="res://addons/parrot/nodes/importer.gd" id="1"]
 
 [node name="Importer" type="Control"]
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1")
 
 [node name="ImportDialog" type="FileDialog" parent="."]
-margin_right = 360.0
-margin_bottom = 130.0
-rect_min_size = Vector2( 200, 400 )
-window_title = "Open a File"
-resizable = true
-dialog_text = "Please select the dialog csv"
-mode = 0
+title = "Please select the dialog csv"
+position = Vector2i(0, 36)
+size = Vector2i(500, 400)
+ok_button_text = "Open"
+mode_overrides_title = false
+file_mode = 0
+filters = PackedStringArray("*.csv")
 
 [node name="TargetDialog" type="FileDialog" parent="."]
-margin_right = 373.0
-margin_bottom = 387.0
-rect_min_size = Vector2( 200, 400 )
-window_title = "Open a Directory"
-resizable = true
-dialog_text = "Please select the target folder for the generated Dialogs"
 mode = 2
+title = "Please select the target folder for the generated dialogs"
+size = Vector2i(500, 400)
+mode_overrides_title = false
 
 [node name="AcceptDialog" type="AcceptDialog" parent="."]
-margin_right = 108.0
-margin_bottom = 58.0
-window_title = "Import successful"
-dialog_text = "The dialog resources where generated from the import file."
+size = Vector2i(473, 100)
+dialog_text = "The dialog resources were generated from the import file."
+dialog_autowrap = true
 
 [connection signal="file_selected" from="ImportDialog" to="." method="_on_ImportDialog_file_selected"]
 [connection signal="dir_selected" from="TargetDialog" to="." method="_on_TargetDialog_dir_selected"]

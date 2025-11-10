@@ -1,27 +1,28 @@
+@tool
 # A hotspot that triggers a Parrot dialog for "look" actions
-tool
-class_name LookHotspot, "res://addons/egoventure/images/look_hotspot.svg"
+@icon("res://addons/egoventure/images/look_hotspot.svg")
+class_name LookHotspot
 extends TextureButton
 
 
 # The dialog resource that should be played by Parrot
-export (String, FILE, "*.tres") var dialog
+@export_file ("*.tres") var dialog
 
 # Show this hotspot depending on the boolean value of this state
 # variable
-export(String) var visibility_state = ""
+@export var visibility_state: String = ""
 
 
 # The hotspot indicator
-var _hotspot_indicator: Sprite
+var _hotspot_indicator: Sprite2D
 
 
 # Connect to the relevant signals and gather the cursors from configuration
 func _init():
-	_hotspot_indicator = Sprite.new()
+	_hotspot_indicator = Sprite2D.new()
 	add_child(_hotspot_indicator)
 	_hotspot_indicator.hide()
-	connect("pressed", self, "_on_pressed")
+	connect("pressed", Callable(self, "_on_pressed"))
 	mouse_default_cursor_shape = Cursors.CURSOR_MAP[Cursors.Type.LOOK]
 	
 
@@ -31,10 +32,10 @@ func _init():
 #
 # - _delta: Unused
 func _process(_delta):
-	_hotspot_indicator.position = rect_size / 2
+	_hotspot_indicator.position = size / 2
 	_hotspot_indicator.texture = Cursors.get_cursor_texture(Cursors.Type.LOOK) 
-	_hotspot_indicator.rotation_degrees = rect_rotation * -1
-	if not Engine.editor_hint:
+	_hotspot_indicator.rotation_degrees = rotation * -1
+	if not Engine.is_editor_hint():
 		_check_visibility()
 		
 		
@@ -56,9 +57,9 @@ func _enter_tree():
 
 # Sanity check the visibility state parameter
 func _check_state():
-	if not Engine.editor_hint:
+	if not Engine.is_editor_hint():
 		var state = EgoVenture.state
-		if not visibility_state.empty() and \
+		if not visibility_state.is_empty() and \
 				(
 					not (visibility_state in state) or
 					not state.get(visibility_state) is bool
@@ -78,18 +79,24 @@ func _check_state():
 
 # The hotspot was clicked, play the dialog
 func _on_pressed():
+	# Add node information to test script when recording
+	if EgoVenture.is_test_run_enabled() and TestRun.is_recording():
+		TestRun.test_script.set_node_info(self.get_class(), self.get_path())
+	# Process pressed event
 	release_focus()
 	if Inventory.selected_item == null:
 		Speedy.hidden = true
 		Parrot.play(load(dialog))
-		yield(Parrot, "finished_dialog")
+		await Parrot.finished_dialog
 		Speedy.hidden = false
-	
+
 
 # Check wether the hotspot should be shown or hidden
 func _check_visibility():
-	if not visibility_state.empty() and "state" in EgoVenture:
+	if not visibility_state.is_empty() and "state" in EgoVenture:
 		if visibility_state in EgoVenture.state and \
 				EgoVenture.state.get(visibility_state) is bool:
 			if not visible == EgoVenture.state.get(visibility_state):
 				visible = EgoVenture.state.get(visibility_state)
+				# update cursor state after visibility was changed
+				get_viewport().update_mouse_cursor_state()

@@ -4,10 +4,13 @@ var thread
 var mutex
 var sem
 
-var time_max = 100 # Milliseconds.
+# maximum and current count of loading threads
+const MAX_LOADING_THREADS = 2
+var _count_loading_threads = 0
 
 var queue = []
 var pending = {}
+
 
 func _lock(_caller):
 	mutex.lock()
@@ -36,13 +39,12 @@ func queue_resource(path, p_in_front = false):
 		_unlock("queue_resource")
 		return
 	else:
-		var res = ResourceLoader.load_interactive(path)
-		res.set_meta("path", path)
 		if p_in_front:
-			queue.insert(0, res)
+			queue.insert(0, path)
 		else:
-			queue.push_back(res)
-		pending[path] = res
+			queue.push_back(path)
+		# NOTE: pending[path] is a link to the ResourceInteractiveLoader in Godot 3, not needed in Godot 4
+		pending[path] = null 
 		_post("queue_resource")
 		_unlock("queue_resource")
 		return
@@ -51,7 +53,7 @@ func queue_resource(path, p_in_front = false):
 func cancel_resource(path):
 	_lock("cancel_resource")
 	if path in pending:
-		if pending[path] is ResourceInteractiveLoader:
+		if pending[path] == null:
 			queue.erase(pending[path])
 		pending.erase(path)
 	_unlock("cancel_resource")
@@ -61,8 +63,8 @@ func get_progress(path):
 	_lock("get_progress")
 	var ret = -1
 	if path in pending:
-		if pending[path] is ResourceInteractiveLoader and float(pending[path].get_stage_count()) > 0:
-			ret = float(pending[path].get_stage()) / float(pending[path].get_stage_count())
+		if pending[path] == null:
+			ret = 0.0
 		else:
 			ret = 1.0
 	_unlock("get_progress")
@@ -73,35 +75,24 @@ func is_ready(path):
 	var ret
 	_lock("is_ready")
 	if path in pending:
-		ret = !(pending[path] is ResourceInteractiveLoader)
+		ret = !(pending[path] == null)
 	else:
 		ret = false
 	_unlock("is_ready")
 	return ret
 
 
-func _wait_for_resource(res, path):
-	_unlock("wait_for_resource")
-	while true:
-		VisualServer.sync()
-		OS.delay_usec(16000) # Wait approximately 1 frame.
-		_lock("wait_for_resource")
-		if queue.size() == 0 || queue[0] != res:
-			return pending[path]
-		_unlock("wait_for_resource")
-
-
 func get_resource(path):
 	_lock("get_resource")
 	if path in pending:
-		if pending[path] is ResourceInteractiveLoader:
-			var res = pending[path]
-			if res != queue[0]:
-				var pos = queue.find(res)
-				queue.remove(pos)
-				queue.insert(0, res)
-
-			res = _wait_for_resource(res, path)
+		if pending[path] == null:
+			if ResourceLoader.load_threaded_get_status(path) == ResourceLoader.THREAD_LOAD_INVALID_RESOURCE:
+				# loading not yet started, start it
+				ResourceLoader.load_threaded_request(path)
+			# loading started, wait until resource is loaded
+			var res = ResourceLoader.load_threaded_get(path)
+			_count_loading_threads -= 1
+			queue.erase(path)
 			pending.erase(path)
 			_unlock("return")
 			return res
@@ -122,13 +113,19 @@ func thread_process():
 	while queue.size() > 0:
 		var res = queue[0]
 		_unlock("process_poll")
-		var ret = res.poll()
+		var status = ResourceLoader.load_threaded_get_status(res)
 		_lock("process_check_queue")
 
-		if ret == ERR_FILE_EOF || ret != OK:
-			var path = res.get_meta("path")
-			if path in pending: # Else, it was already retrieved.
-				pending[res.get_meta("path")] = res.get_resource()
+		if status == ResourceLoader.THREAD_LOAD_INVALID_RESOURCE:
+			# start loading if maximum number of threads haven't been reached
+			if _count_loading_threads < MAX_LOADING_THREADS:
+				ResourceLoader.load_threaded_request(res)
+				_count_loading_threads += 1
+		elif status == ResourceLoader.THREAD_LOAD_LOADED:
+			var path = res
+			if res in pending: # Else, it was already retrieved.
+				pending[res] = ResourceLoader.load_threaded_get(res)
+				_count_loading_threads -= 1
 			# Something might have been put at the front of the queue while
 			# we polled, so use erase instead of remove.
 			queue.erase(res)
@@ -144,4 +141,4 @@ func start():
 	mutex = Mutex.new()
 	sem = Semaphore.new()
 	thread = Thread.new()
-	thread.start(self, "thread_func", 0)
+	thread.start(Callable(self, "thread_func").bind(0))

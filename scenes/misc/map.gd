@@ -17,7 +17,3 @@ func _ready():
 		$map_kevo_new.hide()
 	Boombox.play_music(preload("res://music/blue.ogg"))
 	Boombox.stop_background()
-
-
-
-

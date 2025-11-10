@@ -43,10 +43,18 @@ var _empty_image_texture: ImageTexture
 # Wether the mouse cursor was hidden before we switched to the menu
 var _mouse_was_hidden: bool = false
 
+# Confirmation texts
+var _confirmation_text_overwrite: String
+var _confirmation_text_quit: String
+var _confirmation_text_restart: String
+
+# Confirmation type
+enum {CONFIRMATION_OVERWRITE, CONFIRMATION_QUIT, CONFIRMATION_RESTART}
+var _confirmation_type: int
 
 # Default to hiding the menu
 func _ready():
-	EgoVenture.connect("game_loaded", self, "toggle")
+	EgoVenture.connect("game_loaded", Callable(self, "toggle"))
 
 
 # Hide everything upon startup
@@ -84,14 +92,36 @@ func configure(configuration: GameConfiguration):
 			configuration.menu_saveslots_next_image
 	$Menu/Options/Background.texture = configuration.menu_options_background
 	
-	$Menu/QuitConfirm.dialog_text = configuration.menu_quit_confirmation
-	$Menu/OverwriteConfirm.dialog_text = \
-			configuration.menu_overwrite_confirmation
-	$Menu/RestartConfirm.dialog_text = configuration.menu_restart_confirmation
-	
 	$Menu.theme = configuration.design_theme
 	
-	$Menu/MainMenu/Margin/VBox/MenuItems.add_constant_override("separation", configuration.menu_item_separation)
+	$Menu/MainMenu/Margin/VBox/MenuItems.add_theme_constant_override("separation", configuration.menu_item_separation)
+	
+	# Set theme for menu confirmation
+	$Menu/Confirm/Center/Panel.add_theme_stylebox_override(
+		"panel",
+		$Menu.get_theme_stylebox(
+			"menu_confirmation",
+			"Panel"))
+	$Menu/Confirm/Center/Panel/Margin.add_theme_constant_override(
+		"margin_bottom",
+		$Menu.get_theme_constant(
+			"menu_confirmation_bottom",
+			"MarginContainer"))
+	$Menu/Confirm/Center/Panel/Margin.add_theme_constant_override(
+		"margin_left",
+		$Menu.get_theme_constant(
+			"menu_confirmation_left",
+			"MarginContainer"))
+	$Menu/Confirm/Center/Panel/Margin.add_theme_constant_override(
+		"margin_right",
+		$Menu.get_theme_constant(
+			"menu_confirmation_right",
+			"MarginContainer"))
+	$Menu/Confirm/Center/Panel/Margin.add_theme_constant_override(
+		"margin_top",
+		$Menu.get_theme_constant(
+			"menu_confirmation_top",
+			"MarginContainer"))
 	
 	# Set option labels to the menu button style
 	for label in [
@@ -105,17 +135,17 @@ func configure(configuration: GameConfiguration):
 		"LocaleLabel"
 	]:
 		var node = get_node("Menu/Options/CenterContainer/VBox/Grid/%s" % label)
-		node.add_font_override(
+		node.add_theme_font_override(
 			"font",
-			$Menu.get_font(
+			$Menu.get_theme_font(
 				"menu_button",
 				"Button"
 			)
 		)
 		
-	$Menu/SaveSlots/VBox/Title.add_font_override(
+	$Menu/SaveSlots/VBox/Title.add_theme_font_override(
 		"font",
-		$Menu/SaveSlots/VBox/Title.get_font(
+		$Menu/SaveSlots/VBox/Title.get_theme_font(
 			"menu_button",
 			"Button"
 		)
@@ -128,7 +158,7 @@ func configure(configuration: GameConfiguration):
 			_get_bus_percent("Music")
 	$Menu/Options/CenterContainer/VBox/Grid/EffectsSlider.value = \
 			_get_bus_percent("Effects")
-	$Menu/Options/CenterContainer/VBox/Grid/Subtitles.pressed = \
+	$Menu/Options/CenterContainer/VBox/Grid/Subtitles.button_pressed = \
 			EgoVenture.options_get_subtitles()
 	
 	if not configuration.menu_options_hide_language_selection:
@@ -139,7 +169,7 @@ func configure(configuration: GameConfiguration):
 			if not locale in added_locales:
 				var locale_button = TextureButton.new()
 				locale_button.set_meta("locale", locale)
-				locale_button.expand = true
+				locale_button.ignore_texture_size = true
 				locale_button.stretch_mode = \
 						TextureButton.STRETCH_KEEP_ASPECT_CENTERED
 				locale_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -148,12 +178,7 @@ func configure(configuration: GameConfiguration):
 				locale_button.texture_normal = load(
 					"res://addons/egoventure/images/flags/%s.svg" % locale
 				)
-				locale_button.connect(
-					"pressed", 
-					self, 
-					"_on_locale_changed", 
-					[locale]
-				)
+				locale_button.pressed.connect(self._on_locale_changed.bind(locale))
 				if locale == EgoVenture.in_game_configuration.locale:
 					locale_button.modulate = EgoVenture.configuration.\
 							menu_options_locale_button_modulate_selected
@@ -169,17 +194,47 @@ func configure(configuration: GameConfiguration):
 		$Menu/Options/CenterContainer/VBox/Grid/Locales.hide()
 	
 	# Set alignment of save slot page label
-	$Menu/SaveSlots/VBox/HBox/VBox/Page.align = EgoVenture.configuration.\
-			menu_saveslots_page_label_alignment
-	$Menu/SaveSlots/VBox/HBox/VBox/Page.add_font_override(
+	$Menu/SaveSlots/VBox/HBox/VBox/Page.horizontal_alignment = \
+			(EgoVenture.configuration.menu_saveslots_page_label_alignment
+			as HorizontalAlignment)
+	# Set font of save slot page
+	$Menu/SaveSlots/VBox/HBox/VBox/Page.add_theme_font_override(
 			"font",
-			$Menu/SaveSlots/VBox/HBox/VBox/Page.get_font(
+			$Menu/SaveSlots/VBox/HBox/VBox/Page.get_theme_font(
 				"saveslots_page",
 				"Label"
 			)
 	)
+	$Menu/SaveSlots/VBox/HBox/VBox/Page.add_theme_font_size_override(
+			"font_size",
+			$Menu/SaveSlots/VBox/HBox/VBox/Page.get_theme_font_size(
+				"saveslots_page",
+				"Label"
+			)
+	)
+	$Menu/SaveSlots/VBox/HBox/VBox/Page.add_theme_color_override(
+			"font_color",
+			$Menu/SaveSlots/VBox/HBox/VBox/Page.get_theme_color(
+				"saveslots_page_font_color",
+				"Label"
+			)
+	)
+	$Menu/SaveSlots/VBox/HBox/VBox/Page.add_theme_constant_override(
+			"outline_size",
+			$Menu/SaveSlots/VBox/HBox/VBox/Page.get_theme_constant(
+				"saveslots_page_outline_size",
+				"Label"
+			)
+	)
+	$Menu/SaveSlots/VBox/HBox/VBox/Page.add_theme_color_override(
+			"font_outline_color",
+			$Menu/SaveSlots/VBox/HBox/VBox/Page.get_theme_color(
+				"saveslots_page_outline_color",
+				"Label"
+			)
+	)
 	
-	# set save slot page to slot last modified
+	# Set save slot page to slot last modified
 	_save_slot_page = _get_save_slot_page_last_modified()
 
 
@@ -220,7 +275,17 @@ func toggle():
 		Speedy.keep_shape_once = true
 		Speedy.set_shape(target_shape)
 		
-		get_tree().paused = !get_tree().paused
+		if get_tree().paused:
+			# resume game, Boombox and Parrot
+			get_tree().paused = false
+			Boombox.ignore_pause = true
+			Parrot.ignore_pause = true
+		else:
+			# pause game, Boombox and Parrot
+			Boombox.ignore_pause = false
+			Parrot.ignore_pause = false
+			get_tree().paused = true
+		
 		if _configuration.menu_music != null and $Menu.visible:
 			if $Menu/Music.stream == null:
 				$Menu/Music.stream = _configuration.menu_music
@@ -231,7 +296,7 @@ func toggle():
 		if not $Menu.visible:
 			$Menu/SaveSlots.visible = false
 		else:
-			$Menu/Options/CenterContainer/VBox/Grid/Fullscreen.pressed = \
+			$Menu/Options/CenterContainer/VBox/Grid/Fullscreen.button_pressed = \
 				EgoVenture.in_game_configuration.fullscreen
 			Speedy.set_shape(Input.CURSOR_ARROW)
 			if EgoVenture.is_touch:
@@ -245,13 +310,11 @@ func _on_Resume_pressed():
 	if disabled:
 		disabled = false
 	toggle()
-	$Menu/MainMenu/Margin/VBox/MenuItems/Resume.emit_signal("mouse_exited")
 
 
 # Quit was pressed. Show confirmation
 func _on_Quit_pressed():
-	$Menu/QuitConfirm.popup_centered()
-	$Menu/QuitConfirm.get_ok().release_focus()
+	_confirmation_open(CONFIRMATION_QUIT)
 
 
 # Quit was confirmed. Just quit the game
@@ -292,31 +355,29 @@ func _on_slot_selected(slot: int, exists: bool):
 		if exists:
 			# This save slot exists, show the confirmation dialog
 			_selected_slot = slot
-			$Menu/OverwriteConfirm.popup_centered()
-			$Menu/OverwriteConfirm.get_ok().release_focus()
+			_confirmation_open(CONFIRMATION_OVERWRITE)
 		else:
 			if disabled:
 				disabled = false
 			# Briefly hide the menu to snapshot a picture of the current
 			# scene
 			toggle()
-			EgoVenture.interactive = false
-			yield(VisualServer, "frame_post_draw")
-			var screenshot = get_viewport().get_texture().get_data()
+			Speedy.hidden = true
+			await RenderingServer.frame_post_draw
+			var screenshot = get_viewport().get_texture().get_image()
 			var screenshot_size = get_viewport().get_visible_rect().size * .5
 			screenshot.resize(screenshot_size.x, screenshot_size.y, Image.INTERPOLATE_NEAREST)
-			screenshot.flip_y()
 			screenshot.save_png("user://save_%d.png" % slot)
-			yield(VisualServer, "frame_post_draw")
-			MessageScreen.show_message(EgoVenture.configuration.menu_message_save)
-			EgoVenture.interactive = true
+#			await RenderingServer.frame_post_draw
+			MessageScreen.show_message("MESSAGE_SAVE")
+			Speedy.hidden = false
 			EgoVenture.save(slot)
 	else:
 		if disabled:
 			disabled = false
 		EgoVenture.load(slot)
-		yield(EgoVenture,"game_loaded")
-		MessageScreen.show_message(EgoVenture.configuration.menu_message_load)
+		await EgoVenture.game_loaded
+		MessageScreen.show_message("MESSAGE_LOAD")
 
 
 # Overwrite was confirmed, just call the event handler again ignoring
@@ -408,14 +469,14 @@ func _on_Subtitles_toggled(value: bool):
 # - bus_name: The name of the bus
 #
 # ** Returns **
-# - The slider percent from 0 (-infinity db) to 100 (0 db)
+# - The slider percent from 0 (- AUDIO_MIN db) to 100 (0 db)
 func _get_bus_percent(bus_name: String) -> float:
 	var db = AudioServer.get_bus_volume_db(AudioServer.get_bus_index(bus_name))
-	return db2linear(db) * 100
+	return db_to_linear(db) * 100
 
 
 # Convert a slider percent level to db for an audiobus.
-# 0 percent = -infinity db, 100 percent = 0 db
+# 0 percent = -72db, 100 percent = 0 db
 #
 # ** Arguments **
 # - percent: The percent value
@@ -423,7 +484,7 @@ func _get_bus_percent(bus_name: String) -> float:
 # ** Returns **
 # - The volume value in db
 func _percent_to_db(percent: float) -> float:
-	return linear2db(percent / 100)
+	return linear_to_db(percent / 100)
 
 
 # Get the last modified timestamp in a readable date format for the
@@ -436,9 +497,9 @@ func _percent_to_db(percent: float) -> float:
 # - The last modification timestamp of the file in the date format as configured
 #   in the constant
 func _get_date_from_file(file: String) -> String:
-	var timezone = OS.get_time_zone_info()
-	var datetime = OS.get_datetime_from_unix_time(
-		File.new().get_modified_time(file) + (timezone.bias * 60)
+	var timezone = Time.get_time_zone_from_system()
+	var datetime = Time.get_datetime_dict_from_unix_time(
+		FileAccess.get_modified_time(file) + (timezone.bias * 60)
 	)
 	datetime['month'] = "%02d" % datetime['month']
 	datetime['day'] = "%02d" % datetime['day']
@@ -452,17 +513,17 @@ func _get_date_from_file(file: String) -> String:
 func _get_save_slot_page_last_modified() -> int:
 	var slot_last = 0
 	var time_last = 0
-	var save_dir = Directory.new()	
-	if save_dir.open("user://") == OK:
-		if save_dir.list_dir_begin(true) == OK:  # without navigational files
+	var save_dir = DirAccess.open("user://")
+	if DirAccess.get_open_error() == OK:
+		if save_dir.list_dir_begin()  == OK:  # without navigational files
 			# iterate through save files of save directory and compare modification time
 			var slot_filename = save_dir.get_next()
-			while !slot_filename.empty():
+			while !slot_filename.is_empty():
 				if !save_dir.current_is_dir():  # skip directories
 					if slot_filename.begins_with("save_") and slot_filename.ends_with(".tres"):
 						var slot_number = slot_filename.trim_prefix("save_").trim_suffix(".tres")
-						if slot_number.is_valid_integer():
-							var slot_time = File.new().get_modified_time("user://" + slot_filename)
+						if slot_number.is_valid_int():
+							var slot_time = FileAccess.get_modified_time("user://" + slot_filename)
 							if slot_time > time_last:
 								time_last = slot_time
 								slot_last = slot_number.to_int()
@@ -475,8 +536,7 @@ func _get_save_slot_page_last_modified() -> int:
 
 # Refresh the saveslots vie
 func _refresh_saveslots():
-	var save_dir = Directory.new()
-	save_dir.open("user://")
+	var save_dir = DirAccess.open("user://")
 	
 	if _save_slot_page == 1:
 		$Menu/SaveSlots/VBox/HBox/Previous.modulate = Color(1, 1, 1, 0)
@@ -494,19 +554,51 @@ func _refresh_saveslots():
 		var slot_node = $Menu/SaveSlots/VBox/HBox/VBox/Slots.get_node(
 			"Slot%d" % (slot + 1)
 		)
-		(slot_node.get_node("Slot/Panel") as Panel) \
-				.add_stylebox_override(
+		(slot_node.get_node("Slot/Panel") as Panel).\
+				add_theme_stylebox_override(
 					"panel", 
-					(slot_node.get_node("Slot/Panel") as Panel).get_stylebox(
+					(slot_node.get_node("Slot/Panel") as Panel).get_theme_stylebox(
 						"saveslot_panel",
 						"Panel"
 					)
 				)
-		(slot_node.get_node("Slot/Date") as Label) \
-				.add_font_override(
+		(slot_node.get_node("Slot/Date") as Label).\
+				add_theme_font_override(
 					"font",
-					(slot_node.get_node("Slot/Date") as Label).get_font(
+					(slot_node.get_node("Slot/Date") as Label).get_theme_font(
 						"saveslots_date",
+						"Label"
+					)
+				)
+		(slot_node.get_node("Slot/Date") as Label).\
+				add_theme_font_size_override(
+					"font_size",
+					(slot_node.get_node("Slot/Date") as Label).get_theme_font_size(
+						"saveslots_date",
+						"Label"
+					)
+				)
+		(slot_node.get_node("Slot/Date") as Label).\
+				add_theme_color_override(
+					"font_color",
+					(slot_node.get_node("Slot/Date") as Label).get_theme_color(
+						"saveslots_date_font_color",
+						"Label"
+					)
+				)
+		(slot_node.get_node("Slot/Date") as Label).\
+				add_theme_color_override(
+					"font_outline_color",
+					(slot_node.get_node("Slot/Date") as Label).get_theme_color(
+						"saveslots_date_outline_color",
+						"Label"
+					)
+				)
+		(slot_node.get_node("Slot/Date") as Label).\
+				add_theme_constant_override(
+					"outline_size",
+					(slot_node.get_node("Slot/Date") as Label).get_theme_constant(
+						"saveslots_date_outline_size",
 						"Label"
 					)
 				)
@@ -516,16 +608,14 @@ func _refresh_saveslots():
 		var slot_exists: bool = false
 		
 		if _empty_image_texture == null:
-			var empty_image: Image = Image.new()
-			empty_image.create(
-				ProjectSettings.get("display/window/size/width") * 0.2,
-				ProjectSettings.get("display/window/size/height") * 0.2,
+			var empty_image: Image = Image.create(
+				ProjectSettings.get("display/window/size/viewport_width") * 0.2,
+				ProjectSettings.get("display/window/size/viewport_height") * 0.2,
 				true,
 				Image.FORMAT_RGBAH
 			)
 			empty_image.fill(EgoVenture.configuration.menu_saveslots_empty_color)
-			_empty_image_texture = ImageTexture.new()
-			_empty_image_texture.create_from_image(empty_image)
+			_empty_image_texture = ImageTexture.create_from_image(empty_image)
 		
 		if save_dir.file_exists("save_%d.png" % save_slot) and \
 			save_dir.file_exists("save_%d.tres" % save_slot):
@@ -533,10 +623,8 @@ func _refresh_saveslots():
 			# The slot is already taken. Show the saved image and date
 			slot_exists = true
 			
-			var slot_image = Image.new()
-			slot_image.load("user://save_%d.png" % save_slot)	
-			var slot_image_texture = ImageTexture.new()
-			slot_image_texture.create_from_image(slot_image)
+			var slot_image = Image.load_from_file("user://save_%d.png" % save_slot)
+			var slot_image_texture = ImageTexture.create_from_image(slot_image)
 			slot_panel_image = slot_node.get_node("Slot/Panel/Image")
 			slot_panel_image.texture_normal = slot_image_texture
 			
@@ -563,24 +651,11 @@ func _refresh_saveslots():
 					Cursors.CURSOR_MAP[Cursors.Type.DEFAULT]
 			
 		# Connect the pressed signals for the slot in a clean way
-		if slot_panel_image.is_connected(
-			"pressed", 
-			self, 
-			"_on_slot_selected"
-		):
-			slot_panel_image.disconnect(
-				"pressed", 
-				self, 
-				"_on_slot_selected"
-			)
+		if slot_panel_image.pressed.is_connected(self._on_slot_selected):
+			slot_panel_image.pressed.disconnect(self._on_slot_selected)
 			
 		if connect_signals:
-			slot_panel_image.connect(
-				"pressed", 
-				self, 
-				"_on_slot_selected", 
-				[save_slot, slot_exists]
-			)
+			slot_panel_image.pressed.connect(self._on_slot_selected.bind(save_slot, slot_exists))
 
 
 # The continue button was pressed
@@ -593,8 +668,7 @@ func _on_Continue_pressed():
 # The New Game button was pressed
 func _on_NewGame_pressed():
 	if EgoVenture.has_continue_state() or EgoVenture.game_started:
-		$Menu/RestartConfirm.popup_centered()
-		$Menu/RestartConfirm.get_ok().release_focus()
+		_confirmation_open(CONFIRMATION_RESTART)
 	else:
 		_on_RestartConfirm_confirmed()
 
@@ -619,12 +693,9 @@ func _on_SpeechSlider_gui_input(event):
 	if event is InputEventMouseButton and not \
 			(event as InputEventMouseButton).pressed:
 		if $Menu/Speech.get_playback_position() < MINIMUM_SAMPLE_TIME:
-			yield(
-				get_tree().create_timer(
+			await get_tree().create_timer(
 					MINIMUM_SAMPLE_TIME - $Menu/Speech.get_playback_position()
-				), 
-				"timeout"
-			)
+				).timeout
 		$Menu/Speech.stop()
 
 
@@ -633,12 +704,9 @@ func _on_EffectsSlider_gui_input(event):
 	if event is InputEventMouseButton and not \
 			(event as InputEventMouseButton).pressed:
 		if $Menu/Effects.get_playback_position() < MINIMUM_SAMPLE_TIME:
-			yield(
-				get_tree().create_timer(
+			await get_tree().create_timer(
 					MINIMUM_SAMPLE_TIME - $Menu/Effects.get_playback_position()
-				), 
-				"timeout"
-			)
+				).timeout
 		$Menu/Effects.stop()
 
 
@@ -666,10 +734,55 @@ func _on_locale_changed(locale: String):
 	TranslationServer.set_locale(locale)
 
 
-# Returns true if the main menu is shown and no pop-ups are shown
-func main_menu_is_displayed():
-	return ($Menu.visible 
+# process ui_menu event (called by menu_grab.gd)
+func process_ui_menu_event():
+	if ($Menu.visible
 		and not $Menu/Options.visible
 		and not $Menu/SaveSlots.visible
-		and not $Menu/QuitConfirm.visible
-		and not $Menu/RestartConfirm.visible)
+		and not $Menu/Confirm.visible
+	): # main menu is visible
+		get_viewport().set_input_as_handled()
+		MainMenu.toggle()
+	elif $Menu/Confirm.visible:
+		get_viewport().set_input_as_handled()
+		MainMenu._on_confirmation_cancel_pressed()
+	elif $Menu/Options.visible:
+		get_viewport().set_input_as_handled()
+		MainMenu._on_Return_pressed()
+	elif $Menu/SaveSlots.visible:
+		get_viewport().set_input_as_handled()
+		MainMenu._on_SaveLoad_Cancel_pressed()
+
+
+func _confirmation_open(type: int) -> void:
+	_confirmation_type = type
+	$Menu/Confirm/Center/Panel/Margin/VBox/Text.text = ""
+	$Menu/Confirm/Center/Panel.reset_size()
+	if _confirmation_type == CONFIRMATION_OVERWRITE:
+		$Menu/Confirm/Center/Panel/Margin/VBox/Text.text = \
+			"[center]" + tr(_configuration.menu_overwrite_confirmation)
+	elif _confirmation_type == CONFIRMATION_QUIT:
+		$Menu/Confirm/Center/Panel/Margin/VBox/Text.text = \
+			"[center]" + tr(_configuration.menu_quit_confirmation)
+	elif _confirmation_type == CONFIRMATION_RESTART:
+		$Menu/Confirm/Center/Panel/Margin/VBox/Text.text = \
+			"[center]" + tr(_configuration.menu_restart_confirmation)
+	$Menu/Confirm.show()
+
+
+func _on_confirmation_ok_pressed() -> void:
+	$Menu/Confirm.hide()
+	if _confirmation_type == CONFIRMATION_OVERWRITE:
+		_on_slot_selected(_selected_slot, false)
+	elif _confirmation_type == CONFIRMATION_QUIT:
+		emit_signal("quit_game")
+	elif _confirmation_type == CONFIRMATION_RESTART:
+		EgoVenture.reset()
+		if disabled:
+			disabled = false
+		toggle()
+		emit_signal("new_game")
+
+
+func _on_confirmation_cancel_pressed() -> void:
+	$Menu/Confirm.hide()

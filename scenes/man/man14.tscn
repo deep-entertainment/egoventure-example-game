@@ -1,39 +1,39 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://c0byxth0x0l1s"]
 
-[ext_resource path="res://images/man/man14c.jpg" type="Texture" id=1]
-[ext_resource path="res://images/man/man14a.jpg" type="Texture" id=2]
-[ext_resource path="res://images/man/man14d.jpg" type="Texture" id=3]
-[ext_resource path="res://images/man/man14b.jpg" type="Texture" id=4]
-[ext_resource path="res://addons/egoventure/nodes/four_side_room.tscn" type="PackedScene" id=5]
-[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=6]
+[ext_resource type="Texture2D" uid="uid://bs2egi41b5mlh" path="res://images/man/man14c.jpg" id="1"]
+[ext_resource type="Texture2D" uid="uid://bxxkon6rvisps" path="res://images/man/man14a.jpg" id="2"]
+[ext_resource type="Texture2D" uid="uid://b6gtfpx3oejvi" path="res://images/man/man14d.jpg" id="3"]
+[ext_resource type="Texture2D" uid="uid://2j05o3oudiio" path="res://images/man/man14b.jpg" id="4"]
+[ext_resource type="PackedScene" uid="uid://bajhiyix03pw4" path="res://addons/egoventure/nodes/four_side_room.tscn" id="5"]
+[ext_resource type="Script" uid="uid://dxq2ul8jmuuxw" path="res://addons/egoventure/nodes/hotspots/hotspot.gd" id="6"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Room" parent="." instance=ExtResource( 5 )]
-front_texture = ExtResource( 2 )
-right_texture = ExtResource( 4 )
-back_texture = ExtResource( 1 )
-left_texture = ExtResource( 3 )
+[node name="Room" parent="." instance=ExtResource("5")]
+front_texture = ExtResource("2")
+right_texture = ExtResource("4")
+back_texture = ExtResource("1")
+left_texture = ExtResource("3")
 
 [node name="Hotspot" type="TextureButton" parent="."]
-margin_left = 919.811
-margin_top = -881.238
-margin_right = 1680.81
-margin_bottom = -130.238
+offset_left = 919.811
+offset_top = -881.238
+offset_right = 1680.81
+offset_bottom = -130.238
 mouse_default_cursor_shape = 3
-script = ExtResource( 6 )
+script = ExtResource("6")
 __meta__ = {
 "_edit_use_anchors_": false
 }
 target_scene = "res://scenes/man/man15.tscn"
 
 [node name="Hotspot2" type="TextureButton" parent="."]
-margin_left = 958.049
-margin_top = 2127.48
-margin_right = 1740.05
-margin_bottom = 2786.48
+offset_left = 958.049
+offset_top = 2127.48
+offset_right = 1740.05
+offset_bottom = 2786.48
 mouse_default_cursor_shape = 3
-script = ExtResource( 6 )
+script = ExtResource("6")
 __meta__ = {
 "_edit_use_anchors_": false
 }

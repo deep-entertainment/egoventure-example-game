@@ -1,8 +1,8 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" script_class="CharacterResource" load_steps=2 format=3 uid="uid://wmtm3tiois78"]
 
-[ext_resource path="res://addons/parrot/resources/character_resource.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://dary0nbqy6kgc" path="res://addons/parrot/resources/character_resource.gd" id="1"]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "Carol"
-color = Color( 1, 1, 1, 1 )
+color = Color(1, 1, 1, 1)

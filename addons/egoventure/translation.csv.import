@@ -2,13 +2,14 @@
 
 importer="csv_translation"
 type="Translation"
+uid="uid://btqpsffv57cu8"
 
 [deps]
 
-files=[ "res://addons/egoventure/translation.en.translation", "res://addons/egoventure/translation.de.translation" ]
+files=["res://addons/egoventure/translation.en.translation", "res://addons/egoventure/translation.de.translation"]
 
 source_file="res://addons/egoventure/translation.csv"
-dest_files=[ "res://addons/egoventure/translation.en.translation", "res://addons/egoventure/translation.de.translation" ]
+dest_files=["res://addons/egoventure/translation.en.translation", "res://addons/egoventure/translation.de.translation"]
 
 [params]
 

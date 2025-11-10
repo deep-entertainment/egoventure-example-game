@@ -1,61 +1,49 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://cficaijnu5lkx"]
 
-[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=1]
-[ext_resource path="res://scenes/man/man12f_lift1.gd" type="Script" id=2]
-[ext_resource path="res://images/man/man12f_lift1.jpg" type="Texture" id=3]
-[ext_resource path="res://sounds/man/man_1776_handbag_pills_up.ogg" type="AudioStream" id=4]
-[ext_resource path="res://images/man/hs/screwdr_hs.png" type="Texture" id=5]
-[ext_resource path="res://sounds/man/man_1776_handbag_key_up.ogg" type="AudioStream" id=6]
+[ext_resource type="Script" uid="uid://dxq2ul8jmuuxw" path="res://addons/egoventure/nodes/hotspots/hotspot.gd" id="1"]
+[ext_resource type="Script" uid="uid://dg0tdh7kd6nhe" path="res://scenes/man/man12f_lift1.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dt3ome5jt8tr7" path="res://images/man/man12f_lift1.jpg" id="3"]
+[ext_resource type="AudioStream" uid="uid://dl7ril6vsi55v" path="res://sounds/man/man_1776_handbag_pills_up.ogg" id="4"]
+[ext_resource type="Texture2D" uid="uid://mg3xxhnpex6g" path="res://images/man/hs/screwdr_hs.png" id="5"]
+[ext_resource type="AudioStream" uid="uid://cjtcd5alqsp8i" path="res://sounds/man/man_1776_handbag_key_up.ogg" id="6"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 2 )
+script = ExtResource("2")
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 3 )
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3")
 centered = false
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Hotspot" type="TextureButton" parent="."]
-margin_left = -35.5383
-margin_top = 1070.0
-margin_right = 2588.47
-margin_bottom = 1485.0
+offset_left = -35.5383
+offset_top = 1070.0
+offset_right = 2588.47
+offset_bottom = 1485.0
 mouse_default_cursor_shape = 6
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("1")
 cursor_type = 2
 
 [node name="Hotspot2" type="TextureButton" parent="."]
-margin_left = 1453.7
-margin_top = 168.398
-margin_right = 1750.7
-margin_bottom = 360.398
+offset_left = 1453.7
+offset_top = 168.398
+offset_right = 1750.7
+offset_bottom = 360.398
 mouse_default_cursor_shape = 13
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("1")
 cursor_type = 12
 target_scene = "res://scenes/man/man12f_lift3.tscn"
-effect = ExtResource( 4 )
+effect = ExtResource("4")
 
 [node name="screwdr_hs" type="TextureButton" parent="."]
-margin_left = 1017.0
-margin_top = 112.0
-margin_right = 1188.0
-margin_bottom = 285.0
+offset_left = 1017.0
+offset_top = 112.0
+offset_right = 1188.0
+offset_bottom = 285.0
 mouse_default_cursor_shape = 13
-texture_normal = ExtResource( 5 )
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+texture_normal = ExtResource("5")
+script = ExtResource("1")
 cursor_type = 12
 target_scene = "res://scenes/man/man12f_lift2.tscn"
-effect = ExtResource( 6 )
+effect = ExtResource("6")
 
 [connection signal="activate" from="Hotspot" to="." method="_on_Hotspot_activate"]

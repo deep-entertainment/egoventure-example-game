@@ -1,11 +1,11 @@
 extends Node2D
 
 func _ready():
-	Parrot.connect("finished_dialog", self, "_on_finished_dialog")
+	Parrot.connect("finished_dialog", Callable(self, "_on_finished_dialog"))
 	if (EgoVenture.state as GameState).bro_spoken_to != 1:
 		Speedy.hidden = true
 		Parrot.play(preload("res://dialogs/bro1_q0.tres"))
-		yield(Parrot, "finished_dialog")
+		await Parrot.finished_dialog
 		Speedy.hidden = false
 		(EgoVenture.state as GameState).bro_spoken_to = 1
 	

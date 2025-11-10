@@ -1,83 +1,68 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://b2tycadabe0j7"]
 
-[ext_resource path="res://addons/egoventure/nodes/four_side_room.tscn" type="PackedScene" id=1]
-[ext_resource path="res://images/man/man03d.jpg" type="Texture" id=2]
-[ext_resource path="res://images/man/man03b.jpg" type="Texture" id=3]
-[ext_resource path="res://images/man/man03c.jpg" type="Texture" id=4]
-[ext_resource path="res://images/man/man03a.jpg" type="Texture" id=5]
-[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=6]
-[ext_resource path="res://scenes/man/man03.gd" type="Script" id=7]
+[ext_resource type="PackedScene" uid="uid://bajhiyix03pw4" path="res://addons/egoventure/nodes/four_side_room.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://cucclfb36qi3c" path="res://images/man/man03d.jpg" id="2"]
+[ext_resource type="Texture2D" uid="uid://cqdodc0acpxek" path="res://images/man/man03b.jpg" id="3"]
+[ext_resource type="Texture2D" uid="uid://drs7pvft1rxi2" path="res://images/man/man03c.jpg" id="4"]
+[ext_resource type="Texture2D" uid="uid://dd7wycpute20f" path="res://images/man/man03a.jpg" id="5"]
+[ext_resource type="Script" uid="uid://dxq2ul8jmuuxw" path="res://addons/egoventure/nodes/hotspots/hotspot.gd" id="6"]
+[ext_resource type="Script" uid="uid://db3ilv02g3f5a" path="res://scenes/man/man03.gd" id="7"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 7 )
+script = ExtResource("7")
 
-[node name="Room" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, 3.77563 )
-front_texture = ExtResource( 5 )
-right_texture = ExtResource( 3 )
-back_texture = ExtResource( 4 )
-left_texture = ExtResource( 2 )
+[node name="Room" parent="." instance=ExtResource("1")]
+position = Vector2(0, 3.77563)
+front_texture = ExtResource("5")
+right_texture = ExtResource("3")
+back_texture = ExtResource("4")
+left_texture = ExtResource("2")
 
 [node name="Hotspot" type="TextureButton" parent="."]
-margin_left = 3317.91
-margin_top = 635.668
-margin_right = 4419.91
-margin_bottom = 1388.67
+offset_left = 3317.91
+offset_top = 635.668
+offset_right = 4419.91
+offset_bottom = 1388.67
 mouse_default_cursor_shape = 16
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("6")
 cursor_type = 8
 target_scene = "res://scenes/man/man03b_cl.tscn"
 
 [node name="Hotspot2" type="TextureButton" parent="."]
-margin_left = 977.195
-margin_top = -820.011
-margin_right = 1701.19
-margin_bottom = -103.011
+offset_left = 977.195
+offset_top = -820.011
+offset_right = 1701.19
+offset_bottom = -103.011
 mouse_default_cursor_shape = 3
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("6")
 
 [node name="Hotspot3" type="TextureButton" parent="."]
-margin_left = 955.509
-margin_top = 1953.24
-margin_right = 1694.51
-margin_bottom = 2670.24
+offset_left = 955.509
+offset_top = 1953.24
+offset_right = 1694.51
+offset_bottom = 2670.24
 mouse_default_cursor_shape = 3
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("6")
 target_scene = "res://scenes/man/man02.tscn"
 target_view = "back"
 
 [node name="eye_info_hs" type="TextureButton" parent="."]
-margin_left = 2102.0
-margin_top = -1450.24
-margin_right = 2573.0
-margin_bottom = 26.7622
+offset_left = 2102.0
+offset_top = -1450.24
+offset_right = 2573.0
+offset_bottom = 26.7622
 mouse_default_cursor_shape = 15
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("6")
 cursor_type = 3
 target_scene = "res://scenes/man/man03b_inf.tscn"
 
 [node name="eye_info_hs2" type="TextureButton" parent="."]
-margin_left = -11.7755
-margin_top = 1430.22
-margin_right = 451.224
-margin_bottom = 2901.22
+offset_left = -11.7755
+offset_top = 1430.22
+offset_right = 451.224
+offset_bottom = 2901.22
 mouse_default_cursor_shape = 14
-script = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("6")
 cursor_type = 4
 target_scene = "res://scenes/man/man03b_inf.tscn"
 

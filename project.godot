@@ -6,191 +6,26 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=4
-
-_global_script_classes=[ {
-"base": "Resource",
-"class": "BaseState",
-"language": "GDScript",
-"path": "res://addons/egoventure/resources/base_state.gd"
-}, {
-"base": "Resource",
-"class": "CacheMap",
-"language": "GDScript",
-"path": "res://addons/egoventure/resources/cache_map.gd"
-}, {
-"base": "WindowDialog",
-"class": "CacheUpdateDialog",
-"language": "GDScript",
-"path": "res://addons/egoventure/cache/cache_update_dialog.gd"
-}, {
-"base": "Resource",
-"class": "CharacterResource",
-"language": "GDScript",
-"path": "res://addons/parrot/resources/character_resource.gd"
-}, {
-"base": "Resource",
-"class": "Cursor",
-"language": "GDScript",
-"path": "res://addons/egoventure/resources/cursor.gd"
-}, {
-"base": "RichTextLabel",
-"class": "DialogHotspot",
-"language": "GDScript",
-"path": "res://addons/egoventure/nodes/hotspots/dialog_hotspot.gd"
-}, {
-"base": "Resource",
-"class": "DialogLineResource",
-"language": "GDScript",
-"path": "res://addons/parrot/resources/dialog_line_resource.gd"
-}, {
-"base": "Resource",
-"class": "DialogResource",
-"language": "GDScript",
-"path": "res://addons/parrot/resources/dialog_resource.gd"
-}, {
-"base": "Button",
-"class": "EgoVentureMenuButton",
-"language": "GDScript",
-"path": "res://addons/egoventure/nodes/egoventure_menu_button.gd"
-}, {
-"base": "Node2D",
-"class": "EightSideRoom",
-"language": "GDScript",
-"path": "res://addons/egoventure/nodes/eight_side_room.gd"
-}, {
-"base": "Control",
-"class": "Exporter",
-"language": "GDScript",
-"path": "res://addons/parrot/nodes/exporter.gd"
-}, {
-"base": "Node2D",
-"class": "FourSideRoom",
-"language": "GDScript",
-"path": "res://addons/egoventure/nodes/four_side_room.gd"
-}, {
-"base": "Resource",
-"class": "FulfillmentRecord",
-"language": "GDScript",
-"path": "res://addons/egoventure/resources/fulfillment_record.gd"
-}, {
-"base": "Resource",
-"class": "GameConfiguration",
-"language": "GDScript",
-"path": "res://addons/egoventure/resources/game_configuration.gd"
-}, {
-"base": "BaseState",
-"class": "GameState",
-"language": "GDScript",
-"path": "res://game_state.gd"
-}, {
-"base": "Resource",
-"class": "Goal",
-"language": "GDScript",
-"path": "res://addons/egoventure/resources/goal.gd"
-}, {
-"base": "TextureButton",
-"class": "Hotspot",
-"language": "GDScript",
-"path": "res://addons/egoventure/nodes/hotspots/hotspot.gd"
-}, {
-"base": "Control",
-"class": "Importer",
-"language": "GDScript",
-"path": "res://addons/parrot/nodes/importer.gd"
-}, {
-"base": "Resource",
-"class": "InGameConfiguration",
-"language": "GDScript",
-"path": "res://addons/egoventure/resources/in_game_configuration.gd"
-}, {
-"base": "Resource",
-"class": "InventoryItem",
-"language": "GDScript",
-"path": "res://addons/egoventure/resources/inventory_item.gd"
-}, {
-"base": "TextureButton",
-"class": "InventoryItemNode",
-"language": "GDScript",
-"path": "res://addons/egoventure/nodes/inventory/inventory_item_node.gd"
-}, {
-"base": "TextureButton",
-"class": "LookHotspot",
-"language": "GDScript",
-"path": "res://addons/egoventure/nodes/hotspots/look_hotspot.gd"
-}, {
-"base": "Hotspot",
-"class": "MapHotspot",
-"language": "GDScript",
-"path": "res://addons/egoventure/nodes/hotspots/map_hotspot.gd"
-}, {
-"base": "Reference",
-"class": "ResourceQueue",
-"language": "GDScript",
-"path": "res://addons/egoventure/cache/resource_queue.gd"
-}, {
-"base": "Node",
-"class": "SceneCache",
-"language": "GDScript",
-"path": "res://addons/egoventure/cache/scene_cache.gd"
-}, {
-"base": "TextureButton",
-"class": "TriggerHotspot",
-"language": "GDScript",
-"path": "res://addons/egoventure/nodes/hotspots/trigger_hotspot.gd"
-}, {
-"base": "Hotspot",
-"class": "WalkHotspot",
-"language": "GDScript",
-"path": "res://addons/egoventure/nodes/hotspots/walk_hotspot.gd"
-} ]
-_global_script_class_icons={
-"BaseState": "",
-"CacheMap": "",
-"CacheUpdateDialog": "",
-"CharacterResource": "res://addons/parrot/images/character.svg",
-"Cursor": "",
-"DialogHotspot": "res://addons/egoventure/images/dialog_hotspot.svg",
-"DialogLineResource": "res://addons/parrot/images/dialog_line.svg",
-"DialogResource": "res://addons/parrot/images/dialog.svg",
-"EgoVentureMenuButton": "",
-"EightSideRoom": "",
-"Exporter": "",
-"FourSideRoom": "",
-"FulfillmentRecord": "",
-"GameConfiguration": "",
-"GameState": "",
-"Goal": "",
-"Hotspot": "res://addons/egoventure/images/hotspot.svg",
-"Importer": "",
-"InGameConfiguration": "",
-"InventoryItem": "res://addons/egoventure/images/inventory_item.svg",
-"InventoryItemNode": "",
-"LookHotspot": "res://addons/egoventure/images/look_hotspot.svg",
-"MapHotspot": "res://addons/egoventure/images/map_hotspot.svg",
-"ResourceQueue": "",
-"SceneCache": "",
-"TriggerHotspot": "res://addons/egoventure/images/trigger_hotspot.svg",
-"WalkHotspot": "res://addons/egoventure/images/walk_hotspot.svg"
-}
+config_version=5
 
 [EgoVenture]
 
-hotspots/walk_hotspot_size=Vector2( 700, 740 )
+hotspots/walk_hotspot_size=Vector2(700, 740)
 
 [application]
 
-config/name="Carol Refurbished"
+config/name="Carol Refurbished on Godot 4"
 run/main_scene="res://scenes/logo.tscn"
+config/features=PackedStringArray("4.4")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://images/mouse/transparent.png"
-boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://images/misc/icon.png"
 config/macos_native_icon="res://images/misc/icon.icns"
 config/windows_native_icon="res://images/misc/icon.ico"
 
 [audio]
 
-default_bus_layout="res://addons/egoventure/default_bus_layout.tres"
+buses/default_bus_layout="res://addons/egoventure/default_bus_layout.tres"
 
 [autoload]
 
@@ -200,6 +35,7 @@ MessageScreen="*res://addons/egoventure/nodes/message_screen.tscn"
 Cursors="*res://addons/egoventure/types/cursors.gd"
 Speedy="*res://addons/speedy_gonzales/nodes/speedy.tscn"
 MenuGrab="*res://addons/egoventure/nodes/menu_grab.tscn"
+Notification="*res://addons/egoventure/nodes/notification.tscn"
 Parrot="*res://addons/parrot/nodes/parrot_dialog.tscn"
 MainMenu="*res://addons/egoventure/nodes/main_menu.tscn"
 Boombox="*res://addons/egoventure/nodes/boombox.tscn"
@@ -209,20 +45,23 @@ MapNotification="*res://addons/egoventure/nodes/map_notification.gd"
 Inventory="*res://addons/egoventure/nodes/inventory/inventory.tscn"
 DetailView="*res://addons/egoventure/nodes/inventory/detail_view.tscn"
 CheckCursor="*res://addons/egoventure/nodes/check_cursor.tscn"
-Notification="*res://addons/egoventure/nodes/notification.tscn"
+TestRun="*res://addons/egoventure/test_tools/test_run.gd"
 
 [display]
 
-window/size/width=2560
-window/size/height=1440
-window/dpi/allow_hidpi=true
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/stretch/mode="canvas_items"
 window/handheld/orientation="sensor_landscape"
-window/stretch/mode="2d"
-window/stretch/aspect="keep"
+mouse_cursor/custom_image_hotspot=Vector2(1, 1)
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/egoventure/plugin.cfg", "res://addons/parrot/plugin.cfg", "res://addons/speedy_gonzales/plugin.cfg" )
+enabled=PackedStringArray("res://addons/egoventure/plugin.cfg", "res://addons/parrot/plugin.cfg", "res://addons/speedy_gonzales/plugin.cfg")
+
+[filesystem]
+
+import/blender/enabled=false
 
 [importer_defaults]
 
@@ -255,44 +94,55 @@ texture={
 
 ui_menu={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
-, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
- ]
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194305,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
 }
 ui_skip={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
-, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
- ]
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+, Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
 }
 hotspot_indicator={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
- ]
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
 }
+test_dialog={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194334,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translation_remaps={}
+locale/translations=PackedStringArray("res://translation.en.translation", "res://translation.de.translation", "res://addons/egoventure/translation.de.translation", "res://addons/egoventure/translation.en.translation")
 
 [locale]
 
-translations=PoolStringArray( "res://addons/egoventure/translation.de.translation", "res://addons/egoventure/translation.en.translation", "res://translation.de.translation", "res://translation.en.translation" )
+translations=PackedStringArray("res://addons/egoventure/translation.de.translation", "res://addons/egoventure/translation.en.translation", "res://translation.de.translation", "res://translation.en.translation")
 translation_remaps={
-"res://images/man/hs/man01a_inf.jpg": PoolStringArray( "res://images/man/hs/man01a_inf_de.jpg:de" ),
-"res://images/man/hs/quit.png": PoolStringArray( "res://images/man/hs/quit_de.png:de" ),
-"res://images/man/hs/quit_hov.png": PoolStringArray( "res://images/man/hs/quit_hov_de.png:de" ),
-"res://images/man/man03b_inf.jpg": PoolStringArray( "res://images/man/man03b_inf_de.jpg:de" ),
-"res://images/man/man04a_inf.jpg": PoolStringArray( "res://images/man/man04a_inf_de.jpg:de" ),
-"res://images/man/man06c_lift2.jpg": PoolStringArray( "res://images/man/man06c_lift2_de.jpg:de" ),
-"res://images/man/man09c_cl2_lift4_inf.jpg": PoolStringArray( "res://images/man/man09c_cl2_lift4_inf_de.jpg:de" ),
-"res://images/man/man11a_inf.jpg": PoolStringArray( "res://images/man/man11a_inf_de.jpg:de" ),
-"res://images/man/man22a_inf.jpg": PoolStringArray( "res://images/man/man22a_inf_de.jpg:de" ),
-"res://images/misc/map_info.jpg": PoolStringArray( "res://images/misc/map_info_de.jpg:de" )
+"res://images/man/hs/man01a_inf.jpg": PackedStringArray("res://images/man/hs/man01a_inf_de.jpg:de"),
+"res://images/man/hs/quit.png": PackedStringArray("res://images/man/hs/quit_de.png:de"),
+"res://images/man/hs/quit_hov.png": PackedStringArray("res://images/man/hs/quit_hov_de.png:de"),
+"res://images/man/man03b_inf.jpg": PackedStringArray("res://images/man/man03b_inf_de.jpg:de"),
+"res://images/man/man04a_inf.jpg": PackedStringArray("res://images/man/man04a_inf_de.jpg:de"),
+"res://images/man/man06c_lift2.jpg": PackedStringArray("res://images/man/man06c_lift2_de.jpg:de"),
+"res://images/man/man09c_cl2_lift4_inf.jpg": PackedStringArray("res://images/man/man09c_cl2_lift4_inf_de.jpg:de"),
+"res://images/man/man11a_inf.jpg": PackedStringArray("res://images/man/man11a_inf_de.jpg:de"),
+"res://images/man/man22a_inf.jpg": PackedStringArray("res://images/man/man22a_inf_de.jpg:de"),
+"res://images/misc/map_info.jpg": PackedStringArray("res://images/misc/map_info_de.jpg:de")
 }
-locale_filter=[ 1, [ "de", "en" ] ]
+locale_filter=[1, ["de", "en"]]
 
 [rendering]
 
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
 quality/driver/driver_name="GLES2"
 quality/intended_usage/framebuffer_allocation=0
 quality/intended_usage/framebuffer_allocation.mobile=0
 vram_compression/import_etc=true
 vram_compression/import_pvrtc=true
-environment/default_clear_color=Color( 0, 0, 0, 1 )

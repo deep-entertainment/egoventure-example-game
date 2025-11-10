@@ -24,3 +24,5 @@ DIALOG_OVERWRITE;Are you sure you want to overwrite a saved game?;Willst Du das 
 DIALOG_RESTART;You will lose all progress when starting a new game. Do you really want to restart?;Beim Neustart verlierst Du Deinen Spielfortschritt. Willst Du wirklich neu starten?
 MESSAGE_LOAD;Game loaded;Spiel geladen
 MESSAGE_SAVE;Game saved;Spiel gespeichert
+OK;OK;OK
+CANCEL;Cancel;Abbrechen

@@ -1,23 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://drsg8ffvti56"]
 
-[ext_resource path="res://images/man/man06c_lift2.jpg" type="Texture" id=1]
-[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=2]
-[ext_resource path="res://scenes/man/man06c_lift2.gd" type="Script" id=3]
+[ext_resource type="Texture2D" uid="uid://tu5odoypp5mg" path="res://images/man/man06c_lift2.jpg" id="1"]
+[ext_resource type="Script" uid="uid://dxq2ul8jmuuxw" path="res://addons/egoventure/nodes/hotspots/hotspot.gd" id="2"]
+[ext_resource type="Script" uid="uid://c622k5vr6rpy2" path="res://scenes/man/man06c_lift2.gd" id="3"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 3 )
+script = ExtResource("3")
 
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1")
 centered = false
 
 [node name="Hotspot" type="TextureButton" parent="."]
-margin_left = -28.0
-margin_top = 1137.0
-margin_right = 2592.0
-margin_bottom = 1465.0
+offset_left = -28.0
+offset_top = 1137.0
+offset_right = 2592.0
+offset_bottom = 1465.0
 mouse_default_cursor_shape = 6
-script = ExtResource( 2 )
+script = ExtResource("2")
 __meta__ = {
 "_edit_use_anchors_": false
 }

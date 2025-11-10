@@ -20,7 +20,7 @@ var activated: bool = false
 var just_released: bool = false
 
 # Wether to ignore a game pause
-var ignore_pause: bool = false setget _set_ignore_pause
+var ignore_pause: bool = false: set = _set_ignore_pause
 
 
 # The list of inventory items
@@ -41,10 +41,10 @@ func _ready():
 	else:
 		$Canvas/InventoryAnchor/Panel/InventoryPanel/Reveal.hide()
 		$Canvas/InventoryAnchor/Panel/InventoryPanel/Menu.hide()
-	$Canvas/InventoryAnchor/Panel/InventoryPanel/ScrollContainer\
-			.get_h_scrollbar().rect_scale.x = 0
-	$Canvas/InventoryAnchor/Panel/InventoryPanel/ScrollContainer\
-			.get_h_scrollbar().modulate = Color(0, 0, 0, 0)
+	$Canvas/InventoryAnchor/Panel/InventoryPanel/ScrollContainer.\
+			get_h_scroll_bar().scale.x = 0
+	$Canvas/InventoryAnchor/Panel/InventoryPanel/ScrollContainer.\
+			get_h_scroll_bar().modulate = Color(0, 0, 0, 0)
 	$Canvas/InventoryAnchor/Panel/InventoryPanel/ArrowLeft.hide()
 	$Canvas/InventoryAnchor/Panel/InventoryPanel/ArrowRight.hide()
 
@@ -76,7 +76,7 @@ func _input(event: InputEvent):
 		# Drop the inventory item on RMB and two finger touch
 		if Inventory.selected_item != null and \
 				 event is InputEventMouseButton and \
-				(event as InputEventMouseButton).button_index == BUTTON_RIGHT \
+				(event as InputEventMouseButton).button_index == MOUSE_BUTTON_RIGHT \
 				and not (event as InputEventMouseButton).pressed:
 			release_item()
 			just_released = true
@@ -94,7 +94,7 @@ func _input(event: InputEvent):
 			# Deactivate the inventory when the mouse is below it
 			elif activated and \
 					get_viewport().get_mouse_position().y \
-					> $Canvas/InventoryAnchor/Panel.rect_size.y:
+					> $Canvas/InventoryAnchor/Panel.size.y:
 				toggle_inventory()
 
 
@@ -113,33 +113,33 @@ func configure(configuration: GameConfiguration):
 	$Canvas/InventoryAnchor/Panel/InventoryPanel/ArrowRight.texture_normal = \
 			configuration.inventory_texture_right_arrow
 	$Canvas/InventoryAnchor.theme = configuration.design_theme
-	$Canvas/InventoryAnchor/Panel.rect_min_size.y = configuration.inventory_size
+	$Canvas/InventoryAnchor/Panel.custom_minimum_size.y = configuration.inventory_size
 	_scroll_size = configuration.inventory_size
 	
 	if EgoVenture.is_touch:
-		$Canvas/InventoryAnchor/Panel.add_stylebox_override(
+		$Canvas/InventoryAnchor/Panel.add_theme_stylebox_override(
 			"panel",
-			$Canvas/InventoryAnchor/Panel.get_stylebox("inventory_panel_touch", "Panel")
+			$Canvas/InventoryAnchor/Panel.get_theme_stylebox("inventory_panel_touch", "Panel")
 		)
 	else:
-		$Canvas/InventoryAnchor/Panel.add_stylebox_override(
+		$Canvas/InventoryAnchor/Panel.add_theme_stylebox_override(
 			"panel",
-			$Canvas/InventoryAnchor/Panel.get_stylebox("inventory_panel", "Panel")
+			$Canvas/InventoryAnchor/Panel.get_theme_stylebox("inventory_panel", "Panel")
 		)
 	
 	$Canvas/InventoryAnchor/Panel/InventoryPanel/Reveal.texture_normal = \
 		configuration.inventory_texture_reveal
 		
-	$Canvas/InventoryAnchor.margin_top = configuration.inventory_size * -1
+	$Canvas/InventoryAnchor.offset_top = configuration.inventory_size * -1
 	
 	var animation: Animation = $Animations.get_animation("Activate")
 	animation.track_set_key_value(
 		0,
 		0,
-		configuration.inventory_size * -1
+		Vector2(0,configuration.inventory_size * -1)
 	)
 	
-	if OS.has_touchscreen_ui_hint():
+	if DisplayServer.is_touchscreen_available():
 		$Animations.play("Activate")
 	
 	DetailView.get_node("Panel").theme = configuration.design_theme
@@ -178,24 +178,22 @@ func add_item(
 		return
 	var inventory_item_node = InventoryItemNode.new()
 	inventory_item_node.configure(item)
-	inventory_item_node.connect(
-		"triggered_inventory_item",
-		self,
-		"_on_triggered_inventory_item"
+	inventory_item_node.triggered_inventory_item.connect(
+		self._on_triggered_inventory_item
 	)
 	_inventory_items.insert(position, inventory_item_node)
 	_update()
 	
 	if _inventory_items.size() > 1:
 		_items_width += \
-			$Canvas/InventoryAnchor/Panel/InventoryPanel/ScrollContainer/Inventory.get_constant("separation")
+			$Canvas/InventoryAnchor/Panel/InventoryPanel/ScrollContainer/Inventory.get_theme_constant("separation")
 	_items_width += inventory_item_node.get_rect().size.x
 	
 	if not EgoVenture.is_touch and not activated and not skip_show:
 		# Briefly show the inventory when it is not activated
 		toggle_inventory()
 		$Timer.start()
-		yield($Timer,"timeout")
+		await $Timer.timeout
 		$Timer.stop()
 		toggle_inventory()
 
@@ -216,9 +214,9 @@ func remove_item(item: InventoryItem):
 		
 		if _inventory_items.size() > 1:
 			_items_width -= \
-				$Canvas/InventoryAnchor/Panel/InventoryPanel/ScrollContainer/Inventory.get_constant("separation")
+				$Canvas/InventoryAnchor/Panel/InventoryPanel/ScrollContainer/Inventory.get_theme_constant("separation")
 		_items_width -= _inventory_items[found_index].get_rect().size.x
-		_inventory_items.remove(found_index)
+		_inventory_items.remove_at(found_index)
 		_update()
 
 
@@ -269,7 +267,7 @@ func toggle_inventory():
 # Emit signal, that the notepad was pressed
 func _on_Notepad_pressed():
 	if selected_item == null:
-		Notepad.show()
+		Notepad.display()
 
 
 # Emit signal, that the menu was pressed
@@ -311,17 +309,17 @@ func _on_Reveal_gui_input(event):
 		if Inventory.selected_item == null:
 			if (event as InputEventScreenTouch).pressed:
 				var push_event = InputEventAction.new()
-				push_event.pressed = true
+				push_event.button_pressed = true
 				push_event.action = "hotspot_indicator"
 				Input.parse_input_event(push_event)
 			else:
 				var release_event = InputEventAction.new()
-				release_event.pressed = false
+				release_event.button_pressed = false
 				release_event.action = "hotspot_indicator"
 				Input.parse_input_event(release_event)
 		elif not (event as InputEventScreenTouch).pressed:
 			if DetailView.is_visible:
-				DetailView.hide()
+				DetailView.close()
 			else:
 				DetailView.show_with_item(Inventory.selected_item.item)
 
@@ -335,11 +333,11 @@ func _set_ignore_pause(value: bool):
 	ignore_pause = value
 	
 	if ignore_pause:
-		$Canvas/InventoryAnchor.pause_mode = Node.PAUSE_MODE_PROCESS
-		pause_mode = Node.PAUSE_MODE_PROCESS
+		$Canvas/InventoryAnchor.process_mode = Node.PROCESS_MODE_ALWAYS
+		process_mode = Node.PROCESS_MODE_ALWAYS
 	else:
-		$Canvas/InventoryAnchor.pause_mode = Node.PAUSE_MODE_STOP
-		pause_mode = Node.PAUSE_MODE_STOP
+		$Canvas/InventoryAnchor.process_mode = Node.PROCESS_MODE_PAUSABLE
+		process_mode = Node.PROCESS_MODE_PAUSABLE
 
 
 # Handle moving the inventory to the right

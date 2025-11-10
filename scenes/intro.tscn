@@ -1,33 +1,33 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=5 format=3 uid="uid://r5b288qy1i1h"]
 
-[ext_resource path="res://scenes/intro.gd" type="Script" id=1]
-[ext_resource path="res://images/misc/credits01.jpg" type="Texture" id=2]
-[ext_resource path="res://images/misc/credits02.jpg" type="Texture" id=3]
-[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=4]
+[ext_resource type="Script" uid="uid://bku4t6allkfm4" path="res://scenes/intro.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://d0dnej612v3vu" path="res://images/misc/credits01.jpg" id="2"]
+[ext_resource type="Texture2D" uid="uid://c4lsp4kevsed1" path="res://images/misc/credits02.jpg" id="3"]
+[ext_resource type="Script" uid="uid://dxq2ul8jmuuxw" path="res://addons/egoventure/nodes/hotspots/hotspot.gd" id="4"]
 
 [node name="Node2D" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
+script = ExtResource("1")
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="cred1" type="TextureButton" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-texture_normal = ExtResource( 2 )
-script = ExtResource( 4 )
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("2")
+script = ExtResource("4")
 __meta__ = {
 "_edit_use_anchors_": false
 }
 cursor_type = 0
 
 [node name="cred2" type="TextureButton" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-texture_normal = ExtResource( 3 )
-script = ExtResource( 4 )
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("3")
+script = ExtResource("4")
 __meta__ = {
 "_edit_use_anchors_": false
 }

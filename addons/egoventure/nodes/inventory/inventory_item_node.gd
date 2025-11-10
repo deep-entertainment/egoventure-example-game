@@ -24,7 +24,7 @@ func _gui_input(event: InputEvent):
 			show_detail()
 			accept_event()
 		elif event is InputEventMouseButton and \
-				(event as InputEventMouseButton).button_index == BUTTON_RIGHT \
+				(event as InputEventMouseButton).button_index == MOUSE_BUTTON_RIGHT \
 				and not (event as InputEventMouseButton).pressed and \
 				not Inventory.just_released:
 			show_detail()
@@ -39,9 +39,9 @@ func _gui_input(event: InputEvent):
 func configure(p_item: InventoryItem):
 	item = p_item
 	texture_normal = item.image_normal
-	connect("pressed", self, "_on_InventoryItem_pressed")
-	connect("mouse_entered", self, "_on_mouse_entered")
-	connect("mouse_exited", self, "_on_mouse_exited")
+	connect("pressed", Callable(self, "_on_InventoryItem_pressed"))
+	connect("mouse_entered", Callable(self, "_on_mouse_entered"))
+	connect("mouse_exited", Callable(self, "_on_mouse_exited"))
 
 
 # Show the detail view
@@ -67,7 +67,7 @@ func _on_mouse_entered():
 			Cursors.override(
 				Cursors.Type.DEFAULT,
 				Inventory.selected_item.item.image_active,
-				(item.image_active as Texture).get_size() / 2
+				(item.image_active as Texture2D).get_size() / 2
 			)
 			
 	
@@ -78,7 +78,7 @@ func _on_mouse_exited():
 		Cursors.override(
 			Cursors.Type.DEFAULT,
 			Inventory.selected_item.item.image_normal,
-			(item.image_normal as Texture).get_size() / 2
+			(item.image_normal as Texture2D).get_size() / 2
 		)
 
 
@@ -104,13 +104,12 @@ func _on_InventoryItem_pressed():
 			texture_normal = item.image_active
 		else:
 			modulate.a = 0
-			var pos = rect_global_position
+			var pos = global_position
 			var mpos = get_global_mouse_position()
 			Cursors.override(
 				Cursors.Type.DEFAULT,
 				item.image_normal,
-				(item.image_normal as Texture).get_size() / 2,
-				rect_global_position
+				(item.image_normal as Texture2D).get_size() / 2,
+				global_position
 			)
 			Speedy.keep_shape = true
-

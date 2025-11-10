@@ -14,56 +14,67 @@ var _hints_shown: bool = false
 # Basic style configuration
 func _ready():
 	$Control.hide()
-	$Control/Panel.add_stylebox_override(
+	$Control/Panel.add_theme_stylebox_override(
 		"panel",
-		$Control/Panel.get_stylebox(
+		$Control/Panel.get_theme_stylebox(
 			"notepad_panel",
 			"Panel"
 		)
 	)
-	$Control/Goals.add_color_override(
+	$Control/Goals.add_theme_color_override(
 		"font_color",
-		$Control/Goals.get_color(
+		$Control/Goals.get_theme_color(
 			"goals",
 			"Label"
 		)
 	)
-	$Control/Hints.add_color_override(
+	$Control/Hints.add_theme_color_override(
 		"font_color",
-		$Control/Goals.get_color(
+		$Control/Goals.get_theme_color(
 			"hints",
 			"Label"
 		)
 	)
-	$Control/Goals.add_font_override(
+	$Control/Goals.add_theme_font_override(
 		"font",
-		$Control/Goals.get_font(
+		$Control/Goals.get_theme_font(
 			"goals", 
 			"Label"
 		)
 	)
-	$Control/Hints.add_font_override(
+	$Control/Hints.add_theme_font_override(
 		"font",
-		$Control/Hints.get_font(
+		$Control/Hints.get_theme_font(
 			"hints",
 			"Label"
 		)
 	)
-
+	$Control/Goals.add_theme_font_size_override(
+		"font_size",
+		$Control/Goals.get_theme_font_size(
+			"goals", 
+			"Label"
+		)
+	)
+	$Control/Hints.add_theme_font_size_override(
+		"font_size",
+		$Control/Hints.get_theme_font_size(
+			"hints",
+			"Label"
+		)
+	)
 
 # Configure the notepad and load the hints
 func configure(configuration: GameConfiguration):
 	$Control.theme = configuration.design_theme
 	$Control/BackgroundPicture.texture = configuration.notepad_background
 	
-	$Control/Goals.rect_position = configuration.notepad_goals_rect.position
-	$Control/Goals.rect_size = configuration.notepad_goals_rect.size
-	$Control/Hints.rect_position = configuration.notepad_hints_rect.position
-	$Control/Hints.rect_size = configuration.notepad_hints_rect.size
+	$Control/Goals.position = configuration.notepad_goals_rect.position
+	$Control/Goals.size = configuration.notepad_goals_rect.size
+	$Control/Hints.position = configuration.notepad_hints_rect.position
+	$Control/Hints.size = configuration.notepad_hints_rect.size
 		
-	var file = File.new()
-	
-	file.open(configuration.notepad_hints_file, File.READ)
+	var file = FileAccess.open(configuration.notepad_hints_file, FileAccess.READ)
 	
 	var current_goal: Goal = null
 	
@@ -109,7 +120,7 @@ func finished_step(goal_id: int, step: int):
 
 
 # Show the notepad
-func show():
+func display():
 	if EgoVenture.state.current_goal != -1:
 		var goal: Goal = _get_goal(EgoVenture.state.current_goal)
 		$Control/Goals.text = goal.title

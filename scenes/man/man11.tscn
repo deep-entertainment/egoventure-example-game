@@ -1,122 +1,111 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=3 uid="uid://t3r6sxl584g4"]
 
-[ext_resource path="res://addons/egoventure/nodes/four_side_room.tscn" type="PackedScene" id=1]
-[ext_resource path="res://images/man/man11d.jpg" type="Texture" id=2]
-[ext_resource path="res://images/man/man11c.jpg" type="Texture" id=3]
-[ext_resource path="res://images/man/man11b.jpg" type="Texture" id=4]
-[ext_resource path="res://images/man/man11a.jpg" type="Texture" id=5]
-[ext_resource path="res://images/misc/black.jpg" type="Texture" id=6]
-[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=7]
-[ext_resource path="res://scenes/man/man11.gd" type="Script" id=8]
-[ext_resource path="res://addons/egoventure/nodes/hotspots/trigger_hotspot.gd" type="Script" id=9]
-[ext_resource path="res://inventory/matchkey.tres" type="Resource" id=10]
-[ext_resource path="res://sounds/man/man_upper_1st_room_op.ogg" type="AudioStream" id=11]
+[ext_resource type="PackedScene" uid="uid://bajhiyix03pw4" path="res://addons/egoventure/nodes/four_side_room.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://br0mppl1fdupj" path="res://images/man/man11d.jpg" id="2"]
+[ext_resource type="Texture2D" uid="uid://tkngjb7xfttj" path="res://images/man/man11c.jpg" id="3"]
+[ext_resource type="Texture2D" uid="uid://caninge3yrgwp" path="res://images/man/man11b.jpg" id="4"]
+[ext_resource type="Texture2D" uid="uid://cf37on4jcwm6t" path="res://images/man/man11a.jpg" id="5"]
+[ext_resource type="Texture2D" uid="uid://bk0w5hn2ibajn" path="res://images/misc/black.jpg" id="6"]
+[ext_resource type="Script" uid="uid://dxq2ul8jmuuxw" path="res://addons/egoventure/nodes/hotspots/hotspot.gd" id="7"]
+[ext_resource type="Script" uid="uid://btt2lqvknfgf4" path="res://scenes/man/man11.gd" id="8"]
+[ext_resource type="Script" uid="uid://ccgi81v2l3ldm" path="res://addons/egoventure/nodes/hotspots/trigger_hotspot.gd" id="9"]
+[ext_resource type="Resource" uid="uid://ctno0qr4l86v7" path="res://inventory/matchkey.tres" id="10"]
+[ext_resource type="AudioStream" uid="uid://dkjlhagyr3nq8" path="res://sounds/man/man_upper_1st_room_op.ogg" id="11"]
+[ext_resource type="Script" uid="uid://djh4aivp6387u" path="res://addons/egoventure/nodes/cursor_override.gd" id="12_en7gv"]
+[ext_resource type="Script" uid="uid://bj3irbuguu25c" path="res://addons/egoventure/resources/cursor_override_map.gd" id="13_i8b6k"]
+
+[sub_resource type="Resource" id="Resource_awrws"]
+script = ExtResource("13_i8b6k")
+cursor_type_override = 13
+additional_cursor = 0
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 8 )
+script = ExtResource("8")
 
-[node name="Room" parent="." instance=ExtResource( 1 )]
-front_texture = ExtResource( 5 )
-right_texture = ExtResource( 4 )
-back_texture = ExtResource( 3 )
-left_texture = ExtResource( 2 )
+[node name="Room" parent="." instance=ExtResource("1")]
+front_texture = ExtResource("5")
+right_texture = ExtResource("4")
+back_texture = ExtResource("3")
+left_texture = ExtResource("2")
 
-[node name="man_stairs" type="Sprite" parent="."]
+[node name="man_stairs" type="Sprite2D" parent="."]
 visible = false
-position = Vector2( 0, 1440 )
-texture = ExtResource( 6 )
+position = Vector2(0, 1440)
+texture = ExtResource("6")
 centered = false
 
 [node name="eye_on_door" type="TextureButton" parent="."]
-margin_left = 620.0
-margin_top = 1693.0
-margin_right = 1252.0
-margin_bottom = 2331.0
+offset_left = 620.0
+offset_top = 1693.0
+offset_right = 1252.0
+offset_bottom = 2331.0
 mouse_default_cursor_shape = 16
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("7")
 cursor_type = 8
 target_scene = "res://scenes/man/man11c_cl.tscn"
 
 [node name="hand_on_door" type="TextureButton" parent="."]
-margin_left = 590.0
-margin_top = 1663.0
-margin_right = 1320.0
-margin_bottom = 2363.0
+offset_left = 590.0
+offset_top = 1663.0
+offset_right = 1320.0
+offset_bottom = 2363.0
 mouse_default_cursor_shape = 13
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("7")
 cursor_type = 12
 target_scene = "res://scenes/man/man13.tscn"
-effect = ExtResource( 11 )
+effect = ExtResource("11")
 
 [node name="upper_door_hs" type="TextureButton" parent="."]
-margin_left = 390.833
-margin_top = -618.635
-margin_right = 919.833
-margin_bottom = -156.635
+offset_left = 390.833
+offset_top = -618.635
+offset_right = 919.833
+offset_bottom = -156.635
 focus_mode = 0
 mouse_default_cursor_shape = 2
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-visibility_state = ""
-valid_inventory_items = [ ExtResource( 10 ) ]
+script = ExtResource("9")
+valid_inventory_items = [ExtResource("10")]
 
 [node name="hand_on_first_door" type="TextureButton" parent="."]
-margin_left = 349.205
-margin_top = -464.184
-margin_right = 732.205
-margin_bottom = -71.1841
+offset_left = 349.205
+offset_top = -464.184
+offset_right = 732.205
+offset_bottom = -71.1841
 mouse_default_cursor_shape = 13
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("7")
 cursor_type = 12
 target_scene = "res://scenes/man/man12.tscn"
-effect = ExtResource( 11 )
+effect = ExtResource("11")
 
 [node name="Hotspot2" type="TextureButton" parent="."]
-margin_left = 3877.76
-margin_top = 502.556
-margin_right = 4393.76
-margin_bottom = 1022.56
+offset_left = 3877.76
+offset_top = 502.556
+offset_right = 4393.76
+offset_bottom = 1022.56
 mouse_default_cursor_shape = 13
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("7")
 cursor_type = 12
 
 [node name="Hotspot3" type="TextureButton" parent="."]
-margin_left = -1176.34
-margin_top = 525.311
-margin_right = -790.339
-margin_bottom = 938.311
+offset_left = -1176.34
+offset_top = 525.311
+offset_right = -790.339
+offset_bottom = 938.311
 mouse_default_cursor_shape = 13
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("7")
 cursor_type = 12
 
 [node name="Hotspot" type="TextureButton" parent="."]
-margin_left = 1423.0
-margin_top = 2153.0
-margin_right = 2135.0
-margin_bottom = 2804.0
-mouse_default_cursor_shape = 4
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-cursor_type = 15
+offset_left = 1423.0
+offset_top = 2153.0
+offset_right = 2135.0
+offset_bottom = 2804.0
+mouse_default_cursor_shape = 7
+script = ExtResource("7")
+cursor_type = 13
+
+[node name="CursorOverride" type="Node" parent="."]
+script = ExtResource("12_en7gv")
+map = Array[ExtResource("13_i8b6k")]([SubResource("Resource_awrws")])
 
 [connection signal="item_used" from="upper_door_hs" to="." method="_on_TriggerHotspot_item_used"]
 [connection signal="activate" from="Hotspot2" to="." method="_on_Hotspot2_activate"]

@@ -1,30 +1,30 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://dflqfnyfwn4fj"]
 
-[ext_resource path="res://addons/egoventure/nodes/four_side_room.tscn" type="PackedScene" id=1]
-[ext_resource path="res://images/man/man10c.jpg" type="Texture" id=2]
-[ext_resource path="res://images/man/man10b.jpg" type="Texture" id=3]
-[ext_resource path="res://images/man/man10d.jpg" type="Texture" id=4]
-[ext_resource path="res://images/man/man10a.jpg" type="Texture" id=5]
-[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=6]
-[ext_resource path="res://scenes/man/man10.gd" type="Script" id=7]
+[ext_resource type="PackedScene" uid="uid://bajhiyix03pw4" path="res://addons/egoventure/nodes/four_side_room.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://bgfkadpqxf520" path="res://images/man/man10c.jpg" id="2"]
+[ext_resource type="Texture2D" uid="uid://offwhkfef5oh" path="res://images/man/man10b.jpg" id="3"]
+[ext_resource type="Texture2D" uid="uid://y6ycofow4wbf" path="res://images/man/man10d.jpg" id="4"]
+[ext_resource type="Texture2D" uid="uid://brbrjbl8oa4a2" path="res://images/man/man10a.jpg" id="5"]
+[ext_resource type="Script" uid="uid://dxq2ul8jmuuxw" path="res://addons/egoventure/nodes/hotspots/hotspot.gd" id="6"]
+[ext_resource type="Script" uid="uid://dq64e1tp1bbl5" path="res://scenes/man/man10.gd" id="7"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 7 )
+script = ExtResource("7")
 
-[node name="Room" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, 4.48975 )
-front_texture = ExtResource( 5 )
-right_texture = ExtResource( 3 )
-back_texture = ExtResource( 2 )
-left_texture = ExtResource( 4 )
+[node name="Room" parent="." instance=ExtResource("1")]
+position = Vector2(0, 4.48975)
+front_texture = ExtResource("5")
+right_texture = ExtResource("3")
+back_texture = ExtResource("2")
+left_texture = ExtResource("4")
 
 [node name="Hotspot" type="TextureButton" parent="."]
-margin_left = 899.889
-margin_top = 1996.84
-margin_right = 1626.89
-margin_bottom = 2835.84
+offset_left = 899.889
+offset_top = 1996.84
+offset_right = 1626.89
+offset_bottom = 2835.84
 mouse_default_cursor_shape = 3
-script = ExtResource( 6 )
+script = ExtResource("6")
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -32,12 +32,12 @@ target_scene = "res://scenes/man/man09.tscn"
 target_view = "left"
 
 [node name="Hotspot2" type="TextureButton" parent="."]
-margin_left = 3341.31
-margin_top = 136.072
-margin_right = 4238.31
-margin_bottom = 1350.07
+offset_left = 3341.31
+offset_top = 136.072
+offset_right = 4238.31
+offset_bottom = 1350.07
 mouse_default_cursor_shape = 3
-script = ExtResource( 6 )
+script = ExtResource("6")
 __meta__ = {
 "_edit_use_anchors_": false
 }

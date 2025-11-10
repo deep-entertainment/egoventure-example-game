@@ -1,31 +1,37 @@
+@tool
 # A hotspot supporting precaching of scenes and showing a loading
 # screen and playing a tune while doing so
-tool
-class_name MapHotspot, "res://addons/egoventure/images/map_hotspot.svg"
+@icon("res://addons/egoventure/images/map_hotspot.svg")
+class_name MapHotspot
 extends Hotspot
 
 
 # The loading image to show while the scenes for the new location are
 # cached
-export(Texture) var loading_image
+@export var loading_image: Texture2D
 
 # The music that should be played while loading
-export(AudioStream) var location_music
+@export var location_music: AudioStream
 
 # The new location (subdirectory of the scene files)
-export(String) var location = ""
+@export var location: String = ""
 
 # Set the boolean value of this variable in the state to true
-export(String) var state_variable = ""
+@export var state_variable: String = ""
 
 
 # Connect the pressed signal
 func _init():
 	cursor_type = Cursors.Type.MAP
+	super()
 
 
 # Update cache blocking for the target scene, then jump there
 func _on_pressed():
+	# Add node information to test script when recording
+	if EgoVenture.is_test_run_enabled() and TestRun.is_recording():
+		TestRun.test_script.set_node_info(self.get_class(), self.get_path())
+	# Process pressed event
 	release_focus()
 	if Inventory.selected_item == null:
 		Speedy.hidden = true
@@ -38,11 +44,11 @@ func _on_pressed():
 		EgoVenture.target_view = target_view
 		EgoVenture.current_location = location
 		WaitingScreen.set_image(loading_image)
-		var start = OS.get_ticks_msec()
+		var start = Time.get_ticks_msec()
 		var caches = EgoVenture.update_cache(target_scene, true)
 		if caches > 0:
-			yield(EgoVenture, "queue_complete")
-		var end = OS.get_ticks_msec()
+			await EgoVenture.queue_complete
+		var end = Time.get_ticks_msec()
 		if ((end - start) / 1000) < \
 				EgoVenture.configuration.cache_minimum_wait_seconds:
 			EgoVenture.wait_screen(
@@ -52,6 +58,6 @@ func _on_pressed():
 				)
 			)
 			WaitingScreen.is_skippable = true
-			yield(EgoVenture, "waiting_completed")
+			await EgoVenture.waiting_completed
 		Speedy.hidden = false
 		EgoVenture.change_scene(target_scene)

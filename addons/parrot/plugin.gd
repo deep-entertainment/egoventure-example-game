@@ -1,5 +1,5 @@
+@tool
 # Parrot - a simple dialogue plugin
-tool
 extends EditorPlugin
 
 
@@ -16,12 +16,12 @@ func _enter_tree():
 		"Parrot", 
 		"res://addons/parrot/nodes/parrot_dialog.tscn"
 	)
-	add_tool_menu_item("Import Dialog", self, "_on_import_menu_clicked")
-	_importer = preload("res://addons/parrot/nodes/importer.tscn").instance()
+	add_tool_menu_item("Import Dialog", self._on_import_menu_clicked)
+	_importer = preload("res://addons/parrot/nodes/importer.tscn").instantiate()
 	add_child(_importer)
-	add_tool_menu_item("Export Dialog", self, "_on_export_menu_clicked")
+	add_tool_menu_item("Export Dialog", self._on_export_menu_clicked)
 	_exporter = Exporter.new()
-	get_editor_interface().get_editor_viewport().add_child(_exporter)
+	get_editor_interface().get_editor_main_screen().add_child(_exporter)
 
 
 # remove the singleton and the import menu button
@@ -34,10 +34,10 @@ func _exit_tree():
 
 
 # Show the importer on the tool menu
-func _on_import_menu_clicked(_ud):
+func _on_import_menu_clicked():
 	_importer.start_import()
 	
 
 # Show the exporter on the tool menu
-func _on_export_menu_clicked(_ud):
+func _on_export_menu_clicked():
 	_exporter.start_export()

@@ -1,6 +1,6 @@
+@tool
 # Speedy Gonzales - The fastest software mouse cursor in Mexico.
 # (Actually, a software mouse cursor framework)
-tool
 extends EditorPlugin
 
 

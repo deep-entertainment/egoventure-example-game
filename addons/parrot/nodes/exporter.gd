@@ -1,5 +1,5 @@
+@tool
 # A tool to export all dialogs to CSV format
-tool
 class_name Exporter
 extends Control
 
@@ -21,15 +21,14 @@ var _parent_directory: String = ""
 func start_export():
 	if _directory_selector == null:
 		_directory_selector = EditorFileDialog.new()
-		_directory_selector.mode = EditorFileDialog.MODE_OPEN_DIR
+		_directory_selector.file_mode = EditorFileDialog.FILE_MODE_OPEN_DIR
 		_directory_selector.dialog_text = \
 				"Please select a starting directory that contains dialog " +\
 				"resources"
 		add_child(_directory_selector)
 		_directory_selector.connect(
 			"dir_selected", 
-			self, 
-			"_dialog_parent_dir_selected"
+			Callable(self, "_dialog_parent_dir_selected")
 		)
 	_directory_selector.popup_centered_ratio(0.75)
 
@@ -39,7 +38,7 @@ func _dialog_parent_dir_selected(dir: String):
 	_parent_directory = dir
 	if _export_selector == null:
 		_export_selector = EditorFileDialog.new()
-		_export_selector.mode = EditorFileDialog.MODE_SAVE_FILE
+		_export_selector.file_mode = EditorFileDialog.FILE_MODE_SAVE_FILE
 		_export_selector.clear_filters()
 		_export_selector.add_filter("*.csv")
 		_export_selector.dialog_text = \
@@ -47,8 +46,7 @@ func _dialog_parent_dir_selected(dir: String):
 		add_child(_export_selector)
 		_export_selector.connect(
 			"file_selected",
-			self,
-			"_on_export_file_selected"
+			Callable(self, "_on_export_file_selected")
 		)
 	_export_selector.popup_centered_ratio(0.75)
 	
@@ -64,8 +62,7 @@ func _on_export_file_selected(file: String):
 	
 	_export_lines += _get_export_lines(_parent_directory)
 	
-	var csv_file = File.new()
-	csv_file.open(file, File.WRITE)
+	var csv_file = FileAccess.open(file, FileAccess.WRITE)
 	
 	for line in _export_lines:
 		csv_file.store_csv_line(line, delimiter)
@@ -79,9 +76,8 @@ func _on_export_file_selected(file: String):
 # from it
 func _get_export_lines(start_dir):
 	var results = []
-	var dir = Directory.new()
-	dir.open(start_dir)
-	dir.list_dir_begin(true, true)
+	var dir = DirAccess.open(start_dir)
+	dir.list_dir_begin()
 	
 	while true:
 		var entry = dir.get_next()
@@ -93,7 +89,7 @@ func _get_export_lines(start_dir):
 			var resource = ResourceLoader.load(
 				start_dir.plus_file(entry), 
 				"", 
-				true
+				ResourceLoader.CACHE_MODE_REPLACE
 			)
 			if resource is DialogResource:
 				var dialog_id  = entry

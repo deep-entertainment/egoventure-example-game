@@ -24,7 +24,7 @@ var _resource_queue: ResourceQueue
 var _queued_items: Array = []
 
 # Do not remove these scenes from the cache
-var _permanent_cache: PoolStringArray = []
+var _permanent_cache: PackedStringArray = []
 
 # CacheMap is an object containing a Dictionary of scenes and cache parameters
 # Dictionary key: scene name
@@ -74,7 +74,7 @@ var _cache_clear_age: int
 func _init(
 	cache_count: int, 
 	scene_path: String, 
-	permanent_cache: PoolStringArray,
+	permanent_cache: PackedStringArray,
 	cache_max_size: int
 ):
 	_cache_count = cache_count
@@ -124,7 +124,7 @@ func update_progress():
 # 
 # - path: The path to the scene
 func get_scene(path: String) -> PackedScene:
-	if not path in _cache.keys():
+	if not path in _cache.keys() or _cache[path] == null:
 		# add to cache if scene is part of cache map
 		if path in _cache_map.map:
 			var scene = _resource_queue.get_resource(path)

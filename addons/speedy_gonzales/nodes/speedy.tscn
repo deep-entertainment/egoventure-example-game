@@ -1,11 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=3 uid="uid://07ehwiyp3wyp"]
 
-[ext_resource path="res://addons/speedy_gonzales/nodes/speedy.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://cr5tlks67lx8i" path="res://addons/speedy_gonzales/nodes/speedy.gd" id="1"]
 
 [node name="MouseLayer" type="CanvasLayer"]
-pause_mode = 2
+process_mode = 3
 layer = 128
-script = ExtResource( 1 )
+script = ExtResource("1")
 
-[node name="Cursor" type="Sprite" parent="."]
+[node name="Cursor" type="Sprite2D" parent="."]
 centered = false

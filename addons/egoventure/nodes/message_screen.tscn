@@ -1,66 +1,81 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=3 uid="uid://ikhqnr0b3rtv"]
 
-[ext_resource path="res://addons/egoventure/nodes/message_screen.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://doidgueletl4a" path="res://addons/egoventure/nodes/message_screen.gd" id="1_faumj"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="Animation_8vofh"]
 resource_name = "message"
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Screen:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.7, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[node name="CanvasLayer" type="CanvasLayer"]
-pause_mode = 2
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ticli"]
+_data = {
+&"message": SubResource("Animation_8vofh")
+}
+
+[node name="MessageScreen" type="CanvasLayer"]
+process_mode = 3
 layer = 110
-script = ExtResource( 1 )
+script = ExtResource("1_faumj")
 
 [node name="Screen" type="Control" parent="."]
-visible = false
-margin_right = 2560.0
-margin_bottom = 1440.0
+layout_mode = 3
+anchors_preset = 0
+offset_right = 2560.0
+offset_bottom = 1440.0
 mouse_filter = 2
 
 [node name="Panel" type="Panel" parent="Screen"]
-margin_right = 2560.0
-margin_bottom = 1440.0
+layout_mode = 0
+offset_right = 2560.0
+offset_bottom = 1440.0
 mouse_filter = 2
 
 [node name="Margin" type="MarginContainer" parent="Screen"]
-margin_top = 7.0
-margin_right = 2553.0
-margin_bottom = 1433.0
+layout_mode = 0
+offset_right = 2560.0
+offset_bottom = 1440.0
 mouse_filter = 2
 
 [node name="Message" type="Label" parent="Screen/Margin"]
-margin_bottom = 14.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Animation" type="AnimationPlayer" parent="."]
-anims/message = SubResource( 1 )
+libraries = {
+"": SubResource("AnimationLibrary_ticli")
+}
 
 [node name="DebugScreen" type="Control" parent="."]
-visible = false
-margin_right = 2560.0
-margin_bottom = 1440.0
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 2560.0
+offset_bottom = 1440.0
 mouse_filter = 2
 
 [node name="DebugMargin" type="MarginContainer" parent="DebugScreen"]
-margin_right = 2560.0
-margin_bottom = 1440.0
+process_mode = 3
+layout_mode = 0
+offset_right = 2560.0
+offset_bottom = 1440.0
 mouse_filter = 2
 
 [node name="DebugMessage" type="Label" parent="DebugScreen/DebugMargin"]
-margin_right = 2560.0
-margin_bottom = 14.0
+process_mode = 3
+layout_mode = 2
 size_flags_vertical = 0
+horizontal_alignment = 2
+vertical_alignment = 2
 
-[connection signal="animation_finished" from="Animation" to="." method="_on_Animation_animation_finished"]
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_animation_finished"]

@@ -1,90 +1,71 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=3 format=3 uid="uid://b8u77ci3vcb1v"]
 
-[ext_resource path="res://addons/egoventure/nodes/eight_side_room.gd" type="Script" id=1]
-[ext_resource path="res://addons/egoventure/nodes/hotspots/hotspot.gd" type="Script" id=2]
+[ext_resource type="Script" uid="uid://fynbdhg0ask6" path="res://addons/egoventure/nodes/eight_side_room.gd" id="1"]
+[ext_resource type="Script" uid="uid://dxq2ul8jmuuxw" path="res://addons/egoventure/nodes/hotspots/hotspot.gd" id="2"]
 
 [node name="Room" type="Node2D"]
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
+script = ExtResource("1")
 
 [node name="Views" type="Node" parent="."]
 
-[node name="Front" type="Sprite" parent="Views"]
-position = Vector2( 0, -1540 )
+[node name="Front" type="Sprite2D" parent="Views"]
 z_index = -1
-centered = false
-__meta__ = {
-"_editor_description_": "	"
-}
-
-[node name="FrontRight" type="Sprite" parent="Views"]
-position = Vector2( 2660, -1540 )
-z_index = -1
-centered = false
-__meta__ = {
-"_editor_description_": "	"
-}
-
-[node name="FrontLeft" type="Sprite" parent="Views"]
-position = Vector2( -2660, -1540 )
-z_index = -1
-centered = false
-__meta__ = {
-"_editor_description_": "	"
-}
-
-[node name="Right" type="Sprite" parent="Views"]
-position = Vector2( 2660, 0 )
-z_index = -1
+position = Vector2(0, -1540)
 centered = false
 
-[node name="Back" type="Sprite" parent="Views"]
-position = Vector2( 0, 1540 )
+[node name="FrontRight" type="Sprite2D" parent="Views"]
 z_index = -1
+position = Vector2(2660, -1540)
 centered = false
 
-[node name="BackLeft" type="Sprite" parent="Views"]
-position = Vector2( -2660, 1540 )
+[node name="FrontLeft" type="Sprite2D" parent="Views"]
 z_index = -1
+position = Vector2(-2660, -1540)
 centered = false
 
-[node name="BackRight" type="Sprite" parent="Views"]
-position = Vector2( 2660, 1540 )
+[node name="Right" type="Sprite2D" parent="Views"]
 z_index = -1
+position = Vector2(2660, 0)
 centered = false
 
-[node name="Left" type="Sprite" parent="Views"]
-position = Vector2( -2660, 0 )
+[node name="Back" type="Sprite2D" parent="Views"]
 z_index = -1
+position = Vector2(0, 1540)
+centered = false
+
+[node name="BackLeft" type="Sprite2D" parent="Views"]
+z_index = -1
+position = Vector2(-2660, 1540)
+centered = false
+
+[node name="BackRight" type="Sprite2D" parent="Views"]
+z_index = -1
+position = Vector2(2660, 1540)
+centered = false
+
+[node name="Left" type="Sprite2D" parent="Views"]
+z_index = -1
+position = Vector2(-2660, 0)
 centered = false
 
 [node name="Camera" type="Camera2D" parent="."]
 anchor_mode = 0
-current = true
 
 [node name="Left" type="TextureButton" parent="Camera"]
-margin_top = 132.0
-margin_right = 427.0
-margin_bottom = 1453.0
+offset_top = 132.0
+offset_right = 427.0
+offset_bottom = 1453.0
 mouse_default_cursor_shape = 14
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("2")
 cursor_type = 4
 
 [node name="Right" type="TextureButton" parent="Camera"]
-margin_left = 2140.0
-margin_top = 132.0
-margin_right = 2568.0
-margin_bottom = 1452.0
+offset_left = 2140.0
+offset_top = 132.0
+offset_right = 2568.0
+offset_bottom = 1452.0
 mouse_default_cursor_shape = 15
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource("2")
 cursor_type = 3
 
 [connection signal="activate" from="Camera/Left" to="." method="_on_Left_activate"]

@@ -39,10 +39,10 @@ var theme: Theme
 
 # Let parrot ignore game pausing. So dialog will continue
 # playing when a game is paused
-var ignore_pause: bool setget _set_ignore_pause
+var ignore_pause: bool: set = _set_ignore_pause
 
 # Enable skipping dialog lines
-var skip_enabled: bool = true setget _set_skip_enabled
+var skip_enabled: bool = true: set = _set_skip_enabled
 
 
 # The current dialog playing
@@ -69,7 +69,7 @@ func _input(event):
 			event.is_action_released("ui_skip") and \
 			(_timer_length - $Timer.time_left) > DURATION_NO_SKIP:
 		advance()
-		get_tree().set_input_as_handled()
+		get_viewport().set_input_as_handled()
 
 
 # Configure Parrot. Set the theme to be used for the dialogs and the 
@@ -86,42 +86,63 @@ func configure(
 ):
 	theme = p_theme
 	$VBox/Skip/Panel.theme = theme
-	$VBox/Skip/Panel.add_stylebox_override(
+	$VBox/Skip/Panel.add_theme_stylebox_override(
 		"panel", 
-		$VBox/Skip/Panel.get_stylebox("dialog_panel", "Panel")
+		$VBox/Skip/Panel.get_theme_stylebox("dialog_panel", "Panel")
 	)
-	$VBox/Skip/Panel/Margin/Text.add_font_override(
+	$VBox/Skip/Panel/Margin/Text.add_theme_font_override(
 		"mono_font",
-		$VBox/Skip/Panel/Margin/Text.get_font(
+		$VBox/Skip/Panel/Margin/Text.get_theme_font(
 			"dialog_mono_font", 
 			"RichTextLabel"
 		)
 	)
-	$VBox/Skip/Panel/Margin/Text.add_font_override(
+	$VBox/Skip/Panel/Margin/Text.add_theme_font_override(
 		"bold_italics_font",
-		$VBox/Skip/Panel/Margin/Text.get_font(
+		$VBox/Skip/Panel/Margin/Text.get_theme_font(
 			"dialog_bold_italics_font", 
 			"RichTextLabel"
 		)
 	)
-	$VBox/Skip/Panel/Margin/Text.add_font_override(
+	$VBox/Skip/Panel/Margin/Text.add_theme_font_override(
 		"italics_font",
-		$VBox/Skip/Panel/Margin/Text.get_font(
+		$VBox/Skip/Panel/Margin/Text.get_theme_font(
 			"dialog_italics_font", 
 			"RichTextLabel"
 		)
 	)
-	$VBox/Skip/Panel/Margin/Text.add_font_override(
+	$VBox/Skip/Panel/Margin/Text.add_theme_font_override(
 		"bold_font",
-		$VBox/Skip/Panel/Margin/Text.get_font(
+		$VBox/Skip/Panel/Margin/Text.get_theme_font(
 			"dialog_bold_font", 
 			"RichTextLabel"
 		)
 	)
-	$VBox/Skip/Panel/Margin/Text.add_font_override(
+	$VBox/Skip/Panel/Margin/Text.add_theme_font_override(
 		"normal_font",
-		$VBox/Skip/Panel/Margin/Text.get_font(
+		$VBox/Skip/Panel/Margin/Text.get_theme_font(
 			"dialog_normal_font", 
+			"RichTextLabel"
+		)
+	)
+	$VBox/Skip/Panel/Margin/Text.add_theme_font_size_override(
+		"normal_font_size",
+		$VBox/Skip/Panel/Margin/Text.get_theme_font_size(
+			"dialog_normal_font_size", 
+			"RichTextLabel"
+		)
+	)
+	$VBox/Skip/Panel/Margin/Text.add_theme_color_override(
+		"font_outline_color",
+		$VBox/Skip/Panel/Margin/Text.get_theme_color(
+			"dialog_outline_color", 
+			"RichTextLabel"
+		)
+	)
+	$VBox/Skip/Panel/Margin/Text.add_theme_constant_override(
+		"outline_size",
+		$VBox/Skip/Panel/Margin/Text.get_theme_constant(
+			"dialog_outline_size", 
 			"RichTextLabel"
 		)
 	)
@@ -254,12 +275,13 @@ func advance():
 		
 		if subtitles:
 			print_debug("Displaying subtitles")
-			$VBox/Skip/Panel/Margin/Text.bbcode_text = \
-				"[color=#%s][center]%s[/center][/color]" % [
+			$VBox/Skip/Panel/Margin/Text.text = \
+				"[center][color=#%s]%s[/color][/center]" % [
 					character.color.to_html(false), 
 					text
 				]
 			$VBox.show()
+			pass
 		
 		$Timer.start(line_length)
 		_timer_length = line_length
@@ -274,9 +296,9 @@ func _on_Timer_timeout():
 func _set_ignore_pause(value: bool):
 	ignore_pause = value
 	if ignore_pause:
-		pause_mode = Node.PAUSE_MODE_PROCESS
+		process_mode = Node.PROCESS_MODE_ALWAYS
 	else:
-		pause_mode = Node.PAUSE_MODE_STOP
+		process_mode = Node.PROCESS_MODE_PAUSABLE
 
 
 # Set whether skipping is enabled or not
@@ -290,3 +312,8 @@ func _set_skip_enabled(value: bool):
 	$VBox/Spacer.mouse_filter = Control.MOUSE_FILTER_STOP if skip_enabled else Control.MOUSE_FILTER_IGNORE
 	$VBox/Skip.mouse_filter = Control.MOUSE_FILTER_STOP if skip_enabled else Control.MOUSE_FILTER_IGNORE
 	$VBox/Skip/Panel.mouse_filter = Control.MOUSE_FILTER_STOP if skip_enabled else Control.MOUSE_FILTER_IGNORE
+
+
+# Returns whether dialog is currently playing
+func is_dialog_playing() -> bool:
+	return _dialog_playing

@@ -1,0 +1,292 @@
+[gd_scene load_steps=7 format=3 uid="uid://chuyhmabgscys"]
+
+[ext_resource type="Script" uid="uid://dgjr7xsq7dhbb" path="res://scenes/boombox_test.gd" id="1_v1qhd"]
+[ext_resource type="Texture2D" uid="uid://cydeq5426ycq6" path="res://images/man/man03b_cl.jpg" id="2_t8lbv"]
+[ext_resource type="FontFile" uid="uid://bkm6ajvccj7kr" path="res://misc/fonts/Flareserif821BT-fixed.ttf" id="3_yluva"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejlv3"]
+bg_color = Color(0, 0, 0, 0.843137)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6gxvx"]
+bg_color = Color(0.268749, 0.402295, 0.274509, 0.482353)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a4qjw"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_v1qhd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_t8lbv")
+centered = false
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 2560.0
+offset_bottom = 1440.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ejlv3")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 935.0
+offset_top = 44.0
+offset_right = 1579.0
+offset_bottom = 123.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 64
+text = "Boombox Demo Screen"
+
+[node name="Music" type="Label" parent="."]
+offset_left = 174.0
+offset_top = 242.0
+offset_right = 818.0
+offset_bottom = 321.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 64
+text = "Music"
+horizontal_alignment = 1
+
+[node name="MB1" type="Button" parent="Music"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 195.0
+offset_right = 608.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6gxvx")
+text = "Music off"
+
+[node name="MB2" type="Button" parent="Music"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 303.0
+offset_right = 608.0
+offset_bottom = 370.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6gxvx")
+text = "guitar.ogg
+"
+
+[node name="MB3" type="Button" parent="Music"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 411.0
+offset_right = 608.0
+offset_bottom = 478.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6gxvx")
+text = "piano+stina.ogg (x-fading)
+"
+
+[node name="MB4" type="Button" parent="Music"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 521.0
+offset_right = 608.0
+offset_bottom = 588.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6gxvx")
+text = "Add blue.ogg
+"
+
+[node name="MB5" type="Button" parent="Music"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 631.0
+offset_right = 608.0
+offset_bottom = 698.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6gxvx")
+text = "Remove blue.ogg
+"
+
+[node name="Background" type="Label" parent="."]
+offset_left = 940.0
+offset_top = 242.0
+offset_right = 1584.0
+offset_bottom = 321.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 64
+text = "Background"
+horizontal_alignment = 1
+
+[node name="BB1" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 195.0
+offset_right = 622.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6gxvx")
+text = "Background off"
+
+[node name="BB2" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 300.0
+offset_right = 622.0
+offset_bottom = 367.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6gxvx")
+text = "bg_birds_new2.ogg"
+
+[node name="BB3" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 408.0
+offset_right = 622.0
+offset_bottom = 475.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6gxvx")
+text = "Add clock.ogg"
+
+[node name="BB7" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 519.0
+offset_right = 622.0
+offset_bottom = 586.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6gxvx")
+text = "Remove clock.ogg"
+
+[node name="BB4" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 629.0
+offset_right = 622.0
+offset_bottom = 696.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6gxvx")
+text = "-"
+
+[node name="BB5" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 479.0
+offset_top = 629.0
+offset_right = 541.0
+offset_bottom = 696.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6gxvx")
+text = "+"
+
+[node name="BB6" type="Button" parent="Background"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 730.0
+offset_right = 622.0
+offset_bottom = 798.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_a4qjw")
+text = "Volume \"Touchpad\""
+
+[node name="Volume" type="Label" parent="Background"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 635.0
+offset_right = 455.0
+offset_bottom = 694.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+text = "Volume: 100"
+horizontal_alignment = 1
+
+[node name="Effects" type="Label" parent="."]
+offset_left = 1717.0
+offset_top = 242.0
+offset_right = 2361.0
+offset_bottom = 321.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 64
+text = "Effects"
+horizontal_alignment = 1
+
+[node name="EB1" type="Button" parent="Effects"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 195.0
+offset_right = 613.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6gxvx")
+text = "stairs.ogg"
+
+[node name="EB2" type="Button" parent="Effects"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 301.0
+offset_right = 613.0
+offset_bottom = 368.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6gxvx")
+text = "upper_hall_box_op.ogg"
+
+[node name="EB3" type="Button" parent="Effects"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 407.0
+offset_right = 613.0
+offset_bottom = 474.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6gxvx")
+text = "gate.ogg"
+
+[node name="EB4" type="Button" parent="Effects"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 518.0
+offset_right = 613.0
+offset_bottom = 585.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6gxvx")
+text = "map_icon.ogg"
+
+[node name="EB5" type="Button" parent="Effects"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 624.0
+offset_right = 613.0
+offset_bottom = 691.0
+theme_override_fonts/font = ExtResource("3_yluva")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_6gxvx")
+text = "cheers.ogg"
+
+[connection signal="pressed" from="Music/MB1" to="." method="_on_mb_1_pressed"]
+[connection signal="pressed" from="Music/MB2" to="." method="_on_mb_2_pressed"]
+[connection signal="pressed" from="Music/MB3" to="." method="_on_mb_3_pressed"]
+[connection signal="pressed" from="Music/MB4" to="." method="_on_mb_4_pressed"]
+[connection signal="pressed" from="Music/MB5" to="." method="_on_mb_5_pressed"]
+[connection signal="pressed" from="Background/BB1" to="." method="_on_bb_1_pressed"]
+[connection signal="pressed" from="Background/BB2" to="." method="_on_bb_2_pressed"]
+[connection signal="pressed" from="Background/BB3" to="." method="_on_bb_3_pressed"]
+[connection signal="pressed" from="Background/BB7" to="." method="_on_bb_7_pressed"]
+[connection signal="pressed" from="Background/BB4" to="." method="_on_bb_4_pressed"]
+[connection signal="pressed" from="Background/BB5" to="." method="_on_bb_5_pressed"]
+[connection signal="pressed" from="Effects/EB1" to="." method="_on_eb_1_pressed"]
+[connection signal="pressed" from="Effects/EB2" to="." method="_on_eb_2_pressed"]
+[connection signal="pressed" from="Effects/EB3" to="." method="_on_eb_3_pressed"]
+[connection signal="pressed" from="Effects/EB4" to="." method="_on_eb_4_pressed"]
+[connection signal="pressed" from="Effects/EB5" to="." method="_on_eb_5_pressed"]

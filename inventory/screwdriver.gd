@@ -8,4 +8,4 @@ func _ready():
 
 
 func _on_Hotspot_activate():
-	DetailView.hide()
+	DetailView.close()

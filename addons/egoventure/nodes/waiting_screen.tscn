@@ -1,90 +1,91 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=3 uid="uid://c8m5v2h7ityod"]
 
-[ext_resource path="res://addons/egoventure/nodes/waiting_screen.gd" type="Script" id=1]
+[ext_resource type="Script" uid="uid://8bsaw4s2uobo" path="res://addons/egoventure/nodes/waiting_screen.gd" id="1"]
 
-[sub_resource type="StyleBoxEmpty" id=1]
+[sub_resource type="StyleBoxEmpty" id="1"]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 resource_name = "non_skippable"
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Screen/Panel/ProgressBar:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id="3"]
 resource_name = "skippable"
 length = 2.0
-loop = true
+loop_mode = 1
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Screen/Panel/ProgressBar:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4o7ya"]
+_data = {
+&"non_skippable": SubResource("2"),
+&"skippable": SubResource("3")
 }
 
 [node name="WaitingScreen" type="CanvasLayer"]
-pause_mode = 2
+process_mode = 3
 layer = 126
-script = ExtResource( 1 )
+script = ExtResource("1")
 
 [node name="Screen" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Background" type="Sprite" parent="Screen"]
+[node name="Background" type="Sprite2D" parent="Screen"]
 centered = false
 
 [node name="Panel" type="Panel" parent="Screen"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_styles/panel = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+theme_override_styles/panel = SubResource("1")
 
 [node name="TextureRect" type="TextureRect" parent="Screen/Panel"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-expand = true
+expand_mode = 1
 stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ProgressBar" type="ProgressBar" parent="Screen/Panel"]
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = -12.0
-rect_min_size = Vector2( 0, 12 )
+offset_top = -12.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
-percent_visible = false
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="ProgressBarAnimation" type="AnimationPlayer" parent="."]
-anims/non_skippable = SubResource( 2 )
-anims/skippable = SubResource( 3 )
+libraries = {
+"": SubResource("AnimationLibrary_4o7ya")
+}
 
 [connection signal="gui_input" from="Screen/Panel" to="." method="_on_skip"]

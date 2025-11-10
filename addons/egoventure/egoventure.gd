@@ -22,6 +22,9 @@ var state: BaseState
 # Path of the current scene
 var current_scene: String = ""
 
+# Is the current scene a multi side room
+var current_scene_is_multi_side: bool = false
+
 # The current view of the four side room
 var current_view: String = ""
 
@@ -48,19 +51,19 @@ var saves_exist: bool = false
 var wait_timer: Timer
 
 # Whether the game currently accepts input
-var interactive: bool = true setget _set_interactive
-
+var interactive: bool = true: set = _set_interactive
 
 # A cache of scenes for faster switching
 var _scene_cache: SceneCache
 
-
 # Helper variable if we're on a touch device
 var is_touch: bool
 
-
 # A texture for an empty image
 var _empty_image_texture: ImageTexture = null
+
+# Test run enabled
+var _test_run_enabled: bool = false
 
 
 # Load the ingame configuration
@@ -68,10 +71,9 @@ func _init():
 	# Workaround for faulty feature detection as described in
 	# https://github.com/godotengine/godot/issues/49113
 	is_touch = OS.get_name() == "Android" || OS.get_name() == "iOS"
-	pause_mode = Node.PAUSE_MODE_PROCESS
-	var userdir = Directory.new()
-	userdir.open("user://")
-	userdir.list_dir_begin(true, true)
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	var userdir = DirAccess.open("user://")
+	userdir.list_dir_begin()
 	var file = userdir.get_next()
 	while file != "":
 		if file.match("save_*.tres"):
@@ -79,6 +81,11 @@ func _init():
 			break
 		file = userdir.get_next()
 	userdir.list_dir_end()
+	if !state:
+		state = GameState.new()
+	# INFO: Cursors.configure is needed here to ensure that the Cursors are
+	# defined when starting a scene directly from Godot editor.
+	Cursors.configure(preload("res://configuration.tres"))
 
 
 # Create the wait timer
@@ -87,7 +94,15 @@ func _ready():
 	wait_timer.one_shot = true
 	add_child(wait_timer)
 	Boombox.reset()
-	WaitingScreen.connect("skipped", self, "wait_skipped")
+	WaitingScreen.connect("skipped", Callable(self, "wait_skipped"))
+	# Only process TestRun in case it is a debug build
+	# and not running on touch devices
+	if !is_touch and OS.is_debug_build():
+		TestRun.process_mode = Node.PROCESS_MODE_INHERIT
+		_test_run_enabled = true
+	else:
+		TestRun.process_mode = Node.PROCESS_MODE_DISABLED
+		_test_run_enabled = false
 
 
 # Update the scene cache
@@ -103,7 +118,7 @@ func _process(_delta):
 		)
 	else:
 		_scene_cache.update_progress()
-	
+
 
 # Configure the game from the game's core class
 #
@@ -115,10 +130,10 @@ func configure(p_configuration: GameConfiguration):
 	_load_in_game_configuration()
 	TranslationServer.set_locale(self.in_game_configuration.locale)
 	MainMenu.configure(configuration)
-	MainMenu.connect("quit_game", self, "_on_quit_game")
+	MainMenu.connect("quit_game", self._on_quit_game)
 	Notepad.configure(configuration)
 	Inventory.configure(configuration)
-	Cursors.configure(configuration)
+	#Cursors.configure(configuration)
 	_scene_cache = SceneCache.new(
 		configuration.cache_scene_count, 
 		configuration.cache_scene_path,
@@ -126,7 +141,7 @@ func configure(p_configuration: GameConfiguration):
 		configuration.cache_maximum_size_megabyte
 	)
 	MenuGrab.set_top(configuration.inventory_size)
-	_scene_cache.connect("queue_complete", self, "_on_queue_complete")
+	_scene_cache.connect("queue_complete", self._on_queue_complete)
 	Parrot.configure(
 		configuration.design_theme,
 		configuration.tools_dialog_stretch_ratio,
@@ -138,7 +153,7 @@ func configure(p_configuration: GameConfiguration):
 
 # Save the continue state when going into background on mobile
 func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT \
+	if what == MainLoop.NOTIFICATION_APPLICATION_FOCUS_OUT \
 			and is_touch:
 		save_continue()
 
@@ -155,20 +170,25 @@ func change_scene(path: String, load_game_mode: bool = false):
 		return
 	
 	print("Changing to %s" % path)
+	RenderingServer.render_loop_enabled = false
 	if path != current_scene:
 		current_scene = path
-		get_tree().change_scene_to(_scene_cache.get_scene(path))
+		get_tree().change_scene_to_packed(_scene_cache.get_scene(path))
 	else:
-		# reload current scene when a savegame gets loaded
 		get_tree().reload_current_scene()
-	
-	yield(get_tree(),"idle_frame")
-	var is_multi_side_room = false
+	await get_tree().node_added
+	RenderingServer.render_loop_enabled = true
+	current_scene_is_multi_side = false
 	for child in get_tree().current_scene.get_children():
-		if child.filename in \
+		if child.scene_file_path in \
 				["res://addons/egoventure/nodes/four_side_room.tscn",
 				"res://addons/egoventure/nodes/eight_side_room.tscn"]:
-			is_multi_side_room = true
+			current_scene_is_multi_side = true
+	# update cursor shape after scene change
+	Speedy.keep_shape_once = false
+	Speedy.keep_shape = false
+	Speedy.check_shape()
+	
 	# update cache when scene is changed
 	update_cache(path)
 
@@ -192,8 +212,8 @@ func save(slot: int):
 	saves_exist = true
 	_update_state()
 	ResourceSaver.save(
-		"user://save_%d.tres" % slot, 
 		EgoVenture.state,
+		"user://save_%d.tres" % slot, 
 		ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS
 	)
 
@@ -209,8 +229,8 @@ func save_continue():
 # Save the in game configuration
 func save_in_game_configuration():
 	ResourceSaver.save(
-		"user://in_game_configuration.tres", 
 		in_game_configuration,
+		"user://in_game_configuration.tres", 
 		ResourceSaver.FLAG_REPLACE_SUBRESOURCE_PATHS
 	)
 
@@ -221,7 +241,7 @@ func save_in_game_configuration():
 #
 # -slot: The save slot index to load
 func load(slot: int):
-	_load(ResourceLoader.load("user://save_%d.tres" % slot, "", true))
+	_load(ResourceLoader.load("user://save_%d.tres" % slot, "", ResourceLoader.CACHE_MODE_REPLACE))
 	
 
 # Load the game from the continue state
@@ -244,7 +264,7 @@ func set_audio_levels():
 		AudioServer.get_bus_index("Effects"),
 		options_get_effects_level()
 	)
-	
+
 
 # Cache scenes for better loading performance
 #
@@ -257,7 +277,7 @@ func update_cache(scene: String = "", blocking = false) -> int:
 	if scene == "":
 		scene = _get_current_scene().filename
 	if blocking:
-		WaitingScreen.show()
+		WaitingScreen.display()
 		WaitingScreen.is_skippable = false
 	return _scene_cache.update_cache(scene)
 
@@ -339,28 +359,31 @@ func options_get_effects_level() -> float:
 
 # Set full screen according to game configuration
 func set_full_screen():
+	var window = get_window()
 	if in_game_configuration.fullscreen:
-		OS.window_fullscreen = true
+		window.mode = Window.MODE_EXCLUSIVE_FULLSCREEN
 	else:
-		OS.window_fullscreen = false
-		
-		var game_size = Vector2(
-			ProjectSettings.get("display/window/size/width"),
-			ProjectSettings.get("display/window/size/height")
+		window.mode = Window.MODE_WINDOWED
+		# Size of the game's viewport
+		var game_size = Vector2i(
+			ProjectSettings.get("display/window/size/viewport_width"),
+			ProjectSettings.get("display/window/size/viewport_height")
 		)
+		# Get the usable screen rectangle (position and size)
+		var screen_rect = DisplayServer.screen_get_usable_rect()
+		# Determine the size of the window decoration
+		var decor_size = window.get_size_with_decorations() - window.size
+		# The window's target size is game size + window decorations
+		var target_size: Vector2i = game_size + decor_size
+		if target_size > screen_rect.size:
+			# For the scale ratio include the window decoration
+			var scale_ratio: float = min(float(screen_rect.size.x) / float(target_size.x),
+								float(screen_rect.size.y) / float(target_size.y))
+			window.size = Vector2i(game_size * scale_ratio * 0.95)
 		
-		if game_size > OS.get_screen_size():
-			var target_size = OS.get_screen_size() * .9
-			if OS.get_screen_size().x > OS.get_screen_size().y:
-				target_size = OS.get_screen_size().clamped(
-					OS.get_screen_size().x
-				) * .99
-			elif OS.get_screen_size().x < OS.get_screen_size().y:
-				target_size = OS.get_screen_size().clamped(
-					OS.get_screen_size().y
-				) * .99
-			OS.window_size = target_size
-		OS.center_window()
+		window.position = screen_rect.position + \
+				(screen_rect.size - window.size) / 2
+		print(window.position)
 
 
 # Reset the game to the default
@@ -377,12 +400,9 @@ func reset():
 
 # Show a waiting screen for the given time
 func wait_screen(time: float):
-	WaitingScreen.show()
+	WaitingScreen.display()
 	wait_timer.start(time)
-	yield(
-		wait_timer,
-		"timeout"
-	)
+	await wait_timer.timeout
 	WaitingScreen.hide()
 	emit_signal("waiting_completed")
 
@@ -402,18 +422,26 @@ func reset_continue_state():
 
 # Update the state with the current values
 func _update_state():
-	EgoVenture.state.current_scene = _get_current_scene().filename
+	EgoVenture.state.current_scene = _get_current_scene().scene_file_path
 	EgoVenture.state.target_view = EgoVenture.current_view
-	EgoVenture.state.target_location = EgoVenture.current_location
+	EgoVenture.state.target_position = EgoVenture.current_location
 	EgoVenture.state.inventory_items = Inventory.get_items()
-	if Boombox.is_music_playing() and Boombox.get_music():
-		EgoVenture.state.current_music = Boombox.get_music().resource_path
+	if (
+		(Boombox.is_music_playing()
+		or (Boombox.is_music_paused() and get_tree().paused))
+		and Boombox.get_music()
+	):
+		EgoVenture.state.current_music = Boombox.get_music() #.resource_path
 	else:
-		EgoVenture.state.current_music = ""
-	if Boombox.is_background_playing() and Boombox.get_background():
-		EgoVenture.state.current_background = Boombox.get_background().resource_path
+		EgoVenture.state.current_music = [] #""
+	if (
+		(Boombox.is_background_playing()
+		or (Boombox.is_background_paused() and get_tree().paused))
+		and Boombox.get_background()
+	):
+		EgoVenture.state.current_background = Boombox.get_background() #.resource_path
 	else:
-		EgoVenture.state.current_background = ""
+		EgoVenture.state.current_background = [] #""
 
 
 # Load a saved state. Reset the game first.
@@ -431,7 +459,7 @@ func _load(p_state: BaseState):
 	for goal_fulfilled in p_state.goals_fulfilled:
 		EgoVenture.state.goals_fulfilled.append(goal_fulfilled.duplicate())
 	EgoVenture.target_view = EgoVenture.state.target_view
-	EgoVenture.current_location = EgoVenture.state.target_location
+	EgoVenture.current_location = EgoVenture.state.target_position
 	
 	self.set_parrot_skip_enabled(state.parrot_skip_enabled)
 	
@@ -440,8 +468,8 @@ func _load(p_state: BaseState):
 	for item in state.inventory_items:
 		Inventory.add_item(item, true)
 	
-	for reset_type in Cursors.Type:
-		Cursors.reset(Cursors.Type[reset_type])
+	for reset_type in Cursors.CURSOR_MAP:
+		Cursors.reset(reset_type)
 
 	for cursor_type in p_state.overridden_cursors:
 		var _cursor = p_state.overridden_cursors[cursor_type]
@@ -454,40 +482,49 @@ func _load(p_state: BaseState):
 	Parrot.cancel()
 	
 	if _empty_image_texture == null:
-		var empty_image: Image = Image.new()
-		empty_image.create(
-			ProjectSettings.get("display/window/size/width"),
-			ProjectSettings.get("display/window/size/height"),
+		var empty_image: Image = Image.create(
+			ProjectSettings.get("display/window/size/viewport_width"),
+			ProjectSettings.get("display/window/size/viewport_height"),
 			true,
 			Image.FORMAT_RGBA8
 		)
-		empty_image.fill(Color.black)
-		_empty_image_texture = ImageTexture.new()
-		_empty_image_texture.create_from_image(empty_image)
+		empty_image.fill(Color.BLACK)
+		_empty_image_texture = ImageTexture.create_from_image(empty_image)
 	
 	WaitingScreen.set_image(_empty_image_texture)
 	
 	var cached_items = update_cache(EgoVenture.state.current_scene, true)
 	if cached_items > 0:
-		yield(self, "queue_complete")
+		await self.queue_complete
 	
 	change_scene(EgoVenture.state.current_scene, true)
 	
-	if EgoVenture.state.current_music != "":
-		Boombox.play_music(load(EgoVenture.state.current_music))
+	if EgoVenture.state.current_music.size() > 0:
+		var music_list: Array = []
+		for music in EgoVenture.state.current_music:
+			music_list.append([
+					load(music[0]),
+					music[1],
+					music[2]])
+		Boombox.play_music_list(music_list)
 		
-	if EgoVenture.state.current_background != "":
-		Boombox.play_background(load(EgoVenture.state.current_background))
+	if EgoVenture.state.current_background.size() > 0:
+		var background_list: Array = []
+		for background in EgoVenture.state.current_background:
+			background_list.append([
+					load(background[0]),
+					background[1],
+					background[2]])
+		Boombox.play_background_list(background_list)
 		
 	emit_signal("game_loaded")
 
 
 # Load the in game configuration
 func _load_in_game_configuration():
-	var conf_path = Directory.new()
-	conf_path.open("user://")
+	var conf_path = DirAccess.open("user://")
 	if conf_path.file_exists("in_game_configuration.tres"):
-		in_game_configuration = ResourceLoader.load("user://in_game_configuration.tres", "", true)
+		in_game_configuration = ResourceLoader.load("user://in_game_configuration.tres", "", ResourceLoader.CACHE_MODE_REPLACE)
 	else:
 		in_game_configuration = InGameConfiguration.new()
 	options_set_subtitles(in_game_configuration.subtitles)
@@ -528,19 +565,15 @@ func _set_interactive(value: bool):
 	interactive = value
 	if self.interactive:
 		Speedy.hidden = false
-		Boombox.ignore_pause = false
-		Parrot.ignore_pause = false
 		get_tree().paused = false
 	else:
 		Speedy.hidden = true
-		Boombox.ignore_pause = true
-		Parrot.ignore_pause = true
 		get_tree().paused = true
 
 
 # Pauses the game for a given duration
 # Can be called from scripts with
-# 'yield(EgoVenture.pause(<duration>, <hide_mouse>), "completed")'
+# 'await EgoVenture.pause(<duration>, <hide_mouse>)'
 #
 # ** Arguments **
 #
@@ -555,16 +588,23 @@ func pause(duration: float = 1.0, hide_mouse:bool = true) -> void:
 		Speedy.hidden = true
 	# Pause game in case it wasn't set to non-interactive before
 	if interactive:
-		Boombox.ignore_pause = true
-		Parrot.ignore_pause = true
 		get_tree().paused = true
-	# Wait for duration in seconds	
-	yield(get_tree().create_timer(duration), "timeout")
+	# Wait for duration in seconds
+	await get_tree().create_timer(duration).timeout
 	# Show mouse in case it was hidden and visible before the pause
 	if hide_mouse and !mouse_was_hidden:
 		Speedy.hidden = false
 	# Resume game in case it wasn't set to non-interactive before
 	if interactive:
-		Boombox.ignore_pause = false
-		Parrot.ignore_pause = false
 		get_tree().paused = false
+
+
+# Get the current updated EgoVenture state
+func get_state() -> BaseState:
+	_update_state()
+	return state.duplicate()
+
+
+# Return whether test run is enabled
+func is_test_run_enabled() -> bool:
+	return _test_run_enabled

@@ -1,4 +1,4 @@
-# A waiting screen shown when the scene cache is updatede
+# A waiting screen shown when the scene cache is updated
 extends CanvasLayer
 
 
@@ -7,7 +7,7 @@ signal skipped
 
 
 # Whether the loading is currently skippable
-var is_skippable: bool = false setget _change_skippable
+var is_skippable: bool = false: set = _change_skippable
 
 
 # Hide the screen as default
@@ -17,17 +17,18 @@ func _ready():
 
 
 # Show the waiting screen
-func show():
+func display():
 	$Screen.show()
-	
+	show()
+
 
 # Hide the waiting screen
 func hide():
 	$Screen.hide()
-	
+
 
 # Is the waiting screen visible currently?
-func is_visible():
+func is_displayed():
 	return $Screen.visible
 
 
@@ -48,7 +49,7 @@ func set_progress(value: float):
 # ** Parameters **
 #
 # - image: The image to set
-func set_image(image: Texture):
+func set_image(image: Texture2D):
 	$Screen/Panel/TextureRect.texture = image
 
 

@@ -1,11 +1,11 @@
+@tool
 # A button for the EgoVenture main menu
-tool
 class_name EgoVentureMenuButton
 extends Button
 
 
 # Signal emitted when button is pressed (adds a sound effect before emitting)
-signal button_pressed
+signal menu_button_pressed
 
 
 # The audio stream player to play the button hover and click effects
@@ -15,46 +15,47 @@ var _effect_player: AudioStreamPlayer
 # Create custom styleboxes for normal and hover, connect signals and add
 # the audio stream player
 func _ready():
-	connect("mouse_entered", self, "_on_menuitem_hover")
-	connect("mouse_exited", self, "_on_menuitem_hover_out")
-	connect("pressed", self, "_on_menuitem_pressed")
+	connect("mouse_entered", self._on_menuitem_hover)
+	connect("mouse_exited", self._on_menuitem_hover_out)
+	connect("pressed", self._on_menuitem_pressed)
 	
 	_effect_player = AudioStreamPlayer.new()
 	_effect_player.bus = "Effects"
 	add_child(_effect_player)
 	
-	add_stylebox_override(
+	add_theme_stylebox_override(
 		"normal", 
-		get_stylebox(
+		get_theme_stylebox(
 			"menu_button_normal", 
 			"Button"
 		)
 	)
-	add_stylebox_override(
+	add_theme_stylebox_override(
 		"hover", 
-		get_stylebox(
+		get_theme_stylebox(
 			"menu_button_hover", 
 			"Button"
 		)
 	)
-	add_stylebox_override(
+	add_theme_stylebox_override(
 		"disabled", 
-		get_stylebox(
+		get_theme_stylebox(
 			"menu_button_disabled", 
 			"Button"
 		)
 	)
-	add_stylebox_override(
+	add_theme_stylebox_override(
 		"pressed", 
-		get_stylebox(
+		get_theme_stylebox(
 			"menu_button_pressed", 
 			"Button"
 		)
 	)
-	add_stylebox_override(
+	add_theme_stylebox_override(
 		"focus",
 		StyleBoxEmpty.new()
 	)
+	
 	_on_menuitem_hover_out()
 	
 	# disable focus for menu buttons
@@ -66,10 +67,31 @@ func _ready():
 # Switch fonts to allow more features on hover
 func _on_menuitem_hover():
 	if !disabled:
-		add_font_override(
+		add_theme_font_override(
 			"font",
-			get_font(
+			get_theme_font(
 				"menu_button_hover",
+				"Button"
+			)
+		)
+		add_theme_font_size_override(
+			"font_size",
+			get_theme_font_size(
+				"menu_button_hover_font_size",
+				"Button"
+			)
+		)
+		add_theme_color_override(
+			"font_outline_color",
+			get_theme_color(
+				"menu_button_hover_outline_color",
+				"Button"
+			)
+		)
+		add_theme_constant_override(
+			"outline_size",
+			get_theme_constant(
+				"menu_button_hover_outline_size",
 				"Button"
 			)
 		)
@@ -79,16 +101,37 @@ func _on_menuitem_hover():
 
 # Set menu font
 func _on_menuitem_hover_out():
-	add_font_override(
+	add_theme_font_override(
 		"font",
-		get_font(
+		get_theme_font(
 			"menu_button",
 			"Button"
 		)
 	)
+	add_theme_font_size_override(
+			"font_size",
+			get_theme_font_size(
+				"menu_button_font_size",
+				"Button"
+			)
+		)
+	add_theme_color_override(
+			"font_outline_color",
+			get_theme_color(
+				"menu_button_outline_color",
+				"Button"
+			)
+		)
+	add_theme_constant_override(
+			"outline_size",
+			get_theme_constant(
+				"menu_button_outline_size",
+				"Button"
+			)
+		)
 
 # On pressed, play sound effect and emit our own pressed signal
 func _on_menuitem_pressed():
 	_effect_player.stream = EgoVenture.configuration.menu_button_effect_click
 	_effect_player.play()
-	emit_signal("button_pressed")
+	emit_signal("menu_button_pressed")

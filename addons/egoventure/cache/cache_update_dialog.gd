@@ -1,6 +1,6 @@
-tool
+@tool
 class_name CacheUpdateDialog
-extends WindowDialog
+extends Window
 
 
 # List of scenes to be scanned in full run mode
@@ -18,7 +18,6 @@ var _cache_map_time_modified: int
 # Show the cache update dialog popup
 func show_popup():
 	# Configure buttons
-	get_close_button().hide()
 	$VBox/HBoxContainer/RunDelta.set_disabled(false)
 	$VBox/HBoxContainer/RunFull.set_disabled(false)
 	$VBox/HBoxContainer/Cancel.set_disabled(false)
@@ -31,8 +30,7 @@ func show_popup():
 	# Retrieve CacheMap and last modified timestamp
 	if ResourceLoader.exists("res://cache_map.tres"):
 		_cache_map = ResourceLoader.load("res://cache_map.tres")
-		var file = File.new()
-		_cache_map_time_modified = file.get_modified_time("res://cache_map.tres")
+		_cache_map_time_modified = FileAccess.get_modified_time("res://cache_map.tres")
 	else:
 		_cache_map_time_modified = 0
 	
@@ -46,7 +44,7 @@ func show_popup():
 	$VBox/ProgressBar.value = 0.0
 	self.popup_centered()
 	# Resize popup to ensure that it fits to rendered nodes
-	self.set_size($VBox.get_rect().size+Vector2(20,20))
+	#self.set_size($VBox.get_rect().size+Vector2(20,20))
 
 
 # Start updating the cache map
@@ -73,7 +71,7 @@ func _on_Run_pressed(full_mode: bool):
 	
 	print("\nUpdate of Cache Map started")
 	
-	yield(get_tree(),"idle_frame") # required for progress bar
+	await get_tree().process_frame # required for progress bar
 	
 	# Iterate through all scenes
 	for scene_name in scene_list:
@@ -83,7 +81,7 @@ func _on_Run_pressed(full_mode: bool):
 		scene_index += 1
 		var scene = ResourceLoader.load(scene_name)
 		if scene.is_class("PackedScene"):
-			var scene_node = scene.instance()
+			var scene_node = scene.instantiate()
 			if $VBox/HBoxContainer/Verbose.pressed:
 				print("Scan scene " + scene_name)
 			# Scan the scene to retrieve estimated size in kB and adjacent scenes
@@ -94,10 +92,10 @@ func _on_Run_pressed(full_mode: bool):
 		_cache_map.map[scene_name] = scan_result
 
 		$VBox/ProgressBar.set_value(float(scene_index) / scene_list.size() * 100)
-		yield(get_tree(),"idle_frame")
+		await get_tree().process_frame
 	
 	# Save result in fixed resource root directory
-	var err = ResourceSaver.save("res://cache_map.tres", _cache_map)
+	var err = ResourceSaver.save(_cache_map, "res://cache_map.tres")
 	if err:
 		printerr("Saving res://cache_map.tres failed. Error Code %s" % err)
 	else:
@@ -121,11 +119,10 @@ func _on_Cancel_pressed():
 #
 # - path: directory path
 func _read_scene_list(path: String):
-	var dir = Directory.new()
-	var file = File.new()
 	
-	if dir.open(path) == OK:
-		dir.list_dir_begin(true)
+	var dir = DirAccess.open(path)
+	if dir != null:
+		dir.list_dir_begin()
 		var filename = dir.get_next()
 		while filename != "":
 			if !dir.current_is_dir():
@@ -134,12 +131,12 @@ func _read_scene_list(path: String):
 					# add to scene list
 					_scene_list.append(dir.get_current_dir() + "/" + filename)
 					# add to delta list if scene was modified after last cache map update
-					if file.get_modified_time(dir.get_current_dir() + "/" + filename) > _cache_map_time_modified:
+					if FileAccess.get_modified_time(dir.get_current_dir() + "/" + filename) > _cache_map_time_modified:
 						_scene_list_delta.append(dir.get_current_dir() + "/" + filename)
 					# add to delta list if scene's gd script was modified after last cache map update
 					elif (
-						file.file_exists(dir.get_current_dir() + "/" + filename.get_basename() + ".gd") \
-						and file.get_modified_time(dir.get_current_dir() + "/" + filename.get_basename() + ".gd") \
+						FileAccess.file_exists(dir.get_current_dir() + "/" + filename.get_basename() + ".gd") \
+						and FileAccess.get_modified_time(dir.get_current_dir() + "/" + filename.get_basename() + ".gd") \
 							> _cache_map_time_modified
 					):
 						_scene_list_delta.append(dir.get_current_dir() + "/" + filename)
@@ -182,7 +179,7 @@ func _scan_scene(scene_node: Node) -> Array:
 	# get all textures and target scenes listed in nodes
 	for node in _get_all_children(scene_node):
 		
-		if node.get_class() == "Sprite" and node.texture != null:
+		if node.get_class() == "Sprite2D" and node.texture != null:
 			if ResourceLoader.exists(node.texture.resource_path):
 				size_estimate += node.texture.get_data().get_data().size()
 		
@@ -283,4 +280,3 @@ func _get_all_children(node: Node)->Array:
 		if child.get_child_count() > 0:
 			nodes.append_array(_get_all_children(child))
 	return nodes
-

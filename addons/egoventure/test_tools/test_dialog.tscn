@@ -1,0 +1,83 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgjhvtdr6qyk5"]
+
+[ext_resource type="Script" uid="uid://coph65yr3ihk6" path="res://addons/egoventure/test_tools/test_dialog.gd" id="1_7f56q"]
+
+[node name="TestDialog" type="Window"]
+title = "Record & Run Test Scripts"
+initial_position = 2
+size = Vector2i(600, 200)
+exclusive = true
+unresizable = true
+popup_window = true
+content_scale_mode = 1
+script = ExtResource("1_7f56q")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer/VBox"]
+layout_mode = 2
+alignment = 1
+
+[node name="Record" type="Button" parent="MarginContainer/VBox/VBox"]
+layout_mode = 2
+text = "Record new test script"
+
+[node name="Load" type="Button" parent="MarginContainer/VBox/VBox"]
+layout_mode = 2
+text = "Load test script"
+
+[node name="Stop" type="Button" parent="MarginContainer/VBox/VBox"]
+layout_mode = 2
+text = "Stop current test script"
+
+[node name="Run" type="Button" parent="MarginContainer/VBox/VBox"]
+layout_mode = 2
+text = "Run current test script"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Grid" type="GridContainer" parent="MarginContainer/VBox"]
+layout_mode = 2
+columns = 2
+
+[node name="LabelTestScript" type="Label" parent="MarginContainer/VBox/Grid"]
+layout_mode = 2
+text = "Current test script: "
+
+[node name="NameTestScript" type="Label" parent="MarginContainer/VBox/Grid"]
+layout_mode = 2
+text = "testtesttest"
+
+[node name="LabelStepWaitTime" type="Label" parent="MarginContainer/VBox/Grid"]
+layout_mode = 2
+text = "Step Wait Time in seconds:"
+
+[node name="StepWaitTime" type="SpinBox" parent="MarginContainer/VBox/Grid"]
+layout_mode = 2
+max_value = 10.0
+step = 0.01
+value = 0.1
+update_on_text_changed = true
+custom_arrow_step = 0.01
+
+[node name="FileDialog" type="FileDialog" parent="."]
+
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
+[connection signal="pressed" from="MarginContainer/VBox/VBox/Record" to="." method="_on_record_pressed"]
+[connection signal="pressed" from="MarginContainer/VBox/VBox/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="MarginContainer/VBox/VBox/Stop" to="." method="_on_stop_pressed"]
+[connection signal="pressed" from="MarginContainer/VBox/VBox/Run" to="." method="_on_run_pressed"]
+[connection signal="value_changed" from="MarginContainer/VBox/Grid/StepWaitTime" to="." method="_on_step_wait_time_value_changed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_selected"]

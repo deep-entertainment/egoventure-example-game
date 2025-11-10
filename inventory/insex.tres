@@ -1,18 +1,18 @@
-[gd_resource type="Resource" load_steps=5 format=2]
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://deifomkc00s8w"]
 
-[ext_resource path="res://addons/egoventure/resources/inventory_item.gd" type="Script" id=1]
-[ext_resource path="res://inventory/insex_red.png" type="Texture" id=2]
-[ext_resource path="res://inventory/insex.png" type="Texture" id=3]
-[ext_resource path="res://inventory/insex_big.png" type="Texture" id=4]
+[ext_resource type="Script" uid="uid://dw7ddrdwt26n7" path="res://addons/egoventure/resources/inventory_item.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://ijpqw03jklkx" path="res://inventory/insex_red.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cx26r5cdk03uc" path="res://inventory/insex.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bkjkkqv5sf7v6" path="res://inventory/insex_big.png" id="4"]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 title = "insex"
 description = "Hex key"
-image_normal = ExtResource( 3 )
-image_active = ExtResource( 2 )
-image_big = ExtResource( 4 )
-combineable_with = [  ]
+image_normal = ExtResource("3")
+image_active = ExtResource("2")
+image_big = ExtResource("4")
+combineable_with = []
 detail_scene = ""
 detail_show_mouse = false
 grabbable = true

@@ -1,5 +1,5 @@
+@tool
 # First person point and click adventure framework for Godot
-tool
 extends EditorPlugin
 
 
@@ -56,9 +56,9 @@ func _enter_tree():
 		"CheckCursor",
 		"res://addons/egoventure/nodes/check_cursor.tscn"
 	)
-	add_tool_menu_item("Update Cache Map", self, "_on_cache_update_menu_clicked")
-	_cache_update_dialog = preload("res://addons/egoventure/cache/cache_update_dialog.tscn").instance()
-	get_editor_interface().get_editor_viewport().add_child(_cache_update_dialog)
+	add_tool_menu_item("Update Cache Map", Callable(self, "_on_cache_update_menu_clicked"))
+	_cache_update_dialog = preload("res://addons/egoventure/cache/cache_update_dialog.tscn").instantiate()
+	get_editor_interface().get_editor_main_screen().add_child(_cache_update_dialog)
 
 
 # Remove the previously loaded singletons
@@ -76,5 +76,5 @@ func _exit_tree():
 
 
 # Show cache update dialog popup
-func _on_cache_update_menu_clicked(_ud):
+func _on_cache_update_menu_clicked():
 	_cache_update_dialog.show_popup()
